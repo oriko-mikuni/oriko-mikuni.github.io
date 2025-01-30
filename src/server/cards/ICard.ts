@@ -1,3 +1,4 @@
+import { CardInPlayType } from "../../common/cards/CardInPlayType";
 import { CardName } from "../../common/cards/CardName";
 import { CardSuitIcon } from "../../common/cards/CardSuitIcon";
 import { CardTypeIcon } from "../../common/cards/CardTypeIcon";
@@ -9,16 +10,16 @@ export interface ICard {
     name: CardName;
     suit: Array<CardSuitIcon>;
     typeIcon: Array<CardTypeIcon>;
+
+    canPlayAsAction: (player: Player) => boolean;
+    canFreePlay: (player: Player) => boolean;
     play: (player: Player) => PlayerInput | undefined;
+
     victoryPoints?: VictoryPoints;
     getVictoryPoints: (player: Player) => number;
-}
+    cardInPlayType: CardInPlayType;
 
-// card that have effect on solstice
-export interface ISolsticeCard {
-    solstice: (player: Player) => PlayerInput | undefined;
+    // changes in game
+    typeIconGainThisTurn?: Array<CardTypeIcon>;
+    typeIconLoseThisTurn?: Array<CardTypeIcon>;
 }
-export function isISolsticeCard(object: any): object is ISolsticeCard {
-    return object !== undefined && object.solstice !== undefined;
-}
-

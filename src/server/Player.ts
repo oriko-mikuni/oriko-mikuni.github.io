@@ -54,6 +54,32 @@ export class Player {
     public developmentArea: Array<ICard> = [];
     public impendingQuest: Array<ICard> = [];
 
+    // player stack effect
+    public handSizeIncrease?: number;
+    public unrestMaterialCostReduction?: number;
+    public unrestCardCostReduction?: number;
+    public developmentCostReduction?: Units;
+    public extraLookAtFameDeck?: number = 0;
+
+    // player stack effect on type icon
+    public countEachFertileAs1Production?: number;
+    public treatEachFertileAs1ProductionAsIslander?: number;
+    public treatEachOceanAs2Production?: number;
+
+    // player stack effect on state symbol
+    public conquerLostBarbarian?: number;
+    public advanceLostBarbarian?: number;
+    public developmentLostBarbarian?: number;
+    public attacksLostBarbatian?: number;
+    public allLostBarbarian?: number;
+    public allLostEmpire?: number;
+    public nextCardLostBarbarian?: number;
+    public nextCardLostEmpire?: number;
+
+    // player stack effect can free play card
+    public canFreePlayUnrestOnCardAcquire?: number;
+    public canFreePlayCityAndMetropolis?: number;
+
     public get inPlay(): Array<ICard> {
         return [...this.powerCardInPlay, ...this.permanentCardInPlay, ...this.pinnedCardInPlay, ...this.TradeRoutesInPlay];
     }

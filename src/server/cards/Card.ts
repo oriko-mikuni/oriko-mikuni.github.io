@@ -7,6 +7,7 @@ import {CardStartingLocation} from '../../common/cards/CardStartingLocation';
 import {VictoryPoints} from '../../common/cards/ClientCard';
 import {Player} from '../Player';
 import {CardNationColour} from '../../common/cards/CardNationColour';
+import { CardInPlayType } from '../../common/cards/CardInPlayType';
 
 export interface Properties {
     name: CardName;
@@ -17,6 +18,7 @@ export interface Properties {
     startingLocation?: CardStartingLocation;
     victoryPoints?: VictoryPoints;
     nationColour?: CardNationColour;
+    cardInPlayType: CardInPlayType;
 }
 
 export const staticCardProperties = new Map<CardName, Properties>();
@@ -58,8 +60,15 @@ export abstract class Card {
     public get victoryPoints(): VictoryPoints | undefined {
         return this.properties.victoryPoints;
     }
+    public get cardInPlayType(): CardInPlayType {
+        return this.properties.cardInPlayType;
+    }
 
-    public canPlay(player: Player) {
+    public canPlayAsAction(player: Player) {
+        return true;
+    }
+
+    public canFreePlay(player: Player) {
         return true;
     }
 

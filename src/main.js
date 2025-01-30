@@ -1,3 +1,6 @@
+import vue from 'vue';
+import Test from 'src/client/component/Test.vue';
+
 const chessboard = document.getElementById('chessboard');
 const ctx = chessboard.getContext('2d');
 
@@ -17,3 +20,4 @@ for (let i = 0; i < 10; i++) {
   }
 }
 
+new Vue(Test);
