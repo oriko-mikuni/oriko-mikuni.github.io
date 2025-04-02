@@ -48,10 +48,6 @@
     background-color: white;
 }
 
-.card-nation-location-AveMujica {
-    background-color: black;
-}
-
 .card-nation-colour-Carthaginians {
     background: #005da3;
 }
@@ -170,10 +166,6 @@
 
 .card-nation-colour-Wagadou {
     background-image: url(../images/nation_color/WAG.svg);
-}
-
-.card-nation-colour-AveMujica {
-    background-image: url(../images/nation_color/fan-made/AVE.png);
 }
 
 .card-triangle-location {

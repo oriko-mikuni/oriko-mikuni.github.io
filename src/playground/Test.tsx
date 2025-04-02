@@ -1,9 +1,11 @@
 import React from "react";
+import pageTitle from "../client/component/PageTitle.tsx";
 
 function Test(
     {start = 14, end = 24, step = 1}:
     { start?: number, end?: number, step?: number }
 ): React.JSX.Element {
+    pageTitle();
     const numberSequence: number[] = [];
     for (let i: number = start; i < end; i += step) {
         numberSequence.push(i);
