@@ -4,20 +4,34 @@ import { CardSuitIcon } from "../../common/cards/CardSuitIcon";
 import { CardTypeIcon } from "../../common/cards/CardTypeIcon";
 import { VictoryPoints } from "../../common/cards/ClientCard";
 import { Player } from "../Player";
-import { PlayerInput } from "../PlayerInput";
+import {CardExpansion} from "../../common/cards/CardExpansion";
+import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
+import {CardNationColour} from "../../common/cards/CardNationColour";
+import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
+import {CardStateSymbol} from "../../common/cards/CardStateSymbol";
 
 export interface ICard {
     name: CardName;
     suit: Array<CardSuitIcon>;
+    stateSymbol: Array<CardStateSymbol>;
     typeIcon: Array<CardTypeIcon>;
+    cardNumber?: string;
+    effectText?: string;
+    developmentCost?: string;
+    expansion?: CardExpansion;
+    headerIcon?: CardHeaderIcon;
+    nationColour?: CardNationColour;
+    playerCount?: number;
+    startingLocation?: CardStartingLocation;
 
     canPlayAsAction: (player: Player) => boolean;
     canFreePlay: (player: Player) => boolean;
-    play: (player: Player) => PlayerInput | undefined;
+    // play: (player: Player) => PlayerInput | undefined;
 
     victoryPoints?: VictoryPoints;
+    victoryPointsString?: string;
     getVictoryPoints: (player: Player) => number;
-    cardInPlayType: CardInPlayType;
+    cardInPlayType?: CardInPlayType;
 
     // changes in game
     typeIconGainThisTurn?: Array<CardTypeIcon>;

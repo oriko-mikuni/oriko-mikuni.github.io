@@ -1,10 +1,10 @@
 export const GAME_MODULES = [
-    'ClassicsCommon',
-    'LegendsCommon',
-    'HorizonsUpdated',
-    'HorizonsCommon',
-    'TradeRouteExpansion',
-    
+    'Classics Common',
+    'Legends Common',
+    'Horizons Updated Commons',
+    'Horizons Common',
+    'Trade Route Expansion',
+
     // classics nations
     "Carthaginians",
     "Celts",
@@ -40,6 +40,8 @@ export const GAME_MODULES = [
     "Taino",
     "Tang",
     "Wagadou",
-    'TradeRouteExpansion',
+
+    // others
+    "default",
 ] as const;
 export type GameModule = typeof GAME_MODULES[number];

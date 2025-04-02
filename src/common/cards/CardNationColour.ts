@@ -38,5 +38,5 @@ export enum CardNationColour {
     // TODO: fan-made nations
     // ISR = "Israelites",
     // LHN = "Late Han",
-    // HAN = "Han",
+    AVE = "AveMujica",
 }

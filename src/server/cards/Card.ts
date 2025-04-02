@@ -8,85 +8,109 @@ import {VictoryPoints} from '../../common/cards/ClientCard';
 import {Player} from '../Player';
 import {CardNationColour} from '../../common/cards/CardNationColour';
 import { CardInPlayType } from '../../common/cards/CardInPlayType';
+import {CardExpansion} from "../../common/cards/CardExpansion";
 
 export interface Properties {
     name: CardName;
     suit: Array<CardSuitIcon>;
-    headerIcon?: CardHeaderIcon;
     stateSymbol: Array<CardStateSymbol>;
     typeIcon: Array<CardTypeIcon>;
+    headerIcon?: CardHeaderIcon;
     startingLocation?: CardStartingLocation;
-    victoryPoints?: VictoryPoints;
     nationColour?: CardNationColour;
-    cardInPlayType: CardInPlayType;
+    cardInPlayType?: CardInPlayType;
+    cardNumber?: string;
+    effectText?: string;
+    developmentCost?: string;
+    expansion?: CardExpansion;
+    playerCount?: number;
+    victoryPoints?: VictoryPoints;
+    victoryPointsString?: string;
 }
 
 export const staticCardProperties = new Map<CardName, Properties>();
 
 export abstract class Card {
     private readonly properties: Properties;
-    constructor(properties: Properties) {
-        let staticInstance = staticCardProperties.get(properties.name);
+    protected constructor(properties: Properties) {
+        const staticInstance = staticCardProperties.get(properties.name);
         if (staticInstance === undefined) {
             staticCardProperties.set(properties.name, properties);
-            staticInstance = properties;
         }
         this.properties = properties;
     }
-    public get name() {
+    public get name(): CardName {
         return this.properties.name;
     }
-    public get suit() {
+    public get suit(): Array<CardSuitIcon> {
         return this.properties.suit;
     }
-    public get banner() {
+    public get banner(): CardSuitIcon | undefined {
         return this.properties.suit.at(0);
     }
-    public get stateSymbol() {
-        return this.stateSymbol;
+    public get stateSymbol(): Array<CardStateSymbol> {
+        return this.properties.stateSymbol;
     }
-    public get headerIcon() {
+    public get headerIcon(): CardHeaderIcon | undefined {
         return this.properties.headerIcon;
     }
-    public get typeIcon() {
+    public get typeIcon(): Array<CardTypeIcon> {
         return this.properties.typeIcon;
     }
-    public get nationColour() {
+    public get nationColour(): CardNationColour | undefined {
         return this.properties.nationColour;
     }
-    public get startingLocation() {
+    public get startingLocation(): CardStartingLocation | undefined {
         return this.properties.startingLocation;
     }
     public get victoryPoints(): VictoryPoints | undefined {
         return this.properties.victoryPoints;
     }
-    public get cardInPlayType(): CardInPlayType {
+    public get cardInPlayType(): CardInPlayType | undefined {
         return this.properties.cardInPlayType;
+    }
+    public get cardNumber(): string | undefined {
+        return this.properties.cardNumber;
+    }
+    public get effectText(): string | undefined {
+        return this.properties.effectText;
+    }
+    public get developmentCost(): string | undefined {
+        return this.properties.developmentCost;
+    }
+    public get expansion(): CardExpansion | undefined {
+        return this.properties.expansion;
+    }
+    public get playerCount(): number | undefined {
+        return this.properties.playerCount;
+    }
+    public get victoryPointsString(): string | undefined {
+        return this.properties.victoryPointsString;
     }
 
     public canPlayAsAction(player: Player) {
-        return true;
+        return player !== undefined;
     }
 
     public canFreePlay(player: Player) {
-        return true;
+        return player !== undefined;
     }
 
     public play(player: Player) {
-        return undefined;
+        return player !== undefined;
     }
 
     public getVictoryPoints(player?: Player): number{
-        const vp1 = this.properties.victoryPoints;
-        if (vp1 === 'conditional' || vp1 === 'variable') {
+        if (player === undefined) {
+            throw new Error('Select a player to calculate victory points');
+        }
+        const vp1: VictoryPoints | undefined = this.properties.victoryPoints;
+        if (vp1 === 'conditional' || vp1 === 'variable' || vp1 === 'negativeConditional' || vp1 === 'negativeVariable') {
             throw new Error('When victoryPoints is \'conditional\' or \'variable\', override getVictoryPoints');
         }
         if (vp1 === undefined) {
             return 0;
         }
-        if (typeof(vp1) === 'number') {
-            return vp1;
-        }
-        return 0;
+        return vp1;
     }
 }

@@ -1,0 +1,174 @@
+.card-text-icon {
+    position: relative;
+    display: inline-block;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.card-text-icon.card-text-icon-header-pinned {
+    content: url("../images/header_icon/pinned.png");
+}
+
+.card-text-icon.card-text-icon-header-trade-route {
+    content: url("../images/header_icon/tradeRoute.png");
+}
+
+.card-text-icon.card-text-icon-header-attack {
+    content: url("../images/header_icon/attack.png");
+}
+
+.card-text-icon.card-text-icon-header-powerA {
+    content: url("../images/header_icon/powerA.png");
+}
+
+.card-text-icon.card-text-icon-header-powerB {
+    content: url("../images/header_icon/powerB.png");
+}
+
+.card-text-icon.card-text-icon-location-In-play {
+    content: url("../images/starting_location/InPlay.svg");
+}
+
+.card-text-icon.card-text-icon-location-Nation {
+    content: url("../images/starting_location/Nation.svg");
+}
+
+.card-text-icon.card-text-icon-location-Accession {
+    content: url("../images/starting_location/Accession.svg");
+}
+
+.card-text-icon.card-text-icon-location-Development {
+    content: url("../images/starting_location/Development.svg");
+}
+
+.card-text-icon.card-text-icon-location-Supply {
+    content: url("../images/starting_location/Supply.svg");
+}
+
+.card-text-icon.card-text-icon-location-Chaos {
+    content: url("../images/starting_location/Chaos.svg");
+}
+
+.card-text-icon.card-text-icon-state-barbarian {
+    content: url("../images/state_symbol/barbarian.png");
+}
+
+.card-text-icon.card-text-icon-state-empire {
+    content: url("../images/state_symbol/empire.png");
+}
+
+.card-text-icon.card-text-icon-state-isle-bound {
+    content: url("../images/state_symbol/isle_bound.png");
+}
+
+.card-text-icon.card-text-icon-state-voyaging {
+    content: url("../images/state_symbol/voyaging.png");
+}
+
+.card-text-icon.card-text-icon-state-corrupted {
+    content: url("../images/state_symbol/corrupted.png");
+}
+
+.card-text-icon.card-text-icon-state-summoned {
+    content: url("../images/state_symbol/summoned.png");
+}
+
+.card-text-icon.card-text-icon-suit-power {
+    content: url("../images/suit_icon/power.png");
+}
+
+.card-text-icon.card-text-icon-suit-fame {
+    content: url("../images/suit_icon/fame.png");
+}
+
+.card-text-icon.card-text-icon-suit-unrest {
+    content: url("../images/suit_icon/unrest.png");
+}
+
+.card-text-icon.card-text-icon-suit-uncivilised {
+    content: url("../images/suit_icon/uncivilised.png");
+}
+
+.card-text-icon.card-text-icon-suit-civilised {
+    content: url("../images/suit_icon/civilised.png");
+}
+
+.card-text-icon.card-text-icon-suit-region {
+    content: url("../images/suit_icon/region.png");
+}
+
+.card-text-icon.card-text-icon-suit-tributary {
+    content: url("../images/suit_icon/tributary.png");
+}
+
+.card-text-icon.card-text-icon-suit-trade-route {
+    content: url("../images/suit_icon/trade_route.png");
+}
+
+.card-text-icon.card-text-icon-suit-gadget {
+    content: url("../images/suit_icon/gadget.png");
+}
+
+.card-text-icon.card-text-icon-type-city {
+    content: url("../images/card_type_icon/city.png");
+}
+
+.card-text-icon.card-text-icon-type-knight {
+    content: url("../images/card_type_icon/knight.png");
+}
+
+.card-text-icon.card-text-icon-type-mask {
+    content: url("../images/card_type_icon/mask.png");
+}
+
+.card-text-icon.card-text-icon-type-merchant {
+    content: url("../images/card_type_icon/merchant.png");
+}
+
+.card-text-icon.card-text-icon-type-metropolis {
+    content: url("../images/card_type_icon/metropolis.png");
+}
+
+.card-text-icon.card-text-icon-type-miracle {
+    content: url("../images/card_type_icon/miracle.png");
+}
+
+.card-text-icon.card-text-icon-type-scroll {
+    content: url("../images/card_type_icon/scroll.png");
+}
+
+.card-text-icon.card-text-icon-type-fertile {
+    content: url("../images/card_type_icon/fertile.png");
+}
+
+.card-text-icon.card-text-icon-type-hunt {
+    content: url("../images/card_type_icon/hunt.png");
+}
+
+.card-text-icon.card-text-icon-type-ocean {
+    content: url("../images/card_type_icon/ocean.png");
+}
+
+.card-text-icon.card-text-icon-type-production {
+    content: url("../images/card_type_icon/production.png");
+}
+
+.card-text-icon.card-text-icon-type-river {
+    content: url("../images/card_type_icon/river.png");
+}
+
+.card-text-icon-resource-population {
+    content: url("../../resource/population.svg")
+}
+
+.card-text-icon-resource-material {
+    content: url("../../resource/material.svg");
+}
+
+.card-text-icon-resource-progress {
+    content: url("../../resource/progress.svg")
+}
+
+.card-text-icon-resource-goods {
+    content: url("../../resource/goods.svg");
+}

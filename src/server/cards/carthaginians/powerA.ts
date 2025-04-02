@@ -3,37 +3,29 @@ import { CardName } from "../../../common/cards/CardName";
 import { CardNationColour } from "../../../common/cards/CardNationColour";
 import { CardStartingLocation } from "../../../common/cards/CardStartingLocation";
 import { CardSuitIcon } from "../../../common/cards/CardSuitIcon";
-import { Resources } from "../../../common/Resources";
 import { Player } from "../../Player";
 import { Card } from "../Card";
 import { ICard } from "../ICard";
-import { Units } from "../../../common/Units";
-import { VictoryPoints } from "../../../common/cards/ClientCard";
-import { IPermanentCard } from "../IPermanentCard";
 import { CardInPlayType } from "../../../common/cards/CardInPlayType";
 
-export class CarthaginianPowerA extends Card implements IPermanentCard {
+export class CarthaginiansPowerA extends Card implements ICard {
     constructor() {
         super({
             name: CardName.CARTHAGINIANS_POWER_A,
             suit: [CardSuitIcon.POWER],
-            headerIcon: CardHeaderIcon.POWER_A,
             stateSymbol: [],
             typeIcon: [],
+            headerIcon: CardHeaderIcon.POWER_A,
             startingLocation: CardStartingLocation.IN_PLAY,
-            victoryPoints: 'variable',
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.POWER,
-        });
-    }
-
-    // for each 1 progress you would place into market, place 1 material instead.
-    public wouldPlaceResourceOnMarket(player: Player, resourceUnit: Units): Units {
-        return Units.of({
-            progress: 0,
-            population: resourceUnit.population,
-            goods: resourceUnit.goods,
-            material: resourceUnit.progress + resourceUnit.material,
+            cardNumber: "CAR1A",
+            effectText: "Passive: when you would place 1{progress} on a card in the market, instead place 1{material}.\n" +
+                "Exhaust: when you gain a card from\n" +
+                "the market with {material} on it, double\n" +
+                "the {material} gained.",
+            victoryPoints: 'variable',
+            victoryPointsString: "1VP per 6{material}"
         });
     }
 

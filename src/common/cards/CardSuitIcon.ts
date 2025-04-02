@@ -6,6 +6,6 @@ export enum CardSuitIcon {
     CIVILISED = "civilised",
     REGION = "region",
     TRIBUTARY = "tributary",
-    TRADE_ROUTE = "trade route",
+    TRADE_ROUTE = "trade-route",
     GADGET = "gadget"
 }

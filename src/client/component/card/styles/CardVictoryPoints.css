@@ -1,0 +1,37 @@
+.card-victory-point {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    bottom: 5px;
+    right: 5px;
+}
+
+.card-victory-point-positive {
+    background: url("../images/vp_icon/victory_point.svg");
+    background-size: 25px 25px;
+    color: black;
+}
+
+.card-victory-point-negative {
+    background: url("../images/vp_icon/victory_point_negative.svg");
+    background-size: 25px 25px;
+    color: red;
+}
+
+.card-victory-point-text {
+    position: absolute;
+    font-size: 8px;
+    line-height: 10px;
+    bottom: 5px;
+    right: 30px;
+    top: auto;
+    width: 60px;
+    height: auto;
+
+    background: #333333;
+    color: white;
+    text-align: center;
+}

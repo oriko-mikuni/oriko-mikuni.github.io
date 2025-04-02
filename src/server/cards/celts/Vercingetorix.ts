@@ -1,0 +1,36 @@
+import {ICard} from "../ICard";
+import {CardName} from "../../../common/cards/CardName";
+import {Card} from "../Card";
+import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {CardNationColour} from "../../../common/cards/CardNationColour";
+import {Player} from "../../Player";
+import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
+
+export class Vercingetorix extends Card implements ICard {
+    constructor() {
+        super({
+            name: CardName.VERCINGETORIX,
+            suit: [],
+            headerIcon: undefined,
+            stateSymbol: [CardStateSymbol.EMPIRE],
+            typeIcon: [],
+            startingLocation: CardStartingLocation.DEVELOPMENT,
+            nationColour: CardNationColour.CEL,
+            cardInPlayType: undefined,
+            cardNumber: "CEL7",
+            effectText: "You MAY acquire " + CardEffectReuse.FOUR_SUITS + ".\n" +
+                CardEffectReuse.SELF_HISTORY,
+            developmentCost: "{material}x4",
+            expansion: undefined,
+            playerCount: undefined,
+            victoryPoints: 'variable',
+            victoryPointsString: "1VP per {uncivilised}"
+        });
+    }
+
+    public getVictoryPoints(player: Player): number {
+        return player.suitCount(CardSuitIcon.UNCIVILISED);
+    }
+}

@@ -1,4 +1,4 @@
 export enum CardExpansion {
-    TRADE = "Trade",
+    TRADE_FRIENDLY = "TradeFriendly",
     RUTHLESS = "Ruthless",
 }

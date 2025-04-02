@@ -1,0 +1,50 @@
+.card-suit-icon {
+    height: 30px;
+    width: 30px;
+    background-size: 30px;
+    object-fit: cover;
+}
+
+.card-suit-icon-large {
+    height: 50px;
+    width: 50px;
+    background-size: 50px;
+    object-fit: cover;
+}
+
+.card-suit-icon-power {
+    background-image: url("../images/suit_icon/power.png");
+}
+
+.card-suit-icon-fame {
+    background-image: url("../images/suit_icon/fame.png");
+}
+
+.card-suit-icon-unrest {
+    background-image: url("../images/suit_icon/unrest.png");
+}
+
+.card-suit-icon-uncivilised {
+    background-image: url("../images/suit_icon/uncivilised.png");
+}
+
+.card-suit-icon-civilised {
+    background-image: url("../images/suit_icon/civilised.png");
+}
+
+.card-suit-icon-region {
+    background-image: url("../images/suit_icon/region.png");
+}
+
+.card-suit-icon-tributary {
+    background-image: url("../images/suit_icon/tributary.png");
+}
+
+.card-suit-icon-trade-route {
+    background-image: url("../images/suit_icon/trade_route.png");
+}
+
+.card-suit-icon-gadget {
+    background-image: url("../images/suit_icon/gadget.png");
+}
+

@@ -1,13 +1,13 @@
 export enum CardStateSymbol {
     // regular state symbol
-    BARBARIAN = "Barbarian",
-    EMPIRE = "Empire",
+    BARBARIAN = "barbarian",
+    EMPIRE = "empire",
 
     // Polynesians special state symbol
-    ISLE_BOUND = "Isle-bound",
-    VOYAGING = "Voyaging",
+    ISLE_BOUND = "isle-bound",
+    VOYAGING = "voyaging",
 
     // Cultists special state symbol
-    CORRUPTED = "Corrupted",
-    SUMMONED = "Summoned",
+    CORRUPTED = "corrupted",
+    SUMMONED = "summoned",
 }

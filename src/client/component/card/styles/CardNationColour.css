@@ -1,0 +1,215 @@
+.card-nation-colour-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    background-size: 45px;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    overflow: hidden;
+    background-clip: padding-box;
+    border-bottom-left-radius: inherit;
+}
+
+.card-nation-location-common,
+.card-nation-location-Abbasids,
+.card-nation-location-Aksumites,
+.card-nation-location-Arthurians,
+.card-nation-location-Atlanteans,
+.card-nation-location-Egyptians,
+.card-nation-location-Greeks,
+.card-nation-location-Inuit,
+.card-nation-location-Japanese,
+.card-nation-location-Mayans,
+.card-nation-location-Polynesians,
+.card-nation-location-Sassanids,
+.card-nation-location-Scythians,
+.card-nation-location-Taino,
+.card-nation-location-Wagadou {
+    background-color: black;
+}
+
+.card-nation-location-Carthaginians,
+.card-nation-location-Celts,
+.card-nation-location-Cultists,
+.card-nation-location-Guptas,
+.card-nation-location-Macedonians,
+.card-nation-location-Magyars,
+.card-nation-location-Martians,
+.card-nation-location-Mauryans,
+.card-nation-location-Minoans,
+.card-nation-location-Olmecs,
+.card-nation-location-Persians,
+.card-nation-location-Qin,
+.card-nation-location-Romans,
+.card-nation-location-Tang,
+.card-nation-location-Utopians,
+.card-nation-location-Vikings {
+    background-color: white;
+}
+
+.card-nation-location-AveMujica {
+    background-color: black;
+}
+
+.card-nation-colour-Carthaginians {
+    background: #005da3;
+}
+
+.card-nation-colour-Celts {
+    background: #00683a;
+}
+
+.card-nation-colour-Greeks {
+    background: #ffffff;
+}
+
+.card-nation-colour-Macedonians {
+    background: #552b81;
+}
+
+.card-nation-colour-Persians {
+    background: #a45396;
+}
+
+.card-nation-colour-Romans {
+    background: #e30613;
+}
+
+.card-nation-colour-Scythians {
+    background: #b7b867;
+}
+
+.card-nation-colour-Vikings {
+    background: #f59e00;
+}
+
+.card-nation-colour-Arthurians {
+    background: #8dbe22;
+}
+
+.card-nation-colour-Atlanteans {
+    background: #64c7f3;
+}
+
+.card-nation-colour-Egyptians {
+    background: #ffee00;
+}
+
+.card-nation-colour-Mauryans {
+    background: #9e622e;
+}
+
+.card-nation-colour-Minoans {
+    background: #000000;
+}
+
+.card-nation-colour-Olmecs {
+    background: #8e8e8d;
+}
+
+.card-nation-colour-Qin {
+    background: #ef82ac;
+}
+
+.card-nation-colour-Utopians {
+    background: #12b1ad;
+}
+
+.card-nation-colour-Abbasids {
+    background-image: url(../images/nation_color/ABB.svg);
+}
+
+.card-nation-colour-Aksumites {
+    background-image: url(../images/nation_color/AKS.svg);
+}
+
+.card-nation-colour-Cultists {
+    background-image: url(../images/nation_color/CUL.svg);
+}
+
+.card-nation-colour-Guptas {
+    background-image: url(../images/nation_color/GUP.svg);
+}
+
+.card-nation-colour-Inuit {
+    background-image: url(../images/nation_color/INU.svg);
+}
+
+.card-nation-colour-Japanese {
+    background-image: url(../images/nation_color/JPN.svg);
+}
+
+.card-nation-colour-Magyars {
+    background-image: url(../images/nation_color/MAG.svg);
+}
+
+.card-nation-colour-Mayans {
+    background-image: url(../images/nation_color/MAY.svg);
+}
+
+.card-nation-colour-Martians {
+    background-image: url(../images/nation_color/MRT.svg);
+}
+
+.card-nation-colour-Polynesians {
+    background-image: url(../images/nation_color/POL.svg);
+}
+
+.card-nation-colour-Sassanids {
+    background-image: url(../images/nation_color/SAS.svg);
+}
+
+.card-nation-colour-Taino {
+    background-image: url(../images/nation_color/TAI.svg);
+}
+
+.card-nation-colour-Tang {
+    background-image: url(../images/nation_color/TAN.svg);
+}
+
+.card-nation-colour-Wagadou {
+    background-image: url(../images/nation_color/WAG.svg);
+}
+
+.card-nation-colour-AveMujica {
+    background-image: url(../images/nation_color/fan-made/AVE.png);
+}
+
+.card-triangle-location {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    width: 15px;
+    height: 15px;
+}
+
+.card-triangle-location-In-play {
+    mask: url("../images/starting_location/InPlay.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/starting_location/InPlay.svg") no-repeat center;
+}
+
+.card-triangle-location-Nation {
+    mask: url("../images/starting_location/Nation.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/starting_location/Nation.svg") no-repeat center;
+}
+
+.card-triangle-location-Accession {
+    mask: url("../images/starting_location/Accession.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/starting_location/Accession.svg") no-repeat center;
+}
+
+.card-triangle-location-Development {
+    mask: url("../images/starting_location/Development.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/starting_location/Development.svg") no-repeat center;
+}
+
+.card-triangle-location-Supply {
+    mask: url("../images/starting_location/Supply.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/starting_location/Supply.svg") no-repeat center;
+}
+
+.card-triangle-location-Chaos {
+    mask: url("../images/starting_location/Chaos.svg") no-repeat center / contain;
+    -webkit-mask: url("../images/starting_location/Chaos.svg") no-repeat center;
+}

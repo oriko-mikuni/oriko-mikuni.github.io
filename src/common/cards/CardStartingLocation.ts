@@ -1,5 +1,5 @@
 export enum CardStartingLocation {
-    IN_PLAY = "In play",
+    IN_PLAY = "In-play",
     NATION = "Nation",
     ACCESSION = "Accession",
     DEVELOPMENT = "Development",
