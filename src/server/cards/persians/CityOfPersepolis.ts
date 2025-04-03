@@ -20,7 +20,7 @@ export class CityOfPersepolis extends Card implements ICard {
             nationColour: CardNationColour.PER,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "PER2",
-            effectText: CardEffectReuse.CITY,
+            effectText: CardEffectReuse.city,
         });
     }
 }

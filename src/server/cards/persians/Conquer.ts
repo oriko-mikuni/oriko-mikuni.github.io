@@ -14,7 +14,7 @@ export class Conquer extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.PER,
             cardNumber: "PER17",
-            effectText: cardEffectReuse.CONQUER,
+            effectText: cardEffectReuse.conquer,
         });
     }
 }

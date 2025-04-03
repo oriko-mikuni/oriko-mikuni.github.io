@@ -13,7 +13,7 @@ export class Glory extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM14",
-            effectText: cardEffectReuse.GLORY,
+            effectText: cardEffectReuse.glory,
         });
     }
 }

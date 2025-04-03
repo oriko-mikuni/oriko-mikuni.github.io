@@ -18,8 +18,8 @@ export class DariusI extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.PER,
             cardNumber: "PER9",
-            effectText: "Acquire" + CardEffectReuse.FOUR_SUITS + ".\n" +
-                CardEffectReuse.SELF_HISTORY,
+            effectText: "Acquire" + CardEffectReuse.fourSuits + ".\n" +
+                CardEffectReuse.selfHistory,
             developmentCost: "{material}x3 {population}x2",
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {tributary}"

@@ -16,7 +16,7 @@ export class DidoQueenOfCarthage extends Card implements ICard {
             cardNumber: "CAR18",
             effectText: "Gain 1{population}. You MAY acquire {region}\n" +
                 "and free play it immediately.\n" +
-                CardEffectReuse.SELF_HISTORY,
+                CardEffectReuse.selfHistory,
         });
     }
 }

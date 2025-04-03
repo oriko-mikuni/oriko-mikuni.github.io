@@ -5,12 +5,13 @@ import {CEL_CARD_MANIFEST} from "./celts/cardManifest";
 import {HORIZONS_UPDATED_COMMON_CARD_MANIFEST} from "./horizonUpdate/cardManifest";
 import {PER_CARD_MANIFEST} from "./persians/cardManifest";
 import {ROM_CARD_MANIFEST} from "./romans/cardManifest";
+import {MAC_CARD_MANIFEST} from "./macedonians/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     CAR_CARD_MANIFEST,
     CEL_CARD_MANIFEST,
     // GRE_CARD_MANIFEST,
-    // MAC_CARD_MANIFEST,
+    MAC_CARD_MANIFEST,
     PER_CARD_MANIFEST,
     ROM_CARD_MANIFEST,
     // SCY_CARD_MANIFEST,

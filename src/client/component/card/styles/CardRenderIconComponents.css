@@ -172,3 +172,11 @@
 .card-text-icon-resource-goods {
     content: url("../../resource/goods.svg");
 }
+
+.card-text-icon-resource-action {
+    content: url("../../resource/action.svg");
+}
+
+.card-text-icon-resource-exhaust {
+    content: url("../../resource/exhaust.svg");
+}

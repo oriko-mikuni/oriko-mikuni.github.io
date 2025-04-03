@@ -20,7 +20,7 @@ export class CityOfCarthage extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR2",
-            effectText: CardEffectReuse.CITY,
+            effectText: CardEffectReuse.city,
         });
     }
 }

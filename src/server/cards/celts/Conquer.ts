@@ -16,7 +16,7 @@ export class Conquer extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL8",
-            effectText: CardEffectReuse.CONQUER
+            effectText: CardEffectReuse.conquer
         });
     }
 }

@@ -18,7 +18,7 @@ export class CityOfRome extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM19",
-            effectText: cardEffectReuse.CITY
+            effectText: cardEffectReuse.city
         });
     }
 }

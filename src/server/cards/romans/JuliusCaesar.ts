@@ -18,7 +18,7 @@ export class JuliusCaesar extends Card implements ICard {
             cardNumber: "ROM2",
             effectText: "Free play. Choose: draw 2 cards,\n" +
                 "OR you MAY acquire {region}/{tributary}.\n" +
-                cardEffectReuse.SELF_HISTORY,
+                cardEffectReuse.selfHistory,
         });
     }
 }

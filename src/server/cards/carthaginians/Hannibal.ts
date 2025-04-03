@@ -16,10 +16,10 @@ export class Hannibal extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR6",
-            effectText: "You MAY acquire " + CardEffectReuse.FOUR_SUITS + ".\n" +
+            effectText: "You MAY acquire " + CardEffectReuse.fourSuits + ".\n" +
                 "You MAY draw a card.\n" +
                 "You MAY draw a card from your history.\n" +
-                CardEffectReuse.SELF_HISTORY,
+                CardEffectReuse.selfHistory,
             developmentCost: "{population}x4",
             victoryPoints: 4,
         });

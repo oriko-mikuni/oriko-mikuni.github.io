@@ -13,7 +13,7 @@ export class Prosperity1 extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR15",
-            effectText: ReusedCardEffectText.PROSPERITY
+            effectText: ReusedCardEffectText.prosperity
         });
     }
 }

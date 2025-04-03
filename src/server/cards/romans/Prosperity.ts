@@ -15,7 +15,7 @@ export class Prosperity extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM9",
-            effectText: cardEffectReuse.PROSPERITY,
+            effectText: cardEffectReuse.prosperity,
         });
     }
 }

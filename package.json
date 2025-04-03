@@ -7,7 +7,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "make:cards": "ts-node src/server/tools/export_card_rendering.ts",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && npm run make:cards",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

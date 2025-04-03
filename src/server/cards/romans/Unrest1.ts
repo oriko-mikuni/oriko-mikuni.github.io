@@ -14,7 +14,7 @@ export class Unrest1 extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM22",
-            effectText: cardEffectReuse.UNREST,
+            effectText: cardEffectReuse.unrest,
             victoryPoints: -2,
         });
     }

@@ -15,7 +15,7 @@ export class Lydians extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.PER,
             cardNumber: "PER21",
-            effectText: "Gain 2{population}.\n" + cardEffectReuse.SELF_HISTORY,
+            effectText: "Gain 2{population}.\n" + cardEffectReuse.selfHistory,
         });
     }
 }
