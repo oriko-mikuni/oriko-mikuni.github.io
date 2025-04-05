@@ -26,6 +26,6 @@ export class RomansPowerB extends Card implements ICard {
     }
 
     public getVictoryPoints(player: Player): number {
-        return player.population / 2;
+        return Math.floor(player.population / 2);
     }
 }

@@ -27,6 +27,6 @@ export class MacedoniansPowerA extends Card implements ICard {
     }
 
     public getVictoryPoints(player: Player): number {
-        return player.suitCount(CardSuitIcon.REGION) / 2;
+        return Math.floor(player.suitCount(CardSuitIcon.REGION) / 2);
     }
 }

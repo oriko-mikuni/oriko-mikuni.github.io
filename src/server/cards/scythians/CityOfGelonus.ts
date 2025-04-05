@@ -8,29 +8,22 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import cardEffectReuse from "../../../common/cards/CardEffectReuse";
-import {Player} from "../../Player";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 
-export class AlexandriaInAriana extends Card implements ICard {
+export class CityOfGelonus extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.ALEXANDRIA_IN_ARIANA,
+            name: CardName.CITY_OF_GELONUS,
             suit: [],
             stateSymbol: [CardStateSymbol.EMPIRE],
             typeIcon: [CardTypeIcon.CITY],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.DEVELOPMENT,
-            nationColour: CardNationColour.MAC,
+            nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.PINNED,
-            cardNumber: "MAC9",
+            cardNumber: "SCY5",
             effectText: cardEffectReuse.city,
-            developmentCost: {material: 4, population: 2},
-            victoryPoints: 'variable',
-            victoryPointsString: "1VP per 2 {region}"
+            developmentCost: {population: 3},
+            victoryPoints: 2,
         });
-    }
-
-    public getVictoryPoints(player: Player): number {
-        return Math.floor(player.suitCount(CardSuitIcon.REGION) / 2);
     }
 }

@@ -20,7 +20,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
   * add cards from more nations.
     * Classics
       * [x] Macedonians
-      * [ ] Scythians
+      * [x] Scythians
       * [ ] Greeks
       * [ ] Vikings
     * Legends
@@ -53,7 +53,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
     * [ ] Legends
     * [ ] Horizons
 * toggle features
-  * [ ] add expand / collapse all
+  * [x] add expand / collapse all
   * [ ] add filter options
   * [ ] add grouping options
 * [ ] add i18n support.

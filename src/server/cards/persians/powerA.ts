@@ -29,6 +29,6 @@ export class PersiansPowerA extends Card implements ICard {
     }
 
     public getVictoryPoints(player: Player): number {
-        return player.suitCount(CardSuitIcon.TRIBUTARY)/3;
+        return Math.floor(player.suitCount(CardSuitIcon.TRIBUTARY) / 3);
     }
 }

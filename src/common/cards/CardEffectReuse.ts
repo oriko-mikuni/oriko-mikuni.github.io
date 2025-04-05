@@ -24,6 +24,10 @@ enum CardEffectReuse {
         "OR gain 1{population} OR draw a card.",
     development = "Choose: develop OR pay 2{material} to\n" +
         "acquire {uncivilised}/{civilised}.",
+    mountedArchers = "Exhaust: when another player plays\n" +
+        "an {attack}, you MAY exhaust this card\n" +
+        "to avoid its effects (even if it's\n" +
+        "another player's turn).",
     // phrases
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
     selfHistory = "Put this card into your history.",

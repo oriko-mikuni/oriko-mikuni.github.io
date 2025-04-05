@@ -101,7 +101,7 @@ export abstract class Card {
         return player !== undefined;
     }
 
-    public getVictoryPoints(player?: Player): number{
+    public getVictoryPoints(player: Player): number{
         if (player === undefined) {
             throw new Error('Select a player to calculate victory points');
         }

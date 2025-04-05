@@ -8,27 +8,26 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Player} from "../../Player";
 
-export class RomansPowerA extends Card implements ICard {
+export class ScythiansPowerA extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.ROMANS_POWER_A,
+            name: CardName.SCYTHIANS_POWER_A,
             suit: [CardSuitIcon.POWER],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_A,
             startingLocation: CardStartingLocation.IN_PLAY,
-            nationColour: CardNationColour.ROM,
+            nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.POWER,
-            cardNumber: "ROM1A",
-            effectText: "Passive: whenever you look at any\n" +
-                "number of cards from the {fame} deck, look\n" +
-                "at one additional card, then gain 1{progress}.",
+            cardNumber: "SCY1A",
+            effectText: "Exhaust: spend an action and take {unrest} to\n" +
+                "break through for {region}.",
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per 4{population}"
+            victoryPointsString: "1VP per 6{material}"
         });
     }
 
     public getVictoryPoints(player: Player): number {
-        return Math.floor(player.population / 4);
+        return Math.floor(player.material / 6);
     }
 }

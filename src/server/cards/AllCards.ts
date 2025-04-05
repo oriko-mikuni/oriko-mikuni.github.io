@@ -6,6 +6,7 @@ import {HORIZONS_UPDATED_COMMON_CARD_MANIFEST} from "./horizonUpdate/cardManifes
 import {PER_CARD_MANIFEST} from "./persians/cardManifest";
 import {ROM_CARD_MANIFEST} from "./romans/cardManifest";
 import {MAC_CARD_MANIFEST} from "./macedonians/cardManifest";
+import {SCY_CARD_MANIFEST} from "./scythians/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     CAR_CARD_MANIFEST,
@@ -14,7 +15,7 @@ export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     MAC_CARD_MANIFEST,
     PER_CARD_MANIFEST,
     ROM_CARD_MANIFEST,
-    // SCY_CARD_MANIFEST,
+    SCY_CARD_MANIFEST,
     // VIK_CARD_MANIFEST,
 
     // ART_CARD_MANIFEST,
