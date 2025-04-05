@@ -20,7 +20,7 @@ export class DariusI extends Card implements ICard {
             cardNumber: "PER9",
             effectText: "Acquire" + CardEffectReuse.fourSuits + ".\n" +
                 CardEffectReuse.selfHistory,
-            developmentCost: "{material}x3 {population}x2",
+            developmentCost: {material: 3, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {tributary}"
         });

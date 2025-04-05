@@ -6,6 +6,7 @@ import {CardTypeIcon} from "./CardTypeIcon";
 import {CardNationColour} from "./CardNationColour";
 import {CardStartingLocation} from './CardStartingLocation';
 import {CardExpansion} from './CardExpansion';
+import {Units} from "../Units";
 
 export type VictoryPoints = number | 'conditional' | 'variable' | 'negativeConditional' | 'negativeVariable';
 
@@ -16,7 +17,7 @@ export type ClientCard = {
   typeIcon: Array<CardTypeIcon>;
   headerIcon?: CardHeaderIcon;
   effectText?: string;
-  developmentCost?: string;
+  developmentCost?: Partial<Units>;
   nationColour?: CardNationColour;
   startingLocation?: CardStartingLocation;
   playerCount?: number;

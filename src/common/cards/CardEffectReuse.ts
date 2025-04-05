@@ -18,10 +18,12 @@ enum CardEffectReuse {
     setupUnrestR = " are in play.\n",
 
     city = "Solstice: you MAY discard a card to\n" +
-        "choose: gain 1{population} OR gain 1{material}\n" +
+        "choose: gain 1{material} OR gain 1{population}\n" +
         "OR draw a card.",
     metropolis = "Solstice: choose: gain 1{material}\n" +
         "OR gain 1{population} OR draw a card.",
+    development = "Choose: develop OR pay 2{material} to\n" +
+        "acquire {uncivilised}/{civilised}.",
     // phrases
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
     selfHistory = "Put this card into your history.",

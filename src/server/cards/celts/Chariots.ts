@@ -22,7 +22,7 @@ export class Chariots extends Card implements ICard {
             effectText: "Passive: you may acquire exiled {region}.\n" +
                 "Your [Conquer] and {attack} cards lose\n" +
                 "the {barbarian} icon.",
-            developmentCost: "{population}x3",
+            developmentCost: {population: 3},
             victoryPoints: 4,
         });
     }

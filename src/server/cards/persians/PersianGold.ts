@@ -19,7 +19,7 @@ export class PersianGold extends Card implements ICard {
             cardNumber: "PER7",
             effectText: "All players gain 2{material}. You gain 1{progress}.\n" +
                 "Each other player takes {unrest}.",
-            developmentCost: "{material}x7",
+            developmentCost: {material: 7},
             victoryPoints: 4,
         });
     }

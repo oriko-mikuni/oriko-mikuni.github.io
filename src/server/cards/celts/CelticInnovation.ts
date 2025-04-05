@@ -19,7 +19,7 @@ export class CelticInnovation extends Card implements ICard {
             cardNumber: "CEL3",
             effectText: "You MAY acquire {uncivilised}/{civilised}.\n" +
                 "Each other player takes {unrest}.",
-            developmentCost: "{material}x2 {population}x2",
+            developmentCost: {material: 2, population: 2},
             victoryPoints: 4,
         });
     }

@@ -24,7 +24,7 @@ export class OghamScript extends Card implements ICard {
                 "your hand into your history. You MAY\n" +
                 "put a card from your discard pile\n" +
                 "into your history.",
-            developmentCost: "{material}x2 {population}x2",
+            developmentCost: {material: 2, population: 2},
             victoryPoints: 4,
         });
     }

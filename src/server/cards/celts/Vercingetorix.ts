@@ -22,7 +22,7 @@ export class Vercingetorix extends Card implements ICard {
             cardNumber: "CEL7",
             effectText: "You MAY acquire " + CardEffectReuse.fourSuits + ".\n" +
                 CardEffectReuse.selfHistory,
-            developmentCost: "{material}x4",
+            developmentCost: {material: 4},
             expansion: undefined,
             playerCount: undefined,
             victoryPoints: 'variable',

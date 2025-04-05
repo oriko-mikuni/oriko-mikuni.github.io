@@ -19,7 +19,7 @@ export class Parmenion extends Card implements ICard {
             effectText: "You MAY acquire {region}/{tributary} and\n" +
                 "immediately free play it.\n" +
                 cardEffectReuse.selfHistory,
-            developmentCost: "{material}x2 {population}x2",
+            developmentCost: {material: 2, population: 2},
             victoryPoints: 2,
         });
     }

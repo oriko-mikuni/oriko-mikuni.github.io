@@ -24,7 +24,7 @@ export class AlexandriaInAriana extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC9",
             effectText: cardEffectReuse.city,
-            developmentCost: "{material}x4 {population}x2",
+            developmentCost: {material: 4, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {region}"
         });

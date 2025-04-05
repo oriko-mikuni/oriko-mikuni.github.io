@@ -21,7 +21,7 @@ export class Legions extends Card implements ICard {
             cardNumber: "ROM5",
             effectText: "Passive: increase your hand size by 1.\n" +
                 "Your [Conquer] cards lose the {barbarian} icon.",
-            developmentCost: "{population}x3",
+            developmentCost: {population: 3},
             victoryPoints: 2,
         });
     }

@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Development extends Card implements ICard {
     constructor() {
@@ -15,9 +16,8 @@ export class Development extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC3",
-            effectText: "Choose: develop OR pay 2{material} to\n" +
-                "acquire {uncivilised}/{civilised}.",
-            developmentCost: "{material}x4 {population}x1",
+            effectText: cardEffectReuse.development,
+            developmentCost: {material: 4, population: 1},
             victoryPoints: 3,
         });
     }

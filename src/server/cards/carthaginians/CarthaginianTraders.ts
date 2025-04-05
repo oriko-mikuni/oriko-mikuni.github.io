@@ -13,9 +13,7 @@ export class CarthaginianTraders extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR19",
-            effectText: "Free play. Add 1{material} to a card in the\n" +
-                "market. You MAY put a card from your\n" +
-                "hand or discard pile into your history.",
+            effectText: "Free play. Add 1{material} to a card in the market. You MAY put a card from your hand or discard pile into your history.",
         });
     }
 }

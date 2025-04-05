@@ -9,6 +9,7 @@ import {Player} from '../Player';
 import {CardNationColour} from '../../common/cards/CardNationColour';
 import { CardInPlayType } from '../../common/cards/CardInPlayType';
 import {CardExpansion} from "../../common/cards/CardExpansion";
+import {Units} from "../../common/Units";
 
 export interface Properties {
     name: CardName;
@@ -21,7 +22,7 @@ export interface Properties {
     cardInPlayType?: CardInPlayType;
     cardNumber?: string;
     effectText?: string;
-    developmentCost?: string;
+    developmentCost?: Partial<Units>;
     expansion?: CardExpansion;
     playerCount?: number;
     victoryPoints?: VictoryPoints;
@@ -75,7 +76,7 @@ export abstract class Card {
     public get effectText(): string | undefined {
         return this.properties.effectText;
     }
-    public get developmentCost(): string | undefined {
+    public get developmentCost(): Partial<Units> | undefined {
         return this.properties.developmentCost;
     }
     public get expansion(): CardExpansion | undefined {

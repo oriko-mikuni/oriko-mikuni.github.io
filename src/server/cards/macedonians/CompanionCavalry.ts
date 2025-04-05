@@ -23,7 +23,7 @@ export class CompanionCavalry extends Card implements ICard {
                 "the {barbarian} symbol.\n" +
                 "Exhaust: when you play a {region}, exhaust\n" +
                 "this card to draw a card.",
-            developmentCost: "{population}x3",
+            developmentCost: {population: 3},
             victoryPoints: 3,
         });
     }

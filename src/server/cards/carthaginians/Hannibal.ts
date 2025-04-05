@@ -20,7 +20,7 @@ export class Hannibal extends Card implements ICard {
                 "You MAY draw a card.\n" +
                 "You MAY draw a card from your history.\n" +
                 CardEffectReuse.selfHistory,
-            developmentCost: "{population}x4",
+            developmentCost: {population: 4},
             victoryPoints: 4,
         });
     }

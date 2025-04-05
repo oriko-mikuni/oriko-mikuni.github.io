@@ -19,7 +19,7 @@ export class MilitaryEngineering extends Card implements ICard {
             cardNumber: "ROM3",
             effectText: "Each other player discards 2 cards.\n" +
                 "You MAY break through for {civilised}.",
-            developmentCost: "{material}x4 {population}x1",
+            developmentCost: {material: 4, population: 1},
             victoryPoints: 3,
         });
     }

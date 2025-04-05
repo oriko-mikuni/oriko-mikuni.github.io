@@ -16,10 +16,10 @@ export class CarthaginiansElephants0 extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR3",
-            effectText: "Each other player abandons a {region}.\n"+
+            effectText: "Each other player abandons a {region}.\n" +
                 "You MAY break through for {region}/{tributary}.\n"+
                 CardEffectReuse.selfHistory,
-            developmentCost: "{population}x3",
+            developmentCost: {population: 3},
             victoryPoints: 2
         });
     }

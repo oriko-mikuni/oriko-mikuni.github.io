@@ -16,7 +16,7 @@ export class Satrap extends Card implements ICard {
             nationColour: CardNationColour.PER,
             cardNumber: "PER6",
             effectText: "Free play. Pay 3{material} to gain 1 action.",
-            developmentCost: "{material}x4 {population}x2",
+            developmentCost: {material: 4, population: 2},
             victoryPoints: 3,
         });
     }

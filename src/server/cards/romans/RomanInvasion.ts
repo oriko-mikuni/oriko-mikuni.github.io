@@ -19,7 +19,7 @@ export class RomanInvasion extends Card implements ICard {
             cardNumber: "ROM4",
             effectText: "You MAY acquire {region}/{tributary}.\n" +
                 "Each other player abandons a {region}.",
-            developmentCost: "{population}x3",
+            developmentCost: {population: 3},
             victoryPoints: 2,
         });
     }

@@ -21,7 +21,7 @@ export class Chainmail extends Card implements ICard {
             cardNumber: "CEL4",
             effectText: "Passive: when you play an {attack},\n" +
                 "gain 1{progress}.",
-            developmentCost: "{material}x3 {population}x1",
+            developmentCost: {material: 3, population: 1},
             victoryPoints: 4,
         });
     }

@@ -24,7 +24,7 @@ export class RomeTheEternalCity extends Card implements ICard {
             effectText: "Only playable if [City of Rome] is in play.\n" +
                 "Put [City of Rome] into your history.\n" +
                 cardEffectReuse.metropolis,
-            developmentCost: "{material}x3 {population}x3",
+            developmentCost: {material: 3, population: 3},
             victoryPoints: 4,
         });
     }

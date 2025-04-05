@@ -18,8 +18,7 @@ export class Uxians extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC11",
             effectText: "Steal 2{material} from each other player.\n" +
-                "You may return an {exhaust} to your\n" +
-                "state card.",
+                "You may return an {exhaust} to your state card.",
         });
     }
 }

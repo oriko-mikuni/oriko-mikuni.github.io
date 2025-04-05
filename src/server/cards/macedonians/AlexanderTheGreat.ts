@@ -20,7 +20,7 @@ export class AlexanderTheGreat extends Card implements ICard {
                 "Free play. You MAY acquire {region} twice,\n" +
                 "including from exiled cards.\n" +
                 cardEffectReuse.selfHistory,
-            developmentCost: "{material}x4 {population}x2",
+            developmentCost: {material: 4, population: 2},
             victoryPoints: 4,
         });
     }

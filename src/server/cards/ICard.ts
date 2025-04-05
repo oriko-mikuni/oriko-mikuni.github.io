@@ -9,6 +9,7 @@ import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
 import {CardNationColour} from "../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
 import {CardStateSymbol} from "../../common/cards/CardStateSymbol";
+import {Units} from "../../common/Units";
 
 export interface ICard {
     name: CardName;
@@ -17,7 +18,7 @@ export interface ICard {
     typeIcon: Array<CardTypeIcon>;
     cardNumber?: string;
     effectText?: string;
-    developmentCost?: string;
+    developmentCost?: Partial<Units>;
     expansion?: CardExpansion;
     headerIcon?: CardHeaderIcon;
     nationColour?: CardNationColour;

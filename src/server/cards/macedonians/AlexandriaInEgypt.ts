@@ -22,7 +22,7 @@ export class AlexandriaInEgypt extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC8",
             effectText: cardEffectReuse.metropolis,
-            developmentCost: "{material}x4 {population}x1",
+            developmentCost: {material: 4, population: 1},
             victoryPoints: 2,
         });
     }

@@ -17,7 +17,8 @@ export class MedianEmpire extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.PER,
             cardNumber: "PER12",
-            effectText: "Gain 4{material}.\n" + cardEffectReuse.selfHistory,
+            effectText: "Gain 4{material}.\n" +
+                cardEffectReuse.selfHistory,
         });
     }
 }

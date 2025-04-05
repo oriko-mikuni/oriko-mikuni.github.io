@@ -1,27 +1,26 @@
 import React from "react";
 import './styles/CardEffectTextBox.css';
 import {RenderCardText} from "./CardText.tsx";
+import {Units, UnitsUtils} from "../../../common/Units.ts";
 
-function RenderDevelopmentCost(developmentCost?: string) : Array<React.JSX.Element> | null {
-    if (developmentCost === undefined || developmentCost === "") {
+function RenderDevelopmentCostBox(developmentCost?: Partial<Units>) : Array<React.JSX.Element> | null {
+    if (UnitsUtils.isEmpty(developmentCost)) {
         return null;
     }
-    const textRender: Array<React.JSX.Element> | null = RenderCardText("Development Cost: " + developmentCost);
-    if (textRender === null) {
-        return null;
-    }
+    const developmentCostDisplay: Array<React.JSX.Element> | null =
+        RenderCardText("Development Cost: " + UnitsUtils.toString(developmentCost));
 
-    return [<br key={0}/>, <div className="card-development-cost" key={1}>{textRender}</div>];
+    return [<br key={0}/>, <div className="card-development-cost" key={1}>{developmentCostDisplay}</div>];
 }
 
 export function CardEffectTextBox(
     {effectText, developmentCost}:
-    {effectText?: string, developmentCost?: string}
+    {effectText?: string, developmentCost?: Partial<Units>}
 ): React.JSX.Element | null {
     if (effectText !== undefined || developmentCost !== undefined) {
         return <div className="card-effect-text">
             {RenderCardText(effectText)}
-            {RenderDevelopmentCost(developmentCost)}
+            {RenderDevelopmentCostBox(developmentCost)}
         </div>;
     } else {
         return null;

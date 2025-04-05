@@ -16,8 +16,46 @@ Not affiliated with Osprey. Not endorsed by Osprey.
 A list of some cards from the game.
 Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
 #### TODO for Cardporium
-* add cards from more nations.
-* add common cards and state cards.
-* add more filter options.
-* add i18n support.
-### More advices are welcome! You can start an issue.
+* contents
+  * add cards from more nations.
+    * Classics
+      * [x] Macedonians
+      * [ ] Scythians
+      * [ ] Greeks
+      * [ ] Vikings
+    * Legends
+      * [ ] Mauryans
+      * [ ] Minoans
+      * [ ] Qin
+      * [ ] Atlanteans
+      * [ ] Egyptians
+      * [ ] Olmecs
+      * [ ] Arthurians
+      * [ ] Utopians
+    * Horizons (New Horizons)
+      * [ ] Magyars
+      * [ ] Japanese
+      * [ ] Taino
+      * [ ] Inuits
+      * [ ] Mayans
+      * [ ] Martians
+      * [ ] Polynesians
+      * [ ] Cultists
+    * Horizons (Merchants)
+      * [ ] Abbasids
+      * [ ] Aksumites
+      * [ ] Guptas
+      * [ ] Tang
+      * [ ] Wagadou
+      * [ ] Sassanids
+  * add common cards and state cards.
+    * [ ] Classics
+    * [ ] Legends
+    * [ ] Horizons
+* toggle features
+  * [ ] add expand / collapse all
+  * [ ] add filter options
+  * [ ] add grouping options
+* [ ] add i18n support.
+### More advices are welcome!
+You can start an [issue](https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues).

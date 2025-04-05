@@ -21,7 +21,7 @@ export class CeltsPowerA extends Card implements ICard {
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "CEL1A",
             effectText: "Exhaust: when you acquire {uncivilised} or break through for {uncivilised}, exhaust this card.\n" +
-                "Each other player takes {unrest}.\n",
+                "Each other player takes {unrest}.",
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {uncivilised}"
         });

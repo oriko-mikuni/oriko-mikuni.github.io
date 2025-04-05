@@ -21,7 +21,7 @@ export class Windmills extends Card implements ICard {
             cardNumber: "PER5",
             effectText: "Free play. Exhaust: treat 1 {fertile} as 3 {production}\n" +
                 "for the rest of the turn.",
-            developmentCost: "{material}x4",
+            developmentCost: {material: 4},
             victoryPoints: 2,
         });
     }
