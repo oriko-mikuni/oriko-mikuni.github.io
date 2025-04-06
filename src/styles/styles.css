@@ -1,0 +1,15 @@
+#root {
+    font-family: monospace;
+}
+
+button {
+    color: black;
+    background: white;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.centerAlign {
+    text-align: center;
+}

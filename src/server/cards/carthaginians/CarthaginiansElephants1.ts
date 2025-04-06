@@ -5,6 +5,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import CardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 
 export class CarthaginiansElephants1 extends Card implements ICard {
     constructor() {
@@ -13,6 +14,7 @@ export class CarthaginiansElephants1 extends Card implements ICard {
             suit: [],
             stateSymbol: [CardStateSymbol.EMPIRE],
             typeIcon: [],
+            headerIcon: CardHeaderIcon.ATTACK,
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR4",

@@ -7,11 +7,12 @@ import {PER_CARD_MANIFEST} from "./persians/cardManifest";
 import {ROM_CARD_MANIFEST} from "./romans/cardManifest";
 import {MAC_CARD_MANIFEST} from "./macedonians/cardManifest";
 import {SCY_CARD_MANIFEST} from "./scythians/cardManifest";
+import {GRE_CARD_MANIFEST} from "./greeks/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     CAR_CARD_MANIFEST,
     CEL_CARD_MANIFEST,
-    // GRE_CARD_MANIFEST,
+    GRE_CARD_MANIFEST,
     MAC_CARD_MANIFEST,
     PER_CARD_MANIFEST,
     ROM_CARD_MANIFEST,

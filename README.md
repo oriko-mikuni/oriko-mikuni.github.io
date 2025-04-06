@@ -21,7 +21,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
     * Classics
       * [x] Macedonians
       * [x] Scythians
-      * [ ] Greeks
+      * [x] Greeks
       * [ ] Vikings
     * Legends
       * [ ] Mauryans

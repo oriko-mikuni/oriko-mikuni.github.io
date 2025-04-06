@@ -1,17 +1,17 @@
 import IconNamesJson from '../../genfiles/iconNames.json';
 
 export class IconNamesManifest {
-    public static iconNames: Record<string, {category: string, value: string}> = {};
+    public static iconNames: Record<string, string> = {};
 
     public static initialize(): void {
-        Object.entries(IconNamesJson as Record<string, {category: string, value: string}>).forEach(
-            (iconEntry: [string, {category: string, value: string}]): void  => {
+        Object.entries(IconNamesJson as Record<string, string>).forEach(
+            (iconEntry: [string, string]): void  => {
                 IconNamesManifest.iconNames[iconEntry[0]] = iconEntry[1];
-        })
+        });
     }
 }
 
-export function getIconByName(name: string): {category: string, value: string} | undefined {
+export function getIconByName(name: string): string | undefined {
     return IconNamesManifest.iconNames[name];
 }
 

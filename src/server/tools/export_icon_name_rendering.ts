@@ -7,7 +7,7 @@ import {Resources} from "../../common/Resources";
 import fs from "fs";
 
 class IconNameProcessor {
-    public static json: Record<string, {category: string, value: string}> = {};
+    public static json: Record<string, string> = {};
     public static makeJson(): void {
         this.processIconEnumType("header", CardHeaderIcon);
         this.processIconEnumType("location", CardStartingLocation);
@@ -20,7 +20,7 @@ class IconNameProcessor {
     public static processIconEnumType<T extends Record<string | number, string | number>>
     (category: string, iconEnum: T): void {
         Object.entries(iconEnum).forEach((entry: [string | number, string | number]): void => {
-            IconNameProcessor.json["{" + entry[1] + "}"] = {category: category, value: entry[1].toString()};
+            IconNameProcessor.json["{" + entry[1] + "}"] = category + "-" + entry[1].toString();
         });
     }
 }
