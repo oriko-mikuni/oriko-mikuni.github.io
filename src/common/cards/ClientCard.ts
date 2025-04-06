@@ -8,7 +8,7 @@ import {CardStartingLocation} from './CardStartingLocation';
 import {CardExpansion} from './CardExpansion';
 import {Units} from "../Units";
 
-export type VictoryPoints = number | 'conditional' | 'variable' | 'negativeConditional' | 'negativeVariable';
+export type VictoryPoints = number | 'conditional' | 'variable' | 'negativeConditional';
 
 export type ClientCard = {
   name: CardName;

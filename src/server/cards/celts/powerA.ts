@@ -3,9 +3,8 @@ import {CardName} from "../../../common/cards/CardName";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {Player} from "../../Player";
 import {Card} from "../Card";
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 
 export class CeltsPowerA extends Card implements ICard {
@@ -29,7 +28,7 @@ export class CeltsPowerA extends Card implements ICard {
 
     // exhaust to double material gain effect is hooked in Player.gainResource()
 
-    public getVictoryPoints(player: Player): number {
-        return player.suitCount(CardSuitIcon.UNCIVILISED);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return param.player.suitCount(CardSuitIcon.UNCIVILISED);
     }
 }

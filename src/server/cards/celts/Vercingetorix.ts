@@ -1,10 +1,9 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
@@ -30,7 +29,7 @@ export class Vercingetorix extends Card implements ICard {
         });
     }
 
-    public getVictoryPoints(player: Player): number {
-        return player.suitCount(CardSuitIcon.UNCIVILISED);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return param.player.suitCount(CardSuitIcon.UNCIVILISED);
     }
 }

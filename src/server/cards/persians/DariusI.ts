@@ -1,11 +1,10 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import CardEffectReuse from "../../../common/cards/CardEffectReuse";
-import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 
 export class DariusI extends Card implements ICard {
@@ -26,7 +25,7 @@ export class DariusI extends Card implements ICard {
         });
     }
 
-    public getVictoryPoints(player: Player): number {
-        return player.suitCount(CardSuitIcon.TRIBUTARY);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return param.player.suitCount(CardSuitIcon.TRIBUTARY);
     }
 }

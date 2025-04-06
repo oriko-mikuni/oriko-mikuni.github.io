@@ -17,20 +17,14 @@ function CardVictoryPoints(
     let victoryPointNumber: string;
 
     switch (vp) {
-        case 'negativeVariable':
-            classes.push('card-victory-point-negative');
-            classes.push('card-victory-point-variable');
-            victoryPointNumber = "*";
-            break;
         case 'negativeConditional':
             classes.push('card-victory-point-negative');
             classes.push('card-victory-point-conditional');
             victoryPointNumber = "-?";
             break;
         case 'variable':
-            classes.push('card-victory-point-positive');
             classes.push('card-victory-point-variable');
-            victoryPointNumber = "*";
+            victoryPointNumber = "";
             break;
         case 'conditional':
             classes.push('card-victory-point-positive');

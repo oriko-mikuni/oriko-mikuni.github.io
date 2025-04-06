@@ -158,25 +158,30 @@
 }
 
 .card-text-icon-resource-population {
-    content: url("../../resource/population.svg")
+    content: url("../images/resource/population.svg")
 }
 
 .card-text-icon-resource-material {
-    content: url("../../resource/material.svg");
+    content: url("../images/resource/material.svg");
 }
 
 .card-text-icon-resource-progress {
-    content: url("../../resource/progress.svg")
+    content: url("../images/resource/progress.svg")
 }
 
 .card-text-icon-resource-goods {
-    content: url("../../resource/goods.svg");
+    content: url("../images/resource/goods.svg");
 }
 
 .card-text-icon-resource-action {
-    content: url("../../resource/action.svg");
+    content: url("../images/resource/action.svg");
 }
 
 .card-text-icon-resource-exhaust {
-    content: url("../../resource/exhaust.svg");
+    content: url("../images/resource/exhaust.svg");
+}
+
+.card-text-icon-vp-variable {
+    content: url("../images/vp_icon/victory_point_variable.svg");
+    height: 1.4em;
 }

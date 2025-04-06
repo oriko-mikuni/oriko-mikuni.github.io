@@ -21,7 +21,8 @@ function Homepage() : React.JSX.Element {
     const navigate: NavigateFunction = useNavigate();
     return <div className="centerAlign">
         <h1>
-            Imperium Card Game<br/>
+            Imperium Card Game
+            <br/>
             <span style={largeSuitArrayStyle}>
                 <CardSuitIconDisplay suit={CardSuitIcon.POWER} isLarge={true} />
                 <CardSuitIconDisplay suit={CardSuitIcon.FAME} isLarge={true} />

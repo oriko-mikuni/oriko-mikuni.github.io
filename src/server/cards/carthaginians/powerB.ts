@@ -3,9 +3,8 @@ import { CardName } from "../../../common/cards/CardName";
 import { CardNationColour } from "../../../common/cards/CardNationColour";
 import { CardStartingLocation } from "../../../common/cards/CardStartingLocation";
 import { CardSuitIcon } from "../../../common/cards/CardSuitIcon";
-import { Player } from "../../Player";
 import { Card } from "../Card";
-import { ICard } from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import { CardInPlayType } from "../../../common/cards/CardInPlayType";
 
 export class CarthaginiansPowerB extends Card implements ICard {
@@ -26,7 +25,7 @@ export class CarthaginiansPowerB extends Card implements ICard {
         });
     }
 
-    public getVictoryPoints(player: Player): number {
-        return Math.floor(player.material / 3);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return Math.floor(param.player.material / 3);
     }
 }

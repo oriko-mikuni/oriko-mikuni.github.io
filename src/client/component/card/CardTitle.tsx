@@ -4,16 +4,33 @@ import './styles/CardTitle.css';
 import {CardName} from "../../../common/cards/CardName.ts";
 
 const stateCardTitleColors: Record<string, React.CSSProperties> = {
-    [CardName.BARBARIAN]: {color: "white", background: "#b21e1c"},
-    [CardName.EMPIRE]: {color: "white", background: "#5082b5"},
+    // standard state
+    [CardName.BARBARIAN0]: {color: "white", background: "#b21e1c"},
+    [CardName.EMPIRE0]: {color: "white", background: "#5082b5"},
+    [CardName.BARBARIAN1]: {color: "white", background: "#b21e1c"},
+    [CardName.EMPIRE1]: {color: "white", background: "#5082b5"},
+    [CardName.BARBARIAN2]: {color: "white", background: "#b21e1c"},
+    [CardName.EMPIRE2]: {color: "white", background: "#5082b5"},
+    [CardName.BARBARIAN3]: {color: "white", background: "#b21e1c"},
+    [CardName.EMPIRE3]: {color: "white", background: "#5082b5"},
+
+    // Taino
     [CardName.FREE_TRIBES]: {color: "white", background: "#b21e1c"},
     [CardName.FREE_TRIBES_F]: {color: "white", background: "#b21e1c"},
+
+    // Inuit
     [CardName.SUMMER_INU]: {color: "white", background: "#d9cf89"},
     [CardName.WINTER_INU]: {color: "white", background: "#91c6e8"},
+
+    // Martians
     [CardName.ALIEN]: {color: "white", background: "#5082b5"},
     [CardName.GONE_NATIVE]: {color: "white", background: "#b21e1c"},
+
+    // Polynesians
     [CardName.ISLE_BOUND]: {color: "white", background: "#e6b12d"},
     [CardName.VOYAGING]: {color: "white", background: "#294a59"},
+
+    // Cultists
     [CardName.CORRUPTED_CUL]: {color: "white", background: "#973335"},
     [CardName.SUMMONED_CUL]: {color: "white", background: "#48354b"}
 };

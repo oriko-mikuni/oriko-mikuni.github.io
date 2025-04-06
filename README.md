@@ -18,11 +18,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
 #### TODO for Cardporium
 * contents
   * add cards from more nations.
-    * Classics
-      * [x] Macedonians
-      * [x] Scythians
-      * [x] Greeks
-      * [ ] Vikings
+    * [x] Classics
     * Legends
       * [ ] Mauryans
       * [ ] Minoans

@@ -1,8 +1,7 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
@@ -25,7 +24,7 @@ export class RomansPowerB extends Card implements ICard {
         });
     }
 
-    public getVictoryPoints(player: Player): number {
-        return Math.floor(player.population / 2);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return Math.floor(param.player.population / 2);
     }
 }

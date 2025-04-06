@@ -1,8 +1,7 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
@@ -24,7 +23,7 @@ export class ScythiansPowerB extends Card implements ICard {
             victoryPointsString: "1VP per 3{material} / 3 {region}"
         });
     }
-    public getVictoryPoints(player: Player): number {
-        return Math.floor((player.material + player.suitCount(CardSuitIcon.REGION)) / 3);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return Math.floor((param.player.material + param.player.suitCount(CardSuitIcon.REGION)) / 3);
     }
 }

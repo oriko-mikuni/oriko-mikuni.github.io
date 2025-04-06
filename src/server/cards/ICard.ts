@@ -11,6 +11,8 @@ import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
 import {CardStateSymbol} from "../../common/cards/CardStateSymbol";
 import {Units} from "../../common/Units";
 
+export type GetVPParameter = {player: Player, location: string};
+
 export interface ICard {
     name: CardName;
     suit: Array<CardSuitIcon>;
@@ -31,7 +33,7 @@ export interface ICard {
 
     victoryPoints?: VictoryPoints;
     victoryPointsString?: string;
-    getVictoryPoints: (player: Player) => number;
+    getVictoryPoints: (param: GetVPParameter) => number;
     cardInPlayType?: CardInPlayType;
 
     // changes in game

@@ -1,9 +1,8 @@
 import React, {Dispatch, SetStateAction} from "react";
-import {allModules} from '../cards/ClientCardsManifest';
-import {ClientCard} from "../../common/cards/ClientCard";
+import {allModules} from '../cards/ClientCardsManifest.ts';
+import {ClientCard} from "../../common/cards/ClientCard.ts";
 import CardGroup from "./CardGroup.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
-import ImperiumCardporiumHead from "./ImperiumCardporiumHead.tsx";
 import pageTitle from "./PageTitle.tsx";
 
 type ReactState<T> = [T, Dispatch<SetStateAction<T>>];
@@ -39,7 +38,7 @@ function ImperiumCardporium(): React.JSX.Element {
     return <span>
         <button onClick={(): void | Promise<void> => navigate("/")}>&lt;-- back</button> <br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'> feedback </a>
-        <ImperiumCardporiumHead/>
+        <h1 className="centerAlign">Imperium Cardporium</h1>
         <h2 className="centerAlign">
             Toggle:
             <button onClick={(): void => setAllState(groupDisplayStates, false)}>collapse all</button>

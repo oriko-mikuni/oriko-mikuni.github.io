@@ -20,6 +20,7 @@
 
     /* Linting */
     "strict": true,
+    "noImplicitOverride": true,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,

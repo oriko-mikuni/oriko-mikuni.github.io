@@ -15,6 +15,12 @@
     color: black;
 }
 
+.card-victory-point-variable {
+    background: url("../images/vp_icon/victory_point_variable.svg");
+    background-size: 25px 25px;
+    color: black;
+}
+
 .card-victory-point-negative {
     background: url("../images/vp_icon/victory_point_negative.svg");
     background-size: 25px 25px;
@@ -24,7 +30,7 @@
 .card-victory-point-text {
     position: absolute;
     font-size: 8px;
-    line-height: 10px;
+    line-height: 11px;
     bottom: 5px;
     right: 30px;
     top: auto;

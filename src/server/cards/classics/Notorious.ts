@@ -1,9 +1,8 @@
 import {Card} from "../Card";
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
-import {Player} from "../../Player";
 
 export class Notorious extends Card implements ICard {
     constructor() {
@@ -20,9 +19,9 @@ export class Notorious extends Card implements ICard {
         });
     }
 
-    public getVictoryPoints(player: Player): number {
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
         let returnValue: number = 0;
-        player.allOpponents().forEach(player =>
+        param.player.allOpponents().forEach(player =>
             returnValue += player.suitCount(CardSuitIcon.UNREST));
         return returnValue;
     }

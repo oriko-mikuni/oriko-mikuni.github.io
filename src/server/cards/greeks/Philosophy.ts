@@ -1,15 +1,14 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {Player} from "../../Player";
 
 export class Philosophy extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.PHILOSOPHY,
+            name: CardName.PHILOSOPHY_GRE,
             suit: [],
             stateSymbol: [CardStateSymbol.EMPIRE],
             typeIcon: [],
@@ -24,7 +23,7 @@ export class Philosophy extends Card implements ICard {
         });
     }
 
-    public getVictoryPoints(player: Player): number {
-        return Math.floor(player.cardCount() / 5);
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return Math.floor(param.player.cardCount() / 5);
     }
 }

@@ -1,11 +1,10 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {Player} from "../../Player";
 
 export class Monopoly extends Card implements ICard {
     constructor() {
@@ -25,7 +24,8 @@ export class Monopoly extends Card implements ICard {
             victoryPointsString: "1VP per 5{material}"
         });
     }
-    public getVictoryPoints(player: Player): number {
-        return Math.floor(player.material / 5);
+
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return Math.floor(param.player.material / 5);
     }
 }

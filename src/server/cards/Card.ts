@@ -10,6 +10,7 @@ import {CardNationColour} from '../../common/cards/CardNationColour';
 import { CardInPlayType } from '../../common/cards/CardInPlayType';
 import {CardExpansion} from "../../common/cards/CardExpansion";
 import {Units} from "../../common/Units";
+import {GetVPParameter} from "./ICard";
 
 export interface Properties {
     name: CardName;
@@ -101,17 +102,29 @@ export abstract class Card {
         return player !== undefined;
     }
 
-    public getVictoryPoints(player: Player): number{
-        if (player === undefined) {
-            throw new Error('Select a player to calculate victory points');
-        }
+    public getVictoryPoints(param: GetVPParameter): number {
         const vp1: VictoryPoints | undefined = this.properties.victoryPoints;
-        if (vp1 === 'conditional' || vp1 === 'variable' || vp1 === 'negativeConditional' || vp1 === 'negativeVariable') {
-            throw new Error('When victoryPoints is \'conditional\' or \'variable\', override getVictoryPoints');
+        if (vp1 === 'conditional' || vp1 === 'negativeConditional') {
+            return this.getConditionalVictoryPoints(param);
+        }
+        if (vp1 === 'variable') {
+            return Math.min(this.getVariableVictoryPoints(param), 10);
         }
         if (vp1 === undefined) {
             return 0;
         }
         return vp1;
+    }
+
+    public getConditionalVictoryPoints(param: GetVPParameter): number {
+        if (param === undefined)
+            throw new Error('cannot get victory points without information');
+        throw new Error('When victoryPoints is \'conditional\', override getVictoryPoints');
+    }
+
+    public getVariableVictoryPoints(param: GetVPParameter): number {
+        if (param === undefined)
+            throw new Error('cannot get victory points without information');
+        throw new Error('When victoryPoints is \'variable\', override getVictoryPoints');
     }
 }
