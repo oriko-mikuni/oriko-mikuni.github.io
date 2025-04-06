@@ -4,22 +4,25 @@ import pageTitle from "./PageTitle.tsx";
 import CardSuitIconDisplay from "./card/CardSuitIconDisplay.tsx";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon.ts";
 
-const centerAlign: React.CSSProperties = {
-    textAlign: "center"
-};
-
-const imperiumLargeSuitArray: React.CSSProperties = {
+const largeSuitArrayStyle: React.CSSProperties = {
     gap: "10px",
     display: "inline-flex"
 };
 
+const featureButtonStyle: React.CSSProperties = {
+    width: "300px",
+    height: "75px",
+    fontSize: "23px",
+    fontFamily: "monospace",
+}
+
 function Homepage() : React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
-    return <div style={centerAlign}>
+    return <div className="centerAlign">
         <h1>
             Imperium Card Game<br/>
-            <span style={imperiumLargeSuitArray}>
+            <span style={largeSuitArrayStyle}>
                 <CardSuitIconDisplay suit={CardSuitIcon.POWER} isLarge={true} />
                 <CardSuitIconDisplay suit={CardSuitIcon.FAME} isLarge={true} />
                 <CardSuitIconDisplay suit={CardSuitIcon.UNCIVILISED} isLarge={true} />
@@ -41,7 +44,7 @@ function Homepage() : React.JSX.Element {
             It is not endorsed by Osprey either.<br/>
             The card game is great and this webpage recommends purchasing it for personal use.
         </p>
-        <button onClick={(): void | Promise<void> => navigate('/cards')}>
+        <button onClick={(): void | Promise<void> => navigate('/cards')} style={featureButtonStyle}>
             imperium card list
         </button><br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'> source </a><br/>

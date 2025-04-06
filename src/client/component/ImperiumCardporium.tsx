@@ -1,11 +1,20 @@
-import React from "react";
+import React, {Dispatch, SetStateAction} from "react";
 import {allModules} from '../cards/ClientCardsManifest';
 import {ClientCard} from "../../common/cards/ClientCard";
 import CardGroup from "./CardGroup.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import ImperiumCardporiumHead from "./ImperiumCardporiumHead.tsx";
 import pageTitle from "./PageTitle.tsx";
-import {ReactState, setAllState} from "./common/ReactState.tsx";
+
+type ReactState<T> = [T, Dispatch<SetStateAction<T>>];
+
+function setAllState<T>(stateGroup: Array<ReactState<T>>, newState: T): void {
+    stateGroup.forEach((state: ReactState<T>): void => state[1](newState))
+}
+
+function toggleDisplayState(state: ReactState<boolean>): void {
+    state[1](!state[0]);
+}
 
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
@@ -19,17 +28,25 @@ function ImperiumCardporium(): React.JSX.Element {
             ): React.JSX.Element => {
                 const displayState: ReactState<boolean> = React.useState(false);
                 groupDisplayStates.push(displayState);
-                return <CardGroup module={module} cards={cards} displayState={displayState} key={idx}/>;
+                return <CardGroup
+                    module={module} cards={cards}
+                    display={displayState[0]}
+                    onToggle={(): void => toggleDisplayState(displayState)}
+                    key={idx}
+                />;
             }
         );
-    return <div>
+    return <span>
         <button onClick={(): void | Promise<void> => navigate("/")}>&lt;-- back</button> <br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'> feedback </a>
         <ImperiumCardporiumHead/>
-        <button onClick={(): void | Promise<void> => setAllState(groupDisplayStates, false)}>collapse all</button>
-        <button onClick={(): void | Promise<void> => setAllState(groupDisplayStates, true)}>expand all</button>
+        <h2 className="centerAlign">
+            Toggle:
+            <button onClick={(): void => setAllState(groupDisplayStates, false)}>collapse all</button>
+            <button onClick={(): void => setAllState(groupDisplayStates, true)}>expand all</button>
+        </h2>
         {cardModuleElements}
-    </div>;
+    </span>;
 }
 
 export default ImperiumCardporium;

@@ -6,17 +6,17 @@ export function RenderCardText(effectText?: string) : Array<React.JSX.Element> |
     if (effectText === undefined) {
         return null;
     }
-    const parts = effectText.split(/(\{[^\{\}]+\}|\[[^\[\]]+\]|\n)/g);
+    const parts = effectText.split(/(\{[^{}]+}|\[[^\[\]]+]|\n)/g);
 
     return parts.map((part, index) => {
-        const iconRender: {category: string, value: string} | undefined = getIconByName(part);
+        const iconRender: string | undefined = getIconByName(part);
         if (iconRender) {
             return <CardRenderIconComponents iconName={iconRender} key={index}/>;
         } else {
             if (part === '\n') return <br key={index}/>;
             let italic: boolean = false;
-            if (part.match(/\{([^{}]+)}|\[([^\[\]]+)\]/g)) {
-                if (part.match(/\[([^\[\]]+)\]/g)) {
+            if (part.match(/\{([^{}]+)}|\[([^\[\]]+)]/g)) {
+                if (part.match(/\[([^\[\]]+)]/g)) {
                     italic = true;
                 }
                 part = part.slice(1, part.length - 1);

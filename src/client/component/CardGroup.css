@@ -1,13 +1,4 @@
-.cardBox {
-    display: flex;
-    vertical-align: top;
-}
-
 .cardList {
     display: flex;
     flex-wrap: wrap;
-}
-
-.hidden {
-    display: none;
 }
