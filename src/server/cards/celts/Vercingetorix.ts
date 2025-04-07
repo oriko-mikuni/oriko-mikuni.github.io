@@ -6,6 +6,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import CardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {Player} from "../../Player";
 
 export class Vercingetorix extends Card implements ICard {
     constructor() {
@@ -30,6 +31,6 @@ export class Vercingetorix extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.suitCount(CardSuitIcon.UNCIVILISED);
+        return Player.countSuit(CardSuitIcon.UNCIVILISED, param.player.selectCards(true));
     }
 }

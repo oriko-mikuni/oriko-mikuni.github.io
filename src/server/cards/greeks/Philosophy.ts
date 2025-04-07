@@ -24,6 +24,6 @@ export class Philosophy extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.cardCount() / 5);
+        return Math.floor(param.player.selectCards(true).length / 5);
     }
 }

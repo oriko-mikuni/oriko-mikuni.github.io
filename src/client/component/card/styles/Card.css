@@ -36,6 +36,15 @@
     border-radius: 15px;
 }
 
+.filterDiv {
+    transition: transform 0.15s;
+}
+
+.filterDiv:hover {
+    transform: scale(1.1);
+    z-index: 100;
+}
+
 .card-number {
     position: absolute;
     left: 40px;

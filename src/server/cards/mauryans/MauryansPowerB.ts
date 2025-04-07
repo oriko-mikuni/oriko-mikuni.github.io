@@ -6,26 +6,28 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Player} from "../../Player";
+import {Location} from "../../Player";
 
-export class PersiansPowerB extends Card implements ICard {
+export class MauryansPowerB extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.PERSIANS_POWER_B,
+            name: CardName.MAURYANS_POWER_B,
             suit: [CardSuitIcon.POWER],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_B,
             startingLocation: CardStartingLocation.IN_PLAY,
-            nationColour: CardNationColour.PER,
+            nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.POWER,
-            cardNumber: "PER1B",
+            cardNumber: "MAU1B",
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {tributary}"
+            victoryPointsString: "2VP per card in history"
         });
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards(true));
+        return param.player.selectCards(
+            card => card[1] === Location.HISTORY
+        ).length * 2;
     }
 }

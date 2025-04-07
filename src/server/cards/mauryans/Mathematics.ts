@@ -3,34 +3,38 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
-import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {Location} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {Player} from "../../Player";
 
-export class AlexandriaInAriana extends Card implements ICard {
+export class Mathematics extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.ALEXANDRIA_IN_ARIANA,
+            name: CardName.MATHEMATICS_MAU,
             suit: [],
             stateSymbol: [CardStateSymbol.EMPIRE],
-            typeIcon: [CardTypeIcon.CITY],
+            typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.DEVELOPMENT,
-            nationColour: CardNationColour.MAC,
+            nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
-            cardNumber: "MAC9",
-            effectText: cardEffectReuse.city,
-            developmentCost: {material: 4, population: 2},
+            cardNumber: "MAU3",
+            effectText: "Passive: increase hand size by 1.\n" +
+                "Your [Advance] Cards lose the {barbarian} icon.",
+            developmentCost: {material: 4, population: 1},
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per 2 {region}"
+            victoryPointsString: "1VP per {pinned}\n" +
+                "in play,\n" +
+                "excluding {region}"
         });
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(Player.countSuit(CardSuitIcon.REGION, param.player.selectCards(true)) / 2);
+        return param.player.selectCards(card =>
+            card[1] === Location.IN_PLAY &&
+            !card[0].suit.some(suit1 => suit1 === CardSuitIcon.REGION)
+        ).length;
     }
 }

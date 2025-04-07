@@ -6,6 +6,7 @@ import { CardSuitIcon } from "../../../common/cards/CardSuitIcon";
 import { Card } from "../Card";
 import {GetVPParameter, ICard} from "../ICard";
 import { CardInPlayType } from "../../../common/cards/CardInPlayType";
+import {Player} from "../../Player";
 
 export class CeltsPowerB extends Card implements ICard {
     constructor() {
@@ -27,6 +28,6 @@ export class CeltsPowerB extends Card implements ICard {
     // exhaust to double material gain effect is hooked in Player.gainResource()
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.suitCount(CardSuitIcon.UNCIVILISED) * 2;
+        return Player.countSuit(CardSuitIcon.UNCIVILISED, param.player.selectCards(true)) * 2;
     }
 }

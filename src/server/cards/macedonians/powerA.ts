@@ -6,6 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {Player} from "../../Player";
 
 export class MacedoniansPowerA extends Card implements ICard {
     constructor() {
@@ -26,6 +27,6 @@ export class MacedoniansPowerA extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.suitCount(CardSuitIcon.REGION) / 2);
+        return Math.floor(Player.countSuit(CardSuitIcon.REGION, param.player.selectCards(true)) / 2);
     }
 }

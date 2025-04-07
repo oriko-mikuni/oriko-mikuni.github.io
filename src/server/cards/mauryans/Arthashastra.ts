@@ -1,32 +1,26 @@
-import {GetVPParameter, ICard} from "../ICard";
+import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {Player} from "../../Player";
 
-export class Tamga extends Card implements ICard {
+export class Arthashastra extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.TAMGA,
+            name: CardName.ARTHASHASTRA,
             suit: [],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.NATION,
-            nationColour: CardNationColour.SCY,
+            nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
-            cardNumber: "SCY9",
-            effectText: "Exhaust: discard a card to draw 2 cards.",
-            victoryPoints: 'variable',
-            victoryPointsString: "1VP per 2 {region}"
+            cardNumber: "MAU9",
+            effectText: "Solstice: discard any number of {unrest}.\n" +
+                "For each card discarded, choose:\n" +
+                "draw a card OR gain 1{progress}.",
         });
-    }
-
-    public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(Player.countSuit(CardSuitIcon.REGION, param.player.selectCards(true)) / 2);
     }
 }

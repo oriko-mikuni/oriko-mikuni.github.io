@@ -25,8 +25,8 @@ export class HaraldHardrada extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.cardCount((card: Card): boolean => {
-            return card.victoryPoints === 'variable';
-        }) * 2
+        return param.player.selectCards(
+            card => card[0].victoryPoints === 'variable'
+        ).length * 2;
     }
 }

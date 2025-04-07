@@ -20,7 +20,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
   * add cards from more nations.
     * [x] Classics
     * Legends
-      * [ ] Mauryans
+      * [x] Mauryans
       * [ ] Minoans
       * [ ] Qin
       * [ ] Atlanteans

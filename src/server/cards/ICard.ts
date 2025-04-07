@@ -34,6 +34,8 @@ export interface ICard {
     victoryPoints?: VictoryPoints;
     victoryPointsString?: string;
     getVictoryPoints: (param: GetVPParameter) => number;
+    getConditionalVictoryPoints: (param: GetVPParameter) => number;
+    getVariableVictoryPoints: (param: GetVPParameter) => number;
     cardInPlayType?: CardInPlayType;
 
     // changes in game
