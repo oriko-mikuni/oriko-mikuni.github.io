@@ -27,6 +27,6 @@ export class Tamga extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(Player.countSuit(CardSuitIcon.REGION, param.player.selectCards(true)) / 2);
+        return Math.floor(Player.countSuit(CardSuitIcon.REGION, param.player.selectCards()) / 2);
     }
 }

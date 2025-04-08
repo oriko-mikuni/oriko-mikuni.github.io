@@ -33,8 +33,8 @@ export class Mathematics extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(card =>
-            card[1] === Location.IN_PLAY &&
-            !card[0].suit.some(suit1 => suit1 === CardSuitIcon.REGION)
+            card.location === Location.IN_PLAY &&
+            !card.card.suit.some(suit1 => suit1 === CardSuitIcon.REGION)
         ).length;
     }
 }

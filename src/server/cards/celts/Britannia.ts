@@ -7,6 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Britannia extends Card implements ICard {
     constructor() {
@@ -20,7 +21,7 @@ export class Britannia extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL11",
-            effectText: "You MAY garrison a card.",
+            effectText: cardEffectReuse.garrisonACard,
         });
     }
 }

@@ -31,7 +31,7 @@ export class MauryansPowerA extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Player.countSuit(CardSuitIcon.REGION,
-            param.player.selectCards(card => card[1] === Location.IN_PLAY)
+            param.player.selectCards(card => card.location === Location.IN_PLAY)
         );
     }
 }

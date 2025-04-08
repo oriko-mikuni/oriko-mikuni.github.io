@@ -7,6 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Arachosia extends Card implements ICard {
     constructor() {
@@ -22,7 +23,7 @@ export class Arachosia extends Card implements ICard {
             cardNumber: "PER10",
             effectText: "You MAY put a card from your discard\n" +
                 "pile into your history.\n" +
-                "You MAY garrison a card.",
+                cardEffectReuse.garrisonACard,
         });
     }
 }

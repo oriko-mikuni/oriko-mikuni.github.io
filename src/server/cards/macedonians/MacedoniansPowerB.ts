@@ -26,6 +26,6 @@ export class MacedoniansPowerB extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Player.countSuit(CardSuitIcon.REGION, param.player.selectCards(true));
+        return Player.countSuit(CardSuitIcon.REGION, param.player.selectCards());
     }
 }

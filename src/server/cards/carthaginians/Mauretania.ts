@@ -6,6 +6,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Mauretania extends Card implements ICard {
     constructor() {
@@ -18,7 +19,7 @@ export class Mauretania extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR21",
-            effectText: "Gain 2{material}. You MAY garrison a card.",
+            effectText: "Gain 2{material}. " + cardEffectReuse.garrisonACard,
         });
     }
 }

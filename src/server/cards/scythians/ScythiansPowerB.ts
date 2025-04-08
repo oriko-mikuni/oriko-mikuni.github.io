@@ -27,7 +27,7 @@ export class ScythiansPowerB extends Card implements ICard {
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor((
             param.player.material +
-            Player.countSuit(CardSuitIcon.REGION, param.player.selectCards(true))
+            Player.countSuit(CardSuitIcon.REGION, param.player.selectCards())
         ) / 3);
     }
 }

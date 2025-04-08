@@ -7,6 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Foroyar extends Card implements ICard {
     constructor() {
@@ -20,7 +21,7 @@ export class Foroyar extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK6",
-            effectText: "You MAY garrison a card. Choose: exile\n" +
+            effectText: cardEffectReuse.garrisonACard + " Choose: exile\n" +
                 "a card from the market OR gain 1{population}.",
         });
     }

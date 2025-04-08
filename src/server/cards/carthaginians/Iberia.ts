@@ -7,6 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Iberia extends Card implements ICard {
     constructor() {
@@ -20,7 +21,7 @@ export class Iberia extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR12",
-            effectText: "You MAY garrison a card.",
+            effectText: cardEffectReuse.garrisonACard,
         });
     }
 }

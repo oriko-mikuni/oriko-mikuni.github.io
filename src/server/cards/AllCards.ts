@@ -10,6 +10,7 @@ import {SCY_CARD_MANIFEST} from "./scythians/cardManifest";
 import {GRE_CARD_MANIFEST} from "./greeks/cardManifest";
 import {VIK_CARD_MANIFEST} from "./vikings/cardManifest";
 import {MAU_CARD_MANIFEST} from "./mauryans/cardManifest";
+import {MIN_CARD_MANIFEST} from "./minoans/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     CAR_CARD_MANIFEST,
@@ -22,7 +23,7 @@ export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     VIK_CARD_MANIFEST,
 
     MAU_CARD_MANIFEST,
-    // MIN_CARD_MANIFEST,
+    MIN_CARD_MANIFEST,
     // QIN_CARD_MANIFEST,
     // ATL_CARD_MANIFEST,
     // EGY_CARD_MANIFEST,

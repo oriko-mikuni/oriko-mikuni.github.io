@@ -6,6 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Peloponnese extends Card implements ICard {
     constructor() {
@@ -18,7 +19,7 @@ export class Peloponnese extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE20",
-            effectText: "Gain 1{population}. You MAY garrison a card.",
+            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard,
         });
     }
 }

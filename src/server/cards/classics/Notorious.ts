@@ -23,7 +23,7 @@ export class Notorious extends Card implements ICard {
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.allOpponents().reduce(
             (points: number, opponent: Player): number =>
-                points + Player.countSuit(CardSuitIcon.UNREST, opponent.selectCards(true)),
+                points + Player.countSuit(CardSuitIcon.UNREST, opponent.selectCards()),
             0);
     }
 }

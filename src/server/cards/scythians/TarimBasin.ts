@@ -7,6 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class TarimBasin extends Card implements ICard {
     constructor() {
@@ -21,7 +22,7 @@ export class TarimBasin extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY11",
             effectText: "You MAY draw a card.\n" +
-                "You MAY garrison a card.",
+                cardEffectReuse.garrisonACard,
         });
     }
 }

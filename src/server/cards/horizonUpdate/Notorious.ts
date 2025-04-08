@@ -22,7 +22,7 @@ export class Notorious extends Card implements ICard {
     }
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(
-            (card) => card[0].headerIcon === CardHeaderIcon.ATTACK
+            (card) => card.card.headerIcon === CardHeaderIcon.ATTACK
         ).length;
     }
 }

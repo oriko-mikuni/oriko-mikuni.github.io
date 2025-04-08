@@ -7,6 +7,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Armorica extends Card implements ICard {
     constructor() {
@@ -20,7 +21,7 @@ export class Armorica extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL9",
-            effectText: "You MAY garrison a card.",
+            effectText: cardEffectReuse.garrisonACard,
         });
     }
 }

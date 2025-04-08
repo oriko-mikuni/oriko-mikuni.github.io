@@ -6,6 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Zagros extends Card implements ICard {
     constructor() {
@@ -18,7 +19,7 @@ export class Zagros extends Card implements ICard {
             nationColour: CardNationColour.PER,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "PER20",
-            effectText: "You MAY garrison a card.",
+            effectText: cardEffectReuse.garrisonACard,
         });
     }
 }

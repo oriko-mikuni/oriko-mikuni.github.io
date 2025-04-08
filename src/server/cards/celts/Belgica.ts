@@ -7,6 +7,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Belgica extends Card implements ICard {
     constructor() {
@@ -21,7 +22,7 @@ export class Belgica extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL10",
             effectText: "You MAY draw a card.\n" +
-                "You MAY garrison a card.",
+                cardEffectReuse.garrisonACard,
         });
     }
 }

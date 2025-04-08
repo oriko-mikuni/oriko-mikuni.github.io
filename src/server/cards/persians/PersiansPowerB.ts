@@ -8,27 +8,24 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Player} from "../../Player";
 
-export class PersiansPowerA extends Card implements ICard {
+export class PersiansPowerB extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.PERSIANS_POWER_A,
+            name: CardName.PERSIANS_POWER_B,
             suit: [CardSuitIcon.POWER],
             stateSymbol: [],
             typeIcon: [],
-            headerIcon: CardHeaderIcon.POWER_A,
+            headerIcon: CardHeaderIcon.POWER_B,
             startingLocation: CardStartingLocation.IN_PLAY,
             nationColour: CardNationColour.PER,
             cardInPlayType: CardInPlayType.POWER,
-            cardNumber: "PER1A",
-            effectText: "Exhaust: spend an action, place 2 cards\n" +
-                "on the top of your deck, and pay 1{population}\n" +
-                "to break through for {tributary}.",
+            cardNumber: "PER1B",
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per 3 {tributary}"
+            victoryPointsString: "1VP per {tributary}"
         });
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards(true)) / 3);
+        return Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards());
     }
 }

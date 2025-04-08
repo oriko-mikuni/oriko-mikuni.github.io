@@ -32,7 +32,7 @@ export class Buddhism extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(
-            card => card[1] === Location.HISTORY
+            card => card.location === Location.HISTORY
         ).length;
     }
 }

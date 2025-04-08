@@ -33,7 +33,7 @@ export class VikingsPowerA extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(
-            card => card[0].victoryPoints === 'variable'
+            card => card.card.victoryPoints === 'variable'
         ).length;
     }
 }

@@ -7,6 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Graenland extends Card implements ICard {
     constructor() {
@@ -20,7 +21,7 @@ export class Graenland extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK5",
-            effectText: "You MAY garrison a card.\n" +
+            effectText: cardEffectReuse.garrisonACard + "\n" +
                 "Choose: gain 1{population} OR look at the top\n" +
                 "card of your nation deck, then you MAY\n" +
                 "shuffle the nation deck.",

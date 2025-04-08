@@ -27,6 +27,6 @@ export class GreeksPowerA extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.selectCards(true).length / 7);
+        return Math.floor(param.player.selectCards().length / 7);
     }
 }

@@ -28,9 +28,12 @@ enum CardEffectReuse {
         "an {attack}, you MAY exhaust this card\n" +
         "to avoid its effects (even if it's\n" +
         "another player's turn).",
+    writingSystem = "Exhaust: put a card from your discard\n" +
+        "pile into your history to draw a card.",
     // phrases
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
     selfHistory = "Put this card into your history.",
+    garrisonACard = "You MAY garrison a card."
 }
 
 export default CardEffectReuse;

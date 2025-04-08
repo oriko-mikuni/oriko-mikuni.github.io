@@ -6,6 +6,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class BalearicIslands extends Card implements ICard {
     constructor() {
@@ -18,7 +19,7 @@ export class BalearicIslands extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR20",
-            effectText: "You MAY garrison a card.",
+            effectText: cardEffectReuse.garrisonACard,
         });
     }
 }

@@ -1,4 +1,4 @@
-import {GetVPParameter, ICard} from "../ICard";
+import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
@@ -6,26 +6,21 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Player} from "../../Player";
 
-export class PersiansPowerB extends Card implements ICard {
+export class MinoansPowerA extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.PERSIANS_POWER_B,
+            name: CardName.MINOANS_POWER_A,
             suit: [CardSuitIcon.POWER],
             stateSymbol: [],
             typeIcon: [],
-            headerIcon: CardHeaderIcon.POWER_B,
+            headerIcon: CardHeaderIcon.POWER_A,
             startingLocation: CardStartingLocation.IN_PLAY,
-            nationColour: CardNationColour.PER,
-            cardInPlayType: CardInPlayType.POWER,
-            cardNumber: "PER1B",
-            victoryPoints: 'variable',
-            victoryPointsString: "1VP per {tributary}"
+            nationColour: CardNationColour.MIN,
+            cardInPlayType: CardInPlayType.PINNED,
+            cardNumber: "MIN1A",
+            effectText: "Solstice: you MAY discard a card\n" +
+                "to gain 1{progress}.",
         });
-    }
-
-    public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards(true));
     }
 }

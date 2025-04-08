@@ -18,7 +18,7 @@ export class DariusI extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.PER,
             cardNumber: "PER9",
-            effectText: "Acquire" + CardEffectReuse.fourSuits + ".\n" +
+            effectText: "Acquire " + CardEffectReuse.fourSuits + ".\n" +
                 CardEffectReuse.selfHistory,
             developmentCost: {material: 3, population: 2},
             victoryPoints: 'variable',
@@ -27,6 +27,6 @@ export class DariusI extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards(true));
+        return Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards());
     }
 }
