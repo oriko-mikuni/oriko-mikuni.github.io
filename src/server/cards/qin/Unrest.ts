@@ -1,22 +1,23 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
+import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
-export class RolloTheWalker extends Card implements ICard {
+export class Unrest extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.ROLLO_THE_WALKER,
-            suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            name: CardName.UNREST_QIN_NATION,
+            suit: [CardSuitIcon.UNREST],
+            stateSymbol: [],
             typeIcon: [],
             startingLocation: CardStartingLocation.NATION,
-            nationColour: CardNationColour.VIK,
-            cardNumber: "VIK12",
-            effectText: cardEffectReuse.takeTopFame + " " + cardEffectReuse.selfExile,
+            nationColour: CardNationColour.QIN,
+            cardNumber: "QIN14",
+            effectText: cardEffectReuse.unrest,
+            victoryPoints: -2,
         });
     }
 }

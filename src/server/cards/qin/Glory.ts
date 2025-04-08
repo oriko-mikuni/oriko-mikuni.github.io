@@ -1,22 +1,21 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
-export class RolloTheWalker extends Card implements ICard {
+export class Glory extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.ROLLO_THE_WALKER,
+            name: CardName.GLORY_QIN,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [],
             typeIcon: [],
             startingLocation: CardStartingLocation.NATION,
-            nationColour: CardNationColour.VIK,
-            cardNumber: "VIK12",
-            effectText: cardEffectReuse.takeTopFame + " " + cardEffectReuse.selfExile,
+            nationColour: CardNationColour.QIN,
+            cardNumber: "QIN12",
+            effectText: cardEffectReuse.glory,
         });
     }
 }

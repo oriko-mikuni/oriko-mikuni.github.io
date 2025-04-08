@@ -9,17 +9,17 @@ import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 export class Unrest3 extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.UNREST_VIK1,
+            name: CardName.UNREST_QIN_SUPPLY4,
             suit: [CardSuitIcon.UNREST],
             stateSymbol: [],
             typeIcon: [],
             startingLocation: CardStartingLocation.SUPPLY,
-            nationColour: CardNationColour.VIK,
-            cardNumber: "VIK25",
+            nationColour: CardNationColour.QIN,
+            cardNumber: "QIN25",
             effectText: CardEffectReuse.setupUnrestL+
-                "Vikings" + CardEffectReuse.setupUnrestR+
+                "Qin" + CardEffectReuse.setupUnrestR+
                 CardEffectReuse.unrest,
-            playerCount: 3,
+            playerCount: 4,
             victoryPoints: -2,
         });
     }

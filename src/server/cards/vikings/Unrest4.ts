@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Unrest4 extends Card implements ICard {
     constructor() {
@@ -16,7 +16,9 @@ export class Unrest4 extends Card implements ICard {
             startingLocation: CardStartingLocation.SUPPLY,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK26",
-            effectText: cardEffectReuse.unrest,
+            effectText: CardEffectReuse.setupUnrestL+
+                "Vikings" + CardEffectReuse.setupUnrestR+
+                CardEffectReuse.unrest,
             playerCount: 4,
             victoryPoints: -2,
         });

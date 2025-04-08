@@ -14,7 +14,7 @@ enum CardEffectReuse {
     unrest = "Choose: Pay 1{population} OR discard 2 cards\n" +
         "OR pay 3{material}. If you do, return this card\n" +
         "to the unrest pile.",
-    setupUnrestL = "Setup: add to the unrest pile if the ",
+    setupUnrestL = "Setup: add to the unrest pile if\nthe ",
     setupUnrestR = " are in play.\n",
 
     city = "Solstice: you MAY discard a card to\n" +
@@ -28,12 +28,20 @@ enum CardEffectReuse {
         "an {attack}, you MAY exhaust this card\n" +
         "to avoid its effects (even if it's\n" +
         "another player's turn).",
+    philosophy = "Abandon a {pinned} (not a {region}) to\n" +
+        "break through for {uncivilised}/{civilised}.",
     writingSystem = "Exhaust: put a card from your discard\n" +
         "pile into your history to draw a card.",
-    // phrases
+
+    // reusable words
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
+
+    // reusable sentences
     selfHistory = "Put this card into your history.",
-    garrisonACard = "You MAY garrison a card."
+    selfExile = "Exile this card.",
+    garrisonACard = "You MAY garrison a card.",
+    takeTopFame = "Take the top {fame} card.",
+    drawTopFame = "Draw the top {fame} card."
 }
 
 export default CardEffectReuse;

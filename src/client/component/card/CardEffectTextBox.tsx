@@ -18,8 +18,16 @@ export function CardEffectTextBox(
     {effectText?: string, developmentCost?: Partial<Units>}
 ): React.JSX.Element | null {
     if (effectText !== undefined || developmentCost !== undefined) {
-        return <div className="card-effect-text">
-            {RenderCardText(effectText)}
+        let actualEffectText: string | undefined = effectText;
+        let classes: string = "card-effect-text";
+
+        if (actualEffectText !== undefined && actualEffectText.endsWith("^")) {
+            actualEffectText = actualEffectText.slice(0, actualEffectText.length - 1);
+            classes = classes + " card-effect-text-higher";
+        }
+
+        return <div className={classes}>
+            {RenderCardText(actualEffectText)}
             {RenderDevelopmentCostBox(developmentCost)}
         </div>;
     } else {

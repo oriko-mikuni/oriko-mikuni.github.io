@@ -3,24 +3,23 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
-export class Magadha extends Card implements ICard {
+export class WesternZhou extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.MAGADHA,
+            name: CardName.WESTERN_ZHOU,
             suit: [CardSuitIcon.REGION],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
-            typeIcon: [CardTypeIcon.PRODUCTION],
+            stateSymbol: [],
+            typeIcon: [CardTypeIcon.PRODUCTION, CardTypeIcon.RIVER],
             headerIcon: CardHeaderIcon.PINNED,
-            nationColour: CardNationColour.MAU,
+            nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
-            cardNumber: "MAU20",
-            effectText: cardEffectReuse.garrisonACard,
+            cardNumber: "QIN18",
+            effectText: "gain 1{material}. " + cardEffectReuse.garrisonACard,
         });
     }
 }

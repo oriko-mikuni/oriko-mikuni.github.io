@@ -22,7 +22,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
     * Legends
       * [x] Mauryans
       * [x] Minoans
-      * [ ] Qin
+      * [x] Qin
       * [ ] Atlanteans
       * [ ] Egyptians
       * [ ] Olmecs
