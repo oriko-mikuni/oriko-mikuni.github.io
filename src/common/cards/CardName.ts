@@ -710,7 +710,7 @@ export enum CardName {
     // LEGENDS OLMECS
     OLMECS_POWER_A = "Olmecs#OLM1A",
     OLMECS_POWER_B = "Olmecs#OLM1B",
-    SAN_LORENZO_TENOCHTITLAN = "San Lorenzo Tenochtitlan#OLM2",
+    SAN_LORENZO_TENOCHTITLAN = "San Lorenzo Tenochtitlán#OLM2",
     STEP_PYRAMIDS = "Step Pyramids#OLM3",
     RITUAL_SACRIFICE = "Ritual Sacrifice#OLM4",
     OLMEC_TRADERS = "Olmec Traders#OLM5",

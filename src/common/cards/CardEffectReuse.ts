@@ -32,7 +32,9 @@ enum CardEffectReuse {
         "break through for {uncivilised}/{civilised}.",
     writingSystem = "Exhaust: put a card from your discard\n" +
         "pile into your history to draw a card.",
-
+    stoneMask = "Draw up to 3 cards if able.\n" +
+        "Then return a card to the top of\n" +
+        "your deck.",
     // reusable words
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
 

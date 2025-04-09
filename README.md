@@ -25,7 +25,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
       * [x] Qin
       * [x] Atlanteans
       * [x] Egyptians
-      * [ ] Olmecs
+      * [x] Olmecs
       * [ ] Arthurians
       * [ ] Utopians
     * Horizons (New Horizons)

@@ -1,0 +1,30 @@
+import {ICard} from "../ICard";
+import {CardName} from "../../../common/cards/CardName";
+import {Card} from "../Card";
+import {CardNationColour} from "../../../common/cards/CardNationColour";
+import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
+import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+
+export class StepPyramid extends Card implements ICard {
+    constructor() {
+        super({
+            name: CardName.STEP_PYRAMIDS,
+            suit: [],
+            stateSymbol: [CardStateSymbol.EMPIRE],
+            typeIcon: [],
+            headerIcon: CardHeaderIcon.PINNED,
+            startingLocation: CardStartingLocation.DEVELOPMENT,
+            nationColour: CardNationColour.OLM,
+            cardInPlayType: CardInPlayType.PINNED,
+            cardNumber: "OLM3",
+            effectText: "Exhaust: when a card effect requires you to discard {mask}, " +
+                "exhaust this card to discard 1 {mask} fewer.\n" +
+                "Solstice: you MAY draw a {mask} from\n" +
+                "your discard pile.",
+            developmentCost: {material: 4, population: 2},
+            victoryPoints: 3,
+        });
+    }
+}
