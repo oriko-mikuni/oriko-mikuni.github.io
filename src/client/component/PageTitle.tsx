@@ -7,7 +7,6 @@ function PageTitle(): void {
         const titles: Record<string, string> = {
             "/": "Homepage",
             "/cards": "Imperium Cardporium",
-            "/testTriangle": "Test Triangle"
         };
         document.title = titles[location.pathname] || "Page Not Found";
     }, []);

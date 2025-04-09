@@ -12,6 +12,8 @@ import {VIK_CARD_MANIFEST} from "./vikings/cardManifest";
 import {MAU_CARD_MANIFEST} from "./mauryans/cardManifest";
 import {MIN_CARD_MANIFEST} from "./minoans/cardManifest";
 import {QIN_CARD_MANIFEST} from "./qin/cardManifest";
+import {EGY_CARD_MANIFEST} from "./egyptians/cardManifest";
+import {ATL_CARD_MANIFEST} from "./atlanteans/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     CAR_CARD_MANIFEST,
@@ -26,8 +28,8 @@ export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     MAU_CARD_MANIFEST,
     MIN_CARD_MANIFEST,
     QIN_CARD_MANIFEST,
-    // ATL_CARD_MANIFEST,
-    // EGY_CARD_MANIFEST,
+    ATL_CARD_MANIFEST,
+    EGY_CARD_MANIFEST,
     // OLM_CARD_MANIFEST,
     // ART_CARD_MANIFEST,
     // UTO_CARD_MANIFEST,

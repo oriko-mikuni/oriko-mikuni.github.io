@@ -23,8 +23,8 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
       * [x] Mauryans
       * [x] Minoans
       * [x] Qin
-      * [ ] Atlanteans
-      * [ ] Egyptians
+      * [x] Atlanteans
+      * [x] Egyptians
       * [ ] Olmecs
       * [ ] Arthurians
       * [ ] Utopians
