@@ -1,6 +1,7 @@
 import {CardSuitIcon} from "../common/cards/CardSuitIcon";
 import {ICard} from "./cards/ICard";
 import {CardName} from "../common/cards/CardName";
+import {Game} from "./Game";
 
 export enum Location {
     STATE = "location:state",
@@ -22,6 +23,9 @@ export enum Location {
 export type LocatedCard = {location: Location | CardName, card: ICard};
 
 export class Player {
+    game: Game;
+    id: string;
+
     material: number = 0;
     population: number = 0;
     progress: number = 0;
@@ -44,8 +48,13 @@ export class Player {
     sunkenCards: Array<ICard> = []; // only for Atlantean
     legendCards: Array<ICard> = []; // only for Polynesians
 
+    constructor(id: string, game: Game) {
+        this.id = "p" + id;
+        this.game = game;
+    }
+
     public allOpponents(): Array<Player> {
-        return [];
+        return this.game.players.filter((player1) => player1.id !== this.id);
     }
 
     public allPlayerCards(): Array<LocatedCard> {

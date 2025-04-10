@@ -15,7 +15,7 @@ import {OlmecHieroglyphics} from "./OlmecHieroglyphics";
 import {Calendar} from "./Calendar";
 import {StoneMask} from "./StoneMask";
 import {StoneMask1} from "./StoneMask1";
-import {LoadstoneCompass} from "./LoadstoneCompass";
+import {LodestoneCompass} from "./LodestoneCompass";
 import {BallGames} from "./BallGames";
 import {LagunaDeLosCerros} from "./LagunaDeLosCerros";
 import {LaVenta} from "./LaVenta";
@@ -45,7 +45,7 @@ export const OLM_CARD_MANIFEST = new ModuleManifest({
         [CardName.CALENDAR]: {Factory: Calendar},
         [CardName.STONE_MASK_OLM]: {Factory: StoneMask},
         [CardName.STONE_MASK_OLM1]: {Factory: StoneMask1},
-        [CardName.LOADSTONE_COMPASS]: {Factory: LoadstoneCompass},
+        [CardName.LODESTONE_COMPASS]: {Factory: LodestoneCompass},
         [CardName.BALL_GAMES]: {Factory: BallGames},
         [CardName.LAGUNA_DE_LOS_CERROS]: {Factory: LagunaDeLosCerros},
         [CardName.LA_VENTA]: {Factory: LaVenta},

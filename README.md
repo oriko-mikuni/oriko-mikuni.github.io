@@ -19,15 +19,7 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
 * contents
   * add cards from more nations.
     * [x] Classics
-    * Legends
-      * [x] Mauryans
-      * [x] Minoans
-      * [x] Qin
-      * [x] Atlanteans
-      * [x] Egyptians
-      * [x] Olmecs
-      * [ ] Arthurians
-      * [ ] Utopians
+    * [x] Legends
     * Horizons (New Horizons)
       * [ ] Magyars
       * [ ] Japanese

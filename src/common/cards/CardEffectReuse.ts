@@ -35,10 +35,13 @@ enum CardEffectReuse {
     stoneMask = "Draw up to 3 cards if able.\n" +
         "Then return a card to the top of\n" +
         "your deck.",
+    sacredScroll = "Free play. All players MAY draw a card.",
     // reusable words
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
 
-    // reusable sentences
+    // reusable sentences,
+    knightGarrison = "You MAY garrison in a {region} to trigger\n" +
+        "that card's play effect.",
     selfHistory = "Put this card into your history.",
     selfExile = "Exile this card.",
     garrisonACard = "You MAY garrison a card.",

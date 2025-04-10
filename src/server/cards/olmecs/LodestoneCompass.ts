@@ -5,10 +5,10 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 
-export class LoadstoneCompass extends Card implements ICard {
+export class LodestoneCompass extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.LOADSTONE_COMPASS,
+            name: CardName.LODESTONE_COMPASS,
             suit: [],
             stateSymbol: [],
             typeIcon: [],

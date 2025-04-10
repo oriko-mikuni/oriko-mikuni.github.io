@@ -25,8 +25,6 @@ export class CeltsPowerB extends Card implements ICard {
         });
     }
 
-    // exhaust to double material gain effect is hooked in Player.gainResource()
-
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Player.countSuit(CardSuitIcon.UNCIVILISED, param.player.selectCards()) * 2;
     }
