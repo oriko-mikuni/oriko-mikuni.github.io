@@ -40,7 +40,8 @@ class CardProcessor {
             suit: card.suit,
             typeIcon: card.typeIcon,
             victoryPoints: card.victoryPoints,
-            victoryPointsString: card.victoryPointsString
+            victoryPointsString: card.victoryPointsString,
+            gameModule: module
         };
         if (CardProcessor.json[module] === undefined) {
             CardProcessor.json[module] = [];

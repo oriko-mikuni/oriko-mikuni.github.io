@@ -24,9 +24,10 @@ import {Zagros} from "./Zagros";
 import {Lydians} from "./Lydians";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const PER_CARD_MANIFEST = new ModuleManifest({
-    module: 'Persians',
+    module: GameModule.PERSIANS,
     nationCards: {
         [CardName.PERSIANS_POWER_A] : {Factory: PersiansPowerA},
         [CardName.PERSIANS_POWER_B] : {Factory: PersiansPowerB},

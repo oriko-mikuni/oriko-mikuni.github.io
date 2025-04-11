@@ -24,9 +24,10 @@ import {BalearicIslands} from "./BalearicIslands";
 import {Mauretania} from "./Mauretania";
 import {Unrest} from "./Unrest";
 import {Unrest1} from "./Unrest1";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const CAR_CARD_MANIFEST = new ModuleManifest({
-    module: 'Carthaginians',
+    module: GameModule.CARTHAGINIANS,
     nationCards: {
         [CardName.CARTHAGINIANS_POWER_A]: {Factory: CarthaginiansPowerA},
         [CardName.CARTHAGINIANS_POWER_B]: {Factory: CarthaginiansPowerB},

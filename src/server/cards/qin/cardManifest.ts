@@ -26,9 +26,10 @@ import {DukeZhuangOfQin} from "./DukeZhuangOfQin";
 import {MandateOfHeaven} from "./MandateOfHeaven";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const QIN_CARD_MANIFEST = new ModuleManifest({
-    module: 'Qin',
+    module: GameModule.QIN,
     nationCards: {
         [CardName.QIN_POWER_A]: {Factory: QinPowerA},
         [CardName.QIN_POWER_B]: {Factory: QinPowerB},

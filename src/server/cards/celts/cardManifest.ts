@@ -29,9 +29,10 @@ import {Unrest4} from "./Unrest4";
 import {Unrest5} from "./Unrest5";
 import {Unrest6} from "./Unrest6";
 import {Unrest7} from "./Unrest7";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const CEL_CARD_MANIFEST = new ModuleManifest({
-    module: 'Celts',
+    module: GameModule.CELTS,
     nationCards: {
         [CardName.CELTS_POWER_A]: {Factory: CeltsPowerA},
         [CardName.CELTS_POWER_B]: {Factory: CeltsPowerB},

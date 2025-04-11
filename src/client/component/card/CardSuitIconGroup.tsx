@@ -9,7 +9,7 @@ function CardSuitIconGroup(
 ): React.JSX.Element {
     return <div className="card-suits">{
         suit.map((suit: CardSuitIcon, idx: number) =>
-            <CardSuitIconDisplay suit={suit} key={idx} isLarge={false}/>
+            <CardSuitIconDisplay suit={suit} key={idx}/>
         )
     }</div>
 }

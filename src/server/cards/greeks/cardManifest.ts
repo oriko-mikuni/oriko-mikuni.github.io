@@ -24,9 +24,10 @@ import {Peloponnese} from "./Peloponnese";
 import {ForestOfPholoe} from "./ForestOfPholoe";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const GRE_CARD_MANIFEST = new ModuleManifest({
-    module: 'Greeks',
+    module: GameModule.GREEKS,
     nationCards: {
         [CardName.GREEKS_POWER_A]: {Factory: GreeksPowerA},
         [CardName.GREEKS_POWER_B]: {Factory: GreeksPowerB},

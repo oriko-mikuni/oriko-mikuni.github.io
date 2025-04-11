@@ -24,9 +24,10 @@ import {Pelagonia} from "./Pelagonia";
 import {Unrest} from "./Unrest";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const MAC_CARD_MANIFEST = new ModuleManifest({
-    module: 'Macedonians',
+    module: GameModule.MACEDONIANS,
     nationCards: {
         [CardName.MACEDONIANS_POWER_A]: {Factory: MacedoniansPowerA},
         [CardName.MACEDONIANS_POWER_B]: {Factory: MacedoniansPowerB},

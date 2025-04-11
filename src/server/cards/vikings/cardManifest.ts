@@ -27,9 +27,10 @@ import {Jomsviking} from "./Jomsviking";
 import {Althing} from "./Althing";
 import {Unrest2} from "./Unrest2";
 import {Unrest3} from "./Unrest3";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const VIK_CARD_MANIFEST = new ModuleManifest({
-    module: 'Vikings',
+    module: GameModule.VIKINGS,
     nationCards: {
         [CardName.VIKINGS_POWER_A]: {Factory: VikingsPowerA},
         [CardName.VIKINGS_POWER_B]: {Factory: VikingsPowerB},

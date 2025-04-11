@@ -27,9 +27,10 @@ import {StoneMask6} from "./StoneMask6";
 import {StoneMask7} from "./StoneMask7";
 import {Unrest} from "./Unrest";
 import {Unrest1} from "./Unrest1";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const OLM_CARD_MANIFEST = new ModuleManifest({
-    module: 'Olmecs',
+    module: GameModule.OLMECS,
     nationCards: {
         [CardName.OLMECS_POWER_A]: {Factory: OlmecsPowerA},
         [CardName.OLMECS_POWER_B]: {Factory: OlmecsPowerB},

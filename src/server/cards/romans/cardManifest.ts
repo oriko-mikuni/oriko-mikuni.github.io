@@ -24,9 +24,10 @@ import {Dalmatia} from "./Dalmatia";
 import {RomanExpansion} from "./RomanExpansion";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const ROM_CARD_MANIFEST = new ModuleManifest({
-    module: 'Romans',
+    module: GameModule.ROMANS,
     nationCards: {
         [CardName.ROMANS_POWER_A]: {Factory: RomansPowerA},
         [CardName.ROMANS_POWER_B]: {Factory: RomansPowerB},

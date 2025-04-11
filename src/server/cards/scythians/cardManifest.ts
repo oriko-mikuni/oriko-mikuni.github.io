@@ -25,9 +25,10 @@ import {Tents} from "./Tents";
 import {Unrest2} from "./Unrest2";
 import {Unrest3} from "./Unrest3";
 import {Unrest4} from "./Unrest4";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const SCY_CARD_MANIFEST = new ModuleManifest({
-    module: 'Scythians',
+    module: GameModule.SCYTHIANS,
     nationCards: {
         [CardName.SCYTHIANS_POWER_A] : {Factory: ScythiansPowerA},
         [CardName.SCYTHIANS_POWER_B] : {Factory: ScythiansPowerB},

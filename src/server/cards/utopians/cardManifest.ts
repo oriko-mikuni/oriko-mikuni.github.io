@@ -24,9 +24,10 @@ import {Unrest} from "./Unrest";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
 import {Unrest3} from "./Unrest3";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const UTO_CARD_MANIFEST = new ModuleManifest({
-    module: 'Utopians',
+    module: GameModule.UTOPIANS,
     nationCards: {
         [CardName.UTOPIANS_POWER_A]: {Factory: UtopiansPowerA},
         [CardName.UTOPIANS_POWER_B]: {Factory: UtopiansPowerB},

@@ -23,9 +23,10 @@ import {Unrest} from "./Unrest";
 import {AtlanteanFleet} from "./AtlanteanFleet";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const ATL_CARD_MANIFEST = new ModuleManifest({
-    module: 'Atlanteans',
+    module: GameModule.ATLANTEANS,
     nationCards: {
         [CardName.ATLANTEANS_POWER_A]: {Factory: AtlanteansPowerA},
         [CardName.ATLANTEANS_POWER_B]: {Factory: AtlanteansPowerB},

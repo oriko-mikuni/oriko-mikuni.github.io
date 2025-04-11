@@ -4,7 +4,7 @@ import "./styles/CardSuitIconDisplay.css";
 
 function CardSuitIconDisplay(
     {suit, isLarge = false}:
-    {suit: CardSuitIcon, isLarge: boolean}
+    {suit?: CardSuitIcon, isLarge?: boolean}
 ): React.JSX.Element {
     if (isLarge) {
         return <div className={`card-suit-icon-large card-suit-icon-${suit}`}/>

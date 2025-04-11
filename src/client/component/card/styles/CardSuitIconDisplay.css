@@ -12,6 +12,10 @@
     object-fit: cover;
 }
 
+.card-suit-icon-undefined {
+    background-image: url("../images/suit_icon/no_suit.png");
+}
+
 .card-suit-icon-power {
     background-image: url("../images/suit_icon/power.png");
 }

@@ -24,9 +24,10 @@ import {Cyprus} from "./Cyprus";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
 import {Unrest3} from "./Unrest3";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const MIN_CARD_MANIFEST = new ModuleManifest({
-    module: 'Minoans',
+    module: GameModule.MINOANS,
     nationCards: {
         [CardName.MINOANS_POWER_A]: {Factory: MinoansPowerA},
         [CardName.MINOANS_POWER_B]: {Factory: MinoansPowerB},

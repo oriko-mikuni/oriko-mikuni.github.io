@@ -25,9 +25,10 @@ import {Chanakya} from "./Chanakya";
 import {Magadha} from "./Magadha";
 import {IndusValley} from "./IndusValley";
 import {Prosperity} from "./Prosperity";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const MAU_CARD_MANIFEST = new ModuleManifest({
-    module: 'Mauryans',
+    module: GameModule.MAURYANS,
     nationCards: {
         [CardName.MAURYANS_POWER_A]: {Factory: MauryansPowerA},
         [CardName.MAURYANS_POWER_B]: {Factory: MauryansPowerB},

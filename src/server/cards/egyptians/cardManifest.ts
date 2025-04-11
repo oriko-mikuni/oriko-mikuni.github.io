@@ -24,9 +24,10 @@ import {LowerNile} from "./LowerNile";
 import {NileValley} from "./NileValley";
 import {Unrest1} from "./Unrest1";
 import {Unrest2} from "./Unrest2";
+import {GameModule} from "../../../common/cards/GameModule";
 
 export const EGY_CARD_MANIFEST = new ModuleManifest({
-    module: 'Egyptians',
+    module: GameModule.EGYPTIANS,
     nationCards: {
         [CardName.EGYPTIANS_POWER_A]: {Factory: EgyptiansPowerA},
         [CardName.EGYPTIANS_POWER_B]: {Factory: EgyptiansPowerB},

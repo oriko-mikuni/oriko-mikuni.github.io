@@ -14,7 +14,7 @@ Not affiliated with Osprey. Not endorsed by Osprey.
 
 ### Cardporium
 A list of some cards from the game.
-Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
+Currently, contains nation cards from Classics and Legends.
 #### TODO for Cardporium
 * contents
   * add cards from more nations.
@@ -42,7 +42,9 @@ Currently, contains Carthaginians, Celts, Macedonians, Persians and Romans.
     * [ ] Horizons
 * toggle features
   * [x] add expand / collapse all
-  * [ ] add filter options
+  * add filter options
+    * [x] filter on suit
+    * [ ] filter on name
   * [ ] add grouping options
 * [ ] add i18n support.
 ### More advices are welcome!
