@@ -1,0 +1,20 @@
+import {ICard} from "../ICard";
+import {CardName} from "../../../common/cards/CardName";
+import {Card} from "../Card";
+import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+
+export class Unrest9 extends Card implements ICard {
+    constructor() {
+        super({
+            name: CardName.UNREST9,
+            suit: [CardSuitIcon.UNREST],
+            stateSymbol: [],
+            typeIcon: [],
+            cardNumber: "UNR10",
+            effectText: cardEffectReuse.unrest,
+            playerCount: 3,
+            victoryPoints: -2,
+        });
+    }
+}

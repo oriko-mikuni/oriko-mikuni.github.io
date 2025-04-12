@@ -6,7 +6,7 @@ import CardSuitIconGroup from "./CardSuitIconGroup.tsx";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol.ts";
 import CardStateSymbolRow from "./CardStateSymbolRow.tsx";
 import CardTypeIconGroup from "./CardTypeIconGroup.tsx";
-import CardHeaderIcon from "./CardHeaderIconSide.tsx";
+import CardHeaderIcon from "./CardHeaderIconDisplay.tsx";
 import CardNationColourTriangle from "./CardNationColourTriangle.tsx";
 import {CardEffectTextBox} from "./CardEffectTextBox.tsx";
 import CardVictoryPoints from "./CardVictoryPoints.tsx";

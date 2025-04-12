@@ -3,8 +3,8 @@ export enum CardName {
     DEFAULT = 'default',
 
     // KING OF KINGS
-    KOK = "King of Kings#A",
-    KOK_B = "King of Kings#B",
+    KOK = "King of Kings#FAM_A",
+    KOK_B = "King of Kings#FAM_B",
 
     // COMMON STATE
     BARBARIAN0 = "Barbarian#0",

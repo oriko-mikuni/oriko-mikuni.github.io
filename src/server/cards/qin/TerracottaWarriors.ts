@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {Location} from "../../Player";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class TerracottaWarriors extends Card implements ICard {
     constructor() {
@@ -15,7 +16,7 @@ export class TerracottaWarriors extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN10",
-            effectText: "Cannot be played.^",
+            effectText: cardEffectReuse.unplayable + cardEffectReuse.bumpUpTextBox,
             developmentCost: {material: 7},
             victoryPoints: 'conditional',
             victoryPointsString: "7VP if garrisoned, 3VP if in history"

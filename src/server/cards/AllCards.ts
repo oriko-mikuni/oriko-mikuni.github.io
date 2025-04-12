@@ -1,8 +1,9 @@
 import { ModuleManifest } from "./ModuleManifest";
-import {CAR_CARD_MANIFEST} from "./carthaginians/cardManifest";
 import {CLASSICS_COMMON_CARD_MANIFEST} from "./classics/cardManifest";
-import {CEL_CARD_MANIFEST} from "./celts/cardManifest";
+import {LEGENDS_COMMON_CARD_MANIFEST} from "./legends/cardManifest";
 import {HORIZONS_UPDATED_COMMON_CARD_MANIFEST} from "./horizonUpdate/cardManifest";
+import {CAR_CARD_MANIFEST} from "./carthaginians/cardManifest";
+import {CEL_CARD_MANIFEST} from "./celts/cardManifest";
 import {PER_CARD_MANIFEST} from "./persians/cardManifest";
 import {ROM_CARD_MANIFEST} from "./romans/cardManifest";
 import {MAC_CARD_MANIFEST} from "./macedonians/cardManifest";
@@ -17,6 +18,7 @@ import {ATL_CARD_MANIFEST} from "./atlanteans/cardManifest";
 import {OLM_CARD_MANIFEST} from "./olmecs/cardManifest";
 import {ART_CARD_MANIFEST} from "./arthurians/cardManifest";
 import {UTO_CARD_MANIFEST} from "./utopians/cardManifest";
+import {COMMON_CARD_MANIFEST} from "./common/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     CAR_CARD_MANIFEST,
@@ -53,8 +55,9 @@ export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     // WAG_CARD_MANIFEST,
     // SAS_CARD_MANIFEST,
 
+    COMMON_CARD_MANIFEST,
     CLASSICS_COMMON_CARD_MANIFEST,
-    // LEGENDS_COMMON_CARD_MANIFEST,
+    LEGENDS_COMMON_CARD_MANIFEST,
     HORIZONS_UPDATED_COMMON_CARD_MANIFEST,
     // HORIZONS_COMMON_CARD_MANIFEST,
     // TRADE_ROUTE_EXPANSION_CARD_MANIFEST,

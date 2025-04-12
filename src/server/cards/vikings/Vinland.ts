@@ -9,6 +9,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Location} from "../../Player";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Vinland extends Card implements ICard {
     constructor() {
@@ -22,7 +23,7 @@ export class Vinland extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK7",
-            effectText: "Cannot be played unless both [Longships]\n" +
+            effectText: cardEffectReuse.unplayableUnless + "both [Longships]\n" +
                 "and [Graenland] are in play.\n" +
                 "Choose: return an {unrest} OR you MAY\n" +
                 "garrison a card.",

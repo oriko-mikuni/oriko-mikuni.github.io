@@ -1,6 +1,7 @@
 import React from 'react';
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol.ts";
 import './styles/CardStateSymbolRow.css';
+import CardStateSymbolDisplay from "./CardStateSymbolDisplay.tsx";
 
 
 function CardStateSymbolRow(
@@ -8,8 +9,8 @@ function CardStateSymbolRow(
     {state: CardStateSymbol}
 ): React.JSX.Element {
     return <div className="card-state-symbol-row">
-        <div className={`card-state-symbol-as-${state} card-state-symbol-left`} />
-        <div className={`card-state-symbol-as-${state} card-state-symbol-right`} />
+        <CardStateSymbolDisplay state={state} position="left" />
+        <CardStateSymbolDisplay state={state} position="right" />
     </div>
 }
 

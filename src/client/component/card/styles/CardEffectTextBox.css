@@ -12,8 +12,12 @@
     text-align: center;
 }
 
-.card-effect-text-higher {
-    bottom: 50px;
+.card-effect-text.card-effect-text-higher {
+    bottom: 52px;
+}
+
+.card-effect-text.card-effect-text-higher.card-effect-text-higher-higher {
+    bottom: 64px;
 }
 
 .card-development-cost {

@@ -13,8 +13,10 @@ export type VictoryPoints = number | 'conditional' | 'variable' | 'negativeCondi
 
 export type ClientCard = {
   name: CardName;
-  suit: Array<CardSuitIcon>; // first suit is also banner, unless it
-  stateSymbol: Array<CardStateSymbol>; // 0, 1 or 2 state symbol
+  // first suit is also banner, unless it
+  suit: Array<CardSuitIcon>;
+  // 0, 1 or 2 state symbol
+  stateSymbol: Array<CardStateSymbol>;
   typeIcon: Array<CardTypeIcon>;
   headerIcon?: CardHeaderIcon;
   effectText?: string;

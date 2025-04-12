@@ -14,7 +14,7 @@ export class DukeZhuangOfQin extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN21",
-            effectText: "Cannot be played unless [Mandate of Heaven] is in play.\n" +
+            effectText: cardEffectReuse.unplayableUnless + "[Mandate of Heaven] is in play.\n" +
                 "Return up to 2 {unrest} from your hand or discard pile. " +
                 "break through for {region}/{tributary}.\n" +
                 cardEffectReuse.selfHistory,

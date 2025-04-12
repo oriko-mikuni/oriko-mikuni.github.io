@@ -1,4 +1,6 @@
 enum CardEffectReuse {
+    // format patch
+    bumpUpTextBox = "^",
     // specific card name
     advance = "Choose: pay 3{material} to acquire {uncivilised}/{civilised}\n" +
         "OR pay 5{material} to break through for {uncivilised}/{civilised}.",
@@ -36,8 +38,10 @@ enum CardEffectReuse {
         "Then return a card to the top of\n" +
         "your deck.",
     sacredScroll = "Free play. All players MAY draw a card.",
+
     // reusable words
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
+    unplayableUnless = "Cannot be played unless ",
 
     // reusable sentences,
     knightGarrison = "You MAY garrison in a {region} to trigger\n" +
@@ -46,7 +50,8 @@ enum CardEffectReuse {
     selfExile = "Exile this card.",
     garrisonACard = "You MAY garrison a card.",
     takeTopFame = "Take the top {fame} card.",
-    drawTopFame = "Draw the top {fame} card."
+    drawTopFame = "Draw the top {fame} card.",
+    unplayable = "Cannot be played."
 }
 
 export default CardEffectReuse;

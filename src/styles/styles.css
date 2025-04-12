@@ -2,9 +2,13 @@
     font-family: monospace;
 }
 
+body {
+    background: #aaaaaa;
+}
+
 button {
     color: black;
-    background: white;
+    background: #dddddd;
     border-color: black;
     border-radius: 10px;
     font-size: 20px;

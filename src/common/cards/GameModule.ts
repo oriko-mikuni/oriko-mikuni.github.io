@@ -1,4 +1,5 @@
 export enum GameModule  {
+    COMMON = 'Common',
     CLASSICS_COMMON = 'Common: Classics',
     LEGENDS_COMMON = 'Common: Legends',
     HORIZONS_COMMONS = 'Common: Horizons',

@@ -17,7 +17,7 @@ export class KingWuOfQin extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN8",
-            effectText: "Cannot be played unless [Mandate of Heaven] is in play " +
+            effectText: cardEffectReuse.unplayableUnless + "[Mandate of Heaven] is in play " +
                 "and [Duke Zhuang of Qin] is\n" +
                 "in your history.\n" +
                 "Pay up to 3{progress}. For each {progress} paid,\n" +

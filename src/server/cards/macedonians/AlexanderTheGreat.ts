@@ -16,7 +16,7 @@ export class AlexanderTheGreat extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC6",
-            effectText: "Cannot be played unless [Alexander] is in your history.\n" +
+            effectText: cardEffectReuse.unplayableUnless + "[Alexander] is in your history.\n" +
                 "Free play. You MAY acquire {region} twice,\n" +
                 "including from exiled cards.\n" +
                 cardEffectReuse.selfHistory,

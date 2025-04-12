@@ -4,6 +4,7 @@
     width: 20px;
     background-size: 20px 20px;
     object-fit: cover;
+    background-image: url("../images/header_icon/no_header.png");
 }
 
 .card-header-icon.card-header-icon-powerA {
@@ -22,18 +23,24 @@
     background-image: url("../images/header_icon/pinned.png");
 }
 
-.card-header-icon.card-header-icon-trade-route {
+.card-header-icon.card-header-icon-tradeRoute {
     background-image: url("../images/header_icon/tradeRoute.png");
 }
 
-.card-header-icon-left {
+.card-header-icon.card-header-icon-left {
     position: absolute;
     top: 0;
     left: 5px;
 }
 
-.card-header-icon-right {
+.card-header-icon.card-header-icon-right {
     position: absolute;
     top: 0;
     right: 5px;
+}
+
+.card-header-icon.card-header-icon-large {
+    height: 30px;
+    width: 30px;
+    background-size: 30px 30px;
 }

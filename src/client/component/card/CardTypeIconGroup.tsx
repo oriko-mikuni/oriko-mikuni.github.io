@@ -1,6 +1,7 @@
 import React from 'react';
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon.ts";
 import './styles/CardTypeIconGroup.css';
+import CardTypeIconDisplay from "./CardTypeIconDisplay.tsx";
 
 function CardTypeIconGroup(
     {type}:
@@ -8,7 +9,7 @@ function CardTypeIconGroup(
 ): React.JSX.Element {
     return <div className="card-types">{
         type.map((type: CardTypeIcon, idx: number) =>
-            <div className={`card-type-icon card-type-icon-${type}`} key={idx} />
+            <CardTypeIconDisplay type={type} key={idx} />
         )
     }</div>
 }

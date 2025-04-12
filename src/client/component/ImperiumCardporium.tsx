@@ -1,115 +1,36 @@
-import React, {useReducer} from "react";
+import React, {useReducer, useState} from "react";
 import {allCards} from '../cards/ClientCardsManifest.ts';
-import {ClientCard} from "../../common/cards/ClientCard.ts";
 import CardGroup from "./CardGroup.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import pageTitle from "./PageTitle.tsx";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon.ts";
 import CardSuitIconDisplay from "./card/CardSuitIconDisplay.tsx";
-class CardGroupDisplayState {
-    cards: Array<ClientCard>;
-    display: boolean;
-    groupName: string;
-    constructor(groupName: string) {
-        this.cards = [];
-        this.display = false;
-        this.groupName = groupName;
-    }
-}
-
-class CardporiumDisplayState {
-    groupDisplays: Map<string, CardGroupDisplayState>;
-    cards: Array<ClientCard>;
-    displayGrouping: 'gameModule';
-    filterSuitDisplay: Set<CardSuitIcon>;
-    filterUnsuitedDisplay: boolean;
-
-    constructor(cards: Array<ClientCard> = []) {
-        this.cards = cards;
-        this.displayGrouping = 'gameModule';
-        this.groupDisplays = new Map<string, CardGroupDisplayState>();
-        this.filterSuitDisplay = new Set<CardSuitIcon>();
-        this.filterUnsuitedDisplay = false;
-        this.initDisplaySetting();
-    }
-
-    public initDisplaySetting(): void {
-        if (this.displayGrouping === 'gameModule') {
-            this.groupDisplays.clear();
-            for (const card of this.cards) {
-                const groupName: string = card.gameModule;
-                let groupDisplay: CardGroupDisplayState | undefined = this.groupDisplays.get(groupName);
-                if (groupDisplay === undefined) {
-                    groupDisplay = new CardGroupDisplayState(groupName);
-                    this.groupDisplays.set(groupName, groupDisplay);
-                }
-                groupDisplay.cards.push(card);
-            }
-        }
-    }
-}
-
-enum CardporiumDisplayStateActionType {
-    TOGGLE_ONE_GROUP = 0,
-    TOGGLE_ALL_GROUP = 1,
-    TOGGLE_ONE_SUIT = 2
-}
-
-type CardporiumDisplayStateAction = {
-    type: CardporiumDisplayStateActionType,
-    groupName?: string,
-    suitIcon?: CardSuitIcon,
-    targetDisplayState: boolean,
-};
-
-function cardporiumDisplayStateReducer(state: CardporiumDisplayState, action: CardporiumDisplayStateAction): CardporiumDisplayState {
-    const resultState: CardporiumDisplayState = new CardporiumDisplayState();
-    resultState.cards = state.cards;
-    resultState.displayGrouping = state.displayGrouping;
-    resultState.groupDisplays = state.groupDisplays;
-    state.filterSuitDisplay.forEach((suit: CardSuitIcon) => resultState.filterSuitDisplay.add(suit));
-    resultState.filterUnsuitedDisplay = state.filterUnsuitedDisplay;
-
-    switch (action.type) {
-        case CardporiumDisplayStateActionType.TOGGLE_ONE_GROUP: {
-            if (action.groupName !== undefined) {
-                const groupDisplay: CardGroupDisplayState | undefined = resultState.groupDisplays.get(action.groupName);
-                if (groupDisplay !== undefined) {
-                    groupDisplay.display = action.targetDisplayState;
-                }
-            }
-            break;
-        }
-        case CardporiumDisplayStateActionType.TOGGLE_ALL_GROUP: {
-            const targetDisplayState: boolean = action.targetDisplayState;
-            resultState.groupDisplays.forEach(groupDisplay =>
-                groupDisplay.display = targetDisplayState
-            );
-            break;
-        }
-        case CardporiumDisplayStateActionType.TOGGLE_ONE_SUIT: {
-            if (action.suitIcon !== undefined) {
-                const suitIcon: CardSuitIcon = action.suitIcon;
-                if (action.targetDisplayState && !resultState.filterSuitDisplay.has(suitIcon)) {
-                    resultState.filterSuitDisplay.add(suitIcon);
-                }
-                if (!action.targetDisplayState && resultState.filterSuitDisplay.has(suitIcon)) {
-                    resultState.filterSuitDisplay.delete(suitIcon);
-                }
-            } else {
-                resultState.filterUnsuitedDisplay = action.targetDisplayState;
-            }
-            break;
-        }
-    }
-    return resultState;
-}
+import {CardTypeIcon} from "../../common/cards/CardTypeIcon.ts";
+import CardTypeIconDisplay from "./card/CardTypeIconDisplay.tsx";
+import {CardporiumDisplayState} from "./cardporiumState/GroupingDisplayState.tsx";
+import {
+    CardporiumFilterStateTuple, passHeader, passStateSymbol,
+    passSuit, passTextFilter,
+    passTypeIcon
+} from "./cardporiumState/ElementFilterState.tsx";
+import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon.ts";
+import CardHeaderIconDisplay from "./card/CardHeaderIconDisplay.tsx";
+import {CardStateSymbol} from "../../common/cards/CardStateSymbol.ts";
+import CardStateSymbolDisplay from "./card/CardStateSymbolDisplay.tsx";
 
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
-    const cardporiumDisplaySetting: CardporiumDisplayState = new CardporiumDisplayState(allCards());
-    const [state, dispatch] = useReducer(cardporiumDisplayStateReducer, cardporiumDisplaySetting);
+    const displaySetting: CardporiumDisplayState = new CardporiumDisplayState(allCards());
+    const [state, dispatch] = useReducer(CardporiumDisplayState.reducer, displaySetting);
+    const suitStateTuple = new CardporiumFilterStateTuple<CardSuitIcon>(Object.values(CardSuitIcon));
+    const typeIconStateTuple = new CardporiumFilterStateTuple<CardTypeIcon>(Object.values(CardTypeIcon));
+    const headerIconStateTuple = new CardporiumFilterStateTuple<CardHeaderIcon>(Object.values(CardHeaderIcon));
+    const stateSymbolStateTuple = new CardporiumFilterStateTuple<CardStateSymbol>(Object.values(CardStateSymbol));
+    const [searchText, setSearchText] = useState("");
+    const [isSearchTitle, setIsSearchTitle] = useState(true);
+    const [isSearchEffect, setIsSearchEffect] = useState(true);
+    const [isSearchVictory, setIsSearchVictory] = useState(true);
 
     const cardModuleElements: Array<React.JSX.Element> = [];
     for (const groupState of state.groupDisplays.values()) {
@@ -118,50 +39,37 @@ function ImperiumCardporium(): React.JSX.Element {
                 groupName={groupState.groupName}
                 cards={groupState.cards.filter(card => {
                     let result: boolean = true;
-                    if (state.filterUnsuitedDisplay || state.filterSuitDisplay.size > 0) {
-                        if (card.suit.length === 0 && !state.filterUnsuitedDisplay)
-                            result = false;
-                        if (card.suit.length > 0 && !state.filterSuitDisplay.has(card.suit[0]))
-                            result = false;
-                    }
+                    if (!passSuit(card, suitStateTuple.state)) result = false;
+                    if (!passTypeIcon(card, typeIconStateTuple.state)) result = false;
+                    if (!passHeader(card, headerIconStateTuple.state)) result = false;
+                    if (!passStateSymbol(card, stateSymbolStateTuple.state)) result = false;
+                    if (!passTextFilter(card, searchText, isSearchTitle, isSearchEffect, isSearchVictory)) result = false;
                     return result;
                 })}
                 display={groupState.display}
-                onToggleOn={() => dispatch({
-                    type: CardporiumDisplayStateActionType.TOGGLE_ONE_GROUP,
-                    groupName: groupState.groupName,
-                    targetDisplayState: true
-                })}
-                onToggleOff={() => dispatch({
-                    type: CardporiumDisplayStateActionType.TOGGLE_ONE_GROUP,
-                    groupName: groupState.groupName,
-                    targetDisplayState: false
-                })}
+                onToggleOn={() => dispatch(CardporiumDisplayState.toggle(true, groupState.groupName))}
+                onToggleOff={() => dispatch(CardporiumDisplayState.toggle(false, groupState.groupName))}
                 key={groupState.groupName}
             />
         )
     }
 
-    const suitFilterButtons: Array<React.JSX.Element> = [
-        <button onClick={() => dispatch({
-            type: CardporiumDisplayStateActionType.TOGGLE_ONE_SUIT,
-            suitIcon: undefined,
-            targetDisplayState: !state.filterUnsuitedDisplay
-        })} style={{background: state.filterUnsuitedDisplay ? "#005500" : "white"}}
-        >
-            <CardSuitIconDisplay />
-        </button>
-    ];
-    Object.values(CardSuitIcon).forEach((suitIcon: CardSuitIcon) => suitFilterButtons.push(
-        <button onClick={() => dispatch({
-            type: CardporiumDisplayStateActionType.TOGGLE_ONE_SUIT,
-            suitIcon: suitIcon,
-            targetDisplayState: !state.filterSuitDisplay.has(suitIcon)
-        })} style={{background: state.filterSuitDisplay.has(suitIcon) ? "#005500" : "white"}}
-        >
-            <CardSuitIconDisplay suit={suitIcon}/>
-        </button>
-    ));
+    const suitFilterButtons: Array<React.JSX.Element> =
+        suitStateTuple.filterButtons(({elem}: {elem?: CardSuitIcon}) =>
+            <CardSuitIconDisplay suit={elem} />
+        );
+    const typeIconFilterButtons: Array<React.JSX.Element> =
+        typeIconStateTuple.filterButtons(({elem}: {elem?: CardTypeIcon}) =>
+            <CardTypeIconDisplay type={elem} />
+        );
+    const headerIconFilterButtons: Array<React.JSX.Element> =
+        headerIconStateTuple.filterButtons(({elem}: {elem?: CardHeaderIcon}) =>
+            <CardHeaderIconDisplay headerIcon={elem} />
+        );
+    const stateSymbolFilterButtons: Array<React.JSX.Element> =
+        stateSymbolStateTuple.filterButtons(({elem}: {elem?: CardStateSymbol}) =>
+            <CardStateSymbolDisplay state={elem} />
+        );
 
     return <span>
         <button onClick={() => navigate("/")}>&lt;-- back</button> <br/>
@@ -169,22 +77,43 @@ function ImperiumCardporium(): React.JSX.Element {
         <h1 className="centerAlign">Imperium Cardporium</h1>
         <h2 className="centerAlign">
             Toggle:
-            <button onClick={() => dispatch({
-                type: CardporiumDisplayStateActionType.TOGGLE_ALL_GROUP,
-                targetDisplayState: false
-            })}>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>
                 collapse all
             </button>
-            <button onClick={() => dispatch({
-                type: CardporiumDisplayStateActionType.TOGGLE_ALL_GROUP,
-                targetDisplayState: true
-            })}>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>
                 expand all
             </button>
         </h2>
+        <h2 className="centerAlign">Filter Suits: {suitFilterButtons}</h2>
+        <h2 className="centerAlign">Filter Types: {typeIconFilterButtons}</h2>
+        <h2 className="centerAlign">Filter Header: {headerIconFilterButtons}</h2>
+        <h2 className="centerAlign">Filter State: {stateSymbolFilterButtons}</h2>
         <h2 className="centerAlign">
-            Filter Suits:
-            {suitFilterButtons}
+            Filter text:
+            <input
+                type="text"
+                value={searchText}
+                onChange={text => setSearchText(text.target.value)}
+                placeholder="Filter text"
+            />
+            <span>title:</span>
+            <input
+                type="checkbox"
+                checked={isSearchTitle}
+                onChange={check => setIsSearchTitle(check.target.checked)}
+            />
+            <span>effect:</span>
+            <input
+                type="checkbox"
+                checked={isSearchEffect}
+                onChange={check => setIsSearchEffect(check.target.checked)}
+            />
+            <span>victory:</span>
+            <input
+                type="checkbox"
+                checked={isSearchVictory}
+                onChange={check => setIsSearchVictory(check.target.checked)}
+            />
         </h2>
         {cardModuleElements}
     </span>;

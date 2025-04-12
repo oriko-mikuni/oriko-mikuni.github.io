@@ -17,14 +17,14 @@ function CardGroup(
             )
         }</div>;
 
-    return <div>
-        <h1 style={{color: cards.length > 0 ? "black" : "grey"}}>
+    return <>
+        <h2 style={{color: cards.length > 0 ? "black" : "grey"}}>
             {groupName}
             <button onClick={onToggleOn} style={display ? {display: "none"} : {}}>expand</button>
             <button onClick={onToggleOff} style={display ? {} : {display: "none"}}>collapse</button>
-        </h1>
+        </h2>
         {cardElements}
-    </div>;
+    </>;
 }
 
 export default CardGroup;
