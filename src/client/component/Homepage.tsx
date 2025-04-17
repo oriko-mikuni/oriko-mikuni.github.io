@@ -3,6 +3,7 @@ import React from "react";
 import pageTitle from "./PageTitle.tsx";
 import CardSuitIconDisplay from "./card/CardSuitIconDisplay.tsx";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon.ts";
+import {useTranslation} from "react-i18next";
 
 const largeSuitArrayStyle: React.CSSProperties = {
     gap: "10px",
@@ -19,9 +20,10 @@ const featureButtonStyle: React.CSSProperties = {
 function Homepage() : React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
+    const {t} = useTranslation("ui", {keyPrefix: "HomepageText"});
     return <div className="centerAlign">
         <h1>
-            Imperium Card Game
+            {t("header")}
             <br/>
             <span style={largeSuitArrayStyle}>
                 <CardSuitIconDisplay suit={CardSuitIcon.POWER} isLarge={true} />
@@ -45,11 +47,9 @@ function Homepage() : React.JSX.Element {
             It is not endorsed by Osprey either.<br/>
             The card game is great and this webpage recommends purchasing it for personal use.
         </p>
-        <button onClick={(): void | Promise<void> => navigate('/cards')} style={featureButtonStyle}>
-            imperium card list
-        </button><br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'> source </a><br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'> feedback </a>
+        <button onClick={() => navigate('/cards')} style={featureButtonStyle}>{t("toCardList")}</button><br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'>{t("toSource")}</a><br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{t("toFeedback")}</a>
     </div>
 }
 

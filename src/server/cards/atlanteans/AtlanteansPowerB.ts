@@ -20,8 +20,9 @@ export class AtlanteansPowerB extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "ATL1B",
-            effectText: "Passive: cards that would be placed into\n" +
-                "your history are instead discarded.",
+            effectText: [
+                "Passive: cards that would be placed into your history are instead discarded."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {region}"
         });

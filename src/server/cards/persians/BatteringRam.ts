@@ -17,8 +17,10 @@ export class BatteringRam extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.PER,
             cardNumber: "PER3",
-            effectText: "Each other player abandons a {city}.\n" +
-                "You MAY break through for {region}/{tributary}.",
+            effectText: [
+                "Each other player abandons a {city}.",
+                "You MAY break through for {region}/{tributary}."
+            ],
             developmentCost: {population: 4},
             victoryPoints: 2,
         });

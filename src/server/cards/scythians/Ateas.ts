@@ -16,8 +16,11 @@ export class Ateas extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.SCY,
             cardNumber: "SCY3",
-            effectText: "You MAY acquire {region}. You MAY return an {unrest}. " +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "You MAY acquire {region}.",
+                "You MAY return an {unrest}.",
+                cardEffectReuse.selfHistory
+            ],
             developmentCost: {population: 4},
             victoryPoints: 3,
         });

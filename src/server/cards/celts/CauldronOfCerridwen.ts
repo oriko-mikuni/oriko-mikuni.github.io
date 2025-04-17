@@ -16,7 +16,9 @@ export class CauldronOfCerridwen extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL20",
-            effectText: "Exhaust: pay 1{progress} to gain 2{population}.",
+            effectText: [
+                "Exhaust: pay 1{progress} to gain 2{population}."
+            ],
         });
     }
 }

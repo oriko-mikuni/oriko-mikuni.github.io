@@ -4,7 +4,6 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Philosophy extends Card implements ICard {
     constructor() {
@@ -16,7 +15,9 @@ export class Philosophy extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE10",
-            effectText: cardEffectReuse.philosophy,
+            effectText: [
+                "Abandon a {pinned} (not a {region}) to break through for {uncivilised}/{civilised}."
+            ],
             developmentCost: {material: 6},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 5 cards"

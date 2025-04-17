@@ -15,8 +15,10 @@ export class Jomsviking extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK22",
-            effectText: "Pay 1{population} and 2{material} to acquire {region}/{tributary}.\n" +
-                "Each other player discards a card.",
+            effectText: [
+                "Pay 1{population} and 2{material} to acquire {region}/{tributary}.",
+                "Each other player discards a card."
+            ],
         });
     }
 }

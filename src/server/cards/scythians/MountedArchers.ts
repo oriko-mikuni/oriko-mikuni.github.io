@@ -4,7 +4,6 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class MountedArchers extends Card implements ICard {
     constructor() {
@@ -17,8 +16,10 @@ export class MountedArchers extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY20",
-            effectText: cardEffectReuse.mountedArchers + "\n" +
-                "Solstice: you MAY pay 1{material} to gain 1{population}.",
+            effectText: [
+                "Exhaust: when another player plays an {attack}, you MAY exhaust this card to avoid its effects (even if it's another player's turn).",
+                "Solstice: you MAY pay 1{material} to gain 1{population}."
+            ],
         });
     }
 }

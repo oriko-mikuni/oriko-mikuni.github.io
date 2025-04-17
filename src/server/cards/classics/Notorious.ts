@@ -14,7 +14,11 @@ export class Notorious extends Card implements ICard {
             typeIcon: [],
             headerIcon: CardHeaderIcon.ATTACK,
             cardNumber: "1FAM3",
-            effectText: "Free play. Steal 1 {progress} from each other player. Anyone unable to pay takes {unrest}.",
+            effectText: [
+                "Free play.",
+                "Steal 1{progress} from each other player.",
+                "Anyone unable to pay takes {unrest}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {unrest} scored by other players"
         });

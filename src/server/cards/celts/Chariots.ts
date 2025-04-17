@@ -19,9 +19,10 @@ export class Chariots extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL5",
-            effectText: "Passive: you may acquire exiled {region}.\n" +
-                "Your [Conquer] and {attack} cards lose\n" +
-                "the {barbarian} icon.",
+            effectText: [
+                "Passive: you may acquire exiled {region}.",
+                "Your [Conquer] and {attack} cards lose the {barbarian} icon."
+            ],
             developmentCost: {population: 3},
             victoryPoints: 4,
         });

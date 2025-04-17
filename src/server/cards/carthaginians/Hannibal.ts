@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import CardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Hannibal extends Card implements ICard {
     constructor() {
@@ -16,10 +16,12 @@ export class Hannibal extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR6",
-            effectText: "You MAY acquire " + CardEffectReuse.fourSuits + ".\n" +
-                "You MAY draw a card.\n" +
-                "You MAY draw a card from your history.\n" +
-                CardEffectReuse.selfHistory,
+            effectText: [
+                "You MAY acquire " + CardEffectReuse.fourSuits + ".",
+                "You MAY draw a card.",
+                "You MAY draw a card from your history.",
+                CardEffectReuse.selfHistory
+            ],
             developmentCost: {population: 4},
             victoryPoints: 4,
         });

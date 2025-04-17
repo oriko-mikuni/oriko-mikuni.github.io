@@ -14,9 +14,10 @@ export class Chandragupta extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.MAU,
             cardNumber: "MAU18",
-            effectText: "Acquire {region}. Find an [Indian Elephants]\n" +
-                "and put it in your discard pile.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Acquire {region}. Find an [Indian Elephants] and put it in your discard pile.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

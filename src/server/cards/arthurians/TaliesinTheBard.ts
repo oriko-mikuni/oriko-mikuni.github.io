@@ -15,9 +15,10 @@ export class TaliesinTheBard extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ART,
             cardNumber: "ART6",
-            effectText: "Find a {knight} and put it to your history to " +
-                "look at the top 2 cards of the {fame} deck.\n" +
-                "Take one of those cards.",
+            effectText: [
+                "Find a {knight} and put it to your history to look at the top 2 cards of the {fame} deck.",
+                "Take one of those cards."
+            ],
             victoryPoints: 1,
         });
     }

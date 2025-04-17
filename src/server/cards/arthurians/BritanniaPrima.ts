@@ -19,7 +19,10 @@ export class BritanniaPrima extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART21",
-            effectText: "Draw a card. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Draw a card.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

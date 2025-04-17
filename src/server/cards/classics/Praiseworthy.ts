@@ -13,8 +13,9 @@ export class Praiseworthy extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "1FAM1",
-            effectText: "Choose: put this card into your history OR " +
-                "break through for " + cardEffectReuse.fourSuits + ".",
+            effectText: [
+                "Choose: put this card into your history OR break through for " + cardEffectReuse.fourSuits + "."
+            ],
             victoryPoints: 'conditional',
             victoryPointsString: "7VP if in history, 3VP otherwise"
         });

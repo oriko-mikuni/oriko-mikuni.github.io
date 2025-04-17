@@ -20,7 +20,9 @@ export class Tamga extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY9",
-            effectText: "Exhaust: discard a card to draw 2 cards.",
+            effectText: [
+                "Exhaust: discard a card to draw 2 cards."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {region}"
         });

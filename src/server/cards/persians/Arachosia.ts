@@ -21,9 +21,10 @@ export class Arachosia extends Card implements ICard {
             nationColour: CardNationColour.PER,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "PER10",
-            effectText: "You MAY put a card from your discard\n" +
-                "pile into your history.\n" +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "You MAY put a card from your discard pile into your history.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

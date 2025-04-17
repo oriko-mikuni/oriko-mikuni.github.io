@@ -16,8 +16,10 @@ export class GwalchmeiSirGawain extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.ART,
             cardNumber: "ART14",
-            effectText: "Take {unrest} to gain 1{progress} per garrisoned {knight}.\n" +
-                cardEffectReuse.knightGarrison,
+            effectText: [
+                "Take {unrest} to gain 1{progress} per garrisoned {knight}.",
+                cardEffectReuse.knightGarrison
+            ]
         });
     }
 }

@@ -17,8 +17,10 @@ export class Babylonians extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.PER,
             cardNumber: "PER8",
-            effectText: "Free play. Acquire " + CardEffectReuse.fourSuits + ".\n" +
-                CardEffectReuse.selfHistory,
+            effectText: [
+                "Free play. Acquire " + CardEffectReuse.fourSuits + ".",
+                CardEffectReuse.selfHistory
+            ],
             developmentCost: {population: 5},
             victoryPoints: 4,
         });

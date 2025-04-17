@@ -19,8 +19,9 @@ export class ScythiansPowerA extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "SCY1A",
-            effectText: "Exhaust: spend an action and take {unrest} to\n" +
-                "break through for {region}.",
+            effectText: [
+                "Exhaust: spend an action and take {unrest} to break through for {region}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 6{material}"
         });

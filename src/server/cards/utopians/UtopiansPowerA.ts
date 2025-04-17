@@ -19,10 +19,10 @@ export class UtopiansPowerA extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "UTO1A",
-            effectText: "Passive: when your deck is empty,\n" +
-                "take {unrest}.\n" +
-                "Solstice: all other players MAY return an {unrest}. " +
-                "You gain 1{population} for each {unrest} returned.",
+            effectText: [
+                "Passive: when your deck is empty, take {unrest}.",
+                "Solstice: all other players MAY return an {unrest}. You gain 1{population} for each {unrest} returned."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 4{population}"
         });

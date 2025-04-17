@@ -16,8 +16,9 @@ export class Phalanx extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC17",
-            effectText: "Exhaust: play a {region} from your discard\n" +
-                "pile (spending an action as normal).",
+            effectText: [
+                "Exhaust: play a {region} from your discard pile (spending an action as normal)."
+            ],
         });
     }
 }

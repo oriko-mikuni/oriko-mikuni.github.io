@@ -19,7 +19,9 @@ export class LowerNile extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY20",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

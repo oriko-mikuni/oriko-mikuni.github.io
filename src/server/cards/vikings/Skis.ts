@@ -19,9 +19,10 @@ export class Skis extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK11",
-            effectText: "Exhaust: when you play a {region},\n" +
-                "exhaust this card to choose: draw a card\n" +
-                "OR gain 2{material}.",
+            effectText: [
+                "Exhaust: when you play a {region}, exhaust this card to choose: draw a card OR gain 2{material}."
+            ],
+            victoryPoints: 2
         });
     }
 }

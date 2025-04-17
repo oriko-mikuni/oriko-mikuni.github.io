@@ -20,8 +20,9 @@ export class LongWalls1 extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN2",
-            effectText: "Passive: reduce the cost in {material} to play\n" +
-                "an {unrest} by 2 (to a minimum of 1).",
+            effectText: [
+                "Passive: reduce the cost in {material} to play an {unrest} by 2 (to a minimum of 1)."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per [Long Walls] in play"
         });

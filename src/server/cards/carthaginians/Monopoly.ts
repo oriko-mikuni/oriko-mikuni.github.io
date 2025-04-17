@@ -17,8 +17,10 @@ export class Monopoly extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR8",
-            effectText: "Gain 2{material} and draw a card.\n" +
-                "Give each other player a card from your hand or discard pile.",
+            effectText: [
+                "Gain 2{material} and draw a card.",
+                "Give each other player a card from your hand or discard pile."
+            ],
             developmentCost: {material: 7},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 5{material}"

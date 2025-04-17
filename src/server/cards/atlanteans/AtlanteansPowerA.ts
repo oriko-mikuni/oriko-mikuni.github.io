@@ -20,11 +20,10 @@ export class AtlanteansPowerA extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "ATL1A",
-            effectText: "Passive: cards that would be placed into\n" +
-                "your history are instead discarded.\n" +
-                "Exhaust: When a card is sunk, exhaust\n" +
-                "this card to put a card from your discard\n" +
-                "pile on top of your deck.",
+            effectText: [
+                "Passive: cards that would be placed into your history are instead discarded.",
+                "Exhaust: when a card is sunk, exhaust this card to put a card from your discard pile on top of your deck."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {region}"
         });

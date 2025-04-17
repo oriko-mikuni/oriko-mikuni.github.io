@@ -13,8 +13,9 @@ export class Settlers extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE18",
-            effectText: "Choose: pay 1{population} to acquire {region} OR\n" +
-                "gain 1{progress} OR return an {unrest}.",
+            effectText: [
+                "Choose: pay 1{population} to acquire {region} OR gain 1{progress} OR return an {unrest}."
+            ],
         });
     }
 }

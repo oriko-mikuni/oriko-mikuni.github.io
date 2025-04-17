@@ -20,8 +20,9 @@ export class LongWalls2 extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN3",
-            effectText: "Passive: recall any [Long Walls] to avoid\n" +
-                "the effect of an {attack}.",
+            effectText: [
+                "Passive: recall any [Long Walls] to avoid the effect of an {attack}."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per [Long Walls] in play"

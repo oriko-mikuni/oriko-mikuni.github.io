@@ -15,7 +15,10 @@ export class TheSenate extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM6",
-            effectText: "You MAY acquire {civilised}. You MAY put a card from your hand into your history.",
+            effectText: [
+                "You MAY acquire {civilised}.",
+                "You MAY put a card from your hand into your history."
+            ],
             developmentCost: {material: 4},
             victoryPoints: 3,
         });

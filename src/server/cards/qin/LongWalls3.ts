@@ -20,7 +20,9 @@ export class LongWalls3 extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN4",
-            effectText: "Exhaust: Pay 1{population} to draw a card.",
+            effectText: [
+                "Exhaust: pay 1{population} to draw a card."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per [Long Walls] in play"

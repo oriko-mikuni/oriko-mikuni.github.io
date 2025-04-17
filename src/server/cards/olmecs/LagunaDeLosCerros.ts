@@ -19,7 +19,10 @@ export class LagunaDeLosCerros extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM16",
-            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{population}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

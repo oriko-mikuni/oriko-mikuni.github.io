@@ -22,8 +22,10 @@ export class TresZapotes extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM6",
-            effectText: "You MAY return up to 2 {mask} from your discard pile to your hand.\n" +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "You MAY return up to 2 {mask} from your discard pile to your hand.",
+                cardEffectReuse.garrisonACard
+            ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 3,
         });

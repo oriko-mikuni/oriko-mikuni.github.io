@@ -19,10 +19,10 @@ export class Embalming extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY4",
-            effectText: "Passive: anytime you pay {population}, you\n" +
-                "MAY put a card from your hand into\n" +
-                "your history.\n" +
-                "Exhaust: draw a card.",
+            effectText: [
+                "Passive: anytime you pay {population}, you MAY put a card from your hand into your history.",
+                "Exhaust: draw a card."
+            ],
             developmentCost: {material: 4},
             victoryPoints: 2,
         });

@@ -18,9 +18,9 @@ export class BreadAndCircuses extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM10",
-            effectText: "Solstice: discard a card. You MAY\n" +
-                "return an {unrest} from your hand. You MAY\n" +
-                "return an {unrest} from your discard pile.",
+            effectText: [
+                "Solstice: discard a card. You MAY return an {unrest} from your hand. You MAY return an {unrest} from your discard pile."
+            ],
         });
     }
 }

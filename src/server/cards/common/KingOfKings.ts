@@ -7,16 +7,18 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 export class KingOfKings extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.KOK,
+            name: CardName.KOK_A,
             suit: [CardSuitIcon.FAME],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_A,
             cardNumber: "FAM_A",
-            effectText: "When you would gain this card, instead resolve it. Then flip this card.\n" +
-                "THIS TRIGGERS GAME END.\n" +
-                "If {barbarian}, gain 6{progress}.\n" +
-                "If {empire}, gain 3{progress} and develop for free.",
+            effectText: [
+                "When you would gain this card, instead resolve it. Then flip this card.",
+                "THIS TRIGGERS GAME END.",
+                "If {barbarian}, gain 6{progress}.",
+                "If {empire}, gain 3{progress} and develop for free."
+            ],
         });
     }
 }

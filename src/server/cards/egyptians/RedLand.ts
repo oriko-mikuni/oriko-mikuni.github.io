@@ -20,7 +20,10 @@ export class RedLand extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY11",
-            effectText: "Gain 1{progress}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{progress}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

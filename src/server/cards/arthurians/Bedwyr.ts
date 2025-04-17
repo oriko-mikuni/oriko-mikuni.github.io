@@ -16,8 +16,10 @@ export class Bedwyr extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.ART,
             cardNumber: "ART9",
-            effectText: "You MAY return [Excalibur] from your discard pile to the top of your deck.\n" +
-                cardEffectReuse.knightGarrison,
+            effectText: [
+                "You MAY return [Excalibur] from your discard pile to the top of your deck.",
+                cardEffectReuse.knightGarrison
+            ],
         });
     }
 }

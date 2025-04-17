@@ -15,9 +15,9 @@ export class GreekProsperity extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE3",
-            effectText: "Choose: gain 1{material} per {production}\n" +
-                "OR gain 1{population} per {region}\n" +
-                "OR draw a card per {city}/{metropolis} in play.",
+            effectText: [
+                "Choose: gain 1{material} per {production} OR gain 1{population} per {region} OR draw a card per {city}/{metropolis} in play."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 2,
         });

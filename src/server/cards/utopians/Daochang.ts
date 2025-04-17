@@ -18,12 +18,11 @@ export class Daochang extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "UTO6",
-            effectText: "Passive: when another player plays an {attack}, " +
-                "you MAY pay 1{population} to avoid its effect.\n" +
-                "Exhaust: garrison a {scroll} here to\n" +
-                "acquire {tributary}.\n" +
-                "Solstice: choose: take {unrest} OR\n" +
-                "abandon this card and gain 1{material}.",
+            effectText: [
+                "Passive: when another player plays an {attack}, you MAY pay 1{population} to avoid its effect.",
+                "Exhaust: garrison a {scroll} here to acquire {tributary}.",
+                "Solstice: choose: take {unrest} OR abandon this card and gain 1{material}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {tributary}"
         });

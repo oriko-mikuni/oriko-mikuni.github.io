@@ -13,7 +13,11 @@ export class Proud1 extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "2FAM6",
-            effectText: cardEffectReuse.unplayable + cardEffectReuse.bumpUpTextBox + cardEffectReuse.bumpUpTextBox,
+            effectText: [
+                cardEffectReuse.unplayable,
+                cardEffectReuse.bumpUpTextBox,
+                cardEffectReuse.bumpUpTextBox
+            ],
             victoryPoints: 'conditional',
             victoryPointsString: "12 VP if garrisoned, 8VP if in history, 3VP otherwise"
         });

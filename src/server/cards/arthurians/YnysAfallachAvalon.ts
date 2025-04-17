@@ -20,10 +20,11 @@ export class YnysAfallachAvalon extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART13",
-            effectText: "Return a {knight} from your discard pile to your hand. " +
-                cardEffectReuse.garrisonACard + "\n" +
-                "Solstice: you MAY pay 1{progress} to\n" +
-                "recall this card.",
+            effectText: [
+                "Return a {knight} from your discard pile to your hand.",
+                cardEffectReuse.garrisonACard,
+                "Solstice: you MAY pay 1{progress} to recall this card."
+            ],
         });
     }
 }

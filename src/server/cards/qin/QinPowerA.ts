@@ -20,14 +20,12 @@ export class QinPowerA extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "QIN1A",
-            effectText: "Passive: when you would place {progress} on a card in the market, instead place 1{population}.\n" +
-                "Exhaust: if you gain a card from\n" +
-                "the market with {population} on it, double\n" +
-                "the {population} gained.",
+            effectText: [
+                "Passive: when you would place {progress} on a card in the market, instead place 1{population}.",
+                "Exhaust: if you gain a card from the market with {population} on it, double the {population} gained."
+            ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {pinned}\n" +
-                "in play,\n" +
-                "excluding {region}"
+            victoryPointsString: "1VP per {pinned} in play, excluding {region}"
         });
     }
 

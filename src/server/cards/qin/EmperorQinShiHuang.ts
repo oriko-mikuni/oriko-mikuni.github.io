@@ -16,11 +16,11 @@ export class EmperorQinShiHuang extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN6",
-            effectText: cardEffectReuse.unplayableUnless + "[Mandate of Heaven] is in play " +
-                "and [King Wu of Qin] is\n" +
-                "in your history.\n" +
-                "Free play. " + cardEffectReuse.drawTopFame + "\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Cannot be played unless [Mandate of Heaven] is in play and [King Wu of Qin] is in your history.",
+                "Free play. " + cardEffectReuse.drawTopFame,
+                cardEffectReuse.selfHistory
+            ],
             developmentCost: {material: 3, population: 2},
         });
     }

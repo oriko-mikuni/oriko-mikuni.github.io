@@ -14,9 +14,10 @@ export class ErikTheRed extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK21",
-            effectText: "Abandon [Scandinavia] and pay 1{population}\n" +
-                "to find a {region} and add it to your hand.\n" +
-                cardEffectReuse.selfExile,
+            effectText: [
+                "Abandon [Scandinavia] and pay 1{population} to find a {region} and add it to your hand.",
+                cardEffectReuse.selfExile
+            ],
         });
     }
 }

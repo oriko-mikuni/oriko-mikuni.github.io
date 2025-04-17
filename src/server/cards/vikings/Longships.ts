@@ -19,10 +19,10 @@ export class Longships extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK10",
-            effectText: "Passive: you can acquire exiled {region}\n" +
-                "cards. When you do, gain 1{population}.\n" +
-                "Exhaust: when you play an {attack},\n" +
-                "exhaust this card to gain 2{material}.",
+            effectText: [
+                "Passive: you can acquire exiled {region} cards. When you do, gain 1{population}.",
+                "Exhaust: when you play an {attack}, exhaust this card to gain 2{material}."
+            ],
         });
     }
 }

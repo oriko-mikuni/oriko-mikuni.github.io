@@ -19,7 +19,9 @@ export class IndusValley extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU21",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

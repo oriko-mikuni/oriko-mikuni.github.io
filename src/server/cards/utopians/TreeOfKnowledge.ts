@@ -18,9 +18,10 @@ export class TreeOfKnowledge extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "UTO8",
-            effectText: "Exhaust: garrison a {scroll} here to\n" +
-                "acquire {uncivilised}/{civilised}.\n" +
-                "Solstice: choose: discard a card OR abandon this card and draw a card.",
+            effectText: [
+                "Exhaust: garrison a {scroll} here to acquire {uncivilised}/{civilised}.",
+                "Solstice: choose: discard a card OR abandon this card and draw a card."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {civilised}"
         });

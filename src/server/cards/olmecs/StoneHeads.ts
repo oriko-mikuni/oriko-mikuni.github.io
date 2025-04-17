@@ -19,10 +19,10 @@ export class StoneHeads extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM7",
-            effectText: "Passive: when a card effect requires\n" +
-                "you to discard {mask}, you MAY instead\n" +
-                "abandon cards garrisoned here.\n" +
-                "Solstice: you MAY garrison a card here.",
+            effectText: [
+                "Passive: when a card effect requires you to discard {mask}, you MAY instead abandon cards garrisoned here.",
+                "Solstice: you MAY garrison a card here."
+            ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 3,
         });

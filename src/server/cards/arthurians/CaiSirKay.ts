@@ -14,9 +14,10 @@ export class CaiSirKay extends Card implements ICard {
             typeIcon: [CardTypeIcon.KNIGHT],
             nationColour: CardNationColour.ART,
             cardNumber: "ART18",
-            effectText: "You MAY return a {region} from your discard " +
-                "pile to the top of your deck.\n" +
-                cardEffectReuse.knightGarrison,
+            effectText: [
+                "You MAY return a {region} from your discard pile to the top of your deck.",
+                cardEffectReuse.knightGarrison
+            ]
         });
     }
 }

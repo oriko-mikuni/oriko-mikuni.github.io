@@ -16,8 +16,9 @@ export class LodestoneCompass extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM14",
-            effectText: "Exhaust: discard 2 {mask} and spend an\n" +
-                "action to acquire {region}/{tributary}.",
+            effectText: [
+                "Exhaust: discard 2 {mask} and spend an action to acquire {region}/{tributary}."
+            ],
         });
     }
 }

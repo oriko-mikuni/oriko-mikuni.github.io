@@ -20,9 +20,9 @@ export class OlmecsPowerA extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "OLM1A",
-            effectText: "Exhaust: choose: put a {mask} from your " +
-                "discard pile into your history OR\n" +
-                "discard 3 {mask} to acquire " + cardEffectReuse.fourSuits + ".",
+            effectText: [
+                "Exhaust: choose: put a {mask} from your discard pile into your history OR discard 3 {mask} to acquire " + cardEffectReuse.fourSuits + "."
+            ],
         });
     }
 }

@@ -18,8 +18,10 @@ export class MinoanExpansion extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.MIN,
             cardNumber: "MIN8",
-            effectText: "Each other player abandons a {region}.\n" +
-                "You MAY acquire " + cardEffectReuse.fourSuits + ".",
+            effectText: [
+                "Each other player abandons a {region}.",
+                "You MAY acquire " + cardEffectReuse.fourSuits + "."
+            ],
             developmentCost: {population: 4},
             victoryPoints: 3,
         });

@@ -19,7 +19,9 @@ export class Architecture extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN5",
-            effectText: "Passive: reduce development costs by 1{progress}.",
+            effectText: [
+                "Passive: reduce development costs by 1{progress}."
+            ],
             developmentCost: {progress: 2, material: 5},
             victoryPoints: 3,
         });

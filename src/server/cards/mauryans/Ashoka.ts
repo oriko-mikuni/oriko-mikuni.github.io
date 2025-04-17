@@ -16,10 +16,10 @@ export class Ashoka extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.MAU,
             cardNumber: "MAU5",
-            effectText: cardEffectReuse.takeTopFame + "\n" +
-                "Reveal your hand, draw deck, and\n" +
-                "discard pile and put all {attack} and this\n" +
-                "card into your history.",
+            effectText: [
+                cardEffectReuse.takeTopFame,
+                "Reveal your hand, draw deck, and discard pile and put all {attack} and this card into your history."
+            ],
             developmentCost: {population: 3},
             victoryPoints: 1,
         });

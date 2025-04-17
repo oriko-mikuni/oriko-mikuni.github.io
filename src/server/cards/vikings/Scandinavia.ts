@@ -20,7 +20,9 @@ export class Scandinavia extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK17",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

@@ -19,7 +19,10 @@ export class CarpathianMountain extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY18",
-            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{population}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

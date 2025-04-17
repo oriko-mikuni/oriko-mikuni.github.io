@@ -15,8 +15,10 @@ export class EgyptianIncursion extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY18",
-            effectText: "Pay 1{population} and 2{material} to acquire {region}/{tributary}.\n" +
-                "Each other player recalls a {region}.",
+            effectText: [
+                "Pay 1{population} and 2{material} to acquire {region}/{tributary}.",
+                "Each other player recalls a {region}."
+            ],
         });
     }
 }

@@ -16,7 +16,9 @@ export class Kushites extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY12",
-            effectText: "Gain 2{progress}.",
+            effectText: [
+                "Gain 2{progress}."
+            ],
         });
     }
 }

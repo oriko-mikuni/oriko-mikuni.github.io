@@ -19,7 +19,9 @@ export class PunchMarkedCoins extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU8",
-            effectText: "Exhaust: draw a card and gain 1{progress}.",
+            effectText: [
+                "Exhaust: draw a card and gain 1{progress}."
+            ],
             developmentCost: {material: 3, population: 1},
             victoryPoints: 2,
         });

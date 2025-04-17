@@ -8,6 +8,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Location} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Mathematics extends Card implements ICard {
     constructor() {
@@ -21,13 +22,13 @@ export class Mathematics extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU3",
-            effectText: "Passive: increase hand size by 1.\n" +
-                "Your [Advance] Cards lose the {barbarian} icon.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1,
+                "Your [Advance] cards lose the {barbarian} icon."
+            ],
             developmentCost: {material: 4, population: 1},
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {pinned}\n" +
-                "in play,\n" +
-                "excluding {region}"
+            victoryPointsString: "1VP per {pinned} in play, excluding {region}"
         });
     }
 

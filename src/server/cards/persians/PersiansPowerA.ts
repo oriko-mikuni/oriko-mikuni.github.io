@@ -20,9 +20,9 @@ export class PersiansPowerA extends Card implements ICard {
             nationColour: CardNationColour.PER,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "PER1A",
-            effectText: "Exhaust: spend an action, place 2 cards\n" +
-                "on the top of your deck, and pay 1{population}\n" +
-                "to break through for {tributary}.",
+            effectText: [
+                "Exhaust: spend an action, place 2 cards on the top of your deck, and pay 1{population} to break through for {tributary}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3 {tributary}"
         });

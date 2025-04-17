@@ -19,10 +19,10 @@ export class Pyramids extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY9",
-            effectText: "Passive: reduce the cost in {material} or\n" +
-                "cards to play an {unrest} by 1\n" +
-                "(to a minimum of 1).\n" +
-                "Exhaust: draw a card.",
+            effectText: [
+                "Passive: reduce the cost in {material} or cards to play an {unrest} by 1 (to a minimum of 1).",
+                "Exhaust: draw a card."
+            ],
             developmentCost: {material: 2, population: 3},
             victoryPoints: 4,
         });

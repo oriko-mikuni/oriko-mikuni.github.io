@@ -1,10 +1,13 @@
-.card-victory-point {
-    position: absolute;
+.card-victory-point-icon {
     width: 25px;
     height: 25px;
     font-size: 20px;
     line-height: 25px;
     text-align: center;
+}
+
+.card-victory-point-icon-bottom-right {
+    position: absolute;
     bottom: 5px;
     right: 5px;
 }
@@ -15,10 +18,16 @@
     color: black;
 }
 
+.card-victory-point-null {
+    background: url("../images/vp_icon/victory_point_null.svg");
+    background-size: 25px 25px;
+    color: #00000000;
+}
+
 .card-victory-point-variable {
     background: url("../images/vp_icon/victory_point_variable.svg");
     background-size: 25px 25px;
-    color: black;
+    color: #00000000;
 }
 
 .card-victory-point-negative {

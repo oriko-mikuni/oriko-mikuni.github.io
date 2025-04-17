@@ -18,10 +18,10 @@ export class Portals extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "UTO5",
-            effectText: "Exhaust: garrison a {scroll} here to\n" +
-                "acquire {region}.\n" +
-                "Solstice: choose: recall a {region} OR\n" +
-                "abandon this card and gain 1{population}.",
+            effectText: [
+                "Exhaust: garrison a {scroll} here to acquire {region}.",
+                "Solstice: choose: recall a {region} OR abandon this card and gain 1{population}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {region}"
         });

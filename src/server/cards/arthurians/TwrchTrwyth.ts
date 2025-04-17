@@ -18,11 +18,10 @@ export class TwrchTrwyth extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART5",
-            effectText: "Exhaust: pay 1{progress} to free play an {empire}.\n" +
-                "Solstice: you MAY discard a {knight} to choose: " +
-                "exile an impending quest (except [Graal]) OR " +
-                "return up to 2 {unrest} from your\n" +
-                "hand or discard.",
+            effectText: [
+                "Exhaust: pay 1{progress} to free play an {empire}.",
+                "Solstice: you MAY discard a {knight} to choose: exile an impending quest (except [Graal]) OR return up to 2 {unrest} from your hand or discard."
+            ],
             victoryPoints: -4,
         });
     }

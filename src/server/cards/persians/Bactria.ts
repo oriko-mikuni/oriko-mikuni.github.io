@@ -18,7 +18,10 @@ export class Bactria extends Card implements ICard {
             nationColour: CardNationColour.PER,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "PER19",
-            effectText: "Gain 3{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 3{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

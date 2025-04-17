@@ -16,10 +16,11 @@ export class HaraldHardrada extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK2",
-            effectText: "TAKING THIS CARD TRIGGERS\n" +
-                "THE GAME END.\n" +
-                cardEffectReuse.takeTopFame + "\n" +
-                "You MAY break through for {region}.",
+            effectText: [
+                "TAKING THIS CARD TRIGGERS THE GAME END.",
+                cardEffectReuse.takeTopFame,
+                "You MAY break through for {region}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "2VP per {variable} card"
         });

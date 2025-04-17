@@ -19,8 +19,9 @@ export class Chainmail extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL4",
-            effectText: "Passive: when you play an {attack},\n" +
-                "gain 1{progress}.",
+            effectText: [
+                "Passive: when you play an {attack}, gain 1{progress}."
+            ],
             developmentCost: {material: 3, population: 1},
             victoryPoints: 4,
         });

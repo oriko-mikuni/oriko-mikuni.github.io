@@ -6,6 +6,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Legions extends Card implements ICard {
     constructor() {
@@ -19,8 +20,10 @@ export class Legions extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM5",
-            effectText: "Passive: increase your hand size by 1.\n" +
-                "Your [Conquer] cards lose the {barbarian} icon.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1,
+                "Your [Conquer] cards lose the {barbarian} icon."
+            ],
             developmentCost: {population: 3},
             victoryPoints: 2,
         });

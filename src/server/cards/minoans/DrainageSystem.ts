@@ -19,7 +19,9 @@ export class DrainageSystem extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN4",
-            effectText: "Solstice: gain 1{population}.",
+            effectText: [
+                "Solstice: gain 1{population}."
+            ],
             developmentCost: {progress: 1, material: 2, population: 2},
             victoryPoints: 2,
         });

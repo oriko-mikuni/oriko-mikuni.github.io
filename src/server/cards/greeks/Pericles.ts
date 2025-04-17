@@ -16,8 +16,10 @@ export class Pericles extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE4",
-            effectText: "Free play. Acquire " + cardEffectReuse.fourSuits + ".\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Free play. Acquire " + cardEffectReuse.fourSuits + ".",
+                cardEffectReuse.selfHistory
+            ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 3,
         });

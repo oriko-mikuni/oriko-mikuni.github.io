@@ -27,7 +27,7 @@ import {Empire3} from "./Empire3";
 export const COMMON_CARD_MANIFEST = new ModuleManifest({
     module: GameModule.COMMON,
     commonCards: {
-        [CardName.KOK]: {Factory: KingOfKings},
+        [CardName.KOK_A]: {Factory: KingOfKings},
         [CardName.KOK_B]: {Factory: KingOfKingsB},
         [CardName.UNREST0]: {Factory: Unrest0},
         [CardName.UNREST1]: {Factory: Unrest1},

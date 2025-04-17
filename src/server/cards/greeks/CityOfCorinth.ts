@@ -7,7 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class CityOfCorinth extends Card implements ICard {
     constructor() {
@@ -21,7 +21,9 @@ export class CityOfCorinth extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE5",
-            effectText: cardEffectReuse.city,
+            effectText: [
+                CardEffectReuse.city
+            ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 3,
         });

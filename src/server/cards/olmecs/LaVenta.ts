@@ -19,7 +19,10 @@ export class LaVenta extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM17",
-            effectText: "Gain 2{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 2{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

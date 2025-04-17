@@ -12,8 +12,10 @@ export class Charity extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.UTO,
             cardNumber: "UTO9",
-            effectText: "Gain 1{progress}.\n" +
-                "Each other player MAY gain 2{material}.",
+            effectText: [
+                "Gain 1{progress}.",
+                "Each other player MAY gain 2{material}."
+            ],
         });
     }
 }

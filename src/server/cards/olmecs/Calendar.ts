@@ -18,9 +18,9 @@ export class Calendar extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM11",
-            effectText: "Exhaust: discard 2 {mask} and spend an\n" +
-                "action to choose: gain 1{material} per {production}\n" +
-                "OR gain 1{population} per {region} you have in play.",
+            effectText: [
+                "Exhaust: discard 2 {mask} and spend an action to choose: gain 1{material} per {production} OR gain 1{population} per {region} you have in play."
+            ],
         });
     }
 }

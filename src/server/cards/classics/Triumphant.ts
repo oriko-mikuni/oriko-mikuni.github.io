@@ -12,7 +12,10 @@ export class Triumphant extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "1FAM6",
-            effectText: cardEffectReuse.unplayable + "\nCannot be garrisoned.",
+            effectText: [
+                cardEffectReuse.unplayable,
+                cardEffectReuse.cannotGarrison
+            ],
             victoryPoints: 11,
         });
     }

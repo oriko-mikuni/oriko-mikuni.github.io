@@ -6,6 +6,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Mathematics extends Card implements ICard {
     constructor() {
@@ -19,8 +20,10 @@ export class Mathematics extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN7",
-            effectText: "Passive: increase your hand size by 1.\n" +
-                "Your [Advance] cards lose the {barbarian} icon.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1,
+                "Your [Advance] cards lose the {barbarian} icon."
+            ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 2,
         });

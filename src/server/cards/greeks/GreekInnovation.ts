@@ -18,9 +18,10 @@ export class GreekInnovation extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE7",
-            effectText: "Place 2 cards on top of your deck to\n" +
-                "acquire " + cardEffectReuse.fourSuits + ".\n" +
-                "Each other player recalls a {pinned}.",
+            effectText: [
+                "Place 2 cards on top of your deck to acquire " + cardEffectReuse.fourSuits + ".",
+                "Each other player recalls a {pinned}."
+            ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 3,
         });

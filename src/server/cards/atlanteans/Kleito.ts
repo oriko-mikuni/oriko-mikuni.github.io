@@ -16,10 +16,12 @@ export class Kleito extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL9",
-            effectText: "Choose: acquire " + cardEffectReuse.fourSuits + "\n" +
-                "OR if [Palace of Poseidon] is in play,\n" +
-                "break through " + cardEffectReuse.fourSuits + " twice.\n" +
-                "Sink this card.",
+            effectText: [
+                "Choose: acquire " + cardEffectReuse.fourSuits +
+                " OR if [Palace of Poseidon] is in play, " +
+                "break through " + cardEffectReuse.fourSuits + " twice.",
+                "Sink this card."
+            ],
             developmentCost: {progress: 2, material: 3},
             victoryPoints: 3,
         });

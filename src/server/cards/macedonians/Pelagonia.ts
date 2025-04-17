@@ -19,7 +19,10 @@ export class Pelagonia extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC20",
-            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{population}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

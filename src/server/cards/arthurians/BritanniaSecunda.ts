@@ -18,7 +18,10 @@ export class BritanniaSecunda extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART22",
-            effectText: "Draw a card. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Draw a card.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

@@ -11,7 +11,9 @@ export class Outstanding extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "2FAM4",
-            effectText: "Free play. Put up to 2 cards from your discard pile into your history.",
+            effectText: [
+                "Free play. Put up to 2 cards from your discard pile into your history."
+            ],
             victoryPoints: 7,
         })
     }

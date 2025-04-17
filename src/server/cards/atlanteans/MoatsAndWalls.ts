@@ -19,7 +19,9 @@ export class MoatsAndWalls extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ATL6",
-            effectText: "Exhaust: free play an {unrest}.",
+            effectText: [
+                "Exhaust: free play an {unrest}."
+            ],
             developmentCost: {progress: 1, material: 2, population: 1},
             victoryPoints: 2,
         });

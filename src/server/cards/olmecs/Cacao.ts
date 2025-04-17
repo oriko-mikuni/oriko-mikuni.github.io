@@ -14,9 +14,10 @@ export class Cacao extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.OLM,
             cardNumber: "OLM9",
-            effectText: "All players MAY return an {unrest} from\n" +
-                "their hand or discard pile.\n" +
-                "Gain 1{progress} for each {unrest} returned.",
+            effectText: [
+                "All players MAY return an {unrest} from their hand or discard pile.",
+                "Gain 1{progress} for each {unrest} returned."
+            ],
         });
     }
 }

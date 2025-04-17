@@ -19,7 +19,9 @@ export class ForestOfPholoe extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE21",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

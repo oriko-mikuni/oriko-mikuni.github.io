@@ -18,10 +18,9 @@ export class OlmecHieroglyphics extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM10",
-            effectText: "Exhaust to choose: return an {exhaust} to\n" +
-                "your state card OR spend an action\n" +
-                "to return a card from your discard pile\n" +
-                "to your hand.",
+            effectText: [
+                "Exhaust to choose: return an {exhaust} to your state card OR spend an action to return a card from your discard pile to your hand."
+            ],
         });
     }
 }

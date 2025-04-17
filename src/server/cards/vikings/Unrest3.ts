@@ -16,9 +16,10 @@ export class Unrest3 extends Card implements ICard {
             startingLocation: CardStartingLocation.SUPPLY,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK25",
-            effectText: CardEffectReuse.setupUnrestL+
-                "Vikings" + CardEffectReuse.setupUnrestR+
-                CardEffectReuse.unrest,
+            effectText: [
+                CardEffectReuse.setupUnrestL + "Vikings" + CardEffectReuse.setupUnrestR,
+                CardEffectReuse.unrest
+            ],
             playerCount: 3,
             victoryPoints: -2,
         });

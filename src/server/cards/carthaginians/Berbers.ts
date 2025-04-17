@@ -15,7 +15,9 @@ export class Berbers extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR13",
-            effectText: "Gain 2{population}.",
+            effectText: [
+                "Gain 2{population}."
+            ],
         });
     }
 }

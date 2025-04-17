@@ -19,7 +19,10 @@ export class HaliacmonValley extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC18",
-            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{population}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

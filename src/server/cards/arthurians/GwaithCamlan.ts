@@ -18,11 +18,11 @@ export class GwaithCamlan extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART8",
-            effectText: "PUT INTO PLAY WHEN GAINED.\n" +
-                "Cannot be abandoned or recalled.\n" +
-                "Solstice: put a {knight} into your history\n" +
-                "(garrisoned or from your hand)\n" +
-                "or take 2 {unrest}.",
+            effectText: [
+                "PUT INTO PLAY WHEN GAINED.",
+                "Cannot be abandoned or recalled.",
+                "Solstice: put a {knight} into your history (garrisoned or from your hand) or take 2 {unrest}."
+            ],
             victoryPoints: 2,
         });
     }

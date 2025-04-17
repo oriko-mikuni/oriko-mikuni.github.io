@@ -15,7 +15,10 @@ export class Jewellery extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.SCY,
             cardNumber: "SCY6",
-            effectText: cardEffectReuse.unplayable + "\nCannot be garrisoned.",
+            effectText: [
+                cardEffectReuse.unplayable,
+                cardEffectReuse.cannotGarrison
+            ],
             developmentCost: {material: 7},
             victoryPoints: 7,
         });

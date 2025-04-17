@@ -17,8 +17,10 @@ export class CelticInnovation extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL3",
-            effectText: "You MAY acquire {uncivilised}/{civilised}.\n" +
-                "Each other player takes {unrest}.",
+            effectText: [
+                "You MAY acquire {uncivilised}/{civilised}.",
+                "Each other player takes {unrest}."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 4,
         });

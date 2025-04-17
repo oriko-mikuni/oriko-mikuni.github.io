@@ -21,10 +21,10 @@ export class Graenland extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK5",
-            effectText: cardEffectReuse.garrisonACard + "\n" +
-                "Choose: gain 1{population} OR look at the top\n" +
-                "card of your nation deck, then you MAY\n" +
-                "shuffle the nation deck.",
+            effectText: [
+                cardEffectReuse.garrisonACard,
+                "Choose: gain 1{population} OR look at the top card of your nation deck, then you MAY shuffle the nation deck."
+            ],
         });
     }
 }

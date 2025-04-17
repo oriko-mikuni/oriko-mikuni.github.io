@@ -19,8 +19,9 @@ export class GreeksPowerA extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "GRE1A",
-            effectText: "Exhaust: spend 2 actions to\n" +
-                "break through for {uncivilised}/{civilised}.",
+            effectText: [
+                "Exhaust: spend 2 actions to break through for {uncivilised}/{civilised}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 7 cards"
         });

@@ -16,8 +16,10 @@ export class Legalism extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN16",
-            effectText: "Abandon [Confucianism].\n" +
-                "Exhaust: pay 3{population} to acquire {region}/{tributary}.",
+            effectText: [
+                "Abandon [Confucianism].",
+                "Exhaust: pay 3{population} to acquire {region}/{tributary}."
+            ],
         });
     }
 }

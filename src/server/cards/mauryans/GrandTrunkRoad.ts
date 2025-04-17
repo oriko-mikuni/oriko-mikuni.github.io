@@ -20,9 +20,10 @@ export class GrandTrunkRoad extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU4",
-            effectText: "Passive: counts as two {region}.\n" +
-                "Exhaust: all players gain 1{material},\n" +
-                "you gain 1{progress}.",
+            effectText: [
+                "Passive: counts as two {region}.",
+                "Exhaust: all players gain 1{material}, you gain 1{progress}."
+            ],
             developmentCost: {material: 3, population: 3},
             victoryPoints: 2,
         });

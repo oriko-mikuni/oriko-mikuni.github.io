@@ -1,0 +1,46 @@
+{
+  "module.common": "公共",
+  "module.common-Classics": "经典",
+  "module.common-Legends": "传奇",
+  "module.common-Horizons": "地平线",
+  "module.common-Trade-Route": "贸易路线",
+
+  "module.update-Horizons": "地平线更新",
+  "module.promo": "推广卡",
+
+  "module.nation-Carthaginians": "迦太基",
+  "module.nation-Celts": "凯尔特",
+  "module.nation-Greeks": "希腊",
+  "module.nation-Macedonians": "马其顿",
+  "module.nation-Persians": "波斯",
+  "module.nation-Romans": "罗马",
+  "module.nation-Scythians": "斯基泰",
+  "module.nation-Vikings": "维京",
+
+  "module.nation-Arthurians": "亚瑟王朝",
+  "module.nation-Atlanteans": "亚特兰蒂斯",
+  "module.nation-Egyptians": "埃及",
+  "module.nation-Mauryans": "孔雀王朝",
+  "module.nation-Minoans": "米诺斯",
+  "module.nation-Olmecs": "奥尔梅克",
+  "module.nation-Qin": "大秦",
+  "module.nation-Utopians": "乌托邦",
+
+  "module.nation-Cultists": "邪教徒",
+  "module.nation-Inuit": "因纽特",
+  "module.nation-Japanese": "日本",
+  "module.nation-Magyars": "马扎尔",
+  "module.nation-Mayans": "玛雅",
+  "module.nation-Martians": "火星人",
+  "module.nation-Polynesians": "波利尼西亚",
+  "module.nation-Taino": "泰诺人",
+
+  "module.nation-Abbasids": "阿拔斯王朝",
+  "module.nation-Aksumites": "阿克苏姆",
+  "module.nation-Guptas": "笈多王朝",
+  "module.nation-Sassanids": "萨珊王朝",
+  "module.nation-Tang": "大唐",
+  "module.nation-Wagadou": "加纳帝国",
+
+  "module.default": "默认"
+}

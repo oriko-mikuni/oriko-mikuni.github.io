@@ -16,8 +16,10 @@ export class RamessesII extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY6",
-            effectText: "Free play. Acquire " + cardEffectReuse.fourSuits + ".\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Free play. Acquire " + cardEffectReuse.fourSuits + ".",
+                cardEffectReuse.selfHistory
+            ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 4,
         });

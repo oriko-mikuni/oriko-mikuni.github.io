@@ -11,6 +11,14 @@ button {
     background: #dddddd;
     border-color: black;
     border-radius: 10px;
+    font-size: 15px;
+}
+
+select {
+    color: black;
+    background: #dddddd;
+    border-color: black;
+    border-radius: 10px;
     font-size: 20px;
 }
 

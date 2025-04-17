@@ -3,7 +3,6 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 import {Location} from "../../Player";
 
 export class SacredScroll2 extends Card implements ICard {
@@ -15,7 +14,9 @@ export class SacredScroll2 extends Card implements ICard {
             typeIcon: [CardTypeIcon.SCROLL],
             nationColour: CardNationColour.UTO,
             cardNumber: "UTO14",
-            effectText: cardEffectReuse.sacredScroll,
+            effectText: [
+                "Free play. All players MAY draw a card."
+            ],
             victoryPoints: 'conditional',
             victoryPointsString: "1VP if in history"
         });

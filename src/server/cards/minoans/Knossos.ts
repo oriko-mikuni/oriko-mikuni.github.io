@@ -20,7 +20,9 @@ export class Knossos extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN13",
-            effectText: cardEffectReuse.metropolis,
+            effectText: [
+                cardEffectReuse.metropolis
+            ],
         });
     }
 }

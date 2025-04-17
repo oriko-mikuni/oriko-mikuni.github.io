@@ -11,7 +11,9 @@ export class Independent extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "2FAM2",
-            effectText: "Free play. Gain 3{material} and 2{population}.",
+            effectText: [
+                "Free play. Gain 3{material} and 2{population}."
+            ],
             victoryPoints: 3,
         });
     }

@@ -16,9 +16,10 @@ export class Parmenion extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC4",
-            effectText: "You MAY acquire {region}/{tributary} and\n" +
-                "immediately free play it.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "You MAY acquire {region}/{tributary} and immediately free play it.",
+                cardEffectReuse.selfHistory
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 2,
         });

@@ -29,7 +29,7 @@ class CardProcessor {
         const clientCard: ClientCard = {
             cardNumber: card.cardNumber,
             developmentCost: card.developmentCost,
-            effectText: card.effectText,
+            effectText: card.effectText || [],
             expansion: card.expansion,
             headerIcon: card.headerIcon,
             name: card.name,

@@ -17,8 +17,10 @@ export class IndianElephantsB extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.MAU,
             cardNumber: "MAU13",
-            effectText: "Each other player recalls a {region}.\n" +
-                "You MAY break through for {region}/{tributary}.",
+            effectText: [
+                "Each other player recalls a {region}.",
+                "You MAY break through for {region}/{tributary}."
+            ],
         });
     }
 }

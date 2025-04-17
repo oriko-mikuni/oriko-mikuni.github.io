@@ -20,7 +20,9 @@ export class MacedoniansPowerA extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "MAC1A",
-            effectText: "Passive: when you play a {region} from your discard pile, gain 2{material}.",
+            effectText: [
+                "Passive: when you play a {region} from your discard pile, gain 2{material}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {region}"
         });

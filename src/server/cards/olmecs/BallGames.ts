@@ -16,8 +16,9 @@ export class BallGames extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM15",
-            effectText: "Exhaust: discard 2 {mask} and spend an\n" +
-                "action to acquire {uncivilised}/{civilised}.",
+            effectText: [
+                "Exhaust: discard 2 {mask} and spend an action to acquire {uncivilised}/{civilised}."
+            ],
         });
     }
 }

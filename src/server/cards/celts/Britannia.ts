@@ -21,7 +21,9 @@ export class Britannia extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL11",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

@@ -16,7 +16,9 @@ export class Advance extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR11",
-            effectText: CardEffectReuse.advance
+            effectText: [
+                CardEffectReuse.advance
+            ]
         });
     }
 }

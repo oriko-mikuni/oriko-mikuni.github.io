@@ -17,7 +17,9 @@ export class AdvancedCulture extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL2",
-            effectText: "Acquire {uncivilised}/{civilised}.",
+            effectText: [
+                "Acquire {uncivilised}/{civilised}."
+            ],
             developmentCost: {progress: 1, material: 5},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {region}"

@@ -176,32 +176,32 @@
     height: 15px;
 }
 
-.card-triangle-location-In-play {
+.card-triangle-location-in-play {
     mask: url("../images/starting_location/InPlay.svg") no-repeat center / contain;
     -webkit-mask: url("../images/starting_location/InPlay.svg") no-repeat center;
 }
 
-.card-triangle-location-Nation {
+.card-triangle-location-nation {
     mask: url("../images/starting_location/Nation.svg") no-repeat center / contain;
     -webkit-mask: url("../images/starting_location/Nation.svg") no-repeat center;
 }
 
-.card-triangle-location-Accession {
+.card-triangle-location-accession {
     mask: url("../images/starting_location/Accession.svg") no-repeat center / contain;
     -webkit-mask: url("../images/starting_location/Accession.svg") no-repeat center;
 }
 
-.card-triangle-location-Development {
+.card-triangle-location-development {
     mask: url("../images/starting_location/Development.svg") no-repeat center / contain;
     -webkit-mask: url("../images/starting_location/Development.svg") no-repeat center;
 }
 
-.card-triangle-location-Supply {
+.card-triangle-location-supply {
     mask: url("../images/starting_location/Supply.svg") no-repeat center / contain;
     -webkit-mask: url("../images/starting_location/Supply.svg") no-repeat center;
 }
 
-.card-triangle-location-Chaos {
+.card-triangle-location-chaos {
     mask: url("../images/starting_location/Chaos.svg") no-repeat center / contain;
     -webkit-mask: url("../images/starting_location/Chaos.svg") no-repeat center;
 }

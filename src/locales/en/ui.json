@@ -1,0 +1,36 @@
+{
+  "pageTitle": {
+    "Homepage": "Homepage",
+    "Imperium Cardporium": "Imperium Cardporium"
+  },
+  "HomepageText": {
+    "header": "Imperium Card Game",
+    "toCardList": "imperium card list",
+    "toSource": "source",
+    "toFeedback": "feedback"
+  },
+  "ImperiumCardporium": {
+    "cardporiumHeader": "Imperium Cardporium",
+    "backToHomepage": "<-- back",
+    "toFeedback": "feedback",
+    "filter": "Filter",
+    "Suit": "Suits",
+    "TypeIcon": "Types",
+    "HeaderIcon": "Header",
+    "StateIcon": "State",
+    "VictoryPoint": "VP",
+    "text": "text",
+    "title": "title",
+    "effect": "effect",
+    "victory": "VP text",
+    "expand all": "expand all",
+    "collapse all": "collapse all"
+  },
+  "ElementFilterState": {
+    "invert": "Invert"
+  },
+  "CardGroup": {
+    "expand": "expand",
+    "collapse": "collapse"
+  }
+}

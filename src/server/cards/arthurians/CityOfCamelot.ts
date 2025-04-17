@@ -20,7 +20,9 @@ export class CityOfCamelot extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART11",
-            effectText: cardEffectReuse.city,
+            effectText: [
+                cardEffectReuse.city
+            ],
         });
     }
 }

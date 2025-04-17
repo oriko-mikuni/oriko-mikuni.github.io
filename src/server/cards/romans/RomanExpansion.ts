@@ -16,9 +16,11 @@ export class RomanExpansion extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM21",
-            effectText: "Acquire {region}. You MAY acquire {region} again.\n" +
-                "Each other player recalls a {region}.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Acquire {region}. You MAY acquire {region} again.",
+                "Each other player recalls a {region}.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

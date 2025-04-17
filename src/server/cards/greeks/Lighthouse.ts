@@ -19,10 +19,9 @@ export class Lighthouse extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE9",
-            effectText: "Exhaust: choose: place an {attack} from your\n" +
-                "discard pile on the top of your deck\n" +
-                "OR swap an exiled card with a card\n" +
-                "in the market.",
+            effectText: [
+                "Exhaust: choose: place an {attack} from your discard pile on the top of your deck OR swap an exiled card with a card in the market."
+            ],
             developmentCost: {material: 5},
             victoryPoints: 3,
         });

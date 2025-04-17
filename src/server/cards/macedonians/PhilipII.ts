@@ -14,8 +14,10 @@ export class PhilipII extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC16",
-            effectText: "Acquire " + cardEffectReuse.fourSuits + ".\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Acquire " + cardEffectReuse.fourSuits + ".",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

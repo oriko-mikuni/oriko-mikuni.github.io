@@ -16,10 +16,10 @@ export class AtlanteanFleet extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL20",
-            effectText: "Free play. Choose: sink a card from your\n" +
-                "discard pile and steal 1{progress} from each\n" +
-                "player OR break through for\n" +
-                cardEffectReuse.fourSuits + " and sink this card.",
+            effectText: [
+                "Free play. Choose: sink a card from your discard pile and steal 1{progress} from each player " +
+                "OR break through for " + cardEffectReuse.fourSuits + " and sink this card."
+            ],
         });
     }
 }

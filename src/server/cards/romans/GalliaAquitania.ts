@@ -21,7 +21,9 @@ export class GalliaAquitania extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM11",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

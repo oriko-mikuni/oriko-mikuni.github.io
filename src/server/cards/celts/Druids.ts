@@ -12,9 +12,9 @@ export class Druids extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL14",
-            effectText: "Choose: gain 1{progress}\n" +
-                "OR pay 1{population} to break through for {uncivilised}\n" +
-                "OR return an {unrest} to gain 1{population}.",
+            effectText: [
+                "Choose: gain 1{progress} OR pay 1{population} to break through for {uncivilised} OR return an {unrest} to gain 1{population}."
+            ],
         });
     }
 }

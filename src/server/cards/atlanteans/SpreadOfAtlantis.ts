@@ -17,8 +17,10 @@ export class SpreadOfAtlantis extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL4",
-            effectText: "All other players recall a {region}.\n" +
-                "Break through for {region}/{tributary}.",
+            effectText: [
+                "All other players recall a {region}.",
+                "Break through for {region}/{tributary}."
+            ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 4,
         });

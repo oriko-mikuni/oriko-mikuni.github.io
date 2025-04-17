@@ -14,8 +14,9 @@ export class Flood1 extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL13",
-            effectText: "Sink this card and a {region} in play to\n" +
-                "acquire " + cardEffectReuse.fourSuits + ".",
+            effectText: [
+                "Sink this card and a {region} in play to acquire " + cardEffectReuse.fourSuits + "."
+            ],
         });
     }
 }

@@ -18,7 +18,10 @@ export class Orestis extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC19",
-            effectText: "Gain 2{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 2{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

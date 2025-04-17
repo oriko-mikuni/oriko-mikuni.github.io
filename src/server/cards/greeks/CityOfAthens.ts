@@ -6,7 +6,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class CityOfAthens extends Card implements ICard {
     constructor() {
@@ -20,7 +20,9 @@ export class CityOfAthens extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE11",
-            effectText: cardEffectReuse.city,
+            effectText: [
+                CardEffectReuse.city
+            ],
         });
     }
 }

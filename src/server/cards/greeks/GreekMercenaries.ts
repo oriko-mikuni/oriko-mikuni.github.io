@@ -14,9 +14,11 @@ export class GreekMercenaries extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE15",
-            effectText: "Gain 1{progress}. Draw a card.\n" +
-                "Steal 2{material} from each other player.\n" +
-                "Each other player gains 1{population}.",
+            effectText: [
+                "Gain 1{progress}. Draw a card.",
+                "Steal 2{material} from each other player.",
+                "Each other player gains 1{population}."
+            ],
         });
     }
 }

@@ -20,7 +20,9 @@ export class Magadha extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU20",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

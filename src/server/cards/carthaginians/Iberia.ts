@@ -21,7 +21,9 @@ export class Iberia extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR12",
-            effectText: cardEffectReuse.garrisonACard,
+            effectText: [
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

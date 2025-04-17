@@ -15,8 +15,10 @@ export class KingMinos extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.MIN,
             cardNumber: "MIN2",
-            effectText: "Gain 1{progress}. You MAY develop.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Gain 1{progress}. You MAY develop.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

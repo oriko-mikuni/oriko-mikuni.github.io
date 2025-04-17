@@ -13,8 +13,10 @@ export class UthyrPendragon extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.ART,
             cardNumber: "ART20",
-            effectText: "Break through for {uncivilised}.\n" +
-                cardEffectReuse.selfHistory,
+            effectText:[
+                "Break through for {uncivilised}.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

@@ -16,9 +16,11 @@ export class LawnslotLlynSirLancelot extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ART,
             cardNumber: "ART4",
-            effectText: "Find [Guennuvar] and put it into\n" +
-                "your history.\n" +
-                cardEffectReuse.takeTopFame + " " + cardEffectReuse.selfExile,
+            effectText: [
+                "Find [Guennuvar] and put it into your history.",
+                cardEffectReuse.takeTopFame,
+                cardEffectReuse.selfExile
+            ],
             victoryPoints: 2,
         });
     }

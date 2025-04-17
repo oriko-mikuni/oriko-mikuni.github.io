@@ -16,9 +16,10 @@ export class Unrest extends Card implements ICard {
             startingLocation: CardStartingLocation.SUPPLY,
             nationColour: CardNationColour.UTO,
             cardNumber: "UTO17",
-            effectText: cardEffectReuse.setupUnrestL +
-                "Utopians" + cardEffectReuse.setupUnrestR +
-                cardEffectReuse.unrest,
+            effectText: [
+                cardEffectReuse.setupUnrestL + "Utopians" + cardEffectReuse.setupUnrestR,
+                cardEffectReuse.unrest
+            ],
             victoryPoints: -2,
         });
     }

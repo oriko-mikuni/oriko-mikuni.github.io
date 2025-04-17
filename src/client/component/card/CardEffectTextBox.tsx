@@ -3,39 +3,42 @@ import './styles/CardEffectTextBox.css';
 import {RenderCardText} from "./CardText.tsx";
 import {Units, UnitsUtils} from "../../../common/Units.ts";
 import cardEffectReuse from "../../../common/cards/CardEffectReuse.ts";
+import {useTranslation} from "react-i18next";
+import {TFunction} from "i18next";
 
-function RenderDevelopmentCostBox(developmentCost?: Partial<Units>) : Array<React.JSX.Element> | null {
+function RenderDevelopmentCostBox(translation: TFunction<string, string>, developmentCost?: Partial<Units>) : Array<React.JSX.Element> | null {
     if (UnitsUtils.isEmpty(developmentCost)) {
         return null;
     }
     const developmentCostDisplay: Array<React.JSX.Element> | null =
-        RenderCardText("Development Cost: " + UnitsUtils.toString(developmentCost));
+        RenderCardText(translation("Development Cost: ") + UnitsUtils.toString(developmentCost));
 
     return [<br key={0}/>, <div className="card-development-cost" key={1}>{developmentCostDisplay}</div>];
 }
 
 export function CardEffectTextBox(
     {effectText, developmentCost}:
-    {effectText?: string, developmentCost?: Partial<Units>}
+    {effectText: Array<string>, developmentCost?: Partial<Units>}
 ): React.JSX.Element | null {
-    if (effectText !== undefined || developmentCost !== undefined) {
-        let actualEffectText: string | undefined = effectText;
-        let classes: string = "card-effect-text";
+    let actualEffectText: Array<string> = effectText;
+    let classes: string = "card-effect-text";
+    let higherTextClass: string = " card-effect-text";
+    while (actualEffectText.length > 0 && actualEffectText[actualEffectText.length - 1] === cardEffectReuse.bumpUpTextBox)
+    {
+        actualEffectText = actualEffectText.slice(0, actualEffectText.length - 1);
+        higherTextClass = higherTextClass + "-higher";
+        classes = classes + higherTextClass;
+    }
 
-        if (actualEffectText !== undefined) {
-            let higherTextClass: string = " card-effect-text";
-            while (actualEffectText.endsWith(cardEffectReuse.bumpUpTextBox)) {
-                actualEffectText = actualEffectText.slice(0, actualEffectText.length - 1);
-                higherTextClass = higherTextClass + "-higher";
-                classes = classes + higherTextClass;
-                console.log(actualEffectText);
-                console.log(higherTextClass);
-            }
-        }
+    const {t: translation} = useTranslation("cardEffect");
+    const finalEffectText: string | undefined =
+        actualEffectText.length === 0 ? undefined :
+            actualEffectText.map(text => translation(text)).join("\n");
 
+    if (actualEffectText.length > 0 || developmentCost !== undefined) {
         return <div className={classes}>
-            {RenderCardText(actualEffectText)}
-            {RenderDevelopmentCostBox(developmentCost)}
+            {RenderCardText(finalEffectText)}
+            {RenderDevelopmentCostBox(translation, developmentCost)}
         </div>;
     } else {
         return null;

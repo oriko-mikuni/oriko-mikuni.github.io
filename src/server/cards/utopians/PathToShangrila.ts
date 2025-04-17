@@ -16,12 +16,11 @@ export class PathToShangrila extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PERMANENT,
             cardNumber: "UTO2B",
-            effectText: "Exhaust: abandon a {region} to\n" +
-                "gain 1{population} and 1{progress}.\n" +
-                "Solstice: choose: pay all your {progress}\n" +
-                "(minimum 5) to replace this card with\n" +
-                "[Gates of Shangri-La] OR you MAY draw\n" +
-                "a {region} from your discard pile.",
+            effectText: [
+                "Exhaust: abandon a {region} to gain 1{population} and 1{progress}.",
+                "Solstice: choose: pay all your {progress} (minimum 5) to replace this card with [Gates of Shangri-La] " +
+                "OR you MAY draw a {region} from your discard pile."
+            ],
         });
     }
 }

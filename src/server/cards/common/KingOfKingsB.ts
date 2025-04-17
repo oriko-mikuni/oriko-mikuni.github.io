@@ -13,11 +13,11 @@ export class KingOfKingsB extends Card implements ICard {
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_B,
             cardNumber: "FAM_B",
-            effectText: "When you would gain this card, instead\n" +
-                "resolve it. Multiple players can\n" +
-                "resolve this card.\n" +
-                "If {barbarian}, gain 4{progress}.\n" +
-                "If {empire}, develop for free.",
+            effectText: [
+                "When you would gain this card, instead resolve it. Multiple players can resolve this card.",
+                "If {barbarian}, gain 4{progress}.",
+                "If {empire}, develop for free."
+            ],
         });
     }
 }

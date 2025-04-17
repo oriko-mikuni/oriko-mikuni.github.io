@@ -2,7 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Unrest1 extends Card implements ICard {
     constructor() {
@@ -12,7 +12,9 @@ export class Unrest1 extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "UNR2",
-            effectText: cardEffectReuse.unrest,
+            effectText: [
+                CardEffectReuse.unrest
+            ],
             victoryPoints: -2,
         });
     }

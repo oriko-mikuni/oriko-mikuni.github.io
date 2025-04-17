@@ -19,9 +19,10 @@ export class ArthuriansPowerA extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "ART1A",
-            effectText: "Exhaust: discard a card to draw a {knight}\n" +
-                "from your discard pile.\n" +
-                "Solstice: discard a card and gain 1{progress}.",
+            effectText: [
+                "Exhaust: discard a card to draw a {knight} from your discard pile.",
+                "Solstice: discard a card and gain 1{progress}."
+            ],
         });
     }
 }

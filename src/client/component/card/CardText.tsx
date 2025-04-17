@@ -6,7 +6,7 @@ export function RenderCardText(effectText?: string) : Array<React.JSX.Element> |
     if (effectText === undefined) {
         return null;
     }
-    const parts = effectText.split(/(\{[^{}]+}|\[[^\[\]]+]|\n)/g);
+    const parts = effectText.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n)/g);
 
     return parts.map((part, index) => {
         const iconRender: string | undefined = getIconByName(part);
@@ -15,13 +15,25 @@ export function RenderCardText(effectText?: string) : Array<React.JSX.Element> |
         } else {
             if (part === '\n') return <br key={index}/>;
             let italic: boolean = false;
-            if (part.match(/\{([^{}]+)}|\[([^\[\]]+)]/g)) {
-                if (part.match(/\[([^\[\]]+)]/g)) {
+            let bold: boolean = false;
+            if (part.match(/\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*/g)) {
+                if (part.match(/\[[^\[\]]+]/g)) {
                     italic = true;
                 }
+                if (part.match(/\*[^*]+\*/g)) {
+                    bold = true;
+                }
+
                 part = part.slice(1, part.length - 1);
             }
-            return <span key={index} style={{fontStyle: italic ? 'italic' : ''}}>{part}</span>;
+            return <span
+                key={index}
+                style={{
+                    fontStyle: italic ? 'italic' : '',
+                    fontWeight: bold ? '800' : '400'
+                }}>
+                {part}
+            </span>;
         }
     });
 }

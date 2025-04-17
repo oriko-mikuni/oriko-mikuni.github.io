@@ -19,7 +19,10 @@ export class Mauretania extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR21",
-            effectText: "Gain 2{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 2{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

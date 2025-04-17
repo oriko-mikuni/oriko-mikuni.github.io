@@ -11,7 +11,9 @@ export class Eminent extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "2FAM7",
-            effectText: "Free play. Draw 2 cards.",
+            effectText: [
+                "Free play. Draw 2 cards."
+            ],
             victoryPoints: 8,
         });
     }

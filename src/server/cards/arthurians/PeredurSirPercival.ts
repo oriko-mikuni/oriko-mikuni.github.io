@@ -13,10 +13,9 @@ export class PeredurSirPercival extends Card implements ICard {
             typeIcon: [CardTypeIcon.KNIGHT],
             nationColour: CardNationColour.ART,
             cardNumber: "ART17",
-            effectText: "Choose: return an {unrest} and you MAY " +
-                "garrison in a {region} to trigger that card's " +
-                "play effect OR find [Graal] in your discard " +
-                "pile or draw deck and exile this card.",
+            effectText: [
+                "Choose: return an {unrest} and you MAY garrison in a {region} to trigger that card's play effect OR find [Graal] in your discard pile or draw deck and exile this card."
+            ],
         });
     }
 }

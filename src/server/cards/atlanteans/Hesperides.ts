@@ -20,8 +20,11 @@ export class Hesperides extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ATL17",
-            effectText: "Gain 1{material}. Exile a card from the market. " +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{material}.",
+                "Exile a card from the market.",
+                cardEffectReuse.garrisonACard
+            ]
         });
     }
 }

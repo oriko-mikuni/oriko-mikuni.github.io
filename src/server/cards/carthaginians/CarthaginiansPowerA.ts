@@ -19,10 +19,10 @@ export class CarthaginiansPowerA extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "CAR1A",
-            effectText: "Passive: when you would place 1{progress} on a card in the market, instead place 1{material}.\n" +
-                "Exhaust: when you gain a card from\n" +
-                "the market with {material} on it, double\n" +
-                "the {material} gained.",
+            effectText: [
+                "Passive: when you would place 1{progress} on a card in the market, instead place 1{material}.",
+                "Exhaust: when you gain a card from the market with {material} on it, double the {material} gained."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 6{material}"
         });

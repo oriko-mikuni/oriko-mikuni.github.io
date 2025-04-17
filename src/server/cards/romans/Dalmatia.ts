@@ -19,7 +19,10 @@ export class Dalmatia extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM20",
-            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard
+            effectText: [
+                "Gain 1{population}.",
+                cardEffectReuse.garrisonACard
+            ]
         });
     }
 }

@@ -14,8 +14,10 @@ export class CelticGold extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL2",
-            effectText: "Each other player gains 1{material}.\n" +
-                "Gain 4{material} per {fertile} in your play area.",
+            effectText: [
+                "Each other player gains 1{material}.",
+                "Gain 4{material} per {fertile} in your play area."
+            ],
         });
     }
 }

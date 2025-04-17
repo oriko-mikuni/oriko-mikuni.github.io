@@ -1,57 +1,48 @@
-enum CardEffectReuse {
+export enum CardEffectReuse {
     // format patch
     bumpUpTextBox = "^",
     // specific card name
-    advance = "Choose: pay 3{material} to acquire {uncivilised}/{civilised}\n" +
-        "OR pay 5{material} to break through for {uncivilised}/{civilised}.",
-    conquer = "Choose: pay 2{population} to acquire {region}/{tributary}\n" +
-        "OR pay 3{population} to break through for {region}/{tributary}.",
-    prosperity = "All players MAY draw 1 card.\n" +
-        "Choose: gain 1{material} per {production}\n" +
-        "OR gain 1{population} per {region} you have in play.\n",
-    glory =  "This card cannot be garrisoned.\n" +
-        "Abandon 3 {region} to look at the\ntop 2 cards of the {fame} deck.\n" +
-        "Take one of those cards.",
+    advance = "Choose: pay 3{material} to acquire {uncivilised}/{civilised} OR pay 5{material} to break through for {uncivilised}/{civilised}.",
+    conquer = "Choose: pay 2{population} to acquire {region}/{tributary} OR pay 3{population} to break through for {region}/{tributary}.",
 
-    unrest = "Choose: Pay 1{population} OR discard 2 cards\n" +
-        "OR pay 3{material}. If you do, return this card\n" +
-        "to the unrest pile.",
-    setupUnrestL = "Setup: add to the unrest pile if\nthe ",
-    setupUnrestR = " are in play.\n",
+    unrest = "Choose: Pay 1{population} OR discard 2 cards OR pay 3{material}. If you do, return this card to the unrest pile.",
+    setupUnrestL = "Setup: add to the unrest pile if the ",
+    setupUnrestR = " are in play.",
 
-    city = "Solstice: you MAY discard a card to\n" +
-        "choose: gain 1{material} OR gain 1{population}\n" +
-        "OR draw a card.",
-    metropolis = "Solstice: choose: gain 1{material}\n" +
-        "OR gain 1{population} OR draw a card.",
-    development = "Choose: develop OR pay 2{material} to\n" +
-        "acquire {uncivilised}/{civilised}.",
-    mountedArchers = "Exhaust: when another player plays\n" +
-        "an {attack}, you MAY exhaust this card\n" +
-        "to avoid its effects (even if it's\n" +
-        "another player's turn).",
-    philosophy = "Abandon a {pinned} (not a {region}) to\n" +
-        "break through for {uncivilised}/{civilised}.",
-    writingSystem = "Exhaust: put a card from your discard\n" +
-        "pile into your history to draw a card.",
-    stoneMask = "Draw up to 3 cards if able.\n" +
-        "Then return a card to the top of\n" +
-        "your deck.",
-    sacredScroll = "Free play. All players MAY draw a card.",
+    city = "Solstice: you MAY discard a card to choose: gain 1{material} OR gain 1{population} OR draw a card.",
+    metropolis = "Solstice: choose: gain 1{material} OR gain 1{population} OR draw a card.",
 
     // reusable words
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",
-    unplayableUnless = "Cannot be played unless ",
 
-    // reusable sentences,
-    knightGarrison = "You MAY garrison in a {region} to trigger\n" +
-        "that card's play effect.",
+    // reusable sentences
+    increaseHandSize1 = "Passive: increase your hand size by 1.",
+    knightGarrison = "You MAY garrison in a {region} to trigger that card's play effect.",
     selfHistory = "Put this card into your history.",
     selfExile = "Exile this card.",
     garrisonACard = "You MAY garrison a card.",
+    takeOne = "Take one of those cards.",
     takeTopFame = "Take the top {fame} card.",
     drawTopFame = "Draw the top {fame} card.",
-    unplayable = "Cannot be played."
+    unplayable = "Cannot be played.",
+    thisCannotGarrison = "This card cannot be garrisoned.",
+    cannotGarrison = "Cannot be garrisoned."
+}
+
+export class effectReuseMultipleSentences {
+    static readonly glory: Array<string> = [
+        CardEffectReuse.thisCannotGarrison,
+        "Abandon 3 {region} to look at the top 2 cards of the {fame} deck.",
+        CardEffectReuse.takeOne
+    ]
+    static readonly prosperity = [
+        "All players MAY draw 1 card.",
+        "Choose: gain 1{material} per {production} OR gain 1{population} per {region} you have in play."
+    ]
+    static readonly stoneMask = [
+        "Draw up to 3 cards if able.",
+        "Then return a card to the top of your deck.",
+    ]
 }
 
 export default CardEffectReuse;

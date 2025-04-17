@@ -16,7 +16,10 @@ export class TerracottaWarriors extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN10",
-            effectText: cardEffectReuse.unplayable + cardEffectReuse.bumpUpTextBox,
+            effectText: [
+                cardEffectReuse.unplayable,
+                cardEffectReuse.bumpUpTextBox
+            ],
             developmentCost: {material: 7},
             victoryPoints: 'conditional',
             victoryPointsString: "7VP if garrisoned, 3VP if in history"

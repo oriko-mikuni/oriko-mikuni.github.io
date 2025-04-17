@@ -21,7 +21,10 @@ export class EasternZhou extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN11",
-            effectText: "Gain 1{population}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{population}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

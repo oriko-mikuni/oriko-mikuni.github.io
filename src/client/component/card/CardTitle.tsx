@@ -2,6 +2,7 @@ import React from 'react';
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import './styles/CardTitle.css';
 import {CardName} from "../../../common/cards/CardName.ts";
+import {useTranslation} from "react-i18next";
 
 const stateCardTitleColors: Record<string, React.CSSProperties> = {
     // standard state
@@ -49,15 +50,17 @@ const suitCardTitleColors: Record<CardSuitIcon, React.CSSProperties> = {
 
 const defaultTitleColor: React.CSSProperties = {color: "white", background: "#808080"};
 
-function getCardTitleWithoutSuffix(title: string): string {
-    return title.split('#')[0].toUpperCase();
+function getCardTitleDisplay(title: string): string {
+    return title.toUpperCase();
 }
 
 function CardTitle(
     {title, banner = undefined}:
     {title: string, banner?: CardSuitIcon}
 ): React.JSX.Element {
-    const titleDisplay: string = getCardTitleWithoutSuffix(title);
+    const {t: titleTranslation} = useTranslation("cardName");
+
+    const titleDisplay: string = getCardTitleDisplay(titleTranslation(title));
     const titleColor: React.CSSProperties =
         stateCardTitleColors[title] !== undefined ? stateCardTitleColors[title] :
             banner !== undefined ? suitCardTitleColors[banner] : defaultTitleColor;

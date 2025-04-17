@@ -19,8 +19,11 @@ export class Thule extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ATL16",
-            effectText: "Gain 1{population}. Exile a card from the market. " +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{population}.",
+                "Exile a card from the market.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

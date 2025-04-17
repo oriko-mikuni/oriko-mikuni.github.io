@@ -21,8 +21,10 @@ export class Foroyar extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK6",
-            effectText: cardEffectReuse.garrisonACard + " Choose: exile\n" +
-                "a card from the market OR gain 1{population}.",
+            effectText: [
+                cardEffectReuse.garrisonACard,
+                "Choose: exile a card from the market OR gain 1{population}."
+            ],
         });
     }
 }

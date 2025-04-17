@@ -15,8 +15,10 @@ export class NandaDynasty extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.MAU,
             cardNumber: "MAU10",
-            effectText: "Only playable if [Arthashastra] is in play.\n" +
-                "Gain 2{population}.",
+            effectText: [
+                "Only playable if [Arthashastra] is in play.",
+                "Gain 2{population}."
+            ],
         });
     }
 }

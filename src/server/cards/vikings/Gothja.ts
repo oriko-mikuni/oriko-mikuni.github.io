@@ -13,10 +13,11 @@ export class Gothja extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK16",
-            effectText: "Look at the top card of your nation deck.\n" +
-                "You MAY shuffle the nation deck.\n" +
-                "Choose: return an {unrest} and gain 1{population}\n" +
-                "OR draw 2 cards.",
+            effectText: [
+                "Look at the top card of your nation deck.",
+                "You MAY shuffle the nation deck.",
+                "Choose: return an {unrest} and gain 1{population} OR draw 2 cards."
+            ],
         });
     }
 }

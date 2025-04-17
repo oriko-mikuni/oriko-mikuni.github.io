@@ -7,6 +7,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Player} from "../../Player";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class EgyptiansPowerB extends Card implements ICard {
     constructor() {
@@ -20,7 +21,9 @@ export class EgyptiansPowerB extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "EGY1B",
-            effectText: "Passive: increase your hand size by 1.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "3VP per {civilised}"
         });

@@ -13,8 +13,9 @@ export class MyrddinWylltMerlin extends Card implements ICard {
             typeIcon: [CardTypeIcon.KNIGHT],
             nationColour: CardNationColour.ART,
             cardNumber: "ART23",
-            effectText: "Abandon 3 {knight} garrisoned in {region} to draw\n" +
-                "the active quest into your hand.",
+            effectText: [
+                "Abandon 3 {knight} garrisoned in {region} to draw the active quest into your hand."
+            ],
         });
     }
 }

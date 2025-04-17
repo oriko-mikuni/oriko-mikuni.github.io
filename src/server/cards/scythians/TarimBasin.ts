@@ -21,8 +21,10 @@ export class TarimBasin extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY11",
-            effectText: "You MAY draw a card.\n" +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "You MAY draw a card.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

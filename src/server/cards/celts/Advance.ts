@@ -14,7 +14,9 @@ export class Advance extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL16",
-            effectText: CardEffectReuse.advance,
+            effectText: [
+                CardEffectReuse.advance
+            ]
         });
     }
 }

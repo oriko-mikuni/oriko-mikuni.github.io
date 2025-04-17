@@ -1,34 +1,31 @@
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon.ts";
-import {CardTypeIcon} from "../../../common/cards/CardTypeIcon.ts";
 import React, {useReducer} from "react";
-import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon.ts";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol.ts";
+import {useTranslation} from "react-i18next";
 
-type CardporiumFilterStateAction<T> = {
+type CardporiumFilterStateAction = {
     actionType: "toggle" | "invert",
-    elem?: T,
+    elem?: string,
     targetValue: boolean
 };
 const selectedColor: string = "#005500";
 const unselectedColor: string = "#dddddd";
 
-class CardporiumFilterState<T> {
-    filterDisplaySet: Set<T>;
+class CardporiumFilterState {
+    filterDisplaySet: Set<string>;
     filterVoidDisplay: boolean;
-    fullSet: Set<T>;
+    fullSet: Set<string>;
 
-    constructor(fullSet: Set<T>) {
-        this.filterDisplaySet = new Set<T>();
+    constructor(fullSet: Set<string>) {
+        this.filterDisplaySet = new Set<string>();
         this.filterVoidDisplay = false;
         this.fullSet = fullSet;
     }
 
-    public static reducer<T>(
-        state: CardporiumFilterState<T>,
-        action: CardporiumFilterStateAction<T>
-    ): CardporiumFilterState<T> {
-        const resultState: CardporiumFilterState<T> = new CardporiumFilterState<T>(state.fullSet);
+    public static reducer(
+        state: CardporiumFilterState,
+        action: CardporiumFilterStateAction
+    ): CardporiumFilterState {
+        const resultState: CardporiumFilterState = new CardporiumFilterState(state.fullSet);
         state.filterDisplaySet.forEach((elem) => resultState.filterDisplaySet.add(elem));
         if (action.actionType === "invert") {
             resultState.filterVoidDisplay = !state.filterVoidDisplay;
@@ -51,23 +48,53 @@ class CardporiumFilterState<T> {
         }
         return resultState;
     }
-}
 
-export class CardporiumFilterStateTuple<T> {
-    state: CardporiumFilterState<T>;
-    dispatch:  React.ActionDispatch<[action: CardporiumFilterStateAction<T>]>;
-
-    constructor(fullSet: Array<T>) {
-        const realFullSet: Set<T> = new Set();
-        fullSet.forEach((elem) => realFullSet.add(elem));
-        const initialState: CardporiumFilterState<T> = new CardporiumFilterState<T>(realFullSet);
-        [this.state, this.dispatch] = useReducer(CardporiumFilterState.reducer<T>, initialState);
+    public filterOneProp(
+        cards: Array<ClientCard>,
+        cardToProp: (arg0: ClientCard) => string | undefined
+    ): Array<ClientCard> {
+        if (!this.filterVoidDisplay && this.filterDisplaySet.size === 0)
+            return cards;
+        return cards.filter(card => {
+            const prop: string | undefined = cardToProp(card);
+            if (prop === undefined)
+                return this.filterVoidDisplay;
+            else
+                return this.filterDisplaySet.has(prop);
+        })
     }
 
+    public filterAnyProps(
+        cards: Array<ClientCard>,
+        cardToProp: (arg0: ClientCard) => Array<string>
+    ): Array<ClientCard> {
+        if (!this.filterVoidDisplay && this.filterDisplaySet.size === 0)
+            return cards;
+        return cards.filter(card => {
+            const props: Array<string> = cardToProp(card);
+            if (props.length === 0)
+                return this.filterVoidDisplay;
+            else
+                return props.some(prop => this.filterDisplaySet.has(prop));
+        })
+    }
+}
+
+export class CardporiumFilter {
+    state: CardporiumFilterState;
+    dispatch:  React.ActionDispatch<[action: CardporiumFilterStateAction]>;
+
+    constructor(fullSet: Array<string>) {
+        const realFullSet: Set<string> = new Set();
+        fullSet.forEach((elem) => realFullSet.add(elem));
+        const initialState: CardporiumFilterState = new CardporiumFilterState(realFullSet);
+        [this.state, this.dispatch] = useReducer(CardporiumFilterState.reducer, initialState);
+    }
 
     public filterButtons (
-        IconRenderType: (elem: {elem?: T}) => React.JSX.Element
+        IconRender: (elem: {elem?: string}) => React.JSX.Element
     ): Array<React.JSX.Element> {
+        const {t} = useTranslation("ui", {keyPrefix: "ElementFilterState"});
         let size: number = 1;
         const result: Array<React.JSX.Element> = [
             <button
@@ -78,10 +105,10 @@ export class CardporiumFilterStateTuple<T> {
                 style={{background: this.state.filterVoidDisplay ? selectedColor : unselectedColor}}
                 key={0}
             >
-                <IconRenderType />
+                <IconRender />
             </button>
         ];
-        this.state.fullSet.forEach((elem1: T) => {
+        this.state.fullSet.forEach((elem1: string) => {
             result.push(
                 <button
                     onClick={() => this.dispatch({
@@ -92,7 +119,7 @@ export class CardporiumFilterStateTuple<T> {
                     style={{background: this.state.filterDisplaySet.has(elem1) ? selectedColor : unselectedColor}}
                     key={size}
                 >
-                    <IconRenderType elem={elem1}/>
+                    <IconRender elem={elem1}/>
                 </button>
             );
             size ++;
@@ -105,100 +132,9 @@ export class CardporiumFilterStateTuple<T> {
                 })}
                 key={size}
             >
-                Invert
+                {t("invert")}
             </button>
         );
         return result;
     }
-}
-
-export function passSuit(
-    card: ClientCard,
-    suitFilter: CardporiumFilterState<CardSuitIcon>
-): boolean {
-    if (suitFilter.filterVoidDisplay || suitFilter.filterDisplaySet.size > 0) {
-        if (card.suit.length === 0 && !suitFilter.filterVoidDisplay)
-            return false;
-        if (card.suit.length > 0 && !suitFilter.filterDisplaySet.has(card.suit[0]))
-            return false;
-    }
-    return true;
-}
-
-export function passTypeIcon(
-    card: ClientCard,
-    typeFilter: CardporiumFilterState<CardTypeIcon>
-): boolean {
-    if (typeFilter.filterVoidDisplay || typeFilter.filterDisplaySet.size > 0) {
-        if (card.typeIcon.length === 0 && !typeFilter.filterVoidDisplay)
-            return false;
-        if (card.typeIcon.length > 0 && card.typeIcon.every(
-            type => !typeFilter.filterDisplaySet.has(type)))
-            return false;
-    }
-    return true;
-}
-
-export function passStateSymbol(
-    card: ClientCard,
-    stateFilter: CardporiumFilterState<CardStateSymbol>
-): boolean {
-    if (stateFilter.filterVoidDisplay || stateFilter.filterDisplaySet.size > 0) {
-        if (card.stateSymbol.length === 0 && !stateFilter.filterVoidDisplay)
-            return false;
-        if (card.stateSymbol.length > 0 && card.stateSymbol.every(
-            state => !stateFilter.filterDisplaySet.has(state)))
-            return false;
-    }
-    return true;
-}
-
-export function passHeader(
-    card: ClientCard,
-    headerFilter: CardporiumFilterState<CardHeaderIcon>
-): boolean {
-    if (headerFilter.filterVoidDisplay || headerFilter.filterDisplaySet.size > 0) {
-        if (card.headerIcon === undefined && !headerFilter.filterVoidDisplay)
-            return false;
-        if (card.headerIcon !== undefined && !headerFilter.filterDisplaySet.has(card.headerIcon))
-            return false;
-    }
-    return true;
-}
-
-function simplifyText(text: string): string {
-    return text
-        .toLowerCase()
-        .replace(/^/g, ' ')
-        .replace(/\s/g, ' ')
-        .replace(/\//g, ' ')
-        .replace(/\{([^}]+)}/g, " $1 ")
-        .replace(/\[([^\]]+)]/g, " $1 ")
-        .replace(/\(([^)]+)\)/g, " $1 ")
-        .replace(/["',.:]/g, ' ')
-        .replace(/  +/g, ' ');
-}
-
-export function passTextFilter(
-    card: ClientCard,
-    searchText: string,
-    searchTitle: boolean,
-    searchEffect: boolean,
-    searchVictory: boolean
-): boolean {
-    const simplifiedSearchText = simplifyText(searchText);
-    if (simplifiedSearchText.length === 0 || simplifiedSearchText === " ")
-        return true;
-
-    let result: boolean = false;
-    if (searchTitle) {
-        if (simplifyText(card.name).includes(simplifiedSearchText)) result = true;
-    }
-    if (searchEffect && card.effectText !== undefined) {
-        if (simplifyText(card.effectText).includes(simplifiedSearchText)) result = true;
-    }
-    if (searchVictory && card.victoryPointsString !== undefined) {
-        if (simplifyText(card.victoryPointsString).toLowerCase().includes(simplifiedSearchText)) result = true;
-    }
-    return result;
 }

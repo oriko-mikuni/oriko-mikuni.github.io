@@ -17,9 +17,11 @@ export class Raiders extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.SCY,
             cardNumber: "SCY13",
-            effectText: "Free play. Draw 2 cards.\n" +
-                "All other players recall a {region}.\n" +
-                "Steal 1{population} from each {empire} player.",
+            effectText: [
+                "Free play. Draw 2 cards.",
+                "All other players recall a {region}.",
+                "Steal 1{population} from each {empire} player."
+            ],
         });
     }
 }

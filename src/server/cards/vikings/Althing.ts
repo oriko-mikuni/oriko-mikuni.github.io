@@ -15,8 +15,10 @@ export class Althing extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK23",
-            effectText: "Steal 1{material} from each other player.\n" +
-                "Choose: gain 1{progress} OR return an {unrest}.",
+            effectText: [
+                "Steal 1{material} from each other player.",
+                "Choose: gain 1{progress} OR return an {unrest}."
+            ],
         });
     }
 }

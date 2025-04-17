@@ -15,8 +15,10 @@ export class Unification extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY2",
-            effectText: "Gain 2{progress}.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Gain 2{progress}.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

@@ -19,9 +19,9 @@ export class TradingShips extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR7",
-            effectText: "Exhaust: you MAY recall a {river} or a {fertile}\n" +
-                "to acquire a card in the market that has\n" +
-                "{material} on it.",
+            effectText: [
+                "Exhaust: you MAY recall a {river} or a {fertile} to acquire a card in the market that has {material} on it."
+            ],
             developmentCost: {material: 4, population: 1},
             victoryPoints: 4,
         });

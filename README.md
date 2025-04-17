@@ -42,10 +42,11 @@ Currently, contains nation cards from Classics and Legends.
     * [ ] Horizons
 * toggle features
   * [x] add expand / collapse all
-  * add filter options
-    * [x] filter on suit
-    * [ ] filter on name
+  * [x] add filter options
   * [ ] add grouping options
-* [ ] add i18n support.
+* add i18n support
+  * [x] English 
+  * [x] Simplified Chinese
+  * more languages would be supported after adding all cards from official contents so far
 ### More advices are welcome!
 You can start an [issue](https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues).

@@ -19,8 +19,9 @@ export class OlmecsPowerB extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "OLM1B",
-            effectText: "Exhaust: put a {mask} into your history\n" +
-                "to gain 2{progress}.",
+            effectText: [
+                "Exhaust: put a {mask} into your history to gain 2{progress}."
+            ],
         });
     }
 }

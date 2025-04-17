@@ -12,9 +12,11 @@ export class Glorious extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "1FAM5",
-            effectText: "Free play. If {barbarian}, draw up to 4 cards.\n" +
-                "If {empire}, develop at no cost.\n" +
+            effectText: [
+                "Free play. If {barbarian}, draw up to 4 cards.",
+                "If {empire}, develop at no cost.",
                 cardEffectReuse.selfHistory,
+            ],
             victoryPoints: 6,
         });
     }

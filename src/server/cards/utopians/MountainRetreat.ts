@@ -18,9 +18,10 @@ export class MountainRetreat extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "UTO11",
-            effectText: "Exhaust: garrison an {unrest} here to draw\n" +
-                "a {scroll} from your discard pile.\n" +
-                "Solstice: draw a card OR abandon this card, returning any garrisoned {unrest}.",
+            effectText: [
+                "Exhaust: garrison an {unrest} here to draw a {scroll} from your discard pile.",
+                "Solstice: draw a card OR abandon this card, returning any garrisoned {unrest}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {uncivilised}"
         });

@@ -20,8 +20,10 @@ export class ElysianFields extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ATL18",
-            effectText: "Exile a card from the market.\n" +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "Exile a card from the market.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

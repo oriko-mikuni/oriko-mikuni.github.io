@@ -15,7 +15,9 @@ export class Development extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL5",
-            effectText: "Choose: develop OR acquire {civilised}.",
+            effectText: [
+                "Choose: develop OR acquire {civilised}."
+            ],
             developmentCost: {material: 4},
             victoryPoints: 2,
         });

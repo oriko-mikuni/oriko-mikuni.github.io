@@ -15,9 +15,11 @@ export class Alexander extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC2",
-            effectText: "Draw a card.\n" +
-                "You MAY break through for {region}/{tributary}.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Draw a card.",
+                "You MAY break through for {region}/{tributary}.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

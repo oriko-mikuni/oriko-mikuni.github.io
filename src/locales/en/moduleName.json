@@ -1,0 +1,46 @@
+{
+  "module.common": "Common",
+  "module.common-Classics": "Classics",
+  "module.common-Legends": "Legends",
+  "module.common-Horizons": "Horizons",
+  "module.common-Trade-Route": "Trade Route",
+
+  "module.update-Horizons": "Horizons Update",
+  "module.promo": "Promos",
+
+  "module.nation-Carthaginians": "Carthaginians",
+  "module.nation-Celts": "Celts",
+  "module.nation-Greeks": "Greeks",
+  "module.nation-Macedonians": "Macedonians",
+  "module.nation-Persians": "Persians",
+  "module.nation-Romans": "Romans",
+  "module.nation-Scythians": "Scythians",
+  "module.nation-Vikings": "Vikings",
+
+  "module.nation-Arthurians": "Arthurians",
+  "module.nation-Atlanteans": "Atlanteans",
+  "module.nation-Egyptians": "Egyptians",
+  "module.nation-Mauryans": "Mauryans",
+  "module.nation-Minoans": "Minoans",
+  "module.nation-Olmecs": "Olmecs",
+  "module.nation-Qin": "Qin",
+  "module.nation-Utopians": "Utopians",
+
+  "module.nation-Cultists": "Cultists",
+  "module.nation-Inuit": "Inuit",
+  "module.nation-Japanese": "Japanese",
+  "module.nation-Magyars": "Magyars",
+  "module.nation-Mayans": "Mayans",
+  "module.nation-Martians": "Martians",
+  "module.nation-Polynesians": "Polynesians",
+  "module.nation-Taino": "Taino",
+
+  "module.nation-Abbasids": "Abbasids",
+  "module.nation-Aksumites": "Aksumites",
+  "module.nation-Guptas": "Guptas",
+  "module.nation-Sassanids": "Sassanids",
+  "module.nation-Tang": "Tang",
+  "module.nation-Wagadou": "Wagadou",
+
+  "module.default": "default"
+}

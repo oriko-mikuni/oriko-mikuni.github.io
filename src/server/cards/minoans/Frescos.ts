@@ -19,7 +19,9 @@ export class Frescos extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN6",
-            effectText: "Solstice: you MAY discard a card to draw a card and gain 1{progress}.",
+            effectText: [
+                "Solstice: you MAY discard a card to draw a card and gain 1{progress}."
+            ],
             developmentCost: {progress: 2, material: 3, population: 1},
             victoryPoints: 3,
         });

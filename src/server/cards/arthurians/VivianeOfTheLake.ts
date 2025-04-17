@@ -20,9 +20,10 @@ export class VivianeOfTheLake extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART10",
-            effectText: "Gain 1{progress}.\n" +
-                "Solstice: choose: recall a {knight}\n" +
-                "garrisoned here or draw a card.",
+            effectText: [
+                "Gain 1{progress}.",
+                "Solstice: choose: recall a {knight} garrisoned here or draw a card."
+            ],
         });
     }
 }

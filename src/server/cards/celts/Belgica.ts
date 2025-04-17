@@ -21,8 +21,10 @@ export class Belgica extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL10",
-            effectText: "You MAY draw a card.\n" +
-                cardEffectReuse.garrisonACard,
+            effectText: [
+                "You MAY draw a card.",
+                cardEffectReuse.garrisonACard
+            ]
         });
     }
 }

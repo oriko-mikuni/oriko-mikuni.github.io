@@ -20,8 +20,9 @@ export class LongWalls4 extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN5",
-            effectText: "Exhaust: If you have at least 3 [Long Walls] in play, " +
-                "exhaust this card and return a card to the top of your deck to gain 1 action.",
+            effectText: [
+                "Exhaust: if you have at least 3 [Long Walls] in play, exhaust this card and return a card to the top of your deck to gain 1 action."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per [Long Walls] in play"

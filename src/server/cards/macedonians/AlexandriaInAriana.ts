@@ -7,9 +7,9 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {Player} from "../../Player";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class AlexandriaInAriana extends Card implements ICard {
     constructor() {
@@ -23,7 +23,9 @@ export class AlexandriaInAriana extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC9",
-            effectText: cardEffectReuse.city,
+            effectText: [
+                CardEffectReuse.city
+            ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {region}"

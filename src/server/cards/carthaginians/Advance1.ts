@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import ReusedCardEffectText from "../../../common/cards/CardEffectReuse";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Advance1 extends Card implements ICard {
     constructor() {
@@ -14,7 +14,9 @@ export class Advance1 extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR16",
-            effectText: ReusedCardEffectText.advance
+            effectText: [
+                CardEffectReuse.advance
+            ]
         });
     }
 }

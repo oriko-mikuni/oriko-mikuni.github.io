@@ -12,8 +12,10 @@ export class Meditation extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.UTO,
             cardNumber: "UTO10",
-            effectText: "Free play. Return a card from your discard pile to the top of your deck.\n" +
-                "All other players MAY draw a card.",
+            effectText: [
+                "Free play. Return a card from your discard pile to the top of your deck.",
+                "All other players MAY draw a card."
+            ],
         });
     }
 }

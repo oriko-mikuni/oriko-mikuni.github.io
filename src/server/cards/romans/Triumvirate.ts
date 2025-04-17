@@ -14,8 +14,10 @@ export class Triumvirate extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM18",
-            effectText: "Break through for {uncivilised}.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Break through for {uncivilised}.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

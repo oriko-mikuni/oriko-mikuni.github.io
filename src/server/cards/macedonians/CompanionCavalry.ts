@@ -19,10 +19,10 @@ export class CompanionCavalry extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC5",
-            effectText: "Passive: your [Conquer] cards lose\n" +
-                "the {barbarian} symbol.\n" +
-                "Exhaust: when you play a {region}, exhaust\n" +
-                "this card to draw a card.",
+            effectText: [
+                "Passive: your [Conquer] cards lose the {barbarian} symbol.",
+                "Exhaust: when you play a {region}, exhaust this card to draw a card."
+            ],
             developmentCost: {population: 3},
             victoryPoints: 3,
         });

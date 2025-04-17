@@ -13,8 +13,9 @@ export class KingArthur extends Card implements ICard {
             typeIcon: [CardTypeIcon.KNIGHT],
             nationColour: CardNationColour.ART,
             cardNumber: "ART19",
-            effectText: "Abandon a {region} with a {knight} garrisoned\n" +
-                "to acquire {region}/{tributary}.",
+            effectText: [
+                "Abandon a {region} with a {knight} garrisoned to acquire {region}/{tributary}."
+            ]
         });
     }
 }

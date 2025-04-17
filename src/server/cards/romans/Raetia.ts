@@ -21,7 +21,10 @@ export class Raetia extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM12",
-            effectText: "Gain 1{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

@@ -16,12 +16,11 @@ export class Shangrila extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PERMANENT,
             cardNumber: "UTO3B",
-            effectText: "Passive: when you would gain {material}, " +
-                "instead each other player instead gain " +
-                "1{progress} and you gain 2{population}.\n" +
-                "Exhaust: gain 1{material}.\n" +
-                "Solstice: if you have at least 24{population}\n" +
-                "GAME END IS TRIGGERED.",
+            effectText: [
+                "Passive: when you would gain {material}, instead each other player instead gain 1{progress} and you gain 2{population}.",
+                "Exhaust: gain 1{material}.",
+                "Solstice: if you have at least 24{population} GAME END IS TRIGGERED."
+            ],
         });
     }
 }

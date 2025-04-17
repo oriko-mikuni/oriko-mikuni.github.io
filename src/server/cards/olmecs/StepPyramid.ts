@@ -19,10 +19,10 @@ export class StepPyramid extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM3",
-            effectText: "Exhaust: when a card effect requires you to discard {mask}, " +
-                "exhaust this card to discard 1 {mask} fewer.\n" +
-                "Solstice: you MAY draw a {mask} from\n" +
-                "your discard pile.",
+            effectText: [
+                "Exhaust: when a card effect requires you to discard {mask}, exhaust this card to discard 1 {mask} fewer.",
+                "Solstice: you MAY draw a {mask} from your discard pile."
+            ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 3,
         });

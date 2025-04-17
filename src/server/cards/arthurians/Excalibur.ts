@@ -14,8 +14,9 @@ export class Excalibur extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ART,
             cardNumber: "ART7",
-            effectText: "Abandon [Viviane of the Lake] OR [Ynys Afallach] " +
-                "to break through for {tributary}/{civilised}.",
+            effectText: [
+                "Abandon [Viviane of the Lake] OR [Ynys Afallach] to break through for {tributary}/{civilised}."
+            ],
             victoryPoints: 2,
         });
     }

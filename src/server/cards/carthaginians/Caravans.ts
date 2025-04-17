@@ -18,9 +18,9 @@ export class Caravans extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CAR10",
-            effectText: "Exhaust: pay 3{material} and discard a card\n" +
-                "to acquire a card in the market that\n" +
-                "has {material} on it.",
+            effectText: [
+                "Exhaust: pay 3{material} and discard a card to acquire a card in the market that has {material} on it."
+            ],
         });
     }
 }

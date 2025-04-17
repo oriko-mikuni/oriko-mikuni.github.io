@@ -20,7 +20,10 @@ export class BritanniaFlavia extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ART12",
-            effectText: "Draw a card. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Draw a card.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

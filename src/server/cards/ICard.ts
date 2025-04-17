@@ -19,7 +19,7 @@ export interface ICard {
     stateSymbol: Array<CardStateSymbol>;
     typeIcon: Array<CardTypeIcon>;
     cardNumber?: string;
-    effectText?: string;
+    effectText?: Array<string>;
     developmentCost?: Partial<Units>;
     expansion?: CardExpansion;
     headerIcon?: CardHeaderIcon;

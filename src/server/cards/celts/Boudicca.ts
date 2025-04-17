@@ -16,8 +16,11 @@ export class Boudicca extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL18",
-            effectText: "Gain 1{progress}. Each other player abandons\n" +
-                "a {region}. " + CardEffectReuse.selfHistory,
+            effectText: [
+                "Gain 1{progress}.",
+                "Each other player abandons a {region}.",
+                CardEffectReuse.selfHistory
+            ],
         });
     }
 }

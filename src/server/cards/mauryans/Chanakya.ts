@@ -14,10 +14,10 @@ export class Chanakya extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.MAU,
             cardNumber: "MAU19",
-            effectText: "Choose: acquire {uncivilised} and acquire {civilised}\n" +
-                "OR find [Arthashastra] and put it\n" +
-                "in your discard pile.\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Choose: acquire {uncivilised} and acquire {civilised} OR find [Arthashastra] and put it in your discard pile.",
+                cardEffectReuse.selfHistory
+            ],
         });
     }
 }

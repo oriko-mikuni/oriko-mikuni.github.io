@@ -12,10 +12,13 @@ export class Acclaimed extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "2FAM8",
-            effectText: "Break through for a {variable} card.\n" +
-                cardEffectReuse.selfHistory + cardEffectReuse.bumpUpTextBox,
+            effectText: [
+                "Break through for a {variable} card.",
+                cardEffectReuse.selfHistory,
+                cardEffectReuse.bumpUpTextBox
+            ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per\n{variable} card (including this one)"
+            victoryPointsString: "1VP per {variable} card (including this one)"
         });
     }
 

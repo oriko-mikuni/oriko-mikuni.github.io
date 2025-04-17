@@ -3,6 +3,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class AweInspiring extends Card implements ICard {
     constructor() {
@@ -13,7 +14,9 @@ export class AweInspiring extends Card implements ICard {
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             cardNumber: "1FAM8",
-            effectText: "Passive: increase your hand size by 1.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1
+            ],
             victoryPoints: 7,
         });
     }

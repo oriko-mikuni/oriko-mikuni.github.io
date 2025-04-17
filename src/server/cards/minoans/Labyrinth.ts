@@ -19,7 +19,9 @@ export class Labyrinth extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN7",
-            effectText: "Solstice: you MAY pay 1{population} to gain 1{progress}.",
+            effectText: [
+                "Solstice: you MAY pay 1{population} to gain 1{progress}."
+            ],
             developmentCost: {progress: 2, material: 3, population: 2},
             victoryPoints: 3,
         });

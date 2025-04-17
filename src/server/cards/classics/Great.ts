@@ -12,8 +12,10 @@ export class Great extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "1FAM2",
-            effectText: "Free play. Gain 1 action.\n" +
-                "You MAY put this card into your history.",
+            effectText: [
+                "Free play. Gain 1 action.",
+                "You MAY put this card into your history."
+            ],
             victoryPoints: 'conditional',
             victoryPointsString: "6VP if in history, 2VP otherwise"
         });

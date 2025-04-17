@@ -17,9 +17,9 @@ export class Pottery extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN16",
-            effectText: "Solstice: choose: pay 2{material} and place\n" +
-                "1{progress} on this card OR abandon this\n" +
-                "card and gain all {progress} on it.",
+            effectText: [
+                "Solstice: choose: pay 2{material} and place 1{progress} on this card OR abandon this card and gain all {progress} on it."
+            ],
         });
     }
 }

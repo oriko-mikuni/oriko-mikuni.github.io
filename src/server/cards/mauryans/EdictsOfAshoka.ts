@@ -19,9 +19,10 @@ export class EdictsOfAshoka extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU7",
-            effectText: "Only playable if [Ashoka] is in your history.\n" +
-                "Exhaust: put a card from your hand into your history to choose: " +
-                "draw a card OR return an {unrest} from your discard pile OR both.",
+            effectText: [
+                "Only playable if [Ashoka] is in your history.",
+                "Exhaust: put a card from your hand into your history to choose: draw a card OR return an {unrest} from your discard pile OR both."
+            ],
             developmentCost: {material: 4},
             victoryPoints: 3,
         });

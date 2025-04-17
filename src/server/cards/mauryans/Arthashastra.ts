@@ -18,9 +18,10 @@ export class Arthashastra extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU9",
-            effectText: "Solstice: discard any number of {unrest}.\n" +
-                "For each card discarded, choose:\n" +
-                "draw a card OR gain 1{progress}.",
+            effectText: [
+                "Solstice: discard any number of {unrest}.",
+                "For each card discarded, choose: draw a card OR gain 1{progress}."
+            ],
         });
     }
 }

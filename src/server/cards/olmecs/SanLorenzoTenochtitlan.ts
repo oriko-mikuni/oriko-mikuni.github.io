@@ -19,10 +19,9 @@ export class SanLorenzoTenochtitlan extends Card implements ICard {
             nationColour: CardNationColour.OLM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "OLM2",
-            effectText: "Exhaust: return a card to the top of\n" +
-                "your deck to choose: return a {mask} from\n" +
-                "your discard to your hand OR gain\n" +
-                "1{population} and 1{material}.",
+            effectText: [
+                "Exhaust: return a card to the top of your deck to choose: return a {mask} from your discard to your hand OR gain 1{population} and 1{material}."
+            ],
         });
     }
 }

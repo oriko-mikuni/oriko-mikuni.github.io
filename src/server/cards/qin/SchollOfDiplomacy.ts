@@ -14,9 +14,10 @@ export class SchollOfDiplomacy extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN17",
-            effectText: "Abandon up to 3 {region}. For each {region} abandoned, " +
-                "you MAY acquire {region}/{tributary}.\n" +
-                "If {barbarian}, all other players recall a {region}.",
+            effectText: [
+                "Abandon up to 3 {region}. For each {region} abandoned, you MAY acquire {region}/{tributary}.",
+                "If {barbarian}, all other players recall a {region}."
+            ],
         });
     }
 }

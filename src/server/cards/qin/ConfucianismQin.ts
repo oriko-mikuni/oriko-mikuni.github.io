@@ -16,11 +16,12 @@ export class ConfucianismQin extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN15",
-            effectText: "Abandon [Legalism].\n" +
-                "Exhaust: spend an action and discard\n" +
-                "2 cards to choose: acquire {tributary}/{uncivilised}/{civilised}\n" +
-                "with {population} on it OR return up to 2 {unrest} from\n" +
-                "your discard pile.",
+            effectText: [
+                "Abandon [Legalism].",
+                "Exhaust: spend an action and discard 2 cards to choose: " +
+                "acquire {tributary}/{uncivilised}/{civilised} with {population} on it " +
+                "OR return up to 2 {unrest} from your discard pile."
+            ],
         });
     }
 }

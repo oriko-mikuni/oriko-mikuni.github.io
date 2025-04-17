@@ -16,8 +16,9 @@ export class EgyptianHieroglyphics extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY19",
-            effectText: "Solstice: you MAY put a card from your\n" +
-                "hand or discard pile into your history.",
+            effectText: [
+                "Solstice: you MAY put a card from your hand or discard pile into your history."
+            ],
         });
     }
 }

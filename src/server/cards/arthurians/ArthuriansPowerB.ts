@@ -19,7 +19,9 @@ export class ArthuriansPowerB extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "ART1B",
-            effectText: "Solstice: discard a card and gain 1{progress}.",
+            effectText: [
+                "Solstice: discard a card and gain 1{progress}."
+            ],
             victoryPoints: 6,
         });
     }

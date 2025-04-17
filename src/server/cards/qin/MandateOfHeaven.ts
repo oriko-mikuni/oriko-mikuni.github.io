@@ -17,10 +17,10 @@ export class MandateOfHeaven extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN22",
-            effectText: "Exhaust: add 1{population} from the supply to a\n" +
-                "card in the market, then you MAY\n" +
-                "abandon this card.\n" +
-                "Solstice: discard 2 cards.",
+            effectText: [
+                "Exhaust: add 1{population} from the supply to a card in the market, then you MAY abandon this card.",
+                "Solstice: discard 2 cards."
+            ],
             victoryPoints: 'negativeConditional',
             victoryPointsString: "-2VP if not in play"
         });

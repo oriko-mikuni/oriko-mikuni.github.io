@@ -19,8 +19,9 @@ export class EgyptianLegacy extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY10",
-            effectText: "Each other player takes {unrest} and discards\n" +
-                "a card. Gain 2{progress}.",
+            effectText: [
+                "Each other player takes {unrest} and discards a card. Gain 2{progress}."
+            ],
             developmentCost: {material: 5},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {civilised}"

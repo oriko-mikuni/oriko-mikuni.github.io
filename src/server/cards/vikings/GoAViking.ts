@@ -17,9 +17,11 @@ export class GoAViking extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK13",
-            effectText: "Free play.\n" +
-                "Steal 2{material} from each other player.\n" +
-                "Anyone unable to pay takes {unrest}.",
+            effectText: [
+                "Free play.",
+                "Steal 2{material} from each other player.",
+                "Anyone unable to pay takes {unrest}."
+            ],
         });
     }
 }

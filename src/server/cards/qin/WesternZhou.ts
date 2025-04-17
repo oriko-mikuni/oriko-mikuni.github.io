@@ -19,7 +19,10 @@ export class WesternZhou extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN18",
-            effectText: "gain 1{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

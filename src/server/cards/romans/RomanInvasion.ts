@@ -17,8 +17,10 @@ export class RomanInvasion extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM4",
-            effectText: "You MAY acquire {region}/{tributary}.\n" +
-                "Each other player abandons a {region}.",
+            effectText: [
+                "You MAY acquire {region}/{tributary}.",
+                "Each other player abandons a {region}."
+            ],
             developmentCost: {population: 3},
             victoryPoints: 2,
         });

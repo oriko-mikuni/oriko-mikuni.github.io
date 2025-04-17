@@ -16,9 +16,10 @@ export class Unrest2 extends Card implements ICard {
             startingLocation: CardStartingLocation.SUPPLY,
             nationColour: CardNationColour.OLM,
             cardNumber: "OLM26",
-            effectText: cardEffectReuse.setupUnrestL +
-                "Olmecs" + cardEffectReuse.setupUnrestR +
-                cardEffectReuse.unrest,
+            effectText: [
+                cardEffectReuse.setupUnrestL + "Olmecs" + cardEffectReuse.setupUnrestR,
+                cardEffectReuse.unrest
+            ],
             victoryPoints: -2,
             playerCount: 4
         });

@@ -21,7 +21,10 @@ export class PlainsOfThessaly extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE12",
-            effectText: "Gain 1{material}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{material}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

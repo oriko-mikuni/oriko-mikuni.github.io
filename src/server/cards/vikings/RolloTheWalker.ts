@@ -16,7 +16,10 @@ export class RolloTheWalker extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK12",
-            effectText: cardEffectReuse.takeTopFame + " " + cardEffectReuse.selfExile,
+            effectText: [
+                cardEffectReuse.takeTopFame,
+                cardEffectReuse.selfExile
+            ],
         });
     }
 }

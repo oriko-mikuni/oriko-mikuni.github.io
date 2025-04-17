@@ -14,7 +14,9 @@ export class OlympicGames extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.GRE,
             cardNumber: "GRE2",
-            effectText: "Draw 2 cards. Put a card from your hand into your history.",
+            effectText: [
+                "Draw 2 cards. Put a card from your hand into your history."
+            ],
         });
     }
 }

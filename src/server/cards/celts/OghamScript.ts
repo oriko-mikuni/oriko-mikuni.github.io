@@ -6,6 +6,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class OghamScript extends Card implements ICard {
     constructor() {
@@ -19,11 +20,10 @@ export class OghamScript extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL6",
-            effectText: "Passive: increase your hand size by 1.\n" +
-                "Exhaust: you MAY put a card from\n" +
-                "your hand into your history. You MAY\n" +
-                "put a card from your discard pile\n" +
-                "into your history.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1,
+                "Exhaust: you MAY put a card from your hand into your history. You MAY put a card from your discard pile into your history."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 4,
         });

@@ -7,6 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Hibernia extends Card implements ICard {
     constructor() {
@@ -20,8 +21,10 @@ export class Hibernia extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL12",
-            effectText: "You MAY draw a card from your discard pile. " +
-                "You MAY garrion a card."
+            effectText: [
+                "You MAY draw a card from your discard pile.",
+                cardEffectReuse.garrisonACard
+            ]
         });
     }
 }

@@ -22,7 +22,7 @@ export interface Properties {
     nationColour?: CardNationColour;
     cardInPlayType?: CardInPlayType;
     cardNumber?: string;
-    effectText?: string;
+    effectText?: Array<string>;
     developmentCost?: Partial<Units>;
     expansion?: CardExpansion;
     playerCount?: number;
@@ -74,7 +74,7 @@ export abstract class Card {
     public get cardNumber(): string | undefined {
         return this.properties.cardNumber;
     }
-    public get effectText(): string | undefined {
+    public get effectText(): Array<string> | undefined {
         return this.properties.effectText;
     }
     public get developmentCost(): Partial<Units> | undefined {

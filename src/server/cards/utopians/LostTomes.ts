@@ -18,11 +18,10 @@ export class LostTomes extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "UTO7",
-            effectText: "Exhaust: garrison a {scroll} here to put\n" +
-                "a card from your hand or discard\n" +
-                "into your history.\n" +
-                "Solstice: If there are 2 {scroll} garrisoned here, you MAY " +
-                "abandon this card to draw the top card of the {fame} deck.",
+            effectText: [
+                "Exhaust: garrison a {scroll} here to put a card from your hand or discard into your history.",
+                "Solstice: if there are 2 {scroll} garrisoned here, you MAY abandon this card to draw the top card of the {fame} deck."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "2VP per {fame}"
         });

@@ -19,7 +19,9 @@ export class Sagas extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK8",
-            effectText: "Solstice: you MAY garrison a card.",
+            effectText: [
+                "Solstice: you MAY garrison a card."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per garrisoned card here"
         });

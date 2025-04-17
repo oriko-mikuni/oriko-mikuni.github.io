@@ -1,0 +1,36 @@
+{
+  "pageTitle": {
+    "Homepage": "首页",
+    "Imperium Cardporium": "帝国牌表"
+  },
+  "HomepageText": {
+    "header": "帝国 卡牌游戏",
+    "toCardList": "帝国牌表",
+    "toSource": "源代码",
+    "toFeedback": "反馈"
+  },
+  "ImperiumCardporium": {
+    "cardporiumHeader": "帝国牌表",
+    "backToHomepage": "<-- 返回",
+    "toFeedback": "反馈",
+    "filter": "过滤",
+    "Suit": "花色图标",
+    "TypeIcon": "类型图标",
+    "HeaderIcon": "横幅图标",
+    "StateIcon": "国体",
+    "VictoryPoint": "分数",
+    "text": "文本",
+    "title": "标题文本",
+    "effect": "效果文本",
+    "victory": "分数文本",
+    "expand all": "全部展开",
+    "collapse all": "全部折叠"
+  },
+  "ElementFilterState": {
+    "invert": "反转"
+  },
+  "CardGroup": {
+    "expand": "展开",
+    "collapse": "折叠"
+  }
+}

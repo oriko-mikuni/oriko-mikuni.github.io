@@ -19,7 +19,7 @@ export type ClientCard = {
   stateSymbol: Array<CardStateSymbol>;
   typeIcon: Array<CardTypeIcon>;
   headerIcon?: CardHeaderIcon;
-  effectText?: string;
+  effectText: Array<string>;
   developmentCost?: Partial<Units>;
   nationColour?: CardNationColour;
   startingLocation?: CardStartingLocation;

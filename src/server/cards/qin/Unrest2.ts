@@ -16,9 +16,10 @@ export class Unrest2 extends Card implements ICard {
             startingLocation: CardStartingLocation.SUPPLY,
             nationColour: CardNationColour.QIN,
             cardNumber: "QIN24",
-            effectText: CardEffectReuse.setupUnrestL+
-                "Qin" + CardEffectReuse.setupUnrestR+
-                CardEffectReuse.unrest,
+            effectText: [
+                CardEffectReuse.setupUnrestL + "Qin" + CardEffectReuse.setupUnrestR,
+                CardEffectReuse.unrest
+            ],
             playerCount: 3,
             victoryPoints: -2,
         });

@@ -20,10 +20,10 @@ export class Buddhism extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU6",
-            effectText: "Passive: reduce the cost in {material} or cards\n" +
-                "to play an {unrest} by 1 (to a minimum of 1).\n" +
-                "Solstice: gain 1{progress} OR return an {unrest}\n" +
-                "from your discard pile.",
+            effectText: [
+                "Passive: reduce the cost in {material} or cards to play an {unrest} by 1 (to a minimum of 1).",
+                "Solstice: gain 1{progress} OR return an {unrest} from your discard pile."
+            ],
             developmentCost: {population: 4},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per card in history"

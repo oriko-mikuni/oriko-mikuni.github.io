@@ -12,8 +12,10 @@ export class Nomads extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.SCY,
             cardNumber: "SCY14",
-            effectText: "All players MAY draw a card.\n" +
-                "Gain 1{material} per {production} you have in play.",
+            effectText: [
+                "All players MAY draw a card.",
+                "Gain 1{material} per {production} you have in play."
+            ],
         });
     }
 }

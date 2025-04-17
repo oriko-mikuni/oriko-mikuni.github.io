@@ -17,9 +17,10 @@ export class LadyBertilak extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.ART,
             cardNumber: "ART15",
-            effectText: "Free play. Abandon a {region} with a {knight} garrisoned. " +
-                "Draw 2 cards.\n" +
-                "Each other player discards 2 cards.",
+            effectText: [
+                "Free play. Abandon a {region} with a {knight} garrisoned. Draw 2 cards.",
+                "Each other player discards 2 cards."
+            ],
             victoryPoints: 'conditional',
             victoryPointsString: "2VP if in history"
         });

@@ -19,8 +19,9 @@ export class UtopiansPowerB extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "UTO1B",
-            effectText: "Passive: when your deck is empty,\n" +
-                "take {unrest}.",
+            effectText: [
+                "Passive: when your deck is empty, take {unrest}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3{population}"
         });

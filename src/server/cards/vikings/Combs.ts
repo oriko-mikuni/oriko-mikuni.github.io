@@ -19,8 +19,9 @@ export class Combs extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK4",
-            effectText: "Exhaust: ignore the {empire} icon on the\n" +
-                "next card you play this turn.",
+            effectText: [
+                "Exhaust: ignore the {empire} icon on the next card you play this turn."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3{population}"
         });

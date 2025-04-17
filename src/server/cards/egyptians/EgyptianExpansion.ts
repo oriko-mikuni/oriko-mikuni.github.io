@@ -17,8 +17,10 @@ export class EgyptianExpansion extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY7",
-            effectText: "Each other player abandons a {region}.\n" +
-                "You MAY acquire {region}/{tributary}.",
+            effectText: [
+                "Each other player abandons a {region}.",
+                "You MAY acquire {region}/{tributary}."
+            ],
             developmentCost: {population: 4},
             victoryPoints: 4,
         });

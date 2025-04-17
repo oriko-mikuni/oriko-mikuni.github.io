@@ -21,7 +21,10 @@ export class MountainOfAtlantis extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ATL10",
-            effectText: "Gain 1{progress}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{progress}.",
+                cardEffectReuse.garrisonACard
+            ],
             developmentCost: {population: 2},
         });
     }

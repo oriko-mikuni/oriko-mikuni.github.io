@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import CardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class CityOfRome extends Card implements ICard {
     constructor() {
@@ -18,7 +18,9 @@ export class CityOfRome extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ROM19",
-            effectText: cardEffectReuse.city
+            effectText: [
+                CardEffectReuse.city
+            ],
         });
     }
 }

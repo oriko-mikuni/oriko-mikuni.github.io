@@ -19,8 +19,10 @@ export class Obelisk extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY5",
-            effectText: "Exhaust: free play an {unrest}.\n" +
-                "Solstice: discard a card. Gain 1{progress}.",
+            effectText: [
+                "Exhaust: free play an {unrest}.",
+                "Solstice: discard a card. Gain 1{progress}."
+            ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 2,
         });

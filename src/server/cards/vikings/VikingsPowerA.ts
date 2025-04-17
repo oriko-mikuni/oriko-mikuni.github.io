@@ -19,13 +19,11 @@ export class VikingsPowerA extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "VIK1A",
-            effectText: "Passive: cards that would be placed\n" +
-                "into your history are instead discarded.\n" +
-                "When you take {unrest}, look at the top card\n" +
-                "of your nation deck. You MAY place it\n" +
-                "at the bottom of the nation deck.\n" +
-                "Exhaust: when you return an {unrest},\n" +
-                "exhaust this card to draw 2 cards.",
+            effectText: [
+                "Passive: cards that would be placed into your history are instead discarded.",
+                "When you take {unrest}, look at the top card of your nation deck. You MAY place it at the bottom of the nation deck.",
+                "Exhaust: when you return an {unrest}, exhaust this card to draw 2 cards."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {variable} card"
         });

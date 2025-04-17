@@ -1,6 +1,6 @@
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 
-class CardGroupDisplayState {
+export class CardGroupDisplayState {
     cards: Array<ClientCard>;
     display: boolean;
     groupName: string;
@@ -19,27 +19,23 @@ type CardporiumDisplayStateAction = {
 export class CardporiumDisplayState {
     groupDisplays: Map<string, CardGroupDisplayState>;
     cards: Array<ClientCard>;
-    displayGrouping: 'gameModule';
 
     constructor(cards: Array<ClientCard> = []) {
         this.cards = cards;
-        this.displayGrouping = 'gameModule';
         this.groupDisplays = new Map<string, CardGroupDisplayState>();
         this.initDisplaySetting();
     }
 
     public initDisplaySetting(): void {
-        if (this.displayGrouping === 'gameModule') {
-            this.groupDisplays.clear();
-            for (const card of this.cards) {
-                const groupName: string = card.gameModule;
-                let groupDisplay: CardGroupDisplayState | undefined = this.groupDisplays.get(groupName);
-                if (groupDisplay === undefined) {
-                    groupDisplay = new CardGroupDisplayState(groupName);
-                    this.groupDisplays.set(groupName, groupDisplay);
-                }
-                groupDisplay.cards.push(card);
+        this.groupDisplays.clear();
+        for (const card of this.cards) {
+            const groupName: string = card.gameModule;
+            let groupDisplay: CardGroupDisplayState | undefined = this.groupDisplays.get(groupName);
+            if (groupDisplay === undefined) {
+                groupDisplay = new CardGroupDisplayState(groupName);
+                this.groupDisplays.set(groupName, groupDisplay);
             }
+            groupDisplay.cards.push(card);
         }
     }
 
@@ -53,7 +49,6 @@ export class CardporiumDisplayState {
     ): CardporiumDisplayState {
         const resultState: CardporiumDisplayState = new CardporiumDisplayState();
         resultState.cards = state.cards;
-        resultState.displayGrouping = state.displayGrouping;
         resultState.groupDisplays = state.groupDisplays;
 
         if (action.groupName !== undefined) {

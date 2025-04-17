@@ -19,8 +19,9 @@ export class Metallurgy extends Card implements ICard {
             nationColour: CardNationColour.QIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN9",
-            effectText: "Solstice: choose: gain 1{progress} OR return a\n" +
-                "{region} from your discard pile to your hand.",
+            effectText: [
+                "Solstice: choose: gain 1{progress} OR return a {region} from your discard pile to your hand."
+            ],
             developmentCost: {material: 3, population: 1},
             victoryPoints: 2,
         });

@@ -18,14 +18,11 @@ export class KingArthurSCourt extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardInPlayType: CardInPlayType.PERMANENT,
             cardNumber: "ART2",
-            effectText: "Passive: a {development} card that is\n" +
-                "garrisoned here is considered\n" +
-                "the active quest.\n" +
-                "Exhaust: if [Camelot] is in play, discard\n" +
-                "a card to return an {unrest}.\n" +
-                "Solstice: if there is no active quest,\n" +
-                "you MAY take {unrest} to garrison an\n" +
-                "impending quest.",
+            effectText: [
+                "Passive: a {development} card that is garrisoned here is considered the active quest.",
+                "Exhaust: if [Camelot] is in play, discard a card to return an {unrest}.",
+                "Solstice: if there is no active quest, you MAY take {unrest} to garrison an impending quest."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {civilised}"
         });

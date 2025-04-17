@@ -6,6 +6,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class Kurgans extends Card implements ICard {
     constructor() {
@@ -19,9 +20,10 @@ export class Kurgans extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY4",
-            effectText: "Passive: increase hand size by 1.\n" +
-                "Exhaust: put a card from your discard\n" +
-                "pile into your history.",
+            effectText: [
+                cardEffectReuse.increaseHandSize1,
+                "Exhaust: put a card from your discard pile into your history."
+            ],
             developmentCost: {population: 3},
             victoryPoints: 2,
         });

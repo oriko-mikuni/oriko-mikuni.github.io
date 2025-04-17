@@ -25,27 +25,27 @@
     content: url("../images/header_icon/powerB.png");
 }
 
-.card-text-icon.card-text-icon-location-In-play {
+.card-text-icon.card-text-icon-location-in-play {
     content: url("../images/starting_location/InPlay.svg");
 }
 
-.card-text-icon.card-text-icon-location-Nation {
+.card-text-icon.card-text-icon-location-nation {
     content: url("../images/starting_location/Nation.svg");
 }
 
-.card-text-icon.card-text-icon-location-Accession {
+.card-text-icon.card-text-icon-location-accession {
     content: url("../images/starting_location/Accession.svg");
 }
 
-.card-text-icon.card-text-icon-location-Development {
+.card-text-icon.card-text-icon-location-development {
     content: url("../images/starting_location/Development.svg");
 }
 
-.card-text-icon.card-text-icon-location-Supply {
+.card-text-icon.card-text-icon-location-supply {
     content: url("../images/starting_location/Supply.svg");
 }
 
-.card-text-icon.card-text-icon-location-Chaos {
+.card-text-icon.card-text-icon-location-chaos {
     content: url("../images/starting_location/Chaos.svg");
 }
 

@@ -13,9 +13,9 @@ export class Imperial extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             cardNumber: "2FAM1",
-            effectText: "Choose: break through for " + cardEffectReuse.fourSuits +
-                " (you MAY choose an exiled card)\n" +
-                "OR put this card into your history.",
+            effectText: [
+                "Choose: break through for " + cardEffectReuse.fourSuits + " (you MAY choose an exiled card) OR put this card into your history."
+            ],
             victoryPoints: 'conditional',
             victoryPointsString: "8VP if in history, 2VP otherwise"
         });

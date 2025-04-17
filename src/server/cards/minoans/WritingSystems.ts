@@ -5,7 +5,6 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 
 export class WritingSystems extends Card implements ICard {
     constructor() {
@@ -19,7 +18,9 @@ export class WritingSystems extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN12",
-            effectText: cardEffectReuse.writingSystem,
+            effectText: [
+                "Exhaust: put a card from your discard pile into your history to draw a card."
+            ],
         });
     }
 }

@@ -2,7 +2,6 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 
@@ -16,7 +15,9 @@ export class Development extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY3",
-            effectText: cardEffectReuse.development,
+            effectText: [
+                "Choose: develop OR pay 2{material} to acquire {uncivilised}/{civilised}."
+            ],
             developmentCost: {material: 3, population: 1},
             victoryPoints: 2,
         });

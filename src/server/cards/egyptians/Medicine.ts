@@ -19,7 +19,9 @@ export class Medicine extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "EGY8",
-            effectText: "Passive: reduce development costs by 1{population}.",
+            effectText: [
+                "Passive: reduce development costs by 1{population}."
+            ],
             developmentCost: {material: 4, population: 1},
             victoryPoints: 4,
         });

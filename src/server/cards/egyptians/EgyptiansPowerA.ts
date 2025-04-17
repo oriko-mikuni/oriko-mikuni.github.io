@@ -20,9 +20,9 @@ export class EgyptiansPowerA extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "EGY1A",
-            effectText: "Exhaust: choose: spend an action and\n" +
-                "take {unrest} to develop OR pay 1{population} and\n" +
-                "take {unrest} to gain an action.",
+            effectText: [
+                "Exhaust: choose: spend an action and take {unrest} to develop OR pay 1{population} and take {unrest} to gain an action."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "2VP per {civilised}"
         });

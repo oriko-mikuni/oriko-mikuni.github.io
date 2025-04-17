@@ -19,7 +19,10 @@ export class Celtica extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL21",
-            effectText: "You MAY place a card of your choice from your discard pile on the top of your deck. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "You MAY place a card of your choice from your discard pile on the top of your deck.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

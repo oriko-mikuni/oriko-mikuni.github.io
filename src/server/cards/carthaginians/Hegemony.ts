@@ -16,8 +16,10 @@ export class Hegemony extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR5",
-            effectText: "Pay 2{material} to acquire " + CardEffectReuse.fourSuits + ".\n" +
-                "All players MAY draw a card.",
+            effectText: [
+                "Pay 2{material} to acquire " + CardEffectReuse.fourSuits + ".",
+                "All players MAY draw a card."
+            ],
             developmentCost: {material: 3, population: 1},
             victoryPoints: 2,
         });

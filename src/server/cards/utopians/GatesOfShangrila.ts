@@ -16,12 +16,11 @@ export class GatesOfShangrila extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PERMANENT,
             cardNumber: "UTO3A",
-            effectText: "When put into play, flip your state\n" +
-                "card to its {empire} side.\n" +
-                "Exhaust: put a card into your history\n" +
-                "to gain 1{progress}.\n" +
-                "Solstice: choose: pay all your {progress} (minimum 5) to flip this card\n" +
-                "OR draw a card.",
+            effectText: [
+                "When put into play, flip your state card to its {empire} side.",
+                "Exhaust: put a card into your history to gain 1{progress}.",
+                "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR draw a card."
+            ],
         });
     }
 }

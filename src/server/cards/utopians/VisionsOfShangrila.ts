@@ -16,12 +16,10 @@ export class VisionsOfShangrila extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardInPlayType: CardInPlayType.PERMANENT,
             cardNumber: "UTO2A",
-            effectText: "Exhaust: when you return an {unrest},\n" +
-                "exhaust this card and spend an\n" +
-                "action to gain 1{progress}.\n" +
-                "Solstice: choose: pay all your {progress}\n" +
-                "(minimum 5) to flip this card\n" +
-                "OR discard a card, then draw a card.",
+            effectText: [
+                "Exhaust: when you return an {unrest}, exhaust this card and spend an action to gain 1{progress}.",
+                "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR discard a card, then draw a card."
+            ],
         });
     }
 }

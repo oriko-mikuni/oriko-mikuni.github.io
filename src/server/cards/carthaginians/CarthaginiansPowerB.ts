@@ -19,7 +19,9 @@ export class CarthaginiansPowerB extends Card implements ICard {
             nationColour: CardNationColour.CAR,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "CAR1B",
-            effectText: "Passive: when you would place 1{progress} on a card in the market, instead place 2{material}.",
+            effectText: [
+                "Passive: when you would place 1{progress} on a card in the market, instead place 2{material}."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3{material}"
         });

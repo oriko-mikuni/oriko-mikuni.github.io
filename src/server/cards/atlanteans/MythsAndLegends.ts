@@ -15,9 +15,11 @@ export class MythsAndLegends extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL7",
-            effectText: "Sink a {region} in play to look at the top\n" +
-                "2 cards of the {fame} deck.\n" +
-                "Take one of those cards. Gain 1{progress}.",
+            effectText: [
+                "Sink a {region} in play to look at the top 2 cards of the {fame} deck.",
+                "Take one of those cards.",
+                "Gain 1{progress}.",
+            ],
             developmentCost: {progress: 2},
             victoryPoints: 2,
         });

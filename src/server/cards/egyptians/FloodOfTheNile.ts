@@ -12,8 +12,9 @@ export class FloodOfTheNile extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY14",
-            effectText: "Abandon a {river} to choose: gain 5{material}\n" +
-                "OR if {empire} break through for {uncivilised}/{civilised}.",
+            effectText: [
+                "Abandon a {river} to choose: gain 5{material} OR if {empire} break through for {uncivilised}/{civilised}."
+            ],
         });
     }
 }

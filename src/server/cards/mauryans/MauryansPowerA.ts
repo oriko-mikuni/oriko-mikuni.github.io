@@ -20,10 +20,10 @@ export class MauryansPowerA extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "MAU1A",
-            effectText: "Exhaust: When you play a {region}, exhaust\n" +
-                "this card to gain 1{progress}.\n" +
-                "Solstice: you MAY pay 1{material} to return a\n" +
-                "{region} from your discard pile to your hand.",
+            effectText: [
+                "Exhaust: when you play a {region}, exhaust this card to gain 1{progress}.",
+                "Solstice: you MAY pay 1{material} to return a {region} from your discard pile to your hand."
+            ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {region} in play"
         });

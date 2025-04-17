@@ -15,7 +15,9 @@ export class SealStones extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.MIN,
             cardNumber: "MIN9",
-            effectText: cardEffectReuse.unplayable,
+            effectText: [
+                cardEffectReuse.unplayable
+            ],
             developmentCost: {progress: 3, material: 3, population: 1},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {progress}"

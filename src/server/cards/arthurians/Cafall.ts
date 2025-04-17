@@ -12,10 +12,10 @@ export class Cafall extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.ART,
             cardNumber: "ART25",
-            effectText: "Free play. " +
-                "Draw 2 cards and return a\n" +
-                "card to the top of your deck.\n" +
-                "You MAY exile [Twrch Trwyth] if it is in play or it is the active quest.",
+            effectText: [
+                "Free play. Draw 2 cards and return a card to the top of your deck.",
+                "You MAY exile [Twrch Trwyth] if it is in play or it is the active quest."
+            ]
         });
     }
 }

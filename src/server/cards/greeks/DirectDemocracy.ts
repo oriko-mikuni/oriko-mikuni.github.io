@@ -19,9 +19,10 @@ export class DirectDemocracy extends Card implements ICard {
             nationColour: CardNationColour.GRE,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "GRE8",
-            effectText: "Passive: reduce the cost in {material} or cards\n" +
-                "to play an {unrest} by 1 (to a minimum of 1).\n" +
-                "Exhaust: free play an {unrest}.",
+            effectText: [
+                "Passive: reduce the cost in {material} or cards to play an {unrest} by 1 (to a minimum of 1).",
+                "Exhaust: free play an {unrest}."
+            ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 3,
         });

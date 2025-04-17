@@ -16,8 +16,10 @@ export class EmperorTrajan extends Card implements ICard {
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM8",
-            effectText: "Acquire " + cardEffectReuse.fourSuits + ".\n" +
-                cardEffectReuse.selfHistory,
+            effectText: [
+                "Acquire " + cardEffectReuse.fourSuits + ".",
+                cardEffectReuse.selfHistory
+            ],
             developmentCost: {material: 2, population: 1},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3{population}"

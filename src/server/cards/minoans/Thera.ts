@@ -20,7 +20,10 @@ export class Thera extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MIN17",
-            effectText: "Gain 1{progress}. " + cardEffectReuse.garrisonACard,
+            effectText: [
+                "Gain 1{progress}.",
+                cardEffectReuse.garrisonACard
+            ],
         });
     }
 }

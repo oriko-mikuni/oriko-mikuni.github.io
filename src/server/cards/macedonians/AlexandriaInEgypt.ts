@@ -21,7 +21,9 @@ export class AlexandriaInEgypt extends Card implements ICard {
             nationColour: CardNationColour.MAC,
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAC8",
-            effectText: cardEffectReuse.metropolis,
+            effectText: [
+                cardEffectReuse.metropolis
+            ],
             developmentCost: {material: 4, population: 1},
             victoryPoints: 2,
         });

@@ -1,5 +1,5 @@
-import React, {useReducer, useState} from "react";
-import {allCards} from '../cards/ClientCardsManifest.ts';
+import React, {useReducer} from "react";
+import {allCards, allVictoryPoints} from '../cards/ClientCardsManifest.ts';
 import CardGroup from "./CardGroup.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import pageTitle from "./PageTitle.tsx";
@@ -9,111 +9,96 @@ import {CardTypeIcon} from "../../common/cards/CardTypeIcon.ts";
 import CardTypeIconDisplay from "./card/CardTypeIconDisplay.tsx";
 import {CardporiumDisplayState} from "./cardporiumState/GroupingDisplayState.tsx";
 import {
-    CardporiumFilterStateTuple, passHeader, passStateSymbol,
-    passSuit, passTextFilter,
-    passTypeIcon
+    CardporiumFilter
 } from "./cardporiumState/ElementFilterState.tsx";
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon.ts";
 import CardHeaderIconDisplay from "./card/CardHeaderIconDisplay.tsx";
 import {CardStateSymbol} from "../../common/cards/CardStateSymbol.ts";
 import CardStateSymbolDisplay from "./card/CardStateSymbolDisplay.tsx";
+import {TextFilter} from "./cardporiumState/TextFilterState.tsx";
+import {ClientCard} from "../../common/cards/ClientCard.ts";
+import {useTranslation} from "react-i18next";
+import CardVictoryPointIcon from "./card/CardVictoryPointIcon.tsx";
 
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
     const displaySetting: CardporiumDisplayState = new CardporiumDisplayState(allCards());
     const [state, dispatch] = useReducer(CardporiumDisplayState.reducer, displaySetting);
-    const suitStateTuple = new CardporiumFilterStateTuple<CardSuitIcon>(Object.values(CardSuitIcon));
-    const typeIconStateTuple = new CardporiumFilterStateTuple<CardTypeIcon>(Object.values(CardTypeIcon));
-    const headerIconStateTuple = new CardporiumFilterStateTuple<CardHeaderIcon>(Object.values(CardHeaderIcon));
-    const stateSymbolStateTuple = new CardporiumFilterStateTuple<CardStateSymbol>(Object.values(CardStateSymbol));
-    const [searchText, setSearchText] = useState("");
-    const [isSearchTitle, setIsSearchTitle] = useState(true);
-    const [isSearchEffect, setIsSearchEffect] = useState(true);
-    const [isSearchVictory, setIsSearchVictory] = useState(true);
+    const suitFilter = new CardporiumFilter(Object.values(CardSuitIcon));
+    const typeFilter = new CardporiumFilter(Object.values(CardTypeIcon));
+    const headerFilter = new CardporiumFilter(Object.values(CardHeaderIcon));
+    const stateFilter = new CardporiumFilter(Object.values(CardStateSymbol));
+    const victoryFilter = new CardporiumFilter(allVictoryPoints());
+    const textFilter = new TextFilter();
+
+    const filters: Array<(cards: Array<ClientCard>) => Array<ClientCard>> = [
+        cards => suitFilter.state.filterAnyProps(cards, card => card.suit),
+        cards => typeFilter.state.filterAnyProps(cards, card => card.typeIcon),
+        cards => stateFilter.state.filterAnyProps(cards, card => card.stateSymbol),
+        cards => headerFilter.state.filterOneProp(cards, card => card.headerIcon),
+        cards => victoryFilter.state.filterOneProp(cards, card => card.victoryPoints === undefined ? undefined : card.victoryPoints.toString())
+    ]
 
     const cardModuleElements: Array<React.JSX.Element> = [];
     for (const groupState of state.groupDisplays.values()) {
         cardModuleElements.push(
             <CardGroup
-                groupName={groupState.groupName}
-                cards={groupState.cards.filter(card => {
-                    let result: boolean = true;
-                    if (!passSuit(card, suitStateTuple.state)) result = false;
-                    if (!passTypeIcon(card, typeIconStateTuple.state)) result = false;
-                    if (!passHeader(card, headerIconStateTuple.state)) result = false;
-                    if (!passStateSymbol(card, stateSymbolStateTuple.state)) result = false;
-                    if (!passTextFilter(card, searchText, isSearchTitle, isSearchEffect, isSearchVictory)) result = false;
-                    return result;
-                })}
-                display={groupState.display}
-                onToggleOn={() => dispatch(CardporiumDisplayState.toggle(true, groupState.groupName))}
-                onToggleOff={() => dispatch(CardporiumDisplayState.toggle(false, groupState.groupName))}
+                groupState = {groupState}
+                iconFilters = {filters}
+                textFilter = {(cards, translation) => textFilter.state.filterText(cards, translation)}
+                onToggleOn = {() => dispatch(CardporiumDisplayState.toggle(true, groupState.groupName))}
+                onToggleOff = {() => dispatch(CardporiumDisplayState.toggle(false, groupState.groupName))}
                 key={groupState.groupName}
             />
         )
     }
 
     const suitFilterButtons: Array<React.JSX.Element> =
-        suitStateTuple.filterButtons(({elem}: {elem?: CardSuitIcon}) =>
-            <CardSuitIconDisplay suit={elem} />
-        );
+        suitFilter.filterButtons(({elem}: {elem?: string}) => {
+            const suit: CardSuitIcon | undefined = Object.values(CardSuitIcon).find(value => value === elem);
+            return suit === undefined ? <CardSuitIconDisplay/> : <CardSuitIconDisplay suit={suit}/>;
+        });
     const typeIconFilterButtons: Array<React.JSX.Element> =
-        typeIconStateTuple.filterButtons(({elem}: {elem?: CardTypeIcon}) =>
-            <CardTypeIconDisplay type={elem} />
-        );
+        typeFilter.filterButtons(({elem}: {elem?: string}) => {
+            const typeIcon: CardTypeIcon | undefined = Object.values(CardTypeIcon).find(value => value === elem);
+            return typeIcon === undefined ? <CardTypeIconDisplay/> : <CardTypeIconDisplay type={typeIcon}/>;
+        });
     const headerIconFilterButtons: Array<React.JSX.Element> =
-        headerIconStateTuple.filterButtons(({elem}: {elem?: CardHeaderIcon}) =>
-            <CardHeaderIconDisplay headerIcon={elem} />
-        );
+        headerFilter.filterButtons(({elem}: {elem?: string}) => {
+            const headerIcon: CardHeaderIcon | undefined = Object.values(CardHeaderIcon).find(value => value === elem);
+            return headerIcon === undefined ? <CardHeaderIconDisplay/> : <CardHeaderIconDisplay headerIcon={headerIcon}/>
+        });
     const stateSymbolFilterButtons: Array<React.JSX.Element> =
-        stateSymbolStateTuple.filterButtons(({elem}: {elem?: CardStateSymbol}) =>
-            <CardStateSymbolDisplay state={elem} />
-        );
+        stateFilter.filterButtons(({elem}: {elem?: string}) => {
+            const stateSymbol: CardStateSymbol | undefined = Object.values(CardStateSymbol).find(value => value === elem);
+            return stateSymbol === undefined ? <CardStateSymbolDisplay/> : <CardStateSymbolDisplay state={stateSymbol}/>
+        });
+    const victoryPointFilterButtons: Array<React.JSX.Element> =
+        victoryFilter.filterButtons(({elem}: {elem?: string}) => {
+            if (elem === undefined) return <CardVictoryPointIcon/>;
+            if (elem === 'conditional') return <CardVictoryPointIcon victoryPoints={elem}/>;
+            if (elem === 'variable') return <CardVictoryPointIcon victoryPoints={elem}/>;
+            if (elem === 'negativeConditional') return <CardVictoryPointIcon victoryPoints={elem}/>;
+            const maybeNumber: number = Number.parseInt(elem);
+            if (Number.isNaN(maybeNumber)) return <CardVictoryPointIcon/>;
+            return <CardVictoryPointIcon victoryPoints={maybeNumber}/>;
+        })
 
+    const {t} = useTranslation("ui", {keyPrefix: "ImperiumCardporium"});
     return <span>
-        <button onClick={() => navigate("/")}>&lt;-- back</button> <br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'> feedback </a>
-        <h1 className="centerAlign">Imperium Cardporium</h1>
-        <h2 className="centerAlign">
-            Toggle:
-            <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>
-                collapse all
-            </button>
-            <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>
-                expand all
-            </button>
-        </h2>
-        <h2 className="centerAlign">Filter Suits: {suitFilterButtons}</h2>
-        <h2 className="centerAlign">Filter Types: {typeIconFilterButtons}</h2>
-        <h2 className="centerAlign">Filter Header: {headerIconFilterButtons}</h2>
-        <h2 className="centerAlign">Filter State: {stateSymbolFilterButtons}</h2>
-        <h2 className="centerAlign">
-            Filter text:
-            <input
-                type="text"
-                value={searchText}
-                onChange={text => setSearchText(text.target.value)}
-                placeholder="Filter text"
-            />
-            <span>title:</span>
-            <input
-                type="checkbox"
-                checked={isSearchTitle}
-                onChange={check => setIsSearchTitle(check.target.checked)}
-            />
-            <span>effect:</span>
-            <input
-                type="checkbox"
-                checked={isSearchEffect}
-                onChange={check => setIsSearchEffect(check.target.checked)}
-            />
-            <span>victory:</span>
-            <input
-                type="checkbox"
-                checked={isSearchVictory}
-                onChange={check => setIsSearchVictory(check.target.checked)}
-            />
+        <button onClick={() => navigate("/")}>{t("backToHomepage")}</button> <br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{t("toFeedback")}</a>
+        <h1 className="centerAlign">{t("cardporiumHeader")}</h1>
+        <h2 className="centerAlign">{t("filter") + " " + t("Suit")}: {suitFilterButtons}</h2>
+        <h2 className="centerAlign">{t("filter") + " " + t("TypeIcon")}: {typeIconFilterButtons}</h2>
+        <h2 className="centerAlign">{t("filter") + " " + t("HeaderIcon")}: {headerIconFilterButtons}</h2>
+        <h2 className="centerAlign">{t("filter") + " " + t("StateIcon")}: {stateSymbolFilterButtons}</h2>
+        <h2 className="centerAlign">{t("filter") + " " + t("VictoryPoint")}: {victoryPointFilterButtons}</h2>
+        <h2 className="centerAlign">{t("filter") + " " + t("text")}: {textFilter.filterComponent(t)}</h2>
+        <h2 style={{textAlign: "left"}}>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>{t("collapse all")}</button>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>{t("expand all")}</button>
         </h2>
         {cardModuleElements}
     </span>;
