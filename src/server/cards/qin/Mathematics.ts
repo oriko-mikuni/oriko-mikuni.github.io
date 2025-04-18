@@ -6,7 +6,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Mathematics extends Card implements ICard {
     constructor() {
@@ -21,7 +21,7 @@ export class Mathematics extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "QIN7",
             effectText: [
-                cardEffectReuse.increaseHandSize1,
+                CardEffectReuse.increaseHandSize1,
                 "Your [Advance] cards lose the {barbarian} icon."
             ],
             developmentCost: {material: 3, population: 2},

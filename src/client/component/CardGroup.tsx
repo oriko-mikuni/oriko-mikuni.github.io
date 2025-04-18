@@ -5,21 +5,17 @@ import "./card/styles/CardBox.css";
 import "./CardGroup.css"
 import {useTranslation} from "react-i18next";
 import {CardGroupDisplayState} from "./cardporiumState/GroupingDisplayState.tsx";
-import {TextTranslation} from "./cardporiumState/TextFilterState.tsx";
 
 function CardGroup(
     {groupState, iconFilters, textFilter, onToggleOn, onToggleOff}:
     {
         groupState: CardGroupDisplayState,
         iconFilters: Array<(arg0: Array<ClientCard>) => Array<ClientCard>>,
-        textFilter: (arg0: Array<ClientCard>, translation: TextTranslation) => Array<ClientCard>
+        textFilter: (arg0: Array<ClientCard>) => Array<ClientCard>,
         onToggleOn: () => void,
         onToggleOff: () => void}
 ): React.JSX.Element {
     const {t: moduleTranslation} = useTranslation("moduleName");
-    const {t: nameTranslation} = useTranslation("cardName");
-    const {t: effectTranslation} = useTranslation("cardEffect");
-    const {t: victoryTranslation} = useTranslation("victoryText");
     const {t: cardGroupUITranslation} = useTranslation("ui", {keyPrefix: "CardGroup"});
 
     const filteredCards: Array<ClientCard> = iconFilters.reduce(
@@ -28,12 +24,7 @@ function CardGroup(
             filter: (arg0: Array<ClientCard>) => Array<ClientCard>
         ): Array<ClientCard> =>
             filter(cardList)
-        , textFilter(groupState.cards,
-            {
-                nameTranslation: nameTranslation,
-                effectTranslation: effectTranslation,
-                victoryTranslation: victoryTranslation
-            })
+        , textFilter(groupState.cards)
     )
 
     const cardElements: React.JSX.Element | null = (!groupState.display || filteredCards.length === 0) ? null :

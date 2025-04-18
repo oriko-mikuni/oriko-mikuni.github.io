@@ -4,7 +4,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import CardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 
 export class CarthaginiansElephants0 extends Card implements ICard {

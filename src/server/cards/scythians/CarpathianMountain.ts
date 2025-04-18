@@ -6,7 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class CarpathianMountain extends Card implements ICard {
     constructor() {
@@ -21,7 +21,7 @@ export class CarpathianMountain extends Card implements ICard {
             cardNumber: "SCY18",
             effectText: [
                 "Gain 1{population}.",
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

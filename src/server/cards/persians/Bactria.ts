@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Bactria extends Card implements ICard {
     constructor() {
@@ -20,7 +20,7 @@ export class Bactria extends Card implements ICard {
             cardNumber: "PER19",
             effectText: [
                 "Gain 3{material}.",
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Unrest3 extends Card implements ICard {
     constructor() {
@@ -17,8 +17,8 @@ export class Unrest3 extends Card implements ICard {
             nationColour: CardNationColour.ART,
             cardNumber: "ART29",
             effectText: [
-                cardEffectReuse.setupUnrestL + "Arthurians" + cardEffectReuse.setupUnrestR,
-                cardEffectReuse.unrest
+                CardEffectReuse.setupUnrestL + "Arthurians" + CardEffectReuse.setupUnrestR,
+                CardEffectReuse.unrest
             ],
             playerCount: 4,
             victoryPoints: -2,

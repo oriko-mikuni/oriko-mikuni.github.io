@@ -15,7 +15,7 @@ import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon.ts";
 import CardHeaderIconDisplay from "./card/CardHeaderIconDisplay.tsx";
 import {CardStateSymbol} from "../../common/cards/CardStateSymbol.ts";
 import CardStateSymbolDisplay from "./card/CardStateSymbolDisplay.tsx";
-import {TextFilter} from "./cardporiumState/TextFilterState.tsx";
+import {TextFilter, TextTranslationGroup} from "./cardporiumState/TextFilterState.tsx";
 import {ClientCard} from "../../common/cards/ClientCard.ts";
 import {useTranslation} from "react-i18next";
 import CardVictoryPointIcon from "./card/CardVictoryPointIcon.tsx";
@@ -32,6 +32,16 @@ function ImperiumCardporium(): React.JSX.Element {
     const victoryFilter = new CardporiumFilter(allVictoryPoints());
     const textFilter = new TextFilter();
 
+    const {t: uiTranslation} = useTranslation("ui", {keyPrefix: "ImperiumCardporium"});
+    const {t: nameTranslation} = useTranslation("cardName");
+    const {t: effectTranslation} = useTranslation("cardEffect");
+    const {t: victoryTranslation} = useTranslation("victoryText");
+    const translation: TextTranslationGroup = {
+        nameTranslation,
+        effectTranslation,
+        victoryTranslation
+    };
+
     const filters: Array<(cards: Array<ClientCard>) => Array<ClientCard>> = [
         cards => suitFilter.state.filterAnyProps(cards, card => card.suit),
         cards => typeFilter.state.filterAnyProps(cards, card => card.typeIcon),
@@ -40,19 +50,25 @@ function ImperiumCardporium(): React.JSX.Element {
         cards => victoryFilter.state.filterOneProp(cards, card => card.victoryPoints === undefined ? undefined : card.victoryPoints.toString())
     ]
 
-    const cardModuleElements: Array<React.JSX.Element> = [];
+    const cardModuleElements: Array<{elem: React.JSX.Element, visibleNum: number}> = [];
     for (const groupState of state.groupDisplays.values()) {
         cardModuleElements.push(
-            <CardGroup
-                groupState = {groupState}
-                iconFilters = {filters}
-                textFilter = {(cards, translation) => textFilter.state.filterText(cards, translation)}
-                onToggleOn = {() => dispatch(CardporiumDisplayState.toggle(true, groupState.groupName))}
-                onToggleOff = {() => dispatch(CardporiumDisplayState.toggle(false, groupState.groupName))}
-                key={groupState.groupName}
-            />
+            {
+                elem:
+                    <CardGroup
+                        groupState={groupState}
+                        iconFilters={filters}
+                        textFilter={(cards) => textFilter.state.filterText(cards, translation)}
+                        onToggleOn={() => dispatch(CardporiumDisplayState.toggle(true, groupState.groupName))}
+                        onToggleOff={() => dispatch(CardporiumDisplayState.toggle(false, groupState.groupName))}
+                        key={groupState.groupName}
+                    />,
+                visibleNum: textFilter.state.filterText(groupState.cards, translation).length
+            }
         )
     }
+    cardModuleElements.sort((a, b) =>
+        a.visibleNum > 0 && b.visibleNum > 0 ? 0 : b.visibleNum - a.visibleNum);
 
     const suitFilterButtons: Array<React.JSX.Element> =
         suitFilter.filterButtons(({elem}: {elem?: string}) => {
@@ -85,22 +101,25 @@ function ImperiumCardporium(): React.JSX.Element {
             return <CardVictoryPointIcon victoryPoints={maybeNumber}/>;
         })
 
-    const {t} = useTranslation("ui", {keyPrefix: "ImperiumCardporium"});
     return <span>
-        <button onClick={() => navigate("/")}>{t("backToHomepage")}</button> <br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{t("toFeedback")}</a>
-        <h1 className="centerAlign">{t("cardporiumHeader")}</h1>
-        <h2 className="centerAlign">{t("filter") + " " + t("Suit")}: {suitFilterButtons}</h2>
-        <h2 className="centerAlign">{t("filter") + " " + t("TypeIcon")}: {typeIconFilterButtons}</h2>
-        <h2 className="centerAlign">{t("filter") + " " + t("HeaderIcon")}: {headerIconFilterButtons}</h2>
-        <h2 className="centerAlign">{t("filter") + " " + t("StateIcon")}: {stateSymbolFilterButtons}</h2>
-        <h2 className="centerAlign">{t("filter") + " " + t("VictoryPoint")}: {victoryPointFilterButtons}</h2>
-        <h2 className="centerAlign">{t("filter") + " " + t("text")}: {textFilter.filterComponent(t)}</h2>
+        <button onClick={() => navigate("/")}>{uiTranslation("backToHomepage")}</button> <br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{uiTranslation("toFeedback")}</a>
+        <h1 className="centerAlign">{uiTranslation("cardporiumHeader")}</h1>
+        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("Suit")}: {suitFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("TypeIcon")}: {typeIconFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("HeaderIcon")}: {headerIconFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("StateIcon")}: {stateSymbolFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("VictoryPoint")}: {victoryPointFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("text")}: {textFilter.filterComponent(uiTranslation)}</h2>
         <h2 style={{textAlign: "left"}}>
-            <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>{t("collapse all")}</button>
-            <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>{t("expand all")}</button>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>{uiTranslation("collapse all")}</button>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>{uiTranslation("expand all")}</button>
         </h2>
-        {cardModuleElements}
+        {cardModuleElements.map(elem => elem.elem)}
+        <h2 style={{textAlign: "left"}}>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>{uiTranslation("collapse all")}</button>
+            <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>{uiTranslation("expand all")}</button>
+        </h2>
     </span>;
 }
 

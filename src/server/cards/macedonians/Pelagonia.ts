@@ -6,7 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Pelagonia extends Card implements ICard {
     constructor() {
@@ -21,7 +21,7 @@ export class Pelagonia extends Card implements ICard {
             cardNumber: "MAC20",
             effectText: [
                 "Gain 1{population}.",
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

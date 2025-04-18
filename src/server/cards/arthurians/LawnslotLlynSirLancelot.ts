@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class LawnslotLlynSirLancelot extends Card implements ICard {
     constructor() {
@@ -18,8 +18,8 @@ export class LawnslotLlynSirLancelot extends Card implements ICard {
             cardNumber: "ART4",
             effectText: [
                 "Find [Guennuvar] and put it into your history.",
-                cardEffectReuse.takeTopFame,
-                cardEffectReuse.selfExile
+                CardEffectReuse.takeTopFame,
+                CardEffectReuse.selfExile
             ],
             victoryPoints: 2,
         });

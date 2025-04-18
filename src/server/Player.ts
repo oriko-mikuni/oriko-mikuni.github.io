@@ -2,6 +2,7 @@ import {CardSuitIcon} from "../common/cards/CardSuitIcon";
 import {ICard} from "./cards/ICard";
 import {CardName} from "../common/cards/CardName";
 import {Game} from "./Game";
+import {CardTypeIcon} from "../common/cards/CardTypeIcon";
 
 export enum Location {
     STATE = "location:state",
@@ -109,6 +110,13 @@ export class Player {
         return cards.reduce(
             (count: number, card: LocatedCard): number =>
                 count + card.card.suit.filter(suit1 => suit1 === suit).length,
+            0);
+    }
+
+    public static countType(type: CardTypeIcon, cards: Array<LocatedCard>) {
+        return cards.reduce(
+            (count: number, card: LocatedCard): number =>
+                count + card.card.typeIcon.filter(type1 => type1 === type).length,
             0);
     }
 

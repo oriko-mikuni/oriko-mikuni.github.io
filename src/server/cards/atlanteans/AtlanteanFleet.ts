@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class AtlanteanFleet extends Card implements ICard {
     constructor() {
@@ -18,7 +18,7 @@ export class AtlanteanFleet extends Card implements ICard {
             cardNumber: "ATL20",
             effectText: [
                 "Free play. Choose: sink a card from your discard pile and steal 1{progress} from each player " +
-                "OR break through for " + cardEffectReuse.fourSuits + " and sink this card."
+                "OR break through for " + CardEffectReuse.fourSuits + " and sink this card."
             ],
         });
     }

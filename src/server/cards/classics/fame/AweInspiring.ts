@@ -1,9 +1,9 @@
-import {Card} from "../Card";
-import {ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {Card} from "../../Card";
+import {ICard} from "../../ICard";
+import {CardName} from "../../../../common/cards/CardName";
+import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
+import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
+import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
 
 export class AweInspiring extends Card implements ICard {
     constructor() {
@@ -15,7 +15,7 @@ export class AweInspiring extends Card implements ICard {
             headerIcon: CardHeaderIcon.PINNED,
             cardNumber: "1FAM8",
             effectText: [
-                cardEffectReuse.increaseHandSize1
+                CardEffectReuse.increaseHandSize1
             ],
             victoryPoints: 7,
         });

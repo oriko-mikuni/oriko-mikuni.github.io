@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Flood2 extends Card implements ICard {
     constructor() {
@@ -15,7 +15,7 @@ export class Flood2 extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL14",
             effectText: [
-                "Sink this card and a {region} in play to acquire " + cardEffectReuse.fourSuits + "."
+                "Sink this card and a {region} in play to acquire " + CardEffectReuse.fourSuits + "."
             ],
         });
     }

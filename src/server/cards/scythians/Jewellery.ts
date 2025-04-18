@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Jewellery extends Card implements ICard {
     constructor() {
@@ -16,8 +16,8 @@ export class Jewellery extends Card implements ICard {
             nationColour: CardNationColour.SCY,
             cardNumber: "SCY6",
             effectText: [
-                cardEffectReuse.unplayable,
-                cardEffectReuse.cannotGarrison
+                CardEffectReuse.unplayable,
+                CardEffectReuse.cannotGarrison
             ],
             developmentCost: {material: 7},
             victoryPoints: 7,

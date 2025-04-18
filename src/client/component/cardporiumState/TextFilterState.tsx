@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 import { TFunction } from "i18next";
 
-export type TextTranslation = {
+export type TextTranslationGroup = {
     nameTranslation?: TFunction<"cardName", undefined>,
     effectTranslation?: TFunction<"cardEffect", undefined>,
     victoryTranslation?: TFunction<"cardVictoryText", undefined>
@@ -43,7 +43,7 @@ export class TextFilterState {
 
     public filterText(
         cardList: Array<ClientCard>,
-        translation: TextTranslation,
+        translation: TextTranslationGroup,
     ): Array<ClientCard> {
         const simplifiedSearchText = simplifyText(this.searchText);
         if (!simplifiedSearchText)

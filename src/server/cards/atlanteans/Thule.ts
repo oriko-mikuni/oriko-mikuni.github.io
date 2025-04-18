@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 
 export class Thule extends Card implements ICard {
@@ -22,7 +22,7 @@ export class Thule extends Card implements ICard {
             effectText: [
                 "Gain 1{population}.",
                 "Exile a card from the market.",
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

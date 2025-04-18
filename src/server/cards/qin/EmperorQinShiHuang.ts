@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class EmperorQinShiHuang extends Card implements ICard {
     constructor() {
@@ -18,8 +18,8 @@ export class EmperorQinShiHuang extends Card implements ICard {
             cardNumber: "QIN6",
             effectText: [
                 "Cannot be played unless [Mandate of Heaven] is in play and [King Wu of Qin] is in your history.",
-                "Free play. " + cardEffectReuse.drawTopFame,
-                cardEffectReuse.selfHistory
+                "Free play. " + CardEffectReuse.drawTopFame,
+                CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 3, population: 2},
         });

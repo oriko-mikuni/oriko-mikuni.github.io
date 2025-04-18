@@ -7,7 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Hesperides extends Card implements ICard {
     constructor() {
@@ -23,7 +23,7 @@ export class Hesperides extends Card implements ICard {
             effectText: [
                 "Gain 1{material}.",
                 "Exile a card from the market.",
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ]
         });
     }

@@ -1,7 +1,7 @@
-import {Card} from "../Card";
-import {ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {Card} from "../../Card";
+import {ICard} from "../../ICard";
+import {CardName} from "../../../../common/cards/CardName";
+import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 
 export class Marvellous extends Card implements ICard {
     constructor() {

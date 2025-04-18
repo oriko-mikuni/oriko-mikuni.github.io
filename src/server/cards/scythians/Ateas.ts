@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Ateas extends Card implements ICard {
     constructor() {
@@ -19,7 +19,7 @@ export class Ateas extends Card implements ICard {
             effectText: [
                 "You MAY acquire {region}.",
                 "You MAY return an {unrest}.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
             developmentCost: {population: 4},
             victoryPoints: 3,

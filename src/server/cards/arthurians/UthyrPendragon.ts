@@ -2,7 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class UthyrPendragon extends Card implements ICard {
     constructor() {
@@ -15,7 +15,7 @@ export class UthyrPendragon extends Card implements ICard {
             cardNumber: "ART20",
             effectText:[
                 "Break through for {uncivilised}.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
         });
     }

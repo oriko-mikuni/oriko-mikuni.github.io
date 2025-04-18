@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class RolloTheWalker extends Card implements ICard {
     constructor() {
@@ -17,8 +17,8 @@ export class RolloTheWalker extends Card implements ICard {
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK12",
             effectText: [
-                cardEffectReuse.takeTopFame,
-                cardEffectReuse.selfExile
+                CardEffectReuse.takeTopFame,
+                CardEffectReuse.selfExile
             ],
         });
     }

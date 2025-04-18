@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class GwalchmeiSirGawain extends Card implements ICard {
     constructor() {
@@ -18,7 +18,7 @@ export class GwalchmeiSirGawain extends Card implements ICard {
             cardNumber: "ART14",
             effectText: [
                 "Take {unrest} to gain 1{progress} per garrisoned {knight}.",
-                cardEffectReuse.knightGarrison
+                CardEffectReuse.knightGarrison
             ]
         });
     }

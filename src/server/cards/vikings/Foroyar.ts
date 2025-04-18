@@ -7,7 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Foroyar extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class Foroyar extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK6",
             effectText: [
-                cardEffectReuse.garrisonACard,
+                CardEffectReuse.garrisonACard,
                 "Choose: exile a card from the market OR gain 1{population}."
             ],
         });

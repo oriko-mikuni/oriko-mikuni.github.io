@@ -1,8 +1,8 @@
-import {Card} from "../Card";
-import {GetVPParameter, ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {Location} from "../../Player";
+import {Card} from "../../Card";
+import {GetVPParameter, ICard} from "../../ICard";
+import {CardName} from "../../../../common/cards/CardName";
+import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
+import {Location} from "../../../Player";
 
 export class Great extends Card implements ICard {
     constructor() {

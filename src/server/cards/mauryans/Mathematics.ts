@@ -8,7 +8,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Location} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Mathematics extends Card implements ICard {
     constructor() {
@@ -23,7 +23,7 @@ export class Mathematics extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "MAU3",
             effectText: [
-                cardEffectReuse.increaseHandSize1,
+                CardEffectReuse.increaseHandSize1,
                 "Your [Advance] cards lose the {barbarian} icon."
             ],
             developmentCost: {material: 4, population: 1},

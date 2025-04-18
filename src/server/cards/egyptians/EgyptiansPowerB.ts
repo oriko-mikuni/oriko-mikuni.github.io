@@ -7,7 +7,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Player} from "../../Player";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class EgyptiansPowerB extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class EgyptiansPowerB extends Card implements ICard {
             cardInPlayType: CardInPlayType.POWER,
             cardNumber: "EGY1B",
             effectText: [
-                cardEffectReuse.increaseHandSize1
+                CardEffectReuse.increaseHandSize1
             ],
             victoryPoints: 'variable',
             victoryPointsString: "3VP per {civilised}"

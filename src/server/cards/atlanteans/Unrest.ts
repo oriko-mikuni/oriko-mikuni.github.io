@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Unrest extends Card implements ICard {
     constructor() {
@@ -15,7 +15,7 @@ export class Unrest extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL19",
             effectText: [
-                cardEffectReuse.unrest
+                CardEffectReuse.unrest
             ],
             victoryPoints: -2,
         });

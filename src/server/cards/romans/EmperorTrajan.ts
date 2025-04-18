@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class EmperorTrajan extends Card implements ICard {
     constructor() {
@@ -17,8 +17,8 @@ export class EmperorTrajan extends Card implements ICard {
             nationColour: CardNationColour.ROM,
             cardNumber: "ROM8",
             effectText: [
-                "Acquire " + cardEffectReuse.fourSuits + ".",
-                cardEffectReuse.selfHistory
+                "Acquire " + CardEffectReuse.fourSuits + ".",
+                CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 2, population: 1},
             victoryPoints: 'variable',

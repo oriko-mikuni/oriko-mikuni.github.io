@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Bedwyr extends Card implements ICard {
     constructor() {
@@ -18,7 +18,7 @@ export class Bedwyr extends Card implements ICard {
             cardNumber: "ART9",
             effectText: [
                 "You MAY return [Excalibur] from your discard pile to the top of your deck.",
-                cardEffectReuse.knightGarrison
+                CardEffectReuse.knightGarrison
             ],
         });
     }

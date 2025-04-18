@@ -2,7 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {effectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
+import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
 
 export class Prosperity1 extends Card implements ICard {
     constructor() {
@@ -13,7 +13,7 @@ export class Prosperity1 extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR15",
-            effectText: effectReuseMultipleSentences.prosperity
+            effectText: EffectReuseMultipleSentences.prosperity
         });
     }
 }

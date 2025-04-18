@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class JuliusCaesar extends Card implements ICard {
     constructor() {
@@ -18,7 +18,7 @@ export class JuliusCaesar extends Card implements ICard {
             cardNumber: "ROM2",
             effectText: [
                 "Free play. Choose: draw 2 cards, OR you MAY acquire {region}/{tributary}.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
         });
     }

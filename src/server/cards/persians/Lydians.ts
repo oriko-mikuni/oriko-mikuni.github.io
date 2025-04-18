@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Lydians extends Card implements ICard {
     constructor() {
@@ -17,7 +17,7 @@ export class Lydians extends Card implements ICard {
             cardNumber: "PER21",
             effectText: [
                 "Gain 2{population}.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
         });
     }

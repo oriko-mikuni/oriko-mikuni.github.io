@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class RamessesII extends Card implements ICard {
     constructor() {
@@ -17,8 +17,8 @@ export class RamessesII extends Card implements ICard {
             nationColour: CardNationColour.EGY,
             cardNumber: "EGY6",
             effectText: [
-                "Free play. Acquire " + cardEffectReuse.fourSuits + ".",
-                cardEffectReuse.selfHistory
+                "Free play. Acquire " + CardEffectReuse.fourSuits + ".",
+                CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 4,

@@ -16,8 +16,7 @@ export class CattleRaid extends Card implements ICard {
             nationColour: CardNationColour.CEL,
             cardNumber: "CEL19",
             effectText: [
-                "Gain 2{material}.",
-                "Steal 1{material} from each player with at least one {region} in play.",
+                "Gain 2{material}. Steal 1{material} from each player with at least one {region} in play.",
                 "Steal 1{progress} from each {empire} player."
             ],
         });

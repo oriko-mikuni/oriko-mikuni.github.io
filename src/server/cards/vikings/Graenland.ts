@@ -7,7 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Graenland extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class Graenland extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK5",
             effectText: [
-                cardEffectReuse.garrisonACard,
+                CardEffectReuse.garrisonACard,
                 "Choose: gain 1{population} OR look at the top card of your nation deck, then you MAY shuffle the nation deck."
             ],
         });

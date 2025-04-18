@@ -1,9 +1,9 @@
-import {Card} from "../Card";
-import {GetVPParameter, ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {Location} from "../../Player";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {Card} from "../../Card";
+import {GetVPParameter, ICard} from "../../ICard";
+import {CardName} from "../../../../common/cards/CardName";
+import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
+import {Location} from "../../../Player";
+import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
 
 export class Praiseworthy extends Card implements ICard {
     constructor() {
@@ -14,7 +14,7 @@ export class Praiseworthy extends Card implements ICard {
             typeIcon: [],
             cardNumber: "1FAM1",
             effectText: [
-                "Choose: put this card into your history OR break through for " + cardEffectReuse.fourSuits + "."
+                "Choose: put this card into your history OR break through for " + CardEffectReuse.fourSuits + "."
             ],
             victoryPoints: 'conditional',
             victoryPointsString: "7VP if in history, 3VP otherwise"

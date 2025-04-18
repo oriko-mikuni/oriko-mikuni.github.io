@@ -1,9 +1,9 @@
-import {Card} from "../Card";
-import {GetVPParameter, ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
-import {Player} from "../../Player";
+import {Card} from "../../Card";
+import {GetVPParameter, ICard} from "../../ICard";
+import {CardName} from "../../../../common/cards/CardName";
+import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
+import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
+import {Player} from "../../../Player";
 
 export class Notorious extends Card implements ICard {
     constructor() {

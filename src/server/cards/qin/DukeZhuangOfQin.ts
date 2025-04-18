@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class DukeZhuangOfQin extends Card implements ICard {
     constructor() {
@@ -17,7 +17,7 @@ export class DukeZhuangOfQin extends Card implements ICard {
             effectText: [
                 "Cannot be played unless [Mandate of Heaven] is in play.",
                 "Return up to 2 {unrest} from your hand or discard pile. Break through for {region}/{tributary}.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
         });
     }

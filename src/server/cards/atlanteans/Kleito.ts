@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Kleito extends Card implements ICard {
     constructor() {
@@ -17,9 +17,9 @@ export class Kleito extends Card implements ICard {
             nationColour: CardNationColour.ATL,
             cardNumber: "ATL9",
             effectText: [
-                "Choose: acquire " + cardEffectReuse.fourSuits +
+                "Choose: acquire " + CardEffectReuse.fourSuits +
                 " OR if [Palace of Poseidon] is in play, " +
-                "break through " + cardEffectReuse.fourSuits + " twice.",
+                "break through " + CardEffectReuse.fourSuits + " twice.",
                 "Sink this card."
             ],
             developmentCost: {progress: 2, material: 3},

@@ -7,7 +7,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Thera extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class Thera extends Card implements ICard {
             cardNumber: "MIN17",
             effectText: [
                 "Gain 1{progress}.",
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

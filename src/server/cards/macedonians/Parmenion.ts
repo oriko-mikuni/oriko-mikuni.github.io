@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Parmenion extends Card implements ICard {
     constructor() {
@@ -18,7 +18,7 @@ export class Parmenion extends Card implements ICard {
             cardNumber: "MAC4",
             effectText: [
                 "You MAY acquire {region}/{tributary} and immediately free play it.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 2,

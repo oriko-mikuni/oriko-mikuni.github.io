@@ -6,7 +6,7 @@ import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Kurgans extends Card implements ICard {
     constructor() {
@@ -21,7 +21,7 @@ export class Kurgans extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "SCY4",
             effectText: [
-                cardEffectReuse.increaseHandSize1,
+                CardEffectReuse.increaseHandSize1,
                 "Exhaust: put a card from your discard pile into your history."
             ],
             developmentCost: {population: 3},

@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class MinoanExpansion extends Card implements ICard {
     constructor() {
@@ -20,7 +20,7 @@ export class MinoanExpansion extends Card implements ICard {
             cardNumber: "MIN8",
             effectText: [
                 "Each other player abandons a {region}.",
-                "You MAY acquire " + cardEffectReuse.fourSuits + "."
+                "You MAY acquire " + CardEffectReuse.fourSuits + "."
             ],
             developmentCost: {population: 4},
             victoryPoints: 3,

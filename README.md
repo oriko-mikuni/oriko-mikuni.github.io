@@ -37,13 +37,33 @@ Currently, contains nation cards from Classics and Legends.
       * [ ] Wagadou
       * [ ] Sassanids
   * add common cards and state cards.
-    * [ ] Classics
-    * [ ] Legends
-    * [ ] Horizons
+    * common
+      * [x] barbarian/empire
+      * [x] king of kings
+      * [x] unrest
+    * Classics
+      * [x] fame
+      * [x] uncivilised
+      * [ ] civilised
+      * [ ] region
+      * [ ] tributary
+    * Legends
+      * [x] fame
+      * [ ] uncivilised
+      * [ ] civilised
+      * [ ] region
+      * [ ] tributary
+    * Horizons
+      * [ ] updated cards 
+      * [ ] fame
+      * [ ] uncivilised
+      * [ ] civilised
+      * [ ] region
+      * [ ] tributary
+      * [ ] trade route expansion
 * toggle features
   * [x] add expand / collapse all
   * [x] add filter options
-  * [ ] add grouping options
 * add i18n support
   * [x] English 
   * [x] Simplified Chinese

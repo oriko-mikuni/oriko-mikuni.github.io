@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class MedianEmpire extends Card implements ICard {
     constructor() {
@@ -19,7 +19,7 @@ export class MedianEmpire extends Card implements ICard {
             cardNumber: "PER12",
             effectText: [
                 "Gain 4{material}.",
-                cardEffectReuse.selfHistory
+                CardEffectReuse.selfHistory
             ],
         });
     }

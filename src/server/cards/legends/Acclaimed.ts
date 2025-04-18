@@ -2,7 +2,7 @@ import {Card} from "../Card";
 import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Acclaimed extends Card implements ICard {
     constructor() {
@@ -14,8 +14,8 @@ export class Acclaimed extends Card implements ICard {
             cardNumber: "2FAM8",
             effectText: [
                 "Break through for a {variable} card.",
-                cardEffectReuse.selfHistory,
-                cardEffectReuse.bumpUpTextBox
+                CardEffectReuse.selfHistory,
+                CardEffectReuse.bumpUpTextBox
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {variable} card (including this one)"

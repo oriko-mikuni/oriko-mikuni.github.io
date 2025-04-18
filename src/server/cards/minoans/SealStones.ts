@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class SealStones extends Card implements ICard {
     constructor() {
@@ -16,7 +16,7 @@ export class SealStones extends Card implements ICard {
             nationColour: CardNationColour.MIN,
             cardNumber: "MIN9",
             effectText: [
-                cardEffectReuse.unplayable
+                CardEffectReuse.unplayable
             ],
             developmentCost: {progress: 3, material: 3, population: 1},
             victoryPoints: 'variable',

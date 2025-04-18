@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Unrest4 extends Card implements ICard {
     constructor() {
@@ -17,8 +17,8 @@ export class Unrest4 extends Card implements ICard {
             nationColour: CardNationColour.UTO,
             cardNumber: "UTO21",
             effectText: [
-                cardEffectReuse.setupUnrestL + "Utopians" + cardEffectReuse.setupUnrestR,
-                cardEffectReuse.unrest
+                CardEffectReuse.setupUnrestL + "Utopians" + CardEffectReuse.setupUnrestR,
+                CardEffectReuse.unrest
             ],
             playerCount: 4,
             victoryPoints: -2,

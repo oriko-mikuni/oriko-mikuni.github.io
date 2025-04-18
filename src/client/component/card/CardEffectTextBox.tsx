@@ -2,7 +2,7 @@ import React from "react";
 import './styles/CardEffectTextBox.css';
 import {RenderCardText} from "./CardText.tsx";
 import {Units, UnitsUtils} from "../../../common/Units.ts";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse.ts";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse.ts";
 import {useTranslation} from "react-i18next";
 import {TFunction} from "i18next";
 
@@ -23,7 +23,7 @@ export function CardEffectTextBox(
     let actualEffectText: Array<string> = effectText;
     let classes: string = "card-effect-text";
     let higherTextClass: string = " card-effect-text";
-    while (actualEffectText.length > 0 && actualEffectText[actualEffectText.length - 1] === cardEffectReuse.bumpUpTextBox)
+    while (actualEffectText.length > 0 && actualEffectText[actualEffectText.length - 1] === CardEffectReuse.bumpUpTextBox)
     {
         actualEffectText = actualEffectText.slice(0, actualEffectText.length - 1);
         higherTextClass = higherTextClass + "-higher";

@@ -6,7 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class YnysAfallachAvalon extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class YnysAfallachAvalon extends Card implements ICard {
             cardNumber: "ART13",
             effectText: [
                 "Return a {knight} from your discard pile to your hand.",
-                cardEffectReuse.garrisonACard,
+                CardEffectReuse.garrisonACard,
                 "Solstice: you MAY pay 1{progress} to recall this card."
             ],
         });

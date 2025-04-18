@@ -6,7 +6,7 @@ import { Card } from "../Card";
 import { ICard } from "../ICard";
 import { CardInPlayType } from "../../../common/cards/CardInPlayType";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
-import CardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class CityOfCarthage extends Card implements ICard {
     constructor() {

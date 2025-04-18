@@ -29,7 +29,7 @@ export enum CardEffectReuse {
     cannotGarrison = "Cannot be garrisoned."
 }
 
-export class effectReuseMultipleSentences {
+export class EffectReuseMultipleSentences {
     static readonly glory: Array<string> = [
         CardEffectReuse.thisCannotGarrison,
         "Abandon 3 {region} to look at the top 2 cards of the {fame} deck.",
@@ -44,5 +44,3 @@ export class effectReuseMultipleSentences {
         "Then return a card to the top of your deck.",
     ]
 }
-
-export default CardEffectReuse;

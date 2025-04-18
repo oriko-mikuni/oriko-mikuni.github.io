@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {effectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
+import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
 import {Location} from "../../Player";
 
 export class StoneMask1 extends Card implements ICard {
@@ -17,7 +17,7 @@ export class StoneMask1 extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.OLM,
             cardNumber: "OLM13",
-            effectText: effectReuseMultipleSentences.stoneMask,
+            effectText: EffectReuseMultipleSentences.stoneMask,
             victoryPoints: 'conditional',
             victoryPointsString: "1VP if in history"
         });

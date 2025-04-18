@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 import {Location} from "../../Player";
 
 export class KingWuOfQin extends Card implements ICard {
@@ -19,8 +19,8 @@ export class KingWuOfQin extends Card implements ICard {
             cardNumber: "QIN8",
             effectText: [
                 "Cannot be played unless [Mandate of Heaven] is in play and [Duke Zhuang of Qin] is in your history.",
-                "Pay up to 3{progress}. For each {progress} paid, acquire " + cardEffectReuse.fourSuits + ".",
-                cardEffectReuse.selfHistory
+                "Pay up to 3{progress}. For each {progress} paid, acquire " + CardEffectReuse.fourSuits + ".",
+                CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 'conditional',

@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Ashoka extends Card implements ICard {
     constructor() {
@@ -17,7 +17,7 @@ export class Ashoka extends Card implements ICard {
             nationColour: CardNationColour.MAU,
             cardNumber: "MAU5",
             effectText: [
-                cardEffectReuse.takeTopFame,
+                CardEffectReuse.takeTopFame,
                 "Reveal your hand, draw deck, and discard pile and put all {attack} and this card into your history."
             ],
             developmentCost: {population: 3},

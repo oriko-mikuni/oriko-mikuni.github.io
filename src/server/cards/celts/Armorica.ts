@@ -7,7 +7,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Armorica extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class Armorica extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "CEL9",
             effectText: [
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

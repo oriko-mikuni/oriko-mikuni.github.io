@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class HaraldHardrada extends Card implements ICard {
     constructor() {
@@ -18,7 +18,7 @@ export class HaraldHardrada extends Card implements ICard {
             cardNumber: "VIK2",
             effectText: [
                 "TAKING THIS CARD TRIGGERS THE GAME END.",
-                cardEffectReuse.takeTopFame,
+                CardEffectReuse.takeTopFame,
                 "You MAY break through for {region}."
             ],
             victoryPoints: 'variable',

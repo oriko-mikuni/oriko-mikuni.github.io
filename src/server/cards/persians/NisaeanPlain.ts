@@ -7,7 +7,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class NisaeanPlain extends Card implements ICard {
     constructor() {
@@ -22,7 +22,7 @@ export class NisaeanPlain extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "PER11",
             effectText: [
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }

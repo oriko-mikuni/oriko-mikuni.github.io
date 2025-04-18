@@ -7,7 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import cardEffectReuse from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Scandinavia extends Card implements ICard {
     constructor() {
@@ -21,7 +21,7 @@ export class Scandinavia extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "VIK17",
             effectText: [
-                cardEffectReuse.garrisonACard
+                CardEffectReuse.garrisonACard
             ],
         });
     }
