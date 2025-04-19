@@ -41,12 +41,7 @@ Currently, contains nation cards from Classics and Legends.
       * [x] barbarian/empire
       * [x] king of kings
       * [x] unrest
-    * Classics
-      * [x] fame
-      * [x] uncivilised
-      * [ ] civilised
-      * [ ] region
-      * [ ] tributary
+    * [x] Classics
     * Legends
       * [x] fame
       * [ ] uncivilised

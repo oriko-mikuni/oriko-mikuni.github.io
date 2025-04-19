@@ -32,6 +32,7 @@ export class QinPowerA extends Card implements ICard {
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(card =>
             card.location === Location.IN_PLAY &&
+            card.card.headerIcon === CardHeaderIcon.PINNED &&
             !card.card.suit.some(suit1 => suit1 === CardSuitIcon.REGION)
         ).length;
     }

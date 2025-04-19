@@ -31,6 +31,46 @@ import {Port} from "./uncivilised/Port";
 import {Diplomacy} from "./uncivilised/Diplomacy";
 import {Leadership} from "./uncivilised/Leadership";
 import {LostScroll} from "./uncivilised/LostScroll";
+import {DramaNPoetry} from "./civilised/DramaNPoetry";
+import {Education} from "./civilised/Education";
+import {Moneylender} from "./civilised/Moneylender";
+import {Corruption} from "./civilised/Corruption";
+import {Onager} from "./civilised/Onager";
+import {Metropolis} from "./civilised/Metropolis";
+import {Metropolis1} from "./civilised/Metropolis1";
+import {Pharmacy} from "./civilised/Pharmacy";
+import {Wonder} from "./civilised/Wonder";
+import {Coinage} from "./civilised/Coinage";
+import {Exports} from "./civilised/Exports";
+import {UrbanDevelopment} from "./civilised/UrbanDevelopment";
+import {Mercenaries} from "./civilised/Mercenaries";
+import {Temple} from "./civilised/Temple";
+import {Cataphract} from "./civilised/Cataphract";
+import {Wilderness} from "./region/Wilderness";
+import {Jungle} from "./region/Jungle";
+import {Mountain} from "./region/Mountain";
+import {Coast} from "./region/Coast";
+import {Floodplain} from "./region/Floodplain";
+import {Forest} from "./region/Forest";
+import {Oasis} from "./region/Oasis";
+import {Hills} from "./region/Hills";
+import {Marsh} from "./region/Marsh";
+import {Steppe} from "./region/Steppe";
+import {River} from "./region/River";
+import {Cape} from "./region/Cape";
+import {Woodland} from "./region/Woodland";
+import {SacredPass} from "./region/SacredPass";
+import {Armerians} from "./tributary/Armerians";
+import {Assyrians} from "./tributary/Assyrians";
+import {Egyptians} from "./tributary/Egyptians";
+import {Ionians} from "./tributary/Ionians";
+import {Qin} from "./tributary/Qin";
+import {Olmecs} from "./tributary/Olmecs";
+import {Sumerians} from "./tributary/Sumerians";
+import {Aksumites} from "./tributary/Aksumites";
+import {Minoans} from "./tributary/Minoans";
+import {Mauryans} from "./tributary/Mauryans";
+import {Hittites} from "./tributary/Hittites";
 
 export const CLASSICS_COMMON_CARD_MANIFEST = new ModuleManifest({
     module: GameModule.CLASSICS_COMMON,
@@ -65,45 +105,45 @@ export const CLASSICS_COMMON_CARD_MANIFEST = new ModuleManifest({
         [CardName.DIPLOMACY_C]: {Factory: Diplomacy},
         [CardName.LEADERSHIP_C]: {Factory: Leadership},
         [CardName.LOST_SCROLL_C]: {Factory: LostScroll},
-        // [CardName.DRAMA_N_POETRY_C]: {Factory: DramaNPoetry},
-        // [CardName.EDUCATION_C]: {Factory: Education},
-        // [CardName.MONEYLENDER_C]: {Factory: Moneylender},
-        // [CardName.CORRUPTION_C]: {Factory: Corruption},
-        // [CardName.ONAGER_C]: {Factory: Onager},
-        // [CardName.METROPOLIS_C]: {Factory: Metropolis},
-        // [CardName.METROPOLIS_C1]: {Factory: Metropolis1},
-        // [CardName.PHARMACY]: {Factory: Pharmacy},
-        // [CardName.WONDER]: {Factory: Wonder},
-        // [CardName.COINAGE]: {Factory: Coinage},
-        // [CardName.EXPORTS_C]: {Factory: Exports},
-        // [CardName.URBAN_DEVELOPMENT_C]: {Factory: UrbanDevelopment},
-        // [CardName.MERCENARIES_C]: {Factory: Mercenaries},
-        // [CardName.TEMPLE]: {Factory: Temple},
-        // [CardName.CATAPHRACT_C]: {Factory: Cataphract},
-        // [CardName.WILDERNESS]: {Factory: Wilderness},
-        // [CardName.JUNGLE]: {Factory: Jungle},
-        // [CardName.MOUNTAIN_C]: {Factory: Mountain},
-        // [CardName.COAST]: {Factory: Coast},
-        // [CardName.FLOODPLAIN]: {Factory: Floodplain},
-        // [CardName.FOREST]: {Factory: Forest},
-        // [CardName.OASIS]: {Factory: Oasis},
-        // [CardName.HILLS]: {Factory: Hills},
-        // [CardName.MARSH]: {Factory: Marsh},
-        // [CardName.STEPPE]: {Factory: Steppe},
-        // [CardName.RIVER]: {Factory: River},
-        // [CardName.CAPE]: {Factory: Cape},
-        // [CardName.WOODLAND]: {Factory: Woodland},
-        // [CardName.SACRED_PASS]: {Factory: SacredPass},
-        // [CardName.ARMERIANS]: {Factory: Armerians},
-        // [CardName.ASSYRIANS]: {Factory: Assyrians},
-        // [CardName.EGYPTIANS]: {Factory: Egyptians},
-        // [CardName.IONIANS]: {Factory: Ionians},
-        // [CardName.QIN]: {Factory: Qin},
-        // [CardName.OLMECS]: {Factory: Olmecs},
-        // [CardName.SUMERIANS]: {Factory: Sumerians},
-        // [CardName.AKSUMITES]: {Factory: Aksumites},
-        // [CardName.MINOANS]: {Factory: Minoans},
-        // [CardName.MAURYANS]: {Factory: Mauryans},
-        // [CardName.HITTITES]: {Factory: Hittites},
+        [CardName.DRAMA_N_POETRY_C]: {Factory: DramaNPoetry},
+        [CardName.EDUCATION_C]: {Factory: Education},
+        [CardName.MONEYLENDER_C]: {Factory: Moneylender},
+        [CardName.CORRUPTION_C]: {Factory: Corruption},
+        [CardName.ONAGER_C]: {Factory: Onager},
+        [CardName.METROPOLIS_C]: {Factory: Metropolis},
+        [CardName.METROPOLIS_C1]: {Factory: Metropolis1},
+        [CardName.PHARMACY]: {Factory: Pharmacy},
+        [CardName.WONDER]: {Factory: Wonder},
+        [CardName.COINAGE]: {Factory: Coinage},
+        [CardName.EXPORTS_C]: {Factory: Exports},
+        [CardName.URBAN_DEVELOPMENT_C]: {Factory: UrbanDevelopment},
+        [CardName.MERCENARIES_C]: {Factory: Mercenaries},
+        [CardName.TEMPLE]: {Factory: Temple},
+        [CardName.CATAPHRACT_C]: {Factory: Cataphract},
+        [CardName.WILDERNESS]: {Factory: Wilderness},
+        [CardName.JUNGLE]: {Factory: Jungle},
+        [CardName.MOUNTAIN_C]: {Factory: Mountain},
+        [CardName.COAST]: {Factory: Coast},
+        [CardName.FLOODPLAIN]: {Factory: Floodplain},
+        [CardName.FOREST]: {Factory: Forest},
+        [CardName.OASIS]: {Factory: Oasis},
+        [CardName.HILLS]: {Factory: Hills},
+        [CardName.MARSH]: {Factory: Marsh},
+        [CardName.STEPPE]: {Factory: Steppe},
+        [CardName.RIVER]: {Factory: River},
+        [CardName.CAPE]: {Factory: Cape},
+        [CardName.WOODLAND]: {Factory: Woodland},
+        [CardName.SACRED_PASS]: {Factory: SacredPass},
+        [CardName.ARMERIANS]: {Factory: Armerians},
+        [CardName.ASSYRIANS]: {Factory: Assyrians},
+        [CardName.EGYPTIANS]: {Factory: Egyptians},
+        [CardName.IONIANS]: {Factory: Ionians},
+        [CardName.QIN]: {Factory: Qin},
+        [CardName.OLMECS]: {Factory: Olmecs},
+        [CardName.SUMERIANS]: {Factory: Sumerians},
+        [CardName.AKSUMITES]: {Factory: Aksumites},
+        [CardName.MINOANS]: {Factory: Minoans},
+        [CardName.MAURYANS]: {Factory: Mauryans},
+        [CardName.HITTITES]: {Factory: Hittites},
     }
 });

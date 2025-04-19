@@ -2,15 +2,13 @@ import React, {useReducer} from "react";
 import {allCards, allVictoryPoints} from '../cards/ClientCardsManifest.ts';
 import CardGroup from "./CardGroup.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
-import pageTitle from "./PageTitle.tsx";
+import {pageTitle} from "./PageTitle.tsx";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon.ts";
 import CardSuitIconDisplay from "./card/CardSuitIconDisplay.tsx";
 import {CardTypeIcon} from "../../common/cards/CardTypeIcon.ts";
 import CardTypeIconDisplay from "./card/CardTypeIconDisplay.tsx";
 import {CardporiumDisplayState} from "./cardporiumState/GroupingDisplayState.tsx";
-import {
-    CardporiumFilter
-} from "./cardporiumState/ElementFilterState.tsx";
+import {CardporiumFilter} from "./cardporiumState/ElementFilterState.tsx";
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon.ts";
 import CardHeaderIconDisplay from "./card/CardHeaderIconDisplay.tsx";
 import {CardStateSymbol} from "../../common/cards/CardStateSymbol.ts";

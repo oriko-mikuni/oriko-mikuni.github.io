@@ -1,6 +1,6 @@
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import React from "react";
-import pageTitle from "./PageTitle.tsx";
+import {pageTitle} from "./PageTitle.tsx";
 import CardSuitIconDisplay from "./card/CardSuitIconDisplay.tsx";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon.ts";
 import {useTranslation} from "react-i18next";

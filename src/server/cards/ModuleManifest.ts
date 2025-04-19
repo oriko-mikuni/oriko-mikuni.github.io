@@ -11,8 +11,8 @@ export function cardManifestValues<T extends ICard>(manifest: CardManifest<T>): 
 
 export class ModuleManifest {
   module: GameModule;
-  commonCards: CardManifest<ICard>;
   nationCards: CardManifest<ICard>;
+  commonCards: CardManifest<ICard>;
   cardsToRemove: Set<CardName>;
 
   constructor(arg: {
@@ -22,8 +22,8 @@ export class ModuleManifest {
     cardsToRemove?: Array<CardName>;
   }) {
     this.module = arg.module;
-    this.commonCards = arg.commonCards || {};
     this.nationCards = arg.nationCards || {};
+    this.commonCards = arg.commonCards || {};
     this.cardsToRemove = new Set(arg.cardsToRemove || []);
   }
 }

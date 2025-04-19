@@ -865,7 +865,7 @@ export enum CardName {
     SPREADING_CHAOS = "card_name.CUL9",
     CLOAK_AND_DAGGER = "card_name.CUL10",
     FALLEN_TOWN = "card_name.CUL11",
-    CORRUPTION = "card_name.CUL12",
+    CORRUPTION_CUL = "card_name.CUL12",
     STRANGE_SIGNS = "card_name.CUL13",
     CURSED_LIBRARY = "card_name.CUL14",
     FROZEN_WASTE = "card_name.CUL15",

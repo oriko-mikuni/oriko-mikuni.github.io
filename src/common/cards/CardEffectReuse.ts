@@ -17,9 +17,10 @@ export enum CardEffectReuse {
 
     // reusable sentences
     increaseHandSize1 = "Passive: increase your hand size by 1.",
-    knightGarrison = "You MAY garrison in a {region} to trigger that card's play effect.",
+    knightGarrison = "You MAY garrison this card in a {region} to trigger that card's play effect.",
     selfHistory = "Put this card into your history.",
     selfExile = "Exile this card.",
+    marketExile = "Exile a card from the market.",
     garrisonACard = "You MAY garrison a card.",
     takeOne = "Take one of those cards.",
     takeTopFame = "Take the top {fame} card.",

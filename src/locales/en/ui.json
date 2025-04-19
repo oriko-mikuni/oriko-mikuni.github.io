@@ -1,7 +1,8 @@
 {
   "pageTitle": {
     "Homepage": "Homepage",
-    "Imperium Cardporium": "Imperium Cardporium"
+    "Imperium Cardporium": "Imperium Cardporium",
+    "404": "Page Not Found"
   },
   "HomepageText": {
     "header": "Imperium Card Game",

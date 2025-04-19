@@ -22,7 +22,7 @@ export class Hesperides extends Card implements ICard {
             cardNumber: "ATL17",
             effectText: [
                 "Gain 1{material}.",
-                "Exile a card from the market.",
+                CardEffectReuse.marketExile,
                 CardEffectReuse.garrisonACard
             ]
         });

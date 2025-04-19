@@ -21,7 +21,7 @@ export class ElysianFields extends Card implements ICard {
             cardInPlayType: CardInPlayType.PINNED,
             cardNumber: "ATL18",
             effectText: [
-                "Exile a card from the market.",
+                CardEffectReuse.marketExile,
                 CardEffectReuse.garrisonACard
             ],
         });

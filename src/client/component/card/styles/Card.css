@@ -15,17 +15,16 @@
 
 .filterDiv{
     position: relative;
-    background: #bbbbbb;
-    /*background: radial-gradient(*/
-    /*        300px,*/
-    /*        #999999,*/
-    /*        #444444,*/
-    /*        #888888,*/
-    /*        #686868,*/
-    /*        #777777,*/
-    /*        #888888,*/
-    /*        #666666*/
-    /*);*/
+    /*background: #bbbbbb;*/
+    background: linear-gradient(
+            to right,
+            #805020,
+            #508020,
+            #208050,
+            #205080,
+            #502080,
+            #508020
+    );
     width: 250px;
     height: 350px;
     margin: 10px 15px 10px 0;

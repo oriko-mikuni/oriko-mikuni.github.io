@@ -1,18 +1,21 @@
 import React, {ChangeEvent} from "react";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, Location, useLocation} from "react-router-dom";
 import Homepage from "./Homepage.tsx";
 import ImperiumCardporium from "./ImperiumCardporium.tsx";
 import {useTranslation} from "react-i18next";
-import {i18n} from "i18next";
+import {i18n, TFunction} from "i18next";
 import {languageName} from "../../i18n.ts";
+import {PageTitle} from "./PageTitle.tsx";
 
-function changeLanguage(i18n: i18n, language: string) {
+function changeLanguage(i18n: i18n, t: TFunction<string, string>, location: Location, language: string) {
     i18n.changeLanguage(language);
-    window.location.reload();
+    PageTitle.updateTitle(t, location.pathname);
 }
 
 function App(): React.ReactElement {
     const {i18n} = useTranslation();
+    const {t: pageTitleTranslation} = useTranslation("ui", {keyPrefix: "pageTitle"});
+    const location: Location = useLocation();
 
     const languageList: Array<React.JSX.Element> =
         Object.entries(languageName).map(
@@ -28,7 +31,9 @@ function App(): React.ReactElement {
             <Route path="/cards" element={<ImperiumCardporium/>}/>
         </Routes>
         <div style={{position: "fixed", textAlign: "right", top: "20px", right: "20px"}}>
-            <select onChange={(a: ChangeEvent<HTMLSelectElement>) => changeLanguage(i18n, a.target.value)} defaultValue={i18n.language}>
+            <select onChange={(a: ChangeEvent<HTMLSelectElement>) =>
+                changeLanguage(i18n, pageTitleTranslation, location, a.target.value)} defaultValue={i18n.language}
+            >
                 {languageList}
             </select>
         </div>

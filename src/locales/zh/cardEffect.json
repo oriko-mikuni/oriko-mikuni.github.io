@@ -23,6 +23,8 @@
   "购得{region}。寻找1张“印度战象”\n并将其放入你的弃牌堆。",
   "Acquire {region}. You MAY acquire {region} again.":
   "购得{region}。你*可以*再次购得{region}。",
+  "Acquire {uncivilised}.":
+  "购得{uncivilised}。",
   "Acquire {uncivilised}/{civilised}.":
   "购得{uncivilised}/{civilised}。",
   "Acquire {uncivilised}/{civilised}/{region}/{tributary}.":
@@ -33,6 +35,8 @@
   "所有其他玩家获取1{progress}。",
   "All other players recall a {region}.":
   "所有其他玩家召回1{region}。",
+  "All other players take {unrest}.":
+  "所有其他玩家拿取{unrest}。",
   "All players MAY draw 1 card.":
   "所有玩家*可以*抽取1张牌。",
   "All players MAY draw a card.":
@@ -49,6 +53,8 @@
   "如有玩家不能支付，则该玩家拿取{unrest}。",
   "Break through for a {variable} card.":
   "突破1{variable}牌。",
+  "Break through for {region}.":
+  "突破{region}。",
   "Break through for {region}/{tributary}.":
   "突破{region}/{tributary}。",
   "Break through for {uncivilised}.":
@@ -185,6 +191,8 @@
   "耗竭：弃置1张牌以抽取2张牌。",
   "Exhaust: discard a card to draw a {knight} from your discard pile.":
   "耗竭：弃置1张牌以从你的弃牌堆中抽取1{knight}。",
+  "Exhaust: discard a card to gain 1{progress}.":
+  "耗竭：弃置1张牌以获取1{progress}。",
   "Exhaust: draw a card and gain 1{progress}.":
   "耗竭：抽取1张牌并获取1{progress}。",
   "Exhaust: draw a card.":
@@ -204,11 +212,11 @@
   "Exhaust: garrison a {scroll} here to acquire {uncivilised}/{civilised}.":
   "耗竭：进驻1{scroll}到本牌以购得{uncivilised}/{civilised}。",
   "Exhaust: garrison a {scroll} here to exile a card from your hand (not a {unrest}) and gain 2{population}. If it was an {attack}, also gain 1{progress}.":
-  "耗竭：进驻1{scroll}到本牌以从你的手牌中放逐1张牌（不能是{unrest}）并获取2{population}。若它是{attack}，还获取1{progress}。",
+  "耗竭：进驻1{scroll}到本牌以\n从你的手牌中放逐1张牌（不能是{unrest}）\n并获取2{population}。若它是{attack}，还获取1{progress}。",
   "Exhaust: garrison a {scroll} here to put a card from your hand or discard into your history.":
   "耗竭：进驻1{scroll}到本牌以\n从你的手牌或弃牌堆中将1张牌放入你的历史。",
   "Exhaust: garrison an {unrest} here to draw a {scroll} from your discard pile.":
-  "耗竭：进驻1{unrest}到本牌以从你的弃牌堆中抽取1{scroll}。",
+  "耗竭：进驻1{unrest}到本牌以\n从你的弃牌堆中抽取1{scroll}。",
   "Exhaust: if [Camelot] is in play, discard a card to return an {unrest}.":
   "耗竭：若“卡美洛城”在场，\n弃置1张牌以放回1{unrest}。",
   "Exhaust: if you gain a card from the market with {population} on it, double the {population} gained.":
@@ -272,19 +280,23 @@
   "Exhaust: when you play a {region}, exhaust this card to choose: draw a card OR gain 2{material}.":
   "耗竭：当你打出1{region}时，耗竭本牌以\n选择：抽取1张牌，*或*获取2{material}。",
   "Exhaust: when you play a {region}, exhaust this card to draw a card.":
-  "耗竭：当你打出1{region}时，\n耗竭本牌以抽取1张牌。",
+  "耗竭：当你打出1{region}时，耗竭本牌以抽取1张牌。",
   "Exhaust: when you play a {region}, exhaust this card to gain 1{population}.":
   "耗竭：当你打出1{region}时，耗竭本牌以获取1{population}。",
   "Exhaust: when you play a {region}, exhaust this card to gain 1{progress}.":
   "耗竭：当你打出1{region}时，耗竭本牌以获取1{progress}。",
   "Exhaust: when you play an {attack}, exhaust this card to gain 2{material}.":
-  "耗竭：当你打出1{attack}时，\n耗竭本牌以获取2{material}。",
+  "耗竭：当你打出1{attack}时，耗竭本牌以获取2{material}。",
   "Exhaust: when you return an {unrest}, exhaust this card and spend an action to gain 1{progress}.":
   "耗竭：当你放回1{unrest}时，\n耗竭本牌并花费1行动以获取1{progress}。",
   "Exhaust: when you return an {unrest}, exhaust this card to draw 2 cards.":
-  "耗竭：当你放回1{unrest}时，\n耗竭本牌以抽取2张牌。",
+  "耗竭：当你放回1{unrest}时，耗竭本牌以抽取2张牌。",
+  "Exhaust: when you return an {unrest}, exhaust this card to gain 2{progress}.":
+  "耗竭：当你放回{unrest}时，耗竭本牌以获取2{progress}。",
   "Exhaust: when you return an {unrest}, exhaust this card to gain 3{material}.":
   "耗竭：当你放回1{unrest}时，耗竭本牌以获取3{material}。",
+  "Exhaust: you MAY look at the top card of your nation deck. You MAY then abandon this card to swap a card from your hand with the top of your nation deck.":
+  "耗竭：你*可以*查看你的国家牌库顶的1张牌。\n然后你*可以*舍弃本牌以从你的手牌中\n将1张牌与你的国家牌库顶的1张牌交换。",
   "Exhaust: you MAY put a card from your hand into your history. You MAY put a card from your discard pile into your history.":
   "耗竭：你*可以*从你的手牌中将1张牌放入你的历史。你*可以*从你的弃牌堆中将1张牌放入你的历史。",
   "Exhaust: you MAY recall a {river} or a {fertile} to acquire a card in the market that has {material} on it.":
@@ -333,26 +345,42 @@
   "免费打出。耗竭：在本回合的剩余时间内，\n将1{fertile}视为3{production}。",
   "Free play. Gain 1 action.":
   "免费打出。获取1行动。",
+  "Free play. Gain 1{population}.":
+  "免费打出。获取1{population}。",
   "Free play. Gain 3{material} and 2{population}.":
   "免费打出。获取3{material}和2{population}。",
   "Free play. If {barbarian}, draw up to 4 cards.":
   "免费打出。若{barbarian}，抽取最多4张牌。",
   "Free play. Pay 1{material} and declare one of the following: {uncivilised}, {civilised}, {region}, or {tributary}.":
   "免费打出。支付1{material}并声明以下花色\n之一：{uncivilised}、{civilised}、{region}或{tributary}。",
+  "Free play. Pay 1{population} to gain 1 action.":
+  "免费打出。支付1{population}以获取1行动。",
   "Free play. Pay 3{material} to gain 1 action.":
   "免费打出。支付3{material}以获取1行动。",
+  "Free play. Place a card on top of your deck and gain 2{progress}.":
+  "免费打出。将1张牌放到你的牌库顶并获取2{progress}。",
   "Free play. Put up to 2 cards from your discard pile into your history.":
   "免费打出。\n从你的弃牌堆中将最多2张牌放入你的历史。",
   "Free play. Return a card from your discard pile to the top of your deck.":
   "免费打出。从你的弃牌堆中\n放回1张牌到你的牌堆顶。",
+  "Free play. Return an {exhaust} to your state card.":
+  "免费打出。放回1{exhaust}到你的国体牌。",
+  "Free play. Return up to 2 {unrest} from your hand or discard pile.":
+  "免费打出。从你的手牌或弃牌堆中放回最多2{unrest}。",
+  "Free play. Steal 1{progress} from each other player. Each player MAY discard a card to return an {unrest}.":
+  "免费打出。从每位其他玩家处窃取1{progress}。\n每位玩家*可以*弃置1张牌以放回1{unrest}。",
   "Free play. TRIGGERS GAME END.":
   "免费打出。*触发游戏结束*。",
   "Free play. You MAY acquire {region} twice, including from exiled cards.":
   "免费打出。你*可以*购得{region}两次\n（包括从被放逐的牌中）。",
   "Free play. You MAY draw a card.":
   "免费打出。你*可以*抽取1张牌。",
+  "Free play. You MAY put a card from your hand into your history.":
+  "免费打出。你*可以*从你的手牌中\n将1张牌放入你的历史。",
   "Free play. You MAY return a card from your discard pile to the top of your deck.":
   "免费打出。你*可以*从你的弃牌堆中\n放回1张牌到你的牌库顶。",
+  "Gain 1{material} and 1{population} per {city}/{metropolis} in your play area.":
+  "每有1{city}/{metropolis}在你的游戏区中，\n就获取1{material}和1{population}。",
   "Gain 1{material} per {production} you have in play.":
   "你每有1{production}在场，就获取1{material}。",
   "Gain 1{material}.":
@@ -369,6 +397,8 @@
   "获取1{progress}。你*可以*发展。",
   "Gain 2{material} and draw a card.":
   "获取2{material}并抽取1张牌。",
+  "Gain 2{material} per abandoned {city}.":
+  "每舍弃1{city}就获取2{material}。",
   "Gain 2{material}.":
   "获取2{material}。",
   "Gain 2{material}. Steal 1{material} from each player with at least one {region} in play.":
@@ -395,10 +425,14 @@
   "若{barbarian}，获取4{progress}。",
   "If {barbarian}, gain 6{progress}.":
   "若{barbarian}，获取6{progress}。",
+  "If {barbarian}, put the top card of your nation deck into your discard pile.":
+  "若{barbarian}，将你的国家牌库顶的1张牌\n放入你的弃牌堆。",
   "If {empire}, develop at no cost.":
   "若{empire}，免费发展。",
   "If {empire}, develop for free.":
   "若{empire}，免费发展。",
+  "If {empire}, develop.":
+  "若{empire}，发展。",
   "If {empire}, gain 3{progress} and develop for free.":
   "若{empire}，获取3{progress}并免费发展。",
   "Look at the top card of your nation deck.":
@@ -455,6 +489,10 @@
   "被动：当你的牌库抽空时，拿取{unrest}。",
   "Passive: whenever you look at any number of cards from the {fame} deck, look at one additional card, then gain 1{progress}.":
   "被动：每当你从{fame}牌库查看任意数量的卡牌时，\n额外查看1张牌，然后获取1{progress}。",
+  "Passive: you MAY recall this card to avoid the effect of an {attack}.":
+  "被动：你*可以*召回本牌以回避1{attack}的效果。",
+  "Passive: you MAY recall this to avoid the effect of an {attack}.":
+  "被动：你*可以*召回本牌以回避1{attack}的效果。",
   "Passive: you can acquire exiled {region} cards. When you do, gain 1{population}.":
   "被动：你可以购得被放逐的{region}牌。\n当你如此做时，获取1{population}。",
   "Passive: you may acquire exiled {region}.":
@@ -509,8 +547,12 @@
   "至日：选择：弃置1张牌，\n*或*舍弃本牌并抽取1张牌。",
   "Solstice: choose: gain 1{material} OR gain 1{population} OR draw a card.":
   "至日：选择：获取1{material}，\n*或*获取1{population}，*或*抽取1张牌。",
+  "Solstice: choose: gain 1{population} OR pay 2{population} to gain 1{progress}.":
+  "至日：选择：获取1{population}，\n*或*支付2{population}以获取1{progress}。",
   "Solstice: choose: gain 1{progress} OR return a {region} from your discard pile to your hand.":
   "至日：选择：获取1{progress}，*或*从你的\n弃牌堆中放回{region}到你的手牌。",
+  "Solstice: choose: gain 2{material} OR return a {region} from your discard pile to your hand.":
+  "至日：选择：获取2{material}，*或*从你的弃牌堆中\n放回1{region}到你的手牌中。",
   "Solstice: choose: pay 2{material} and place 1{progress} on this card OR abandon this card and gain all {progress} on it.":
   "至日：选择：支付2{material}并在本牌上放置{progress}，\n*或*舍弃本牌并获取本牌上的所有{progress}。",
   "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR discard a card, then draw a card.":
@@ -545,6 +587,8 @@
   "至日：获取1{population}。",
   "Solstice: gain 1{progress} OR return an {unrest} from your discard pile.":
   "至日：获取1{progress}，*或*从你的弃牌堆中放回1{unrest}。",
+  "Solstice: gain 2{material}.":
+  "至日：获取2{material}。",
   "Solstice: if there are 2 {scroll} garrisoned here, you MAY abandon this card to draw the top card of the {fame} deck.":
   "至日：若有2{scroll}已进驻本牌，\n你*可以*舍弃本牌以抽取{fame}牌库顶的1张牌。",
   "Solstice: if there is no active quest, you MAY take {unrest} to garrison an impending quest.":
@@ -553,6 +597,8 @@
   "至日：若你拥有至少24{population}，*触发游戏结束。*",
   "Solstice: put a {knight} into your history (garrisoned or from your hand) or take 2 {unrest}.":
   "至日：将1{knight}放入你的历史\n（已进驻的或从你的手牌中），\n*或*拿取2{unrest}。",
+  "Solstice: return an {unrest} from your discard pile.":
+  "至日：从你的弃牌堆中放回1{unrest}。",
   "Solstice: you MAY discard a card to choose: gain 1{material} OR gain 1{population} OR draw a card.":
   "至日：你*可以*弃置1张牌以选择：\n获取1{material}，*或*获取1{population}，*或*抽取1张牌。",
   "Solstice: you MAY discard a card to draw a card and gain 1{progress}.":
@@ -643,14 +689,16 @@
   "你*可以*从你的弃牌堆中抽取1张牌。",
   "You MAY draw a card from your history.":
   "你*可以*从你的历史抽取1张牌。",
+  "You MAY draw a card of your choice from your discard pile and place it on the top of your draw deck.":
+  "你*可以*从你的弃牌堆中抽取1张你选择的牌，\n并将其放到你的抽牌库顶。",
   "You MAY draw a card.":
   "你*可以*抽取1张牌。",
   "You MAY exile [Twrch Trwyth] if it is in play or it is the active quest.":
   "若“图鲁夫·图鲁维斯”在场或\n它是当前任务，你*可以*放逐它。",
   "You MAY garrison a card.":
   "你*可以*进驻1张牌。",
-  "You MAY garrison in a {region} to trigger that card's play effect.":
-  "你*可以*进驻到1{region}以触发\n那张牌的打出效果。",
+  "You MAY garrison this card in a {region} to trigger that card's play effect.":
+  "你*可以*将本牌进驻到1{region}以触发\n那张牌的打出效果。",
   "You MAY place a card of your choice from your discard pile on the top of your deck.":
   "你*可以*从你的弃牌堆中选择1张牌\n放到你的牌库顶。",
   "You MAY put a card from your discard pile into your history.":

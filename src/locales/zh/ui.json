@@ -1,7 +1,8 @@
 {
   "pageTitle": {
     "Homepage": "首页",
-    "Imperium Cardporium": "帝国牌表"
+    "Imperium Cardporium": "帝国牌表",
+    "404": "找不到页面"
   },
   "HomepageText": {
     "header": "帝国 卡牌游戏",

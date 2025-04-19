@@ -24,7 +24,7 @@ export class Themiscyra extends Card implements ICard {
             cardNumber: "ATL11",
             effectText: [
                 "Gain 1{progress}.",
-                "Exile a card from the market.",
+                CardEffectReuse.marketExile,
                 CardEffectReuse.garrisonACard
             ],
             developmentCost: {population: 2},

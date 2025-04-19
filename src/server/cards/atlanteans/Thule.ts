@@ -21,7 +21,7 @@ export class Thule extends Card implements ICard {
             cardNumber: "ATL16",
             effectText: [
                 "Gain 1{population}.",
-                "Exile a card from the market.",
+                CardEffectReuse.marketExile,
                 CardEffectReuse.garrisonACard
             ],
         });
