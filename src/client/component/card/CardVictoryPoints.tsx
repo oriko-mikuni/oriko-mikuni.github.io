@@ -11,9 +11,18 @@ function CardVictoryPoints(
 ): React.JSX.Element | null {
     const vp : VictoryPoints = victoryPoints === undefined ? 0 : victoryPoints;
     const {t: vpTextTranslate} = useTranslation("victoryText");
-    const vpText: Array<React.JSX.Element> | null = RenderCardText(
-        victoryPointString === undefined ? undefined : vpTextTranslate(victoryPointString)
-    );
+    let vpText: Array<React.JSX.Element> | null;
+    let vpTextClasses: string = "card-victory-point-text";
+    if (victoryPointString === undefined) {
+        vpText = RenderCardText(undefined);
+    } else {
+        let translateResult: string = vpTextTranslate(victoryPointString);
+        if (translateResult.endsWith("#wider")) {
+            translateResult = translateResult.slice(0, translateResult.length - 6);
+            vpTextClasses = vpTextClasses + " card-victory-point-text-wider";
+        }
+        vpText = RenderCardText(translateResult);
+    }
     if (vp === 0 && vpText === null) {
         return null;
     }
@@ -22,7 +31,7 @@ function CardVictoryPoints(
 
     return <>
         <div className="card-victory-point-icon-bottom-right">{victoryPointRender}</div>
-        <div className={`card-victory-point-text`}>{vpText}</div>
+        <div className={vpTextClasses}>{vpText}</div>
     </>;
 }
 

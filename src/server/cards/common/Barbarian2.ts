@@ -1,14 +1,14 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 
 export class Barbarian2 extends Card implements ICard {
     constructor() {
         super({
             name: CardName.BARBARIAN2,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: []
         });
     }

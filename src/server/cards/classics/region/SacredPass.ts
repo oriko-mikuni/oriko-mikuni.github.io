@@ -4,14 +4,14 @@ import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 
 export class SacredPass extends Card implements ICard {
     constructor() {
         super({
             name: CardName.SACRED_PASS,
             suit: [CardSuitIcon.REGION],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             cardInPlayType: CardInPlayType.PINNED,

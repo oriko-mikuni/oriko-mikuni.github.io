@@ -42,12 +42,7 @@ Currently, contains nation cards from Classics and Legends.
       * [x] king of kings
       * [x] unrest
     * [x] Classics
-    * Legends
-      * [x] fame
-      * [ ] uncivilised
-      * [ ] civilised
-      * [ ] region
-      * [ ] tributary
+    * [x] Legends
     * Horizons
       * [ ] updated cards 
       * [ ] fame
@@ -60,8 +55,8 @@ Currently, contains nation cards from Classics and Legends.
   * [x] add expand / collapse all
   * [x] add filter options
 * add i18n support
-  * [x] English 
-  * [x] Simplified Chinese
+  * [x] English
+  * [x] Chinese(China)
   * more languages would be supported after adding all cards from official contents so far
 ### More advices are welcome!
 You can start an [issue](https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues).

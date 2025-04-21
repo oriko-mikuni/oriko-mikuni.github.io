@@ -4,14 +4,14 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 
 export class IndianElephantsB extends Card implements ICard {
     constructor() {
         super({
             name: CardName.INDIAN_ELEPHANTS_B,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             headerIcon: CardHeaderIcon.ATTACK,
             startingLocation: CardStartingLocation.NATION,

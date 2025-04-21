@@ -2,14 +2,14 @@ import {ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 
 export class Education extends Card implements ICard {
     constructor() {
         super({
             name: CardName.EDUCATION_C,
             suit: [CardSuitIcon.CIVILISED],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             cardNumber: "1CIV2",
             effectText: [

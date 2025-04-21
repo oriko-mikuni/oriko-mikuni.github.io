@@ -2,7 +2,7 @@ import {ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
@@ -12,7 +12,7 @@ export class Cataphract extends Card implements ICard {
         super({
             name: CardName.CATAPHRACT_C,
             suit: [CardSuitIcon.CIVILISED],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [CardTypeIcon.KNIGHT],
             headerIcon: CardHeaderIcon.ATTACK,
             cardNumber: "1CIV15",

@@ -2,7 +2,7 @@ import {ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 
 export class Onager extends Card implements ICard {
@@ -10,7 +10,7 @@ export class Onager extends Card implements ICard {
         super({
             name: CardName.ONAGER_C,
             suit: [CardSuitIcon.CIVILISED],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             headerIcon: CardHeaderIcon.ATTACK,
             cardNumber: "1CIV5",

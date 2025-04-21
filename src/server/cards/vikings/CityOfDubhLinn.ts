@@ -1,7 +1,7 @@
 import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
@@ -14,7 +14,7 @@ export class CityOfDubhLinn extends Card implements ICard {
         super({
             name: CardName.CITY_OF_DUBH_LINN,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [CardTypeIcon.CITY],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.NATION,

@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 
 export class Philosophy extends Card implements ICard {
@@ -10,7 +10,7 @@ export class Philosophy extends Card implements ICard {
         super({
             name: CardName.PHILOSOPHY_GRE,
             suit: [],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.GRE,

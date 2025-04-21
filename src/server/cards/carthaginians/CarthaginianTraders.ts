@@ -1,7 +1,7 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 
 export class CarthaginianTraders extends Card implements ICard {
@@ -9,7 +9,7 @@ export class CarthaginianTraders extends Card implements ICard {
         super({
             name: CardName.CARTHAGINIAN_TRADERS,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR19",

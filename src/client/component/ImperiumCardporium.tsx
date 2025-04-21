@@ -11,7 +11,7 @@ import {CardporiumDisplayState} from "./cardporiumState/GroupingDisplayState.tsx
 import {CardporiumFilter} from "./cardporiumState/ElementFilterState.tsx";
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon.ts";
 import CardHeaderIconDisplay from "./card/CardHeaderIconDisplay.tsx";
-import {CardStateSymbol} from "../../common/cards/CardStateSymbol.ts";
+import {CardStateIcon} from "../../common/cards/CardStateIcon.ts";
 import CardStateSymbolDisplay from "./card/CardStateSymbolDisplay.tsx";
 import {TextFilter, TextTranslationGroup} from "./cardporiumState/TextFilterState.tsx";
 import {ClientCard} from "../../common/cards/ClientCard.ts";
@@ -26,7 +26,7 @@ function ImperiumCardporium(): React.JSX.Element {
     const suitFilter = new CardporiumFilter(Object.values(CardSuitIcon));
     const typeFilter = new CardporiumFilter(Object.values(CardTypeIcon));
     const headerFilter = new CardporiumFilter(Object.values(CardHeaderIcon));
-    const stateFilter = new CardporiumFilter(Object.values(CardStateSymbol));
+    const stateFilter = new CardporiumFilter(Object.values(CardStateIcon));
     const victoryFilter = new CardporiumFilter(allVictoryPoints());
     const textFilter = new TextFilter();
 
@@ -45,23 +45,30 @@ function ImperiumCardporium(): React.JSX.Element {
         cards => typeFilter.state.filterAnyProps(cards, card => card.typeIcon),
         cards => stateFilter.state.filterAnyProps(cards, card => card.stateSymbol),
         cards => headerFilter.state.filterOneProp(cards, card => card.headerIcon),
-        cards => victoryFilter.state.filterOneProp(cards, card => card.victoryPoints === undefined ? undefined : card.victoryPoints.toString())
+        cards => victoryFilter.state.filterOneProp(cards, card => card.victoryPoints === undefined ? undefined : card.victoryPoints.toString()),
+        cards => textFilter.state.filterText(cards, translation)
     ]
 
     const cardModuleElements: Array<{elem: React.JSX.Element, visibleNum: number}> = [];
+
+    const allFilter: (arg0: Array<ClientCard>) => Array<ClientCard> = cards =>
+        filters.reduce(
+            (cardList: Array<ClientCard>, filter: (arg0: Array<ClientCard>) => Array<ClientCard>): Array<ClientCard> => filter(cardList),
+            cards
+        );
+
     for (const groupState of state.groupDisplays.values()) {
         cardModuleElements.push(
             {
                 elem:
                     <CardGroup
                         groupState={groupState}
-                        iconFilters={filters}
-                        textFilter={(cards) => textFilter.state.filterText(cards, translation)}
+                        filter={allFilter}
                         onToggleOn={() => dispatch(CardporiumDisplayState.toggle(true, groupState.groupName))}
                         onToggleOff={() => dispatch(CardporiumDisplayState.toggle(false, groupState.groupName))}
                         key={groupState.groupName}
                     />,
-                visibleNum: textFilter.state.filterText(groupState.cards, translation).length
+                visibleNum: allFilter(groupState.cards).length
             }
         )
     }
@@ -85,7 +92,7 @@ function ImperiumCardporium(): React.JSX.Element {
         });
     const stateSymbolFilterButtons: Array<React.JSX.Element> =
         stateFilter.filterButtons(({elem}: {elem?: string}) => {
-            const stateSymbol: CardStateSymbol | undefined = Object.values(CardStateSymbol).find(value => value === elem);
+            const stateSymbol: CardStateIcon | undefined = Object.values(CardStateIcon).find(value => value === elem);
             return stateSymbol === undefined ? <CardStateSymbolDisplay/> : <CardStateSymbolDisplay state={stateSymbol}/>
         });
     const victoryPointFilterButtons: Array<React.JSX.Element> =
@@ -103,12 +110,12 @@ function ImperiumCardporium(): React.JSX.Element {
         <button onClick={() => navigate("/")}>{uiTranslation("backToHomepage")}</button> <br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{uiTranslation("toFeedback")}</a>
         <h1 className="centerAlign">{uiTranslation("cardporiumHeader")}</h1>
-        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("Suit")}: {suitFilterButtons}</h2>
-        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("TypeIcon")}: {typeIconFilterButtons}</h2>
-        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("HeaderIcon")}: {headerIconFilterButtons}</h2>
-        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("StateIcon")}: {stateSymbolFilterButtons}</h2>
-        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("VictoryPoint")}: {victoryPointFilterButtons}</h2>
-        <h2 className="centerAlign">{uiTranslation("filter") + " " + uiTranslation("text")}: {textFilter.filterComponent(uiTranslation)}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("Suit")}: {suitFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("TypeIcon")}: {typeIconFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("HeaderIcon")}: {headerIconFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("StateIcon")}: {stateSymbolFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("VictoryPoint")}: {victoryPointFilterButtons}</h2>
+        <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("text")}: {textFilter.filterComponent(uiTranslation)}</h2>
         <h2 style={{textAlign: "left"}}>
             <button onClick={() => dispatch(CardporiumDisplayState.toggle(false))}>{uiTranslation("collapse all")}</button>
             <button onClick={() => dispatch(CardporiumDisplayState.toggle(true))}>{uiTranslation("expand all")}</button>

@@ -2,14 +2,14 @@ import {GetVPParameter, ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 
 export class Minoans extends Card implements ICard {
     constructor() {
         super({
             name: CardName.MINOANS,
             suit: [CardSuitIcon.TRIBUTARY],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             cardNumber: "1TRI9",
             effectText: [

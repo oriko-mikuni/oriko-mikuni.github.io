@@ -3,7 +3,7 @@ import {ClientCard} from "../../../common/cards/ClientCard";
 import CardTitle from "./CardTitle"
 import './styles/Card.css';
 import CardSuitIconGroup from "./CardSuitIconGroup.tsx";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol.ts";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon.ts";
 import CardStateSymbolRow from "./CardStateSymbolRow.tsx";
 import CardTypeIconGroup from "./CardTypeIconGroup.tsx";
 import CardHeaderIcon from "./CardHeaderIconDisplay.tsx";
@@ -35,7 +35,7 @@ function Card(
 
     cardContents.push(<CardTypeIconGroup type={card.typeIcon} key="card-types"/>);
 
-    card.stateSymbol.forEach((state: CardStateSymbol, index: number) => {
+    card.stateSymbol.forEach((state: CardStateIcon, index: number) => {
         cardContents.push(<CardStateSymbolRow key={`card-state-symbol-${index}`} state={state} />)
     });
 

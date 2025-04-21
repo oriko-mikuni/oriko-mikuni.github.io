@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {Player} from "../../../Player";
 
 export class Oracle extends Card implements ICard {
@@ -10,7 +10,7 @@ export class Oracle extends Card implements ICard {
         super({
             name: CardName.ORACLE_C,
             suit: [CardSuitIcon.UNCIVILISED],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             cardNumber: "1UNC9",
             effectText: [

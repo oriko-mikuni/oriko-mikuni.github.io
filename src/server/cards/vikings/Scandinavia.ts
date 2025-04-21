@@ -1,7 +1,7 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
@@ -14,7 +14,7 @@ export class Scandinavia extends Card implements ICard {
         super({
             name: CardName.SCANDINAVIA,
             suit: [CardSuitIcon.REGION],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [CardTypeIcon.PRODUCTION],
             headerIcon: CardHeaderIcon.PINNED,
             nationColour: CardNationColour.VIK,

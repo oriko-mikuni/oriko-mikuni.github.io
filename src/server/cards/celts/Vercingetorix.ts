@@ -1,7 +1,7 @@
 import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
@@ -14,7 +14,7 @@ export class Vercingetorix extends Card implements ICard {
             name: CardName.VERCINGETORIX,
             suit: [],
             headerIcon: undefined,
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CEL,

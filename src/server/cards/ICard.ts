@@ -8,7 +8,7 @@ import {CardExpansion} from "../../common/cards/CardExpansion";
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
 import {CardNationColour} from "../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
-import {CardStateSymbol} from "../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../common/cards/CardStateIcon";
 import {Units} from "../../common/Units";
 
 export type GetVPParameter = {player: Player, location: string};
@@ -16,7 +16,7 @@ export type GetVPParameter = {player: Player, location: string};
 export interface ICard {
     name: CardName;
     suit: Array<CardSuitIcon>;
-    stateSymbol: Array<CardStateSymbol>;
+    stateSymbol: Array<CardStateIcon>;
     typeIcon: Array<CardTypeIcon>;
     cardNumber?: string;
     effectText?: Array<string>;

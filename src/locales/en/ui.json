@@ -14,7 +14,7 @@
     "cardporiumHeader": "Imperium Cardporium",
     "backToHomepage": "<-- back",
     "toFeedback": "feedback",
-    "filter": "Filter",
+    "filter-": "Filter ",
     "Suit": "Suits",
     "TypeIcon": "Types",
     "HeaderIcon": "Header",
@@ -24,6 +24,7 @@
     "title": "title",
     "effect": "effect",
     "victory": "VP text",
+    "reset": "Reset",
     "expand all": "expand all",
     "collapse all": "collapse all"
   },

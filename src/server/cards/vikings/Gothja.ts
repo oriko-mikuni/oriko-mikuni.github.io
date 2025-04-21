@@ -1,7 +1,7 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 
 export class Gothja extends Card implements ICard {
@@ -9,7 +9,7 @@ export class Gothja extends Card implements ICard {
         super({
             name: CardName.GOTHJA,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             nationColour: CardNationColour.VIK,
             cardNumber: "VIK16",

@@ -2,7 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
@@ -14,7 +14,7 @@ export class OghamScript extends Card implements ICard {
             name: CardName.OGHAM_SCRIPT,
             suit: [],
             headerIcon: CardHeaderIcon.PINNED,
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CEL,

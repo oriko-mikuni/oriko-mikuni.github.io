@@ -1,7 +1,7 @@
 import {CardName} from './CardName';
 import {CardSuitIcon} from "./CardSuitIcon";
 import {CardHeaderIcon} from "./CardHeaderIcon";
-import {CardStateSymbol} from "./CardStateSymbol";
+import {CardStateIcon} from "./CardStateIcon";
 import {CardTypeIcon} from "./CardTypeIcon";
 import {CardNationColour} from "./CardNationColour";
 import {CardStartingLocation} from './CardStartingLocation';
@@ -16,7 +16,7 @@ export type ClientCard = {
   // first suit is also banner, unless it
   suit: Array<CardSuitIcon>;
   // 0, 1 or 2 state symbol
-  stateSymbol: Array<CardStateSymbol>;
+  stateSymbol: Array<CardStateIcon>;
   typeIcon: Array<CardTypeIcon>;
   headerIcon?: CardHeaderIcon;
   effectText: Array<string>;

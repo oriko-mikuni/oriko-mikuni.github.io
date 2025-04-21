@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {Location} from "../../../Player";
@@ -12,7 +12,7 @@ export class Town1 extends Card implements ICard {
         super({
             name: CardName.TOWN1,
             suit: [CardSuitIcon.UNCIVILISED],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             cardInPlayType: CardInPlayType.PINNED,

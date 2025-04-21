@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
@@ -16,7 +16,7 @@ export class AlexandriaInAriana extends Card implements ICard {
         super({
             name: CardName.ALEXANDRIA_IN_ARIANA,
             suit: [],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [CardTypeIcon.CITY],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.DEVELOPMENT,

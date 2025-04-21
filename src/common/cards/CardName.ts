@@ -245,7 +245,7 @@ export enum CardName {
     ROMANS = "card_name.2TRI5",
     GREEKS = "card_name.2TRI6",
     CARTHAGINIANS = "card_name.2TRI7",
-    PERSIANs = "card_name.2TRI8",
+    PERSIANS = "card_name.2TRI8",
     CELTS = "card_name.2TRI9",
     CELTS_NEW = "card_name.2TRI9X",
     MACEDONIANS = "card_name.2TRI10",

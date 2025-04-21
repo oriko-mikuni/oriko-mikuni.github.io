@@ -2,7 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
@@ -14,7 +14,7 @@ export class MountainOfAtlantis extends Card implements ICard {
         super({
             name: CardName.MOUNTAIN_OF_ATLANTIS,
             suit: [CardSuitIcon.REGION],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.DEVELOPMENT,

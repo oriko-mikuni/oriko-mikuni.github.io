@@ -9,15 +9,15 @@ import enCardEffect from './locales/en/cardEffect.json';
 import enVictoryText from './locales/en/cardVictoryText.json';
 import enUI from './locales/en/ui.json';
 
-import zhCardName from './locales/zh/cardName.json';
-import zhModuleName from './locales/zh/moduleName.json';
-import zhCardEffect from './locales/zh/cardEffect.json';
-import zhVictoryText from './locales/zh/cardVictoryText.json';
-import zhUI from './locales/zh/ui.json';
+import zhCNCardName from './locales/zh-CN/cardName.json';
+import zhCNModuleName from './locales/zh-CN/moduleName.json';
+import zhCNCardEffect from './locales/zh-CN/cardEffect.json';
+import zhCNVictoryText from './locales/zh-CN/cardVictoryText.json';
+import zhCNUi from './locales/zh-CN/ui.json';
 
 export const languageName: Record<string, string> = {
     "en": "English",
-    "zh": "中文"
+    "zh_CN": "简体中文"
 }
 
 i18n
@@ -38,12 +38,12 @@ i18n
                 victoryText: enVictoryText,
                 ui: enUI,
             },
-            zh: {
-                cardName: zhCardName,
-                moduleName: zhModuleName,
-                cardEffect: zhCardEffect,
-                victoryText: zhVictoryText,
-                ui: zhUI,
+            zh_CN: {
+                cardName: zhCNCardName,
+                moduleName: zhCNModuleName,
+                cardEffect: zhCNCardEffect,
+                victoryText: zhCNVictoryText,
+                ui: zhCNUi,
             }
         },
         ns: ['cardName', 'moduleName', 'cardEffect', 'ui', 'victoryText'],

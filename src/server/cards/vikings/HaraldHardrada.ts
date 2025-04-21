@@ -1,7 +1,7 @@
 import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
@@ -11,7 +11,7 @@ export class HaraldHardrada extends Card implements ICard {
         super({
             name: CardName.HARALD_HARDRADA,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.VIK,

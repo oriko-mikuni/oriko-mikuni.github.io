@@ -1,10 +1,10 @@
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol.ts";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon.ts";
 import React from "react";
 import "./styles/CardStateSymbolDisplay.css"
 
 function CardStateSymbolDisplay(
     {state, position}:
-    {state?: CardStateSymbol, position?: 'left' | 'right'}
+    {state?: CardStateIcon, position?: 'left' | 'right'}
 ): React.JSX.Element {
     if (position === undefined)
         return <div className={`card-state-symbol card-state-symbol-as-${state}`}/>;

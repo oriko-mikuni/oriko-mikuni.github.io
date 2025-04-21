@@ -50,3 +50,7 @@
     color: white;
     text-align: center;
 }
+
+.card-victory-point-text.card-victory-point-text-wider {
+    width: 65px;
+}

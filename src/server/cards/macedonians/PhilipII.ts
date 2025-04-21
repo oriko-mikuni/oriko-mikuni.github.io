@@ -2,7 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class PhilipII extends Card implements ICard {
@@ -10,7 +10,7 @@ export class PhilipII extends Card implements ICard {
         super({
             name: CardName.PHILIP_II,
             suit: [],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             nationColour: CardNationColour.MAC,
             cardNumber: "MAC16",

@@ -1,7 +1,7 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
@@ -14,7 +14,7 @@ export class Graenland extends Card implements ICard {
         super({
             name: CardName.GRAENLAND,
             suit: [CardSuitIcon.REGION],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,
             startingLocation: CardStartingLocation.NATION,

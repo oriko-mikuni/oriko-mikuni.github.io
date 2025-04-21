@@ -1,7 +1,7 @@
 import {CardName} from '../../common/cards/CardName';
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
-import {CardStateSymbol} from "../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../common/cards/CardStateIcon";
 import {CardTypeIcon} from "../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from '../../common/cards/CardStartingLocation';
 import {VictoryPoints} from '../../common/cards/ClientCard';
@@ -15,7 +15,7 @@ import {GetVPParameter} from "./ICard";
 export interface Properties {
     name: CardName;
     suit: Array<CardSuitIcon>;
-    stateSymbol: Array<CardStateSymbol>;
+    stateSymbol: Array<CardStateIcon>;
     typeIcon: Array<CardTypeIcon>;
     headerIcon?: CardHeaderIcon;
     startingLocation?: CardStartingLocation;
@@ -50,7 +50,7 @@ export abstract class Card {
     public get banner(): CardSuitIcon | undefined {
         return this.properties.suit.at(0);
     }
-    public get stateSymbol(): Array<CardStateSymbol> {
+    public get stateSymbol(): Array<CardStateIcon> {
         return this.properties.stateSymbol;
     }
     public get headerIcon(): CardHeaderIcon | undefined {

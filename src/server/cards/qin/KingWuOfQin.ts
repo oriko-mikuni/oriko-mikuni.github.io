@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 import {Location} from "../../Player";
@@ -12,7 +12,7 @@ export class KingWuOfQin extends Card implements ICard {
         super({
             name: CardName.KING_WU_OF_QIN,
             suit: [],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.QIN,

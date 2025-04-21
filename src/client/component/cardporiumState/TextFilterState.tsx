@@ -119,6 +119,14 @@ export class TextFilter {
                 checked={this.state.isSearchVictory}
                 onChange={check => this.setIsSearchVictory(check.target.checked)}
             />
+            <button
+                onClick={() => {
+                    this.setIsSearchTitle(true);
+                    this.setIsSearchEffect(true);
+                    this.setIsSearchVictory(true);
+                    this.setSearchText("");
+                }}
+            >{t("reset")}</button>
         </>;
     }
 }

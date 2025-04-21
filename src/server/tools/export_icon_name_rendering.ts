@@ -1,6 +1,6 @@
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
-import {CardStateSymbol} from "../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../common/cards/CardStateIcon";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../common/cards/CardTypeIcon";
 import {Resources} from "../../common/Resources";
@@ -11,7 +11,7 @@ class IconNameProcessor {
     public static makeJson(): void {
         this.processIconEnumType("header", CardHeaderIcon);
         this.processIconEnumType("location", CardStartingLocation);
-        this.processIconEnumType("state", CardStateSymbol);
+        this.processIconEnumType("state", CardStateIcon);
         this.processIconEnumType("suit", CardSuitIcon);
         this.processIconEnumType("type", CardTypeIcon);
         this.processIconEnumType("resource", Resources);

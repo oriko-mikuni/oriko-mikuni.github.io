@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {Player} from "../../../Player";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 
@@ -11,7 +11,7 @@ export class UrbanDevelopment extends Card implements ICard {
         super({
             name: CardName.URBAN_DEVELOPMENT_C,
             suit: [CardSuitIcon.CIVILISED],
-            stateSymbol: [CardStateSymbol.EMPIRE],
+            stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             cardNumber: "1CIV12",
             effectText: [

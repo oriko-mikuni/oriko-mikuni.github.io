@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Lydians extends Card implements ICard {
@@ -11,7 +11,7 @@ export class Lydians extends Card implements ICard {
         super({
             name: CardName.LYDIANS,
             suit: [CardSuitIcon.TRIBUTARY],
-            stateSymbol: [CardStateSymbol.BARBARIAN],
+            stateSymbol: [CardStateIcon.BARBARIAN],
             typeIcon: [],
             nationColour: CardNationColour.PER,
             cardNumber: "PER21",

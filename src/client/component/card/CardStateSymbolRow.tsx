@@ -1,12 +1,12 @@
 import React from 'react';
-import {CardStateSymbol} from "../../../common/cards/CardStateSymbol.ts";
+import {CardStateIcon} from "../../../common/cards/CardStateIcon.ts";
 import './styles/CardStateSymbolRow.css';
 import CardStateSymbolDisplay from "./CardStateSymbolDisplay.tsx";
 
 
 function CardStateSymbolRow(
     {state}:
-    {state: CardStateSymbol}
+    {state: CardStateIcon}
 ): React.JSX.Element {
     return <div className="card-state-symbol-row">
         <CardStateSymbolDisplay state={state} position="left" />
