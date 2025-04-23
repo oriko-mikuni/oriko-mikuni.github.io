@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 import { TFunction } from "i18next";
+import {UnitsUtils} from "../../../common/Units.ts";
 
 export type TextTranslationGroup = {
     nameTranslation?: TFunction<"cardName", undefined>,
@@ -66,6 +67,21 @@ export class TextFilterState {
                 if (simplifyText(display).includes(simplifiedSearchText))
                     return true;
             }
+            if (this.isSearchEffect && (!UnitsUtils.isEmpty(card.developmentCost) || card.developmentCostString.length > 0)) {
+                let developmentCostDisplay: string;
+                const trans = translation.effectTranslation;
+                developmentCostDisplay = trans === undefined ? (
+                    "Development Cost: " +
+                    (UnitsUtils.toString(card.developmentCost) ?? "") +
+                    card.developmentCostString.join(" ")
+                ): (
+                    trans("Development Cost: ") +
+                    (UnitsUtils.toString(card.developmentCost) ?? "") +
+                    card.developmentCostString.map(text => trans(text)).join(" ")
+                );
+                if (simplifyText(developmentCostDisplay).includes(simplifiedSearchText))
+                    return true;
+            }
             if (this.isSearchVictory && card.victoryPointsString !== undefined) {
                 const display: string = translation.victoryTranslation === undefined ? card.victoryPointsString
                     : translation.victoryTranslation(card.victoryPointsString);
@@ -99,21 +115,22 @@ export class TextFilter {
                 type="text"
                 value={this.state.searchText}
                 onChange={text => this.setSearchText(text.target.value)}
-                placeholder="Filter text"
+                placeholder={t("searchText")}
             />
-            <span>{t("title")}:</span>
+            <br/>
+            <span>{t("title")}</span>
             <input
                 type="checkbox"
                 checked={this.state.isSearchTitle}
                 onChange={check => this.setIsSearchTitle(check.target.checked)}
             />
-            <span>{t("effect")}:</span>
+            <span>{t("effect")}</span>
             <input
                 type="checkbox"
                 checked={this.state.isSearchEffect}
                 onChange={check => this.setIsSearchEffect(check.target.checked)}
             />
-            <span>{t("victory")}:</span>
+            <span>{t("victory")}</span>
             <input
                 type="checkbox"
                 checked={this.state.isSearchVictory}
@@ -127,6 +144,7 @@ export class TextFilter {
                     this.setSearchText("");
                 }}
             >{t("reset")}</button>
+            <br/>
         </>;
     }
 }

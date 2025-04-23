@@ -11,6 +11,13 @@
     border-bottom-left-radius: inherit;
 }
 
+.card-nation-colour-inline-square {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: 1em;
+}
+
 .card-nation-location-common,
 .card-nation-location-Abbasids,
 .card-nation-location-Aksumites,

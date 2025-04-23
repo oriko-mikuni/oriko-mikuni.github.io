@@ -21,6 +21,7 @@ export type ClientCard = {
   headerIcon?: CardHeaderIcon;
   effectText: Array<string>;
   developmentCost?: Partial<Units>;
+  developmentCostString: Array<string>;
   nationColour?: CardNationColour;
   startingLocation?: CardStartingLocation;
   playerCount?: number;

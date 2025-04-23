@@ -7,7 +7,7 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon.ts";
 import CardStateSymbolRow from "./CardStateSymbolRow.tsx";
 import CardTypeIconGroup from "./CardTypeIconGroup.tsx";
 import CardHeaderIcon from "./CardHeaderIconDisplay.tsx";
-import CardNationColourTriangle from "./CardNationColourTriangle.tsx";
+import CardNationColourRender, {CardNationColourStyle} from "./CardNationColourRender.tsx";
 import {CardEffectTextBox} from "./CardEffectTextBox.tsx";
 import CardVictoryPoints from "./CardVictoryPoints.tsx";
 
@@ -52,8 +52,8 @@ function Card(
             {cardContents}
         </div>
         <CardSuitIconGroup suit={card.suit} />
-        <CardEffectTextBox effectText={card.effectText} developmentCost={card.developmentCost} />
-        <CardNationColourTriangle nationColour={card.nationColour} location={card.startingLocation}/>
+        <CardEffectTextBox effectText={card.effectText} developmentCost={card.developmentCost} developmentCostString={card.developmentCostString}/>
+        <CardNationColourRender nationColour={card.nationColour} location={card.startingLocation} style={CardNationColourStyle.TRIANGLE}/>
         <CardVictoryPoints victoryPoints={card.victoryPoints} victoryPointString={card.victoryPointsString}/>
         <div className="card-number">{card.cardNumber}</div>
         {playerCountRender}

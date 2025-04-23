@@ -44,7 +44,7 @@ Currently, contains nation cards from Classics and Legends.
     * [x] Classics
     * [x] Legends
     * Horizons
-      * [ ] updated cards 
+      * [x] updated cards 
       * [ ] fame
       * [ ] uncivilised
       * [ ] civilised

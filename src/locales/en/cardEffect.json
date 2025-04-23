@@ -1,4 +1,8 @@
 {
+  ", take a {unrest}":
+  ", take a {unrest}",
+  "(illustration changed for historical accuracy)":
+  "[(illustration changed for]\n[historical accuracy)]",
   "Abandon 3 {knight} garrisoned in {region} to draw the active quest into your hand.":
   "Abandon 3 {knight} garrisoned in {region} to draw\nthe active quest into your hand.",
   "Abandon 3 {region} to look at the top 2 cards of the {fame} deck.":
@@ -47,6 +51,8 @@
   "All players MAY draw 1 card.",
   "All players MAY draw a card.":
   "All players MAY draw a card.",
+  "All players MAY gain 1{goods}.":
+  "All players MAY gain 1{goods}.",
   "All players MAY return an {unrest} from their hand or discard pile.":
   "All players MAY return an {unrest} from\ntheir hand or discard pile.",
   "All players gain 2{material}.":
@@ -57,6 +63,8 @@
   "Any player you give a {mask} also takes {unrest}.",
   "Anyone unable to pay takes {unrest}.":
   "Anyone unable to pay takes {unrest}.",
+  "Break through for a {uncivilised}.":
+  "Break through for a {uncivilised}.",
   "Break through for a {variable} card.":
   "Break through for a {variable} card.",
   "Break through for {region}.":
@@ -85,8 +93,12 @@
   "Cannot be played unless both [Longships]\nand [Graenland] are in play.",
   "Cannot be played.":
   "Cannot be played.",
+  "Choose 2 {region} you have in play: sink 1 and abandon the other to look at the top 2 cards of the {fame} deck.":
+  "Choose 2 {region} you have in play: sink 1\nand abandon the other to look at the top\n2 cards of the {fame} deck.",
   "Choose: Pay 1{population} OR discard 2 cards OR pay 3{material}. If you do, return this card to the unrest pile.":
   "Choose: Pay 1{population} OR discard 2 cards\nOR pay 3{material}. If you do, return this card\nto the unrest pile.",
+  "Choose: acquire a {region}/{trade-route} and free play it OR find an [Indian Elephants] and place it on the top of your deck.":
+  "Choose: acquire a {region}/{trade-route} and free play it OR find an [Indian Elephants] and place it on the top of your deck.",
   "Choose: acquire {uncivilised} OR break through for {uncivilised} and all other players gain 1{progress}.":
   "Choose: acquire {uncivilised} OR break through for {uncivilised} and all other players gain 1{progress}.",
   "Choose: acquire {uncivilised} and acquire {civilised} OR find [Arthashastra] and put it in your discard pile.":
@@ -95,6 +107,8 @@
   "Choose: acquire {uncivilised}/{civilised} OR abandon [King Arthur] to free play an {empire} card.",
   "Choose: acquire {uncivilised}/{civilised}/{region}/{tributary} OR if [Palace of Poseidon] is in play, break through {uncivilised}/{civilised}/{region}/{tributary} twice.":
   "Choose: acquire {uncivilised}/{civilised}/{region}/{tributary}\nOR if [Palace of Poseidon] is in play,\nbreak through {uncivilised}/{civilised}/{region}/{tributary} twice.",
+  "Choose: add 1{material} to a card in the market OR gain 1{population}.":
+  "Choose: add 1{material} to a card in the market OR gain 1{population}.",
   "Choose: break through for {tributary} OR break through for {region} and each other player recalls a {region}.":
   "Choose: break through for {tributary}\nOR break through for {region} and each\nother player recalls a {region}.",
   "Choose: break through for {uncivilised}/{civilised}/{region}/{tributary} (you MAY choose an exiled card) OR put this card into your history.":
@@ -103,6 +117,8 @@
   "Choose: develop OR acquire {civilised}.",
   "Choose: develop OR pay 2{material} to acquire {uncivilised}/{civilised}.":
   "Choose: develop OR pay 2{material} to\nacquire {uncivilised}/{civilised}.",
+  "Choose: draw 2 cards OR gain 1{goods} OR return 1 {exhaust} to your state card.":
+  "Choose: draw 2 cards OR gain 1{goods}\nOR return 1 {exhaust} to your state card.",
   "Choose: exile a card from the market OR gain 1{population}.":
   "Choose: exile a card from the market OR gain 1{population}.",
   "Choose: gain 1{material} per {production} OR gain 1{population} per {region} OR draw a card per {city}/{metropolis} in play.":
@@ -111,6 +127,10 @@
   "Choose: gain 1{material} per {production}\nOR gain 1{population} per {region} OR\ngain 1{progress} per {city}/{metropolis} in your play area.",
   "Choose: gain 1{material} per {production} OR gain 1{population} per {region} you have in play.":
   "Choose: gain 1{material} per {production} OR gain 1{population} per {region} you have in play.",
+  "Choose: gain 1{material} per {production} you have in play and per card in your development area OR gain 1{progress} per {city}/{metropolis} you have in play.":
+  "Choose: gain 1{material} per {production} you have in play and per card in your development area OR gain 1{progress} per {city}/{metropolis} you have in play.",
+  "Choose: gain 1{material} per {production}/{merchant} OR gain 1{population} per {region}/{trade-route} OR draw a card per {city}/{metropolis} you have in play.":
+  "Choose: gain 1{material} per {production}/{merchant}\nOR gain 1{population} per {region}/{trade-route}\nOR draw a card per {city}/{metropolis}\nyou have in play.",
   "Choose: gain 1{population} OR look at the top card of your nation deck, then you MAY shuffle the nation deck.":
   "Choose: gain 1{population} OR look at the top\ncard of your nation deck, then you MAY\nshuffle the nation deck.",
   "Choose: gain 1{progress} OR pay 1{population} to break through for {uncivilised} OR return an {unrest} to gain 1{population}.":
@@ -167,6 +187,8 @@
   "Each other player recalls a {pinned}.",
   "Each other player recalls a {region}.":
   "Each other player recalls a {region}.",
+  "Each other player takes a {unrest}.":
+  "Each other player takes a {unrest}.",
   "Each other player takes {unrest} and discards a card. Gain 2{progress}.":
   "Each other player takes {unrest} and\ndiscards a card. Gain 2{progress}.",
   "Each other player takes {unrest}.":
@@ -183,6 +205,10 @@
   "Exhaust: all players MAY gain 2{material}.",
   "Exhaust: all players gain 1{material}, you gain 1{progress}.":
   "Exhaust: all players gain 1{material},\nyou gain 1{progress}.",
+  "Exhaust: choose a {pinned} any other player has in play. Until the end of your turn, this card becomes a copy of that card. If that card has an exhaust and/or solstice effect, resolve them all now.":
+  "Exhaust: choose a {pinned} any other player\nhas in play. Until the end of your turn,\nthis card becomes a copy of that card.\nIf that card has an exhaust and/or solstice effect, resolve them all now.",
+  "Exhaust: choose: gain 1{goods} OR garrison a {scroll} here and put a card from your hand or discard pile into your history.":
+  "Exhaust: choose: gain 1{goods} OR garrison\na {scroll} here and put a card from your\nhand or discard pile into your history.",
   "Exhaust: choose: place an {attack} from your discard pile on the top of your deck OR swap an exiled card with a card in the market.":
   "Exhaust: choose: place an {attack} from your\ndiscard pile on the top of your deck\nOR swap an exiled card with a card\nin the market.",
   "Exhaust: choose: put a {mask} from your discard pile into your history OR discard 3 {mask} to acquire {uncivilised}/{civilised}/{region}/{tributary}.":
@@ -193,6 +219,10 @@
   "Exhaust: choose: recall a {river} to gain\n2{material} and 1{population} OR recall a {fertile} to\ngain 1 action.",
   "Exhaust: choose: spend an action and take {unrest} to develop OR pay 1{population} and take {unrest} to gain an action.":
   "Exhaust: choose: spend an action and\ntake {unrest} to develop OR pay 1{population} and\ntake {unrest} to gain an action.",
+  "Exhaust: discard 2 {mask} and spend 1 action to acquire a {region}/{tributary}/{trade-route}.":
+  "Exhaust: discard 2 {mask} and spend 1\naction to acquire a {region}/{tributary}/{trade-route}.",
+  "Exhaust: discard 2 {mask} and spend 1 action to acquire a {uncivilised}/{civilised}.":
+  "Exhaust: discard 2 {mask} and spend 1\naction to acquire a {uncivilised}/{civilised}.",
   "Exhaust: discard 2 {mask} and spend an action to acquire {region}/{tributary}.":
   "Exhaust: discard 2 {mask} and spend an\naction to acquire {region}/{tributary}.",
   "Exhaust: discard 2 {mask} and spend an action to acquire {uncivilised}/{civilised}.":
@@ -223,6 +253,8 @@
   "Exhaust: garrison a {scroll} here to\nacquire {tributary}.",
   "Exhaust: garrison a {scroll} here to acquire {uncivilised}/{civilised}.":
   "Exhaust: garrison a {scroll} here to\nacquire {uncivilised}/{civilised}.",
+  "Exhaust: garrison a {scroll} here to choose: acquire a {region} OR trade.":
+  "Exhaust: garrison a {scroll} here to choose: acquire a {region} OR trade.",
   "Exhaust: garrison a {scroll} here to exile a card from your hand (not a {unrest}) and gain 2{population}. If it was an {attack}, also gain 1{progress}.":
   "Exhaust: garrison a {scroll} here to exile a card from your hand (not a {unrest}) and gain 2{population}. If it was an {attack}, also gain 1{progress}.",
   "Exhaust: garrison a {scroll} here to put a card from your hand or discard into your history.":
@@ -237,6 +269,8 @@
   "Exhaust: if you have at least 3 [Long Walls] in play, exhaust this card and return a card to the top of your deck to gain 1 action.",
   "Exhaust: ignore the {empire} icon on the next card you play this turn.":
   "Exhaust: ignore the {empire} icon on the\nnext card you play this turn.",
+  "Exhaust: look at the top 2 cards of your nation deck. You MAY place 1 of them at the bottom of the nation deck.":
+  "Exhaust: look at the top 2 cards of your nation deck. You MAY place 1 of them at the bottom of the nation deck.",
   "Exhaust: pay 1{material} to draw a card from your discard pile.":
   "Exhaust: pay 1{material} to draw a card from\nyour discard pile.",
   "Exhaust: pay 1{material} to draw a card.":
@@ -259,10 +293,14 @@
   "Exhaust: put a card from your discard pile into your history.",
   "Exhaust: put a card from your hand into your history to choose: draw a card OR return an {unrest} from your discard pile OR both.":
   "Exhaust: put a card from your hand into your history to choose: draw a card OR return an {unrest} from your discard pile OR both.",
+  "Exhaust: put a card from your hand into your history to move 3{material} here.":
+  "Exhaust: put a card from your hand into your history to move 3{material} here.",
   "Exhaust: put a card into your history to gain 1{progress}.":
   "Exhaust: put a card into your history\nto gain 1{progress}.",
   "Exhaust: put a {mask} into your history to gain 2{progress}.":
   "Exhaust: put a {mask} into your history\nto gain 2{progress}.",
+  "Exhaust: recall a {river}/{fertile}/{ocean} to choose: acquire a card in the market with {material} on it OR trade.":
+  "Exhaust: recall a {river}/{fertile}/{ocean} to\nchoose: acquire a card in the market\nwith {material} on it OR trade.",
   "Exhaust: resolve the exhaust keyword on an opponent's {pinned} card as though it were your own.":
   "Exhaust: resolve the exhaust keyword\non an opponent's {pinned} card as though it\nwere your own.",
   "Exhaust: return a card to the top of your deck to choose: return a {mask} from your discard to your hand OR gain 1{population} and 1{material}.":
@@ -285,6 +323,8 @@
   "Exhaust: when a card effect requires you to discard {mask}, exhaust this card to discard 1 {mask} fewer.",
   "Exhaust: when a card is sunk, exhaust this card to put a card from your discard pile on top of your deck.":
   "Exhaust: when a card is sunk, exhaust\nthis card to put a card from your discard\npile on top of your deck.",
+  "Exhaust: when another player plays a {attack}, you MAY exhaust this card and pay 1{population} to avoid its effects (even if it's another player's turn).":
+  "Exhaust: when another player plays a {attack}, you MAY exhaust this card and pay 1{population} to avoid its effects (even if it's another player's turn).",
   "Exhaust: when another player plays an {attack}, you MAY exhaust this card and pay 1{population} to avoid its effects (even if it's another player's turn).":
   "Exhaust: when another player plays an {attack}, you MAY exhaust this card and pay 1{population} to avoid its effects (even if it's another player's turn).",
   "Exhaust: when another player plays an {attack}, you MAY exhaust this card to avoid its effects (even if it's another player's turn).":
@@ -331,6 +371,8 @@
   "Find [Guennuvar] and put it into\nyour history.",
   "Find a {knight} and put it to your history to look at the top 2 cards of the {fame} deck.":
   "Find a {knight} and put it to your history to look at the top 2 cards of the {fame} deck.",
+  "Flip your state card to its {empire} side.":
+  "Flip your state card to its {empire} side.",
   "For each card discarded, choose: draw a card OR gain 1{progress}.":
   "For each card discarded, choose:\ndraw a card OR gain 1{progress}.",
   "Free play.":
@@ -351,8 +393,12 @@
   "Free play. Choose: return an {unrest}\nOR gain 1{progress} and you MAY return\nan {exhaust} to your state card.",
   "Free play. Choose: sink a card from your discard pile and steal 1{progress} from each player OR break through for {uncivilised}/{civilised}/{region}/{tributary} and sink this card.":
   "Free play. Choose: sink a card from your\ndiscard pile and steal 1{progress} from each\nplayer OR break through for\n{uncivilised}/{civilised}/{region}/{tributary} and sink this card.",
+  "Free play. Choose: sink a card from your discard pile to steal 1{progress} from each other player OR break through for {uncivilised}/{civilised}/{region}/{tributary}/{trade-route} and sink this card.":
+  "Free play. Choose: sink a card from your\ndiscard pile to steal 1{progress} from each\nother player OR break through for\n{uncivilised}/{civilised}/{region}/{tributary}/{trade-route} and sink this card.",
   "Free play. Draw 2 cards and discard one of them.":
   "Free play.\nDraw 2 cards and discard one of them.",
+  "Free play. Draw 2 cards and place a card on the top of your deck.":
+  "Free play. Draw 2 cards and place a\ncard on the top of your deck.",
   "Free play. Draw 2 cards and return a card to the top of your deck.":
   "Free play. Draw 2 cards and return a\ncard to the top of your deck.",
   "Free play. Draw 2 cards.":
@@ -397,6 +443,8 @@
   "Free play. You MAY acquire {region} twice,\nincluding from exiled cards.",
   "Free play. You MAY draw a card.":
   "Free play. You MAY draw a card.",
+  "Free play. You MAY gain all resources from a card in the market. You MAY add 1{material} to a card in the market.":
+  "Free play. You MAY gain all resources from a card in the market. You MAY add 1{material} to a card in the market.",
   "Free play. You MAY put a card from your hand into your history.":
   "Free play. You MAY put a card from\nyour hand into your history.",
   "Free play. You MAY return a card from your discard pile to the top of your deck.":
@@ -405,6 +453,8 @@
   "Gain 1{material} and 1{population} per {city}/{metropolis} in\nyour play area.",
   "Gain 1{material} per {production} you have in play.":
   "Gain 1{material} per {production} you have in play.",
+  "Gain 1{material} per {production}/{river}/{fertile} you have in play.":
+  "Gain 1{material} per {production}/{river}/{fertile} you have in play.",
   "Gain 1{material}.":
   "Gain 1{material}.",
   "Gain 1{population}.":
@@ -441,10 +491,14 @@
   "Give each other player a card from your hand or discard pile.",
   "If [Mountain of Atlantis] leaves play, sink this card.":
   "If [Mountain of Atlantis] leaves play,\nsink this card.",
+  "If [Twrch Trwyth] is in play or it is the active quest, you MAY exile it.":
+  "If [Twrch Trwyth] is in play or it is the active quest, you MAY exile it.",
   "If it matches the declared type, add it to your hand. Otherwise, exile it.":
   "If it matches the declared type, add it to your hand. Otherwise, exile it.",
   "If the abandoned card has no {production}, gain an additional {progress}.":
   "If the abandoned card has no {production},\ngain an additional {progress}.",
+  "If the other copy of [Nomads] is in your discard pile, gain 1{progress}.":
+  "If the other copy of [Nomads] is in your discard pile, gain 1{progress}.",
   "If {barbarian}, all other players recall a {region}.":
   "If {barbarian}, all other players recall a {region}.",
   "If {barbarian}, gain 4{progress}.":
@@ -461,6 +515,8 @@
   "If {empire}, develop.",
   "If {empire}, gain 3{progress} and develop for free.":
   "If {empire}, gain 3{progress} and develop for free.",
+  "If {empire}, put this card into your history.":
+  "If {empire}, put this card into your history.",
   "Look at the top card of your nation deck.":
   "Look at the top card of your nation deck.",
   "Only playable if [Arthashastra] is in play.":
@@ -489,12 +545,16 @@
   "Passive: reduce development costs by 1{population}.",
   "Passive: reduce development costs by 1{progress}.":
   "Passive: reduce development costs by 1{progress}.",
+  "Passive: reduce development costs by 2{material} (to a minimum of 0).":
+  "Passive: reduce development costs by 2{material} (to a minimum of 0).",
   "Passive: reduce the cost in {material} or cards to play an {unrest} by 1 (to a minimum of 1).":
   "Passive: reduce the cost in {material} or\ncards to play an {unrest} by 1\n(to a minimum of 1).",
   "Passive: reduce the cost in {material} to play an {unrest} by 2 (to a minimum of 1).":
   "Passive: reduce the cost in {material} to play\nan {unrest} by 2 (to a minimum of 1).",
   "Passive: when a card effect requires you to discard {mask}, you MAY instead abandon cards garrisoned here.":
   "Passive: when a card effect requires\nyou to discard {mask}, you MAY instead\nabandon cards garrisoned here.",
+  "Passive: when a card would be put into your history, discard it instead and abandon a {pinned} if able.":
+  "Passive: when a card would be put into your history, discard it instead and abandon a {pinned} if able.",
   "Passive: when another player plays an {attack}, ignore the effects unless they give you 1{progress}.":
   "Passive: when another player plays\nan {attack}, ignore the effects unless they\ngive you 1{progress}.",
   "Passive: when another player plays an {attack}, you MAY pay 1{population} to avoid its effect.":
@@ -503,6 +563,10 @@
   "Passive: when you play a {region} from your discard pile, gain 2{material}.",
   "Passive: when you play an {attack}, gain 1{progress}.":
   "Passive: when you play an {attack}, gain 1{progress}.",
+  "Passive: when you reshuffle your discard pile into a new draw deck, take a {unrest} to gain 1{progress}.":
+  "Passive: when you reshuffle your\ndiscard pile into a new draw deck,\ntake a {unrest} to gain 1{progress}.",
+  "Passive: when you reshuffle your discard pile into a new draw deck, take a {unrest}.":
+  "Passive: when you reshuffle your discard pile into a new draw deck, take a {unrest}.",
   "Passive: when you would gain {material}, instead each other player instead gain 1{progress} and you gain 2{population}.":
   "Passive: when you would gain {material}, instead each other player instead gain 1{progress} and you gain 2{population}.",
   "Passive: when you would place 1{progress} on a card in the market, instead place 1{material}.":
@@ -515,6 +579,8 @@
   "Passive: when your deck is empty,\ntake {unrest}.",
   "Passive: whenever you look at any number of cards from the {fame} deck, look at one additional card, then gain 1{progress}.":
   "Passive: whenever you look at any\nnumber of cards from the {fame} deck, look\nat one additional card, then gain 1{progress}.",
+  "Passive: you MAY recall a {ocean} to avoid the effect of a {attack} card.":
+  "Passive: you MAY recall a {ocean} to\navoid the effect of a {attack} card.",
   "Passive: you MAY recall this card to avoid the effect of an {attack}.":
   "Passive: you MAY recall this card to\navoid the effect of an {attack}.",
   "Passive: you MAY recall this to avoid the effect of an {attack}.":
@@ -531,6 +597,12 @@
   "Passive: your [Conquer] cards lose\nthe {barbarian} icon.",
   "Pay 1{population} and 2{material} to acquire {region}/{tributary}.":
   "Pay 1{population} and 2{material} to acquire {region}/{tributary}.",
+  "Pay 1{population} to break through for a {region}/{tributary}.":
+  "Pay 1{population} to break through for a {region}/{tributary}.",
+  "Pay 1{progress}.":
+  "Pay 1{progress}.",
+  "Pay 2{material} to acquire a {uncivilised}/{civilised}/{trade-route}.":
+  "Pay 2{material} to acquire a {uncivilised}/{civilised}/{trade-route}.",
   "Pay 2{material} to acquire {uncivilised}/{civilised}/{region}/{tributary}.":
   "Pay 2{material} to acquire {uncivilised}/{civilised}/{region}/{tributary}.",
   "Pay 2{population} to break through for {tributary}.":
@@ -539,6 +611,8 @@
   "Pay 3{material} to break through for {tributary}.",
   "Pay 3{material}. All other players take {unrest}.":
   "Pay 3{material}. All other players take {unrest}.",
+  "Pay 3{material}. Each other player takes {unrest}.":
+  "Pay 3{material}. Each other player takes {unrest}.",
   "Pay up to 3{progress}. For each {progress} paid, acquire {uncivilised}/{civilised}/{region}/{tributary}.":
   "Pay up to 3{progress}. For each {progress} paid,\nacquire {uncivilised}/{civilised}/{region}/{tributary}.",
   "Place 2 cards on top of your deck to acquire {uncivilised}/{civilised}/{region}/{tributary}.":
@@ -577,10 +651,16 @@
   "Sink this card and a {region} in play to acquire {uncivilised}/{civilised}/{region}/{tributary}.",
   "Sink this card.":
   "Sink this card.",
+  "Solstice: all other players MAY draw a card. Choose: draw a card and gain 2{material} OR move 1{material} here OR pay all {material} from here (minimum 12) to flip this card.":
+  "Solstice: all other players MAY draw a card. Choose: draw a card and gain 2{material} OR move 1{material} here OR pay all {material} from here (minimum 12) to flip this card.",
   "Solstice: all other players MAY return an {unrest}. You gain 1{population} for each {unrest} returned.":
   "Solstice: all other players MAY return an {unrest}. You gain 1{population} for each {unrest} returned.",
   "Solstice: choose: discard a card OR abandon this card and draw a card.":
   "Solstice: choose: discard a card OR abandon this card and draw a card.",
+  "Solstice: choose: discard a card to gain 2{population}, then each other player MAY draw a card OR if you have at least 24{population}, put this card into your history and TRIGGER THE GAME END.":
+  "Solstice: choose: discard a card to gain\n2{population}, then each other player MAY draw\na card OR if you have at least 24{population},\nput this card into your history and\nTRIGGER THE GAME END.",
+  "Solstice: choose: gain 1{goods} OR pay 1{goods} to draw a card per {ocean} you have in play (max 3).":
+  "Solstice: choose: gain 1{goods}\nOR pay 1{goods} to draw a card per {ocean}\nyou have in play (max 3).",
   "Solstice: choose: gain 1{material} OR gain 1{population} OR draw a card.":
   "Solstice: choose: gain 1{material}\nOR gain 1{population} OR draw a card.",
   "Solstice: choose: gain 1{population} OR pay 2{population} to gain 1{progress}.":
@@ -591,6 +671,8 @@
   "Solstice: choose: gain 2{material} OR return a\n{region} from your discard pile to your hand.",
   "Solstice: choose: pay 2{material} and place 1{progress} on this card OR abandon this card and gain all {progress} on it.":
   "Solstice: choose: pay 2{material} and place\n1{progress} on this card OR abandon this\ncard and gain all {progress} on it.",
+  "Solstice: choose: pay 2{material} to add 1{progress} to this card OR abandon this card.":
+  "Solstice: choose: pay 2{material} to\nadd 1{progress} to this card\nOR abandon this card.",
   "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR discard a card, then draw a card.":
   "Solstice: choose: pay all your {progress}\n(minimum 5) to flip this card\nOR discard a card, then draw a card.",
   "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR draw a card.":
@@ -601,6 +683,10 @@
   "Solstice: choose: recall a {knight}\ngarrisoned here or draw a card.",
   "Solstice: choose: recall a {region} OR abandon this card and gain 1{population}.":
   "Solstice: choose: recall a {region} OR\nabandon this card and gain 1{population}.",
+  "Solstice: choose: take a {unrest} and place it on the top of your deck OR discard 2 cards.":
+  "Solstice: choose: take a {unrest} and\nplace it on the top of your deck\nOR discard 2 cards.",
+  "Solstice: choose: take a {unrest} and place it on the top of your deck OR pay 3{material}.":
+  "Solstice: choose: take a {unrest} and\nplace it on the top of your deck\nOR pay 3{material}.",
   "Solstice: choose: take {unrest} OR abandon this card and gain 1{material}.":
   "Solstice: choose: take {unrest} OR\nabandon this card and gain 1{material}.",
   "Solstice: choose: take {unrest} OR discard 2 cards.":
@@ -629,6 +715,8 @@
   "Solstice: gain 1{population}.",
   "Solstice: gain 1{progress} OR return an {unrest} from your discard pile.":
   "Solstice: gain 1{progress} OR return an {unrest}\nfrom your discard pile.",
+  "Solstice: gain 2{material} and discard a card.":
+  "Solstice: gain 2{material} and discard a card.",
   "Solstice: gain 2{material}.":
   "Solstice: gain 2{material}.",
   "Solstice: gain 2{population} and discard a card.":
@@ -637,6 +725,8 @@
   "Solstice: gain 3{material} and discard a card.",
   "Solstice: if there are 2 {scroll} garrisoned here, you MAY abandon this card to draw the top card of the {fame} deck.":
   "Solstice: if there are 2 {scroll} garrisoned here, you MAY abandon this card to draw the top card of the {fame} deck.",
+  "Solstice: if there are at least 2 {scroll} garrisoned here, abandon this card to take the top {fame} card.":
+  "Solstice: if there are at least 2 {scroll} garrisoned here, abandon this card to take the top {fame} card.",
   "Solstice: if there is no active quest, you MAY take {unrest} to garrison an impending quest.":
   "Solstice: if there is no active quest,\nyou MAY take {unrest} to garrison an\nimpending quest.",
   "Solstice: if you have at least 24{population} GAME END IS TRIGGERED.":
@@ -647,10 +737,14 @@
   "Solstice: put a {knight} into your history\n(garrisoned or from your hand)\nor take 2 {unrest}.",
   "Solstice: return an {unrest} from your discard pile.":
   "Solstice: return an {unrest} from your\ndiscard pile.",
+  "Solstice: sink a card from your hand. If it was {uncivilised}/{civilised}/{tributary}/{fame}/{trade-route}, gain 3{material}.":
+  "Solstice: sink a card from your hand.\nIf it was {uncivilised}/{civilised}/{tributary}/{fame}/{trade-route}, gain 3{material}.",
   "Solstice: you MAY discard a card to choose: gain 1{material} OR gain 1{population} OR draw a card.":
   "Solstice: you MAY discard a card to\nchoose: gain 1{material} OR gain 1{population}\nOR draw a card.",
   "Solstice: you MAY discard a card to draw a card and gain 1{progress}.":
   "Solstice: you MAY discard a card to\ndraw a card and gain 1{progress}.",
+  "Solstice: you MAY discard a card to gain 1{population}.":
+  "Solstice: you MAY discard a card\nto gain 1{population}.",
   "Solstice: you MAY discard a card to gain 1{progress}.":
   "Solstice: you MAY discard a card\nto gain 1{progress}.",
   "Solstice: you MAY discard a card to return an {unrest} from your discard pile.":
@@ -679,6 +773,8 @@
   "Solstice: you MAY recall a {region}.",
   "Solstice: you MAY return a {region} from your discard pile to your hand.":
   "Solstice: you MAY return a {region} from\nyour discard pile to your hand.",
+  "Solstice: you MAY return a {unrest}. If you do, each other player gains 2{material}.":
+  "Solstice: you MAY return a {unrest}. If you\ndo, each other player gains 2{material}.",
   "Steal 1{material} from each other player.":
   "Steal 1{material} from each other player.",
   "Steal 1{population} from each {empire} player.":
@@ -703,6 +799,8 @@
   "Then return a card to the top of\nyour deck.",
   "This card cannot be garrisoned.":
   "This card cannot be garrisoned.",
+  "When a card is sunk, you MAY return a card from your discard pile to the top of your deck.":
+  "When a card is sunk, you MAY return\na card from your discard pile to the\ntop of your deck.",
   "When put into play, flip your state card to its {empire} side.":
   "When put into play, flip your state\ncard to its {empire} side.",
   "When you take {unrest}, look at the top card of your nation deck. You MAY place it at the bottom of the nation deck.":
@@ -713,6 +811,12 @@
   "When you would gain this card, instead resolve it. Then flip this card.",
   "You MAY abandon a {region} with garrisoned [Myrddin Wyllt] to put both the active quest and the top card of your nation deck in your discard pile.":
   "You MAY abandon a {region} with garrisoned [Myrddin Wyllt] to put both the active quest and the top card of your nation deck in your discard pile.",
+  "You MAY acquire a {civilised}.":
+  "You MAY acquire a {civilised}.",
+  "You MAY acquire a {region}.":
+  "You MAY acquire a {region}.",
+  "You MAY acquire a {uncivilised}.":
+  "You MAY acquire a {uncivilised}.",
   "You MAY acquire an exiled card (not a{knight}).":
   "You MAY acquire an exiled card (not a{knight}).",
   "You MAY acquire {civilised}.":
@@ -735,6 +839,8 @@
   "You MAY break through for {region}.",
   "You MAY break through for {region}/{tributary}.":
   "You MAY break through for {region}/{tributary}.",
+  "You MAY choose: discard a card to break through for a {region} OR pay 3{material} to break through for a {tributary}.":
+  "You MAY choose: discard a card\nto break through for a {region} OR pay 3{material}\nto break through for a {tributary}.",
   "You MAY draw a card from your discard pile.":
   "You MAY draw a card from\nyour discard pile.",
   "You MAY draw a card from your history.":
@@ -761,6 +867,8 @@
   "You MAY put this card into your history.",
   "You MAY return [Excalibur] from your discard pile to the top of your deck.":
   "You MAY return [Excalibur] from your discard pile to the top of your deck.",
+  "You MAY return a card from your discard pile to the top of your deck.":
+  "You MAY return a card from your discard pile to the top of your deck.",
   "You MAY return a {region} from your discard pile to the top of your deck.":
   "You MAY return a {region} from your discard pile to the top of your deck.",
   "You MAY return an {unrest}.":
@@ -769,6 +877,8 @@
   "You MAY return up to 2 {mask} from your discard pile to your hand.",
   "You MAY shuffle the nation deck.":
   "You MAY shuffle the nation deck.",
+  "You MAY spend an action to break through for a {region}.":
+  "You MAY spend an action to\nbreak through for a {region}.",
   "You gain 1{progress}.":
   "You gain 1{progress}.",
   "You may return a card of your choice from your discard pile to the top of your draw deck.":

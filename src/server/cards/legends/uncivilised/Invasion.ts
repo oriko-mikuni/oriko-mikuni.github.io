@@ -14,7 +14,7 @@ export class Invasion extends Card implements ICard {
             headerIcon: CardHeaderIcon.ATTACK,
             cardNumber: "2UNC5",
             effectText: [
-                "Pay 3{material}. All other players take {unrest}.",
+                "Pay 3{material}. Each other player takes {unrest}.",
                 "Choose: break through for {tributary} OR break through for {region} and each other player recalls a {region}."
             ],
             victoryPoints: 1,

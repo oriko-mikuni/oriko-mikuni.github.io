@@ -12,7 +12,7 @@ export class KingOfKings extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_A,
-            cardNumber: "FAM_A",
+            cardNumber: "?FAM?A",
             effectText: [
                 "When you would gain this card, instead resolve it. Then flip this card.",
                 "THIS TRIGGERS GAME END.",

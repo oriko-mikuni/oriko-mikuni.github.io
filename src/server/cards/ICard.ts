@@ -10,6 +10,7 @@ import {CardNationColour} from "../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
 import {CardStateIcon} from "../../common/cards/CardStateIcon";
 import {Units} from "../../common/Units";
+import {GameModule} from "../../common/cards/GameModule";
 
 export type GetVPParameter = {player: Player, location: string};
 
@@ -21,11 +22,13 @@ export interface ICard {
     cardNumber?: string;
     effectText?: Array<string>;
     developmentCost?: Partial<Units>;
+    developmentCostString?: Array<string>;
     expansion?: CardExpansion;
     headerIcon?: CardHeaderIcon;
     nationColour?: CardNationColour;
     playerCount?: number;
     startingLocation?: CardStartingLocation;
+    gameModule?: GameModule;
 
     canPlayAsAction: (player: Player) => boolean;
     canFreePlay: (player: Player) => boolean;

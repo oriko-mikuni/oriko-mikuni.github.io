@@ -1,8 +1,8 @@
 {
   "module.common": "公共",
-  "module.common-Classics": "经典",
-  "module.common-Legends": "传奇",
-  "module.common-Horizons": "地平线",
+  "module.common-Classics": "经典市场",
+  "module.common-Legends": "传奇市场",
+  "module.common-Horizons": "地平线市场",
   "module.common-Trade-Route": "贸易路线",
 
   "module.update-Horizons": "地平线更新",

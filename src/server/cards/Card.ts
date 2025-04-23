@@ -11,6 +11,7 @@ import { CardInPlayType } from '../../common/cards/CardInPlayType';
 import {CardExpansion} from "../../common/cards/CardExpansion";
 import {Units} from "../../common/Units";
 import {GetVPParameter} from "./ICard";
+import {GameModule} from "../../common/cards/GameModule";
 
 export interface Properties {
     name: CardName;
@@ -24,10 +25,12 @@ export interface Properties {
     cardNumber?: string;
     effectText?: Array<string>;
     developmentCost?: Partial<Units>;
+    developmentCostString?: Array<string>;
     expansion?: CardExpansion;
     playerCount?: number;
     victoryPoints?: VictoryPoints;
     victoryPointsString?: string;
+    gameModule?: GameModule;
 }
 
 export const staticCardProperties = new Map<CardName, Properties>();
@@ -88,6 +91,12 @@ export abstract class Card {
     }
     public get victoryPointsString(): string | undefined {
         return this.properties.victoryPointsString;
+    }
+    public get gameModule(): GameModule | undefined {
+        return this.properties.gameModule;
+    }
+    public get developmentCostString(): Array<string> | undefined {
+        return this.properties.developmentCostString;
     }
 
     public canPlayAsAction(player: Player) {

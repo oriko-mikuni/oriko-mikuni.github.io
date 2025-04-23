@@ -11,6 +11,7 @@ export enum CardEffectReuse {
 
     city = "Solstice: you MAY discard a card to choose: gain 1{material} OR gain 1{population} OR draw a card.",
     metropolis = "Solstice: choose: gain 1{material} OR gain 1{population} OR draw a card.",
+    harbourCity = "Solstice: choose: gain 1{goods} OR pay 1{goods} to draw a card per {ocean} you have in play (max 3).",
 
     // reusable words
     fourSuits = "{uncivilised}/{civilised}/{region}/{tributary}",

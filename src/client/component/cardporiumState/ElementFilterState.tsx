@@ -7,36 +7,40 @@ type CardporiumFilterStateAction = {
     elem?: string,
     targetValue: boolean
 };
-const selectedColor: string = "#005500";
-const unselectedColor: string = "#dddddd";
+
+const selectedStyle: Record<0 | 1, React.CSSProperties> = {
+    0: {background: "#303030", color: "#fff"},
+    1: {background: "#dddddd", color: "#000"}
+};
 
 class CardporiumFilterState {
     filterDisplaySet: Set<string>;
     filterVoidDisplay: boolean;
     fullSet: Set<string>;
+    includeVoidContent: boolean;
 
-    constructor(fullSet: Set<string>) {
-        this.filterDisplaySet = new Set<string>();
-        this.filterVoidDisplay = false;
+    constructor(fullSet: Set<string>, includeVoidContent: boolean, currentSet: Set<string>) {
+        this.filterVoidDisplay = true;
         this.fullSet = fullSet;
+        this.filterDisplaySet = currentSet !== undefined ? currentSet : new Set<string>(fullSet);
+        this.includeVoidContent = includeVoidContent;
     }
 
     public static reducer(
         state: CardporiumFilterState,
         action: CardporiumFilterStateAction
     ): CardporiumFilterState {
-        const resultState: CardporiumFilterState = new CardporiumFilterState(state.fullSet);
-        state.filterDisplaySet.forEach((elem) => resultState.filterDisplaySet.add(elem));
+        const resultState: CardporiumFilterState = new CardporiumFilterState(state.fullSet, state.includeVoidContent, new Set<string>());
         if (action.actionType === "invert") {
             resultState.filterVoidDisplay = !state.filterVoidDisplay;
+
             resultState.fullSet.forEach((elem) => {
-                if (resultState.filterDisplaySet.has(elem))
-                    resultState.filterDisplaySet.delete(elem);
-                else
+                if (!state.filterDisplaySet.has(elem))
                     resultState.filterDisplaySet.add(elem);
             });
             return resultState;
         }
+        resultState.filterDisplaySet = state.filterDisplaySet;
         if (action.elem === undefined) {
             resultState.filterVoidDisplay = action.targetValue;
         } else {
@@ -53,8 +57,6 @@ class CardporiumFilterState {
         cards: Array<ClientCard>,
         cardToProp: (arg0: ClientCard) => string | undefined
     ): Array<ClientCard> {
-        if (!this.filterVoidDisplay && this.filterDisplaySet.size === 0)
-            return cards;
         return cards.filter(card => {
             const prop: string | undefined = cardToProp(card);
             if (prop === undefined)
@@ -68,8 +70,6 @@ class CardporiumFilterState {
         cards: Array<ClientCard>,
         cardToProp: (arg0: ClientCard) => Array<string>
     ): Array<ClientCard> {
-        if (!this.filterVoidDisplay && this.filterDisplaySet.size === 0)
-            return cards;
         return cards.filter(card => {
             const props: Array<string> = cardToProp(card);
             if (props.length === 0)
@@ -84,11 +84,13 @@ export class CardporiumFilter {
     state: CardporiumFilterState;
     dispatch:  React.ActionDispatch<[action: CardporiumFilterStateAction]>;
 
-    constructor(fullSet: Array<string>) {
+    constructor(fullSet: Array<string>, includeVoidContent: boolean = true) {
         const realFullSet: Set<string> = new Set();
         fullSet.forEach((elem) => realFullSet.add(elem));
-        const initialState: CardporiumFilterState = new CardporiumFilterState(realFullSet);
-        [this.state, this.dispatch] = useReducer(CardporiumFilterState.reducer, initialState);
+        [this.state, this.dispatch] = useReducer(
+            CardporiumFilterState.reducer,
+            new CardporiumFilterState(realFullSet, includeVoidContent, new Set<string>(realFullSet))
+        );
     }
 
     public filterButtons (
@@ -96,18 +98,20 @@ export class CardporiumFilter {
     ): Array<React.JSX.Element> {
         const {t} = useTranslation("ui", {keyPrefix: "ElementFilterState"});
         let size: number = 1;
-        const result: Array<React.JSX.Element> = [
-            <button
-                onClick = {() => this.dispatch({
-                    actionType: "toggle",
-                    targetValue: !this.state.filterVoidDisplay
-                })}
-                style={{background: this.state.filterVoidDisplay ? selectedColor : unselectedColor}}
-                key={0}
-            >
-                <IconRender />
-            </button>
-        ];
+        const result: Array<React.JSX.Element> = [];
+        if (this.state.includeVoidContent) {
+            result.push(
+                <button
+                    onClick={() => this.dispatch({
+                        actionType: "toggle",
+                        targetValue: !this.state.filterVoidDisplay
+                    })}
+                    style={selectedStyle[this.state.filterVoidDisplay ? 1 : 0]}
+                    key={0}
+                >
+                    <IconRender/>
+                </button>);
+        }
         this.state.fullSet.forEach((elem1: string) => {
             result.push(
                 <button
@@ -116,7 +120,7 @@ export class CardporiumFilter {
                         elem: elem1,
                         targetValue: !this.state.filterDisplaySet.has(elem1)
                     })}
-                    style={{background: this.state.filterDisplaySet.has(elem1) ? selectedColor : unselectedColor}}
+                    style={selectedStyle[this.state.filterDisplaySet.has(elem1) ? 1 : 0]}
                     key={size}
                 >
                     <IconRender elem={elem1}/>
@@ -126,7 +130,7 @@ export class CardporiumFilter {
         });
         result.push(
             <button
-                onClick = {() => this.dispatch({
+                onClick={() => this.dispatch({
                     actionType: "invert",
                     targetValue: true
                 })}

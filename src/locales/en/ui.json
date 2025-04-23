@@ -15,24 +15,29 @@
     "backToHomepage": "<-- back",
     "toFeedback": "feedback",
     "filter-": "Filter ",
-    "Suit": "Suits",
+    "NationOrCommon": "Nation / Common",
+    "SuitIcon": "Suits",
     "TypeIcon": "Types",
     "HeaderIcon": "Header",
     "StateIcon": "State",
     "VictoryPoint": "VP",
+    "searchText": "search text...",
     "text": "text",
     "title": "title",
     "effect": "effect",
     "victory": "VP text",
     "reset": "Reset",
-    "expand all": "expand all",
-    "collapse all": "collapse all"
+    "gameContents": "Game Contents",
+    "includeHorizons": "Include Horizons"
   },
   "ElementFilterState": {
     "invert": "Invert"
   },
   "CardGroup": {
-    "expand": "expand",
-    "collapse": "collapse"
+    "hintIfNoCardsLine1": "Currently no cards are shown.",
+    "hintIfNoCardsLine2": "Pick at least one Nation / Common. You may change your filter settings.",
+    "hintIfNoCardsLine3": "In filter settings, N/A represents cards with none of these icon,",
+    "hintIfNoCardsLine4": "while each other icon represents cards with at least one of such icon.",
+    "hintIfNoCardsLine5": "For example, Civilised(suit) would include cards with Uncivilised/Civilised suit."
   }
 }

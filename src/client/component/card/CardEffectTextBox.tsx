@@ -6,19 +6,28 @@ import {CardEffectReuse} from "../../../common/cards/CardEffectReuse.ts";
 import {useTranslation} from "react-i18next";
 import {TFunction} from "i18next";
 
-function RenderDevelopmentCostBox(translation: TFunction<string, string>, developmentCost?: Partial<Units>) : Array<React.JSX.Element> | null {
-    if (UnitsUtils.isEmpty(developmentCost)) {
+function RenderDevelopmentCostBox(
+    translation: TFunction<string, string>,
+    developmentCost: Partial<Units> | undefined,
+    developmentCostString: Array<string>
+) : Array<React.JSX.Element> | null {
+    if (UnitsUtils.isEmpty(developmentCost) && developmentCostString.length === 0) {
         return null;
     }
+
     const developmentCostDisplay: Array<React.JSX.Element> | null =
-        RenderCardText(translation("Development Cost: ") + UnitsUtils.toString(developmentCost));
+        RenderCardText(
+            translation("Development Cost: ") +
+            (UnitsUtils.toString(developmentCost) ?? "") +
+            developmentCostString.map(string => translation(string)).join("\n")
+        );
 
     return [<br key={0}/>, <div className="card-development-cost" key={1}>{developmentCostDisplay}</div>];
 }
 
 export function CardEffectTextBox(
-    {effectText, developmentCost}:
-    {effectText: Array<string>, developmentCost?: Partial<Units>}
+    {effectText, developmentCost, developmentCostString}:
+    {effectText: Array<string>, developmentCost?: Partial<Units>, developmentCostString: Array<string>}
 ): React.JSX.Element | null {
     let actualEffectText: Array<string> = effectText;
     let classes: string = "card-effect-text";
@@ -38,7 +47,7 @@ export function CardEffectTextBox(
     if (actualEffectText.length > 0 || developmentCost !== undefined) {
         return <div className={classes}>
             {RenderCardText(finalEffectText)}
-            {RenderDevelopmentCostBox(translation, developmentCost)}
+            {RenderDevelopmentCostBox(translation, developmentCost, developmentCostString)}
         </div>;
     } else {
         return null;

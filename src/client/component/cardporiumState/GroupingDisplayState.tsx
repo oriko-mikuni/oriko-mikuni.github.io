@@ -1,46 +1,28 @@
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 
-export class CardGroupDisplayState {
-    cards: Array<ClientCard>;
-    display: boolean;
-    groupName: string;
-    constructor(groupName: string) {
-        this.cards = [];
-        this.display = false;
-        this.groupName = groupName;
-    }
-}
-
 type CardporiumDisplayStateAction = {
-    groupName?: string,
-    targetDisplayState: boolean,
+    targetUpdateState?: boolean,
 };
 
 export class CardporiumDisplayState {
-    groupDisplays: Map<string, CardGroupDisplayState>;
     cards: Array<ClientCard>;
+    updatedCards: Array<ClientCard>;
+    update?: (arg0: ClientCard) => ClientCard;
+    updateState: boolean;
 
-    constructor(cards: Array<ClientCard> = []) {
+    constructor(cards: Array<ClientCard> = [], update: ((arg0: ClientCard) => ClientCard) | undefined = undefined) {
         this.cards = cards;
-        this.groupDisplays = new Map<string, CardGroupDisplayState>();
-        this.initDisplaySetting();
+        this.update = update;
+        this.updatedCards = cards.map(card => update !== undefined ? update(card) : card)
+        this.updateState = false;
     }
 
-    public initDisplaySetting(): void {
-        this.groupDisplays.clear();
-        for (const card of this.cards) {
-            const groupName: string = card.gameModule;
-            let groupDisplay: CardGroupDisplayState | undefined = this.groupDisplays.get(groupName);
-            if (groupDisplay === undefined) {
-                groupDisplay = new CardGroupDisplayState(groupName);
-                this.groupDisplays.set(groupName, groupDisplay);
-            }
-            groupDisplay.cards.push(card);
-        }
+    public getCards(): Array<ClientCard> {
+        return this.updateState ? this.updatedCards : this.cards;
     }
 
-    public static toggle(targetDisplayState: boolean, groupName?: string) {
-        return {groupName: groupName, targetDisplayState: targetDisplayState};
+    public static toggleUpdate(targetUpdateState: boolean) {
+        return {targetUpdateState: targetUpdateState};
     }
 
     public static reducer(
@@ -49,19 +31,13 @@ export class CardporiumDisplayState {
     ): CardporiumDisplayState {
         const resultState: CardporiumDisplayState = new CardporiumDisplayState();
         resultState.cards = state.cards;
-        resultState.groupDisplays = state.groupDisplays;
+        resultState.updatedCards = state.updatedCards;
+        resultState.update = state.update;
+        resultState.updateState = state.updateState;
 
-        if (action.groupName !== undefined) {
-            const groupDisplay: CardGroupDisplayState | undefined = resultState.groupDisplays.get(action.groupName);
-            if (groupDisplay !== undefined) {
-                groupDisplay.display = action.targetDisplayState;
-            }
-        } else {
-            resultState.groupDisplays.forEach(groupDisplay =>
-                groupDisplay.display = action.targetDisplayState
-            );
+        if (action.targetUpdateState !== undefined) {
+            resultState.updateState = action.targetUpdateState;
         }
         return resultState;
     }
-
 }

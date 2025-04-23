@@ -4,22 +4,22 @@ import Card from "./card/Card.tsx";
 import "./card/styles/CardBox.css";
 import "./CardGroup.css"
 import {useTranslation} from "react-i18next";
-import {CardGroupDisplayState} from "./cardporiumState/GroupingDisplayState.tsx";
 
 function CardGroup(
-    {groupState, filter, onToggleOn, onToggleOff}:
-    {
-        groupState: CardGroupDisplayState,
-        filter: (arg0: Array<ClientCard>) => Array<ClientCard>,
-        onToggleOn: () => void,
-        onToggleOff: () => void}
+    {cards, filter}:
+    {cards: Array<ClientCard>, filter: (arg0: Array<ClientCard>) => Array<ClientCard>}
 ): React.JSX.Element {
-    const {t: moduleTranslation} = useTranslation("moduleName");
-    const {t: cardGroupUITranslation} = useTranslation("ui", {keyPrefix: "CardGroup"});
+    const filteredCards: Array<ClientCard> = filter(cards);
+    const {t} = useTranslation("ui", {keyPrefix: "CardGroup"});
 
-    const filteredCards: Array<ClientCard> = filter(groupState.cards);
-
-    const cardElements: React.JSX.Element | null = (!groupState.display || filteredCards.length === 0) ? null :
+    const cardElements: React.JSX.Element | null = (filteredCards.length === 0) ?
+        <p style={{fontSize: "20px", lineHeight: "24px"}}>
+            {t("hintIfNoCardsLine1")}<br/>
+            {t("hintIfNoCardsLine2")}<br/>
+            {t("hintIfNoCardsLine3")}<br/>
+            {t("hintIfNoCardsLine4")}<br/>
+            {t("hintIfNoCardsLine5")}
+        </p> :
         <div className="cardList">{
             filteredCards.map((card: ClientCard, idx: number): React.JSX.Element =>
                 <div className="cardBox" key={idx}>
@@ -29,11 +29,6 @@ function CardGroup(
         }</div>;
 
     return <>
-        <h2 style={{color: filteredCards.length > 0 ? "black" : "grey"}}>
-            {moduleTranslation(groupState.groupName)}
-            <button onClick={onToggleOn} style={groupState.display ? {display: "none"} : {}}>{cardGroupUITranslation("expand")}</button>
-            <button onClick={onToggleOff} style={groupState.display ? {} : {display: "none"}}>{cardGroupUITranslation("collapse")}</button>
-        </h2>
         {cardElements}
     </>;
 }

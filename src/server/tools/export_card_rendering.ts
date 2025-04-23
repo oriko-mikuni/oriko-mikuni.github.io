@@ -7,7 +7,7 @@ import {exportIconNameRendering} from "./export_icon_name_rendering";
 import {GameModule} from "../../common/cards/GameModule";
 
 class CardProcessor {
-    public static json: Record<string, Array<ClientCard>> = {};
+    public static json: Array<ClientCard> = [];
     public static makeJson() {
         ALL_MODULE_MANIFEST.forEach(this.processManifest);
     }
@@ -29,6 +29,7 @@ class CardProcessor {
         const clientCard: ClientCard = {
             cardNumber: card.cardNumber,
             developmentCost: card.developmentCost,
+            developmentCostString: card.developmentCostString || [],
             effectText: card.effectText || [],
             expansion: card.expansion,
             headerIcon: card.headerIcon,
@@ -41,12 +42,9 @@ class CardProcessor {
             typeIcon: card.typeIcon,
             victoryPoints: card.victoryPoints,
             victoryPointsString: card.victoryPointsString,
-            gameModule: module
+            gameModule: card.gameModule ?? module
         };
-        if (CardProcessor.json[module] === undefined) {
-            CardProcessor.json[module] = [];
-        }
-        CardProcessor.json[module].push(clientCard);
+        CardProcessor.json.push(clientCard);
     }
 }
 

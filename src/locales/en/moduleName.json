@@ -1,8 +1,8 @@
 {
   "module.common": "Common",
-  "module.common-Classics": "Classics",
-  "module.common-Legends": "Legends",
-  "module.common-Horizons": "Horizons",
+  "module.common-Classics": "Classics Common",
+  "module.common-Legends": "Legends Common",
+  "module.common-Horizons": "Horizons Common",
   "module.common-Trade-Route": "Trade Route",
 
   "module.update-Horizons": "Horizons Update",

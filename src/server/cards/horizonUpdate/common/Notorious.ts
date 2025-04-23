@@ -1,8 +1,9 @@
-import {GetVPParameter, ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
-import {Card} from "../Card";
-import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
+import {GetVPParameter, ICard} from "../../ICard";
+import {CardName} from "../../../../common/cards/CardName";
+import {Card} from "../../Card";
+import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
+import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
+import {GameModule} from "../../../../common/cards/GameModule";
 
 export class Notorious extends Card implements ICard {
     constructor() {
@@ -19,7 +20,8 @@ export class Notorious extends Card implements ICard {
                 "Anyone unable to pay takes {unrest}."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {attack}"
+            victoryPointsString: "1VP per {attack}",
+            gameModule: GameModule.CLASSICS_COMMON
         });
     }
     public override getVariableVictoryPoints(param: GetVPParameter): number {

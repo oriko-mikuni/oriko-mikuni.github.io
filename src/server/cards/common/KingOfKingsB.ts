@@ -12,7 +12,7 @@ export class KingOfKingsB extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_B,
-            cardNumber: "FAM_B",
+            cardNumber: "?FAM?B",
             effectText: [
                 "When you would gain this card, instead resolve it. Multiple players can resolve this card.",
                 "If {barbarian}, gain 4{progress}.",

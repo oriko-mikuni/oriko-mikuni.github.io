@@ -15,24 +15,29 @@
     "backToHomepage": "<-- 返回",
     "toFeedback": "反馈",
     "filter-": "过滤",
-    "Suit": "花色图标",
+    "NationOrCommon": "国家/公共",
+    "SuitIcon": "花色图标",
     "TypeIcon": "类型图标",
     "HeaderIcon": "顶部图标",
     "StateIcon": "国体图标",
     "VictoryPoint": "分值",
+    "searchText": "搜索文本...",
     "text": "文本",
     "title": "标题文本",
     "effect": "效果文本",
     "victory": "分数文本",
     "reset": "重置",
-    "expand all": "全部展开",
-    "collapse all": "全部折叠"
+    "gameContents": "游戏内容",
+    "includeHorizons": "包含地平线"
   },
   "ElementFilterState": {
     "invert": "反转"
   },
   "CardGroup": {
-    "expand": "展开",
-    "collapse": "折叠"
+    "hintIfNoCardsLine1": "目前没有显示任何卡牌。",
+    "hintIfNoCardsLine2": "选择至少一种国家/公共牌。你可以更改你的过滤设置。",
+    "hintIfNoCardsLine3": "过滤设置中，N/A表示一个该类图标都没有的牌，",
+    "hintIfNoCardsLine4": "其他图标表示带有至少一个对应图标的牌。",
+    "hintIfNoCardsLine5": "例如：文明（花色）会同时包含具有蒙昧+文明花色的牌。"
   }
 }
