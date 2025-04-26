@@ -1,11 +1,11 @@
 import {CardNationColour} from "./CardNationColour";
 
 export enum GameModule  {
-    COMMON = 'module.common',
-    CLASSICS_COMMON = 'module.common-Classics',
-    LEGENDS_COMMON = 'module.common-Legends',
-    HORIZONS_COMMON = 'module.common-Horizons',
-    TRADE_ROUTE_EXPANSION = 'module.common-Trade-Route',
+    COMMON = 'module.1.common',
+    CLASSICS_COMMON = 'module.2.common-Classics',
+    LEGENDS_COMMON = 'module.3.common-Legends',
+    HORIZONS_COMMON = 'module.4.common-Horizons',
+    TRADE_ROUTE_EXPANSION = 'module.5.common-Trade-Route',
 
     HORIZONS_UPDATE = 'module.update-Horizons',
     PROMO = 'module.promo',

@@ -3,6 +3,27 @@ import {CardName} from "../../common/cards/CardName";
 import {ClientCard, VictoryPoints} from "../../common/cards/ClientCard";
 import {GameModule} from "../../common/cards/GameModule";
 
+export const horizonModules: Set<GameModule> = new Set<GameModule>([
+        GameModule.HORIZONS_COMMON,
+        GameModule.TRADE_ROUTE_EXPANSION,
+        GameModule.HORIZONS_UPDATE,
+        // horizons nations
+        GameModule.ABBASIDS,
+        GameModule.AKSUMITES,
+        GameModule.CULTISTS,
+        GameModule.GUPTAS,
+        GameModule.INUIT,
+        GameModule.JAPANESE,
+        GameModule.MAGYARS,
+        GameModule.MAYANS,
+        GameModule.MARTIANS,
+        GameModule.POLYNESIANS,
+        GameModule.SASSANIDS,
+        GameModule.TAINO,
+        GameModule.TANG,
+        GameModule.WAGADOU
+]);
+
 class ClientCardsManifest {
     public static cards: Map<CardName, ClientCard> = new Map();
     public static allCards: Array<ClientCard> = [];

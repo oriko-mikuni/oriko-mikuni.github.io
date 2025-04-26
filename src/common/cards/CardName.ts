@@ -26,26 +26,6 @@ export enum CardName {
     MERCHANT4 = "card_name.MERC4A",
     MERCHANT_EMPIRE4 = "card_name.MERC4B",
 
-    // COMMON TRADE ROUTE
-    CORNWALL_TIN_ROAD = "card_name.3TRO1",
-    LAPIS_LAZULI_TRADE = "card_name.3TRO2",
-    PHILIPPINES_JADE_TRADE = "card_name.3TRO3",
-    BALTIC_AMBER_ROAD = "card_name.3TRO4",
-    HOPEWELL_EXCHANGE_SYSTEM = "card_name.3TRO5",
-    SWAHILI_COAST = "card_name.3TRO6",
-    THE_NILE_CORRIDOR = "card_name.3TRO7",
-    ANDES_HIGHWAY = "card_name.3TRO8",
-    MEDITERRANEAN_CIRCLE = "card_name.3TRO9",
-
-    // PROMO CARD
-    PROMO_UNDAUNTED = "card_name.0FAM1",
-    PROMO_BOUNTIFUL = "card_name.9FAM1",
-    PROMO_HEIR_PRESUMPTIVE = "card_name.9UNC1",
-    PROMO_ABUNDANCE0 = "card_name.ABU1",
-    PROMO_ABUNDANCE1 = "card_name.ABU2",
-    PROMO_ABUNDANCE2 = "card_name.ABU3",
-    PROMO_ABUNDANCE3 = "card_name.ABU4",
-
     // CLASSICS FAME
     PRAISEWORTHY = "card_name.1FAM1",
     GREAT = "card_name.1FAM2",
@@ -309,10 +289,10 @@ export enum CardName {
     SCRUBLAND = "card_name.3REG8",
     BOGS = "card_name.3REG9",
     VALLEY = "card_name.3REG10",
-    DISTANT_ISLAND = "card_name.3REG11",
-    BORDERLAND = "card_name.3REG12",
-    ALLUVIAL_PLAIN = "card_name.3REG13",
-    HEATH = "card_name.3REG14",
+    BORDERLAND = "card_name.3REG11",
+    ALLUVIAL_PLAIN = "card_name.3REG12",
+    HEATH = "card_name.3REG13",
+    DISTANT_ISLAND = "card_name.3REG14",
 
     // HORIZONS TRIBUTARY
     MELAYU_KINGDOM = "card_name.3TRI1",
@@ -325,9 +305,29 @@ export enum CardName {
     CAROLINGIAN_KINGDOM = "card_name.3TRI8",
     KHMER_EMPIRE = "card_name.3TRI9",
     SABAEANS = "card_name.3TRI10",
-    Cimmerians = "card_name.3TRI11",
+    CIMMERIANS = "card_name.3TRI11",
     ILLYRIANS = "card_name.3TRI12",
     TYRRHENIANS = "card_name.3TRI13",
+
+    // COMMON TRADE ROUTE
+    CORNWALL_TIN_ROAD = "card_name.3TRO1",
+    LAPIS_LAZULI_TRADE = "card_name.3TRO2",
+    PHILIPPINES_JADE_TRADE = "card_name.3TRO3",
+    BALTIC_AMBER_ROAD = "card_name.3TRO4",
+    HOPEWELL_EXCHANGE_SYSTEM = "card_name.3TRO5",
+    SWAHILI_COAST = "card_name.3TRO6",
+    THE_NILE_CORRIDOR = "card_name.3TRO7",
+    ANDES_HIGHWAY = "card_name.3TRO8",
+    MEDITERRANEAN_CIRCLE = "card_name.3TRO9",
+
+    // PROMO CARD
+    PROMO_UNDAUNTED = "card_name.0FAM1",
+    PROMO_BOUNTIFUL = "card_name.9FAM1",
+    PROMO_HEIR_PRESUMPTIVE = "card_name.9UNC1",
+    PROMO_ABUNDANCE0 = "card_name.ABU1",
+    PROMO_ABUNDANCE1 = "card_name.ABU2",
+    PROMO_ABUNDANCE2 = "card_name.ABU3",
+    PROMO_ABUNDANCE3 = "card_name.ABU4",
 
      // CLASSICS CARTHAGINIANS
     CARTHAGINIANS_POWER_A = "card_name.CAR1A",

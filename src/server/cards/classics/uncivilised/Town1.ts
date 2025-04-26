@@ -5,7 +5,7 @@ import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
-import {Location} from "../../../Player";
+import {PlayerCardLocation} from "../../../Player";
 
 export class Town1 extends Card implements ICard {
     constructor() {
@@ -27,6 +27,6 @@ export class Town1 extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === Location.HISTORY ? 2 : 0;
+        return param.location === PlayerCardLocation.HISTORY ? 2 : 0;
     }
 }

@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {Location} from "../../Player";
+import {isPlayerLocation, PlayerCardLocation} from "../../Player";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class TerracottaWarriors extends Card implements ICard {
@@ -27,7 +27,7 @@ export class TerracottaWarriors extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return !param.location.startsWith("location:") ? 7 :
-            param.location === Location.HISTORY ? 3 : 0;
+        return !isPlayerLocation(param.location) ? 7 :
+            param.location === PlayerCardLocation.HISTORY ? 3 : 0;
     }
 }

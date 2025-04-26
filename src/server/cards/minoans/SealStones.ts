@@ -1,4 +1,4 @@
-import {ICard} from "../ICard";
+import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
@@ -22,5 +22,9 @@ export class SealStones extends Card implements ICard {
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {progress}"
         });
+    }
+
+    public override getVariableVictoryPoints(param: GetVPParameter): number {
+        return param.player.progress;
     }
 }

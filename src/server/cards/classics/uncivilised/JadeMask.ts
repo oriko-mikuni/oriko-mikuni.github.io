@@ -4,7 +4,7 @@ import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 import {EffectReuseMultipleSentences} from "../../../../common/cards/CardEffectReuse";
-import {Location} from "../../../Player";
+import {PlayerCardLocation} from "../../../Player";
 
 export class JadeMask extends Card implements ICard {
     constructor() {
@@ -21,6 +21,6 @@ export class JadeMask extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === Location.HISTORY ? 1 : 0;
+        return param.location === PlayerCardLocation.HISTORY ? 1 : 0;
     }
 }

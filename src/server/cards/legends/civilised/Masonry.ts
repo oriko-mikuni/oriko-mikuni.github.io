@@ -6,7 +6,7 @@ import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
-import {Location, Player} from "../../../Player";
+import {PlayerCardLocation, Player} from "../../../Player";
 
 export class Masonry extends Card implements ICard {
     constructor() {
@@ -29,7 +29,7 @@ export class Masonry extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         const inPlayCards =
-            param.player.selectCards(card => card.location === Location.IN_PLAY);
+            param.player.selectCards(card => card.location === PlayerCardLocation.IN_PLAY);
         return (Player.countType(CardTypeIcon.CITY, inPlayCards)
             + Player.countType(CardTypeIcon.METROPOLIS, inPlayCards)
         ) * 2;

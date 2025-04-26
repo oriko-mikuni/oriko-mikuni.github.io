@@ -126,14 +126,16 @@ export abstract class Card {
     }
 
     public getConditionalVictoryPoints(param: GetVPParameter): number {
+        console.log(this.name);
         if (param === undefined)
-            throw new Error('cannot get victory points without information');
+            throw new Error('cannot get conditional victory points without information');
         throw new Error('When victoryPoints is \'conditional\', override getVictoryPoints');
     }
 
     public getVariableVictoryPoints(param: GetVPParameter): number {
+        console.log(this.name);
         if (param === undefined)
-            throw new Error('cannot get victory points without information');
+            throw new Error('cannot get variable victory points without information');
         throw new Error('When victoryPoints is \'variable\', override getVictoryPoints');
     }
 }

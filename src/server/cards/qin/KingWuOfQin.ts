@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {Location} from "../../Player";
+import {PlayerCardLocation} from "../../Player";
 
 export class KingWuOfQin extends Card implements ICard {
     constructor() {
@@ -29,6 +29,6 @@ export class KingWuOfQin extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === Location.HISTORY ? 2 : 0;
+        return param.location === PlayerCardLocation.HISTORY ? 2 : 0;
     }
 }

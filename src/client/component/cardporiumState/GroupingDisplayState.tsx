@@ -1,42 +1,47 @@
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 
 type CardporiumDisplayStateAction = {
-    targetUpdateState?: boolean,
+    targetIncludeHorizonsState?: boolean,
 };
+
+type CardporiumDisplayStateProps = {
+    cards?: Array<ClientCard>;
+    update?: (arg0: ClientCard) => ClientCard;
+}
 
 export class CardporiumDisplayState {
     cards: Array<ClientCard>;
     updatedCards: Array<ClientCard>;
     update?: (arg0: ClientCard) => ClientCard;
-    updateState: boolean;
+    includeHorizonsState: boolean;
 
-    constructor(cards: Array<ClientCard> = [], update: ((arg0: ClientCard) => ClientCard) | undefined = undefined) {
-        this.cards = cards;
-        this.update = update;
-        this.updatedCards = cards.map(card => update !== undefined ? update(card) : card)
-        this.updateState = false;
+    constructor(props: CardporiumDisplayStateProps) {
+        this.cards = props.cards || [];
+        this.update = props.update;
+        this.updatedCards = this.cards.map(card => this.update !== undefined ? this.update(card) : card);
+        this.includeHorizonsState = false;
     }
 
     public getCards(): Array<ClientCard> {
-        return this.updateState ? this.updatedCards : this.cards;
+        return this.includeHorizonsState ? this.updatedCards : this.cards;
     }
 
-    public static toggleUpdate(targetUpdateState: boolean) {
-        return {targetUpdateState: targetUpdateState};
+    public static toggleIncludeHorizons(targetIncludeHorizonsState: boolean): Partial<CardporiumDisplayStateAction> {
+        return {targetIncludeHorizonsState: targetIncludeHorizonsState};
     }
 
     public static reducer(
         state: CardporiumDisplayState,
         action: CardporiumDisplayStateAction
     ): CardporiumDisplayState {
-        const resultState: CardporiumDisplayState = new CardporiumDisplayState();
+        const resultState: CardporiumDisplayState = new CardporiumDisplayState({});
         resultState.cards = state.cards;
         resultState.updatedCards = state.updatedCards;
         resultState.update = state.update;
-        resultState.updateState = state.updateState;
+        resultState.includeHorizonsState = state.includeHorizonsState;
 
-        if (action.targetUpdateState !== undefined) {
-            resultState.updateState = action.targetUpdateState;
+        if (action.targetIncludeHorizonsState !== undefined) {
+            resultState.includeHorizonsState = action.targetIncludeHorizonsState;
         }
         return resultState;
     }

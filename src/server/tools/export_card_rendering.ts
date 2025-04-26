@@ -5,11 +5,18 @@ import {ALL_MODULE_MANIFEST} from '../cards/AllCards';
 import {CardManifest, cardManifestValues, ModuleManifest} from '../cards/ModuleManifest';
 import {exportIconNameRendering} from "./export_icon_name_rendering";
 import {GameModule} from "../../common/cards/GameModule";
+import {Player} from "../Player";
+import {Game} from "../Game";
 
 class CardProcessor {
     public static json: Array<ClientCard> = [];
+    public static fakeGame: Game;
+    public static fakePlayer: Player;
     public static makeJson() {
+        this.fakeGame = new Game(1);
+        this.fakePlayer = this.fakeGame.players[0];
         ALL_MODULE_MANIFEST.forEach(this.processManifest);
+        this.fakePlayer.getVictoryPoint();
     }
 
     private static processManifest(manifest: ModuleManifest) {
@@ -44,6 +51,10 @@ class CardProcessor {
             victoryPointsString: card.victoryPointsString,
             gameModule: card.gameModule ?? module
         };
+        // add all condition/variable cards to the hand of a fake player, ensuring scoring functions are overridden correctly.
+        if (typeof card.victoryPoints === 'string') {
+            this.fakePlayer.handCards.push(card);
+        }
         CardProcessor.json.push(clientCard);
     }
 }

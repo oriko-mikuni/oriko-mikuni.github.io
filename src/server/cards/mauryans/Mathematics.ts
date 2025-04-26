@@ -6,7 +6,7 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Location} from "../../Player";
+import {PlayerCardLocation} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
@@ -34,7 +34,7 @@ export class Mathematics extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(card =>
-            card.location === Location.IN_PLAY &&
+            card.location === PlayerCardLocation.IN_PLAY &&
             card.card.headerIcon === CardHeaderIcon.PINNED &&
             !card.card.suit.some(suit1 => suit1 === CardSuitIcon.REGION)
         ).length;

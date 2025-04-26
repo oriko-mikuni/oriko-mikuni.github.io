@@ -1,9 +1,9 @@
 {
-  "module.common": "公共",
-  "module.common-Classics": "经典市场",
-  "module.common-Legends": "传奇市场",
-  "module.common-Horizons": "地平线市场",
-  "module.common-Trade-Route": "贸易路线",
+  "module.1.common": "公共",
+  "module.2.common-Classics": "经典市场",
+  "module.3.common-Legends": "传奇市场",
+  "module.4.common-Horizons": "地平线市场",
+  "module.5.common-Trade-Route": "贸易路线模组",
 
   "module.update-Horizons": "地平线更新",
   "module.promo": "推广卡",

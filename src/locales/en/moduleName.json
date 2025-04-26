@@ -1,9 +1,9 @@
 {
-  "module.common": "Common",
-  "module.common-Classics": "Classics Common",
-  "module.common-Legends": "Legends Common",
-  "module.common-Horizons": "Horizons Common",
-  "module.common-Trade-Route": "Trade Route",
+  "module.1.common": "Common",
+  "module.2.common-Classics": "Classics Common",
+  "module.3.common-Legends": "Legends Common",
+  "module.4.common-Horizons": "Horizons Common",
+  "module.5.common-Trade-Route": "Trade Route Expansion",
 
   "module.update-Horizons": "Horizons Update",
   "module.promo": "Promos",

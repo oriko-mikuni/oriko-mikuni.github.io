@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {Location} from "../../Player";
+import {PlayerCardLocation} from "../../Player";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
@@ -32,7 +32,7 @@ export class Buddhism extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(
-            card => card.location === Location.HISTORY
+            card => card.location === PlayerCardLocation.HISTORY
         ).length;
     }
 }

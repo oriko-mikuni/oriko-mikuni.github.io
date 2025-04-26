@@ -18,7 +18,6 @@
     background-size: 1em;
 }
 
-.card-nation-location-common,
 .card-nation-location-Abbasids,
 .card-nation-location-Aksumites,
 .card-nation-location-Arthurians,
@@ -36,6 +35,7 @@
     background-color: black;
 }
 
+.card-nation-location-common,
 .card-nation-location-Carthaginians,
 .card-nation-location-Celts,
 .card-nation-location-Cultists,

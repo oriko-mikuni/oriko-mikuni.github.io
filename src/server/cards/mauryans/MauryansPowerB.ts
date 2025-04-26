@@ -6,7 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Location} from "../../Player";
+import {PlayerCardLocation} from "../../Player";
 
 export class MauryansPowerB extends Card implements ICard {
     constructor() {
@@ -27,7 +27,7 @@ export class MauryansPowerB extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(
-            card => card.location === Location.HISTORY
+            card => card.location === PlayerCardLocation.HISTORY
         ).length * 2;
     }
 }

@@ -43,14 +43,7 @@ Currently, contains nation cards from Classics and Legends.
       * [x] unrest
     * [x] Classics
     * [x] Legends
-    * Horizons
-      * [x] updated cards 
-      * [ ] fame
-      * [ ] uncivilised
-      * [ ] civilised
-      * [ ] region
-      * [ ] tributary
-      * [ ] trade route expansion
+    * [x] Horizons
 * toggle features
   * [x] add expand / collapse all
   * [x] add filter options

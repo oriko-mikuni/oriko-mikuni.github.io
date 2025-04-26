@@ -5,7 +5,7 @@ import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
-import {Location} from "../../../Player";
+import {PlayerCardLocation} from "../../../Player";
 
 export class Qin extends Card implements ICard {
     constructor() {
@@ -27,7 +27,7 @@ export class Qin extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(param.player.selectCards(card =>
-            card.location === Location.IN_PLAY &&
+            card.location === PlayerCardLocation.IN_PLAY &&
             card.card.headerIcon === CardHeaderIcon.PINNED &&
             !card.card.suit.some(suit1 => suit1 === CardSuitIcon.REGION)
         ).length / 3);

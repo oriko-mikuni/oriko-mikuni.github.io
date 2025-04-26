@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
-import {Location} from "../../Player";
+import {PlayerCardLocation} from "../../Player";
 
 export class StoneMask extends Card implements ICard {
     constructor() {
@@ -24,6 +24,6 @@ export class StoneMask extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === Location.HISTORY ? 1 : 0;
+        return param.location === PlayerCardLocation.HISTORY ? 1 : 0;
     }
 }

@@ -94,39 +94,45 @@ export class CardporiumFilter {
     }
 
     public filterButtons (
-        IconRender: (elem: {elem?: string}) => React.JSX.Element
+        IconRender: (elem: {elem?: string}) => React.JSX.Element | null
     ): Array<React.JSX.Element> {
         const {t} = useTranslation("ui", {keyPrefix: "ElementFilterState"});
         let size: number = 1;
         const result: Array<React.JSX.Element> = [];
         if (this.state.includeVoidContent) {
-            result.push(
-                <button
-                    onClick={() => this.dispatch({
-                        actionType: "toggle",
-                        targetValue: !this.state.filterVoidDisplay
-                    })}
-                    style={selectedStyle[this.state.filterVoidDisplay ? 1 : 0]}
-                    key={0}
-                >
-                    <IconRender/>
-                </button>);
+            const icon: React.JSX.Element | null = IconRender({});
+            if (icon !== null) {
+                result.push(
+                    <button
+                        onClick={() => this.dispatch({
+                            actionType: "toggle",
+                            targetValue: !this.state.filterVoidDisplay
+                        })}
+                        style={selectedStyle[this.state.filterVoidDisplay ? 1 : 0]}
+                        key={0}
+                    >
+                        {icon}
+                    </button>);
+            }
         }
         this.state.fullSet.forEach((elem1: string) => {
-            result.push(
-                <button
-                    onClick={() => this.dispatch({
-                        actionType: "toggle",
-                        elem: elem1,
-                        targetValue: !this.state.filterDisplaySet.has(elem1)
-                    })}
-                    style={selectedStyle[this.state.filterDisplaySet.has(elem1) ? 1 : 0]}
-                    key={size}
-                >
-                    <IconRender elem={elem1}/>
-                </button>
-            );
-            size ++;
+            const icon: React.JSX.Element | null = IconRender({elem: elem1});
+            if (icon !== null) {
+                result.push(
+                    <button
+                        onClick={() => this.dispatch({
+                            actionType: "toggle",
+                            elem: elem1,
+                            targetValue: !this.state.filterDisplaySet.has(elem1)
+                        })}
+                        style={selectedStyle[this.state.filterDisplaySet.has(elem1) ? 1 : 0]}
+                        key={size}
+                    >
+                        {icon}
+                    </button>
+                );
+                size++;
+            }
         });
         result.push(
             <button

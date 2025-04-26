@@ -18,8 +18,8 @@ function simplifyText(text: string): string {
         .replace(/\{([^}]+)}/g, " $1 ")
         .replace(/\[([^\]]+)]/g, " $1 ")
         .replace(/\(([^)]+)\)/g, " $1 ")
-        .replace(/["',.:]/g, ' ')
-        .replace(/  +/g, ' ');
+        .replace(/["',.:。]/g, ' ')
+        .replace(/ /g, '');
     if (result.startsWith(' ')) {
         result = result.slice(1, result.length);
     }
@@ -68,9 +68,8 @@ export class TextFilterState {
                     return true;
             }
             if (this.isSearchEffect && (!UnitsUtils.isEmpty(card.developmentCost) || card.developmentCostString.length > 0)) {
-                let developmentCostDisplay: string;
                 const trans = translation.effectTranslation;
-                developmentCostDisplay = trans === undefined ? (
+                const developmentCostDisplay = trans === undefined ? (
                     "Development Cost: " +
                     (UnitsUtils.toString(card.developmentCost) ?? "") +
                     card.developmentCostString.join(" ")

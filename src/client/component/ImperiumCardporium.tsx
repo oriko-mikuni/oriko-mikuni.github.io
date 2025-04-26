@@ -1,5 +1,5 @@
 import React, {useReducer} from "react";
-import {allCards, allGameModules, allVictoryPoints, getCardUpdate} from '../cards/ClientCardsManifest.ts';
+import {allCards, allGameModules, allVictoryPoints, getCardUpdate, horizonModules} from '../cards/ClientCardsManifest.ts';
 import CardGroup from "./CardGroup.tsx";
 import {NavigateFunction, useNavigate} from "react-router-dom";
 import {pageTitle} from "./PageTitle.tsx";
@@ -25,7 +25,7 @@ import CardNationColourRender, {CardNationColourStyle} from "./card/CardNationCo
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
-    const [state, dispatch] = useReducer(CardporiumDisplayState.reducer, new CardporiumDisplayState(allCards(), getCardUpdate));
+    const [state, dispatch] = useReducer(CardporiumDisplayState.reducer, new CardporiumDisplayState({cards: allCards(), update: getCardUpdate}));
     const gameModuleFilter = new CardporiumFilter(allGameModules(), false);
     const suitFilter = new CardporiumFilter(Object.values(CardSuitIcon));
     const typeFilter = new CardporiumFilter(Object.values(CardTypeIcon));
@@ -52,7 +52,8 @@ function ImperiumCardporium(): React.JSX.Element {
         cards => stateFilter.state.filterAnyProps(cards, card => card.stateSymbol),
         cards => headerFilter.state.filterOneProp(cards, card => card.headerIcon),
         cards => victoryFilter.state.filterOneProp(cards, card => card.victoryPoints === undefined ? undefined : card.victoryPoints.toString()),
-        cards => textFilter.state.filterText(cards, translation)
+        cards => textFilter.state.filterText(cards, translation),
+        cards => cards.filter(card => state.includeHorizonsState || !horizonModules.has(card.gameModule))
     ]
     const allFilter: (arg0: Array<ClientCard>) => Array<ClientCard> = cards =>
         filters.reduce(
@@ -63,22 +64,26 @@ function ImperiumCardporium(): React.JSX.Element {
     const suitFilterButtons: Array<React.JSX.Element> =
         suitFilter.filterButtons(({elem}: {elem?: string}) => {
             const suit: CardSuitIcon | undefined = Object.values(CardSuitIcon).find(value => value === elem);
-            return suit === undefined ? <CardSuitIconDisplay/> : <CardSuitIconDisplay suit={suit}/>;
+            if (suit === undefined) return <CardSuitIconDisplay/>;
+            return <CardSuitIconDisplay suit={suit}/>;
         });
     const typeIconFilterButtons: Array<React.JSX.Element> =
         typeFilter.filterButtons(({elem}: {elem?: string}) => {
             const typeIcon: CardTypeIcon | undefined = Object.values(CardTypeIcon).find(value => value === elem);
-            return typeIcon === undefined ? <CardTypeIconDisplay/> : <CardTypeIconDisplay type={typeIcon}/>;
+            if (typeIcon === undefined) return <CardTypeIconDisplay/>;
+            return <CardTypeIconDisplay type={typeIcon}/>;
         });
     const headerIconFilterButtons: Array<React.JSX.Element> =
         headerFilter.filterButtons(({elem}: {elem?: string}) => {
             const headerIcon: CardHeaderIcon | undefined = Object.values(CardHeaderIcon).find(value => value === elem);
-            return headerIcon === undefined ? <CardHeaderIconDisplay/> : <CardHeaderIconDisplay headerIcon={headerIcon}/>
+            if (headerIcon === undefined) return <CardHeaderIconDisplay/>;
+            return <CardHeaderIconDisplay headerIcon={headerIcon}/>;
         });
     const stateSymbolFilterButtons: Array<React.JSX.Element> =
         stateFilter.filterButtons(({elem}: {elem?: string}) => {
             const stateSymbol: CardStateIcon | undefined = Object.values(CardStateIcon).find(value => value === elem);
-            return stateSymbol === undefined ? <CardStateSymbolDisplay/> : <CardStateSymbolDisplay state={stateSymbol}/>
+            if (stateSymbol === undefined) return <CardStateSymbolDisplay/>;
+            return <CardStateSymbolDisplay state={stateSymbol}/>;
         });
     const victoryPointFilterButtons: Array<React.JSX.Element> =
         victoryFilter.filterButtons(({elem}: {elem?: string}) => {
@@ -93,7 +98,8 @@ function ImperiumCardporium(): React.JSX.Element {
     const gameModuleFilterButtons: Array<React.JSX.Element> =
         gameModuleFilter.filterButtons(({elem}: {elem?: string}) => {
             const gameModule: GameModule | undefined = Object.values(GameModule).find(value => value === elem);
-            if (gameModule === undefined ) return <></>;
+            if (gameModule === undefined ) return null;
+            if (!state.includeHorizonsState && horizonModules.has(gameModule)) return null;
             const nationColour: CardNationColour | undefined = moduleNation[gameModule];
             if (nationColour === undefined) return <>{gameModuleTranslation(gameModule)}</>;
             return <span>
@@ -108,8 +114,8 @@ function ImperiumCardporium(): React.JSX.Element {
             <input
                 type="checkbox"
                 style={{height: "30px", width: "30px"}}
-                checked={state.updateState}
-                onChange={check => dispatch(CardporiumDisplayState.toggleUpdate(check.target.checked))}
+                checked={state.includeHorizonsState}
+                onChange={check => dispatch(CardporiumDisplayState.toggleIncludeHorizons(check.target.checked))}
             />
         </span>;
 

@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
-import {Location} from "../../Player";
+import {PlayerCardLocation} from "../../Player";
 
 export class Morigena extends Card implements ICard {
     constructor() {
@@ -25,6 +25,6 @@ export class Morigena extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === Location.HISTORY ? 2 : 0;
+        return param.location === PlayerCardLocation.HISTORY ? 2 : 0;
     }
 }

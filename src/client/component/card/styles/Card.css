@@ -49,14 +49,14 @@
     left: 40px;
     bottom: 10px;
     font-size: 10px;
-    color: black;
+    color: white;
 }
 
 .card-player-count-background {
     position: absolute;
     left: 35px;
     bottom: 20px;
-    background-color: black;
+    background-color: white;
     mask: url("../images/corner_icon/playerCount.svg");
     width: 11px;
     height: 11px;
@@ -68,7 +68,7 @@
     left: 45px;
     bottom: 20px;
     font-size: 10px;
-    color: black;
+    color: white;
 }
 
 .card-expansion-TradeFriendly {

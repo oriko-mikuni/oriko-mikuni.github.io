@@ -4,7 +4,7 @@ import {CardName} from "../common/cards/CardName";
 import {Game} from "./Game";
 import {CardTypeIcon} from "../common/cards/CardTypeIcon";
 
-export enum Location {
+export enum PlayerCardLocation {
     STATE = "location:state",
     NATION_POWER = "location:nation-power",
     IN_PLAY = "location:in-play",
@@ -19,9 +19,15 @@ export enum Location {
     DEVELOPMENT_AREA = "location:developmentArea"
 }
 
-// if garrisoned, location is that card it is garrisoned under, which does not start with "location:"
-// if not garrisoned, location starts with "location:"
-export type LocatedCard = {location: Location | CardName, card: ICard};
+export type PlayerCardLocationOrGarrison = PlayerCardLocation | ICard;
+
+export function isPlayerLocation(arg: PlayerCardLocationOrGarrison): arg is PlayerCardLocation {
+    return typeof arg === "string";
+}
+
+// if garrisoned, location is that card it is garrisoned under, which is ICard
+// if not garrisoned, location is a string which satisfies isPlayerLocation()
+export type LocatedCard = {location: PlayerCardLocationOrGarrison, card: ICard};
 
 export class Player {
     game: Game;
@@ -41,7 +47,7 @@ export class Player {
     stateCard?: ICard;
     nationPower?: ICard;
     inPlayCards: Array<ICard> = []; // including power, permanent, pinned, trade-route
-    garrisonedCards: Array<[ICard, CardName]> = [];
+    garrisonedCards: Array<[ICard, ICard]> = [];
     drawDeckCards: Array<ICard> = [];
     discardPileCards: Array<ICard> = [];
     handCards: Array<ICard> = [];
@@ -61,27 +67,27 @@ export class Player {
     public allPlayerCards(): Array<LocatedCard> {
         const result: Array<LocatedCard> = [];
         // nation deck
-        this.nationDeckCards.forEach((card)=> result.push({card: card, location: Location.NATION_DECK}));
-        if (this.accessionCard !== undefined) result.push({card: this.accessionCard, location: Location.ACCESSION});
+        this.nationDeckCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.NATION_DECK}));
+        if (this.accessionCard !== undefined) result.push({card: this.accessionCard, location: PlayerCardLocation.ACCESSION});
         // development area
-        this.developmentAreaCards.forEach((card)=> result.push({card: card, location: Location.DEVELOPMENT_AREA}));
+        this.developmentAreaCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.DEVELOPMENT_AREA}));
 
         // state & nation power card
-        if (this.stateCard !== undefined) result.push({card: this.stateCard, location: Location.STATE});
-        if (this.nationPower !== undefined) result.push({card: this.nationPower, location: Location.NATION_POWER})
+        if (this.stateCard !== undefined) result.push({card: this.stateCard, location: PlayerCardLocation.STATE});
+        if (this.nationPower !== undefined) result.push({card: this.nationPower, location: PlayerCardLocation.NATION_POWER})
 
         // in play card
-        this.inPlayCards.forEach((card)=> result.push({card: card, location: Location.IN_PLAY}));
+        this.inPlayCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.IN_PLAY}));
         // garrisoned card
-        this.garrisonedCards.forEach(([card, cardName])=> result.push({card: card, location: cardName}));
+        this.garrisonedCards.forEach(([card, garrisonCard])=> result.push({card: card, location: garrisonCard}));
         // draw, discard and hand card
-        this.drawDeckCards.forEach((card)=> result.push({card: card, location: Location.DRAW_DECK}));
-        this.discardPileCards.forEach((card)=> result.push({card: card, location: Location.DISCARD_PILE}));
-        this.handCards.forEach((card)=> result.push({card: card, location: Location.HAND}));
+        this.drawDeckCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.DRAW_DECK}));
+        this.discardPileCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.DISCARD_PILE}));
+        this.handCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.HAND}));
         // history, sunken or legend
-        this.historyCards.forEach((card)=> result.push({card: card, location: Location.HISTORY}));
-        this.sunkenCards.forEach((card)=> result.push({card: card, location: Location.SUNKEN}));
-        this.legendCards.forEach((card)=> result.push({card: card, location: Location.LEGEND}));
+        this.historyCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.HISTORY}));
+        this.sunkenCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.SUNKEN}));
+        this.legendCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.LEGEND}));
 
         return result;
     }
@@ -89,13 +95,13 @@ export class Player {
     public allScoringCards(): Array<LocatedCard> {
         const result: Array<LocatedCard> = this.allPlayerCards();
         return result.filter((locatedCard: LocatedCard) => {
-            const location: Location | CardName = locatedCard.location;
+            const location: PlayerCardLocation | ICard = locatedCard.location;
             // if not garrisoned, exclude nation deck and development area
-            if (location.startsWith("location:")) {
-                return location !== Location.NATION_DECK && location !== Location.ACCESSION && location !== Location.DEVELOPMENT_AREA;
+            if (isPlayerLocation(location)) {
+                return location !== PlayerCardLocation.NATION_DECK && location !== PlayerCardLocation.ACCESSION && location !== PlayerCardLocation.DEVELOPMENT_AREA;
             }
             // if garrisoned, exclude garrison under King Arthur's Court
-            return location !== CardName.KING_ARTHUR_S_COURT;
+            return location.name !== CardName.KING_ARTHUR_S_COURT;
         })
     }
 
@@ -122,9 +128,12 @@ export class Player {
 
     public getVictoryPoint(): number {
         return this.allScoringCards().reduce(
-            (points: number, card: LocatedCard): number => points + card.card.getVictoryPoints({
-                player: this,
-                location: card.location
-            }), this.progress);
+            (points: number, card: LocatedCard): number => {
+                const vp: number = card.card.getVictoryPoints({
+                    player: this,
+                    location: card.location
+                });
+                return points + vp;
+            }, this.progress);
     }
 }
