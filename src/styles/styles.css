@@ -24,4 +24,5 @@ select {
 
 .centerAlign {
     text-align: center;
+    justify-content: center;
 }

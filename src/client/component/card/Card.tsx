@@ -11,8 +11,10 @@ import CardNationColourRender, {CardNationColourStyle} from "./CardNationColourR
 import {CardEffectTextBox} from "./CardEffectTextBox.tsx";
 import CardVictoryPoints from "./CardVictoryPoints.tsx";
 
-function getCardClasses(card: ClientCard): string {
+function getCardClasses(card: ClientCard, onClick?: () => void): string {
     const classes =['filterDiv'];
+    if (onClick !== undefined)
+        classes.push("card-reactive");
 
     classes.push(`card-name-${card.name.toLowerCase().replace(/[ #,]/g, '-')}`);
 
@@ -20,23 +22,23 @@ function getCardClasses(card: ClientCard): string {
 }
 
 function Card(
-    {card}:
-    {card: ClientCard}
+    {card, onClick}:
+    {card: ClientCard, onClick?: () => void}
 ): React.JSX.Element {
-    const cardContents: Array<React.JSX.Element> = [];
+    const topContents: Array<React.JSX.Element> = [];
 
     const cardTitle: React.JSX.Element = <CardTitle title={card.name} banner={card.suit.at(0)} key="cardTitle" />;
-    cardContents.push(cardTitle);
+    topContents.push(cardTitle);
 
     if (card.headerIcon !== undefined) {
-        cardContents.push(<CardHeaderIcon headerIcon={card.headerIcon} position="left" key="cardHeaderIconLeft"/>);
-        cardContents.push(<CardHeaderIcon headerIcon={card.headerIcon} position="right" key="cardHeaderIconRight"/>);
+        topContents.push(<CardHeaderIcon headerIcon={card.headerIcon} position="left" key="cardHeaderIconLeft"/>);
+        topContents.push(<CardHeaderIcon headerIcon={card.headerIcon} position="right" key="cardHeaderIconRight"/>);
     }
 
-    cardContents.push(<CardTypeIconGroup type={card.typeIcon} key="card-types"/>);
+    topContents.push(<CardTypeIconGroup type={card.typeIcon} key="card-types"/>);
 
     card.stateSymbol.forEach((state: CardStateIcon, index: number) => {
-        cardContents.push(<CardStateSymbolRow key={`card-state-symbol-${index}`} state={state} />)
+        topContents.push(<CardStateSymbolRow key={`card-state-symbol-${index}`} state={state} />)
     });
 
     const playerCountRender: React.JSX.Element | null = card.playerCount === undefined ? null :
@@ -47,9 +49,9 @@ function Card(
     const expansionRender: React.JSX.Element | null = card.expansion === undefined ? null :
         <div className={`card-expansion-${card.expansion}`}/>;
 
-    return <div className={getCardClasses(card)}>
+    return <div className={getCardClasses(card, onClick)} onClick={onClick}>
         <div className="card-content-wrapper">
-            {cardContents}
+            {topContents}
         </div>
         <CardSuitIconGroup suit={card.suit} />
         <CardEffectTextBox effectText={card.effectText} developmentCost={card.developmentCost} developmentCostString={card.developmentCostString}/>

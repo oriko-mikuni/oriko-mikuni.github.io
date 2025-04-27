@@ -5,6 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Pottery extends Card implements ICard {
     constructor() {
@@ -20,6 +21,9 @@ export class Pottery extends Card implements ICard {
             effectText: [
                 "Solstice: choose: pay 2{material} and place 1{progress} on this card OR abandon this card and gain all {progress} on it."
             ],
+            keywords: [
+                KeywordNames.resourceOnCard
+            ]
         });
     }
 }

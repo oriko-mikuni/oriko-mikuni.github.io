@@ -21,6 +21,7 @@ import "./ImperiumCardporium.css";
 import {GameModule, moduleNation} from "../../common/cards/GameModule.ts";
 import {CardNationColour} from "../../common/cards/CardNationColour.ts";
 import CardNationColourRender, {CardNationColourStyle} from "./card/CardNationColourRender.tsx";
+import CardDetailDescription from "./tooltip/CardDetailDescription.tsx";
 
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
@@ -134,8 +135,16 @@ function ImperiumCardporium(): React.JSX.Element {
         </div>
         <div className="ImperiumCardporium_content">
             <h1 className="centerAlign">{uiTranslation("cardporiumHeader")}</h1>
-            <CardGroup cards={state.getCards()} filter={allFilter}/>
+            <CardGroup
+                cards={state.getCards()}
+                filter={allFilter}
+                onClickACard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
+            />
         </div>
+        <CardDetailDescription
+            card={state.detailedCard}
+            closeDialog={() => dispatch(CardporiumDisplayState.toggleDetailedCard(undefined))}
+        />
     </div>;
 }
 

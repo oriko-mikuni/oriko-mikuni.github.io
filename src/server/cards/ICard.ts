@@ -29,6 +29,7 @@ export interface ICard {
     playerCount?: number;
     startingLocation?: CardStartingLocation;
     gameModule?: GameModule;
+    keywords?: Array<string>;
 
     canPlayAsAction: (player: Player) => boolean;
     canFreePlay: (player: Player) => boolean;

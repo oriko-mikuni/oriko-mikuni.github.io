@@ -7,6 +7,7 @@ import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {GameModule} from "../../../../common/cards/GameModule";
+import {KeywordNames} from "../../../../common/keywords";
 
 export class Pottery extends Card implements ICard {
     constructor() {
@@ -22,7 +23,10 @@ export class Pottery extends Card implements ICard {
             effectText: [
                 "Solstice: choose: pay 2{material} to add 1{progress} to this card OR abandon this card."
             ],
-            gameModule: GameModule.MINOANS
+            gameModule: GameModule.MINOANS,
+            keywords: [
+                KeywordNames.resourceOnCard
+            ]
         });
     }
 }

@@ -30,4 +30,5 @@ export type ClientCard = {
   victoryPoints?: VictoryPoints;
   victoryPointsString?: string;
   gameModule: GameModule;
+  keywords?: Array<string>;
 }

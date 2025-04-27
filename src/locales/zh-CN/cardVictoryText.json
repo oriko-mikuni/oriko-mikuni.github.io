@@ -70,6 +70,7 @@
   "2VP per {pinned} in play, excluding {region}": "每有1{pinned}在场（不包括{region}），2VP",
   "2VP per {river}": "每{river}2VP",
   "2VP per {uncivilised}": "每{uncivilised}2VP",
+  "2VP per {unrest}": "每{unrest}2VP",
   "2VP per {variable} card": "每{variable}牌2VP",
   "3VP if in play": "若在场，3VP",
   "3VP if in play, 10VP if in history": "若在场，3VP，若在历史中，10VP",

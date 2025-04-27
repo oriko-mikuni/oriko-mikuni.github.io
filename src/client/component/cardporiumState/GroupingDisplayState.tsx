@@ -2,6 +2,7 @@ import {ClientCard} from "../../../common/cards/ClientCard.ts";
 
 type CardporiumDisplayStateAction = {
     targetIncludeHorizonsState?: boolean,
+    targetDetailedCard?: ClientCard
 };
 
 type CardporiumDisplayStateProps = {
@@ -14,12 +15,14 @@ export class CardporiumDisplayState {
     updatedCards: Array<ClientCard>;
     update?: (arg0: ClientCard) => ClientCard;
     includeHorizonsState: boolean;
+    detailedCard: ClientCard | undefined;
 
     constructor(props: CardporiumDisplayStateProps) {
         this.cards = props.cards || [];
         this.update = props.update;
         this.updatedCards = this.cards.map(card => this.update !== undefined ? this.update(card) : card);
         this.includeHorizonsState = false;
+        this.detailedCard = undefined;
     }
 
     public getCards(): Array<ClientCard> {
@@ -28,6 +31,10 @@ export class CardporiumDisplayState {
 
     public static toggleIncludeHorizons(targetIncludeHorizonsState: boolean): Partial<CardporiumDisplayStateAction> {
         return {targetIncludeHorizonsState: targetIncludeHorizonsState};
+    }
+
+    public static toggleDetailedCard(targetDetailedCard?: ClientCard): Partial<CardporiumDisplayStateAction> {
+        return {targetDetailedCard: targetDetailedCard};
     }
 
     public static reducer(
@@ -42,6 +49,8 @@ export class CardporiumDisplayState {
 
         if (action.targetIncludeHorizonsState !== undefined) {
             resultState.includeHorizonsState = action.targetIncludeHorizonsState;
+        } else if (action.targetDetailedCard !== undefined) {
+            resultState.detailedCard = action.targetDetailedCard;
         }
         return resultState;
     }

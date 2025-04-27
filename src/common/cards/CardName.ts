@@ -324,10 +324,10 @@ export enum CardName {
     PROMO_UNDAUNTED = "card_name.0FAM1",
     PROMO_BOUNTIFUL = "card_name.9FAM1",
     PROMO_HEIR_PRESUMPTIVE = "card_name.9UNC1",
-    PROMO_ABUNDANCE0 = "card_name.ABU1",
-    PROMO_ABUNDANCE1 = "card_name.ABU2",
-    PROMO_ABUNDANCE2 = "card_name.ABU3",
-    PROMO_ABUNDANCE3 = "card_name.ABU4",
+    PROMO_ABUNDANCE1 = "card_name.ABU1",
+    PROMO_ABUNDANCE2 = "card_name.ABU2",
+    PROMO_ABUNDANCE3 = "card_name.ABU3",
+    PROMO_ABUNDANCE4 = "card_name.ABU4",
 
      // CLASSICS CARTHAGINIANS
     CARTHAGINIANS_POWER_A = "card_name.CAR1A",

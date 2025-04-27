@@ -49,7 +49,8 @@ class CardProcessor {
             typeIcon: card.typeIcon,
             victoryPoints: card.victoryPoints,
             victoryPointsString: card.victoryPointsString,
-            gameModule: card.gameModule ?? module
+            gameModule: card.gameModule ?? module,
+            keywords: card.keywords,
         };
         // add all condition/variable cards to the hand of a fake player, ensuring scoring functions are overridden correctly.
         if (typeof card.victoryPoints === 'string') {

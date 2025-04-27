@@ -1,0 +1,32 @@
+{
+  "tooltip": {
+    "leader": {
+      "name": "领袖",
+      "description": "来自你的国家的卡牌，以一个人的名字命名。"
+    },
+    "outOfPlayArea": {
+      "name": "不在场区域",
+      "description": "历史/淹没/传说牌堆。（在你的国家{power}牌底下）"
+    },
+    "resourceOnCard": {
+      "name": "卡牌上的资源",
+      "description": "当你要放置资源到卡牌上时，从供应堆拿取相应的资源放置。\n如果你在场的1张持续牌离场（舍弃、召回等），拿取其上所有的资源。\n除非特别说明，否则卡牌上的资源不属于你。"
+    },
+    "card_name.2FAM8": {
+      "name": "突破1{variable}牌",
+      "description": "当你突破1张{variable}牌时，遵循正常的突破规则，但要么从市场中选择一张卡牌，要么从主牌库中展示卡牌。"
+    },
+    "promoAbundance": {
+      "name": "关于本推广牌",
+      "description": "属于推广包Turczi Junior Promo Pack。\n设置游戏时，若你游玩的国家有一张名为“繁荣”的牌，你可以改为使用本牌。\n若你如此做，从你的牌组移除1张“繁荣”（放回游戏盒）并用“富饶”代替它。\n若你的国家有多张“繁荣”，选择其中最多1张替换。"
+    },
+    "card_name.9UNC1": {
+      "name": "关于本推广牌",
+      "description": "属于推广包Turczi Junior Promo Pack。\n要使用本牌，只需在游戏设置前将本牌洗入市场。\n不需要替换其他牌。"
+    },
+    "card_name.9FAM1": {
+      "name": "关于本推广牌",
+      "description": "属于推广包Turczi Junior Promo Pack。\n要使用本牌，在游戏设置时将本牌洗入名望牌库，并从名望牌库随机移除一张牌，不要查看。\n名望牌库的卡牌数量保持不变。"
+    }
+  }
+}

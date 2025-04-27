@@ -5,10 +5,11 @@ import "./card/styles/CardBox.css";
 import "./CardGroup.css"
 import {useTranslation} from "react-i18next";
 
-function CardGroup(
-    {cards, filter}:
-    {cards: Array<ClientCard>, filter: (arg0: Array<ClientCard>) => Array<ClientCard>}
-): React.JSX.Element {
+function CardGroup({cards, filter, onClickACard}: {
+    cards: Array<ClientCard>,
+    filter: (arg0: Array<ClientCard>) => Array<ClientCard>,
+    onClickACard?: (arg0: ClientCard) => void
+}): React.JSX.Element {
     const filteredCards: Array<ClientCard> = filter(cards);
     const {t} = useTranslation("ui", {keyPrefix: "CardGroup"});
 
@@ -23,7 +24,7 @@ function CardGroup(
         <div className="cardList">{
             filteredCards.map((card: ClientCard, idx: number): React.JSX.Element =>
                 <div className="cardBox" key={idx}>
-                    <Card card={card}/>
+                    <Card card={card} onClick={onClickACard === undefined ? undefined : () => onClickACard(card)}/>
                 </div>
             )
         }</div>;

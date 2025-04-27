@@ -1,0 +1,32 @@
+{
+  "tooltip": {
+    "leader": {
+      "name": "Leader",
+      "description": "A card from your civilization, named after a singular person."
+    },
+    "outOfPlayArea": {
+      "name": "Out of Play Area",
+      "description": "History/Sunken/Legends pile. (under your civilization {power} card)"
+    },
+    "resourceOnCard": {
+      "name": "Resource on Card",
+      "description": "When instructed to place a resource on a card, take the resource in question from the supply.\nIf a pinned card you have in play with resources on it leaves play (abandoned, recalled, etc), gain all resources that were on the card.\nResources on cards are not yours (unless explicitly noted otherwise)."
+    },
+    "promoAbundance": {
+      "name": "About this Promo",
+      "description": "Belong to Turczi Junior Promo Pack.\nWhile setting up, if the civilization you're playing has a card exactly called [Prosperity], you may opt to use this card instead.\nIf you do, remove one [Prosperity] from your deck (return it to the box) and place [Abundance] in its place.\nIf your civilization has multiple copies of [Prosperity], choose at most one to replace."
+    },
+    "card_name.2FAM8": {
+      "name": "Break Through for a {variable} Card",
+      "description": "When you Break Through for a {variable} card, follow the normal rules for Breaking Through, but you may either choose a card from the Market ro to reveal cards from the Main deck."
+    },
+    "card_name.9UNC1": {
+      "name": "About this Promo",
+      "description": "Belong to Turczi Junior Promo Pack.\nTo use this card, simply shuffle it into the common cards before setup.\nDo not have to remove another card."
+    },
+    "card_name.9FAM1": {
+      "name": "About this Promo",
+      "description": "Belong to Turczi Junior Promo Pack.\nTo use this card, shuffle it into the Fame deck and then randomly remove one card from the Fame deck without revealing it during setup.\nThe number of cards in the Fame deck won't change."
+    }
+  }
+}

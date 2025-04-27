@@ -1094,5 +1094,19 @@
   "Commerce: choose: resolve the Commerce effect of a {trade-route} any player other than you has in play OR free play a {trade-route} from your discard pile.":
   "Commerce: choose: resolve the Commerce\neffect of a {trade-route} any player other than\nyou has in play OR free play a {trade-route}\nfrom your discard pile.",
   "Profit (3{goods}): draw 3 cards. You MAY put up to 2 cards from your hand into your history.":
-  "Profit (3{goods}): draw 3 cards. You MAY\nput up to 2 cards from your hand\ninto your history."
+  "Profit (3{goods}): draw 3 cards. You MAY\nput up to 2 cards from your hand\ninto your history.",
+  "Free play. Take an {unrest} to find a leader in your out of play area, take it into your hand, and put this card in its place.":
+  "Free play. Take an {unrest} to find a leader in your out of play area, take it into your hand, and put this card in its place.",
+  "You MAY draw a card from your discard pile. You MAY garrison a card.":
+  "You MAY draw a card from your discard pile. You MAY garrison a card.",
+  "Exhaust: you MAY garrison a card.":
+  "Exhaust: you MAY garrison a card.",
+  "Solstice: for every 2 cards garrisoned here, gain 1{population}.":
+  "Solstice: for every 2 cards garrisoned here, gain 1{population}.",
+  "Every player adds 1{population} to each {region} they have in play. Add 1{population} to each {region} in the market.":
+  "Every player adds 1{population} to each {region}\nthey have in play. Add 1{population} to\n each {region} in the market.",
+  "Free play. You MAY acquire a {uncivilised}/{region}.":
+  "Free play. You MAY acquire a {uncivilised}/{region}.",
+  "You MAY take a {unrest} to steal 1{progress} from each other player.":
+  "You MAY take a {unrest} to steal 1{progress}\nfrom each other player."
 }
