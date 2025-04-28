@@ -16,6 +16,7 @@
   "1VP per 3 cards in history": "每有3张牌\n在历史中，\n1VP",
   "1VP per 3 {pinned} cards in play excluding {region}": "每有3{pinned}在场（不包括{region}），1VP",
   "1VP per 3 {production}": "每3{production}1VP",
+  "1VP per 3 {region}": "每3{region}1VP",
   "1VP per 3 {tributary}": "每3{tributary}1VP",
   "1VP per 3{material}": "每3{material}1VP",
   "1VP per 3{material} / 3 {region}": "每3{material}/3{region}1VP",

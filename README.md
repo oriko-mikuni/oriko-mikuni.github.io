@@ -21,7 +21,7 @@ Currently, contains nation cards from Classics and Legends.
     * [x] Classics
     * [x] Legends
     * Horizons (New Horizons)
-      * [ ] Magyars
+      * [x] Magyars
       * [ ] Japanese
       * [ ] Taino
       * [ ] Inuits
