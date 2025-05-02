@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <rect x="0" y="0" width="80" height="80" fill="#8c5c4d"/>
+  <path fill="#3c1b11"
+        d="M 25 30
+         L 30 25
+         L 40 35
+         L 50 25
+         L 55 30
+         L 45 40
+         L 55 50
+         L 50 55
+         L 40 45
+         L 30 55
+         L 25 50
+         L 35 40
+         Z
+  "/>
+  <!--  <polygon points="100,0 0,100 100,100" fill="#31a037"/>-->
+</svg>
