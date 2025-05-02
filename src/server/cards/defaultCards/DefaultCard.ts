@@ -1,6 +1,6 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
-import {Card, Properties} from "../Card";
+import {Card} from "../Card";
 
 export class DefaultCard extends Card implements ICard {
     constructor() {

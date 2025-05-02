@@ -28,6 +28,6 @@ export class CarthaginiansPowerB extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.material / 3);
+        return Math.floor(param.scoringResources.material / 3);
     }
 }

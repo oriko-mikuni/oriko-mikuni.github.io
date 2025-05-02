@@ -1,5 +1,9 @@
 {
   "tooltip": {
+    "freeTribes": {
+      "name": "Free Tribes",
+      "description": "Unlike all other civilisations, the Taino consider *all* Resource tokens on their cards as Resources in their pool during Scoring.\nThis means that placing (for example) {material} tokens on [Zemi] does not reduce the points you score for cards like [Moneylenders]."
+    },
     "leader": {
       "name": "Leader",
       "description": "A card from your civilization, named after a singular person."
@@ -10,7 +14,7 @@
     },
     "resourceOnCard": {
       "name": "Resource on Card",
-      "description": "When instructed to place a resource on a card, take the resource in question from the supply.\nIf a pinned card you have in play with resources on it leaves play (abandoned, recalled, etc), gain all resources that were on the card.\nResources on cards are not yours (unless explicitly noted otherwise)."
+      "description": "When instructed to place a resource on a card, take the resource in question from the supply.\nWhen instructed to move a resource to a card, take the resource in question from the owner's Resource Pool.\nIf a pinned card you have in play with resources on it leaves play (abandoned, recalled, etc), gain all resources that were on the card.\nResources on cards are not yours (unless explicitly noted otherwise)."
     },
     "promoAbundance": {
       "name": "About this Promo",

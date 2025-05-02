@@ -21,6 +21,6 @@ export class Minoans extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.progress / 4);
+        return Math.floor(param.scoringResources.progress / 4);
     }
 }

@@ -21,6 +21,6 @@ export class Moneylender extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.material / 10);
+        return Math.floor(param.scoringResources.material / 10);
     }
 }

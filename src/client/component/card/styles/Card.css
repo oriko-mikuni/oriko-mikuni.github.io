@@ -15,7 +15,18 @@
 
 .filterDiv{
     position: relative;
-    background-color: #bbbbbb;
+    background-color: #555555;
+    width: 250px;
+    height: 350px;
+    margin: 10px;
+    border-top: 2px;
+    border-left: 2px;
+    border-bottom: 2px solid rgb(137, 137, 137);
+    border-right: 2px solid rgb(137, 137, 137);
+    border-radius: 15px;
+}
+
+.filterDiv:not(.state-card){
     background-image: linear-gradient(
             to bottom right,
             #805020,
@@ -25,14 +36,6 @@
             #502080,
             #508020
     );
-    width: 250px;
-    height: 350px;
-    margin: 10px;
-    border-top: 2px;
-    border-left: 2px;
-    border-bottom: 2px solid rgb(137, 137, 137);
-    border-right: 2px solid rgb(137, 137, 137);
-    border-radius: 15px;
 }
 
 .filterDiv.card-reactive {

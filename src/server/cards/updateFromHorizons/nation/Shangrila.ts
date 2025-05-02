@@ -4,7 +4,7 @@ import {Card} from "../../Card";
 import {CardNationColour} from "../../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
-import {PlayerCardLocation} from "../../../Player";
+import {isInPlayLocation, PlayerCardLocation} from "../../../Player";
 import {GameModule} from "../../../../common/cards/GameModule";
 
 export class Shangrila extends Card implements ICard {
@@ -29,6 +29,6 @@ export class Shangrila extends Card implements ICard {
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
         return param.location === PlayerCardLocation.HISTORY ? 10 :
-            param.location === PlayerCardLocation.IN_PLAY ? 3 : 0;
+            isInPlayLocation(param.location) ? 3 : 0;
     }
 }

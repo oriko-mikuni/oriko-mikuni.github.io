@@ -6,7 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Player, PlayerCardLocation} from "../../Player";
+import {isInPlayLocation, Player} from "../../Player";
 
 export class MerchantEmpire3 extends Card implements ICard {
     constructor() {
@@ -31,7 +31,7 @@ export class MerchantEmpire3 extends Card implements ICard {
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(Player.countType(CardTypeIcon.PRODUCTION,
             param.player.selectCards(card =>
-                card.location === PlayerCardLocation.IN_PLAY
+                isInPlayLocation(card.location)
             )
         ) / 2);
     }

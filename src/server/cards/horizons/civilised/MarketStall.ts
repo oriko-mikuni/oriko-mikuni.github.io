@@ -27,6 +27,6 @@ export class MarketStall extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.goods;
+        return param.scoringResources.goods;
     }
 }

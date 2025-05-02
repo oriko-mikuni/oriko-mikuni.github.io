@@ -10,6 +10,7 @@ function RenderDevelopmentCostBox(
     translation: TFunction<string, string>,
     developmentCost: Partial<Units> | undefined,
     developmentCostString: Array<string>,
+    hasEffectText: boolean,
     diy: boolean
 ) : Array<React.JSX.Element> | null {
     if (UnitsUtils.isEmpty(developmentCost) && developmentCostString.length === 0) {
@@ -28,6 +29,7 @@ function RenderDevelopmentCostBox(
             )
         );
 
+    if (!hasEffectText) return [<div className="card-development-cost" key={0}>{developmentCostDisplay}</div>];
     return [<br key={0}/>, <div className="card-development-cost" key={1}>{developmentCostDisplay}</div>];
 }
 
@@ -54,7 +56,7 @@ export function CardEffectTextBox(
     if (actualEffectText.length > 0 || developmentCost !== undefined) {
         return <div className={classes}>
             {RenderCardText(finalEffectText)}
-            {RenderDevelopmentCostBox(translation, developmentCost, developmentCostString, diy)}
+            {RenderDevelopmentCostBox(translation, developmentCost, developmentCostString, actualEffectText.length > 0, diy)}
         </div>;
     } else {
         return null;

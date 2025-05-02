@@ -24,7 +24,7 @@ export class SacredGrove extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.allOpponents().filter(opponent =>
-            opponent.progress < param.player.progress
+            opponent.scoringResources().progress < param.scoringResources.progress
         ).length * 2;
     }
 }

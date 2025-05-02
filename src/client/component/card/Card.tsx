@@ -13,11 +13,15 @@ import CardVictoryPoints from "./CardVictoryPoints.tsx";
 import {GameModule} from "../../../common/cards/GameModule.ts";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon.ts";
 import CardExpansionRender from "./CardExpansionRender.tsx";
+import {CardInPlayType} from "../../../common/cards/CardInPlayType.ts";
 
 function getCardClasses(card: ClientCard, onClick?: () => void): string {
     const classes =['filterDiv'];
     if (onClick !== undefined)
         classes.push("card-reactive");
+    if (card.cardInPlayType === CardInPlayType.STATE) {
+        classes.push("state-card");
+    }
 
     classes.push(`card-name-${card.name.toLowerCase().replace(/[ #,]/g, '-')}`);
 
@@ -35,6 +39,7 @@ function Card(
         banner={card.suit.at(0)}
         key="cardTitle"
         diy={card.gameModule === GameModule.DEFAULT}
+        isState={card.cardInPlayType === CardInPlayType.STATE}
     />);
 
     if (card.headerIcon !== CardHeaderIcon.NO_HEADER) {
@@ -54,8 +59,11 @@ function Card(
         <div className="card-player-count-text">{card.playerCount.toString() + (card.playerCount < 4 ? "+" : "")}</div>
     </div>;
     const expansionRender: React.JSX.Element | null = <CardExpansionRender expansion={card.expansion}/>;
-    const backgroundStyle: React.CSSProperties | undefined = !card.illustration ? undefined :
-        {backgroundImage: `url("${card.illustration}")`, backgroundSize: "250px 350px"};
+    const backgroundStyle: React.CSSProperties | undefined =
+        card.illustration ? {
+        backgroundImage: `url("${card.illustration}")`,
+            backgroundSize: "250px 350px"
+    } : undefined;
 
     return <div className={getCardClasses(card, onClick)} style={backgroundStyle} onClick={onClick}>
         <div className="card-content-wrapper">

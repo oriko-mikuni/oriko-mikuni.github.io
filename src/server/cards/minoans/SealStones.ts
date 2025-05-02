@@ -25,6 +25,6 @@ export class SealStones extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.progress;
+        return param.scoringResources.progress;
     }
 }

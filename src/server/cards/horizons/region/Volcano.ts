@@ -7,7 +7,7 @@ import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
-import {PlayerCardLocation} from "../../../Player";
+import {isInPlayLocation} from "../../../Player";
 
 export class Volcano extends Card implements ICard {
     constructor() {
@@ -30,6 +30,6 @@ export class Volcano extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.IN_PLAY ? 3 : 0;
+        return isInPlayLocation(param.location) ? 3 : 0;
     }
 }

@@ -3,6 +3,8 @@ import {ICard} from "./cards/ICard";
 import {CardName} from "../common/cards/CardName";
 import {Game} from "./Game";
 import {CardTypeIcon} from "../common/cards/CardTypeIcon";
+import {Units} from "../common/Units";
+import {KeywordNames} from "../common/keywords";
 
 export enum PlayerCardLocation {
     STATE = "location:state",
@@ -25,6 +27,12 @@ export function isPlayerLocation(arg: PlayerCardLocationOrGarrison): arg is Play
     return typeof arg === "string";
 }
 
+export function isInPlayLocation(location: PlayerCardLocation | ICard): boolean {
+    return location === PlayerCardLocation.IN_PLAY
+        || location === PlayerCardLocation.STATE
+        || location === PlayerCardLocation.NATION_POWER;
+}
+
 // if garrisoned, location is that card it is garrisoned under, which is ICard
 // if not garrisoned, location is a string which satisfies isPlayerLocation()
 export type LocatedCard = {location: PlayerCardLocationOrGarrison, card: ICard};
@@ -33,6 +41,7 @@ export class Player {
     game: Game;
     id: string;
 
+    // your resources
     material: number = 0;
     population: number = 0;
     progress: number = 0;
@@ -47,6 +56,7 @@ export class Player {
     stateCard?: ICard;
     nationPower?: ICard;
     inPlayCards: Array<ICard> = []; // including power, permanent, pinned, trade-route
+
     garrisonedCards: Array<[ICard, ICard]> = [];
     drawDeckCards: Array<ICard> = [];
     discardPileCards: Array<ICard> = [];
@@ -54,6 +64,9 @@ export class Player {
     historyCards: Array<ICard> = [];
     sunkenCards: Array<ICard> = []; // only for Atlantean
     legendCards: Array<ICard> = []; // only for Polynesians
+
+    // resources on your cards
+    resourceOnYourCards: Array<[ICard, Units]> = [];
 
     constructor(id: string, game: Game) {
         this.id = "p" + id;
@@ -112,6 +125,19 @@ export class Player {
         return result.filter((card: LocatedCard): boolean => cond(card));
     }
 
+    public hasKeywordInPlay(keyword: KeywordNames): boolean {
+        const cards: Array<LocatedCard> = this.selectCards(card => isInPlayLocation(card.location));
+        for (const card of cards) {
+            if (card.card.keywords) {
+                for (const keyword1 of card.card.keywords) {
+                    if (keyword1 === keyword)
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public static countSuit(suit: CardSuitIcon, cards: Array<LocatedCard>) {
         return cards.reduce(
             (count: number, card: LocatedCard): number =>
@@ -126,14 +152,36 @@ export class Player {
             0);
     }
 
+    public scoringResources(): Units {
+        const yourSupply: Units = {
+            material: this.material,
+            population: this.population,
+            progress: this.progress,
+            goods: this.goods
+        };
+        if (this.hasKeywordInPlay(KeywordNames.freeTribes)) {
+            return this.resourceOnYourCards.reduce((unit: Units, [, cardUnit]: [ICard, Units]): Units => {
+                return {
+                    material: unit.material + cardUnit.material,
+                    population: unit.population + cardUnit.population,
+                    progress: unit.progress + cardUnit.progress,
+                    goods: unit.goods + cardUnit.goods
+                }
+            }, yourSupply);
+        }
+        return yourSupply;
+    }
+
     public getVictoryPoint(): number {
+        const scoringResources = this.scoringResources();
         return this.allScoringCards().reduce(
             (points: number, card: LocatedCard): number => {
                 const vp: number = card.card.getVictoryPoints({
                     player: this,
-                    location: card.location
+                    location: card.location,
+                    scoringResources: scoringResources
                 });
                 return points + vp;
-            }, this.progress);
+            }, this.scoringResources().progress);
     }
 }

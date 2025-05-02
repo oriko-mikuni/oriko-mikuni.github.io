@@ -11,8 +11,9 @@ import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
 import {CardStateIcon} from "../../common/cards/CardStateIcon";
 import {Units} from "../../common/Units";
 import {GameModule} from "../../common/cards/GameModule";
+import {KeywordNames} from "../../common/keywords";
 
-export type GetVPParameter = {player: Player, location: PlayerCardLocation | ICard};
+export type GetVPParameter = {player: Player, location: PlayerCardLocation | ICard, scoringResources: Units};
 
 export interface ICard {
     name: CardName;
@@ -29,7 +30,8 @@ export interface ICard {
     playerCount?: number;
     startingLocation?: CardStartingLocation;
     gameModule?: GameModule;
-    keywords?: Array<string>;
+    keywords?: Array<KeywordNames>;
+    cardInPlayType?: CardInPlayType;
 
     canPlayAsAction: (player: Player) => boolean;
     canFreePlay: (player: Player) => boolean;
@@ -40,9 +42,4 @@ export interface ICard {
     getVictoryPoints: (param: GetVPParameter) => number;
     getConditionalVictoryPoints: (param: GetVPParameter) => number;
     getVariableVictoryPoints: (param: GetVPParameter) => number;
-    cardInPlayType?: CardInPlayType;
-
-    // changes in game
-    typeIconGainThisTurn?: Array<CardTypeIcon>;
-    typeIconLoseThisTurn?: Array<CardTypeIcon>;
 }

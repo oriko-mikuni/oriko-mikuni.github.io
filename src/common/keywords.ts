@@ -3,4 +3,5 @@ export enum KeywordNames {
     outOfPlayArea = "outOfPlayArea",
     resourceOnCard = "resourceOnCard",
     promoAbundance = "promoAbundance",
+    freeTribes = "freeTribes",
 }

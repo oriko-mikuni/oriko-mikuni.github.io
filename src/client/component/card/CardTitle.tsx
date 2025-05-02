@@ -55,15 +55,15 @@ function getCardTitleDisplay(title: string): string {
 }
 
 function CardTitle(
-    {title, banner = undefined, diy = false}:
-    {title: string, banner?: CardSuitIcon, diy?: boolean}
+    {title, banner = undefined, diy = false, isState}:
+    {title: string, banner?: CardSuitIcon, diy?: boolean, isState: boolean}
 ): React.JSX.Element {
     const {t: titleTranslation} = useTranslation("cardName");
 
     const titleDisplay: string = getCardTitleDisplay(diy ? title : titleTranslation(title));
-    const titleColor: React.CSSProperties =
-        stateCardTitleColors[title] !== undefined ? stateCardTitleColors[title] :
-            banner !== undefined ? suitCardTitleColors[banner] : defaultTitleColor;
+    const titleColor: React.CSSProperties = isState
+        ? (stateCardTitleColors[title] !== undefined ? stateCardTitleColors[title] : defaultTitleColor)
+        : (banner !== undefined ? suitCardTitleColors[banner] : defaultTitleColor);
 
     return <div className={`card-title${titleDisplay.length > 20 ? " card-title-long" : ""}`}>
         <div style={titleColor}>

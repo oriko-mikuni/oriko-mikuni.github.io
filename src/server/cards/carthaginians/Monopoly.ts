@@ -28,6 +28,6 @@ export class Monopoly extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.material / 5);
+        return Math.floor(param.scoringResources.material / 5);
     }
 }

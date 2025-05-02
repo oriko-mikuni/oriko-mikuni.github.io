@@ -27,6 +27,6 @@ export class EmperorTrajan extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.population / 3);
+        return Math.floor(param.scoringResources.population / 3);
     }
 }

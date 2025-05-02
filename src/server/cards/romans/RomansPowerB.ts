@@ -25,6 +25,6 @@ export class RomansPowerB extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.population / 2);
+        return Math.floor(param.scoringResources.population / 2);
     }
 }

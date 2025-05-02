@@ -7,6 +7,7 @@ import {CardStartingLocation} from './CardStartingLocation';
 import {CardExpansion} from './CardExpansion';
 import {Units} from "../Units";
 import {GameModule} from "./GameModule";
+import {CardInPlayType} from "./CardInPlayType";
 
 export type VictoryPoints = number | 'conditional' | 'variable' | 'negativeConditional';
 
@@ -23,6 +24,7 @@ export type ClientCard = {
   developmentCostString: Array<string>;
   nationColour: CardNationColour;
   nationColourURL?: string;
+  cardInPlayType?: CardInPlayType;
   startingLocation: CardStartingLocation;
   playerCount: number;
   expansion: CardExpansion;

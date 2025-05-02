@@ -46,6 +46,7 @@ class CardProcessor {
             headerIcon: card.headerIcon ?? CardHeaderIcon.NO_HEADER,
             name: card.name,
             nationColour: card.nationColour ?? CardNationColour.COMMON,
+            cardInPlayType: card.cardInPlayType,
             playerCount: card.playerCount ?? 1,
             startingLocation: card.startingLocation ?? CardStartingLocation.DEFAULT,
             stateSymbol: card.stateSymbol,

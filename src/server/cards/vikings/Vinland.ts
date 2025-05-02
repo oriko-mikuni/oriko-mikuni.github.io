@@ -8,7 +8,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {PlayerCardLocation} from "../../Player";
+import {isInPlayLocation} from "../../Player";
 
 export class Vinland extends Card implements ICard {
     constructor() {
@@ -32,6 +32,6 @@ export class Vinland extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.IN_PLAY ? 6 : 0;
+        return isInPlayLocation(param.location) ? 6 : 0;
     }
 }

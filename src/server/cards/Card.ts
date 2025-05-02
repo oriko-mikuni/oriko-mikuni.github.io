@@ -12,6 +12,7 @@ import {CardExpansion} from "../../common/cards/CardExpansion";
 import {Units} from "../../common/Units";
 import {GetVPParameter} from "./ICard";
 import {GameModule} from "../../common/cards/GameModule";
+import {KeywordNames} from "../../common/keywords";
 
 export interface Properties {
     name: CardName;
@@ -31,7 +32,7 @@ export interface Properties {
     victoryPoints?: VictoryPoints;
     victoryPointsString?: string;
     gameModule?: GameModule;
-    keywords?: Array<string>;
+    keywords?: Array<KeywordNames>;
 }
 
 export const staticCardProperties = new Map<CardName, Properties>();
@@ -99,7 +100,7 @@ export abstract class Card {
     public get developmentCostString(): Array<string> | undefined {
         return this.properties.developmentCostString;
     }
-    public get keywords(): Array<string> | undefined {
+    public get keywords(): Array<KeywordNames> | undefined {
         return this.properties.keywords;
     }
 

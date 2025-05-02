@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
-import {PlayerCardLocation} from "../../Player";
+import {isInPlayLocation} from "../../Player";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
@@ -30,7 +30,7 @@ export class QinPowerB extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards(card =>
-            card.location === PlayerCardLocation.IN_PLAY &&
+            isInPlayLocation(card.location) &&
             card.card.headerIcon === CardHeaderIcon.PINNED &&
             !card.card.suit.some(suit1 => suit1 === CardSuitIcon.REGION)
         ).length * 2;

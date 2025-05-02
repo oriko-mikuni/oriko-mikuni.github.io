@@ -6,7 +6,7 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {PlayerCardLocation} from "../../Player";
+import {isInPlayLocation} from "../../Player";
 
 export class LongWalls1 extends Card implements ICard {
     constructor() {
@@ -30,7 +30,7 @@ export class LongWalls1 extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return param.player.selectCards((card) =>
-            card.location === PlayerCardLocation.IN_PLAY &&
+            isInPlayLocation(card.location) &&
             card.card.name.includes("Long Walls")
         ).length;
     }

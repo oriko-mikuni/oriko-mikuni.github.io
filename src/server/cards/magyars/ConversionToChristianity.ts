@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {Player, PlayerCardLocation} from "../../Player";
+import {isInPlayLocation, Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 
 export class ConversionToChristianity extends Card implements ICard {
@@ -29,7 +29,7 @@ export class ConversionToChristianity extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Player.countSuit(CardSuitIcon.REGION,
-            param.player.selectCards(card => card.location === PlayerCardLocation.IN_PLAY)
+            param.player.selectCards(card => isInPlayLocation(card.location))
         );
     }
 }

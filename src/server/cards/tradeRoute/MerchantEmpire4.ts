@@ -2,7 +2,7 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
-import {Player, PlayerCardLocation} from "../../Player";
+import {isInPlayLocation, Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
@@ -31,7 +31,7 @@ export class MerchantEmpire4 extends Card implements ICard {
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(Player.countType(CardTypeIcon.PRODUCTION,
             param.player.selectCards(card =>
-                card.location === PlayerCardLocation.IN_PLAY
+                isInPlayLocation(card.location)
             )
         ) / 2);
     }

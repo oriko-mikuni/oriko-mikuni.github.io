@@ -31,6 +31,6 @@ export class UtopiansPowerA extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.population / 4);
+        return Math.floor(param.scoringResources.population / 4);
     }
 }

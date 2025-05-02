@@ -9,6 +9,8 @@
   "舍弃已进驻到{region}的3{knight}\n以抽取当前任务到你的手牌。",
   "Abandon 3 {region} to look at the top 2 cards of the {fame} deck.":
   "舍弃3{region}以查看{fame}牌库顶的2张牌。",
+  "Abandon 6 {production} and move 1 of your {population} to a {pinned} you have in play to look at the top 2 cards of the {fame} deck.":
+  "舍弃6{production}并移动你的1{population}到你在场的\n1张牌上以查看{fame}牌库顶的2张牌。",
   "Abandon [Confucianism].":
   "舍弃“儒家思想”。",
   "Abandon [Legalism].":
@@ -133,6 +135,8 @@
   "不能被打出。",
   "Choose 2 {region} you have in play: sink 1 and abandon the other to look at the top 2 cards of the {fame} deck.":
   "选择在场的2{region}：\n沉没其中1张并舍弃另1张以查看\n{fame}牌库顶的2张牌。",
+  "Choose for each {fertile}, {river}, and {ocean} you have in play: gain 2{material} OR gain 1{population}.":
+  "你每有1{fertile}/{river}/{ocean}在场就选择1次：\n获取2{material}*或*获取1{population}。",
   "Choose: Pay 1{population} OR discard 2 cards OR pay 3{material}. If you do, return this card to the unrest pile.":
   "选择：支付1{population}，*或*弃置2张牌，\n*或*支付3{material}。若你如此做，\n将本牌放回动乱牌堆。",
   "Choose: acquire a {attack} OR steal 2{material} per {ocean} you have in play (including this card) from each other player, then put this card into your history.":
@@ -165,6 +169,8 @@
   "选择：抽取2张牌，*或*获取1{goods}，\n*或*放回1{exhaust}到你的国体牌。",
   "Choose: draw a card from your discard pile OR gain 1{goods} OR trade.":
   "选择：从你的弃牌堆中抽取1张牌，\n*或*获取1{goods}，*或*交易。",
+  "Choose: draw a {region} from your discard pile OR free play a {region}.":
+  "选择：从你的弃牌堆中抽取1{region}，\n*或*免费打出1{region}。",
   "Choose: exile a card from the market OR gain 1{population}.":
   "选择：从市场中房主1张牌，*或*获取1{population}。",
   "Choose: exile a card from the market OR swap an exiled {uncivilised}/{civilised}/{region}/{tributary} with a card in the market.":
@@ -189,6 +195,8 @@
   "选择：获取1{progress}，*或*放回1{unrest}。",
   "Choose: gain 2{material} OR look at the top card of your nation deck, then you MAY shuffle the nation deck.":
   "选择：获取2{material}，\n*或*查看你的国家牌库顶的1张牌，\n然后你*可以*洗匀国家牌库。",
+  "Choose: move 1 of your {material} here OR take a {unrest}.":
+  "选择：移动你的1{material}到本牌，\n*或*拿取1{unrest}。",
   "Choose: pay 1{goods} to gain 2{progress} OR pay 1{progress} to gain 2{goods}.":
   "选择：支付1{goods}以获取2{progress}，\n*或*支付1{progress}以获取2{goods}。",
   "Choose: pay 1{material} to acquire a {uncivilised} OR draw a card from your discard pile and gain 2{population}.":
@@ -247,6 +255,8 @@
   "抽取2张牌。\n从你的手牌中将1张牌放入你的历史。",
   "Draw a card, gain 1{goods} and return a {exhaust} to your state card.":
   "抽取1张牌，获取1{goods}\n并放回1{exhaust}到你的国体牌。",
+  "Draw a card, if able.":
+  "如有可能，抽取1张牌。",
   "Draw a card.":
   "抽取1张牌。",
   "Draw a card. Steal 1{goods} from each other player. Anyone unable to pay takes a {unrest} and gains 1{goods}.":
@@ -255,6 +265,8 @@
   "拿取顶部的{fame}牌。",
   "Draw up to 3 cards if able.":
   "如有可能，抽取最多3张牌。",
+  "Each other player MAY draw a card.":
+  "每位其他玩家*可以*抽取1张牌。",
   "Each other player MAY gain 2{material}.":
   "每位其他玩家*可以*获取2{material}。",
   "Each other player abandons a {city}.":
@@ -303,12 +315,16 @@
   "耗竭：选择一位其他玩家在场的1{pinned}。\n直到你的回合结束前，本牌成为那张牌的复制。\n若那张牌具有耗竭和/或至日关键词，\n立刻结算它们。",
   "Exhaust: choose: acquire a {trade-route} and exile a card from the market OR trade OR pay 3{goods} to flip this card ({exhaust} stays).":
   "耗竭：选择：购得1{trade-route}并\n从市场放逐1张牌，*或*交易，\n*或*支付3{goods}以将本牌翻面（{exhaust}留在这）。",
+  "Exhaust: choose: free play a {empire} and each other player MAY draw a card OR gain 1{goods}.":
+  "耗竭：选择：免费打出1{empire}且每位\n其他玩家*可以*抽取1张牌，*或*获取1{goods}。",
   "Exhaust: choose: gain 1{goods} OR garrison a {scroll} here and put a card from your hand or discard pile into your history.":
   "耗竭：选择：获取1{goods}，\n*或*进驻1{scroll}到本牌并从你的手牌或\n弃牌堆中将1张牌放入你的历史。",
+  "Exhaust: choose: garrison up to 2 {unrest} here OR move up to 5 of your {population}/{material} here.":
+  "耗竭：选择：将最多2{unrest}进驻到本牌，\n*或*移动你的最多5{population}/{material}到本牌。",
   "Exhaust: choose: move 2 of your {material} to 2 different cards in the market to gain 1{goods} OR if {barbarian}, pay 2{material} and discard a card to acquire a card in the market with {material} on it.":
   "耗竭：选择：移动你的2{material}到市场中的\n2张不同的牌上以获取1{goods}，\n*或*若{barbarian}，支付2{material}并弃置1张牌以购得\n市场中的1张其上放有{material}的卡牌。",
   "Exhaust: choose: move up to 2 of your {population} here OR pay 4{population} from here to draw the top {fame} card.":
-  "耗竭：选择：移动你的2{population}到本牌，\n*或*从本牌上支付4{population}以拿取顶部的{fame}牌。",
+  "耗竭：选择：移动你的最多2{population}到本牌，\n*或*从本牌上支付4{population}以拿取顶部的{fame}牌。",
   "Exhaust: choose: place an {attack} from your discard pile on the top of your deck OR swap an exiled card with a card in the market.":
   "耗竭：选择：\n从你的弃牌堆中将1{attack}放到你的牌库顶，\n*或*将1张被放逐的牌与市场中的1张牌交换。",
   "Exhaust: choose: put a {mask} from your discard pile into your history OR discard 3 {mask} to acquire {uncivilised}/{civilised}/{region}/{tributary}.":
@@ -399,8 +415,12 @@
   "耗竭：支付2{population}并弃置1张牌以获取1行动。",
   "Exhaust: pay 3{material} and discard a card to acquire a card in the market that has {material} on it.":
   "耗竭：支付3{material}并弃置1张牌以购得\n市场中的1张其上放有{material}的牌。",
+  "Exhaust: pay 3{material} to free play a {region}.":
+  "耗竭：支付3{material}以免费打出1{region}。",
   "Exhaust: pay 3{population} to acquire {region}/{tributary}.":
   "耗竭：支付3{population}以购得{region}/{tributary}。",
+  "Exhaust: place a card on the top of your deck and move 1 of your {population} here to acquire a {region}. If it has {ocean}, gain 1{progress}.":
+  "耗竭：放回1张牌到你的牌库顶并移动\n你的1{population}到本牌以购得1{region}。\n若它有{ocean}，获取1{progress}。",
   "Exhaust: play a {region} from your discard pile (spending 1 action as normal).":
   "耗竭：从你的弃牌堆中打出1{region}\n（照常花费1行动）。",
   "Exhaust: play a {region} from your discard pile (spending an action as normal).":
@@ -433,6 +453,8 @@
   "耗竭：放回1张牌到你的牌库顶以选择：\n从你的弃牌堆中放回1{mask}到你的手牌，\n*或*获取1{population}和1{material}。",
   "Exhaust: return an {unrest} from your discard pile to gain 1{progress}.":
   "耗竭：从你的弃牌堆中放回1{unrest}以获取1{progress}。",
+  "Exhaust: spend 1 action and place a card on the top of your deck to acquire a {uncivilised}/{civilised}.":
+  "耗竭：花费1行动并放回1张牌到你的\n牌库顶以购得1{uncivilised}/{civilised}。",
   "Exhaust: spend 2 actions to break through for {uncivilised}/{civilised}.":
   "耗竭：花费2行动以突破{uncivilised}/{civilised}。",
   "Exhaust: spend an action and discard 2 cards to choose: acquire {tributary}/{uncivilised}/{civilised} with {population} on it OR return up to 2 {unrest} from your discard pile.":
@@ -567,7 +589,7 @@
   "免费打出。抽取2张牌。",
   "Free play. Draw a card.":
   "免费打出。抽取1张牌。",
-  "Free play. Draw the top card of your deck if able and choose: discard it OR return it to the top OR put it in into your history.":
+  "Free play. Draw the top card of your deck if able and choose: discard it OR return it to the top OR put it into your history.":
   "免费打出。\n如有可能，抽取你的牌库顶的1张牌，并选择：\n弃置它，*或*将它放回牌库顶，*或*将它放入你的历史。",
   "Free play. Draw the top {fame} card.":
   "免费打出。拿取顶部的{fame}牌。",
@@ -619,6 +641,8 @@
   "免费打出。你*可以*从你的手牌中\n将1张牌放入你的历史。",
   "Free play. You MAY return a card from your discard pile to the top of your deck.":
   "免费打出。你*可以*从你的弃牌堆中\n放回1张牌到你的牌库顶。",
+  "Gain 1 action.":
+  "获取1行动。",
   "Gain 1{goods}.":
   "获取1{goods}。",
   "Gain 1{material} and 1{population} per {city}/{metropolis} in your play area.":
@@ -637,6 +661,8 @@
   "获取1{population}。你*可以*从你的手牌中\n将1张牌放入你的历史。",
   "Gain 1{progress} for each {unrest} returned.":
   "每放回1{unrest}，获取1{progress}。",
+  "Gain 1{progress} per 2 {production} you have in play.":
+  "你每有2{production}在场就获取1{progress}。",
   "Gain 1{progress} per player who did.":
   "每有1位玩家如此做，获取1{progress}。",
   "Gain 1{progress} per {unrest} returned.":
@@ -717,6 +743,8 @@
   "若{empire}，将本牌放入你的历史。",
   "If {empire}, you MAY pay 1{population} to return a {unrest}.":
   "若{empire}，你*可以*支付1{population}以放回1{unrest}。",
+  "Look at the top 3 cards of the {fame} deck.":
+  "查看{fame}牌库顶的3张牌。",
   "Look at the top card of your nation deck.":
   "查看你的国家牌库顶的1张牌。",
   "No effect when played. Cannot be discarded during your Clean-up step.":
@@ -753,6 +781,8 @@
   "被动：打出1{unrest}的{material}或卡牌费用减少1（最低为1）。",
   "Passive: reduce the cost in {material} to play an {unrest} by 2 (to a minimum of 1).":
   "被动：打出1{unrest}的{material}费用减少2（最低为1）。",
+  "Passive: resources on your cards count for scoring purposes.":
+  "被动：在计分时，你卡牌上的资源算作你的。",
   "Passive: when a card effect requires you to discard {mask}, you MAY instead abandon cards garrisoned here.":
   "被动：当1张牌的效果要求你弃置{mask}时，\n你*可以*改为舍弃已进驻在此的牌。",
   "Passive: when a card would be put into your history, discard it instead and abandon a {pinned} if able.":
@@ -815,6 +845,8 @@
   "支付2{material}以购得1{uncivilised}/{civilised}/{trade-route}。",
   "Pay 2{material} to acquire {uncivilised}/{civilised}/{region}/{tributary}.":
   "支付2{material}以购得{uncivilised}/{civilised}/{region}/{tributary}。",
+  "Pay 2{material}. Each {fertile} you have in play counts as {production} for the rest of this turn.":
+  "支付2{material}。在本回合的剩余时间内，\n你在场的每个{fertile}都算作1{production}。",
   "Pay 2{population} to break through for a {trade-route}.":
   "支付2{population}以突破1{trade-route}。",
   "Pay 2{population} to break through for {tributary}.":
@@ -857,6 +889,8 @@
   "将“罗马城”放入你的历史。",
   "Put a {region} from your hand into your history to acquire a {uncivilised}/{civilised}/{region}/{tributary}.":
   "从你的手牌将1{region}放入你的历史\n以购得1{uncivilised}/{civilised}/{region}/{tributary}。",
+  "Put a {region} you have in play into your history.":
+  "将你在场的1{region}放入你的历史。",
   "Put this card into your history.":
   "将本牌放入你的历史。",
   "Put up to 3 cards from your hand and/or discard pile into your history.":
@@ -1013,6 +1047,8 @@
   "至日：如有可能，你*可以*抽取1张牌。\n若你如此做，放回1张牌到你的牌库顶。",
   "Solstice: you MAY draw a {mask} from your discard pile.":
   "至日：你*可以*从你的弃牌堆中抽取1{mask}。",
+  "Solstice: you MAY draw the top card of your deck, if able, and choose: discard it OR return it to the top OR put it into your history.":
+  "至日：如有可能，你*可以*抽取\n你的牌库顶的1张牌，并选择：\n弃置它，*或*将它放回牌库顶，\n*或*将它放入你的历史。",
   "Solstice: you MAY gain 2{progress}. If you do, choose: abandon this card OR put it into your history.":
   "至日：你*可以*获取2{progress}。若你如此做，\n选择：舍弃本牌，*或*将本牌放入你的历史。",
   "Solstice: you MAY garrison a card here.":
@@ -1031,6 +1067,8 @@
   "至日：你*可以*从你的手牌或弃牌堆中\n将1张牌放入你的历史。",
   "Solstice: you MAY recall a {region}.":
   "至日：你*可以*召回1{region}。",
+  "Solstice: you MAY recall a {river}/{ocean} to gain 2{population} and draw a card.":
+  "至日：你*可以*召回1{river}/{ocean}以\n获取2{population}并抽取1张牌。",
   "Solstice: you MAY return a {region} from your discard pile to your hand.":
   "至日：你*可以*从你的弃牌堆中\n放回1{region}到你的手牌。",
   "Solstice: you MAY return a {unrest}. If you do, each other player gains 2{material}.":
@@ -1065,6 +1103,8 @@
   "然后放回1张牌到你的牌库顶。",
   "This card cannot be garrisoned.":
   "本牌不能用于进驻。",
+  "This card is limited to 2 garrisoned cards.":
+  "本牌最多只能有2张已进驻牌。",
   "When a card is sunk, you MAY return a card from your discard pile to the top of your deck.":
   "当1张牌沉没时，你*可以*从你的弃牌堆中\n放回1张牌到你的牌库顶。",
   "When put into play, flip your state card to its {empire} side.":
@@ -1135,6 +1175,8 @@
   "你*可以*将本牌进驻到1{region}以触发\n那张牌的打出效果。",
   "You MAY garrison this card under a {region} with {river} you have in play to gain 1 action.":
   "你*可以*将本牌进驻到有{river}的1{region}以获取1行动。",
+  "You MAY pay 1{population} from [Zemi] to acquire a {tributary}.":
+  "你可以从“神像”支付1{population}以购得1{tributary}。",
   "You MAY pay 2{population} to trade.":
   "你*可以*支付2{population}以交易。",
   "You MAY pay 3{population} to gain 2{progress}.":
@@ -1157,6 +1199,8 @@
   "你*可以*从你的弃牌堆中放回\n1张牌到你的牌库顶。",
   "You MAY return a {region} from your discard pile to the top of your deck.":
   "你*可以*从你的弃牌堆放回\n1{region}到你的牌库顶。",
+  "You MAY return a {unrest} garrisoned in [Zemi] to add 1{material} to [Zemi].":
+  "你*可以*放回已进驻到“神像”的1{unrest}\n以添加1{material}到“神像”。",
   "You MAY return a {unrest}.":
   "你*可以*放回1{unrest}。",
   "You MAY return an {unrest}.":

@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {PlayerCardLocation} from "../../Player";
+import {isInPlayLocation} from "../../Player";
 
 export class MandateOfHeaven extends Card implements ICard {
     constructor() {
@@ -27,6 +27,6 @@ export class MandateOfHeaven extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.IN_PLAY ? 0 : -2;
+        return isInPlayLocation(param.location) ? 0 : -2;
     }
 }
