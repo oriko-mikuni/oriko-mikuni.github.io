@@ -1,6 +1,6 @@
 import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
-import {Card} from "../Card";
+import {Card, Properties} from "../Card";
 
 export class DefaultCard extends Card implements ICard {
     constructor() {
@@ -16,10 +16,11 @@ export class DefaultCard extends Card implements ICard {
             cardNumber: undefined,
             effectText: undefined,
             developmentCost: undefined,
+            developmentCostString: undefined,
             expansion: undefined,
             playerCount: undefined,
             victoryPoints: undefined,
-            victoryPointsString: undefined
+            victoryPointsString: undefined,
         });
     }
 }

@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Glory extends Card implements ICard {
     constructor() {
@@ -15,7 +15,7 @@ export class Glory extends Card implements ICard {
             startingLocation: CardStartingLocation.ACCESSION,
             nationColour: CardNationColour.SCY,
             cardNumber: "SCY2",
-            effectText: EffectReuseMultipleSentences.glory,
+            effectText: CardEffectReuse.glory,
         });
     }
 }

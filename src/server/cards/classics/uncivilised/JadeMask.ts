@@ -3,7 +3,7 @@ import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
-import {EffectReuseMultipleSentences} from "../../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
 import {PlayerCardLocation} from "../../../Player";
 
 export class JadeMask extends Card implements ICard {
@@ -14,7 +14,7 @@ export class JadeMask extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [CardTypeIcon.MASK],
             cardNumber: "1UNC2",
-            effectText: EffectReuseMultipleSentences.stoneMask,
+            effectText: CardEffectReuse.stoneMask,
             victoryPoints: 'conditional',
             victoryPointsString: "1VP if in history"
         });

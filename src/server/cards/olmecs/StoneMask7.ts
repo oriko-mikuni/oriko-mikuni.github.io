@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
-import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 import {PlayerCardLocation} from "../../Player";
 
 export class StoneMask7 extends Card implements ICard {
@@ -15,7 +15,7 @@ export class StoneMask7 extends Card implements ICard {
             typeIcon: [CardTypeIcon.MASK],
             nationColour: CardNationColour.OLM,
             cardNumber: "OLM23",
-            effectText: EffectReuseMultipleSentences.stoneMask,
+            effectText: CardEffectReuse.stoneMask,
             victoryPoints: 'conditional',
             victoryPointsString: "1VP if in history"
         });

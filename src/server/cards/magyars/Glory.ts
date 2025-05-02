@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
-import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Glory extends Card implements ICard {
     constructor() {
@@ -14,7 +14,7 @@ export class Glory extends Card implements ICard {
             typeIcon: [],
             nationColour: CardNationColour.MAG,
             cardNumber: "MAG19",
-            effectText: EffectReuseMultipleSentences.glory,
+            effectText: CardEffectReuse.glory,
         });
     }
 }

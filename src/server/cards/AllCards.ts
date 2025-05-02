@@ -23,6 +23,7 @@ import {OLM_CARD_MANIFEST} from "./olmecs/cardManifest";
 import {ART_CARD_MANIFEST} from "./arthurians/cardManifest";
 import {UTO_CARD_MANIFEST} from "./utopians/cardManifest";
 import {MAG_CARD_MANIFEST} from "./magyars/cardManifest";
+import {JPN_CARD_MANIFEST} from "./japanese/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     COMMON_CARD_MANIFEST,
@@ -52,7 +53,7 @@ export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     UTO_CARD_MANIFEST,
 
     MAG_CARD_MANIFEST,
-    // JPN_CARD_MANIFEST,
+    JPN_CARD_MANIFEST,
     // TAI_CARD_MANIFEST,
     // INU_CARD_MANIFEST,
     // MAY_CARD_MANIFEST,

@@ -3,7 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {EffectReuseMultipleSentences} from "../../../common/cards/CardEffectReuse";
+import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 
 export class Prosperity extends Card implements ICard {
     constructor() {
@@ -15,7 +15,7 @@ export class Prosperity extends Card implements ICard {
             startingLocation: CardStartingLocation.NATION,
             nationColour: CardNationColour.CAR,
             cardNumber: "CAR9",
-            effectText: EffectReuseMultipleSentences.prosperity
+            effectText: CardEffectReuse.prosperity
         });
     }
 }
