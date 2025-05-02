@@ -1207,3 +1207,11 @@ export enum CardName {
     UNREST_WAG = "card_name.WAG22",
     UNREST_WAG1 = "card_name.WAG23",
 }
+
+export function getCardName(value: string): CardName | undefined {
+    return Object.values(CardName).find(cardName => cardName.toString() === value);
+}
+
+export function isCardName(value: string): value is CardName {
+    return getCardName(value) !== undefined;
+}

@@ -4,27 +4,31 @@
     width: 20px;
     background-size: 20px 20px;
     object-fit: cover;
-    background-image: url("../images/header_icon/no_header.png");
+    background-image: url("/header_icon/no_header.png");
 }
 
 .card-header-icon.card-header-icon-powerA {
-    background-image: url("../images/header_icon/powerA.png");
+    background-image: url("/header_icon/powerA.png");
 }
 
 .card-header-icon.card-header-icon-powerB {
-    background-image: url("../images/header_icon/powerB.png");
+    background-image: url("/header_icon/powerB.png");
 }
 
 .card-header-icon.card-header-icon-attack {
-    background-image: url("../images/header_icon/attack.png");
+    background-image: url("/header_icon/attack.png");
 }
 
 .card-header-icon.card-header-icon-pinned {
-    background-image: url("../images/header_icon/pinned.png");
+    background-image: url("/header_icon/pinned.png");
 }
 
 .card-header-icon.card-header-icon-tradeRoute {
-    background-image: url("../images/header_icon/tradeRoute.png");
+    background-image: url("/header_icon/tradeRoute.png");
+}
+
+.card-header-icon.card-header-icon-no_header {
+    background-image: url("/header_icon/no_header.png");
 }
 
 .card-header-icon.card-header-icon-left {

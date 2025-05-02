@@ -1,5 +1,5 @@
 import cardJson from '../../genfiles/cards.json';
-import {CardName} from "../../common/cards/CardName";
+import {CardName, getCardName} from "../../common/cards/CardName";
 import {ClientCard, VictoryPoints} from "../../common/cards/ClientCard";
 import {GameModule} from "../../common/cards/GameModule";
 
@@ -34,14 +34,16 @@ class ClientCardsManifest {
         const vpSet: Set<VictoryPoints> = new Set();
         const gameModuleSet: Set<GameModule> = new Set();
         (cardJson as Array<ClientCard>).forEach((card: ClientCard): void => {
-            ClientCardsManifest.cards.set(card.name, card);
+            const cardNameEnum: CardName | undefined = getCardName(card.name);
+            if (cardNameEnum === undefined) return;
+            ClientCardsManifest.cards.set(cardNameEnum, card);
             if (card.cardNumber !== undefined && card.cardNumber.endsWith("X")) {
                 const cardNumberToUpdate: string = card.cardNumber.slice(0, card.cardNumber.length - 1);
                 this.allCardUpdates[cardNumberToUpdate] = card;
             } else {
                 ClientCardsManifest.allCards.push(card);
             }
-            if (card.victoryPoints !== undefined && !vpSet.has(card.victoryPoints)) vpSet.add(card.victoryPoints);
+            if (!vpSet.has(card.victoryPoints)) vpSet.add(card.victoryPoints);
             if (!gameModuleSet.has(card.gameModule)) gameModuleSet.add(card.gameModule);
         });
         this.allGameModules = [];

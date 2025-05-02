@@ -13,25 +13,19 @@
 }
 
 .card-victory-point-positive {
-    background: url("../images/vp_icon/victory_point.svg");
+    background-image: url("/vp_icon/victory_point.svg");
     background-size: 25px 25px;
     color: black;
 }
 
-.card-victory-point-null {
-    background: url("../images/vp_icon/victory_point_null.svg");
-    background-size: 25px 25px;
-    color: #00000000;
-}
-
 .card-victory-point-variable {
-    background: url("../images/vp_icon/victory_point_variable.svg");
+    background-image: url("/vp_icon/victory_point_variable.svg");
     background-size: 25px 25px;
     color: #00000000;
 }
 
 .card-victory-point-negative {
-    background: url("../images/vp_icon/victory_point_negative.svg");
+    background-image: url("/vp_icon/victory_point_negative.svg");
     background-size: 25px 25px;
     color: red;
 }
@@ -46,7 +40,7 @@
     width: 60px;
     height: auto;
 
-    background: #00000080;
+    background-color: #00000080;
     color: white;
     text-align: center;
 }

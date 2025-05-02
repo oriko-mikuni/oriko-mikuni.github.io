@@ -6,53 +6,53 @@
 }
 
 .card-type-icon.card-type-icon-city {
-    background-image: url("../images/card_type_icon/city.png");
+    background-image: url("/card_type_icon/city.png");
 }
 
 .card-type-icon.card-type-icon-knight {
-    background-image: url("../images/card_type_icon/knight.png");
+    background-image: url("/card_type_icon/knight.png");
 }
 
 .card-type-icon.card-type-icon-mask {
-    background-image: url("../images/card_type_icon/mask.png");
+    background-image: url("/card_type_icon/mask.png");
 }
 
 .card-type-icon.card-type-icon-merchant {
-    background-image: url("../images/card_type_icon/merchant.png");
+    background-image: url("/card_type_icon/merchant.png");
 }
 
 .card-type-icon.card-type-icon-metropolis {
-    background-image: url("../images/card_type_icon/metropolis.png");
+    background-image: url("/card_type_icon/metropolis.png");
 }
 
 .card-type-icon.card-type-icon-miracle {
-    background-image: url("../images/card_type_icon/miracle.png");
+    background-image: url("/card_type_icon/miracle.png");
 }
 
 .card-type-icon.card-type-icon-scroll {
-    background-image: url("../images/card_type_icon/scroll.png");
+    background-image: url("/card_type_icon/scroll.png");
 }
 
 .card-type-icon.card-type-icon-fertile {
-    background-image: url("../images/card_type_icon/fertile.png");
+    background-image: url("/card_type_icon/fertile.png");
 }
 
 .card-type-icon.card-type-icon-hunt {
-    background-image: url("../images/card_type_icon/hunt.png");
+    background-image: url("/card_type_icon/hunt.png");
 }
 
 .card-type-icon.card-type-icon-ocean {
-    background-image: url("../images/card_type_icon/ocean.png");
+    background-image: url("/card_type_icon/ocean.png");
 }
 
 .card-type-icon.card-type-icon-production {
-    background-image: url("../images/card_type_icon/production.png");
+    background-image: url("/card_type_icon/production.png");
 }
 
 .card-type-icon.card-type-icon-river {
-    background-image: url("../images/card_type_icon/river.png");
+    background-image: url("/card_type_icon/river.png");
 }
 
 .card-type-icon.card-type-icon-undefined {
-    background-image: url("../images/card_type_icon/no_type.png");
+    background-image: url("/card_type_icon/no_type.png");
 }

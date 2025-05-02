@@ -48,6 +48,7 @@ function Homepage() : React.JSX.Element {
             The card game is great and this webpage recommends purchasing it for personal use.
         </p>
         <button onClick={() => navigate('/cards')} style={featureButtonStyle}>{t("toCardList")}</button><br/>
+        <button onClick={() => navigate('/cardMaker')} style={featureButtonStyle}>{t("toCardMaker")}</button><br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'>{t("toSource")}</a><br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{t("toFeedback")}</a>
     </div>

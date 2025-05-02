@@ -4,13 +4,12 @@ import './styles/CardVictoryPoints.css';
 
 function CardVictoryPointIcon(
     {victoryPoints}:
-    {victoryPoints?: VictoryPoints}
+    {victoryPoints: VictoryPoints}
 ): React.JSX.Element {
     const classes: Array<string> = ['card-victory-point-icon'];
-    const vp: VictoryPoints = victoryPoints === undefined ? 0 : victoryPoints;
     let victoryPointNumber: string;
 
-    switch (vp) {
+    switch (victoryPoints) {
         case 'negativeConditional':
             classes.push('card-victory-point-negative');
             classes.push('card-victory-point-conditional');
@@ -26,14 +25,9 @@ function CardVictoryPointIcon(
             victoryPointNumber = "?";
             break;
         default:
-            classes.push(vp < 0 ? 'card-victory-point-negative' : 'card-victory-point-positive');
+            classes.push(victoryPoints < 0 ? 'card-victory-point-negative' : 'card-victory-point-positive');
             classes.push('card-victory-point-number');
-            victoryPointNumber = vp.toString();
-    }
-
-    if (victoryPoints === undefined) {
-        classes.push('card-victory-point-null');
-        victoryPointNumber = "x";
+            victoryPointNumber = victoryPoints.toString();
     }
 
     return <div className={classes.join(' ')}>{victoryPointNumber}</div>;

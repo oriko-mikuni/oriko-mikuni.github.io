@@ -13,42 +13,42 @@
 }
 
 .card-suit-icon-undefined {
-    background-image: url("../images/suit_icon/no_suit.png");
+    background-image: url("/suit_icon/no_suit.png");
 }
 
 .card-suit-icon-power {
-    background-image: url("../images/suit_icon/power.png");
+    background-image: url("/suit_icon/power.png");
 }
 
 .card-suit-icon-fame {
-    background-image: url("../images/suit_icon/fame.png");
+    background-image: url("/suit_icon/fame.png");
 }
 
 .card-suit-icon-unrest {
-    background-image: url("../images/suit_icon/unrest.png");
+    background-image: url("/suit_icon/unrest.png");
 }
 
 .card-suit-icon-uncivilised {
-    background-image: url("../images/suit_icon/uncivilised.png");
+    background-image: url("/suit_icon/uncivilised.png");
 }
 
 .card-suit-icon-civilised {
-    background-image: url("../images/suit_icon/civilised.png");
+    background-image: url("/suit_icon/civilised.png");
 }
 
 .card-suit-icon-region {
-    background-image: url("../images/suit_icon/region.png");
+    background-image: url("/suit_icon/region.png");
 }
 
 .card-suit-icon-tributary {
-    background-image: url("../images/suit_icon/tributary.png");
+    background-image: url("/suit_icon/tributary.png");
 }
 
 .card-suit-icon-trade-route {
-    background-image: url("../images/suit_icon/trade_route.png");
+    background-image: url("/suit_icon/trade_route.png");
 }
 
 .card-suit-icon-gadget {
-    background-image: url("../images/suit_icon/gadget.png");
+    background-image: url("/suit_icon/gadget.png");
 }
 

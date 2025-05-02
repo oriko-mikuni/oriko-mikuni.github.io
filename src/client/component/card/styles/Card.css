@@ -15,8 +15,8 @@
 
 .filterDiv{
     position: relative;
-    /*background: #bbbbbb;*/
-    background: linear-gradient(
+    background-color: #bbbbbb;
+    background-image: linear-gradient(
             to bottom right,
             #805020,
             #508020,
@@ -57,7 +57,7 @@
     left: 35px;
     bottom: 20px;
     background-color: white;
-    mask: url("../images/corner_icon/playerCount.svg");
+    mask: url("/corner_icon/playerCount.svg");
     width: 11px;
     height: 11px;
     background-size: 11px 11px;
@@ -69,24 +69,4 @@
     bottom: 20px;
     font-size: 10px;
     color: white;
-}
-
-.card-expansion-TradeFriendly {
-    position: absolute;
-    left: 25px;
-    bottom: 25px;
-    background: url("../images/corner_icon/tradeFriendly.png");
-    width: 10px;
-    height: 10px;
-    background-size: 10px 10px;
-}
-
-.card-expansion-Ruthless {
-    position: absolute;
-    left: 25px;
-    bottom: 25px;
-    background: url("../images/corner_icon/ruthless.png");
-    width: 10px;
-    height: 10px;
-    background-size: 10px 10px;
 }

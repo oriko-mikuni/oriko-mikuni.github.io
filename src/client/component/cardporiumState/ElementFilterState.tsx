@@ -9,8 +9,8 @@ type CardporiumFilterStateAction = {
 };
 
 const selectedStyle: Record<0 | 1, React.CSSProperties> = {
-    0: {background: "#303030", color: "#fff"},
-    1: {background: "#dddddd", color: "#000"}
+    0: {backgroundColor: "#303030", color: "#fff"},
+    1: {backgroundColor: "#dddddd", color: "#000"}
 };
 
 class CardporiumFilterState {

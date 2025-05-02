@@ -18,6 +18,7 @@
     background-size: 1em;
 }
 
+.card-nation-location-common-black,
 .card-nation-location-Abbasids,
 .card-nation-location-Aksumites,
 .card-nation-location-Arthurians,
@@ -55,126 +56,6 @@
     background-color: white;
 }
 
-.card-nation-colour-Carthaginians {
-    background: #005da3;
-}
-
-.card-nation-colour-Celts {
-    background: #00683a;
-}
-
-.card-nation-colour-Greeks {
-    background: #ffffff;
-}
-
-.card-nation-colour-Macedonians {
-    background: #552b81;
-}
-
-.card-nation-colour-Persians {
-    background: #a45396;
-}
-
-.card-nation-colour-Romans {
-    background: #e30613;
-}
-
-.card-nation-colour-Scythians {
-    background: #b7b867;
-}
-
-.card-nation-colour-Vikings {
-    background: #f59e00;
-}
-
-.card-nation-colour-Arthurians {
-    background: #8dbe22;
-}
-
-.card-nation-colour-Atlanteans {
-    background: #64c7f3;
-}
-
-.card-nation-colour-Egyptians {
-    background: #ffee00;
-}
-
-.card-nation-colour-Mauryans {
-    background: #9e622e;
-}
-
-.card-nation-colour-Minoans {
-    background: #000000;
-}
-
-.card-nation-colour-Olmecs {
-    background: #8e8e8d;
-}
-
-.card-nation-colour-Qin {
-    background: #ef82ac;
-}
-
-.card-nation-colour-Utopians {
-    background: #12b1ad;
-}
-
-.card-nation-colour-Abbasids {
-    background-image: url(../images/nation_color/ABB.svg);
-}
-
-.card-nation-colour-Aksumites {
-    background-image: url(../images/nation_color/AKS.svg);
-}
-
-.card-nation-colour-Cultists {
-    background-image: url(../images/nation_color/CUL.svg);
-}
-
-.card-nation-colour-Guptas {
-    background-image: url(../images/nation_color/GUP.svg);
-}
-
-.card-nation-colour-Inuit {
-    background-image: url(../images/nation_color/INU.svg);
-}
-
-.card-nation-colour-Japanese {
-    background-image: url(../images/nation_color/JPN.svg);
-}
-
-.card-nation-colour-Magyars {
-    background-image: url(../images/nation_color/MAG.svg);
-}
-
-.card-nation-colour-Mayans {
-    background-image: url(../images/nation_color/MAY.svg);
-}
-
-.card-nation-colour-Martians {
-    background-image: url(../images/nation_color/MRT.svg);
-}
-
-.card-nation-colour-Polynesians {
-    background-image: url(../images/nation_color/POL.svg);
-}
-
-.card-nation-colour-Sassanids {
-    background-image: url(../images/nation_color/SAS.svg);
-}
-
-.card-nation-colour-Taino {
-    background-image: url(../images/nation_color/TAI.svg);
-}
-
-.card-nation-colour-Tang {
-    background-image: url(../images/nation_color/TAN.svg);
-}
-
-.card-nation-colour-Wagadou {
-    background-image: url(../images/nation_color/WAG.svg);
-}
-
 .card-triangle-location {
     position: absolute;
     bottom: 8px;
@@ -183,32 +64,37 @@
     height: 15px;
 }
 
-.card-triangle-location-in-play {
-    mask: url("../images/starting_location/InPlay.svg") no-repeat center / contain;
-    -webkit-mask: url("../images/starting_location/InPlay.svg") no-repeat center;
+.card-inline-square-location {
+    width: 1em;
+    height: 1em;
 }
 
-.card-triangle-location-nation {
-    mask: url("../images/starting_location/Nation.svg") no-repeat center / contain;
-    -webkit-mask: url("../images/starting_location/Nation.svg") no-repeat center;
+.card-location-in-play {
+    mask: url("/starting_location/InPlay.svg") no-repeat center / contain;
+    -webkit-mask: url("/starting_location/InPlay.svg") no-repeat center;
 }
 
-.card-triangle-location-accession {
-    mask: url("../images/starting_location/Accession.svg") no-repeat center / contain;
-    -webkit-mask: url("../images/starting_location/Accession.svg") no-repeat center;
+.card-location-nation {
+    mask: url("/starting_location/Nation.svg") no-repeat center / contain;
+    -webkit-mask: url("/starting_location/Nation.svg") no-repeat center;
 }
 
-.card-triangle-location-development {
-    mask: url("../images/starting_location/Development.svg") no-repeat center / contain;
-    -webkit-mask: url("../images/starting_location/Development.svg") no-repeat center;
+.card-location-accession {
+    mask: url("/starting_location/Accession.svg") no-repeat center / contain;
+    -webkit-mask: url("/starting_location/Accession.svg") no-repeat center;
 }
 
-.card-triangle-location-supply {
-    mask: url("../images/starting_location/Supply.svg") no-repeat center / contain;
-    -webkit-mask: url("../images/starting_location/Supply.svg") no-repeat center;
+.card-location-development {
+    mask: url("/starting_location/Development.svg") no-repeat center / contain;
+    -webkit-mask: url("/starting_location/Development.svg") no-repeat center;
 }
 
-.card-triangle-location-chaos {
-    mask: url("../images/starting_location/Chaos.svg") no-repeat center / contain;
-    -webkit-mask: url("../images/starting_location/Chaos.svg") no-repeat center;
+.card-location-supply {
+    mask: url("/starting_location/Supply.svg") no-repeat center / contain;
+    -webkit-mask: url("/starting_location/Supply.svg") no-repeat center;
+}
+
+.card-location-chaos {
+    mask: url("/starting_location/Chaos.svg") no-repeat center / contain;
+    -webkit-mask: url("/starting_location/Chaos.svg") no-repeat center;
 }

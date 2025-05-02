@@ -4,12 +4,15 @@ import CardTitle from "./CardTitle"
 import './styles/Card.css';
 import CardSuitIconGroup from "./CardSuitIconGroup.tsx";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon.ts";
-import CardStateSymbolRow from "./CardStateSymbolRow.tsx";
+import CardStateIconRow from "./CardStateIconRow.tsx";
 import CardTypeIconGroup from "./CardTypeIconGroup.tsx";
-import CardHeaderIcon from "./CardHeaderIconDisplay.tsx";
-import CardNationColourRender, {CardNationColourStyle} from "./CardNationColourRender.tsx";
+import CardHeaderIconDisplay from "./CardHeaderIconDisplay.tsx";
+import CardNationColourRender, {CardNationColourDisplayShape} from "./CardNationColourRender.tsx";
 import {CardEffectTextBox} from "./CardEffectTextBox.tsx";
 import CardVictoryPoints from "./CardVictoryPoints.tsx";
+import {GameModule} from "../../../common/cards/GameModule.ts";
+import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon.ts";
+import CardExpansionRender from "./CardExpansionRender.tsx";
 
 function getCardClasses(card: ClientCard, onClick?: () => void): string {
     const classes =['filterDiv'];
@@ -27,36 +30,57 @@ function Card(
 ): React.JSX.Element {
     const topContents: Array<React.JSX.Element> = [];
 
-    const cardTitle: React.JSX.Element = <CardTitle title={card.name} banner={card.suit.at(0)} key="cardTitle" />;
-    topContents.push(cardTitle);
+    topContents.push(<CardTitle
+        title={card.name}
+        banner={card.suit.at(0)}
+        key="cardTitle"
+        diy={card.gameModule === GameModule.DEFAULT}
+    />);
 
-    if (card.headerIcon !== undefined) {
-        topContents.push(<CardHeaderIcon headerIcon={card.headerIcon} position="left" key="cardHeaderIconLeft"/>);
-        topContents.push(<CardHeaderIcon headerIcon={card.headerIcon} position="right" key="cardHeaderIconRight"/>);
+    if (card.headerIcon !== CardHeaderIcon.NO_HEADER) {
+        topContents.push(<CardHeaderIconDisplay headerIcon={card.headerIcon} position="left" key="cardHeaderIconLeft"/>);
+        topContents.push(<CardHeaderIconDisplay headerIcon={card.headerIcon} position="right" key="cardHeaderIconRight"/>);
     }
 
     topContents.push(<CardTypeIconGroup type={card.typeIcon} key="card-types"/>);
 
     card.stateSymbol.forEach((state: CardStateIcon, index: number) => {
-        topContents.push(<CardStateSymbolRow key={`card-state-symbol-${index}`} state={state} />)
+        topContents.push(<CardStateIconRow key={`card-state-symbol-${index}`} state={state} />)
     });
 
-    const playerCountRender: React.JSX.Element | null = card.playerCount === undefined ? null :
+    const playerCountRender: React.JSX.Element | null = card.playerCount < 2 ? null :
     <div>
         <div className="card-player-count-background"/>
         <div className="card-player-count-text">{card.playerCount.toString() + (card.playerCount < 4 ? "+" : "")}</div>
     </div>;
-    const expansionRender: React.JSX.Element | null = card.expansion === undefined ? null :
-        <div className={`card-expansion-${card.expansion}`}/>;
+    const expansionRender: React.JSX.Element | null = <CardExpansionRender expansion={card.expansion}/>;
+    const backgroundStyle: React.CSSProperties | undefined = !card.illustration ? undefined :
+        {backgroundImage: `url("${card.illustration}")`, backgroundSize: "250px 350px"};
 
-    return <div className={getCardClasses(card, onClick)} onClick={onClick}>
+    return <div className={getCardClasses(card, onClick)} style={backgroundStyle} onClick={onClick}>
         <div className="card-content-wrapper">
             {topContents}
         </div>
-        <CardSuitIconGroup suit={card.suit} />
-        <CardEffectTextBox effectText={card.effectText} developmentCost={card.developmentCost} developmentCostString={card.developmentCostString}/>
-        <CardNationColourRender nationColour={card.nationColour} location={card.startingLocation} style={CardNationColourStyle.TRIANGLE}/>
-        <CardVictoryPoints victoryPoints={card.victoryPoints} victoryPointString={card.victoryPointsString}/>
+        <CardSuitIconGroup
+            suit={card.suit}
+        />
+        <CardEffectTextBox
+            effectText={card.effectText}
+            developmentCost={card.developmentCost}
+            developmentCostString={card.developmentCostString}
+            diy={card.gameModule === GameModule.DEFAULT}
+        />
+        <CardNationColourRender
+            nationColour={card.nationColour}
+            location={card.startingLocation}
+            shape={CardNationColourDisplayShape.TRIANGLE}
+            nationColourImageURL={card.nationColourURL}
+        />
+        <CardVictoryPoints
+            victoryPoints={card.victoryPoints}
+            victoryPointString={card.victoryPointsString}
+            diy={card.gameModule === GameModule.DEFAULT}
+        />
         <div className="card-number">{card.cardNumber}</div>
         {playerCountRender}
         {expansionRender}

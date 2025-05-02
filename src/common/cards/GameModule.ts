@@ -50,17 +50,17 @@ export enum GameModule  {
     DEFAULT = "module.default",
 }
 
-export const moduleNation: Record<GameModule, CardNationColour | undefined> = {
-    [GameModule.DEFAULT]: undefined,
+export const moduleNation: Record<GameModule, CardNationColour> = {
+    [GameModule.DEFAULT]: CardNationColour.COMMON,
 
-    [GameModule.COMMON]: undefined,
-    [GameModule.CLASSICS_COMMON]: undefined,
-    [GameModule.LEGENDS_COMMON]: undefined,
-    [GameModule.HORIZONS_COMMON]: undefined,
-    [GameModule.TRADE_ROUTE_EXPANSION]: undefined,
+    [GameModule.COMMON]: CardNationColour.COMMON,
+    [GameModule.CLASSICS_COMMON]: CardNationColour.COMMON,
+    [GameModule.LEGENDS_COMMON]: CardNationColour.COMMON,
+    [GameModule.HORIZONS_COMMON]: CardNationColour.COMMON,
+    [GameModule.TRADE_ROUTE_EXPANSION]: CardNationColour.COMMON,
 
-    [GameModule.PROMO]: undefined,
-    [GameModule.HORIZONS_UPDATE]: undefined,
+    [GameModule.PROMO]: CardNationColour.COMMON,
+    [GameModule.HORIZONS_UPDATE]: CardNationColour.COMMON,
 
     [GameModule.ABBASIDS]: CardNationColour.ABB,
     [GameModule.AKSUMITES]: CardNationColour.AKS,

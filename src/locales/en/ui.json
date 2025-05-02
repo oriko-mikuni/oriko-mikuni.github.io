@@ -2,11 +2,13 @@
   "pageTitle": {
     "Homepage": "Homepage",
     "Imperium Cardporium": "Imperium Cardporium",
+    "Imperium Card Maker": "Imperium Card Maker",
     "404": "Page Not Found"
   },
   "HomepageText": {
     "header": "Imperium Card Game",
-    "toCardList": "imperium card list",
+    "toCardList": "card list",
+    "toCardMaker": "card maker",
     "toSource": "source",
     "toFeedback": "feedback"
   },
@@ -29,6 +31,32 @@
     "reset": "Reset",
     "gameContents": "Game Contents",
     "includeHorizons": "Include Horizons"
+  },
+  "ImperiumCardMaker": {
+    "backToHomepage": "<-- back",
+    "toFeedback": "feedback",
+    "Download Image": "Download Image",
+    "Download Not Supported": "Download not supported yet, you can use print screen key.",
+    "Export JSON": "Export JSON",
+    "Import JSON": "Import JSON",
+    "Name": "Name",
+    "Card Number": "Card Number",
+    "Suit Icon": "Suit Icon",
+    "Type Icon": "Type Icon",
+    "State Icon": "State Icon",
+    "Header Icon": "Header Icon",
+    "Effect Text": "Effect Text",
+    "Development Cost": "Development Cost",
+    "Development Cost Text": "Development Cost Text",
+    "Nation Colour": "Nation Colour",
+    "Custom Nation Colour": "Custom Nation Colour",
+    "Starting Location": "Starting Location",
+    "Player Count": "Player Count",
+    "Expansion": "Expansion",
+    "Victory Point": "Victory Point",
+    "Scoring Effect": "Scoring Effect",
+    "Illustration": "Illustration",
+    "clear": "Clear"
   },
   "ElementFilterState": {
     "invert": "Invert"

@@ -6,182 +6,182 @@
 }
 
 .card-text-icon.card-text-icon-header-pinned {
-    content: url("../images/header_icon/pinned.png");
+    content: url("/header_icon/pinned.png");
 }
 
 .card-text-icon.card-text-icon-header-tradeRoute {
-    content: url("../images/header_icon/tradeRoute.png");
+    content: url("/header_icon/tradeRoute.png");
 }
 
 .card-text-icon.card-text-icon-header-attack {
-    content: url("../images/header_icon/attack.png");
+    content: url("/header_icon/attack.png");
 }
 
 .card-text-icon.card-text-icon-header-powerA {
-    content: url("../images/header_icon/powerA.png");
+    content: url("/header_icon/powerA.png");
 }
 
 .card-text-icon.card-text-icon-header-powerB {
-    content: url("../images/header_icon/powerB.png");
+    content: url("/header_icon/powerB.png");
 }
 
 .card-text-icon.card-text-icon-location-in-play {
-    content: url("../images/starting_location/InPlay.svg");
+    content: url("/starting_location/InPlay.svg");
 }
 
 .card-text-icon.card-text-icon-location-nation {
-    content: url("../images/starting_location/Nation.svg");
+    content: url("/starting_location/Nation.svg");
 }
 
 .card-text-icon.card-text-icon-location-accession {
-    content: url("../images/starting_location/Accession.svg");
+    content: url("/starting_location/Accession.svg");
 }
 
 .card-text-icon.card-text-icon-location-development {
-    content: url("../images/starting_location/Development.svg");
+    content: url("/starting_location/Development.svg");
 }
 
 .card-text-icon.card-text-icon-location-supply {
-    content: url("../images/starting_location/Supply.svg");
+    content: url("/starting_location/Supply.svg");
 }
 
 .card-text-icon.card-text-icon-location-chaos {
-    content: url("../images/starting_location/Chaos.svg");
+    content: url("/starting_location/Chaos.svg");
 }
 
 .card-text-icon.card-text-icon-state-barbarian {
-    content: url("../images/state_symbol/barbarian.png");
+    content: url("/state_symbol/barbarian.png");
 }
 
 .card-text-icon.card-text-icon-state-empire {
-    content: url("../images/state_symbol/empire.png");
+    content: url("/state_symbol/empire.png");
 }
 
 .card-text-icon.card-text-icon-state-isle-bound {
-    content: url("../images/state_symbol/isle_bound.png");
+    content: url("/state_symbol/isle_bound.png");
 }
 
 .card-text-icon.card-text-icon-state-voyaging {
-    content: url("../images/state_symbol/voyaging.png");
+    content: url("/state_symbol/voyaging.png");
 }
 
 .card-text-icon.card-text-icon-state-corrupted {
-    content: url("../images/state_symbol/corrupted.png");
+    content: url("/state_symbol/corrupted.png");
 }
 
 .card-text-icon.card-text-icon-state-summoned {
-    content: url("../images/state_symbol/summoned.png");
+    content: url("/state_symbol/summoned.png");
 }
 
 .card-text-icon.card-text-icon-suit-power {
-    content: url("../images/suit_icon/power.png");
+    content: url("/suit_icon/power.png");
 }
 
 .card-text-icon.card-text-icon-suit-fame {
-    content: url("../images/suit_icon/fame.png");
+    content: url("/suit_icon/fame.png");
 }
 
 .card-text-icon.card-text-icon-suit-unrest {
-    content: url("../images/suit_icon/unrest.png");
+    content: url("/suit_icon/unrest.png");
 }
 
 .card-text-icon.card-text-icon-suit-uncivilised {
-    content: url("../images/suit_icon/uncivilised.png");
+    content: url("/suit_icon/uncivilised.png");
 }
 
 .card-text-icon.card-text-icon-suit-civilised {
-    content: url("../images/suit_icon/civilised.png");
+    content: url("/suit_icon/civilised.png");
 }
 
 .card-text-icon.card-text-icon-suit-region {
-    content: url("../images/suit_icon/region.png");
+    content: url("/suit_icon/region.png");
 }
 
 .card-text-icon.card-text-icon-suit-tributary {
-    content: url("../images/suit_icon/tributary.png");
+    content: url("/suit_icon/tributary.png");
 }
 
 .card-text-icon.card-text-icon-suit-trade-route {
-    content: url("../images/suit_icon/trade_route.png");
+    content: url("/suit_icon/trade_route.png");
 }
 
 .card-text-icon.card-text-icon-suit-gadget {
-    content: url("../images/suit_icon/gadget.png");
+    content: url("/suit_icon/gadget.png");
 }
 
 .card-text-icon.card-text-icon-type-city {
-    content: url("../images/card_type_icon/city.png");
+    content: url("/card_type_icon/city.png");
 }
 
 .card-text-icon.card-text-icon-type-knight {
-    content: url("../images/card_type_icon/knight.png");
+    content: url("/card_type_icon/knight.png");
 }
 
 .card-text-icon.card-text-icon-type-mask {
-    content: url("../images/card_type_icon/mask.png");
+    content: url("/card_type_icon/mask.png");
 }
 
 .card-text-icon.card-text-icon-type-merchant {
-    content: url("../images/card_type_icon/merchant.png");
+    content: url("/card_type_icon/merchant.png");
 }
 
 .card-text-icon.card-text-icon-type-metropolis {
-    content: url("../images/card_type_icon/metropolis.png");
+    content: url("/card_type_icon/metropolis.png");
 }
 
 .card-text-icon.card-text-icon-type-miracle {
-    content: url("../images/card_type_icon/miracle.png");
+    content: url("/card_type_icon/miracle.png");
 }
 
 .card-text-icon.card-text-icon-type-scroll {
-    content: url("../images/card_type_icon/scroll.png");
+    content: url("/card_type_icon/scroll.png");
 }
 
 .card-text-icon.card-text-icon-type-fertile {
-    content: url("../images/card_type_icon/fertile.png");
+    content: url("/card_type_icon/fertile.png");
 }
 
 .card-text-icon.card-text-icon-type-hunt {
-    content: url("../images/card_type_icon/hunt.png");
+    content: url("/card_type_icon/hunt.png");
 }
 
 .card-text-icon.card-text-icon-type-ocean {
-    content: url("../images/card_type_icon/ocean.png");
+    content: url("/card_type_icon/ocean.png");
 }
 
 .card-text-icon.card-text-icon-type-production {
-    content: url("../images/card_type_icon/production.png");
+    content: url("/card_type_icon/production.png");
 }
 
 .card-text-icon.card-text-icon-type-river {
-    content: url("../images/card_type_icon/river.png");
+    content: url("/card_type_icon/river.png");
 }
 
 .card-text-icon-resource-population {
-    content: url("../images/resource/population.svg")
+    content: url("/resource/population.svg")
 }
 
 .card-text-icon-resource-material {
-    content: url("../images/resource/material.svg");
+    content: url("/resource/material.svg");
 }
 
 .card-text-icon-resource-progress {
-    content: url("../images/resource/progress.svg")
+    content: url("/resource/progress.svg")
 }
 
 .card-text-icon-resource-goods {
-    content: url("../images/resource/goods.svg");
+    content: url("/resource/goods.svg");
 }
 
 .card-text-icon-resource-action {
-    content: url("../images/resource/action.svg");
+    content: url("/resource/action.svg");
 }
 
 .card-text-icon-resource-exhaust {
-    content: url("../images/resource/exhaust.svg");
+    content: url("/resource/exhaust.svg");
 }
 
 .card-text-icon-vp-variable {
-    content: url("../images/vp_icon/victory_point_variable.svg");
+    content: url("/vp_icon/victory_point_variable.svg");
     height: 1.4em;
 }

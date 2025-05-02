@@ -4,4 +4,5 @@ export enum CardHeaderIcon {
     ATTACK = "attack",
     POWER_A = "powerA",
     POWER_B = "powerB",
+    NO_HEADER = "no_header"
 }

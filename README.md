@@ -15,6 +15,11 @@ Not affiliated with Osprey. Not endorsed by Osprey.
 ### Cardporium
 A list of some cards from the game.
 Currently, contains nation cards from Classics and Legends.
+
+### Card Maker
+A simple card maker, still in progress.
+Download feature is not implemented, you can use Print Screen key to save image, or export json to save custom card data.
+
 #### TODO for Cardporium
 * contents
   * add cards from more nations.
@@ -51,5 +56,7 @@ Currently, contains nation cards from Classics and Legends.
   * [x] English
   * [x] Chinese(China)
   * more languages would be supported after adding all cards from official contents so far
+#### TODO for Card Maker
+* [ ] add download image feature
 ### More advices are welcome!
 You can start an [issue](https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues).

@@ -6,6 +6,7 @@ import {useTranslation} from "react-i18next";
 import {i18n, TFunction} from "i18next";
 import {languageName} from "../../i18n.ts";
 import {PageTitle} from "./PageTitle.tsx";
+import ImperiumCardMaker from "./ImperiumCardMaker.tsx";
 
 function changeLanguage(i18n: i18n, t: TFunction<string, string>, location: Location, language: string) {
     i18n.changeLanguage(language);
@@ -29,6 +30,7 @@ function App(): React.ReactElement {
         <Routes>
             <Route path="/" element={<Homepage />}/>
             <Route path="/cards" element={<ImperiumCardporium/>}/>
+            <Route path="/cardMaker" element={<ImperiumCardMaker/>}/>
         </Routes>
         <div style={{position: "fixed", textAlign: "right", top: "20px", right: "20px"}}>
             <select onChange={(a: ChangeEvent<HTMLSelectElement>) =>

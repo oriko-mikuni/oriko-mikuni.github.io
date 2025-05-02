@@ -5,4 +5,5 @@ export enum CardStartingLocation {
     DEVELOPMENT = "development",
     SUPPLY = "supply",
     CHAOS = "chaos",
+    DEFAULT = "default"
 }

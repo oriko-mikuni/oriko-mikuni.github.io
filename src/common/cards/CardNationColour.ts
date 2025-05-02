@@ -1,4 +1,5 @@
 export enum CardNationColour {
+    COMMON = "common",
     // classics nations
     CAR = "Carthaginians",
     CEL = "Celts",

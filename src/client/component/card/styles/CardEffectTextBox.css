@@ -7,7 +7,7 @@
     right: 10px;
     top: auto;
     padding: 5px 0;
-    background-color: #00000080;
+    background-color: #000000c0;
     color: white;
     text-align: center;
 }
@@ -26,6 +26,6 @@
     top: auto;
     margin-top: 5px;
     padding: 2px;
-    background: white;
+    background-color: white;
     color: black;
 }

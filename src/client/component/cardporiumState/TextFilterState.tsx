@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 import { TFunction } from "i18next";
 import {UnitsUtils} from "../../../common/Units.ts";
+import CheckBox from "../common/CheckBox.tsx";
+import InputTextBox from "../common/InputTextBox.tsx";
 
 export type TextTranslationGroup = {
     nameTranslation?: TFunction<"cardName", undefined>,
@@ -110,30 +112,11 @@ export class TextFilter {
 
     filterComponent(t: TFunction<string, string>): React.JSX.Element {
         return <>
-            <input
-                type="text"
+            <InputTextBox
                 value={this.state.searchText}
-                onChange={text => this.setSearchText(text.target.value)}
+                onChange={text => {this.setSearchText(text)}}
                 placeholder={t("searchText")}
-            />
-            <br/>
-            <span>{t("title")}</span>
-            <input
-                type="checkbox"
-                checked={this.state.isSearchTitle}
-                onChange={check => this.setIsSearchTitle(check.target.checked)}
-            />
-            <span>{t("effect")}</span>
-            <input
-                type="checkbox"
-                checked={this.state.isSearchEffect}
-                onChange={check => this.setIsSearchEffect(check.target.checked)}
-            />
-            <span>{t("victory")}</span>
-            <input
-                type="checkbox"
-                checked={this.state.isSearchVictory}
-                onChange={check => this.setIsSearchVictory(check.target.checked)}
+                width="15em"
             />
             <button
                 onClick={() => {
@@ -144,6 +127,18 @@ export class TextFilter {
                 }}
             >{t("reset")}</button>
             <br/>
+            <label>
+                <span>{t("title")}</span>
+                <CheckBox checked={this.state.isSearchTitle} onChange={check => this.setIsSearchTitle(check)}/>
+            </label>
+            <label>
+                <span>{t("effect")}</span>
+                <CheckBox checked={this.state.isSearchEffect} onChange={check => this.setIsSearchEffect(check)}/>
+            </label>
+            <label>
+                <span>{t("victory")}</span>
+                <CheckBox checked={this.state.isSearchVictory} onChange={check => this.setIsSearchVictory(check)}/>
+            </label>
         </>;
     }
 }

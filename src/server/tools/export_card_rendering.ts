@@ -7,6 +7,10 @@ import {exportIconNameRendering} from "./export_icon_name_rendering";
 import {GameModule} from "../../common/cards/GameModule";
 import {Player} from "../Player";
 import {Game} from "../Game";
+import {CardExpansion} from "../../common/cards/CardExpansion";
+import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
+import {CardStartingLocation} from "../../common/cards/CardStartingLocation";
+import {CardNationColour} from "../../common/cards/CardNationColour";
 
 class CardProcessor {
     public static json: Array<ClientCard> = [];
@@ -38,16 +42,16 @@ class CardProcessor {
             developmentCost: card.developmentCost,
             developmentCostString: card.developmentCostString || [],
             effectText: card.effectText || [],
-            expansion: card.expansion,
-            headerIcon: card.headerIcon,
+            expansion: card.expansion ?? CardExpansion.NONE,
+            headerIcon: card.headerIcon ?? CardHeaderIcon.NO_HEADER,
             name: card.name,
-            nationColour: card.nationColour,
-            playerCount: card.playerCount,
-            startingLocation: card.startingLocation,
+            nationColour: card.nationColour ?? CardNationColour.COMMON,
+            playerCount: card.playerCount ?? 1,
+            startingLocation: card.startingLocation ?? CardStartingLocation.DEFAULT,
             stateSymbol: card.stateSymbol,
             suit: card.suit,
             typeIcon: card.typeIcon,
-            victoryPoints: card.victoryPoints,
+            victoryPoints: card.victoryPoints ?? 0,
             victoryPointsString: card.victoryPointsString,
             gameModule: card.gameModule ?? module,
             keywords: card.keywords,
