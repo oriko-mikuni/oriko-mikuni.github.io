@@ -812,8 +812,8 @@
   "card_name.INU1B": "因纽特",
   "card_name.INU2": "努纳武特",
   "card_name.INU3": "海冰",
-  "card_name.INU4": "努纳齐亚弗特",
-  "card_name.INU5": "格陵兰",
+  "card_name.INU4": "努纳齐亚福特",
+  "card_name.INU5": "卡拉利特努纳特（格陵兰）",
   "card_name.INU6": "进步",
   "card_name.INU7": "冰屋",
   "card_name.INU8": "帐篷屋",
@@ -825,7 +825,7 @@
   "card_name.INU14": "探险",
   "card_name.INU15": "皮艇",
   "card_name.INU16": "纹身",
-  "card_name.INU17": "萨满",
+  "card_name.INU17": "安格科克（萨满）",
   "card_name.INU18": "油灯",
   "card_name.INU19": "喉音",
   "card_name.INU20": "因努伊特石堆",
@@ -1168,5 +1168,7 @@
   "card_name.WAG22": "动乱",
   "card_name.WAG23": "动乱",
 
-  "card_name.default": "默认"
+  "card_name.default": "默认",
+
+  "card_name_reference": "“{{cardName}}”"
 }

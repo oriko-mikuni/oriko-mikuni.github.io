@@ -29,9 +29,7 @@ export class MerchantEmpire1 extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(Player.countType(CardTypeIcon.PRODUCTION,
-            param.player.selectCards(card =>
-                isInPlayLocation(card.location)
-            )
+            param.player.selectCards(card => isInPlayLocation(card.location))
         ) / 2);
     }
 }

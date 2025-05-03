@@ -63,6 +63,7 @@ function ImperiumCardMaker(): React.JSX.Element {
         <div className="ImperiumCardMaker_sidebar">
             <button onClick={() => navigate("/")}>{cardMakerTranslation("backToHomepage")}</button> <br/>
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{cardMakerTranslation("toFeedback")}</a>
+            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/wiki/Card-Maker'>{cardMakerTranslation("howToAddIcons")}</a>
             <div id="cardDisplay">{cardElement}</div>
             {/*<button onClick={() => downloadImage(card.name)}>{cardMakerTranslation("Download Image")}</button><br/>*/}
             <>{cardMakerTranslation("Download Not Supported")}</><br/>

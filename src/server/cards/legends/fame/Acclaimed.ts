@@ -3,6 +3,7 @@ import {GetVPParameter, ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../../common/keywords";
 
 export class Acclaimed extends Card implements ICard {
     constructor() {
@@ -18,7 +19,10 @@ export class Acclaimed extends Card implements ICard {
                 CardEffectReuse.bumpUpTextBox
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {variable} card (including this one)"
+            victoryPointsString: "1VP per {variable} card (including this one)",
+            keywords: [
+                KeywordNames.acclaimed
+            ]
         });
     }
 

@@ -1151,7 +1151,7 @@
   "card_name.WAG5": "Great Mosque of Djenne",
   "card_name.WAG6": "Adoption of Islam",
   "card_name.WAG7": "Great Wealth",
-  "card_name.WAG8": "Dinga Cisse",
+  "card_name.WAG8": "Dinga Cissé",
   "card_name.WAG9": "Salt Merchants",
   "card_name.WAG10": "Berber Traders",
   "card_name.WAG11": "Niger River Valley",
@@ -1168,5 +1168,7 @@
   "card_name.WAG22": "Unrest",
   "card_name.WAG23": "Unrest",
 
-  "card_name.default": "default"
+  "card_name.default": "default",
+
+  "card_name_reference": "[{{cardName}}]"
 }

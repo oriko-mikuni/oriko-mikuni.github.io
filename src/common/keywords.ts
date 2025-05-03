@@ -4,4 +4,7 @@ export enum KeywordNames {
     resourceOnCard = "resourceOnCard",
     promoAbundance = "promoAbundance",
     freeTribes = "freeTribes",
+    acclaimed = "acclaimed",
+    heirPresumptive = "heirPresumptive",
+    bountiful = "bountiful",
 }

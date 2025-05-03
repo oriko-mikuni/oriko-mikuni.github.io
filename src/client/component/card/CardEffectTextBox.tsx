@@ -1,6 +1,6 @@
 import React from "react";
 import './styles/CardEffectTextBox.css';
-import {RenderCardText} from "./CardText.tsx";
+import CardTextRender from "./CardTextRender.tsx";
 import {Units, UnitsUtils} from "../../../common/Units.ts";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse.ts";
 import {useTranslation} from "react-i18next";
@@ -18,16 +18,16 @@ function RenderDevelopmentCostBox(
     }
 
     const developmentCostResource: string | undefined = UnitsUtils.toString(developmentCost);
-    const developmentCostDisplay: Array<React.JSX.Element> | null =
-        RenderCardText(
-            (
-                developmentCostResource === undefined ? "" :
-                translation("Development Cost: ") + developmentCostResource
-            ) + (
-                diy ? developmentCostString.join("\n") :
-                developmentCostString.map(string => translation(string)).join("\n")
-            )
-        );
+    const developmentCostDisplay: React.JSX.Element | null =
+        <CardTextRender text={
+                (
+                    developmentCostResource === undefined ? "" :
+                        translation("Development Cost: ") + developmentCostResource
+                ) + (
+                    diy ? developmentCostString.join("\n") :
+                        developmentCostString.map(string => translation(string)).join("\n")
+                )
+        }/>;
 
     if (!hasEffectText) return [<div className="card-development-cost" key={0}>{developmentCostDisplay}</div>];
     return [<br key={0}/>, <div className="card-development-cost" key={1}>{developmentCostDisplay}</div>];
@@ -55,7 +55,7 @@ export function CardEffectTextBox(
 
     if (actualEffectText.length > 0 || developmentCost !== undefined) {
         return <div className={classes}>
-            {RenderCardText(finalEffectText)}
+            <CardTextRender text={finalEffectText}/>
             {RenderDevelopmentCostBox(translation, developmentCost, developmentCostString, actualEffectText.length > 0, diy)}
         </div>;
     } else {

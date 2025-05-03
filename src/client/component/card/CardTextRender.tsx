@@ -2,17 +2,30 @@ import React from "react";
 import CardRenderIconComponents from "./CardRenderIconComponents.tsx";
 import {getIconByName} from "../../cards/IconNamesManifest.ts";
 
-export function RenderCardText(effectText?: string) : Array<React.JSX.Element> | null {
-    if (effectText === undefined) {
+function CardTextRender({text}: {
+    text?: string
+}) : React.JSX.Element | null {
+    if (text === undefined) {
         return null;
     }
-    const parts = effectText.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n)/g);
+    // const {t} = useTranslation("cardName");
+    // const splitNameRef: Array<string> = text.split("/(@[^@]+@)/g");
+    // const resolveNameRefResult: string = splitNameRef.map(part => {
+    //     if (!part.match(/@[^@]+@/g)) return part.replace("@", "");
+    //     part = part.replace("@", "");
+    //     if (isCardName(part)) {
+    //         part = t("card_name_reference", {cardName: t(part)});
+    //     }
+    //     return part;
+    // }).join("");
 
-    return parts.map((part, index) => {
+    const parts: Array<string> = text.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n)/g);
+
+    const result: Array<React.JSX.Element> = parts.map((part, index) => {
         const iconRender: string | undefined = getIconByName(part);
-        if (iconRender) {
+        if (iconRender)
             return <CardRenderIconComponents iconName={iconRender} key={index}/>;
-        } else {
+        else {
             if (part === '\n') return <br key={index}/>;
             let italic: boolean = false;
             let bold: boolean = false;
@@ -23,7 +36,6 @@ export function RenderCardText(effectText?: string) : Array<React.JSX.Element> |
                 if (part.match(/\*[^*]+\*/g)) {
                     bold = true;
                 }
-
                 part = part.slice(1, part.length - 1);
             }
             return <span
@@ -36,4 +48,8 @@ export function RenderCardText(effectText?: string) : Array<React.JSX.Element> |
             </span>;
         }
     });
+
+    return <>{result}</>;
 }
+
+export default CardTextRender;

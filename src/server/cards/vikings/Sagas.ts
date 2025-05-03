@@ -28,8 +28,6 @@ export class Sagas extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.selectCards(card =>
-            card.location === this
-        ).length;
+        return param.player.selectCards(card => card.location === this).length;
     }
 }

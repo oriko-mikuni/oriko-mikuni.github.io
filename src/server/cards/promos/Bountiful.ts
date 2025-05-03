@@ -5,6 +5,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Bountiful extends Card implements ICard {
     constructor() {
@@ -22,6 +23,9 @@ export class Bountiful extends Card implements ICard {
                 "Solstice: for every 2 cards garrisoned here, gain 1{population}."
             ],
             victoryPoints: 4,
+            keywords: [
+                KeywordNames.bountiful
+            ]
         });
     }
 }
