@@ -13,20 +13,16 @@ export class Vercingetorix extends Card implements ICard {
         super({
             name: CardName.VERCINGETORIX,
             suit: [],
-            headerIcon: undefined,
             stateSymbol: [CardStateIcon.EMPIRE],
             typeIcon: [],
             startingLocation: CardStartingLocation.DEVELOPMENT,
             nationColour: CardNationColour.CEL,
-            cardInPlayType: undefined,
             cardNumber: "CEL7",
             effectText: [
                 "You MAY acquire " + CardEffectReuse.fourSuits + ".",
                 CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 4},
-            expansion: undefined,
-            playerCount: undefined,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {uncivilised}"
         });

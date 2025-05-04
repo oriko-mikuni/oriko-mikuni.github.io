@@ -1027,8 +1027,8 @@ export enum CardName {
     LANDING_SITE = "card_name.MRT24",
     THOATS = "card_name.MRT25",
     UNREST_MRT = "card_name.MRT26",
-    UNREST_MRT1 = "card_name.MRT27",
-    UNREST_MRT2 = "card_name.MRT28",
+    UNREST_MRT_SUPPLY = "card_name.MRT27",
+    UNREST_MRT_SUPPLY1 = "card_name.MRT28",
     ALIEN = "card_name.MRT29A",
     GONE_NATIVE = "card_name.MRT29B",
 

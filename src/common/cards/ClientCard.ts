@@ -34,4 +34,5 @@ export type ClientCard = {
   gameModule: GameModule;
   keywords?: Array<string>;
   illustration?: string;
+  exhaustCount?: number;
 }

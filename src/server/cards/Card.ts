@@ -33,6 +33,7 @@ export interface Properties {
     victoryPointsString?: string;
     gameModule?: GameModule;
     keywords?: Array<KeywordNames>;
+    exhaustCount?: number;
 }
 
 export const staticCardProperties = new Map<CardName, Properties>();
@@ -102,6 +103,9 @@ export abstract class Card {
     }
     public get keywords(): Array<KeywordNames> | undefined {
         return this.properties.keywords;
+    }
+    public get exhaustCount(): number | undefined {
+        return this.properties.exhaustCount;
     }
 
     public canPlayAsAction(player: Player) {

@@ -26,3 +26,11 @@ select {
     text-align: center;
     justify-content: center;
 }
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-bold {
+    font-weight: bold;
+}

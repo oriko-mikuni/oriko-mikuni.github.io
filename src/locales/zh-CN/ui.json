@@ -16,7 +16,6 @@
     "cardporiumHeader": "帝国牌表",
     "backToHomepage": "<-- 返回",
     "toFeedback": "反馈",
-    "howToAddIcons": "如何添加图标",
     "filter-": "过滤",
     "NationOrCommon": "国家/公共",
     "SuitIcon": "花色图标",
@@ -36,6 +35,7 @@
   "ImperiumCardMaker": {
     "backToHomepage": "<-- 返回",
     "toFeedback": "反馈",
+    "howToAddIcons": "如何添加图标",
     "Download Image": "下载图片",
     "Download Not Supported": "暂不支持下载，你可以使用截图键。",
     "Export JSON": "导出JSON",

@@ -2,6 +2,13 @@ import React from "react";
 import CardRenderIconComponents from "./CardRenderIconComponents.tsx";
 import {getIconByName} from "../../cards/IconNamesManifest.ts";
 
+function getClasses(italic: boolean, bold: boolean): string {
+    const classes: Array<string> = [];
+    if (italic) classes.push("text-italic");
+    if (bold) classes.push("text-bold");
+    return classes.join(" ");
+}
+
 function CardTextRender({text}: {
     text?: string
 }) : React.JSX.Element | null {
@@ -40,10 +47,8 @@ function CardTextRender({text}: {
             }
             return <span
                 key={index}
-                style={{
-                    fontStyle: italic ? 'italic' : '',
-                    fontWeight: bold ? '800' : '400'
-                }}>
+                className={getClasses(italic, bold)}
+            >
                 {part}
             </span>;
         }

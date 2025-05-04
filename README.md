@@ -27,12 +27,12 @@ Download feature is not implemented, you can use Print Screen key to save image,
     * [x] Legends
     * Horizons (New Horizons)
       * [x] Magyars
-      * [ ] Japanese
-      * [ ] Taino
-      * [ ] Inuits
-      * [ ] Mayans
-      * [ ] Martians
-      * [ ] Polynesians
+      * [x] Japanese
+      * [x] Taino
+      * [x] Inuits
+      * [x] Mayans
+      * [x] Martians
+      * [x] Polynesians
       * [ ] Cultists
     * Horizons (Merchants)
       * [ ] Abbasids

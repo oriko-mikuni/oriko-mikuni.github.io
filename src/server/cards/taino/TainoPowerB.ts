@@ -23,6 +23,7 @@ export class TainoPowerB extends Card implements ICard {
             cardNumber: "TAI1B",
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {fertile}/{ocean}",
+            exhaustCount: 3
         });
     }
 

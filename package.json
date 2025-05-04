@@ -6,6 +6,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "code:generateCardByManifest": "ts-node src/server/tools/generate_card_ts_by_cardManifest.ts",
     "make:cards": "ts-node src/server/tools/export_card_rendering.ts",
     "predeploy": "npm run make:cards && npm run build",
     "deploy": "gh-pages -d dist"

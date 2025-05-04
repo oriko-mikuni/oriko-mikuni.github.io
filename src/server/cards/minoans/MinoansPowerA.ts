@@ -17,7 +17,7 @@ export class MinoansPowerA extends Card implements ICard {
             headerIcon: CardHeaderIcon.POWER_A,
             startingLocation: CardStartingLocation.IN_PLAY,
             nationColour: CardNationColour.MIN,
-            cardInPlayType: CardInPlayType.PINNED,
+            cardInPlayType: CardInPlayType.POWER,
             cardNumber: "MIN1A",
             effectText: [
                 "Solstice: you MAY discard a card to gain 1{progress}."

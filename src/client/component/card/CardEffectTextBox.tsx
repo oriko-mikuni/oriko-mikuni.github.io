@@ -22,7 +22,7 @@ function RenderDevelopmentCostBox(
         <CardTextRender text={
                 (
                     developmentCostResource === undefined ? "" :
-                        translation("Development Cost: ") + developmentCostResource
+                        translation("Development cost: ") + developmentCostResource
                 ) + (
                     diy ? developmentCostString.join("\n") :
                         developmentCostString.map(string => translation(string)).join("\n")

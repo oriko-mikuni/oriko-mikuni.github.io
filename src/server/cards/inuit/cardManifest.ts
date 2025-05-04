@@ -17,7 +17,7 @@ import {ImaqArcticSea} from "./ImaqArcticSea";
 import {OralHistory} from "./OralHistory";
 import {Exploration} from "./Exploration";
 import {Kayaks} from "./Kayaks";
-import {TattoosInu} from "./TattoosInu";
+import {Tattoos} from "./Tattoos";
 import {AngakkuqShaman} from "./AngakkuqShaman";
 import {QulliqOilLamp} from "./QulliqOilLamp";
 import {ThroatSinging} from "./ThroatSinging";
@@ -48,7 +48,7 @@ export const INU_CARD_MANIFEST = new ModuleManifest({
         [CardName.ORAL_HISTORY]: {Factory: OralHistory},
         [CardName.EXPLORATION]: {Factory: Exploration},
         [CardName.KAYAKS]: {Factory: Kayaks},
-        [CardName.TATTOOS_INU]: {Factory: TattoosInu},
+        [CardName.TATTOOS_INU]: {Factory: Tattoos},
         [CardName.ANGAKKUQ_SHAMAN]: {Factory: AngakkuqShaman},
         [CardName.QULLIQ_OIL_LAMP]: {Factory: QulliqOilLamp},
         [CardName.THROAT_SINGING]: {Factory: ThroatSinging},

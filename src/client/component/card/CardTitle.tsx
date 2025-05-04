@@ -3,6 +3,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import './styles/CardTitle.css';
 import {CardName} from "../../../common/cards/CardName.ts";
 import {useTranslation} from "react-i18next";
+import CardTextRender from "./CardTextRender.tsx";
 
 const stateCardTitleColors: Record<string, React.CSSProperties> = {
     // standard state
@@ -55,8 +56,8 @@ function getCardTitleDisplay(title: string): string {
 }
 
 function CardTitle(
-    {title, banner = undefined, diy = false, isState}:
-    {title: string, banner?: CardSuitIcon, diy?: boolean, isState: boolean}
+    {title, banner = undefined, diy = false, isState, exhaustCount}:
+    {title: string, banner?: CardSuitIcon, diy?: boolean, isState: boolean, exhaustCount?: number}
 ): React.JSX.Element {
     const {t: titleTranslation} = useTranslation("cardName");
 
@@ -64,11 +65,15 @@ function CardTitle(
     const titleColor: React.CSSProperties = isState
         ? (stateCardTitleColors[title] !== undefined ? stateCardTitleColors[title] : defaultTitleColor)
         : (banner !== undefined ? suitCardTitleColors[banner] : defaultTitleColor);
+    const specialExhaustCount: React.JSX.Element | null =
+        exhaustCount === undefined ? null :
+            <div className="special-exhaust-count text-bold">
+                <CardTextRender text={exhaustCount + "{exhaust}"}/>
+            </div>
 
     return <div className={`card-title${titleDisplay.length > 20 ? " card-title-long" : ""}`}>
-        <div style={titleColor}>
-            {titleDisplay}
-        </div>
+        <div style={titleColor}>{titleDisplay}</div>
+        {specialExhaustCount}
     </div> ;
 }
 

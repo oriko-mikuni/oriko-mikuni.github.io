@@ -17,13 +17,12 @@ import {CardInPlayType} from "../../../common/cards/CardInPlayType.ts";
 
 function getCardClasses(card: ClientCard, onClick?: () => void): string {
     const classes =['filterDiv'];
-    if (onClick !== undefined)
-        classes.push("card-reactive");
-    if (card.cardInPlayType === CardInPlayType.STATE) {
-        classes.push("state-card");
-    }
+    if (onClick !== undefined) classes.push("card-reactive");
+    if (card.cardInPlayType === CardInPlayType.STATE) classes.push("state-card");
+    if (card.cardInPlayType === CardInPlayType.POWER) classes.push("power-card");
+    if (card.cardInPlayType === CardInPlayType.PERMANENT) classes.push("permanent-card");
 
-    classes.push(`card-name-${card.name.toLowerCase().replace(/[ #,]/g, '-')}`);
+    classes.push(`card-name-${card.name}`);
 
     return classes.join(' ');
 }
@@ -40,6 +39,7 @@ function Card(
         key="cardTitle"
         diy={card.gameModule === GameModule.DEFAULT}
         isState={card.cardInPlayType === CardInPlayType.STATE}
+        exhaustCount={card.exhaustCount}
     />);
 
     if (card.headerIcon !== CardHeaderIcon.NO_HEADER) {

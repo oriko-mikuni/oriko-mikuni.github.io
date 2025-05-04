@@ -27,6 +27,7 @@ export class InuitPowerA extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {uncivilised}/{civilised}",
+            exhaustCount: 3
         });
     }
 

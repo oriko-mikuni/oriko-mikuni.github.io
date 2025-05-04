@@ -25,6 +25,7 @@ export class InuitPowerB extends Card implements ICard {
                 "End of solstice: flip your state card."
             ],
             victoryPoints: 5,
+            exhaustCount: 3
         });
     }
 }

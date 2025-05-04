@@ -72,11 +72,11 @@ export class TextFilterState {
             if (this.isSearchEffect && (!UnitsUtils.isEmpty(card.developmentCost) || card.developmentCostString.length > 0)) {
                 const trans = translation.effectTranslation;
                 const developmentCostDisplay = trans === undefined ? (
-                    "Development Cost: " +
+                    "Development cost: " +
                     (UnitsUtils.toString(card.developmentCost) ?? "") +
                     card.developmentCostString.join(" ")
                 ): (
-                    trans("Development Cost: ") +
+                    trans("Development cost: ") +
                     (UnitsUtils.toString(card.developmentCost) ?? "") +
                     card.developmentCostString.map(text => trans(text)).join(" ")
                 );

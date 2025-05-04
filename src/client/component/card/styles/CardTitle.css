@@ -15,3 +15,10 @@
 .card-title.card-title-long {
     letter-spacing: 0;
 }
+
+.special-exhaust-count {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: white;
+}

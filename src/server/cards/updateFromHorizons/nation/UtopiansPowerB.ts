@@ -26,7 +26,8 @@ export class UtopiansPowerB extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3{population}",
-            gameModule: GameModule.UTOPIANS
+            gameModule: GameModule.UTOPIANS,
+            exhaustCount: 3
         });
     }
 

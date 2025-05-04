@@ -22,6 +22,7 @@ export class CardEffectReuse {
     static readonly knightGarrison: string = "You MAY garrison this card in a {region} to trigger that card's play effect.";
     static readonly selfHistory: string = "Put this card into your history.";
     static readonly selfExile: string = "Exile this card.";
+    static readonly maySelfExile: string = "You MAY exile this card.";
     static readonly marketExile: string = "Exile a card from the market.";
     static readonly garrisonACard: string = "You MAY garrison a card.";
     static readonly takeOne: string = "Take one of those cards.";

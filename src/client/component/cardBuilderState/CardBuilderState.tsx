@@ -135,6 +135,20 @@ export class CardBuilderState {
 
     public getOperations(dispatch: (action: Partial<CardBuilderStateProps>) => void): React.JSX.Element {
         const {t: cardMakerTranslation} = useTranslation("ui", {keyPrefix: "ImperiumCardMaker"});
+        const customNationColorInput: React.JSX.Element = <input id="customNationColourInput" type="file" onChange={e => {
+            if (e.target.files) {
+                const file: File = e.target.files[0];
+                const fileURL: string = URL.createObjectURL(file);
+                dispatch({nationColourURL: fileURL, nationColour: CardNationColour.COMMON})
+            }
+        }}/>;
+        const illustrationInput: React.JSX.Element  = <input id="illustrationInput" type="file" onChange={e => {
+            if (e.target.files) {
+                const file: File = e.target.files[0];
+                const fileURL: string = URL.createObjectURL(file);
+                dispatch({illustration: fileURL})
+            }
+        }}/>;
         return <>
             {cardMakerTranslation("Name")}
             <InputTextBox value={this.props.name} onChange={text => dispatch({name: text})}/><br/>
@@ -144,70 +158,92 @@ export class CardBuilderState {
             <ButtonGroup
                 range={Object.values(CardSuitIcon)}
                 ItemRender={arg0 => <CardSuitIconDisplay suit={arg0.arg0}/>}
-                onClick={suit => {dispatch(suit !== undefined ? {suit: [...this.props.suit, suit]} : {})}}
+                onClick={suit => {
+                    dispatch(suit !== undefined ? {suit: [...this.props.suit, suit]} : {})
+                }}
             />
-            <button onClick={() => dispatch({suit: []})}>{cardMakerTranslation("clear")}</button><br/>
+            <button onClick={() => dispatch({suit: []})}>{cardMakerTranslation("clear")}</button>
+            <br/>
             {cardMakerTranslation("Type Icon")}
             <ButtonGroup
                 range={Object.values(CardTypeIcon)}
                 ItemRender={arg0 => <CardTypeIconDisplay type={arg0.arg0}/>}
-                onClick={type => {dispatch(type !== undefined ? {typeIcon: [...this.props.typeIcon, type]} : {})}}
+                onClick={type => {
+                    dispatch(type !== undefined ? {typeIcon: [...this.props.typeIcon, type]} : {})
+                }}
             />
-            <button onClick={() => dispatch({typeIcon: []})}>{cardMakerTranslation("clear")}</button><br/>
+            <button onClick={() => dispatch({typeIcon: []})}>{cardMakerTranslation("clear")}</button>
+            <br/>
             {cardMakerTranslation("State Icon")}
             <ButtonGroup
                 range={Object.values(CardStateIcon)}
                 ItemRender={arg0 => <CardStateIconDisplay state={arg0.arg0}/>}
-                onClick={state => {dispatch(state !== undefined ? {stateIcon: [...this.props.stateIcon, state]} : {})}}
+                onClick={state => {
+                    dispatch(state !== undefined ? {stateIcon: [...this.props.stateIcon, state]} : {})
+                }}
             />
-            <button onClick={() => dispatch({stateIcon: []})}>{cardMakerTranslation("clear")}</button><br/>
+            <button onClick={() => dispatch({stateIcon: []})}>{cardMakerTranslation("clear")}</button>
+            <br/>
             {cardMakerTranslation("Header Icon")}
             <ButtonGroup
                 range={Object.values(CardHeaderIcon)}
                 ItemRender={arg0 => <CardHeaderIconDisplay headerIcon={arg0.arg0}/>}
-                onClick={header => {dispatch({headerIcon: header})}}
+                onClick={header => {
+                    dispatch({headerIcon: header})
+                }}
             /><br/>
             {cardMakerTranslation("Effect Text")}
             <InputTextBox value={this.props.effectText} onChange={text => dispatch({effectText: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Development Cost")}
             <CardRenderIconComponents iconName="resource-progress"/>
-            <InputNumber value={this.props.developmentCostProgress} onChange={num => dispatch({developmentCostProgress: num})}/>
+            <InputNumber value={this.props.developmentCostProgress}
+                         onChange={num => dispatch({developmentCostProgress: num})}/>
             <CardRenderIconComponents iconName="resource-material"/>
-            <InputNumber value={this.props.developmentCostMaterial} onChange={num => dispatch({developmentCostMaterial: num})}/>
+            <InputNumber value={this.props.developmentCostMaterial}
+                         onChange={num => dispatch({developmentCostMaterial: num})}/>
             <CardRenderIconComponents iconName="resource-population"/>
-            <InputNumber value={this.props.developmentCostPopulation} onChange={num => dispatch({developmentCostPopulation: num})}/>
+            <InputNumber value={this.props.developmentCostPopulation}
+                         onChange={num => dispatch({developmentCostPopulation: num})}/>
             <CardRenderIconComponents iconName="resource-goods"/>
-            <InputNumber value={this.props.developmentCostGoods} onChange={num => dispatch({developmentCostGoods: num})}/>
+            <InputNumber value={this.props.developmentCostGoods}
+                         onChange={num => dispatch({developmentCostGoods: num})}/>
             <br/>
             {cardMakerTranslation("Development Cost Text")}
-            <InputTextBox value={this.props.developmentCostString} onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
+            <InputTextBox value={this.props.developmentCostString}
+                          onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Nation Colour")}
             <ButtonGroup range={Object.values(CardNationColour)} ItemRender={arg0 => {
                 if (arg0.arg0 === undefined || arg0.arg0 === CardNationColour.COMMON) return <>-</>;
-                return <CardNationColourRender nationColour={arg0.arg0} shape={CardNationColourDisplayShape.SQUARE} location={CardStartingLocation.DEFAULT}/>;
-            }} onClick={nationColour => {dispatch({nationColour: nationColour, nationColourURL: ""})}}/><br/>
-            {cardMakerTranslation("Custom Nation Colour")}
-            <input type="file" onChange={e => {
-                if (e.target.files) {
-                    const file: File = e.target.files[0];
-                    const fileURL: string = URL.createObjectURL(file);
-                    dispatch({nationColourURL: fileURL, nationColour: CardNationColour.COMMON})
-                }
+                return <CardNationColourRender nationColour={arg0.arg0} shape={CardNationColourDisplayShape.SQUARE}
+                                               location={CardStartingLocation.DEFAULT}/>;
+            }} onClick={nationColour => {
+                const customNationColourElement: HTMLInputElement = document.getElementById("customNationColourInput") as HTMLInputElement;
+                if (customNationColourElement !== null) customNationColourElement.value = "";
+                dispatch({nationColour: nationColour, nationColourURL: ""})
             }}/><br/>
+            {cardMakerTranslation("Custom Nation Colour")}
+            {customNationColorInput}<br/>
             {cardMakerTranslation("Starting Location")}
             <ButtonGroup range={Object.values(CardStartingLocation)} ItemRender={arg0 => {
                 if (arg0.arg0 === undefined || arg0.arg0 === CardStartingLocation.DEFAULT) return <>-</>;
-                return <CardNationColourRender nationColour={undefined} shape={CardNationColourDisplayShape.SQUARE} location={arg0.arg0}/>;
-            }} onClick={location => {dispatch({startingLocation: location})}}/><br/>
+                return <CardNationColourRender nationColour={undefined} shape={CardNationColourDisplayShape.SQUARE}
+                                               location={arg0.arg0}/>;
+            }} onClick={location => {
+                dispatch({startingLocation: location})
+            }}/><br/>
             {cardMakerTranslation("Player Count")}
-            <ButtonGroup range={[1,2,3,4]}
+            <ButtonGroup range={[1, 2, 3, 4]}
                          ItemRender={arg0 => <>{arg0.arg0}</>}
-                         onClick={number => {dispatch({playerCount: number})}}/><br/>
+                         onClick={number => {
+                             dispatch({playerCount: number})
+                         }}/><br/>
             {cardMakerTranslation("Expansion")}
             <ButtonGroup range={Object.values(CardExpansion)} ItemRender={arg0 => {
                 if (arg0.arg0 === undefined || arg0.arg0 === CardExpansion.NONE) return <>-</>;
                 return <CardExpansionRender expansion={arg0.arg0} separate={true}/>;
-            }} onClick={expansion => {dispatch({expansion: expansion})}}/><br/>
+            }} onClick={expansion => {
+                dispatch({expansion: expansion})
+            }}/><br/>
             {cardMakerTranslation("Victory Point")}
             <ButtonGroup range={Object.values(VictoryPointType)} ItemRender={arg0 => {
                 if (arg0.arg0 === undefined)
@@ -215,19 +251,20 @@ export class CardBuilderState {
                 if (arg0.arg0 === VictoryPointType.number)
                     return <CardVictoryPointIcon victoryPoints={this.props.victoryPoints}/>;
                 return <CardVictoryPointIcon victoryPoints={arg0.arg0}/>;
-            }} onClick={vp => {dispatch({victoryPointType: vp})}}/>
+            }} onClick={vp => {
+                dispatch({victoryPointType: vp})
+            }}/>
             <InputNumber value={this.props.victoryPoints} onChange={num => dispatch({victoryPoints: num})}/><br/>
             {cardMakerTranslation("Scoring Effect")}
-            <InputTextBox value={this.props.victoryPointsString} onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
+            <InputTextBox value={this.props.victoryPointsString}
+                          onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Illustration")}
-            <button onClick={() => dispatch({illustration: ""})}>{cardMakerTranslation("clear")}</button>
-            <input type="file" onChange={e => {
-                if (e.target.files) {
-                    const file: File = e.target.files[0];
-                    const fileURL: string = URL.createObjectURL(file);
-                    dispatch({illustration: fileURL})
-                }
-            }}/><br/>
+            <button onClick={() => {
+                const illustrationInput: HTMLInputElement = document.getElementById("illustrationInput") as HTMLInputElement;
+                if (illustrationInput !== null) illustrationInput.value = "";
+                dispatch({illustration: ""});
+            }}>{cardMakerTranslation("clear")}</button>
+            {illustrationInput}<br/>
         </>;
     }
 }

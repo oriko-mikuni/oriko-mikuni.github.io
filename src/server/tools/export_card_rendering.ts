@@ -56,6 +56,7 @@ class CardProcessor {
             victoryPointsString: card.victoryPointsString,
             gameModule: card.gameModule ?? module,
             keywords: card.keywords,
+            exhaustCount: card.exhaustCount
         };
         // add all condition/variable cards to the hand of a fake player, ensuring scoring functions are overridden correctly.
         if (typeof card.victoryPoints === 'string') {

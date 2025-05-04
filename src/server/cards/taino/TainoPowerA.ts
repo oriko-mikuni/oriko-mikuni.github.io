@@ -22,6 +22,7 @@ export class TainoPowerA extends Card implements ICard {
             effectText: [
                 "Exhaust: pay 3{material} to free play a {region}."
             ],
+            exhaustCount: 3
         });
     }
 }

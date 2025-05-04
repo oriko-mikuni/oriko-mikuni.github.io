@@ -15,7 +15,7 @@ export enum PlayerCardLocation {
     HAND = "location:hand",
     HISTORY = "location:history",
     SUNKEN = "location:sunken",
-    LEGEND = "location:legend",
+    LEGENDS = "location:legends",
     NATION_DECK = "location:nationDeck",
     ACCESSION = "location:accessionCard",
     DEVELOPMENT_AREA = "location:developmentArea"
@@ -63,7 +63,7 @@ export class Player {
     handCards: Array<ICard> = [];
     historyCards: Array<ICard> = [];
     sunkenCards: Array<ICard> = []; // only for Atlantean
-    legendCards: Array<ICard> = []; // only for Polynesians
+    legendsCards: Array<ICard> = []; // only for Polynesians
 
     // resources on your cards
     resourceOnYourCards: Array<[ICard, Units]> = [];
@@ -100,7 +100,7 @@ export class Player {
         // history, sunken or legend
         this.historyCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.HISTORY}));
         this.sunkenCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.SUNKEN}));
-        this.legendCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.LEGEND}));
+        this.legendsCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.LEGENDS}));
 
         return result;
     }
