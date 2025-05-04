@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 
 export class Unrest2 extends Card implements ICard {
     constructor() {
@@ -12,6 +13,7 @@ export class Unrest2 extends Card implements ICard {
             suit: [CardSuitIcon.UNREST],
             stateSymbol: [],
             typeIcon: [],
+            startingLocation: CardStartingLocation.SUPPLY,
             nationColour: CardNationColour.MAY,
             cardNumber: "MAY28",
             effectText: [
