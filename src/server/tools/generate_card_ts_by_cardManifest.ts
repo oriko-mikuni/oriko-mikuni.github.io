@@ -4,13 +4,13 @@ class CardTsFileGenerator {
     public static cardManifest: Array<[string, string]> = [];
     public static defaultCardTsContent: string;
     public static makeTsFile(pathName: string): void {
-        if (!fs.existsSync(pathName + 'cardManifest.ts') || !fs.existsSync(pathName + 'defaultCard.ts'))
+        if (!fs.existsSync(pathName + 'cardManifest.ts') || !fs.existsSync(pathName + 'DefaultCard.ts'))
             return;
 
-        CardTsFileGenerator.defaultCardTsContent = fs.readFileSync(pathName + 'defaultCard.ts').toString();
+        CardTsFileGenerator.defaultCardTsContent = fs.readFileSync(pathName + 'DefaultCard.ts').toString();
         const readCardManifestString: string = fs.readFileSync(pathName + 'cardManifest.ts').toString();
 
-        const regex: RegExp = /\[([^]]+)]:\s*\{Factory: ([^}]+)}/g;
+        const regex: RegExp = /\[([^\]]+)]:\s*\{Factory: ([^}]+)}/g;
         let match: RegExpExecArray | null;
 
         while ((match = regex.exec(readCardManifestString)) !== null) {
@@ -29,4 +29,4 @@ class CardTsFileGenerator {
     }
 }
 
-CardTsFileGenerator.makeTsFile('src/server/cards/polynesians/');
+CardTsFileGenerator.makeTsFile('src/server/cards/cultists/');

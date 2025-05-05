@@ -42,7 +42,7 @@
     "Import JSON": "Import JSON",
     "Name": "Name",
     "Card Number": "Card Number",
-    "Suit Icon": "Suit Icon",
+    "Suit Icon": "Suit Icon (first suit is also banner color)",
     "Type Icon": "Type Icon",
     "State Icon": "State Icon",
     "Header Icon": "Header Icon",
@@ -57,6 +57,9 @@
     "Victory Point": "Victory Point",
     "Scoring Effect": "Scoring Effect",
     "Illustration": "Illustration",
+    "Exhaust Count": "Exhaust Count",
+    "Exhaust Count Settings Unavailable": "To customize exhaust count, first set the banner to POWER.",
+    "Default Exhaust Count Is Five": "Default is 5, other values would be shown.",
     "clear": "Clear"
   },
   "ElementFilterState": {

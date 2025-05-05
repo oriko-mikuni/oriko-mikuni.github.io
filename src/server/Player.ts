@@ -1,6 +1,5 @@
 import {CardSuitIcon} from "../common/cards/CardSuitIcon";
 import {ICard} from "./cards/ICard";
-import {CardName} from "../common/cards/CardName";
 import {Game} from "./Game";
 import {CardTypeIcon} from "../common/cards/CardTypeIcon";
 import {Units} from "../common/Units";
@@ -80,27 +79,27 @@ export class Player {
     public allPlayerCards(): Array<LocatedCard> {
         const result: Array<LocatedCard> = [];
         // nation deck
-        this.nationDeckCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.NATION_DECK}));
+        this.nationDeckCards.forEach(card => result.push({card: card, location: PlayerCardLocation.NATION_DECK}));
         if (this.accessionCard !== undefined) result.push({card: this.accessionCard, location: PlayerCardLocation.ACCESSION});
         // development area
-        this.developmentAreaCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.DEVELOPMENT_AREA}));
+        this.developmentAreaCards.forEach(card => result.push({card: card, location: PlayerCardLocation.DEVELOPMENT_AREA}));
 
         // state & nation power card
         if (this.stateCard !== undefined) result.push({card: this.stateCard, location: PlayerCardLocation.STATE});
         if (this.nationPower !== undefined) result.push({card: this.nationPower, location: PlayerCardLocation.NATION_POWER})
 
         // in play card
-        this.inPlayCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.IN_PLAY}));
+        this.inPlayCards.forEach(card => result.push({card: card, location: PlayerCardLocation.IN_PLAY}));
         // garrisoned card
         this.garrisonedCards.forEach(([card, garrisonCard])=> result.push({card: card, location: garrisonCard}));
         // draw, discard and hand card
-        this.drawDeckCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.DRAW_DECK}));
-        this.discardPileCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.DISCARD_PILE}));
-        this.handCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.HAND}));
+        this.drawDeckCards.forEach(card => result.push({card: card, location: PlayerCardLocation.DRAW_DECK}));
+        this.discardPileCards.forEach(card => result.push({card: card, location: PlayerCardLocation.DISCARD_PILE}));
+        this.handCards.forEach(card => result.push({card: card, location: PlayerCardLocation.HAND}));
         // history, sunken or legend
-        this.historyCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.HISTORY}));
-        this.sunkenCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.SUNKEN}));
-        this.legendsCards.forEach((card)=> result.push({card: card, location: PlayerCardLocation.LEGENDS}));
+        this.historyCards.forEach(card => result.push({card: card, location: PlayerCardLocation.HISTORY}));
+        this.sunkenCards.forEach(card => result.push({card: card, location: PlayerCardLocation.SUNKEN}));
+        this.legendsCards.forEach(card => result.push({card: card, location: PlayerCardLocation.LEGENDS}));
 
         return result;
     }
@@ -114,7 +113,7 @@ export class Player {
                 return location !== PlayerCardLocation.NATION_DECK && location !== PlayerCardLocation.ACCESSION && location !== PlayerCardLocation.DEVELOPMENT_AREA;
             }
             // if garrisoned, exclude garrison under King Arthur's Court
-            return location.name !== CardName.KING_ARTHUR_S_COURT;
+            return location.keywords === undefined || location.keywords.every(keyword => keyword !== KeywordNames.doNotScoreActiveQuest);
         })
     }
 
@@ -127,25 +126,22 @@ export class Player {
 
     public hasKeywordInPlay(keyword: KeywordNames): boolean {
         const cards: Array<LocatedCard> = this.selectCards(card => isInPlayLocation(card.location));
-        for (const card of cards) {
-            if (card.card.keywords) {
-                for (const keyword1 of card.card.keywords) {
-                    if (keyword1 === keyword)
-                        return true;
-                }
-            }
-        }
-        return false;
+        return cards.some(card =>
+            card.card.keywords &&
+            card.card.keywords.some(keyword1 =>
+                keyword1 === keyword
+            )
+        );
     }
 
-    public static countSuit(suit: CardSuitIcon, cards: Array<LocatedCard>) {
+    public static countSuit(suit: CardSuitIcon, cards: Array<LocatedCard>): number {
         return cards.reduce(
             (count: number, card: LocatedCard): number =>
                 count + card.card.suit.filter(suit1 => suit1 === suit).length,
             0);
     }
 
-    public static countType(type: CardTypeIcon, cards: Array<LocatedCard>) {
+    public static countType(type: CardTypeIcon, cards: Array<LocatedCard>): number {
         return cards.reduce(
             (count: number, card: LocatedCard): number =>
                 count + card.card.typeIcon.filter(type1 => type1 === type).length,
@@ -173,15 +169,28 @@ export class Player {
     }
 
     public getVictoryPoint(): number {
-        const scoringResources = this.scoringResources();
+        const scoringResources: Units = this.scoringResources();
+
+        const alienProgress: boolean = this.hasKeywordInPlay(KeywordNames.alienProgress);
+        const noNegativeFromUnrest: boolean = this.hasKeywordInPlay(KeywordNames.noNegativeFromUnrest);
+
+        const baseScoringProgress: number = alienProgress
+            ? Math.floor(scoringResources.progress / 3)
+            : scoringResources.progress;
+
         return this.allScoringCards().reduce(
             (points: number, card: LocatedCard): number => {
-                const vp: number = card.card.getVictoryPoints({
+                let vp: number = card.card.getVictoryPoints({
                     player: this,
                     location: card.location,
                     scoringResources: scoringResources
                 });
+
+                if (noNegativeFromUnrest && card.card.suit.some(
+                    suit => suit === CardSuitIcon.UNREST))
+                    vp = Math.max(vp, 0);
+
                 return points + vp;
-            }, this.scoringResources().progress);
+            }, baseScoringProgress);
     }
 }

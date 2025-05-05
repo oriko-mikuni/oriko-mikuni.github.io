@@ -25,15 +25,7 @@ Download feature is not implemented, you can use Print Screen key to save image,
   * add cards from more nations.
     * [x] Classics
     * [x] Legends
-    * Horizons (New Horizons)
-      * [x] Magyars
-      * [x] Japanese
-      * [x] Taino
-      * [x] Inuits
-      * [x] Mayans
-      * [x] Martians
-      * [x] Polynesians
-      * [ ] Cultists
+    * [x] Horizons (New Horizons)
     * Horizons (Merchants)
       * [ ] Abbasids
       * [ ] Aksumites

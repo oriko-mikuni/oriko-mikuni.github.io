@@ -6,6 +6,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class KingArthurSCourt extends Card implements ICard {
     constructor() {
@@ -24,7 +25,10 @@ export class KingArthurSCourt extends Card implements ICard {
                 "Solstice: if there is no active quest, you MAY take {unrest} to garrison an impending quest."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {civilised}"
+            victoryPointsString: "1VP per {civilised}",
+            keywords: [
+                KeywordNames.doNotScoreActiveQuest
+            ]
         });
     }
 

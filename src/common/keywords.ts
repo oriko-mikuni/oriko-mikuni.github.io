@@ -7,4 +7,7 @@ export enum KeywordNames {
     acclaimed = "acclaimed",
     heirPresumptive = "heirPresumptive",
     bountiful = "bountiful",
+    alienProgress = "alienProgress",
+    noNegativeFromUnrest = "noNegativeFromUnrest",
+    doNotScoreActiveQuest  = "doNotScoreActiveQuest",
 }

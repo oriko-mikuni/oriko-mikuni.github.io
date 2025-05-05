@@ -51,6 +51,7 @@ export type CardBuilderStateProps = {
     victoryPoints: number;
     victoryPointsString: string;
     illustration: string;
+    exhaustCount: number;
 }
 
 function isDevelopmentCostEmpty(props: CardBuilderStateProps): boolean {
@@ -90,7 +91,8 @@ const CardBuilderStatePropsDefault: CardBuilderStateProps = {
     victoryPointType: VictoryPointType.number,
     victoryPoints: 0,
     victoryPointsString: "",
-    illustration: ""
+    illustration: "",
+    exhaustCount: 5
 }
 
 export function ofCardBuilderStateProps(props: Partial<CardBuilderStateProps>): CardBuilderStateProps {
@@ -129,7 +131,8 @@ export class CardBuilderState {
             typeIcon: this.props.typeIcon,
             victoryPoints: this.props.victoryPointType !== VictoryPointType.number ? this.props.victoryPointType : this.props.victoryPoints,
             victoryPointsString: this.props.victoryPointsString !== "" ? this.props.victoryPointsString : undefined,
-            illustration: this.props.illustration || undefined
+            illustration: this.props.illustration || undefined,
+            exhaustCount: (this.props.suit.at(0) !== CardSuitIcon.POWER || this.props.exhaustCount === 5) ? undefined : this.props.exhaustCount
         };
     }
 
@@ -149,6 +152,14 @@ export class CardBuilderState {
                 dispatch({illustration: fileURL})
             }
         }}/>;
+        const specialExhaustInput: React.JSX.Element | null =
+            this.props.suit.length === 0 || this.props.suit[0] !== CardSuitIcon.POWER
+                ? <span>{cardMakerTranslation("Exhaust Count Settings Unavailable")}</span>
+                : <span>
+                    {cardMakerTranslation("Exhaust Count")}
+                    <InputNumber value={this.props.exhaustCount} onChange={num => dispatch({exhaustCount: num < 1 ? 1 : num})}/>
+                    {cardMakerTranslation("Default Exhaust Count Is Five")}
+                </span>;
         return <>
             {cardMakerTranslation("Name")}
             <InputTextBox value={this.props.name} onChange={text => dispatch({name: text})}/><br/>
@@ -163,6 +174,7 @@ export class CardBuilderState {
                 }}
             />
             <button onClick={() => dispatch({suit: []})}>{cardMakerTranslation("clear")}</button>
+            {specialExhaustInput}
             <br/>
             {cardMakerTranslation("Type Icon")}
             <ButtonGroup
@@ -213,7 +225,7 @@ export class CardBuilderState {
                           onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Nation Colour")}
             <ButtonGroup range={Object.values(CardNationColour)} ItemRender={arg0 => {
-                if (arg0.arg0 === undefined || arg0.arg0 === CardNationColour.COMMON) return <>-</>;
+                if (arg0.arg0 === undefined || arg0.arg0 === CardNationColour.COMMON) return <>{cardMakerTranslation("clear")}</>;
                 return <CardNationColourRender nationColour={arg0.arg0} shape={CardNationColourDisplayShape.SQUARE}
                                                location={CardStartingLocation.DEFAULT}/>;
             }} onClick={nationColour => {
@@ -225,7 +237,7 @@ export class CardBuilderState {
             {customNationColorInput}<br/>
             {cardMakerTranslation("Starting Location")}
             <ButtonGroup range={Object.values(CardStartingLocation)} ItemRender={arg0 => {
-                if (arg0.arg0 === undefined || arg0.arg0 === CardStartingLocation.DEFAULT) return <>-</>;
+                if (arg0.arg0 === undefined || arg0.arg0 === CardStartingLocation.DEFAULT) return <>{cardMakerTranslation("clear")}</>;
                 return <CardNationColourRender nationColour={undefined} shape={CardNationColourDisplayShape.SQUARE}
                                                location={arg0.arg0}/>;
             }} onClick={location => {
@@ -239,12 +251,13 @@ export class CardBuilderState {
                          }}/><br/>
             {cardMakerTranslation("Expansion")}
             <ButtonGroup range={Object.values(CardExpansion)} ItemRender={arg0 => {
-                if (arg0.arg0 === undefined || arg0.arg0 === CardExpansion.NONE) return <>-</>;
+                if (arg0.arg0 === undefined || arg0.arg0 === CardExpansion.NONE) return <>{cardMakerTranslation("clear")}</>;
                 return <CardExpansionRender expansion={arg0.arg0} separate={true}/>;
             }} onClick={expansion => {
                 dispatch({expansion: expansion})
             }}/><br/>
             {cardMakerTranslation("Victory Point")}
+            <InputNumber value={this.props.victoryPoints} onChange={num => dispatch({victoryPoints: num})}/>
             <ButtonGroup range={Object.values(VictoryPointType)} ItemRender={arg0 => {
                 if (arg0.arg0 === undefined)
                     return <></>;
@@ -253,8 +266,7 @@ export class CardBuilderState {
                 return <CardVictoryPointIcon victoryPoints={arg0.arg0}/>;
             }} onClick={vp => {
                 dispatch({victoryPointType: vp})
-            }}/>
-            <InputNumber value={this.props.victoryPoints} onChange={num => dispatch({victoryPoints: num})}/><br/>
+            }}/><br/>
             {cardMakerTranslation("Scoring Effect")}
             <InputTextBox value={this.props.victoryPointsString}
                           onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>

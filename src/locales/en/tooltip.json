@@ -1,5 +1,9 @@
 {
   "tooltip": {
+    "doNotScoreActiveQuest": {
+      "name": "Active Quest",
+      "description": "At the end of the game your garrisoned active quest are not considered owned by you for scoring purposes."
+    },
     "freeTribes": {
       "name": "Free Tribes",
       "description": "Unlike all other civilisations, the Taino consider *all* Resource tokens on their cards as Resources in their pool during Scoring.\nThis means that placing (for example) {material} tokens on [Zemi] does not reduce the points you score for cards like [Moneylenders]."
@@ -7,6 +11,14 @@
     "leader": {
       "name": "Leader",
       "description": "A card from your civilization, named after a singular person."
+    },
+    "alienProgress": {
+      "name": "Special Scoring Rule",
+      "description": "Score 1VP for every 3{progress} at game end instead of 1 each."
+    },
+    "noNegativeFromUnrest": {
+      "name": "Special Scoring Rule",
+      "description": "You do not score any negative points for {unrest}."
     },
     "outOfPlayArea": {
       "name": "Out of Play Area",

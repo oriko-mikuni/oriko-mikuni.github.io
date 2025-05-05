@@ -76,6 +76,7 @@
   "1VP per {trade-route}": "每{trade-route}1VP",
   "1VP per {tributary}": "每{tributary}1VP",
   "1VP per {uncivilised}": "每{uncivilised}1VP",
+  "1VP per {unrest}": "每{unrest}1VP",
   "1VP per {unrest} scored by other players": "其他玩家每有\n1{unrest}计分，1VP",
   "1VP per {variable} card": "每{variable}牌1VP",
   "1VP per {variable} card (including this one)": "每{variable}牌\n（包括本牌）\n1VP",

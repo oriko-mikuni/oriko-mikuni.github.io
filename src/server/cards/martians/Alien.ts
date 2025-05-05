@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Alien extends Card implements ICard {
     constructor() {
@@ -21,6 +22,9 @@ export class Alien extends Card implements ICard {
                 "Score 1VP for every 3{progress} at game end instead of 1 each.",
                 "End of Solstice: if you have no {progress}, exile your Nation deck and [Reactor Explosion], the flip this card."
             ],
+            keywords: [
+                KeywordNames.alienProgress
+            ]
         });
     }
 }

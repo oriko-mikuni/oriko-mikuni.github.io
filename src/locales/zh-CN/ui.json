@@ -42,7 +42,7 @@
     "Import JSON": "导入JSON",
     "Name": "名称",
     "Card Number": "卡牌编号",
-    "Suit Icon": "花色图标",
+    "Suit Icon": "花色图标（第一个花色也是横幅颜色）",
     "Type Icon": "类型图标",
     "State Icon": "国体图标",
     "Header Icon": "顶部图标",
@@ -57,6 +57,9 @@
     "Victory Point": "分数",
     "Scoring Effect": "计分效果",
     "Illustration": "插画",
+    "Exhaust Count": "耗竭数量",
+    "Exhaust Count Settings Unavailable": "要自定义耗竭数量，先将横幅设为势力。",
+    "Default Exhaust Count Is Five": "默认为5，其他数值会显示",
     "clear": "清除"
   },
   "ElementFilterState": {

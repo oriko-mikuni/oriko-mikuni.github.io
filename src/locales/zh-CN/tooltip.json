@@ -1,5 +1,9 @@
 {
   "tooltip": {
+    "doNotScoreActiveQuest": {
+      "name": "当前任务",
+      "description": "游戏结束计分时，进驻到本牌的当前任务不算作你的卡牌。"
+    },
     "freeTribes": {
       "name": "自由部落",
       "description": "与其他国家不同的是，泰诺人在计分时会将自己卡牌上的*所有*资源指示物也算作拥有的资源。\n这意味着往“神像”上放置（例如）{material}指示物不会减少泰诺人通过“放债者”等牌取得的分数。"
@@ -7,6 +11,14 @@
     "leader": {
       "name": "领袖",
       "description": "来自你的国家的卡牌，以一个人的名字命名。"
+    },
+    "alienProgress": {
+      "name": "特殊计分规则",
+      "description": "游戏结束时你每3{progress}才能计1分。"
+    },
+    "noNegativeFromUnrest": {
+      "name": "特殊计分规则",
+      "description": "你不会为{unrest}计算任何负分。"
     },
     "outOfPlayArea": {
       "name": "不在场区域",
