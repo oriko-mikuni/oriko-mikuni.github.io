@@ -10,21 +10,23 @@ import {useTranslation} from "react-i18next";
 import {ClientCard} from "../../common/cards/ClientCard.ts";
 import Card from "./card/Card.tsx";
 import "./ImperiumCardMaker.css";
-// import html2canvas from "html2canvas";
+import html2canvas from "html2canvas";
+import CardTextRender from "./card/CardTextRender.tsx";
+import {getHelpText} from "../cards/IconNamesManifest.ts";
 
-// async function downloadImage(name: string): Promise<void> {
-//     const element: HTMLElement | null = document.getElementById("cardDisplay");
-//     if (element === null) return;
-//     html2canvas(element, {useCORS: true}).then(canvas => {
-//         const link: HTMLAnchorElement = document.createElement("a");
-//         link.href = canvas.toDataURL("image/png");
-//         link.download = name + ".png";
-//         link.click();
-//     }).catch(error => console.error("Error downloading image", error));
-// }
+async function downloadImage(name: string): Promise<void> {
+    const element: HTMLElement | null = document.getElementById("cardDisplay");
+    if (element === null) return;
+    html2canvas(element, {useCORS: true}).then(canvas => {
+        const link: HTMLAnchorElement = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = name + ".png";
+        link.click();
+    }).catch(error => console.error("Error downloading image", error));
+}
 
 async function exportJson(state: CardBuilderState): Promise<void> {
-    const prop: CardBuilderStateProps = {...state.props, illustration: "", nationColourURL: ""};
+    const prop: CardBuilderStateProps = {...state.props, illustration: "", nationColourFile: 'none'};
     const jsonString: string = JSON.stringify(prop, null, 2);
     const blob: Blob = new Blob([jsonString], {type: "application/json"});
     const url: string = URL.createObjectURL(blob);
@@ -65,11 +67,14 @@ function ImperiumCardMaker(): React.JSX.Element {
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{cardMakerTranslation("toFeedback")}</a> <br/>
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/wiki/Card-Maker---%E5%8D%A1%E7%89%8C%E5%88%B6%E4%BD%9C'>{cardMakerTranslation("howToAddIcons")}</a> <br/>
             <div id="cardDisplay">{cardElement}</div>
-            {/*<button onClick={() => downloadImage(card.name)}>{cardMakerTranslation("Download Image")}</button><br/>*/}
-            <>{cardMakerTranslation("Download Not Supported")}</><br/>
+            <button onClick={() => downloadImage(card.name)}>{cardMakerTranslation("Download Image")}</button><br/>
+            {/*<>{cardMakerTranslation("Download Not Supported")}</><br/>*/}
             <button onClick={() => exportJson(state)}>{cardMakerTranslation("Export JSON")}</button><br/>
             <span>{cardMakerTranslation("Import JSON")}</span>
             <input type="file" onChange={e => {importJson(e.target.files, dispatch)}}></input>
+            <h2>{cardMakerTranslation("How To Add Icons")}</h2>
+            <p>{cardMakerTranslation("Copy the code into the text")}</p>
+            <CardTextRender text={getHelpText()}/>
         </div>
         <div className="ImperiumCardMaker_content">
             {toggles}

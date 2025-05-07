@@ -1,100 +1,63 @@
-.card-nation-colour-triangle {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 45px;
-    height: 45px;
-    background-size: 45px;
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
-    overflow: hidden;
-    background-clip: padding-box;
-    border-bottom-left-radius: inherit;
-}
-
-.card-nation-colour-inline-square {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-size: 1em;
-}
-
-.card-nation-location-common-black,
-.card-nation-location-Abbasids,
-.card-nation-location-Aksumites,
-.card-nation-location-Arthurians,
-.card-nation-location-Atlanteans,
-.card-nation-location-Egyptians,
-.card-nation-location-Greeks,
-.card-nation-location-Inuit,
-.card-nation-location-Japanese,
-.card-nation-location-Mayans,
-.card-nation-location-Polynesians,
-.card-nation-location-Sassanids,
-.card-nation-location-Scythians,
-.card-nation-location-Taino,
-.card-nation-location-Wagadou {
-    background-color: black;
-}
-
-.card-nation-location-common,
-.card-nation-location-Carthaginians,
-.card-nation-location-Celts,
-.card-nation-location-Cultists,
-.card-nation-location-Guptas,
-.card-nation-location-Macedonians,
-.card-nation-location-Magyars,
-.card-nation-location-Martians,
-.card-nation-location-Mauryans,
-.card-nation-location-Minoans,
-.card-nation-location-Olmecs,
-.card-nation-location-Persians,
-.card-nation-location-Qin,
-.card-nation-location-Romans,
-.card-nation-location-Tang,
-.card-nation-location-Utopians,
-.card-nation-location-Vikings {
-    background-color: white;
-}
-
 .card-triangle-location {
     position: absolute;
     bottom: 8px;
     left: 8px;
     width: 15px;
     height: 15px;
+    background-size: 15px 15px;
 }
 
 .card-inline-square-location {
+    position: absolute;
     width: 1em;
     height: 1em;
+    background-size: 1em 1em;
 }
 
-.card-location-in-play {
-    mask: url("/starting_location/InPlay.svg") no-repeat center / contain;
-    -webkit-mask: url("/starting_location/InPlay.svg") no-repeat center;
+.card-location-in-play.card-location-black {
+    background-image: url("/starting_location/InPlay.svg");
 }
 
-.card-location-nation {
-    mask: url("/starting_location/Nation.svg") no-repeat center / contain;
-    -webkit-mask: url("/starting_location/Nation.svg") no-repeat center;
+.card-location-nation.card-location-black {
+    background-image: url("/starting_location/Nation.svg");
 }
 
-.card-location-accession {
-    mask: url("/starting_location/Accession.svg") no-repeat center / contain;
-    -webkit-mask: url("/starting_location/Accession.svg") no-repeat center;
+.card-location-accession.card-location-black {
+    background-image: url("/starting_location/Accession.svg");
 }
 
-.card-location-development {
-    mask: url("/starting_location/Development.svg") no-repeat center / contain;
-    -webkit-mask: url("/starting_location/Development.svg") no-repeat center;
+.card-location-development.card-location-black {
+    background-image: url("/starting_location/Development.svg");
 }
 
-.card-location-supply {
-    mask: url("/starting_location/Supply.svg") no-repeat center / contain;
-    -webkit-mask: url("/starting_location/Supply.svg") no-repeat center;
+.card-location-supply.card-location-black {
+    background-image: url("/starting_location/Supply.svg");
 }
 
-.card-location-chaos {
-    mask: url("/starting_location/Chaos.svg") no-repeat center / contain;
-    -webkit-mask: url("/starting_location/Chaos.svg") no-repeat center;
+.card-location-chaos.card-location-black {
+    background-image: url("/starting_location/Chaos.svg");
+}
+
+.card-location-in-play.card-location-white {
+    background-image: url("/starting_location/InPlayWhite.svg");
+}
+
+.card-location-nation.card-location-white {
+    background-image: url("/starting_location/NationWhite.svg");
+}
+
+.card-location-accession.card-location-white {
+    background-image: url("/starting_location/AccessionWhite.svg");
+}
+
+.card-location-development.card-location-white {
+    background-image: url("/starting_location/DevelopmentWhite.svg");
+}
+
+.card-location-supply.card-location-white {
+    background-image: url("/starting_location/SupplyWhite.svg");
+}
+
+.card-location-chaos.card-location-white {
+    background-image: url("/starting_location/ChaosWhite.svg");
 }

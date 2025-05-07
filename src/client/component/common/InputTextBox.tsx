@@ -1,6 +1,6 @@
 import React from "react";
 
-function InputTextBox({value, onChange, height = "1em", width = "20em", allowBr = false, placeholder = ""}: {
+function InputTextBox({value, onChange, height = "1em", width = "24em", allowBr = false, placeholder = ""}: {
     value: string,
     onChange: (text: string) => void,
     height?: string,

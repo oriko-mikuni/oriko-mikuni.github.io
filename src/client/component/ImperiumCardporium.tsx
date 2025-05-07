@@ -109,11 +109,18 @@ function ImperiumCardporium(): React.JSX.Element {
             const gameModule: GameModule | undefined = Object.values(GameModule).find(value => value === elem);
             if (gameModule === undefined ) return null;
             if (!state.includeHorizonsState && horizonModules.has(gameModule)) return null;
+
             const nationColour: CardNationColour = moduleNation[gameModule];
-            if (nationColour === CardNationColour.COMMON) return <>{gameModuleTranslation(gameModule)}</>;
+            if (nationColour === CardNationColour.COMMON || nationColour === CardNationColour.COMMON_B)
+                return <>{gameModuleTranslation(gameModule)}</>;
+
             return <span>
                 {gameModuleTranslation(gameModule)}
-                <CardNationColourRender shape={CardNationColourDisplayShape.SQUARE} nationColour={nationColour} location={CardStartingLocation.DEFAULT}/>
+                <CardNationColourRender
+                    shape={CardNationColourDisplayShape.SQUARE}
+                    nationColour={nationColour}
+                    location={CardStartingLocation.DEFAULT}
+                />
             </span>;
         });
 

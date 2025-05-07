@@ -26,32 +26,28 @@ function CardTextRender({text}: {
     //     return part;
     // }).join("");
 
-    const parts: Array<string> = text.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n)/g);
+    const parts: Array<string> = text.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n|\\)/g);
+    let muteNextPart: boolean = false;
 
     const result: Array<React.JSX.Element> = parts.map((part, index) => {
+        if (part === "") return <span key={index}></span>;
         const iconRender: string | undefined = getIconByName(part);
-        if (iconRender)
-            return <CardRenderIconComponents iconName={iconRender} key={index}/>;
-        else {
-            if (part === '\n') return <br key={index}/>;
-            let italic: boolean = false;
-            let bold: boolean = false;
-            if (part.match(/\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*/g)) {
-                if (part.match(/\[[^\[\]]+]/g)) {
-                    italic = true;
-                }
-                if (part.match(/\*[^*]+\*/g)) {
-                    bold = true;
-                }
-                part = part.slice(1, part.length - 1);
+        let italic: boolean = false;
+        let bold: boolean = false;
+        if (muteNextPart) muteNextPart = false;
+        else if (part === '\\') {muteNextPart = true; return <span key={index}></span>}
+        else if (iconRender) return <CardRenderIconComponents iconName={iconRender} key={index}/>;
+        else if (part === '\n') return <br key={index}/>;
+        else if (part.match(/\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*/g)) {
+            if (part.match(/\[[^\[\]]+]/g)) {
+                italic = true;
             }
-            return <span
-                key={index}
-                className={getClasses(italic, bold)}
-            >
-                {part}
-            </span>;
+            if (part.match(/\*[^*]+\*/g)) {
+                bold = true;
+            }
+            part = part.slice(1, part.length - 1);
         }
+        return <span key={index} className={getClasses(italic, bold)}>{part}</span>;
     });
 
     return <>{result}</>;

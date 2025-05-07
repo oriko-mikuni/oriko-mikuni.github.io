@@ -55,12 +55,11 @@
     color: white;
 }
 
-.card-player-count-background {
+.card-player-count-background-white {
     position: absolute;
     left: 35px;
     bottom: 20px;
-    background-color: white;
-    mask: url("/corner_icon/playerCount.svg");
+    background-image: url("/corner_icon/playerCountWhite.svg");
     width: 11px;
     height: 11px;
     background-size: 11px 11px;

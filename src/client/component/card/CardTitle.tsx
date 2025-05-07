@@ -5,7 +5,7 @@ import {CardName} from "../../../common/cards/CardName.ts";
 import {useTranslation} from "react-i18next";
 import CardTextRender from "./CardTextRender.tsx";
 
-const stateCardTitleColors: Record<string, React.CSSProperties> = {
+const stateCardTitleColours: Record<string, React.CSSProperties> = {
     // standard state
     [CardName.BARBARIAN0]: {color: "white", backgroundColor: "#b21e1c"},
     [CardName.EMPIRE0]: {color: "white", backgroundColor: "#5082b5"},
@@ -63,7 +63,7 @@ function CardTitle(
 
     const titleDisplay: string = getCardTitleDisplay(diy ? title : titleTranslation(title));
     const titleColor: React.CSSProperties = isState
-        ? (stateCardTitleColors[title] !== undefined ? stateCardTitleColors[title] : defaultTitleColor)
+        ? (stateCardTitleColours[title] !== undefined ? stateCardTitleColours[title] : defaultTitleColor)
         : (banner !== undefined ? suitCardTitleColors[banner] : defaultTitleColor);
     const specialExhaustCount: React.JSX.Element | null =
         exhaustCount === undefined ? null :

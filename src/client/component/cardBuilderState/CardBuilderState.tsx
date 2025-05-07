@@ -41,7 +41,7 @@ export type CardBuilderStateProps = {
     headerIcon: CardHeaderIcon;
     name: string;
     nationColour: CardNationColour;
-    nationColourURL: string;
+    nationColourFile: File | 'none';
     playerCount: number;
     startingLocation: CardStartingLocation;
     stateIcon: Array<CardStateIcon>;
@@ -82,7 +82,7 @@ const CardBuilderStatePropsDefault: CardBuilderStateProps = {
     headerIcon: CardHeaderIcon.NO_HEADER,
     name: "",
     nationColour: CardNationColour.COMMON,
-    nationColourURL: "",
+    nationColourFile: 'none',
     playerCount: 0,
     startingLocation: CardStartingLocation.DEFAULT,
     stateIcon: [],
@@ -123,7 +123,7 @@ export class CardBuilderState {
             keywords: [],
             name: this.props.name !== "" ? this.props.name : "-",
             nationColour: this.props.nationColour,
-            nationColourURL: this.props.nationColourURL,
+            nationColourFile: this.props.nationColourFile === 'none' ? undefined : this.props.nationColourFile,
             playerCount: this.props.playerCount,
             startingLocation: this.props.startingLocation,
             stateSymbol: this.props.stateIcon,
@@ -141,8 +141,7 @@ export class CardBuilderState {
         const customNationColorInput: React.JSX.Element = <input id="customNationColourInput" type="file" onChange={e => {
             if (e.target.files) {
                 const file: File = e.target.files[0];
-                const fileURL: string = URL.createObjectURL(file);
-                dispatch({nationColourURL: fileURL, nationColour: CardNationColour.COMMON})
+                dispatch({nationColourFile: file, nationColour: CardNationColour.COMMON})
             }
         }}/>;
         const illustrationInput: React.JSX.Element  = <input id="illustrationInput" type="file" onChange={e => {
@@ -174,6 +173,7 @@ export class CardBuilderState {
                 }}
             />
             <button onClick={() => dispatch({suit: []})}>{cardMakerTranslation("clear")}</button>
+            <br/>
             {specialExhaustInput}
             <br/>
             {cardMakerTranslation("Type Icon")}
@@ -221,17 +221,18 @@ export class CardBuilderState {
                          onChange={num => dispatch({developmentCostGoods: num})}/>
             <br/>
             {cardMakerTranslation("Development Cost Text")}
-            <InputTextBox value={this.props.developmentCostString}
+            <InputTextBox value={this.props.developmentCostString} width="23em"
                           onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Nation Colour")}
             <ButtonGroup range={Object.values(CardNationColour)} ItemRender={arg0 => {
+                if (arg0.arg0 === CardNationColour.COMMON_B) return null;
                 if (arg0.arg0 === undefined || arg0.arg0 === CardNationColour.COMMON) return <>{cardMakerTranslation("clear")}</>;
                 return <CardNationColourRender nationColour={arg0.arg0} shape={CardNationColourDisplayShape.SQUARE}
                                                location={CardStartingLocation.DEFAULT}/>;
             }} onClick={nationColour => {
                 const customNationColourElement: HTMLInputElement = document.getElementById("customNationColourInput") as HTMLInputElement;
                 if (customNationColourElement !== null) customNationColourElement.value = "";
-                dispatch({nationColour: nationColour, nationColourURL: ""})
+                dispatch({nationColour: nationColour, nationColourFile: 'none'})
             }}/><br/>
             {cardMakerTranslation("Custom Nation Colour")}
             {customNationColorInput}<br/>
@@ -268,7 +269,7 @@ export class CardBuilderState {
                 dispatch({victoryPointType: vp})
             }}/><br/>
             {cardMakerTranslation("Scoring Effect")}
-            <InputTextBox value={this.props.victoryPointsString}
+            <InputTextBox value={this.props.victoryPointsString} width="12em"
                           onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Illustration")}
             <button onClick={() => {

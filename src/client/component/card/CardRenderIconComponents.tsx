@@ -5,7 +5,7 @@ function CardRenderIconComponents(
     {iconName}:
     {iconName: string}
 ): React.JSX.Element {
-    return <img className={`card-text-icon card-text-icon-${iconName}`} alt={iconName}/>;
+    return <div className={`card-text-icon card-text-icon-${iconName}`}/>;
 }
 
 export default CardRenderIconComponents;

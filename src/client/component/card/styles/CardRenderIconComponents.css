@@ -1,188 +1,321 @@
 .card-text-icon {
     position: relative;
     display: inline-block;
-    height: 1.2em;
     vertical-align: middle;
     transform: translate(0px, -1px);
 }
 
 .card-text-icon.card-text-icon-header-pinned {
-    content: url("/header_icon/pinned.png");
+    background-image: url("/header_icon/pinned.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-tradeRoute {
-    content: url("/header_icon/tradeRoute.png");
+    background-image: url("/header_icon/tradeRoute.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-attack {
-    content: url("/header_icon/attack.png");
+    background-image: url("/header_icon/attack.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-powerA {
-    content: url("/header_icon/powerA.png");
+    background-image: url("/header_icon/powerA.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-powerB {
-    content: url("/header_icon/powerB.png");
+    background-image: url("/header_icon/powerB.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-in-play {
-    content: url("/starting_location/InPlay.svg");
+    background-image: url("/starting_location/InPlayWhite.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-nation {
-    content: url("/starting_location/Nation.svg");
+    background-image: url("/starting_location/NationWhite.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-accession {
-    content: url("/starting_location/Accession.svg");
+    background-image: url("/starting_location/AccessionWhite.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-development {
-    content: url("/starting_location/Development.svg");
+    background-image: url("/starting_location/DevelopmentWhite.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-supply {
-    content: url("/starting_location/Supply.svg");
+    background-image: url("/starting_location/SupplyWhite.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-chaos {
-    content: url("/starting_location/Chaos.svg");
+    background-image: url("/starting_location/ChaosWhite.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-barbarian {
-    content: url("/state_symbol/barbarian.png");
+    background-image: url("/state_symbol/barbarian.png");
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-empire {
-    content: url("/state_symbol/empire.png");
+    background-image: url("/state_symbol/empire.png");
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-isle-bound {
-    content: url("/state_symbol/isle_bound.png");
+    background-image: url("/state_symbol/isle_bound.png");
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-voyaging {
-    content: url("/state_symbol/voyaging.png");
+    background-image: url("/state_symbol/voyaging.png");
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-corrupted {
-    content: url("/state_symbol/corrupted.png");
+    background-image: url("/state_symbol/corrupted.png");
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-summoned {
-    content: url("/state_symbol/summoned.png");
+    background-image: url("/state_symbol/summoned.png");
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-power {
-    content: url("/suit_icon/power.png");
+    background-image: url("/suit_icon/power.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-fame {
-    content: url("/suit_icon/fame.png");
+    background-image: url("/suit_icon/fame.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-unrest {
-    content: url("/suit_icon/unrest.png");
+    background-image: url("/suit_icon/unrest.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-uncivilised {
-    content: url("/suit_icon/uncivilised.png");
+    background-image: url("/suit_icon/uncivilised.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-civilised {
-    content: url("/suit_icon/civilised.png");
+    background-image: url("/suit_icon/civilised.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-region {
-    content: url("/suit_icon/region.png");
+    background-image: url("/suit_icon/region.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-tributary {
-    content: url("/suit_icon/tributary.png");
+    background-image: url("/suit_icon/tributary.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-trade-route {
-    content: url("/suit_icon/trade_route.png");
+    background-image: url("/suit_icon/trade_route.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-gadget {
-    content: url("/suit_icon/gadget.png");
+    background-image: url("/suit_icon/gadget.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-city {
-    content: url("/card_type_icon/city.png");
+    background-image: url("/card_type_icon/city.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-knight {
-    content: url("/card_type_icon/knight.png");
+    background-image: url("/card_type_icon/knight.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-mask {
-    content: url("/card_type_icon/mask.png");
+    background-image: url("/card_type_icon/mask.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-merchant {
-    content: url("/card_type_icon/merchant.png");
+    background-image: url("/card_type_icon/merchant.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-metropolis {
-    content: url("/card_type_icon/metropolis.png");
+    background-image: url("/card_type_icon/metropolis.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-miracle {
-    content: url("/card_type_icon/miracle.png");
+    background-image: url("/card_type_icon/miracle.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-scroll {
-    content: url("/card_type_icon/scroll.png");
+    background-image: url("/card_type_icon/scroll.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-fertile {
-    content: url("/card_type_icon/fertile.png");
+    background-image: url("/card_type_icon/fertile.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-hunt {
-    content: url("/card_type_icon/hunt.png");
+    background-image: url("/card_type_icon/hunt.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-ocean {
-    content: url("/card_type_icon/ocean.png");
+    background-image: url("/card_type_icon/ocean.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-production {
-    content: url("/card_type_icon/production.png");
+    background-image: url("/card_type_icon/production.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-river {
-    content: url("/card_type_icon/river.png");
+    background-image: url("/card_type_icon/river.png");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-resource-population {
-    content: url("/resource/population.svg")
+    background-image: url("/resource/population.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-resource-material {
-    content: url("/resource/material.svg");
+    background-image: url("/resource/material.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-resource-progress {
-    content: url("/resource/progress.svg")
+    background-image: url("/resource/progress.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-resource-goods {
-    content: url("/resource/goods.svg");
+    background-image: url("/resource/goods.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-resource-action {
-    content: url("/resource/action.svg");
+    background-image: url("/resource/action.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-resource-exhaust {
-    content: url("/resource/exhaust.svg");
+    background-image: url("/resource/exhaust.svg");
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon-vp-variable {
-    content: url("/vp_icon/victory_point_variable.svg");
+    background-image: url("/vp_icon/victory_point_variable.svg");
     height: 1.4em;
+    width: 1.4em;
+    background-size: 1.4em 1.4em;
 }

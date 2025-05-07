@@ -23,7 +23,7 @@ export type ClientCard = {
   developmentCost?: Partial<Units>;
   developmentCostString: Array<string>;
   nationColour: CardNationColour;
-  nationColourURL?: string;
+  nationColourFile?: File;
   cardInPlayType?: CardInPlayType;
   startingLocation: CardStartingLocation;
   playerCount: number;

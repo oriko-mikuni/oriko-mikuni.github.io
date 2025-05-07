@@ -29,4 +29,4 @@ class CardTsFileGenerator {
     }
 }
 
-CardTsFileGenerator.makeTsFile('src/server/cards/cultists/');
+CardTsFileGenerator.makeTsFile('src/server/cards/guptas/');

@@ -55,7 +55,7 @@ function Card(
 
     const playerCountRender: React.JSX.Element | null = card.playerCount < 2 ? null :
     <div>
-        <div className="card-player-count-background"/>
+        <div className="card-player-count-background-white"/>
         <div className="card-player-count-text">{card.playerCount.toString() + (card.playerCount < 4 ? "+" : "")}</div>
     </div>;
     const expansionRender: React.JSX.Element | null = <CardExpansionRender expansion={card.expansion}/>;
@@ -82,7 +82,8 @@ function Card(
             nationColour={card.nationColour}
             location={card.startingLocation}
             shape={CardNationColourDisplayShape.TRIANGLE}
-            nationColourImageURL={card.nationColourURL}
+            nationColourImageFile={card.nationColourFile}
+            diy={card.gameModule === GameModule.DEFAULT}
         />
         <CardVictoryPoints
             victoryPoints={card.victoryPoints}

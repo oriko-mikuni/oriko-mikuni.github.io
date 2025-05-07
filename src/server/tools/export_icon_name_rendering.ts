@@ -9,8 +9,8 @@ import fs from "fs";
 class IconNameProcessor {
     static json: Record<string, string> = {};
     public static makeJson(): void {
-        this.processIconEnumType("header", CardHeaderIcon);
-        this.processIconEnumType("location", CardStartingLocation);
+        this.processIconEnumType("header", CardHeaderIcon, CardHeaderIcon.NO_HEADER);
+        this.processIconEnumType("location", CardStartingLocation, CardStartingLocation.DEFAULT);
         this.processIconEnumType("state", CardStateIcon);
         this.processIconEnumType("suit", CardSuitIcon);
         this.processIconEnumType("type", CardTypeIcon);
@@ -20,9 +20,9 @@ class IconNameProcessor {
     }
 
     static processIconEnumType<T extends Record<string | number, string | number>>
-    (category: string, iconEnum: T): void {
+    (category: string, iconEnum: T, exclude?: string | number): void {
         Object.entries(iconEnum).forEach((entry: [string | number, string | number]): void => {
-            this.processSingleIcon(category, entry[1].toString());
+            if (entry[1] !== exclude) this.processSingleIcon(category, entry[1].toString());
         });
     }
 
