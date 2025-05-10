@@ -16,7 +16,7 @@ import {EasternZhou} from "./EasternZhou";
 import {Glory} from "./Glory";
 import {WritingSystems} from "./WritingSystems";
 import {Unrest} from "./Unrest";
-import {ConfucianismQin} from "./ConfucianismQin";
+import {Confucianism} from "./Confucianism";
 import {Legalism} from "./Legalism";
 import {SchollOfDiplomacy} from "./SchollOfDiplomacy";
 import {WesternZhou} from "./WesternZhou";
@@ -46,7 +46,7 @@ export const QIN_CARD_MANIFEST = new ModuleManifest({
         [CardName.GLORY_QIN]: {Factory: Glory},
         [CardName.WRITING_SYSTEMS_QIN]: {Factory: WritingSystems},
         [CardName.UNREST_QIN_NATION]: {Factory: Unrest},
-        [CardName.CONFUCIANISM_QIN]: {Factory: ConfucianismQin},
+        [CardName.CONFUCIANISM_QIN]: {Factory: Confucianism},
         [CardName.LEGALISM]: {Factory: Legalism},
         [CardName.SCHOOL_OF_DIPLOMACY]: {Factory: SchollOfDiplomacy},
         [CardName.WESTERN_ZHOU]: {Factory: WesternZhou},

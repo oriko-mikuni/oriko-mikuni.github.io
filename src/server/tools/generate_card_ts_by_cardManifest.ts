@@ -20,6 +20,7 @@ class CardTsFileGenerator {
         }
 
         for (const [cardName, fileName] of CardTsFileGenerator.cardManifest) {
+            console.log(cardName + ": " + fileName);
             const targetValue: string =
                 CardTsFileGenerator.defaultCardTsContent
                     .replace("class DefaultCard", "class " + fileName)
@@ -29,4 +30,4 @@ class CardTsFileGenerator {
     }
 }
 
-CardTsFileGenerator.makeTsFile('src/server/cards/guptas/');
+// CardTsFileGenerator.makeTsFile('src/server/cards/sassanids/');

@@ -33,6 +33,9 @@ import {CUL_CARD_MANIFEST} from "./cultists/cardManifest";
 import {ABB_CARD_MANIFEST} from "./abbasids/cardManifest";
 import {AKS_CARD_MANIFEST} from "./aksumites/cardManifest";
 import {GUP_CARD_MANIFEST} from "./guptas/cardManifest";
+import {TAN_CARD_MANIFEST} from "./tang/cardManifest";
+import {WAG_CARD_MANIFEST} from "./wagadou/cardManifest";
+import {SAS_CARD_MANIFEST} from "./sassanids/cardManifest";
 
 export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     COMMON_CARD_MANIFEST,
@@ -73,8 +76,7 @@ export const ALL_MODULE_MANIFEST: Array<ModuleManifest> = [
     ABB_CARD_MANIFEST,
     AKS_CARD_MANIFEST,
     GUP_CARD_MANIFEST,
-    // TAN_CARD_MANIFEST,
-    // WAG_CARD_MANIFEST,
-    // SAS_CARD_MANIFEST,
-
+    TAN_CARD_MANIFEST,
+    WAG_CARD_MANIFEST,
+    SAS_CARD_MANIFEST,
 ];

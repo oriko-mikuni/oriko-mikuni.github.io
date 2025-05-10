@@ -16,6 +16,10 @@
     letter-spacing: 0;
 }
 
+.card-title.card-title-long.card-title-super-long {
+    font-size: 14px;
+}
+
 .special-exhaust-count {
     position: absolute;
     top: 5px;

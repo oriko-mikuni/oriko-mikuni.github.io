@@ -71,7 +71,9 @@ function CardTitle(
                 <CardTextRender text={exhaustCount + "{exhaust}"}/>
             </div>
 
-    return <div className={`card-title${titleDisplay.length > 20 ? " card-title-long" : ""}`}>
+    const className: string = titleDisplay.length >= 25 ? "card-title card-title-long card-title-super-long" :
+        titleDisplay.length > 20 ? "card-title card-title-long" : "card-title";
+    return <div className={className}>
         <div style={titleColor}>{titleDisplay}</div>
         {specialExhaustCount}
     </div> ;

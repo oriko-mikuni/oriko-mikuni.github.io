@@ -25,14 +25,8 @@ Download feature is not implemented, you can use Print Screen key to save image,
   * add cards from more nations.
     * [x] Classics
     * [x] Legends
-    * [x] Horizons (New Horizons)
-    * Horizons (Merchants)
-      * [ ] Abbasids
-      * [ ] Aksumites
-      * [ ] Guptas
-      * [ ] Tang
-      * [ ] Wagadou
-      * [ ] Sassanids
+    * [x] Horizons
+    * [x] Horizons
   * add common cards and state cards.
     * common
       * [x] barbarian/empire
@@ -47,8 +41,14 @@ Download feature is not implemented, you can use Print Screen key to save image,
 * add i18n support
   * [x] English
   * [x] Chinese(China)
-  * more languages would be supported after adding all cards from official contents so far
+  * for more languages, you can help translation by going to the [locales](https://github.com/oriko-mikuni/oriko-mikuni.github.io/tree/main/src/locales) folder and following these steps:
+    * Copy all `.json` file in `en` folder and paste them in a new folder, named by your language (e.g. `de`).
+    * Translate all the value strings in the new files.
+      * Do not change the key (strings on the left of `:`).
+      * Do not translate anything wrapped by `{}`, they are icons and should remain the same
+      * Wrap the **bold** content by `**` and wrap the *italic* content by `[]`
+    * Then you can send a pull request.
 #### TODO for Card Maker
-* [ ] add download image feature
+* [x] add download image feature
 ### More advices are welcome!
 You can start an [issue](https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues).
