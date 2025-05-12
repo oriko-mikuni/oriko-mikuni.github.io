@@ -1,0 +1,70 @@
+.card-item,
+.card-item::after,
+.card-item::before,
+.card-item *::after,
+.card-item *::before,
+.card-item *,
+.card-item ::before,
+.card-item ::after {
+    box-sizing: content-box;
+}
+
+.card-item {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    margin: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card-item-left {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-size: 15px;
+}
+
+.card-item-right {
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 15px;
+}
+
+.card-item-special-exhaust-count {
+    color: white;
+    display: inline-block;
+}
+
+.card-player-count-minimal {
+    font-size: 12px;
+}
+
+.card-player-count-icon-white {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("/corner_icon/playerCountWhite.svg");
+    width: 12px;
+    height: 12px;
+    background-size: 12px 12px;
+}
+
+.card-player-count-icon-black {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url("/corner_icon/playerCount.svg");
+    width: 12px;
+    height: 12px;
+    background-size: 12px 12px;
+}

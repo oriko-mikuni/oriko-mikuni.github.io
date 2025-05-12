@@ -5,317 +5,214 @@
     transform: translate(0px, -1px);
 }
 
-.card-text-icon.card-text-icon-header-pinned {
-    background-image: url("/header_icon/pinned.png");
+.card-text-icon.card-text-icon-header,
+.card-text-icon.card-text-icon-location,
+.card-text-icon.card-text-icon-suit,
+.card-text-icon.card-text-icon-type,
+.card-text-icon.card-text-icon-resource {
     height: 1.2em;
     width: 1.2em;
     background-size: 1.2em 1.2em;
+}
+
+.card-text-icon.card-text-icon-state {
+    height: 1.2em;
+    width: 1.5em;
+    background-size: 1.5em 1.2em;
+}
+
+.card-text-icon.card-text-icon-suit-minimize {
+    height: 1.2em;
+    width: 1.2em;
+    background-size: 1.2em 1.2em;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.6em;
+}
+
+.card-text-icon.card-text-icon-vp {
+    height: 1.4em;
+    width: 1.4em;
+    background-size: 1.4em 1.4em;
+}
+
+.card-text-icon.card-text-icon-header-pinned {
+    background-image: url("/header_icon/pinned.png");
 }
 
 .card-text-icon.card-text-icon-header-tradeRoute {
     background-image: url("/header_icon/tradeRoute.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-attack {
     background-image: url("/header_icon/attack.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-powerA {
     background-image: url("/header_icon/powerA.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-header-powerB {
     background-image: url("/header_icon/powerB.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-in-play {
     background-image: url("/starting_location/InPlayWhite.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-nation {
     background-image: url("/starting_location/NationWhite.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-accession {
     background-image: url("/starting_location/AccessionWhite.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-development {
     background-image: url("/starting_location/DevelopmentWhite.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-supply {
     background-image: url("/starting_location/SupplyWhite.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-location-chaos {
     background-image: url("/starting_location/ChaosWhite.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-barbarian {
     background-image: url("/state_symbol/barbarian.png");
-    height: 1.2em;
-    width: 1.5em;
-    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-empire {
     background-image: url("/state_symbol/empire.png");
-    height: 1.2em;
-    width: 1.5em;
-    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-isle-bound {
     background-image: url("/state_symbol/isle_bound.png");
-    height: 1.2em;
-    width: 1.5em;
-    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-voyaging {
     background-image: url("/state_symbol/voyaging.png");
-    height: 1.2em;
-    width: 1.5em;
-    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-corrupted {
     background-image: url("/state_symbol/corrupted.png");
-    height: 1.2em;
-    width: 1.5em;
-    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-state-summoned {
     background-image: url("/state_symbol/summoned.png");
-    height: 1.2em;
-    width: 1.5em;
-    background-size: 1.5em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-power {
     background-image: url("/suit_icon/power.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-fame {
     background-image: url("/suit_icon/fame.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-unrest {
     background-image: url("/suit_icon/unrest.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-uncivilised {
     background-image: url("/suit_icon/uncivilised.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-civilised {
     background-image: url("/suit_icon/civilised.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-region {
     background-image: url("/suit_icon/region.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-tributary {
     background-image: url("/suit_icon/tributary.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-trade-route {
     background-image: url("/suit_icon/trade_route.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-suit-gadget {
     background-image: url("/suit_icon/gadget.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-city {
     background-image: url("/card_type_icon/city.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-knight {
     background-image: url("/card_type_icon/knight.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-mask {
     background-image: url("/card_type_icon/mask.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-merchant {
     background-image: url("/card_type_icon/merchant.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-metropolis {
     background-image: url("/card_type_icon/metropolis.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-miracle {
     background-image: url("/card_type_icon/miracle.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-scroll {
     background-image: url("/card_type_icon/scroll.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-fertile {
     background-image: url("/card_type_icon/fertile.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-hunt {
     background-image: url("/card_type_icon/hunt.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-ocean {
     background-image: url("/card_type_icon/ocean.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-production {
     background-image: url("/card_type_icon/production.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
 .card-text-icon.card-text-icon-type-river {
     background-image: url("/card_type_icon/river.png");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-resource-population {
+.card-text-icon.card-text-icon-resource-population {
     background-image: url("/resource/population.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-resource-material {
+.card-text-icon.card-text-icon-resource-material {
     background-image: url("/resource/material.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-resource-progress {
+.card-text-icon.card-text-icon-resource-progress {
     background-image: url("/resource/progress.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-resource-goods {
+.card-text-icon.card-text-icon-resource-goods {
     background-image: url("/resource/goods.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-resource-action {
+.card-text-icon.card-text-icon-resource-action {
     background-image: url("/resource/action.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-resource-exhaust {
+.card-text-icon.card-text-icon-resource-exhaust {
     background-image: url("/resource/exhaust.svg");
-    height: 1.2em;
-    width: 1.2em;
-    background-size: 1.2em 1.2em;
 }
 
-.card-text-icon-vp-variable {
+.card-text-icon.card-text-icon-vp-variable {
     background-image: url("/vp_icon/victory_point_variable.svg");
-    height: 1.4em;
-    width: 1.4em;
-    background-size: 1.4em 1.4em;
 }

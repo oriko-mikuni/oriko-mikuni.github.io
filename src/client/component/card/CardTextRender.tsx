@@ -9,8 +9,9 @@ function getClasses(italic: boolean, bold: boolean): string {
     return classes.join(" ");
 }
 
-function CardTextRender({text}: {
-    text?: string
+function CardTextRender({text, minimize = false}: {
+    text?: string,
+    minimize?: boolean
 }) : React.JSX.Element | null {
     if (text === undefined) {
         return null;
@@ -36,7 +37,7 @@ function CardTextRender({text}: {
         let bold: boolean = false;
         if (muteNextPart) muteNextPart = false;
         else if (part === '\\') {muteNextPart = true; return <span key={index}></span>}
-        else if (iconRender) return <CardRenderIconComponents iconName={iconRender} key={index}/>;
+        else if (iconRender) return <CardRenderIconComponents iconName={iconRender} key={index} minimize={minimize}/>;
         else if (part === '\n') return <br key={index}/>;
         else if (part.match(/\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*/g)) {
             if (part.match(/\[[^\[\]]+]/g)) {

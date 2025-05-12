@@ -9,7 +9,7 @@ export class RoadBuilding extends Card implements ICard {
     constructor() {
         super({
             name: CardName.ROAD_BUILDING,
-            suit: [CardSuitIcon.UNCIVILISED,CardSuitIcon.UNCIVILISED],
+            suit: [CardSuitIcon.UNCIVILISED,CardSuitIcon.CIVILISED],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.PINNED,

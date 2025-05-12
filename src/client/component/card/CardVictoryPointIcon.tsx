@@ -3,8 +3,8 @@ import React from "react";
 import './styles/CardVictoryPoints.css';
 
 function CardVictoryPointIcon(
-    {victoryPoints}:
-    {victoryPoints: VictoryPoints}
+    {victoryPoints, size = "25px"}:
+    {victoryPoints: VictoryPoints, size?: string}
 ): React.JSX.Element {
     const classes: Array<string> = ['card-victory-point-icon'];
     let victoryPointNumber: string;
@@ -12,7 +12,6 @@ function CardVictoryPointIcon(
     switch (victoryPoints) {
         case 'negativeConditional':
             classes.push('card-victory-point-negative');
-            classes.push('card-victory-point-conditional');
             victoryPointNumber = "-?";
             break;
         case 'variable':
@@ -21,16 +20,20 @@ function CardVictoryPointIcon(
             break;
         case 'conditional':
             classes.push('card-victory-point-positive');
-            classes.push('card-victory-point-conditional');
             victoryPointNumber = "?";
             break;
         default:
             classes.push(victoryPoints < 0 ? 'card-victory-point-negative' : 'card-victory-point-positive');
-            classes.push('card-victory-point-number');
             victoryPointNumber = victoryPoints.toString();
     }
 
-    return <div className={classes.join(' ')}>{victoryPointNumber}</div>;
+    const style: React.CSSProperties & Record<string, string> = {
+        "--size": size
+    }
+
+    return <div className={classes.join(' ')} style={style}>
+        {victoryPointNumber}
+    </div>;
 }
 
 export default CardVictoryPointIcon;

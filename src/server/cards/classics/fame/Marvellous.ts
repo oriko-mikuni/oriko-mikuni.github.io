@@ -12,7 +12,7 @@ export class Marvellous extends Card implements ICard {
             typeIcon: [],
             cardNumber: "1FAM4",
             effectText: [
-                "Free play. Draw the top card of your deck if able and choose: discard it OR return it to the top OR put it in into your history."
+                "Free play. Draw the top card of your deck if able and choose: discard it OR return it to the top OR put it into your history."
             ],
             victoryPoints: 9,
         })

@@ -1,9 +1,6 @@
 .card-victory-point-icon {
-    width: 25px;
-    height: 25px;
-    font-size: 20px;
-    line-height: 25px;
-    text-align: center;
+    --size: 25px;
+    display: inline-block;
 }
 
 .card-victory-point-icon-bottom-right {
@@ -13,20 +10,35 @@
 }
 
 .card-victory-point-positive {
+    width: var(--size);
+    height: var(--size);
+    font-size: calc(var(--size) * 0.8);
+    line-height: var(--size);
+    text-align: center;
     background-image: url("/vp_icon/victory_point.svg");
-    background-size: 25px 25px;
+    background-size: var(--size) var(--size);
     color: black;
 }
 
 .card-victory-point-variable {
+    width: var(--size);
+    height: var(--size);
+    font-size: calc(var(--size) * 0.8);
+    line-height: var(--size);
+    text-align: center;
     background-image: url("/vp_icon/victory_point_variable.svg");
-    background-size: 25px 25px;
+    background-size: var(--size) var(--size);
     color: #00000000;
 }
 
 .card-victory-point-negative {
+    width: var(--size);
+    height: var(--size);
+    font-size: calc(var(--size) * 0.8);
+    line-height: var(--size);
+    text-align: center;
     background-image: url("/vp_icon/victory_point_negative.svg");
-    background-size: 25px 25px;
+    background-size: var(--size) var(--size);
     color: red;
 }
 

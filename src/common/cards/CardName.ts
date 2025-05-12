@@ -1,3 +1,5 @@
+import React from "react";
+
 export enum CardName {
     // default
     DEFAULT = "card_name.default",
@@ -1214,4 +1216,36 @@ export function getCardName(value: string): CardName | undefined {
 
 export function isCardName(value: string): value is CardName {
     return getCardName(value) !== undefined;
+}
+
+
+const customCardTitleColours: Record<string, React.CSSProperties> = {
+    // standard state
+    [CardName.BARBARIAN0]: {color: "white", backgroundColor: "#b21e1c"},
+    [CardName.EMPIRE0]: {color: "white", backgroundColor: "#5082b5"},
+    [CardName.BARBARIAN1]: {color: "white", backgroundColor: "#b21e1c"},
+    [CardName.EMPIRE1]: {color: "white", backgroundColor: "#5082b5"},
+    [CardName.BARBARIAN2]: {color: "white", backgroundColor: "#b21e1c"},
+    [CardName.EMPIRE2]: {color: "white", backgroundColor: "#5082b5"},
+    [CardName.BARBARIAN3]: {color: "white", backgroundColor: "#b21e1c"},
+    [CardName.EMPIRE3]: {color: "white", backgroundColor: "#5082b5"},
+    // Taino
+    [CardName.FREE_TRIBES]: {color: "white", backgroundColor: "#b21e1c"},
+    [CardName.FREE_TRIBES_F]: {color: "white", backgroundColor: "#b21e1c"},
+    // Inuit
+    [CardName.SUMMER_INU]: {color: "white", backgroundColor: "#d9cf89"},
+    [CardName.WINTER_INU]: {color: "white", backgroundColor: "#91c6e8"},
+    // Martians
+    [CardName.ALIEN]: {color: "white", backgroundColor: "#5082b5"},
+    [CardName.GONE_NATIVE]: {color: "white", backgroundColor: "#b21e1c"},
+    // Polynesians
+    [CardName.ISLE_BOUND]: {color: "white", backgroundColor: "#e6b12d"},
+    [CardName.VOYAGING]: {color: "white", backgroundColor: "#294a59"},
+    // Cultists
+    [CardName.CORRUPTED_CUL]: {color: "white", backgroundColor: "#973335"},
+    [CardName.SUMMONED_CUL]: {color: "white", backgroundColor: "#48354b"}
+};
+
+export function getCustomCardTitleColour(name: string): React.CSSProperties | undefined {
+    return customCardTitleColours[name];
 }

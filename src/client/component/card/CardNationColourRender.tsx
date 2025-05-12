@@ -27,7 +27,11 @@ const CardNationColourShapeContainerStyle: Readonly<Record<CardNationColourDispl
         display: "inline-block",
         width: "1em",
         height: "1em",
-        backgroundSize: "1em"
+        backgroundSize: "1em",
+        verticalAlign: "middle",
+        borderColor: "white",
+        borderWidth: "1px",
+        borderStyle: "solid",
     }
 }
 
@@ -36,7 +40,14 @@ const CardLocationDisplayShape: Record<CardNationColourDisplayShape, string> = {
     [CardNationColourDisplayShape.SQUARE]: "card-inline-square-location",
 }
 
-function CardNationColourRender({nationColour, location, shape, nationColourImageFile, diy = false}: {
+function CardNationColourRender
+({
+    nationColour,
+    location,
+    shape,
+    nationColourImageFile,
+    diy = false
+}: {
     nationColour?: CardNationColour,
     location: CardStartingLocation,
     shape: CardNationColourDisplayShape,
@@ -45,7 +56,7 @@ function CardNationColourRender({nationColour, location, shape, nationColourImag
 }): React.JSX.Element | null {
     const displayBackground: React.CSSProperties = getNationBackgroundStyle(nationColour);
     const locationColour: string = getNationTextColour(nationColour);
-    const containerShapeStyle: React.CSSProperties = CardNationColourShapeContainerStyle[shape];
+    const containerShapeStyle: React.CSSProperties = {...CardNationColourShapeContainerStyle[shape]};
 
     let displayNationColourElement: React.JSX.Element;
 
@@ -76,7 +87,7 @@ function CardNationColourRender({nationColour, location, shape, nationColourImag
             width: "1em",
             height: "1em",
             backgroundSize: "1em",
-            position: "absolute",
+            position: "relative",
         }}/>;
     }
 

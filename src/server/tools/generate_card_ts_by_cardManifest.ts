@@ -30,4 +30,4 @@ class CardTsFileGenerator {
     }
 }
 
-// CardTsFileGenerator.makeTsFile('src/server/cards/sassanids/');
+CardTsFileGenerator.makeTsFile('src/server/cards/sassanids/');

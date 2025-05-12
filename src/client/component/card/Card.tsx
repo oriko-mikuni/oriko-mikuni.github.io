@@ -38,7 +38,6 @@ function Card(
         banner={card.suit.at(0)}
         key="cardTitle"
         diy={card.gameModule === GameModule.DEFAULT}
-        isState={card.cardInPlayType === CardInPlayType.STATE}
         exhaustCount={card.exhaustCount}
     />);
 

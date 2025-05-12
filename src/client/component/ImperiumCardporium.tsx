@@ -133,12 +133,22 @@ function ImperiumCardporium(): React.JSX.Element {
             </label>
         </span>;
 
+    const minimizeCardsToggle: React.JSX.Element =
+        <span style={{display: "flex", fontSize: "15px", alignItems: "center"}}>
+            <label>
+                {uiTranslation("minimizeCardDisplay")}
+                <CheckBox size="30px" checked={state.minimizeCard}
+                          onChange={check => dispatch(CardporiumDisplayState.toggleMinimizeCards(check))}/>
+            </label>
+        </span>;
+
     return <div className="ImperiumCardporium">
         <div className="ImperiumCardporium_sidebar">
             <button onClick={() => navigate("/")}>{uiTranslation("backToHomepage")}</button> <br/>
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{uiTranslation("toFeedback")}</a>
             <h2 className="centerAlign">{uiTranslation("gameContents")}</h2> {horizonsUpdateToggle}
             <h2 className="centerAlign">{uiTranslation("NationOrCommon")}</h2> {gameModuleFilterButtons}
+            <h2 className="centerAlign">{uiTranslation("cardDisplaySettings")}</h2> {minimizeCardsToggle}
             <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("SuitIcon")}</h2> {suitFilterButtons}
             <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("TypeIcon")}</h2> {typeIconFilterButtons}
             <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("HeaderIcon")}</h2> {headerIconFilterButtons}
@@ -151,6 +161,7 @@ function ImperiumCardporium(): React.JSX.Element {
             <CardGroup
                 cards={state.getCards()}
                 filter={allFilter}
+                minimize={state.minimizeCard}
                 onClickACard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
             />
         </div>

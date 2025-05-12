@@ -4,11 +4,13 @@ import Card from "./card/Card.tsx";
 import "./card/styles/CardBox.css";
 import "./CardGroup.css"
 import {useTranslation} from "react-i18next";
+import CardItemInList from "./card/CardItemInList.tsx";
 
-function CardGroup({cards, filter, onClickACard}: {
+function CardGroup({cards, filter, onClickACard, minimize}: {
     cards: Array<ClientCard>,
     filter: (arg0: Array<ClientCard>) => Array<ClientCard>,
-    onClickACard?: (arg0: ClientCard) => void
+    onClickACard?: (arg0: ClientCard) => void,
+    minimize: boolean,
 }): React.JSX.Element {
     const filteredCards: Array<ClientCard> = filter(cards);
     const {t} = useTranslation("ui", {keyPrefix: "CardGroup"});
@@ -24,7 +26,9 @@ function CardGroup({cards, filter, onClickACard}: {
         <div className="cardList">{
             filteredCards.map((card: ClientCard, idx: number): React.JSX.Element =>
                 <div className="cardBox" key={idx}>
-                    <Card card={card} onClick={onClickACard === undefined ? undefined : () => onClickACard(card)}/>
+                    {minimize || <Card card={card} onClick={onClickACard === undefined ? undefined : () => onClickACard(card)}/>}
+                    {minimize && <CardItemInList card={card}
+                                     onClick={onClickACard === undefined ? undefined : () => onClickACard(card)}/>}
                 </div>
             )
         }</div>;
