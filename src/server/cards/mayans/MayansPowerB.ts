@@ -7,12 +7,13 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {isInPlayLocation, LocatedCard, Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
+import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 
 export class MayansPowerB extends Card implements ICard {
     constructor() {
         super({
             name: CardName.MAYANS_POWER_B,
-            suit: [],
+            suit: [CardSuitIcon.POWER],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_B,

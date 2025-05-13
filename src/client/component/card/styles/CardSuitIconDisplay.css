@@ -2,6 +2,7 @@
     height: 30px;
     width: 30px;
     background-size: 30px;
+    border-radius: 15px;
     object-fit: cover;
 }
 
@@ -9,6 +10,7 @@
     height: 50px;
     width: 50px;
     background-size: 50px;
+    border-radius: 25px;
     object-fit: cover;
 }
 

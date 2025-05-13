@@ -18,7 +18,7 @@ const nationColourFileName: Partial<Record<CardNationColour, string>> = {
 }
 
 class NationColourImageManifest {
-    public static nationColourFile: Partial<Record<CardNationColour, string>> = {};
+    public static nationColourFile: Partial<Record<CardNationColour, Blob>> = {};
     public static initialize(): void {
         for (const colour of Object.values(CardNationColour)) {
             const imagePath: string | undefined = nationColourFileName[colour];
@@ -31,21 +31,16 @@ class NationColourImageManifest {
                     return res.blob();
                 })
                 .then((blob: Blob): void => {
-                    const fr: FileReader = new FileReader();
-                    fr.onloadend = (): void => {
-                        NationColourImageManifest.nationColourFile[colour]
-                            = fr.result as string;
-                    }
-                    fr.readAsDataURL(blob);
+                    NationColourImageManifest.nationColourFile[colour] = blob;
                 })
                 .catch(err => console.error("fetch error: " + err));
         }
     }
 }
 
-export function getNationColourFile(colour?: CardNationColour): string {
-    if (colour === undefined) return "";
-    return NationColourImageManifest.nationColourFile[colour] ?? "";
+export function getNationColourFile(colour?: CardNationColour): Blob | null {
+    if (colour === undefined) return null;
+    return NationColourImageManifest.nationColourFile[colour] ?? null;
 }
 
 NationColourImageManifest.initialize();

@@ -1,11 +1,9 @@
 import React from "react";
-import {CardNationColour} from "../../../common/cards/CardNationColour.ts";
-import {getNationColourFile} from "../../cards/NationColourImageManifest.ts";
 
-function CardNationColourCustomImage({file, nationColour}: {
-    file?: File,
-    nationColour?: CardNationColour
-}): React.JSX.Element {
+function CardNationColourCustomImage(
+    {file}:
+    {file: Blob}
+): React.JSX.Element {
     const canvasRef: React.RefObject<HTMLCanvasElement | null> =
         React.useRef<HTMLCanvasElement>(null);
     const size: number = 45;
@@ -45,15 +43,11 @@ function CardNationColourCustomImage({file, nationColour}: {
             ctx.restore();
         }
 
-        if (file !== undefined) {
-            const reader = new FileReader();
-            reader.onload = (): void => {
-                img.src = reader.result as string;
-            }
-            reader.readAsDataURL(file);
-        } else {
-            img.src = getNationColourFile(nationColour) as string;
+        const reader = new FileReader();
+        reader.onload = (): void => {
+            img.src = reader.result as string;
         }
+        reader.readAsDataURL(file);
     });
 
     return <canvas ref={canvasRef} width={45} height={45}/>;

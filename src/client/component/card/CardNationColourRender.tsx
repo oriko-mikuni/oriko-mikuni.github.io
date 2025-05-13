@@ -7,6 +7,7 @@ import './styles/CardNationColour.css';
 import React from "react";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation.ts";
 import CardNationColourCustomImage from "./CardNationColourCustomImage.tsx";
+import {getNationColourFile} from "../../cards/NationColourImageManifest.ts";
 
 export enum CardNationColourDisplayShape {
     TRIANGLE = "card-nation-colour-triangle",
@@ -24,6 +25,7 @@ const CardNationColourShapeContainerStyle: Readonly<Record<CardNationColourDispl
         backgroundClip: "padding-box",
         borderBottomLeftRadius: "inherit"},
     [CardNationColourDisplayShape.SQUARE]: {
+        position: "relative",
         display: "inline-block",
         width: "1em",
         height: "1em",
@@ -62,16 +64,10 @@ function CardNationColourRender
 
     if (shape === CardNationColourDisplayShape.TRIANGLE) {
         if (diy) {
-            if (displayBackground.backgroundImage || nationColourImageFile) {
-                displayNationColourElement =
-                    <CardNationColourCustomImage nationColour={nationColour} file={nationColourImageFile}/>;
-            } else if (displayBackground.backgroundColor) {
-                displayNationColourElement = <svg width={45} height={45}>
-                    <polygon points="0,0 45,45 0,45" fill={displayBackground.backgroundColor}/>
-                </svg>;
-            } else {
-                displayNationColourElement = <></>;
-            }
+            const blob: Blob | null = nationColourImageFile ?? getNationColourFile(nationColour);
+            displayNationColourElement = blob !== null
+                ? <CardNationColourCustomImage file={blob}/>
+                : <svg width={45} height={45}><polygon points="0,0 45,45 0,45" fill={displayBackground.backgroundColor ?? "#00000000"}/></svg>;
         } else {
             displayNationColourElement = <div style={{
                 ...displayBackground,
@@ -87,15 +83,24 @@ function CardNationColourRender
             width: "1em",
             height: "1em",
             backgroundSize: "1em",
-            position: "relative",
+            position: "absolute",
         }}/>;
+        if (nationColour === undefined || nationColour === CardNationColour.COMMON_B || nationColour === CardNationColour.COMMON) {
+            containerShapeStyle.borderWidth = undefined;
+            containerShapeStyle.borderColor = undefined;
+            containerShapeStyle.borderStyle = undefined;
+        }
     }
 
     const locationDisplayStyleClass: string = CardLocationDisplayShape[shape];
+
+    const displayStartingLocationElement: React.JSX.Element | null =
+        location === CardStartingLocation.DEFAULT ? null :
+            <div className={`${locationDisplayStyleClass} card-location-${locationColour} card-location-${location}`}/>;
+
     return <div style={containerShapeStyle}>
         {displayNationColourElement}
-        {location === CardStartingLocation.DEFAULT ? null :
-            <div className={`${locationDisplayStyleClass} card-location-${locationColour} card-location-${location}`}/>}
+        {displayStartingLocationElement}
     </div>;
 }
 

@@ -5,12 +5,13 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 
 export class MayansPowerA extends Card implements ICard {
     constructor() {
         super({
             name: CardName.MAYANS_POWER_A,
-            suit: [],
+            suit: [CardSuitIcon.POWER],
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_A,
