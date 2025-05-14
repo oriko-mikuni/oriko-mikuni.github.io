@@ -1,4 +1,5 @@
 # oriko-mikuni.github.io
+<div align="center">
 <img src="https://github.com/oriko-mikuni/oriko-mikuni.github.io/raw/main/public/suit_icon/powerR.png" height="50" alt="power">
 <img src="https://github.com/oriko-mikuni/oriko-mikuni.github.io/raw/main/public/suit_icon/fameR.png" height="50" alt="fame">
 <img src="https://github.com/oriko-mikuni/oriko-mikuni.github.io/raw/main/public/suit_icon/uncivilisedR.png" height="50" alt="uncivilised">
@@ -8,7 +9,7 @@
 <img src="https://github.com/oriko-mikuni/oriko-mikuni.github.io/raw/main/public/suit_icon/unrestR.png" height="50" alt="unrest">
 <img src="https://github.com/oriko-mikuni/oriko-mikuni.github.io/raw/main/public/suit_icon/trade_routeR.png" height="50" alt="trade_route">
 <img src="https://github.com/oriko-mikuni/oriko-mikuni.github.io/raw/main/public/suit_icon/gadgetR.png" height="50" alt="gadget">
-
+</div>
 This is a webpage of the great card game Imperium
 **[Classics](https://www.ospreypublishing.com/uk/imperium-classics-9781472844743/)**,
 **[Legends](https://www.ospreypublishing.com/uk/imperium-legends-9781472844750/)** and
