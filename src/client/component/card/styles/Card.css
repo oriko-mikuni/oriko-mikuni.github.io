@@ -27,15 +27,16 @@
 }
 
 .filterDiv:not(.state-card):not(.power-card):not(.permanent-card){
-    background-image: linear-gradient(
-            to bottom right,
-            #805020,
-            #508020,
-            #208050,
-            #205080,
-            #502080,
-            #508020
-    );
+    background-image: url("/images/card_illust_placeholder.png");
+    /*background-image: linear-gradient(*/
+    /*        to bottom right,*/
+    /*        #805020,*/
+    /*        #508020,*/
+    /*        #208050,*/
+    /*        #205080,*/
+    /*        #502080,*/
+    /*        #508020*/
+    /*);*/
 }
 
 .filterDiv.card-reactive {
