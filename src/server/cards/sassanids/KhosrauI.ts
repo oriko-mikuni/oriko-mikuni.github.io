@@ -22,6 +22,12 @@ export class KhosrauI extends Card implements ICard {
                 CardEffectReuse.selfHistory
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.ARDASHIR_I,
+                CardName.ATAR,
+                CardName.ZOROASTRIANISM,
+                CardName.ABAN
+            ]
         });
     }
 }

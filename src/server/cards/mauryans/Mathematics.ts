@@ -28,7 +28,10 @@ export class Mathematics extends Card implements ICard {
             ],
             developmentCost: {material: 4, population: 1},
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {pinned} in play, excluding {region}"
+            victoryPointsString: "1VP per {pinned} in play, excluding {region}",
+            relatedCards: [
+                CardName.ADVANCE_MAU
+            ]
         });
     }
 

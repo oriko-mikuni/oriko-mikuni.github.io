@@ -24,6 +24,9 @@ export class Kleito extends Card implements ICard {
             ],
             developmentCost: {progress: 2, material: 3},
             victoryPoints: 3,
+            relatedCards: [
+                CardName.PALACE_OF_POSEIDON
+            ]
         });
     }
 }

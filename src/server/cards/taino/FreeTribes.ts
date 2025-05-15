@@ -21,6 +21,9 @@ export class FreeTribes extends Card implements ICard {
             ],
             keywords: [
                 KeywordNames.freeTribes
+            ],
+            relatedCards: [
+                CardName.FREE_TRIBES_F
             ]
         });
     }

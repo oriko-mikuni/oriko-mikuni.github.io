@@ -30,6 +30,9 @@ export class WoodBlockPrinting extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {trade-route}",
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_TAN
+            ]
         });
     }
 

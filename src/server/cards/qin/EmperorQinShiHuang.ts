@@ -22,6 +22,10 @@ export class EmperorQinShiHuang extends Card implements ICard {
                 CardEffectReuse.selfHistory
             ],
             developmentCost: {material: 3, population: 2},
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_QIN,
+                CardName.KING_WU_OF_QIN
+            ]
         });
     }
 }

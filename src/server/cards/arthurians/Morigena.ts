@@ -20,7 +20,10 @@ export class Morigena extends Card implements ICard {
                 "You MAY abandon a {region} with garrisoned [Myrddin Wyllt] to put both the active quest and the top card of your nation deck in your discard pile."
             ],
             victoryPoints: 'conditional',
-            victoryPointsString: "2VP if in history"
+            victoryPointsString: "2VP if in history",
+            relatedCards: [
+                CardName.MYRDDIN_WYLLT_MERLIN
+            ]
         });
     }
 

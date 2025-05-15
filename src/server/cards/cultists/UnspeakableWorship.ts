@@ -22,6 +22,9 @@ export class UnspeakableWorship extends Card implements ICard {
                 "Exhaust: choose: gain 1 action OR recall a {pinned}.",
                 "Solstice: choose: pay 3{material} OR abandon this card."
             ],
+            relatedCards: [
+                CardName.UNHOLY_SHRINE
+            ]
         });
     }
 }

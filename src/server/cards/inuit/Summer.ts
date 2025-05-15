@@ -21,6 +21,9 @@ export class Summer extends Card implements ICard {
                 "You cannot play nor develop {barbarian} cards.",
                 "Decrease your hand size by 2 (except during setup)."
             ],
+            relatedCards: [
+                CardName.WINTER_INU
+            ]
         });
     }
 }

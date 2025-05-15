@@ -25,6 +25,10 @@ export class Shah extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {fame}",
+            relatedCards: [
+                CardName.KOK_A,
+                CardName.KOK_B
+            ]
         });
     }
 

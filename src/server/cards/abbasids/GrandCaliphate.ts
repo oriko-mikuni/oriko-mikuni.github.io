@@ -25,6 +25,9 @@ export class GrandCaliphate extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'conditional',
             victoryPointsString: "3VP if in history",
+            relatedCards: [
+                CardName.AL_MA_MUN
+            ]
         });
     }
 

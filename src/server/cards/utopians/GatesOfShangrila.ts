@@ -21,6 +21,9 @@ export class GatesOfShangrila extends Card implements ICard {
                 "Exhaust: put a card into your history to gain 1{progress}.",
                 "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR draw a card."
             ],
+            relatedCards: [
+                CardName.SHANGRILA
+            ]
         });
     }
 }

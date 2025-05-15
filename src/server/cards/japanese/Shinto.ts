@@ -20,6 +20,9 @@ export class Shinto extends Card implements ICard {
                 "If {barbarian}, abandon [Tendai Buddhism].",
                 "Exhaust: when you play a {uncivilised}/{civilised}, exhaust this card to gain 1{population} and draw 2 cards."
             ],
+            relatedCards: [
+                CardName.TENDAI_BUDDHISM
+            ]
         });
     }
 }

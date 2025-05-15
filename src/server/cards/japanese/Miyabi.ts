@@ -21,7 +21,10 @@ export class Miyabi extends Card implements ICard {
             ],
             developmentCost: {goods: 2, population: 1},
             victoryPoints: 2,
-            victoryPointsString: "Return up to 2 {unrest} before scoring"
+            victoryPointsString: "Return up to 2 {unrest} before scoring",
+            relatedCards: [
+                CardName.APPEAL_TO_CHINA
+            ]
         });
     }
 }

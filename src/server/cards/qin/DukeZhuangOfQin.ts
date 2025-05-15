@@ -19,6 +19,9 @@ export class DukeZhuangOfQin extends Card implements ICard {
                 "Return up to 2 {unrest} from your hand or discard pile. Break through for {region}/{tributary}.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_QIN
+            ]
         });
     }
 }

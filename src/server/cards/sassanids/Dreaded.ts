@@ -27,6 +27,10 @@ export class Dreaded extends Card implements ICard {
             developmentCost: {material: 2, population: 3},
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 2,
+            relatedCards: [
+                CardName.KOK_A,
+                CardName.KOK_B
+            ]
         });
     }
 }

@@ -25,6 +25,9 @@ export class EdictsOfAshoka extends Card implements ICard {
             ],
             developmentCost: {material: 4},
             victoryPoints: 3,
+            relatedCards: [
+                CardName.ASHOKA
+            ]
         });
     }
 }

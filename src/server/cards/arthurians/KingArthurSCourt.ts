@@ -28,6 +28,9 @@ export class KingArthurSCourt extends Card implements ICard {
             victoryPointsString: "1VP per {civilised}",
             keywords: [
                 KeywordNames.doNotScoreActiveQuest
+            ],
+            relatedCards: [
+                CardName.CITY_OF_CAMELOT
             ]
         });
     }

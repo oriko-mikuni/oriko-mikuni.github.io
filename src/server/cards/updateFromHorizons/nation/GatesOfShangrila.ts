@@ -22,7 +22,10 @@ export class GatesOfShangrila extends Card implements ICard {
                 "Exhaust: put a card from your hand into your history to move 3{material} here.",
                 "Solstice: all other players MAY draw a card. Choose: draw a card and gain 2{material} OR move 1{material} here OR pay all {material} from here (minimum 12) to flip this card."
             ],
-            gameModule: GameModule.UTOPIANS
+            gameModule: GameModule.UTOPIANS,
+            relatedCards: [
+                CardName.SHANGRILA_NEW
+            ]
         });
     }
 }

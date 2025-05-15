@@ -25,6 +25,10 @@ export class CompanionCavalry extends Card implements ICard {
             ],
             developmentCost: {population: 3},
             victoryPoints: 3,
+            relatedCards: [
+                CardName.CONQUER_MAC,
+                CardName.CONQUER_MAC1
+            ]
         });
     }
 }

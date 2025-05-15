@@ -23,6 +23,9 @@ export class AlexanderTheGreat extends Card implements ICard {
             ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 4,
+            relatedCards: [
+                CardName.ALEXANDER
+            ]
         });
     }
 }

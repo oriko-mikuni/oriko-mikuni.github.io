@@ -21,6 +21,10 @@ export class Summoned extends Card implements ICard {
                 "For each card exiled this way, draw a card and choose: return a {unrest} OR gain 1{progress}."
             ],
             victoryPoints: 5,
+            relatedCards: [
+                CardName.DARK_RITUAL,
+                CardName.STRANGE_SIGNS
+            ]
         });
     }
 }

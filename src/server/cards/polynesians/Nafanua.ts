@@ -22,6 +22,9 @@ export class Nafanua extends Card implements ICard {
             ],
             victoryPoints: 'conditional',
             victoryPointsString: "1VP if in legends",
+            relatedCards: [
+                CardName.OVERPOPULATION
+            ]
         });
     }
 

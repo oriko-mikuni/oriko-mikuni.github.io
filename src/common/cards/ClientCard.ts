@@ -8,6 +8,7 @@ import {CardExpansion} from './CardExpansion';
 import {Units} from "../Units";
 import {GameModule} from "./GameModule";
 import {CardInPlayType} from "./CardInPlayType";
+import {CardName} from "./CardName";
 
 export type VictoryPoints = number | 'conditional' | 'variable' | 'negativeConditional';
 
@@ -32,7 +33,8 @@ export type ClientCard = {
   victoryPoints: VictoryPoints;
   victoryPointsString?: string;
   gameModule: GameModule;
-  keywords?: Array<string>;
+  keywords: Array<string>;
+  relatedCards: Array<CardName>;
   illustration?: string;
   exhaustCount?: number;
 }

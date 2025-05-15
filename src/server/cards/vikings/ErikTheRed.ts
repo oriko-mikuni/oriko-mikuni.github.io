@@ -18,6 +18,9 @@ export class ErikTheRed extends Card implements ICard {
                 "Abandon [Scandinavia] and pay 1{population} to find a {region} and add it to your hand.",
                 CardEffectReuse.selfExile
             ],
+            relatedCards: [
+                CardName.SCANDINAVIA
+            ]
         });
     }
 }

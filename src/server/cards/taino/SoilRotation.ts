@@ -18,6 +18,10 @@ export class SoilRotation extends Card implements ICard {
                 "Pay 2{material}. Each {fertile} you have in play counts as {production} for the rest of this turn.",
                 "Choose: draw a {region} from your discard pile OR free play a {region}."
             ],
+            relatedCards: [
+                CardName.MIGRATION,
+                CardName.SOL_DE_JAYUYA
+            ]
         });
     }
 }

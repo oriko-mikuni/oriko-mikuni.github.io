@@ -26,6 +26,9 @@ export class Kayaks extends Card implements ICard {
             developmentCostString: [
                 ", OR free if [Imaq (Arctic Sea)] is in play"
             ],
+            relatedCards: [
+                CardName.IMAQ_ARCTIC_SEA
+            ]
         });
     }
 }

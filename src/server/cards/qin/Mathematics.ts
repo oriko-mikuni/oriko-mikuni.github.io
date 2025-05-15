@@ -26,6 +26,9 @@ export class Mathematics extends Card implements ICard {
             ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 2,
+            relatedCards: [
+                CardName.ADVANCE_QIN
+            ]
         });
     }
 }

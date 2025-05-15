@@ -33,6 +33,7 @@ export interface Properties {
     victoryPointsString?: string;
     gameModule?: GameModule;
     keywords?: Array<KeywordNames>;
+    relatedCards?: Array<CardName>;
     exhaustCount?: number;
 }
 
@@ -106,6 +107,9 @@ export abstract class Card {
     }
     public get exhaustCount(): number | undefined {
         return this.properties.exhaustCount;
+    }
+    public get relatedCards(): Array<CardName> | undefined {
+        return this.properties.relatedCards;
     }
 
     public canPlayAsAction(player: Player) {

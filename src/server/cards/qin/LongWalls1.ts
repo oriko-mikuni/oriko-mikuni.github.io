@@ -24,7 +24,12 @@ export class LongWalls1 extends Card implements ICard {
                 "Passive: reduce the cost in {material} to play an {unrest} by 2 (to a minimum of 1)."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per [Long Walls] in play"
+            victoryPointsString: "1VP per [Long Walls] in play",
+            relatedCards: [
+                CardName.LONG_WALLS_II,
+                CardName.LONG_WALLS_III,
+                CardName.LONG_WALLS_IV
+            ]
         });
     }
 

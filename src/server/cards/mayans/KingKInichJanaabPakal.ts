@@ -20,6 +20,9 @@ export class KingKInichJanaabPakal extends Card implements ICard {
                 "Acquire a " + CardEffectReuse.fourSuits + "/{trade-route} up to 2 times.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.PALENQUE
+            ]
         });
     }
 }

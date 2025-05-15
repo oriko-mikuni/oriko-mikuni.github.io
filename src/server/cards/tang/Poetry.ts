@@ -22,6 +22,9 @@ export class Poetry extends Card implements ICard {
                 "If [Yu Xuanji] is in your history, gain 1{progress}."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.YU_XUANJI
+            ]
         });
     }
 }

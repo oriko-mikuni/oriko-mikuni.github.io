@@ -26,6 +26,9 @@ export class KumaraSweetPotato extends Card implements ICard {
             ],
             victoryPoints: 'negativeConditional',
             victoryPointsString: "-2VP if in legends",
+            relatedCards: [
+                CardName.ISLANDER_PROSPERITY
+            ]
         });
     }
 

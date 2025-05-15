@@ -26,6 +26,9 @@ export class Legions extends Card implements ICard {
             ],
             developmentCost: {population: 3},
             victoryPoints: 2,
+            relatedCards: [
+                CardName.CONQUER_ROM
+            ]
         });
     }
 }

@@ -29,6 +29,9 @@ export class ChandraguptaII extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {civilised}",
+            relatedCards: [
+                CardName.CHANDRAGUPTA_I
+            ]
         });
     }
 

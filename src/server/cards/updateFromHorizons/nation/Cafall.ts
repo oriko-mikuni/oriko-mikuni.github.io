@@ -21,7 +21,10 @@ export class Cafall extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {hunt}",
-            gameModule: GameModule.ARTHURIANS
+            gameModule: GameModule.ARTHURIANS,
+            relatedCards: [
+                CardName.TWRCH_TRWYTH
+            ]
         });
     }
 

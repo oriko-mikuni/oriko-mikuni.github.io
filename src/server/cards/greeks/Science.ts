@@ -26,6 +26,9 @@ export class Science extends Card implements ICard {
             ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 3,
+            relatedCards: [
+                CardName.ADVANCE_GRE
+            ]
         });
     }
 }

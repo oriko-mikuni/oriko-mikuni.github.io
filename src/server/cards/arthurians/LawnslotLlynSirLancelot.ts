@@ -22,6 +22,9 @@ export class LawnslotLlynSirLancelot extends Card implements ICard {
                 CardEffectReuse.selfExile
             ],
             victoryPoints: 2,
+            relatedCards: [
+                CardName.GUENNUVAR
+            ]
         });
     }
 }

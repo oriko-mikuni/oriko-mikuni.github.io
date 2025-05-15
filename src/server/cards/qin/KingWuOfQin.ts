@@ -24,7 +24,11 @@ export class KingWuOfQin extends Card implements ICard {
             ],
             developmentCost: {material: 3, population: 2},
             victoryPoints: 'conditional',
-            victoryPointsString: "2VP if in history"
+            victoryPointsString: "2VP if in history",
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_QIN,
+                CardName.DUKE_ZHUANG_OF_QIN
+            ]
         });
     }
 

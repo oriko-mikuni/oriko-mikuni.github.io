@@ -23,7 +23,10 @@ export class RomansPowerA extends Card implements ICard {
                 "Passive: whenever you look at any number of cards from the {fame} deck, look at one additional card, then gain 1{progress}."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per 4{population}"
+            victoryPointsString: "1VP per 4{population}",
+            relatedCards: [
+                CardName.GLORY_ROM
+            ]
         });
     }
 

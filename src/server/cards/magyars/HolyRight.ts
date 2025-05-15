@@ -25,6 +25,10 @@ export class HolyRight extends Card implements ICard {
                 "[Saint Stephen I] and [Conversion to Christianity] must both be in your history."
             ],
             victoryPoints: 8,
+            relatedCards: [
+                CardName.SAINT_STEPHEN_I,
+                CardName.CONVERSION_TO_CHRISTIANITY_MAG
+            ]
         });
     }
 }

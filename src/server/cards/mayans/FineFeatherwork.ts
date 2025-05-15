@@ -22,6 +22,11 @@ export class FineFeatherwork extends Card implements ICard {
                 "Exhaust: you MAY put a {mask} from your hand or discard pile into your history.",
                 "If you do, you MAY develop a [Headpiece] and add it to your hand."
             ],
+            relatedCards: [
+                CardName.HEADPIECE,
+                CardName.HEADPIECE1,
+                CardName.HEADPIECE2
+            ]
         });
     }
 }

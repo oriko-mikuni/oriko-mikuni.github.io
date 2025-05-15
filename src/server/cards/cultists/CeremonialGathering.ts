@@ -22,6 +22,9 @@ export class CeremonialGathering extends Card implements ICard {
                 "Passive: when you gain {population}, add it here.",
                 "Solstice: choose: remove all {population} here (minimum 15) to flip this card OR draw a card from your discard pile."
             ],
+            relatedCards: [
+                CardName.CEREMONY_OF_THE_KEY
+            ]
         });
     }
 }

@@ -24,6 +24,9 @@ export class Arpad extends Card implements ICard {
                 "All players abandon a {region} with garrisoned card(s). Those that cannot must take a {unrest}.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.ALMOS
+            ]
         });
     }
 }

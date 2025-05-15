@@ -24,7 +24,10 @@ export class MacedoniansPowerA extends Card implements ICard {
                 "Passive: when you play a {region} from your discard pile, gain 2{material}."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per 2 {region}"
+            victoryPointsString: "1VP per 2 {region}",
+            relatedCards: [
+                CardName.PHALANX
+            ]
         });
     }
 

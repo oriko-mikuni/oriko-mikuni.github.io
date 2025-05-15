@@ -20,6 +20,9 @@ export class ResearchTheCeremony extends Card implements ICard {
                 "Exhaust: move 1 of your {progress} here.",
                 "Solstice: choose: remove all {progress} (minimum 5) on this card to flip it OR take a {unrest} to add 1{progress} to this card."
             ],
+            relatedCards: [
+                CardName.PREPARE_THE_CEREMONY
+            ]
         });
     }
 }

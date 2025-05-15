@@ -24,6 +24,12 @@ export class TurkishMercenaries extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'conditional',
             victoryPointsString: "3VP if in history",
+            relatedCards: [
+                CardName.MERCHANT_EMPIRE1,
+                CardName.MERCHANT_EMPIRE2,
+                CardName.MERCHANT_EMPIRE3,
+                CardName.MERCHANT_EMPIRE4,
+            ]
         });
     }
 

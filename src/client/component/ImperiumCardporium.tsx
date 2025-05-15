@@ -167,7 +167,9 @@ function ImperiumCardporium(): React.JSX.Element {
         </div>
         <CardDetailDescription
             card={state.detailedCard}
+            availableCards={state.getCards()}
             closeDialog={() => dispatch(CardporiumDisplayState.toggleDetailedCard(undefined))}
+            clickCard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
         />
     </div>;
 }

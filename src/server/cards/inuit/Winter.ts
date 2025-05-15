@@ -20,6 +20,9 @@ export class Winter extends Card implements ICard {
                 "Passive: you can play {barbarian} cards.",
                 "You cannot play nor develop {empire} cards."
             ],
+            relatedCards: [
+                CardName.SUMMER_INU
+            ]
         });
     }
 }

@@ -19,6 +19,9 @@ export class ImperialExaminations extends Card implements ICard {
                 "If {empire}, find [Scholar Officials] and free play it."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.SCHOLAR_OFFICIALS
+            ]
         });
     }
 }

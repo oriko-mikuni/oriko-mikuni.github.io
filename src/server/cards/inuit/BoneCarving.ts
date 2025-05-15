@@ -20,6 +20,9 @@ export class BoneCarving extends Card implements ICard {
             ],
             developmentCost: {material: 3},
             victoryPoints: 3,
+            relatedCards: [
+                CardName.ORAL_HISTORY
+            ]
         });
     }
 }

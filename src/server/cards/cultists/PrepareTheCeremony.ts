@@ -21,6 +21,9 @@ export class PrepareTheCeremony extends Card implements ICard {
                 "Your cards lose the {barbarian} icon.",
                 "Solstice: choose: remove all {progress} (minimum 5) on this card to replace it with [Ceremonial Gathering] (discarding any garrisoned cards) OR garrison a card here."
             ],
+            relatedCards: [
+                CardName.CEREMONIAL_GATHERING
+            ]
         });
     }
 }

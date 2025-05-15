@@ -15,6 +15,9 @@ export class Guennuvar extends Card implements ICard {
             effectText: [
                 "All other players gain 1{progress}.",
                 "Choose: acquire {uncivilised}/{civilised} OR abandon [King Arthur] to free play an {empire} card."
+            ],
+            relatedCards: [
+                CardName.KING_ARTHUR
             ]
         });
     }

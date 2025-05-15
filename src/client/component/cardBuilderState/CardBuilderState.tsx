@@ -121,6 +121,7 @@ export class CardBuilderState {
             gameModule: GameModule.DEFAULT,
             headerIcon: this.props.headerIcon,
             keywords: [],
+            relatedCards: [],
             name: this.props.name !== "" ? this.props.name : "-",
             nationColour: this.props.nationColour,
             nationColourFile: this.props.nationColourFile === 'none' ? undefined : this.props.nationColourFile,

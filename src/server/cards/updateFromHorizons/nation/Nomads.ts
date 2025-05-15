@@ -18,7 +18,10 @@ export class Nomads extends Card implements ICard {
                 "Gain 1{material} per {production}/{river}/{fertile} you have in play.",
                 "If the other copy of [Nomads] is in your discard pile, gain 1{progress}."
             ],
-            gameModule: GameModule.SCYTHIANS
+            gameModule: GameModule.SCYTHIANS,
+            relatedCards: [
+                CardName.NOMADS_B_NEW
+            ]
         });
     }
 }

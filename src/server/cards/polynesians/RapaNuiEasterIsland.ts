@@ -33,6 +33,9 @@ export class RapaNuiEasterIsland extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 3 cards in legends",
+            relatedCards: [
+                CardName.RAROTONGA
+            ]
         });
     }
 

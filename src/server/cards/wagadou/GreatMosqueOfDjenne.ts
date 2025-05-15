@@ -27,6 +27,9 @@ export class GreatMosqueOfDjenne extends Card implements ICard {
             developmentCost: {population: 4},
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 2,
+            relatedCards: [
+                CardName.ADOPTION_OF_ISLAM
+            ]
         });
     }
 }

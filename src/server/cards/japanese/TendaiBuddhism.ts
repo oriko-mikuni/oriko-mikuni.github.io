@@ -23,6 +23,9 @@ export class TendaiBuddhism extends Card implements ICard {
                 "Solstice: if {barbarian}, choose: abandon [Shinto] OR discard a card.",
                 "If {empire}, you MAY pay 1{population} to return a {unrest}."
             ],
+            relatedCards: [
+                CardName.SHINTO
+            ]
         });
     }
 }

@@ -31,6 +31,7 @@ export interface ICard {
     startingLocation?: CardStartingLocation;
     gameModule?: GameModule;
     keywords?: Array<KeywordNames>;
+    relatedCards?: Array<CardName>;
     cardInPlayType?: CardInPlayType;
     exhaustCount?: number;
 

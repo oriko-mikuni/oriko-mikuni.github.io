@@ -44,5 +44,6 @@
       "name": "关于本推广牌",
       "description": "属于推广包Turczi Junior Promo Pack。\n要使用本牌，在游戏设置时将本牌洗入名望牌库，并从名望牌库随机移除一张牌，不要查看。\n名望牌库的卡牌数量保持不变。"
     }
-  }
+  },
+  "Related Cards": "相关卡牌"
 }

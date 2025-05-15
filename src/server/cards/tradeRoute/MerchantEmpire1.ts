@@ -23,7 +23,10 @@ export class MerchantEmpire1 extends Card implements ICard {
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per 2 {production} in play"
+            victoryPointsString: "1VP per 2 {production} in play",
+            relatedCards: [
+                CardName.MERCHANT1
+            ]
         });
     }
 

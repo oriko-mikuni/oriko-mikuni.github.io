@@ -23,6 +23,10 @@ export class ArdashirI extends Card implements ICard {
                 CardEffectReuse.selfHistory
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.ASWARAN_CAVALRY,
+                CardName.CLIBANARII
+            ]
         });
     }
 }

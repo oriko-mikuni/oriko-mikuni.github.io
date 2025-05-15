@@ -28,7 +28,10 @@ export class Bishoprics extends Card implements ICard {
             ],
             developmentCost: {material: 5},
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {civilised}"
+            victoryPointsString: "1VP per {civilised}",
+            relatedCards: [
+                CardName.CONVERSION_TO_CHRISTIANITY_MAG
+            ]
         });
     }
 

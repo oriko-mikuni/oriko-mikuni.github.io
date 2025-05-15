@@ -30,6 +30,9 @@ export class SaltIndustryCommission extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'conditional',
             victoryPointsString: "4VP if in play, 2VP otherwise",
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_TAN
+            ]
         });
     }
 

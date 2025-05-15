@@ -27,7 +27,11 @@ export class JinguJiShrineTemple extends Card implements ICard {
             ],
             developmentCost: {material: 5},
             victoryPoints: 'variable',
-            victoryPointsString: "2VP per {fame}"
+            victoryPointsString: "2VP per {fame}",
+            relatedCards: [
+                CardName.SHINTO,
+                CardName.TENDAI_BUDDHISM
+            ]
         });
     }
 

@@ -20,6 +20,9 @@ export class Bedwyr extends Card implements ICard {
                 "You MAY return [Excalibur] from your discard pile to the top of your deck.",
                 CardEffectReuse.knightGarrison
             ],
+            relatedCards: [
+                CardName.EXCALIBUR
+            ]
         });
     }
 }

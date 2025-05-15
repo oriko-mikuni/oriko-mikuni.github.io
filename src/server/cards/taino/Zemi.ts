@@ -23,6 +23,9 @@ export class Zemi extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 5 resources here",
+            relatedCards: [
+                CardName.CACIQUE
+            ]
         });
     }
 

@@ -19,6 +19,9 @@ export class KingOfKings extends Card implements ICard {
                 "If {barbarian}, gain 6{progress}.",
                 "If {empire}, gain 3{progress} and develop for free."
             ],
+            relatedCards: [
+                CardName.KOK_B
+            ]
         });
     }
 }

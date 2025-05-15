@@ -28,6 +28,9 @@ export class RomeTheEternalCity extends Card implements ICard {
             ],
             developmentCost: {material: 3, population: 3},
             victoryPoints: 4,
+            relatedCards: [
+                CardName.CITY_OF_ROME
+            ]
         });
     }
 }

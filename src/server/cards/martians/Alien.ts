@@ -24,6 +24,10 @@ export class Alien extends Card implements ICard {
             ],
             keywords: [
                 KeywordNames.alienProgress
+            ],
+            relatedCards: [
+                CardName.REACTOR_EXPLOSION,
+                CardName.GONE_NATIVE
             ]
         });
     }

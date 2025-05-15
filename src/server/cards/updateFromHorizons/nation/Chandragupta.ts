@@ -21,7 +21,11 @@ export class Chandragupta extends Card implements ICard {
                 "Choose: acquire a {region}/{trade-route} and free play it OR find an [Indian Elephants] and place it on the top of your deck.",
                 CardEffectReuse.selfHistory
             ],
-            gameModule: GameModule.MAURYANS
+            gameModule: GameModule.MAURYANS,
+            relatedCards: [
+                CardName.INDIAN_ELEPHANTS_NEW,
+                CardName.INDIAN_ELEPHANTS_B_NEW
+            ]
         });
     }
 }

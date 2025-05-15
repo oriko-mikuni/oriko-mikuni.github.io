@@ -20,6 +20,9 @@ export class VisionsOfShangrila extends Card implements ICard {
                 "Exhaust: when you return an {unrest}, exhaust this card and spend an action to gain 1{progress}.",
                 "Solstice: choose: pay all your {progress} (minimum 5) to flip this card OR discard a card, then draw a card."
             ],
+            relatedCards: [
+                CardName.PATH_TO_SHANGRILA
+            ]
         });
     }
 }

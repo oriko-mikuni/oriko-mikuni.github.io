@@ -25,6 +25,9 @@ export class Kupe extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {ocean} in play",
+            relatedCards: [
+                CardName.OVERPOPULATION
+            ]
         });
     }
 

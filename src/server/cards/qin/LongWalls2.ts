@@ -25,7 +25,12 @@ export class LongWalls2 extends Card implements ICard {
             ],
             developmentCost: {material: 2, population: 2},
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per [Long Walls] in play"
+            victoryPointsString: "1VP per [Long Walls] in play",
+            relatedCards: [
+                CardName.LONG_WALLS_I,
+                CardName.LONG_WALLS_III,
+                CardName.LONG_WALLS_IV
+            ]
         });
     }
 

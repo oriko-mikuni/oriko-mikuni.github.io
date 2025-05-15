@@ -18,6 +18,10 @@ export class Excalibur extends Card implements ICard {
                 "Abandon [Viviane of the Lake] OR [Ynys Afallach] to break through for {tributary}/{civilised}."
             ],
             victoryPoints: 2,
+            relatedCards: [
+                CardName.VIVIANE_OF_THE_LAKE,
+                CardName.YNYS_AFALLACH_AVALON
+            ]
         });
     }
 }

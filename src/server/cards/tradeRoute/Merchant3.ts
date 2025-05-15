@@ -22,6 +22,9 @@ export class Merchant3 extends Card implements ICard {
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
             playerCount: 3,
+            relatedCards: [
+                CardName.MERCHANT_EMPIRE3
+            ]
         });
     }
 }

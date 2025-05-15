@@ -18,6 +18,9 @@ export class IsleBound extends Card implements ICard {
             effectText: [
                 "Solstice: choose: gain 1 mana from your hand or discard pile OR discard 1 mana to gain 1{goods}."
             ],
+            relatedCards: [
+                CardName.VOYAGING
+            ]
         });
     }
 }

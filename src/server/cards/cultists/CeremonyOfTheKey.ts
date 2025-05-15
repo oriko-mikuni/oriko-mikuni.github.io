@@ -22,6 +22,10 @@ export class CeremonyOfTheKey extends Card implements ICard {
                 "Exhaust: discard a card to garrison a card here.",
                 "Solstice: if you have at least 13 different icons on cards garrisoned here, flip your state card to its {summoned} side, put this card into your history and TRIGGER THE GAME END."
             ],
+            relatedCards: [
+                CardName.CORRUPTED_CUL,
+                CardName.SUMMONED_CUL
+            ]
         });
     }
 }

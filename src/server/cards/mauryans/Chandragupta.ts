@@ -18,6 +18,10 @@ export class Chandragupta extends Card implements ICard {
                 "Acquire {region}. Find an [Indian Elephants] and put it in your discard pile.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.INDIAN_ELEPHANTS,
+                CardName.INDIAN_ELEPHANTS_B
+            ]
         });
     }
 }

@@ -22,6 +22,9 @@ export class RitualSacrifice extends Card implements ICard {
             ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 3,
+            relatedCards: [
+                CardName.STEP_PYRAMIDS
+            ]
         });
     }
 }

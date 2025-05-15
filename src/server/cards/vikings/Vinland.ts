@@ -27,7 +27,11 @@ export class Vinland extends Card implements ICard {
                 "Choose: return an {unrest} OR you MAY garrison a card."
             ],
             victoryPoints: 'conditional',
-            victoryPointsString: "6VP if in play"
+            victoryPointsString: "6VP if in play",
+            relatedCards: [
+                CardName.GRAENLAND,
+                CardName.LONGSHIPS
+            ]
         });
     }
 

@@ -23,6 +23,13 @@ export class TwistedGrove extends Card implements ICard {
                 "Exhaust: place a {unrest} on the top of your deck to return a {exhaust} to your state card.",
                 "Solstice: you MAY garrison a {corrupted} card here."
             ],
+            relatedCards: [
+                CardName.DARK_RITUAL,
+                CardName.CORRUPTION_CUL,
+                CardName.STRANGE_SIGNS,
+                CardName.LURE_OF_DECADENCE,
+                CardName.UNSPEAKABLE_WORSHIP
+            ]
         });
     }
 }

@@ -19,6 +19,9 @@ export class NandaDynasty extends Card implements ICard {
                 "Only playable if [Arthashastra] is in play.",
                 "Gain 2{population}."
             ],
+            relatedCards: [
+                CardName.ARTHASHASTRA
+            ]
         });
     }
 }

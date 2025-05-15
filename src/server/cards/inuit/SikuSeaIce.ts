@@ -25,6 +25,9 @@ export class SikuSeaIce extends Card implements ICard {
                 CardEffectReuse.garrisonACard,
                 "Passive: when your state card is flipped to [Summer], recall this card and gain 1{material}."
             ],
+            relatedCards: [
+                CardName.SUMMER_INU
+            ]
         });
     }
 }

@@ -15,6 +15,9 @@ export class Cafall extends Card implements ICard {
             effectText: [
                 "Free play. Draw 2 cards and return a card to the top of your deck.",
                 "You MAY exile [Twrch Trwyth] if it is in play or it is the active quest."
+            ],
+            relatedCards: [
+                CardName.TWRCH_TRWYTH
             ]
         });
     }

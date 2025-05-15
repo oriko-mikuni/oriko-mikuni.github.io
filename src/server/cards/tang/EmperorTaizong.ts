@@ -21,6 +21,9 @@ export class EmperorTaizong extends Card implements ICard {
                 CardEffectReuse.selfHistory
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_TAN
+            ]
         });
     }
 }

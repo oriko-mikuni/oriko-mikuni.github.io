@@ -16,6 +16,9 @@ export class Cacique extends Card implements ICard {
                 "You MAY return a {unrest} garrisoned in [Zemi] to add 1{material} to [Zemi].",
                 "You MAY pay 1{population} from [Zemi] to acquire a {tributary}."
             ],
+            relatedCards: [
+                CardName.ZEMI
+            ]
         });
     }
 }

@@ -20,6 +20,9 @@ export class Confucianism extends Card implements ICard {
                 "Abandon [Legalism].",
                 "Exhaust: spend an action and discard 2 cards to choose: acquire {tributary}/{uncivilised}/{civilised} with {population} on it OR return up to 2 {unrest} from your discard pile."
             ],
+            relatedCards: [
+                CardName.LEGALISM
+            ]
         });
     }
 }

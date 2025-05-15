@@ -19,6 +19,9 @@ export class Voyaging extends Card implements ICard {
                 "Passive: you cannot draw cards from your deck. Cards gained via acquiring or breaking through (excluding {unrest}) are added into your discard pile instead of your hand. When you play {region} with {ocean}, gain 1{progress} and flip this card.",
                 "End of solstice: you MAY discard your hand to flip this card then draw a card."
             ],
+            relatedCards: [
+                CardName.ISLE_BOUND
+            ]
         });
     }
 }

@@ -26,6 +26,10 @@ export class OralHistory extends Card implements ICard {
             developmentCost: {material: 3},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per card garrisoned here",
+            relatedCards: [
+                CardName.SUMMER_INU,
+                CardName.WINTER_INU
+            ]
         });
     }
 

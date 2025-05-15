@@ -18,6 +18,9 @@ export class Corrupted extends Card implements ICard {
             effectText: [
                 "Passive: when any other player would take a {unrest} during your turn, you MAY instead force them to take a [Chaos] and put it in their discard pile."
             ],
+            relatedCards: [
+                CardName.SUMMONED_CUL
+            ]
         });
     }
 }

@@ -31,6 +31,9 @@ export class AcademyOfGondishapur extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {city}/{metropolis}",
+            relatedCards: [
+                CardName.ADVANCE_SAS
+            ]
         });
     }
 

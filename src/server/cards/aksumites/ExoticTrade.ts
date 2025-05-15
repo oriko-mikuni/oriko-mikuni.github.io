@@ -25,6 +25,10 @@ export class ExoticTrade extends Card implements ICard {
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 2,
+            relatedCards: [
+                CardName.AKSUMITE_COINAGE,
+                CardName.LAND_OF_SHEBA
+            ]
         });
     }
 }

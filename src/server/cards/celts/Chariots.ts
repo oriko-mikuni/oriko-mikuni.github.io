@@ -25,6 +25,10 @@ export class Chariots extends Card implements ICard {
             ],
             developmentCost: {population: 3},
             victoryPoints: 4,
+            relatedCards: [
+                CardName.CONQUER_CEL,
+                CardName.CONQUER_CEL1
+            ]
         });
     }
 }

@@ -18,6 +18,10 @@ export class PrinceShotokuTaishi extends Card implements ICard {
                 "Choose: return a {unrest} and find [Tendai Buddhism] and add it to your hand OR free play a {civilised} (ignoring {empire}) and find [Kanji] and add it to your hand.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.TENDAI_BUDDHISM,
+                CardName.KANJI
+            ]
         });
     }
 }

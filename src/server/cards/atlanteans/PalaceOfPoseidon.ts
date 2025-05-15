@@ -27,6 +27,9 @@ export class PalaceOfPoseidon extends Card implements ICard {
             ],
             developmentCost: {progress: 1, material: 3, population: 2},
             victoryPoints: 5,
+            relatedCards: [
+                CardName.MOUNTAIN_OF_ATLANTIS
+            ]
         });
     }
 }

@@ -28,6 +28,9 @@ export class Nunavik extends Card implements ICard {
             ],
             developmentCost: {material: 1},
             victoryPoints: 1,
+            relatedCards: [
+                CardName.ANGAKKUQ_SHAMAN
+            ]
         });
     }
 }

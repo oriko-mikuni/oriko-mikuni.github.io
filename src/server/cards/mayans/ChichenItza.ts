@@ -26,6 +26,11 @@ export class ChichenItza extends Card implements ICard {
             developmentCost: {material: 4, population: 2},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2{goods}",
+            relatedCards: [
+                CardName.HEADPIECE,
+                CardName.HEADPIECE1,
+                CardName.HEADPIECE2
+            ]
         });
     }
 

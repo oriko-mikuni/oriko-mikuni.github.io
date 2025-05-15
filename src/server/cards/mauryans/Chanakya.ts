@@ -18,6 +18,9 @@ export class Chanakya extends Card implements ICard {
                 "Choose: acquire {uncivilised} and acquire {civilised} OR find [Arthashastra] and put it in your discard pile.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.ARTHASHASTRA
+            ]
         });
     }
 }

@@ -21,6 +21,9 @@ export class Merchant1 extends Card implements ICard {
                 "Exhaust: choose: acquire a {trade-route} and exile a card from the market OR trade OR pay 3{goods} to flip this card ({exhaust} stays)."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.MERCHANT_EMPIRE1
+            ]
         });
     }
 }

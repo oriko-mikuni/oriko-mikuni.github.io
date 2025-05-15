@@ -21,6 +21,9 @@ export class WakaHouruaLargeCanoes extends Card implements ICard {
                 "Exhaust: if {voyaging}, discard a card and abandon this card to develop.",
                 "If {isle-bound}, abandon [Overpopulation] to flip your state card."
             ],
+            relatedCards: [
+                CardName.OVERPOPULATION
+            ]
         });
     }
 }

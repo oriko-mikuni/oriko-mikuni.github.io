@@ -20,6 +20,9 @@ export class Tohunga extends Card implements ICard {
             ],
             victoryPoints: 'negativeConditional',
             victoryPointsString: "-2VP if in legends",
+            relatedCards: [
+                CardName.OVERPOPULATION
+            ]
         });
     }
 

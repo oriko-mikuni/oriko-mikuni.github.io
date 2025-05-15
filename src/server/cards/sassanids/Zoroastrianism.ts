@@ -22,6 +22,10 @@ export class Zoroastrianism extends Card implements ICard {
                 "End of Solstice: if both [Aban] and [Atar] are in play, gain 1{progress} and draw 1 card. If neither of them are, take a {unrest}."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            relatedCards: [
+                CardName.ATAR,
+                CardName.ABAN
+            ]
         });
     }
 }

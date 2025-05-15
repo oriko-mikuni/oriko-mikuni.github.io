@@ -25,6 +25,10 @@ export class EmpressWuZetian extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'conditional',
             victoryPointsString: "1VP if in history",
+            relatedCards: [
+                CardName.MANDATE_OF_HEAVEN_TAN,
+                CardName.EMPEROR_TAIZONG
+            ]
         });
     }
 

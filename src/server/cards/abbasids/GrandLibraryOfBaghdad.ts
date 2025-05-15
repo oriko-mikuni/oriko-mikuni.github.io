@@ -32,6 +32,9 @@ export class GrandLibraryOfBaghdad extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per garrisoned card here",
+            relatedCards: [
+                CardName.BAGHDAD
+            ]
         });
     }
 

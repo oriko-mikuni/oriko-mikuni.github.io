@@ -24,6 +24,9 @@ export class SaintStephenI extends Card implements ICard {
             ],
             developmentCost: {population: 5},
             victoryPoints: 4,
+            relatedCards: [
+                CardName.ARPAD
+            ]
         });
     }
 }

@@ -25,6 +25,9 @@ export class AdoptionOfIslam extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 4 cards in your history",
+            relatedCards: [
+                CardName.PACT_WITH_BIDA
+            ]
         });
     }
 

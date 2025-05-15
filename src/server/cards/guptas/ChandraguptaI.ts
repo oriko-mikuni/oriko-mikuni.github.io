@@ -25,6 +25,9 @@ export class ChandraguptaI extends Card implements ICard {
             developmentCost: {goods: 1, material: 2, population: 2},
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 2,
+            relatedCards: [
+                CardName.SRI_GUPTA
+            ]
         });
     }
 }

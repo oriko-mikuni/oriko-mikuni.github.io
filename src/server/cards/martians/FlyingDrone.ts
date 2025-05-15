@@ -16,6 +16,9 @@ export class FlyingDrone extends Card implements ICard {
             effectText: [
                 "Free play. Choose: pay 1{population} to find a {region} and add it to your hand OR abandon [Landing Site] and take a {unrest} to break through for a {region}."
             ],
+            relatedCards: [
+                CardName.LANDING_SITE
+            ]
         });
     }
 }

@@ -28,6 +28,9 @@ export class Science extends Card implements ICard {
             developmentCost: {goods: 1, population: 2},
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 3,
+            relatedCards: [
+                CardName.ADVANCE_GUP
+            ]
         });
     }
 }

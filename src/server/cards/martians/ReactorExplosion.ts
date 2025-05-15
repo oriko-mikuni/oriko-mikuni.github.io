@@ -25,6 +25,11 @@ export class ReactorExplosion extends Card implements ICard {
                 "Passive: your {development} cards lose the {barbarian} icon.",
                 "Solstice: take 2 {unrest} and put 1 of them into your history."
             ],
+            relatedCards: [
+                CardName.PERMANENT_SETTLEMENT,
+                CardName.RITUALS_OF_EARTHLINGS,
+                CardName.ALIEN_OVERLORD
+            ]
         });
     }
 }

@@ -20,6 +20,10 @@ export class TutuTeAroaro extends Card implements ICard {
                 "You MAY abandon [Overpopulation]. Flip your state card.",
                 "Put this card into legends."
             ],
+            relatedCards: [
+                CardName.TAHITI,
+                CardName.OVERPOPULATION
+            ]
         });
     }
 }

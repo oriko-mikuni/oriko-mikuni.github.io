@@ -20,6 +20,9 @@ export class Legalism extends Card implements ICard {
                 "Abandon [Confucianism].",
                 "Exhaust: pay 3{population} to acquire {region}/{tributary}."
             ],
+            relatedCards: [
+                CardName.CONFUCIANISM_QIN
+            ]
         });
     }
 }

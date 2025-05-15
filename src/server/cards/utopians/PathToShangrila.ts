@@ -21,6 +21,10 @@ export class PathToShangrila extends Card implements ICard {
                 "Solstice: choose: pay all your {progress} (minimum 5) to replace this card with [Gates of Shangri-La] " +
                 "OR you MAY draw a {region} from your discard pile."
             ],
+            relatedCards: [
+                CardName.GATES_OF_SHANGRILA,
+                CardName.GATES_OF_SHANGRILA_NEW,
+            ]
         });
     }
 }

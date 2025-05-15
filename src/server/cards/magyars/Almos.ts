@@ -22,6 +22,9 @@ export class Almos extends Card implements ICard {
                 "Each other player recalls a {pinned}.",
                 CardEffectReuse.selfHistory
             ],
+            relatedCards: [
+                CardName.EMESE
+            ]
         });
     }
 }
