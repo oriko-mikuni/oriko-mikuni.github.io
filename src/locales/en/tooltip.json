@@ -43,7 +43,16 @@
     "bountiful": {
       "name": "About this Promo",
       "description": "Belong to Turczi Junior Promo Pack.\nTo use this card, shuffle it into the Fame deck and then randomly remove one card from the Fame deck without revealing it during setup.\nThe number of cards in the Fame deck won't change."
+    },
+    "supreme": {
+      "name": "Supreme",
+      "description": "This card has no effect when played, but it can still be played as an *Action* to just to *Discard* it.\nIt can also be Discarded as a cost on Actions, *Exhaust* effects, *Solstice* effects, etc. Only Discarding it during Clean-up is forbidden."
+    },
+    "sacredPass": {
+      "name": "Sacred Pass",
+      "description": "You may not use this card to add the {accession} card to your deck."
     }
   },
-  "Related Cards": "Related Cards"
+  "Related Cards": "Related Cards",
+  "Close": "Close"
 }

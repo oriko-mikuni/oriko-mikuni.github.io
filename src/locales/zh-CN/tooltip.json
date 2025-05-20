@@ -43,7 +43,16 @@
     "bountiful": {
       "name": "关于本推广牌",
       "description": "属于推广包Turczi Junior Promo Pack。\n要使用本牌，在游戏设置时将本牌洗入名望牌库，并从名望牌库随机移除一张牌，不要查看。\n名望牌库的卡牌数量保持不变。"
+    },
+    "supreme": {
+      "name": "至尊",
+      "description": "本牌仍然可以花费*行动*打出，除了*弃置*它以外没有任何效果。\n它也可以作为行动、*耗竭*效果、*至日*效果等的费用弃置。\n唯独禁止在清理阶段弃置。"
+    },
+    "sacredPass": {
+      "name": "神圣山口",
+      "description": "你不能使用这张牌将{accession}牌加入你的牌库。"
     }
   },
-  "Related Cards": "相关卡牌"
+  "Related Cards": "相关卡牌",
+  "Close": "关闭"
 }

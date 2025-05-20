@@ -10,4 +10,6 @@ export enum KeywordNames {
     alienProgress = "alienProgress",
     noNegativeFromUnrest = "noNegativeFromUnrest",
     doNotScoreActiveQuest  = "doNotScoreActiveQuest",
+    supreme = "supreme",
+    sacredPass = "sacredPass",
 }

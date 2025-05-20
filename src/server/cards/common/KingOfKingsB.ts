@@ -3,6 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
+import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 
 export class KingOfKingsB extends Card implements ICard {
     constructor() {
@@ -12,6 +13,7 @@ export class KingOfKingsB extends Card implements ICard {
             stateSymbol: [],
             typeIcon: [],
             headerIcon: CardHeaderIcon.POWER_B,
+            cardInPlayType: CardInPlayType.POWER,
             cardNumber: "?FAM?B",
             effectText: [
                 "When you would gain this card, instead resolve it. Multiple players can resolve this card.",

@@ -5,6 +5,7 @@ import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
+import {KeywordNames} from "../../../../common/keywords";
 
 export class SacredPass extends Card implements ICard {
     constructor() {
@@ -20,6 +21,9 @@ export class SacredPass extends Card implements ICard {
                 "Exhaust: you MAY look at the top card of your nation deck. You MAY then abandon this card to swap a card from your hand with the top of your nation deck."
             ],
             victoryPoints: 1,
+            keywords: [
+                KeywordNames.sacredPass
+            ]
         });
     }
 }

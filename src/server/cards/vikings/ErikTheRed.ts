@@ -19,7 +19,11 @@ export class ErikTheRed extends Card implements ICard {
                 CardEffectReuse.selfExile
             ],
             relatedCards: [
-                CardName.SCANDINAVIA
+                CardName.SCANDINAVIA,
+                CardName.ICELAND,
+                CardName.GRAENLAND,
+                CardName.FOROYAR,
+                CardName.VINLAND
             ]
         });
     }
