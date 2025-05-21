@@ -5,6 +5,7 @@ import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Welcoming extends Card implements ICard {
     constructor() {
@@ -22,6 +23,9 @@ export class Welcoming extends Card implements ICard {
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 5,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

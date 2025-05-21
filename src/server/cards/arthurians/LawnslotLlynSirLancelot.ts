@@ -5,6 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class LawnslotLlynSirLancelot extends Card implements ICard {
     constructor() {
@@ -22,6 +23,9 @@ export class LawnslotLlynSirLancelot extends Card implements ICard {
                 CardEffectReuse.selfExile
             ],
             victoryPoints: 2,
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.GUENNUVAR
             ]

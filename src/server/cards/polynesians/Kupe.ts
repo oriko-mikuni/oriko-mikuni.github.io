@@ -6,6 +6,7 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {isInPlayLocation, Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Kupe extends Card implements ICard {
     constructor() {
@@ -25,6 +26,9 @@ export class Kupe extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 2 {ocean} in play",
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.OVERPOPULATION
             ]

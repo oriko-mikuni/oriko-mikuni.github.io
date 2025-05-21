@@ -7,6 +7,7 @@ import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {GameModule} from "../../../../common/cards/GameModule";
+import {KeywordNames} from "../../../../common/keywords";
 
 export class ScythiansPowerA extends Card implements ICard {
     constructor() {
@@ -26,7 +27,10 @@ export class ScythiansPowerA extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 6{material}",
-            gameModule: GameModule.SCYTHIANS
+            gameModule: GameModule.SCYTHIANS,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 

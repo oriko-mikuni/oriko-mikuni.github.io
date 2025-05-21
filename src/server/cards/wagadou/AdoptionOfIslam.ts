@@ -6,6 +6,7 @@ import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {PlayerCardLocation} from "../../Player";
+import {KeywordNames} from "../../../common/keywords";
 
 export class AdoptionOfIslam extends Card implements ICard {
     constructor() {
@@ -25,6 +26,9 @@ export class AdoptionOfIslam extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 4 cards in your history",
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.PACT_WITH_BIDA
             ]

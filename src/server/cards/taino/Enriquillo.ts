@@ -6,6 +6,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
 import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Enriquillo extends Card implements ICard {
     constructor() {
@@ -25,6 +26,9 @@ export class Enriquillo extends Card implements ICard {
             developmentCost: {population: 5},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {tributary}",
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 

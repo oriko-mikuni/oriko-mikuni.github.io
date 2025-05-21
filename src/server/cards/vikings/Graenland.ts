@@ -8,6 +8,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Graenland extends Card implements ICard {
     constructor() {
@@ -25,6 +26,9 @@ export class Graenland extends Card implements ICard {
                 CardEffectReuse.garrisonACard,
                 "Choose: gain 1{population} OR look at the top card of your nation deck, then you MAY shuffle the nation deck."
             ],
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

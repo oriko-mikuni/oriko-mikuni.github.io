@@ -6,6 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class VikingsPowerB extends Card implements ICard {
     constructor() {
@@ -24,7 +25,10 @@ export class VikingsPowerB extends Card implements ICard {
                 "When you take {unrest}, look at the top card of your nation deck. You MAY place it at the bottom of the nation deck."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "2VP per {variable} card"
+            victoryPointsString: "2VP per {variable} card",
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 

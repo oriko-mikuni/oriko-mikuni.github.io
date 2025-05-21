@@ -30,7 +30,7 @@
     },
     "promoAbundance": {
       "name": "About this Promo",
-      "description": "Belong to Turczi Junior Promo Pack.\nWhile setting up, if the civilization you're playing has a card exactly called [Prosperity], you may opt to use this card instead.\nIf you do, remove one [Prosperity] from your deck (return it to the box) and place [Abundance] in its place.\nIf your civilization has multiple copies of [Prosperity], choose at most one to replace."
+      "description": "Belong to Turczi Junior Promo Pack.\nWhile setting up, if the civilization you're playing has a card exactly called [Prosperity], you may opt to use this card instead. If you do, remove one [Prosperity] from your deck (return it to the box) and place [Abundance] in its place.\nIf your civilization has multiple copies of [Prosperity], choose at most one to replace."
     },
     "acclaimed": {
       "name": "Break Through for a {variable} Card",
@@ -46,11 +46,19 @@
     },
     "supreme": {
       "name": "Supreme",
-      "description": "This card has no effect when played, but it can still be played as an *Action* to just to *Discard* it.\nIt can also be Discarded as a cost on Actions, *Exhaust* effects, *Solstice* effects, etc. Only Discarding it during Clean-up is forbidden."
+      "description": "This card has no effect when played, but it can still be played as an *Action* to just to *Discard* it. It can also be Discarded as a cost on Actions, *Exhaust* effects, *Solstice* effects, etc. Only Discarding it during Clean-up is forbidden."
     },
     "sacredPass": {
       "name": "Sacred Pass",
       "description": "You may not use this card to add the {accession} card to your deck."
+    },
+    "find": {
+      "name": "Find",
+      "description": "Search for the card(s) specified in the order of your hand, your Discard pile, your Draw pile, your *Nation Deck* (excluding your {accession} card).\nSome cards may explicitly include or limit the areas you search.\nIf you find none, nothing happens, otherwise reveal the card you found and the original card will tell you where you should place it.\nIf a choice is indicated (e.g. \"Find a {region}\"), you may search all areas listed above and choose one eligible card to reveal, return the other cards to the places you found them.\n*Shuffle your Draw deck or Nation deck whenever you finish searching them.* When shuffling your Nation deck, leave {accession} card at the bottom of the deck."
+    },
+    "look": {
+      "name": "Look",
+      "description": "Pick up and examine the indicated card(s) without showing other players. Unless instructed otherwise, return the card(s) you Looked at to their original location. If there are fewer eligible cards available to Look at than specified, Look at as many as possible.\nIf you Look at multiple cards, return them in any order.\nIf you Look at {fame} cards, ignore [King of Kings] unless it's the only card in the Fame deck.\nIf you Look at cards in your *Nation deck*, ignore your {accession} card unless it's the only card in your Nation deck."
     }
   },
   "Related Cards": "Related Cards",

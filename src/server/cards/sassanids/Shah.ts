@@ -7,6 +7,7 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {Player} from "../../Player";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Shah extends Card implements ICard {
     constructor() {
@@ -25,6 +26,9 @@ export class Shah extends Card implements ICard {
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {fame}",
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.KOK_A,
                 CardName.KOK_B

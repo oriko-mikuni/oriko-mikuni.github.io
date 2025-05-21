@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {KeywordNames} from "../../../common/keywords";
 
 export class RitualSacrifice extends Card implements ICard {
     constructor() {
@@ -22,6 +23,9 @@ export class RitualSacrifice extends Card implements ICard {
             ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 3,
+            keywords: [
+                KeywordNames.look
+            ],
             relatedCards: [
                 CardName.STEP_PYRAMIDS
             ]

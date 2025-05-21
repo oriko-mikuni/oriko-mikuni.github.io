@@ -22,6 +22,7 @@ export class SacredPass extends Card implements ICard {
             ],
             victoryPoints: 1,
             keywords: [
+                KeywordNames.look,
                 KeywordNames.sacredPass
             ]
         });

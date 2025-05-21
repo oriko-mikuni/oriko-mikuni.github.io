@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {KeywordNames} from "../../../common/keywords";
 
 export class TutuTeAroaro extends Card implements ICard {
     constructor() {
@@ -19,6 +20,9 @@ export class TutuTeAroaro extends Card implements ICard {
                 "Choose: acquire a {region} (including from exiled cards) OR find [Tahiti] and free play it.",
                 "You MAY abandon [Overpopulation]. Flip your state card.",
                 "Put this card into legends."
+            ],
+            keywords: [
+                KeywordNames.find
             ],
             relatedCards: [
                 CardName.TAHITI,

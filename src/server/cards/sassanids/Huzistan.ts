@@ -9,6 +9,7 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Huzistan extends Card implements ICard {
     constructor() {
@@ -26,6 +27,9 @@ export class Huzistan extends Card implements ICard {
                 CardEffectReuse.garrisonACard
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

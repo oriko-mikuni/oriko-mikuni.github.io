@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class ImperialExaminations extends Card implements ICard {
     constructor() {
@@ -19,6 +20,9 @@ export class ImperialExaminations extends Card implements ICard {
                 "If {empire}, find [Scholar Officials] and free play it."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.SCHOLAR_OFFICIALS
             ]

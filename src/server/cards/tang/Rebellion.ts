@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Rebellion extends Card implements ICard {
     constructor() {
@@ -21,6 +22,9 @@ export class Rebellion extends Card implements ICard {
                 "For each {metropolis} abandoned this way, gain 2{material}."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

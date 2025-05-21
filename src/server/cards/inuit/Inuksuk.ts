@@ -8,6 +8,7 @@ import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {isInPlayLocation, Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Inuksuk extends Card implements ICard {
     constructor() {
@@ -28,6 +29,9 @@ export class Inuksuk extends Card implements ICard {
             developmentCost: {material: 4},
             victoryPoints: 'variable',
             victoryPointsString: "1VP per {hunt} in play",
+            keywords: [
+                KeywordNames.find
+            ],
         });
     }
 

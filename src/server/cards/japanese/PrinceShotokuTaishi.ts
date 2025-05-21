@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class PrinceShotokuTaishi extends Card implements ICard {
     constructor() {
@@ -17,6 +18,9 @@ export class PrinceShotokuTaishi extends Card implements ICard {
             effectText: [
                 "Choose: return a {unrest} and find [Tendai Buddhism] and add it to your hand OR free play a {civilised} (ignoring {empire}) and find [Kanji] and add it to your hand.",
                 CardEffectReuse.selfHistory
+            ],
+            keywords: [
+                KeywordNames.find
             ],
             relatedCards: [
                 CardName.TENDAI_BUDDHISM,

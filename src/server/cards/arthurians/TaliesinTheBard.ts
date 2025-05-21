@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {KeywordNames} from "../../../common/keywords";
 
 export class TaliesinTheBard extends Card implements ICard {
     constructor() {
@@ -20,6 +21,10 @@ export class TaliesinTheBard extends Card implements ICard {
                 "Take one of those cards."
             ],
             victoryPoints: 1,
+            keywords: [
+                KeywordNames.find,
+                KeywordNames.look
+            ],
         });
     }
 }

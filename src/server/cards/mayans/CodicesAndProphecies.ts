@@ -5,6 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class CodicesAndProphecies extends Card implements ICard {
     constructor() {
@@ -23,6 +24,9 @@ export class CodicesAndProphecies extends Card implements ICard {
             ],
             developmentCost: {material: 4, population: 2},
             victoryPoints: 4,
+            keywords: [
+                KeywordNames.find
+            ],
         });
     }
 }

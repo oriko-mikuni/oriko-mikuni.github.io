@@ -6,6 +6,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class CornwallTinRoad extends Card implements ICard {
     constructor() {
@@ -23,7 +24,10 @@ export class CornwallTinRoad extends Card implements ICard {
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {barbarian} ({uncivilised}/{region}/{tributary} only)"
+            victoryPointsString: "1VP per {barbarian} ({uncivilised}/{region}/{tributary} only)",
+            keywords: [
+                KeywordNames.find
+            ],
         });
     }
 

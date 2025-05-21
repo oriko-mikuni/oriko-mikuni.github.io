@@ -5,6 +5,7 @@ import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Glory extends Card implements ICard {
     constructor() {
@@ -18,6 +19,9 @@ export class Glory extends Card implements ICard {
             cardNumber: "GUP2",
             effectText: CardEffectReuse.glory,
             expansion: CardExpansion.TRADE_FRIENDLY,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

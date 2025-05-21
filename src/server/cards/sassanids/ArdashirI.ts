@@ -6,6 +6,7 @@ import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class ArdashirI extends Card implements ICard {
     constructor() {
@@ -23,6 +24,9 @@ export class ArdashirI extends Card implements ICard {
                 CardEffectReuse.selfHistory
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.ASWARAN_CAVALRY,
                 CardName.CLIBANARII

@@ -18,6 +18,7 @@ export class HeirPresumptive extends Card implements ICard {
             victoryPoints: 1,
             keywords: [
                 KeywordNames.heirPresumptive,
+                KeywordNames.find,
                 KeywordNames.leader,
                 KeywordNames.outOfPlayArea
             ]

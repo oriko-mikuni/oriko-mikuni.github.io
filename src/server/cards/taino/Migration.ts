@@ -5,6 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Migration extends Card implements ICard {
     constructor() {
@@ -21,6 +22,9 @@ export class Migration extends Card implements ICard {
                 "Abandon 6 {production} and move 1 of your {population} to a {pinned} you have in play to look at the top 2 cards of the {fame} deck.",
                 CardEffectReuse.takeOne
             ],
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

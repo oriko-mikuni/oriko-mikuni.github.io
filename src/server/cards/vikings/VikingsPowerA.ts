@@ -6,6 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class VikingsPowerA extends Card implements ICard {
     constructor() {
@@ -25,7 +26,10 @@ export class VikingsPowerA extends Card implements ICard {
                 "Exhaust: when you return an {unrest}, exhaust this card to draw 2 cards."
             ],
             victoryPoints: 'variable',
-            victoryPointsString: "1VP per {variable} card"
+            victoryPointsString: "1VP per {variable} card",
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 

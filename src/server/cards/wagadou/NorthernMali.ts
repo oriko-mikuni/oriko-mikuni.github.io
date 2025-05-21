@@ -7,6 +7,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class NorthernMali extends Card implements ICard {
     constructor() {
@@ -25,6 +26,9 @@ export class NorthernMali extends Card implements ICard {
                 "Look at the top card of your nation deck, then you MAY shuffle the nation deck."
             ],
             expansion: CardExpansion.TRADE_FRIENDLY,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

@@ -5,6 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class BloodOath extends Card implements ICard {
     constructor() {
@@ -21,6 +22,9 @@ export class BloodOath extends Card implements ICard {
                 "Exhaust: when you return a {unrest}, exhaust this card to draw a card.",
                 "Passive: when you take a {unrest}, look at the top card of your nation deck. You MAY place it at the bottom of your nation deck."
             ],
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

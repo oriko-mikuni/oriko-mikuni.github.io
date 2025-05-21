@@ -3,6 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Gothja extends Card implements ICard {
     constructor() {
@@ -18,6 +19,9 @@ export class Gothja extends Card implements ICard {
                 "You MAY shuffle the nation deck.",
                 "Choose: return an {unrest} and gain 1{population} OR draw 2 cards."
             ],
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

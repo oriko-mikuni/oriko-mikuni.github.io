@@ -3,6 +3,7 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class FlyingDrone extends Card implements ICard {
     constructor() {
@@ -15,6 +16,9 @@ export class FlyingDrone extends Card implements ICard {
             cardNumber: "MRT16",
             effectText: [
                 "Free play. Choose: pay 1{population} to find a {region} and add it to your hand OR abandon [Landing Site] and take a {unrest} to break through for a {region}."
+            ],
+            keywords: [
+                KeywordNames.find
             ],
             relatedCards: [
                 CardName.LANDING_SITE

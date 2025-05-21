@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class ErikTheRed extends Card implements ICard {
     constructor() {
@@ -17,6 +18,9 @@ export class ErikTheRed extends Card implements ICard {
             effectText: [
                 "Abandon [Scandinavia] and pay 1{population} to find a {region} and add it to your hand.",
                 CardEffectReuse.selfExile
+            ],
+            keywords: [
+                KeywordNames.find
             ],
             relatedCards: [
                 CardName.SCANDINAVIA,

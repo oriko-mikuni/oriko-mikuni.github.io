@@ -6,6 +6,7 @@ import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
 import {GameModule} from "../../../../common/cards/GameModule";
+import {KeywordNames} from "../../../../common/keywords";
 
 export class MythsAndLegends extends Card implements ICard {
     constructor() {
@@ -23,7 +24,10 @@ export class MythsAndLegends extends Card implements ICard {
             ],
             developmentCost: {progress: 2},
             victoryPoints: 2,
-            gameModule: GameModule.ATLANTEANS
+            gameModule: GameModule.ATLANTEANS,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

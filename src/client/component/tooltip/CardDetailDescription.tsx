@@ -21,8 +21,8 @@ function getTooltipRender(card: ClientCard, t: TFunction<string, string>): React
         if (name === "") return;
 
         result.push(<div key={index}>
-            <h2><CardTextRender text={name} isBlack={true}/></h2>
-            <p><CardTextRender text={description} isBlack={true}/></p>
+            <div className="text-xl font-bold"><CardTextRender text={name} isBlack={true}/></div>
+            <CardTextRender text={description} isBlack={true}/>
         </div>);
     })
     return <>{result}</>;
@@ -39,16 +39,16 @@ function getRelatedCardsRender(
         const card: ClientCard | undefined = getCard(value);
         if (card === undefined) return;
         if (!availableCards.includes(card)) return;
-        result.push(<div className="cardBox">
-            <CardItemInList key={index} card={card} onClick={() => clickCard(card)}/>
+        result.push(<div className="cardBox" key={index}>
+            <CardItemInList card={card} onClick={() => clickCard(card)}/>
         </div>);
     });
 
     if (result.length === 0) return <></>;
 
     return <>
-        <h2>{t("Related Cards")}</h2>
-        {result}
+        <div className="text-xl font-bold">{t("Related Cards")}</div>
+        <div className="flex flex-wrap">{result}</div>
     </>;
 }
 
@@ -63,7 +63,7 @@ function CardDetailDescription(
 
     return <div>
         <div className={"fixed size-full bg-[#00000080] z-[100] left-0 top-0"} onClick={closeDialog} key="overlay"></div>
-        <div className={"fixed w-[500px] bg-white text-black text-[12px] z-[101] p-[10px] rounded-[10px] left-1/2 top-1/2 -translate-1/2"} key="dialog">
+        <div className={"fixed w-[650px] bg-white text-black text-[12px] z-[101] p-[10px] rounded-[10px] left-1/2 top-1/2 -translate-1/2"} key="dialog">
             <button onClick={closeDialog} key="close">{t1("Close")}</button>
             <span className="cardBox text-center justify-center" key="card">
                 <Card card={card}/>

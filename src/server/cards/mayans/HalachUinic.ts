@@ -2,6 +2,7 @@ import {ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
+import {KeywordNames} from "../../../common/keywords";
 
 export class HalachUinic extends Card implements ICard {
     constructor() {
@@ -17,6 +18,9 @@ export class HalachUinic extends Card implements ICard {
                 "Look at the top card of your nation deck.",
                 "You MAY place it at the bottom of your nation deck."
             ],
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

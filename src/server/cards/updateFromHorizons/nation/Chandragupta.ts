@@ -6,6 +6,7 @@ import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
 import {GameModule} from "../../../../common/cards/GameModule";
+import {KeywordNames} from "../../../../common/keywords";
 
 export class Chandragupta extends Card implements ICard {
     constructor() {
@@ -22,6 +23,9 @@ export class Chandragupta extends Card implements ICard {
                 CardEffectReuse.selfHistory
             ],
             gameModule: GameModule.MAURYANS,
+            keywords: [
+                KeywordNames.find
+            ],
             relatedCards: [
                 CardName.INDIAN_ELEPHANTS_NEW,
                 CardName.INDIAN_ELEPHANTS_B_NEW

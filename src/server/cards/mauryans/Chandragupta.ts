@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Chandragupta extends Card implements ICard {
     constructor() {
@@ -17,6 +18,9 @@ export class Chandragupta extends Card implements ICard {
             effectText: [
                 "Acquire {region}. Find an [Indian Elephants] and put it in your discard pile.",
                 CardEffectReuse.selfHistory
+            ],
+            keywords: [
+                KeywordNames.find
             ],
             relatedCards: [
                 CardName.INDIAN_ELEPHANTS,

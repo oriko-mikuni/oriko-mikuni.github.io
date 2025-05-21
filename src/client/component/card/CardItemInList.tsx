@@ -48,7 +48,7 @@ function CardItemInList({card, onClick}: {
         card.victoryPoints === 0 ? null : <CardVictoryPointIcon victoryPoints={card.victoryPoints} size={"20px"}/>;
 
     return <div
-        className={"force-content-box relative w-[280px] h-[40px] font-bold whitespace-nowrap overflow-hidden m-[5px] pl-[5px] py-[4px] rounded-[8px] " + titleColour}
+        className={"force-content-box relative w-[280px] h-[40px] text-[15px] font-bold whitespace-nowrap overflow-hidden m-[5px] pl-[5px] py-[4px] rounded-[8px] " + titleColour}
         onClick={onClick}
     >
         <div className="absolute text-left left-[5px] top-[4px] leading-[20px]">

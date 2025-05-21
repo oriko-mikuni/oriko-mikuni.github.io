@@ -6,6 +6,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {KeywordNames} from "../../../common/keywords";
 
 export class MayansPowerA extends Card implements ICard {
     constructor() {
@@ -22,6 +23,9 @@ export class MayansPowerA extends Card implements ICard {
             effectText: [
                 "Exhaust: discard a card to find a {mask} (not from your nation deck) and add it to your hand.",
                 "Solstice: if you have at least 1 {city} in play, choose: discard a {mask} OR abandon a {city}."
+            ],
+            keywords: [
+                KeywordNames.find
             ],
         });
     }

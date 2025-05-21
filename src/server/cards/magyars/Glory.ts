@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Glory extends Card implements ICard {
     constructor() {
@@ -15,6 +16,9 @@ export class Glory extends Card implements ICard {
             nationColour: CardNationColour.MAG,
             cardNumber: "MAG19",
             effectText: CardEffectReuse.glory,
+            keywords: [
+                KeywordNames.look
+            ]
         });
     }
 }

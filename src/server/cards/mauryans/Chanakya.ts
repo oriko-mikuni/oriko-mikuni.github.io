@@ -4,6 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {KeywordNames} from "../../../common/keywords";
 
 export class Chanakya extends Card implements ICard {
     constructor() {
@@ -17,6 +18,9 @@ export class Chanakya extends Card implements ICard {
             effectText: [
                 "Choose: acquire {uncivilised} and acquire {civilised} OR find [Arthashastra] and put it in your discard pile.",
                 CardEffectReuse.selfHistory
+            ],
+            keywords: [
+                KeywordNames.find
             ],
             relatedCards: [
                 CardName.ARTHASHASTRA

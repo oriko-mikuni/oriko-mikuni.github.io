@@ -6,6 +6,7 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {KeywordNames} from "../../../common/keywords";
 
 export class RomansPowerA extends Card implements ICard {
     constructor() {
@@ -24,6 +25,9 @@ export class RomansPowerA extends Card implements ICard {
             ],
             victoryPoints: 'variable',
             victoryPointsString: "1VP per 4{population}",
+            keywords: [
+                KeywordNames.look
+            ],
             relatedCards: [
                 CardName.GLORY_ROM
             ]

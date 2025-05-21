@@ -12,4 +12,6 @@ export enum KeywordNames {
     doNotScoreActiveQuest  = "doNotScoreActiveQuest",
     supreme = "supreme",
     sacredPass = "sacredPass",
+    find = "find",
+    look = "look"
 }
