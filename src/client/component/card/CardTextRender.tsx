@@ -4,28 +4,19 @@ import {getIconByName} from "../../cards/IconNamesManifest.ts";
 
 function getClasses(italic: boolean, bold: boolean): string {
     const classes: Array<string> = [];
-    if (italic) classes.push("text-italic");
-    if (bold) classes.push("text-bold");
+    if (italic) classes.push("italic");
+    if (bold) classes.push("font-bold");
     return classes.join(" ");
 }
 
-function CardTextRender({text, minimize = false}: {
+function CardTextRender({text, minimize = false, isBlack = false}: {
     text?: string,
     minimize?: boolean
+    isBlack?: boolean
 }) : React.JSX.Element | null {
     if (text === undefined) {
         return null;
     }
-    // const {t} = useTranslation("cardName");
-    // const splitNameRef: Array<string> = text.split("/(@[^@]+@)/g");
-    // const resolveNameRefResult: string = splitNameRef.map(part => {
-    //     if (!part.match(/@[^@]+@/g)) return part.replace("@", "");
-    //     part = part.replace("@", "");
-    //     if (isCardName(part)) {
-    //         part = t("card_name_reference", {cardName: t(part)});
-    //     }
-    //     return part;
-    // }).join("");
 
     const parts: Array<string> = text.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n|\\)/g);
     let muteNextPart: boolean = false;
@@ -37,7 +28,7 @@ function CardTextRender({text, minimize = false}: {
         let bold: boolean = false;
         if (muteNextPart) muteNextPart = false;
         else if (part === '\\') {muteNextPart = true; return <span key={index}></span>}
-        else if (iconRender) return <CardRenderIconComponents iconName={iconRender} key={index} minimize={minimize}/>;
+        else if (iconRender) return <CardRenderIconComponents iconName={iconRender} key={index} minimize={minimize} isBlack={isBlack}/>;
         else if (part === '\n') return <br key={index}/>;
         else if (part.match(/\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*/g)) {
             if (part.match(/\[[^\[\]]+]/g)) {

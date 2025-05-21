@@ -1,12 +1,14 @@
 import React from "react";
 
-function InputNumber({value, onChange, height = "1em", width = "3em"}: {
+function InputNumber({value, onChange, width = "3em"}: {
     value: number,
     onChange: (text: number) => void,
-    height?: string,
     width?: string,
 }): React.JSX.Element {
+    const widthVar: React.CSSProperties & Record<string, string> = {'--input-number-width': width};
     return <input
+        className="w-(--input-number-width)"
+        style={widthVar}
         type="number"
         value={value}
         onChange={(e) => {
@@ -14,7 +16,6 @@ function InputNumber({value, onChange, height = "1em", width = "3em"}: {
             if (!Number.isNaN(parsedNumber) && parsedNumber !== value)
                 onChange(parsedNumber);
         }}
-        style={{width: width, height: height}}
     />;
 }
 

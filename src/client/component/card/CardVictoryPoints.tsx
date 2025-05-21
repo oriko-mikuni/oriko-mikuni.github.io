@@ -1,9 +1,11 @@
 import {VictoryPoints} from "../../../common/cards/ClientCard.ts";
 import React from "react";
-import './styles/CardVictoryPoints.css';
 import CardTextRender from "./CardTextRender.tsx";
 import CardVictoryPointIcon from "./CardVictoryPointIcon.tsx";
 import {useTranslation} from "react-i18next";
+
+const cardVictoryPointText: string = "absolute text-[8px] leading-[11px] bg-[#00000080] text-white text-center right-[30px] bottom-[5px] w-[60px]";
+const cardVictoryPointWiderText: string = "absolute text-[8px] leading-[11px] bg-[#00000080] text-white text-center right-[30px] bottom-[5px] w-[65px]";
 
 function CardVictoryPoints(
     {victoryPoints, victoryPointString, diy = false}:
@@ -11,15 +13,17 @@ function CardVictoryPoints(
 ): React.JSX.Element | null {
     const {t: vpTextTranslate} = useTranslation("victoryText");
     let vpText: React.JSX.Element | null;
-    let vpTextClasses: string = "card-victory-point-text";
+    let vpTextClasses: string;
     if (victoryPointString === undefined) {
         vpText = null;
+        vpTextClasses = "";
     } else {
         let translateResult: string = diy ? victoryPointString : vpTextTranslate(victoryPointString);
         if (translateResult.endsWith("#wider")) {
             translateResult = translateResult.slice(0, translateResult.length - 6);
-            vpTextClasses = vpTextClasses + " card-victory-point-text-wider";
-        }
+            vpTextClasses = cardVictoryPointWiderText;
+        } else
+            vpTextClasses = cardVictoryPointText;
         vpText = <CardTextRender text={translateResult}/>;
     }
     if (victoryPoints === 0 && vpText === null) {
@@ -29,7 +33,7 @@ function CardVictoryPoints(
     const victoryPointRender: React.JSX.Element = <CardVictoryPointIcon victoryPoints={victoryPoints}/>;
 
     return <>
-        <div className="card-victory-point-icon-bottom-right">{victoryPointRender}</div>
+        <div className="absolute bottom-[5px] right-[5px]">{victoryPointRender}</div>
         <div className={vpTextClasses}>{vpText}</div>
     </>;
 }

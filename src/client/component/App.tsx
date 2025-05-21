@@ -32,7 +32,7 @@ function App(): React.ReactElement {
             <Route path="/cards" element={<ImperiumCardporium/>}/>
             <Route path="/cardMaker" element={<ImperiumCardMaker/>}/>
         </Routes>
-        <div style={{position: "fixed", textAlign: "right", top: "20px", right: "20px"}}>
+        <div className="fixed text-right top-[20px] right-[20px]">
             <select onChange={(a: ChangeEvent<HTMLSelectElement>) =>
                 changeLanguage(i18n, pageTitleTranslation, location, a.target.value)} defaultValue={i18n.language}
             >

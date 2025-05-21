@@ -17,6 +17,25 @@ const nationColourFileName: Partial<Record<CardNationColour, string>> = {
     [CardNationColour.WAG]: "/nation_colour/WAG.png",
 }
 
+const nationBgColour: Partial<Record<CardNationColour, string>> = {
+    [CardNationColour.ART]: "#8dbe22",
+    [CardNationColour.ATL]: "#64c7f3",
+    [CardNationColour.CAR]: "#005da3",
+    [CardNationColour.CEL]: "#00683a",
+    [CardNationColour.EGY]: "#ffee00",
+    [CardNationColour.GRE]: "#ffffff",
+    [CardNationColour.MAC]: "#552b81",
+    [CardNationColour.MAU]: "#9e622e",
+    [CardNationColour.MIN]: "#000000",
+    [CardNationColour.OLM]: "#8e8e8d",
+    [CardNationColour.PER]: "#a45396",
+    [CardNationColour.QIN]: "#ef82ac",
+    [CardNationColour.ROM]: "#e30613",
+    [CardNationColour.SCY]: "#b7b867",
+    [CardNationColour.UTO]: "#12b1ad",
+    [CardNationColour.VIK]: "#f59e00",
+};
+
 class NationColourImageManifest {
     public static nationColourFile: Partial<Record<CardNationColour, Blob>> = {};
     public static initialize(): void {
@@ -38,9 +57,15 @@ class NationColourImageManifest {
     }
 }
 
-export function getNationColourFile(colour?: CardNationColour): Blob | null {
+export function getNationBgColourFile(colour?: CardNationColour): Blob | null {
     if (colour === undefined) return null;
     return NationColourImageManifest.nationColourFile[colour] ?? null;
+}
+
+
+export function getNationBgColour(colour?: CardNationColour): string {
+    if (colour === undefined) return "transparent";
+    return nationBgColour[colour] ?? "transparent";
 }
 
 NationColourImageManifest.initialize();

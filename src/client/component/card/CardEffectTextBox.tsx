@@ -1,10 +1,11 @@
 import React from "react";
-import './styles/CardEffectTextBox.css';
 import CardTextRender from "./CardTextRender.tsx";
 import {Units, UnitsUtils} from "../../../common/Units.ts";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse.ts";
 import {useTranslation} from "react-i18next";
 import {TFunction} from "i18next";
+
+const effectTextBottom: Array<string> = ["bottom-[40px]", "bottom-[52px]", "bottom-[64px]"];
 
 function RenderDevelopmentCostBox(
     translation: TFunction<string, string>,
@@ -29,8 +30,8 @@ function RenderDevelopmentCostBox(
                 )
         }/>;
 
-    if (!hasEffectText) return [<div className="card-development-cost" key={0}>{developmentCostDisplay}</div>];
-    return [<br key={0}/>, <div className="card-development-cost" key={1}>{developmentCostDisplay}</div>];
+    if (!hasEffectText) return [<div className="inline-block mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
+    return [<br key={1}/>, <div className="inline-block mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
 }
 
 export function CardEffectTextBox(
@@ -38,13 +39,11 @@ export function CardEffectTextBox(
     {effectText: Array<string>, developmentCost?: Partial<Units>, developmentCostString: Array<string>, diy?: boolean}
 ): React.JSX.Element | null {
     let actualEffectText: Array<string> = effectText;
-    let classes: string = "card-effect-text";
-    let higherTextClass: string = " card-effect-text";
-    while (actualEffectText.length > 0 && actualEffectText[actualEffectText.length - 1] === CardEffectReuse.bumpUpTextBox)
-    {
+
+    let higher: number = 0;
+    while (actualEffectText.length > 0 && actualEffectText[actualEffectText.length - 1] === CardEffectReuse.bumpUpTextBox) {
         actualEffectText = actualEffectText.slice(0, actualEffectText.length - 1);
-        higherTextClass = higherTextClass + "-higher";
-        classes = classes + higherTextClass;
+        higher++;
     }
 
     const {t: translation} = useTranslation("cardEffect");
@@ -54,6 +53,9 @@ export function CardEffectTextBox(
                 actualEffectText.map(text => translation(text)).join("\n");
 
     if (actualEffectText.length > 0 || developmentCost !== undefined) {
+        const classes: string = effectTextBottom[Math.min(higher, 2)] +
+            " absolute text-[10px] leading-[13px] inset-x-[10px] py-[5px] bg-[#000000c0] text-white text-center";
+
         return <div className={classes}>
             <CardTextRender text={finalEffectText}/>
             {RenderDevelopmentCostBox(translation, developmentCost, developmentCostString, actualEffectText.length > 0, diy)}

@@ -23,7 +23,6 @@ import {TextFilter, TextTranslationGroup} from "./cardporiumState/TextFilterStat
 import {ClientCard} from "../../common/cards/ClientCard.ts";
 import {useTranslation} from "react-i18next";
 import CardVictoryPointIcon from "./card/CardVictoryPointIcon.tsx";
-import "./ImperiumCardporium.css";
 import {GameModule, moduleNation} from "../../common/cards/GameModule.ts";
 import {CardNationColour} from "../../common/cards/CardNationColour.ts";
 import CardNationColourRender, {CardNationColourDisplayShape} from "./card/CardNationColourRender.tsx";
@@ -73,19 +72,19 @@ function ImperiumCardporium(): React.JSX.Element {
     const suitFilterButtons: Array<React.JSX.Element> =
         suitFilter.filterButtons(({elem}: {elem?: string}) => {
             const suit: CardSuitIcon | undefined = Object.values(CardSuitIcon).find(value => value === elem);
-            if (suit === undefined) return <CardSuitIconDisplay/>;
-            return <CardSuitIconDisplay suit={suit}/>;
+            if (suit === undefined) return <CardSuitIconDisplay position="inline"/>;
+            return <CardSuitIconDisplay suit={suit} position="inline"/>;
         });
     const typeIconFilterButtons: Array<React.JSX.Element> =
         typeFilter.filterButtons(({elem}: {elem?: string}) => {
             const typeIcon: CardTypeIcon | undefined = Object.values(CardTypeIcon).find(value => value === elem);
-            if (typeIcon === undefined) return <CardTypeIconDisplay/>;
-            return <CardTypeIconDisplay type={typeIcon}/>;
+            if (typeIcon === undefined) return <CardTypeIconDisplay position="inline"/>;
+            return <CardTypeIconDisplay type={typeIcon} position="inline"/>;
         });
     const headerIconFilterButtons: Array<React.JSX.Element> =
         headerFilter.filterButtons(({elem}: {elem?: string}) => {
             const headerIcon: CardHeaderIcon | undefined = Object.values(CardHeaderIcon).find(value => value === elem);
-            if (headerIcon === undefined || headerIcon === CardHeaderIcon.NO_HEADER) return <CardHeaderIconDisplay/>;
+            if (headerIcon === undefined) return <CardHeaderIconDisplay/>;
             return <CardHeaderIconDisplay headerIcon={headerIcon}/>;
         });
     const stateSymbolFilterButtons: Array<React.JSX.Element> =
@@ -112,12 +111,12 @@ function ImperiumCardporium(): React.JSX.Element {
 
             const nationColour: CardNationColour = moduleNation[gameModule];
             if (nationColour === CardNationColour.COMMON || nationColour === CardNationColour.COMMON_B)
-                return <>{gameModuleTranslation(gameModule)}</>;
+                return <span className="text-[14px]">{gameModuleTranslation(gameModule)}</span>;
 
-            return <span>
+            return <span className="text-[14px] force-content-box">
                 {gameModuleTranslation(gameModule)}
                 <CardNationColourRender
-                    shape={CardNationColourDisplayShape.SQUARE}
+                    shape={CardNationColourDisplayShape.INLINE_SQUARE}
                     nationColour={nationColour}
                     location={CardStartingLocation.DEFAULT}
                 />
@@ -125,39 +124,39 @@ function ImperiumCardporium(): React.JSX.Element {
         });
 
     const horizonsUpdateToggle: React.JSX.Element =
-        <span style={{display: "flex", fontSize: "15px", alignItems: "center"}}>
-            <label>
+        <span className="flex item-center">
+            <label className="contents">
                 {uiTranslation("includeHorizons")}
-                <CheckBox size="30px" checked={state.includeHorizonsState}
+                <CheckBox size="24px" checked={state.includeHorizonsState}
                           onChange={check => dispatch(CardporiumDisplayState.toggleIncludeHorizons(check))}/>
             </label>
         </span>;
 
     const minimizeCardsToggle: React.JSX.Element =
-        <span style={{display: "flex", fontSize: "15px", alignItems: "center"}}>
-            <label>
+        <span className="flex item-center">
+            <label className="contents">
                 {uiTranslation("minimizeCardDisplay")}
-                <CheckBox size="30px" checked={state.minimizeCard}
+                <CheckBox size="24px" checked={state.minimizeCard}
                           onChange={check => dispatch(CardporiumDisplayState.toggleMinimizeCards(check))}/>
             </label>
         </span>;
 
-    return <div className="ImperiumCardporium">
-        <div className="ImperiumCardporium_sidebar">
+    return <div className="flex h-full">
+        <div className={"fixed w-[315px] bg-[#808080] text-white overflow-x-hidden overflow-y-scroll p-[10px] left-0 inset-y-0"}>
             <button onClick={() => navigate("/")}>{uiTranslation("backToHomepage")}</button> <br/>
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{uiTranslation("toFeedback")}</a>
-            <h2 className="centerAlign">{uiTranslation("gameContents")}</h2> {horizonsUpdateToggle}
-            <h2 className="centerAlign">{uiTranslation("NationOrCommon")}</h2> {gameModuleFilterButtons}
-            <h2 className="centerAlign">{uiTranslation("cardDisplaySettings")}</h2> {minimizeCardsToggle}
-            <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("SuitIcon")}</h2> {suitFilterButtons}
-            <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("TypeIcon")}</h2> {typeIconFilterButtons}
-            <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("HeaderIcon")}</h2> {headerIconFilterButtons}
-            <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("StateIcon")}</h2> {stateSymbolFilterButtons}
-            <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("VictoryPoint")}</h2> {victoryPointFilterButtons}
-            <h2 className="centerAlign">{uiTranslation("filter-") + uiTranslation("text")}</h2> {textFilter.filterComponent(uiTranslation)}
+            <h2 className="text-center justify-center">{uiTranslation("gameContents")}</h2> {horizonsUpdateToggle}
+            <h2 className="text-center justify-center">{uiTranslation("NationOrCommon")}</h2> {gameModuleFilterButtons}
+            <h2 className="text-center justify-center">{uiTranslation("cardDisplaySettings")}</h2> {minimizeCardsToggle}
+            <h2 className="text-center justify-center">{uiTranslation("filter-") + uiTranslation("SuitIcon")}</h2> {suitFilterButtons}
+            <h2 className="text-center justify-center">{uiTranslation("filter-") + uiTranslation("TypeIcon")}</h2> {typeIconFilterButtons}
+            <h2 className="text-center justify-center">{uiTranslation("filter-") + uiTranslation("HeaderIcon")}</h2> {headerIconFilterButtons}
+            <h2 className="text-center justify-center">{uiTranslation("filter-") + uiTranslation("StateIcon")}</h2> {stateSymbolFilterButtons}
+            <h2 className="text-center justify-center">{uiTranslation("filter-") + uiTranslation("VictoryPoint")}</h2> {victoryPointFilterButtons}
+            <h2 className="text-center justify-center">{uiTranslation("filter-") + uiTranslation("text")}</h2> {textFilter.filterComponent(uiTranslation)}
         </div>
-        <div className="ImperiumCardporium_content">
-            <h1 className="centerAlign">{uiTranslation("cardporiumHeader")}</h1>
+        <div className="w-full ml-[315px] p-[10px]">
+            <h1 className="text-center justify-center">{uiTranslation("cardporiumHeader")}</h1>
             <CardGroup
                 cards={state.getCards()}
                 filter={allFilter}

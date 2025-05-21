@@ -1,8 +1,6 @@
 import {ClientCard} from "../../common/cards/ClientCard.ts";
 import React from "react";
 import Card from "./card/Card.tsx";
-import "./card/styles/CardBox.css";
-import "./CardGroup.css"
 import {useTranslation} from "react-i18next";
 import CardItemInList from "./card/CardItemInList.tsx";
 
@@ -16,14 +14,14 @@ function CardGroup({cards, filter, onClickACard, minimize}: {
     const {t} = useTranslation("ui", {keyPrefix: "CardGroup"});
 
     const cardElements: React.JSX.Element | null = (filteredCards.length === 0) ?
-        <p style={{fontSize: "20px", lineHeight: "24px"}}>
+        <p className="text-[16px] leading-[20px]">
             {t("hintIfNoCardsLine1")}<br/>
             {t("hintIfNoCardsLine2")}<br/>
             {t("hintIfNoCardsLine3")}<br/>
             {t("hintIfNoCardsLine4")}<br/>
             {t("hintIfNoCardsLine5")}
         </p> :
-        <div className="cardList">{
+        <div className="flex flex-wrap">{
             filteredCards.map((card: ClientCard, idx: number): React.JSX.Element =>
                 <div className="cardBox" key={idx}>
                     {minimize || <Card card={card} onClick={onClickACard === undefined ? undefined : () => onClickACard(card)}/>}

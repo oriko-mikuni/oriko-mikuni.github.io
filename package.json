@@ -12,10 +12,12 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.7",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
+    "html-to-image": "^1.11.13",
     "html2canvas": "^1.4.1",
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.0.4",
@@ -24,6 +26,7 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
     "react-router-dom": "^7.4.1",
+    "tailwindcss": "^4.1.7",
     "typescript": "~5.7.2",
     "vite": "^6.3.5"
   },

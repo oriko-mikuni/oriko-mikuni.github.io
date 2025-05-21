@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@layer base {
+    html {@apply font-mono;}
+    body {@apply bg-[#aaaaaa];}
+    h1 {@apply text-3xl font-bold;}
+    h2 {@apply text-xl font-bold;}
+    h3 {@apply text-lg font-bold; }
+    a {@apply underline text-[#0080ff];}
+    input[type="file"] {@apply text-black bg-[#dddddd];}
+    input[type="text"], input[type="number"], textarea {@apply text-black bg-[#dddddd] border-black border rounded-lg;}
+    button, select {@apply px-1 text-black bg-[#dddddd] border-black border rounded-lg;}
+}
+
+.cardBox {
+    @apply relative flex align-top;
+}
+
+.clip-border-bl-triangle {
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.force-content-box,
+.force-content-box *,
+.force-content-box::before,
+.force-content-box::after,
+.force-content-box ::before,
+.force-content-box ::after,
+.force-content-box *::before,
+.force-content-box *::after {
+    box-sizing: content-box;
+}
+
+.border-lt-none-rb-solid {
+    border-left-style: hidden;
+    border-top-style: hidden;
+    border-right-style: solid;
+    border-bottom-style: solid;
+}
+
+.bg-illustration-placeholder {background-image: url("/images/card_illust_placeholder.png");}
+
+.bg-card-suit-undefined {background-image: url("/suit_icon/no_suit.png");}
+.bg-card-suit-power {background-image: url("/suit_icon/power.png");}
+.bg-card-suit-fame {background-image: url("/suit_icon/fame.png");}
+.bg-card-suit-unrest {background-image: url("/suit_icon/unrest.png");}
+.bg-card-suit-uncivilised {background-image: url("/suit_icon/uncivilised.png");}
+.bg-card-suit-civilised {background-image: url("/suit_icon/civilised.png");}
+.bg-card-suit-region {background-image: url("/suit_icon/region.png");}
+.bg-card-suit-tributary {background-image: url("/suit_icon/tributary.png");}
+.bg-card-suit-trade-route {background-image: url("/suit_icon/trade_route.png");}
+.bg-card-suit-gadget {background-image: url("/suit_icon/gadget.png");}
+
+.bg-card-type-city {background-image: url("/card_type_icon/city.png");}
+.bg-card-type-knight {background-image: url("/card_type_icon/knight.png");}
+.bg-card-type-mask {background-image: url("/card_type_icon/mask.png");}
+.bg-card-type-merchant {background-image: url("/card_type_icon/merchant.png");}
+.bg-card-type-metropolis {background-image: url("/card_type_icon/metropolis.png");}
+.bg-card-type-miracle {background-image: url("/card_type_icon/miracle.png");}
+.bg-card-type-scroll {background-image: url("/card_type_icon/scroll.png");}
+.bg-card-type-fertile {background-image: url("/card_type_icon/fertile.png");}
+.bg-card-type-hunt {background-image: url("/card_type_icon/hunt.png");}
+.bg-card-type-ocean {background-image: url("/card_type_icon/ocean.png");}
+.bg-card-type-production {background-image: url("/card_type_icon/production.png");}
+.bg-card-type-river {background-image: url("/card_type_icon/river.png");}
+.bg-card-type-undefined {background-image: url("/card_type_icon/no_type.png");}
+
+.bg-card-header-powerA {background-image: url("/header_icon/powerA.png");}
+.bg-card-header-powerB {background-image: url("/header_icon/powerB.png");}
+.bg-card-header-attack {background-image: url("/header_icon/attack.png");}
+.bg-card-header-pinned {background-image: url("/header_icon/pinned.png");}
+.bg-card-header-tradeRoute {background-image: url("/header_icon/tradeRoute.png");}
+.bg-card-header-no_header {background-image: url("/header_icon/no_header.png");}
+
+.bg-card-state-undefined {background-image: url("/state_symbol/no_state.png");}
+.bg-card-state-barbarian {background-image: url("/state_symbol/barbarian.png");}
+.bg-card-state-empire {background-image: url("/state_symbol/empire.png");}
+.bg-card-state-isle-bound {background-image: url("/state_symbol/isle_bound.png");}
+.bg-card-state-voyaging {background-image: url("/state_symbol/voyaging.png");}
+.bg-card-state-corrupted {background-image: url("/state_symbol/corrupted.png");}
+.bg-card-state-summoned {background-image: url("/state_symbol/summoned.png");}
+
+.bg-card-location-in-play {background-image: url("/starting_location/InPlayWhite.svg");}
+.bg-card-location-nation {background-image: url("/starting_location/NationWhite.svg");}
+.bg-card-location-accession {background-image: url("/starting_location/AccessionWhite.svg");}
+.bg-card-location-development {background-image: url("/starting_location/DevelopmentWhite.svg");}
+.bg-card-location-supply {background-image: url("/starting_location/SupplyWhite.svg");}
+.bg-card-location-chaos {background-image: url("/starting_location/ChaosWhite.svg");}
+
+.bg-card-location-in-play-black {background-image: url("/starting_location/InPlay.svg");}
+.bg-card-location-nation-black {background-image: url("/starting_location/Nation.svg");}
+.bg-card-location-accession-black {background-image: url("/starting_location/Accession.svg");}
+.bg-card-location-development-black {background-image: url("/starting_location/Development.svg");}
+.bg-card-location-supply-black {background-image: url("/starting_location/Supply.svg");}
+.bg-card-location-chaos-black {background-image: url("/starting_location/Chaos.svg");}
+
+.bg-card-resource-population {background-image: url("/resource/population.svg");}
+.bg-card-resource-material {background-image: url("/resource/material.svg");}
+.bg-card-resource-progress {background-image: url("/resource/progress.svg");}
+.bg-card-resource-goods {background-image: url("/resource/goods.svg");}
+.bg-card-resource-action {background-image: url("/resource/action.svg");}
+.bg-card-resource-exhaust {background-image: url("/resource/exhaust.svg");}
+
+.bg-card-vp-positive {background-image: url("/vp_icon/victory_point.svg");}
+.bg-card-vp-variable {background-image: url("/vp_icon/victory_point_variable.svg");}
+.bg-card-vp-negative {background-image: url("/vp_icon/victory_point_negative.svg");}
+
+.bg-card-player-count-white {background-image: url("/corner_icon/playerCountWhite.svg");}
+.bg-card-player-count-black {background-image: url("/corner_icon/playerCount.svg");}
+
+.bg-card-expansion-TradeFriendly {background-image: url("/corner_icon/tradeFriendly.png");}
+.bg-card-expansion-Ruthless {background-image: url("/corner_icon/ruthless.png");}
+
+.bg-card-nation-Arthurians {background-color: #8dbe22;}
+.bg-card-nation-Atlanteans {background-color: #64c7f3;}
+.bg-card-nation-Carthaginians {background-color: #005da3;}
+.bg-card-nation-Celts {background-color: #00683a;}
+.bg-card-nation-Egyptians {background-color: #ffee00;}
+.bg-card-nation-Greeks {background-color: #ffffff;}
+.bg-card-nation-Macedonians {background-color: #552b81;}
+.bg-card-nation-Mauryans {background-color: #9e622e;}
+.bg-card-nation-Minoans {background-color: #000000;}
+.bg-card-nation-Olmecs {background-color: #8e8e8d;}
+.bg-card-nation-Persians {background-color: #a45396;}
+.bg-card-nation-Qin {background-color: #ef82ac;}
+.bg-card-nation-Romans {background-color: #e30613;}
+.bg-card-nation-Scythians {background-color: #b7b867;}
+.bg-card-nation-Utopians {background-color: #12b1ad;}
+.bg-card-nation-Vikings {background-color: #f59e00;}
+
+.bg-card-nation-Abbasids {background-image: url("/nation_colour/ABB.png");}
+.bg-card-nation-Aksumites {background-image: url("/nation_colour/AKS.png");}
+.bg-card-nation-Cultists {background-image: url("/nation_colour/CUL.png");}
+.bg-card-nation-Guptas {background-image: url("/nation_colour/GUP.png");}
+.bg-card-nation-Inuit {background-image: url("/nation_colour/INU.png");}
+.bg-card-nation-Japanese {background-image: url("/nation_colour/JPN.png");}
+.bg-card-nation-Magyars {background-image: url("/nation_colour/MAG.png");}
+.bg-card-nation-Martians {background-image: url("/nation_colour/MRT.png");}
+.bg-card-nation-Mayans {background-image: url("/nation_colour/MAY.png");}
+.bg-card-nation-Polynesians {background-image: url("/nation_colour/POL.png");}
+.bg-card-nation-Sassanids {background-image: url("/nation_colour/SAS.png");}
+.bg-card-nation-Taino {background-image: url("/nation_colour/TAI.png");}
+.bg-card-nation-Tang {background-image: url("/nation_colour/TAN.png");}
+.bg-card-nation-Wagadou {background-image: url("/nation_colour/WAG.png");}

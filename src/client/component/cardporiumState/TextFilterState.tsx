@@ -110,12 +110,7 @@ export class TextFilter {
 
     filterComponent(t: TFunction<string, string>): React.JSX.Element {
         return <>
-            <InputTextBox
-                value={this.state.searchText}
-                onChange={text => {this.setSearchText(text)}}
-                placeholder={t("searchText")}
-                width="15em"
-            />
+            <InputTextBox value={this.state.searchText} onChange={text => {this.setSearchText(text)}} placeholder={t("searchText")} width="12em"/>
             <button
                 onClick={() => {
                     this.setIsSearchTitle(true);
@@ -127,15 +122,15 @@ export class TextFilter {
             <br/>
             <label>
                 <span>{t("title")}</span>
-                <CheckBox checked={this.state.isSearchTitle} onChange={check => this.setIsSearchTitle(check)}/>
+                <CheckBox size="15px" checked={this.state.isSearchTitle} onChange={check => this.setIsSearchTitle(check)}/>
             </label>
             <label>
                 <span>{t("effect")}</span>
-                <CheckBox checked={this.state.isSearchEffect} onChange={check => this.setIsSearchEffect(check)}/>
+                <CheckBox size="15px" checked={this.state.isSearchEffect} onChange={check => this.setIsSearchEffect(check)}/>
             </label>
             <label>
                 <span>{t("victory")}</span>
-                <CheckBox checked={this.state.isSearchVictory} onChange={check => this.setIsSearchVictory(check)}/>
+                <CheckBox size="15px" checked={this.state.isSearchVictory} onChange={check => this.setIsSearchVictory(check)}/>
             </label>
         </>;
     }

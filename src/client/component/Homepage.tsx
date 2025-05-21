@@ -5,38 +5,25 @@ import CardSuitIconDisplay from "./card/CardSuitIconDisplay.tsx";
 import {CardSuitIcon} from "../../common/cards/CardSuitIcon.ts";
 import {useTranslation} from "react-i18next";
 
-const largeSuitArrayStyle: React.CSSProperties = {
-    gap: "10px",
-    display: "inline-flex"
-};
-
-const featureButtonStyle: React.CSSProperties = {
-    width: "300px",
-    height: "75px",
-    fontSize: "23px",
-    fontFamily: "monospace",
-}
+const featureButtonClassName: string = "w-[300px] h-[75px] text-[24px]";
 
 function Homepage() : React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
     const {t} = useTranslation("ui", {keyPrefix: "HomepageText"});
-    return <div className="centerAlign">
-        <h1>
-            {t("header")}
-            <br/>
-            <span style={largeSuitArrayStyle}>
-                <CardSuitIconDisplay suit={CardSuitIcon.POWER} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.FAME} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.UNCIVILISED} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.CIVILISED} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.REGION} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.TRIBUTARY} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.UNREST} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.TRADE_ROUTE} isLarge={true} />
-                <CardSuitIconDisplay suit={CardSuitIcon.GADGET} isLarge={true} />
-            </span>
-        </h1>
+    return <div className="text-center justify-center gap-[10px]">
+        <h1>{t("header")}</h1>
+        <span className="gap-[10px] inline-flex">
+            <CardSuitIconDisplay suit={CardSuitIcon.POWER} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.FAME} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.UNCIVILISED} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.CIVILISED} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.REGION} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.TRIBUTARY} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.UNREST} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.TRADE_ROUTE} position={'home-large'}/>
+            <CardSuitIconDisplay suit={CardSuitIcon.GADGET} position={'home-large'}/>
+        </span>
         <p>
             This is a webpage of the great card game Imperium:&nbsp;
             <a href="https://www.ospreypublishing.com/uk/imperium-classics-9781472844743/">Classics</a>,&nbsp;
@@ -47,9 +34,12 @@ function Homepage() : React.JSX.Element {
             It is not endorsed by Osprey either.<br/>
             The card game is great and this webpage recommends purchasing it for personal use.
         </p>
-        <button onClick={() => navigate('/cards')} style={featureButtonStyle}>{t("toCardList")}</button><br/>
-        <button onClick={() => navigate('/cardMaker')} style={featureButtonStyle}>{t("toCardMaker")}</button><br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'>{t("toSource")}</a><br/>
+        <button onClick={() => navigate('/cards')} className={featureButtonClassName}>{t("toCardList")}</button>
+        <br/>
+        <button onClick={() => navigate('/cardMaker')} className={featureButtonClassName}>{t("toCardMaker")}</button>
+        <br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'>{t("toSource")}</a>
+        <br/>
         <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{t("toFeedback")}</a>
     </div>
 }

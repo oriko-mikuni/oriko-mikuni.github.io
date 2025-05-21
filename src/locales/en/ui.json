@@ -62,7 +62,7 @@
     "Scoring Effect": "Scoring Effect",
     "Illustration": "Illustration",
     "Exhaust Count": "Exhaust Count",
-    "Exhaust Count Settings Unavailable": "To customize exhaust count, first set the banner to POWER.",
+    "Exhaust Count Settings Unavailable": "To customize exhaust count, first set the banner to {power}.",
     "Default Exhaust Count Is Five": "Default is 5, other values would be shown.",
     "clear": "Clear"
   },

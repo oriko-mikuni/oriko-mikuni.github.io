@@ -21,6 +21,7 @@ import CardNationColourRender, {CardNationColourDisplayShape} from "../card/Card
 import CardExpansionRender from "../card/CardExpansionRender.tsx";
 import CardVictoryPointIcon from "../card/CardVictoryPointIcon.tsx";
 import {useTranslation} from "react-i18next";
+import CardTextRender from "../card/CardTextRender.tsx";
 
 enum VictoryPointType {
     number = 'number',
@@ -154,7 +155,7 @@ export class CardBuilderState {
         }}/>;
         const specialExhaustInput: React.JSX.Element | null =
             this.props.suit.length === 0 || this.props.suit[0] !== CardSuitIcon.POWER
-                ? <span>{cardMakerTranslation("Exhaust Count Settings Unavailable")}</span>
+                ? <span><CardTextRender text={cardMakerTranslation("Exhaust Count Settings Unavailable")}></CardTextRender></span>
                 : <span>
                     {cardMakerTranslation("Exhaust Count")}
                     <InputNumber value={this.props.exhaustCount} onChange={num => dispatch({exhaustCount: num < 1 ? 1 : num})}/>
@@ -168,7 +169,7 @@ export class CardBuilderState {
             {cardMakerTranslation("Suit Icon")}
             <ButtonGroup
                 range={Object.values(CardSuitIcon)}
-                ItemRender={arg0 => <CardSuitIconDisplay suit={arg0.arg0}/>}
+                ItemRender={arg0 => <CardSuitIconDisplay suit={arg0.arg0} position="inline"/>}
                 onClick={suit => {
                     dispatch(suit !== undefined ? {suit: [...this.props.suit, suit]} : {})
                 }}
@@ -180,7 +181,7 @@ export class CardBuilderState {
             {cardMakerTranslation("Type Icon")}
             <ButtonGroup
                 range={Object.values(CardTypeIcon)}
-                ItemRender={arg0 => <CardTypeIconDisplay type={arg0.arg0}/>}
+                ItemRender={arg0 => <CardTypeIconDisplay type={arg0.arg0} position="inline"/>}
                 onClick={type => {
                     dispatch(type !== undefined ? {typeIcon: [...this.props.typeIcon, type]} : {})
                 }}
@@ -209,27 +210,25 @@ export class CardBuilderState {
             <InputTextBox value={this.props.effectText} onChange={text => dispatch({effectText: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Development Cost")}
             <CardRenderIconComponents iconName="resource-progress"/>
-            <InputNumber value={this.props.developmentCostProgress}
-                         onChange={num => dispatch({developmentCostProgress: num})}/>
+            <InputNumber value={this.props.developmentCostProgress} onChange={num => dispatch({developmentCostProgress: num})}/>
             <CardRenderIconComponents iconName="resource-material"/>
-            <InputNumber value={this.props.developmentCostMaterial}
-                         onChange={num => dispatch({developmentCostMaterial: num})}/>
+            <InputNumber value={this.props.developmentCostMaterial} onChange={num => dispatch({developmentCostMaterial: num})}/>
             <CardRenderIconComponents iconName="resource-population"/>
-            <InputNumber value={this.props.developmentCostPopulation}
-                         onChange={num => dispatch({developmentCostPopulation: num})}/>
+            <InputNumber value={this.props.developmentCostPopulation} onChange={num => dispatch({developmentCostPopulation: num})}/>
             <CardRenderIconComponents iconName="resource-goods"/>
-            <InputNumber value={this.props.developmentCostGoods}
-                         onChange={num => dispatch({developmentCostGoods: num})}/>
+            <InputNumber value={this.props.developmentCostGoods} onChange={num => dispatch({developmentCostGoods: num})}/>
             <br/>
             {cardMakerTranslation("Development Cost Text")}
-            <InputTextBox value={this.props.developmentCostString} width="23em"
-                          onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
+            <InputTextBox value={this.props.developmentCostString} onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Nation Colour")}
             <ButtonGroup range={Object.values(CardNationColour)} ItemRender={arg0 => {
                 if (arg0.arg0 === CardNationColour.COMMON_B) return null;
                 if (arg0.arg0 === undefined || arg0.arg0 === CardNationColour.COMMON) return <>{cardMakerTranslation("clear")}</>;
-                return <CardNationColourRender nationColour={arg0.arg0} shape={CardNationColourDisplayShape.SQUARE}
-                                               location={CardStartingLocation.DEFAULT}/>;
+                return <span className="force-content-box">
+                    <CardNationColourRender nationColour={arg0.arg0}
+                                            shape={CardNationColourDisplayShape.INLINE_SQUARE}
+                                            location={CardStartingLocation.DEFAULT}/>
+                </span>;
             }} onClick={nationColour => {
                 const customNationColourElement: HTMLInputElement = document.getElementById("customNationColourInput") as HTMLInputElement;
                 if (customNationColourElement !== null) customNationColourElement.value = "";
@@ -238,13 +237,13 @@ export class CardBuilderState {
             {cardMakerTranslation("Custom Nation Colour")}
             {customNationColorInput}<br/>
             {cardMakerTranslation("Starting Location")}
-            <ButtonGroup range={Object.values(CardStartingLocation)} ItemRender={arg0 => {
-                if (arg0.arg0 === undefined || arg0.arg0 === CardStartingLocation.DEFAULT) return <>{cardMakerTranslation("clear")}</>;
-                return <CardNationColourRender nationColour={undefined} shape={CardNationColourDisplayShape.SQUARE}
-                                               location={arg0.arg0}/>;
-            }} onClick={location => {
-                dispatch({startingLocation: location})
-            }}/><br/>
+            <ButtonGroup range={Object.values(CardStartingLocation)}
+                         ItemRender={arg0 => {
+                             if (arg0.arg0 === undefined || arg0.arg0 === CardStartingLocation.DEFAULT) return <>{cardMakerTranslation("clear")}</>;
+                             return <CardNationColourRender nationColour={undefined} shape={CardNationColourDisplayShape.INLINE_SQUARE} location={arg0.arg0}/>;
+                         }}
+                         onClick={location => {dispatch({startingLocation: location})
+                         }}/><br/>
             {cardMakerTranslation("Player Count")}
             <ButtonGroup range={[1, 2, 3, 4]}
                          ItemRender={arg0 => <>{arg0.arg0}</>}
@@ -254,7 +253,7 @@ export class CardBuilderState {
             {cardMakerTranslation("Expansion")}
             <ButtonGroup range={Object.values(CardExpansion)} ItemRender={arg0 => {
                 if (arg0.arg0 === undefined || arg0.arg0 === CardExpansion.NONE) return <>{cardMakerTranslation("clear")}</>;
-                return <CardExpansionRender expansion={arg0.arg0} separate={true}/>;
+                return <CardExpansionRender expansion={arg0.arg0}/>;
             }} onClick={expansion => {
                 dispatch({expansion: expansion})
             }}/><br/>
@@ -270,8 +269,7 @@ export class CardBuilderState {
                 dispatch({victoryPointType: vp})
             }}/><br/>
             {cardMakerTranslation("Scoring Effect")}
-            <InputTextBox value={this.props.victoryPointsString} width="12em"
-                          onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
+            <InputTextBox value={this.props.victoryPointsString} width="12em" onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Illustration")}
             <button onClick={() => {
                 const illustrationInput: HTMLInputElement = document.getElementById("illustrationInput") as HTMLInputElement;

@@ -62,7 +62,7 @@
     "Scoring Effect": "计分效果",
     "Illustration": "插画",
     "Exhaust Count": "耗竭数量",
-    "Exhaust Count Settings Unavailable": "要自定义耗竭数量，先将横幅设为势力。",
+    "Exhaust Count Settings Unavailable": "要自定义耗竭数量，先将横幅设为{power}。",
     "Default Exhaust Count Is Five": "默认为5，其他数值会显示",
     "clear": "清除"
   },

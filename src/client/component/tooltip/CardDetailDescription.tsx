@@ -1,6 +1,4 @@
 import React from "react";
-import "./CardDetailDescription.css";
-import "../card/styles/CardBox.css";
 import CardTextRender from "../card/CardTextRender.tsx";
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 import Card from "../card/Card.tsx";
@@ -23,8 +21,8 @@ function getTooltipRender(card: ClientCard, t: TFunction<string, string>): React
         if (name === "") return;
 
         result.push(<div key={index}>
-            <h2><CardTextRender text={name}/></h2>
-            <p><CardTextRender text={description}/></p>
+            <h2><CardTextRender text={name} isBlack={true}/></h2>
+            <p><CardTextRender text={description} isBlack={true}/></p>
         </div>);
     })
     return <>{result}</>;
@@ -58,16 +56,16 @@ function CardDetailDescription(
     {card, closeDialog, clickCard, availableCards}:
     {card?: ClientCard, closeDialog: () => void, clickCard: (arg0: ClientCard) => void, availableCards: Array<ClientCard>}
 ): React.JSX.Element {
-    if (card === undefined) {
-        return <></>
-    }
     const {t} = useTranslation("tooltip", {keyPrefix: "tooltip"});
     const {t: t1} = useTranslation("tooltip");
+
+    if (card === undefined) return <></>
+
     return <div>
-        <div className="CardDetailDialogOverlay" onClick={closeDialog} key="overlay"></div>
-        <div className="CardDetailDialog" key="dialog">
-            <button onClick={closeDialog} key="close">x</button>
-            <span className="cardBox centerAlign" key="card">
+        <div className={"fixed size-full bg-[#00000080] z-[100] left-0 top-0"} onClick={closeDialog} key="overlay"></div>
+        <div className={"fixed w-[500px] bg-white text-black text-[12px] z-[101] p-[10px] rounded-[10px] left-1/2 top-1/2 -translate-1/2"} key="dialog">
+            <button onClick={closeDialog} key="close">{t1("Close")}</button>
+            <span className="cardBox text-center justify-center" key="card">
                 <Card card={card}/>
             </span>
             {getTooltipRender(card, t)}

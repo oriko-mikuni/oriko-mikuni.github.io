@@ -1,8 +1,0 @@
-.card-suits {
-    position: absolute;
-    bottom: 5px;
-    display: flex;
-    gap: 3px;
-    left: 50%;
-    translate: -50%;
-}

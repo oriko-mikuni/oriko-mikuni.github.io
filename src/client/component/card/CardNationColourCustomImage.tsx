@@ -1,12 +1,13 @@
 import React from "react";
 
+const nationColourSize: number = 45;
+
 function CardNationColourCustomImage(
     {file}:
     {file: Blob}
 ): React.JSX.Element {
     const canvasRef: React.RefObject<HTMLCanvasElement | null> =
         React.useRef<HTMLCanvasElement>(null);
-    const size: number = 45;
 
     React.useEffect((): void => {
         const canvas: HTMLCanvasElement | null = canvasRef.current;
@@ -17,25 +18,25 @@ function CardNationColourCustomImage(
         const img: HTMLImageElement = new Image();
         img.onload = (): void => {
             const patternCanvas: HTMLCanvasElement = document.createElement("canvas");
-            patternCanvas.width = size;
-            patternCanvas.height = size;
+            patternCanvas.width = nationColourSize;
+            patternCanvas.height = nationColourSize;
 
             const patternCtx: CanvasRenderingContext2D | null = patternCanvas.getContext("2d");
             if (!patternCtx) return;
 
-            patternCtx.clearRect(0, 0, size, size);
-            patternCtx.drawImage(img, 0, 0, size, size);
+            patternCtx.clearRect(0, 0, nationColourSize, nationColourSize);
+            patternCtx.drawImage(img, 0, 0, nationColourSize, nationColourSize);
 
             const pattern: CanvasPattern | null = ctx.createPattern(patternCanvas, 'no-repeat');
             if (!pattern) return;
 
-            ctx.clearRect(0, 0, size, size);
+            ctx.clearRect(0, 0, nationColourSize, nationColourSize);
             ctx.save();
 
             ctx.beginPath();
             ctx.moveTo(0, 0);
-            ctx.lineTo(size, size);
-            ctx.lineTo(0, size);
+            ctx.lineTo(nationColourSize, nationColourSize);
+            ctx.lineTo(0, nationColourSize);
             ctx.closePath();
 
             ctx.fillStyle = pattern;

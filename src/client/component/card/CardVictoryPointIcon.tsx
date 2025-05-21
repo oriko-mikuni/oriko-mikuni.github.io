@@ -1,37 +1,41 @@
 import {VictoryPoints} from "../../../common/cards/ClientCard.ts";
 import React from "react";
-import './styles/CardVictoryPoints.css';
+
+const cardVPPositive: string = "bg-card-vp-positive text-black";
+const cardVPNegative: string = "bg-card-vp-negative text-[#ff0000]";
+const cardVPVariable: string = "bg-card-vp-variable text-transparent";
 
 function CardVictoryPointIcon(
     {victoryPoints, size = "25px"}:
     {victoryPoints: VictoryPoints, size?: string}
 ): React.JSX.Element {
-    const classes: Array<string> = ['card-victory-point-icon'];
+    let classes: string;
     let victoryPointNumber: string;
 
     switch (victoryPoints) {
         case 'negativeConditional':
-            classes.push('card-victory-point-negative');
+            classes = cardVPNegative;
             victoryPointNumber = "-?";
             break;
         case 'variable':
-            classes.push('card-victory-point-variable');
+            classes = cardVPVariable;
             victoryPointNumber = "*";
             break;
         case 'conditional':
-            classes.push('card-victory-point-positive');
+            classes = cardVPPositive;
             victoryPointNumber = "?";
             break;
         default:
-            classes.push(victoryPoints < 0 ? 'card-victory-point-negative' : 'card-victory-point-positive');
+            classes = victoryPoints < 0 ? cardVPNegative : cardVPPositive;
             victoryPointNumber = victoryPoints.toString();
     }
 
-    const style: React.CSSProperties & Record<string, string> = {
-        "--size": size
-    }
+    const sizeVar: React.CSSProperties & Record<string, string> = {"--size": size};
 
-    return <div className={classes.join(' ')} style={style}>
+    return <div
+        className={`inline-block size-[var(--size)] text-[calc(var(--size)*0.8)] leading-[var(--size)] text-center bg-cover ${classes}`}
+        style={sizeVar}
+    >
         {victoryPointNumber}
     </div>;
 }

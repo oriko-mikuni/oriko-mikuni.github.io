@@ -9,17 +9,16 @@ import {
 import {useTranslation} from "react-i18next";
 import {ClientCard} from "../../common/cards/ClientCard.ts";
 import Card from "./card/Card.tsx";
-import "./ImperiumCardMaker.css";
-import html2canvas from "html2canvas";
+import {toPng} from 'html-to-image';
 import CardTextRender from "./card/CardTextRender.tsx";
 import {getHelpText} from "../cards/IconNamesManifest.ts";
 
 async function downloadImage(name: string): Promise<void> {
     const element: HTMLElement | null = document.getElementById("cardDisplay");
     if (element === null) return;
-    html2canvas(element, {useCORS: true}).then(canvas => {
-        const link: HTMLAnchorElement = document.createElement("a");
-        link.href = canvas.toDataURL("image/png");
+    toPng(element).then(dataUrl => {
+        const link: HTMLAnchorElement = document.createElement('a');
+        link.href = dataUrl;
         link.download = name + ".png";
         link.click();
     }).catch(error => console.error("Error downloading image", error));
@@ -58,11 +57,11 @@ function ImperiumCardMaker(): React.JSX.Element {
         = useReducer(CardBuilderState.reducer, new CardBuilderState({}));
     const {t: cardMakerTranslation} = useTranslation("ui", {keyPrefix: "ImperiumCardMaker"});
     const card: ClientCard = state.getCardDisplay();
-    const cardElement: React.JSX.Element = <div className="cardBox centerAlign"><Card card={card}/></div>;
+    const cardElement: React.JSX.Element = <div className="cardBox text-center justify-center"><Card card={card}/></div>;
     const toggles: React.JSX.Element = state.getOperations(dispatch);
 
-    return <div className="ImperiumCardMaker">
-        <div className="ImperiumCardMaker_sidebar">
+    return <div className="flex h-full">
+        <div className="fixed top-0 left-0 bottom-0 w-[300px] bg-[#666666] text-white overflow-x-hidden overflow-y-scroll p-[10px]">
             <button onClick={() => navigate("/")}>{cardMakerTranslation("backToHomepage")}</button> <br/>
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{cardMakerTranslation("toFeedback")}</a> <br/>
             <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/wiki/Card-Maker---%E5%8D%A1%E7%89%8C%E5%88%B6%E4%BD%9C'>{cardMakerTranslation("howToAddIcons")}</a> <br/>
@@ -76,7 +75,7 @@ function ImperiumCardMaker(): React.JSX.Element {
             <p>{cardMakerTranslation("Copy the code into the text")}</p>
             <CardTextRender text={getHelpText()}/>
         </div>
-        <div className="ImperiumCardMaker_content">
+        <div className="ml-[320px] p-[20px] w-full">
             {toggles}
         </div>
     </div>

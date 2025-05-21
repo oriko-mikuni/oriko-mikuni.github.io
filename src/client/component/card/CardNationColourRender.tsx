@@ -1,45 +1,29 @@
 import {
     CardNationColour,
-    getNationBackgroundStyle,
+    getNationColourStyle,
     getNationTextColour
 } from "../../../common/cards/CardNationColour.ts";
-import './styles/CardNationColour.css';
 import React from "react";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation.ts";
 import CardNationColourCustomImage from "./CardNationColourCustomImage.tsx";
-import {getNationColourFile} from "../../cards/NationColourImageManifest.ts";
+import {getNationBgColour, getNationBgColourFile} from "../../cards/NationColourImageManifest.ts";
 
 export enum CardNationColourDisplayShape {
     TRIANGLE = "card-nation-colour-triangle",
-    SQUARE = "card-nation-colour-inline-square"
+    INLINE_SQUARE = "card-nation-colour-inline-square",
+    MINIMAL_SQUARE = "card-nation-colour-minimal-square"
 }
 
-const CardNationColourShapeContainerStyle: Readonly<Record<CardNationColourDisplayShape, Readonly<React.CSSProperties>>> = {
-    [CardNationColourDisplayShape.TRIANGLE]: {
-        position: "absolute",
-        bottom: "0",
-        left: "0",
-        width: "45px",
-        height: "45px",
-        overflow: "hidden",
-        backgroundClip: "padding-box",
-        borderBottomLeftRadius: "inherit"},
-    [CardNationColourDisplayShape.SQUARE]: {
-        position: "relative",
-        display: "inline-block",
-        width: "1em",
-        height: "1em",
-        backgroundSize: "1em",
-        verticalAlign: "middle",
-        borderColor: "white",
-        borderWidth: "1px",
-        borderStyle: "solid",
-    }
-}
+const CardNationColourShapeContainerStyle: Record<CardNationColourDisplayShape, string> = {
+    [CardNationColourDisplayShape.TRIANGLE]: "absolute bottom-0 left-0 w-[45px] h-[45px] overflow-hidden bg-clip-padding rounded-bl-[inherit] text-transparent",
+    [CardNationColourDisplayShape.INLINE_SQUARE]: "relative inline-block w-[1em] h-[1em] bg-cover text-transparent align-sub",
+    [CardNationColourDisplayShape.MINIMAL_SQUARE]: "relative inline-block w-[1em] h-[1em] bg-cover text-transparent align-text-top",
+};
 
 const CardLocationDisplayShape: Record<CardNationColourDisplayShape, string> = {
-    [CardNationColourDisplayShape.TRIANGLE]: "card-triangle-location",
-    [CardNationColourDisplayShape.SQUARE]: "card-inline-square-location",
+    [CardNationColourDisplayShape.TRIANGLE]: "absolute bottom-[8px] left-[8px] w-[15px] h-[15px] bg-cover bg-card-location-",
+    [CardNationColourDisplayShape.INLINE_SQUARE]: "absolute w-[1em] h-[1em] bg-cover bg-card-location-",
+    [CardNationColourDisplayShape.MINIMAL_SQUARE]: "absolute w-[1em] h-[1em] bg-cover bg-card-location-",
 }
 
 function CardNationColourRender
@@ -56,49 +40,32 @@ function CardNationColourRender
     nationColourImageFile?: File,
     diy?: boolean
 }): React.JSX.Element | null {
-    const displayBackground: React.CSSProperties = getNationBackgroundStyle(nationColour);
+    const displayBackgroundString: string = getNationColourStyle(nationColour);
     const locationColour: string = getNationTextColour(nationColour);
-    const containerShapeStyle: React.CSSProperties = {...CardNationColourShapeContainerStyle[shape]};
+    let containerShapeStyle: string = CardNationColourShapeContainerStyle[shape];
 
     let displayNationColourElement: React.JSX.Element;
 
     if (shape === CardNationColourDisplayShape.TRIANGLE) {
         if (diy) {
-            const blob: Blob | null = nationColourImageFile ?? getNationColourFile(nationColour);
-            displayNationColourElement = blob !== null
-                ? <CardNationColourCustomImage file={blob}/>
-                : <svg width={45} height={45}><polygon points="0,0 45,45 0,45" fill={displayBackground.backgroundColor ?? "#00000000"}/></svg>;
+            const blob: Blob | null = nationColourImageFile ?? getNationBgColourFile(nationColour);
+            displayNationColourElement = blob !== null ? <CardNationColourCustomImage file={blob}/> :
+                <svg width={45} height={45} fill={getNationBgColour(nationColour)}><polygon points="0,0 45,45 0,45"/></svg>;
         } else {
-            displayNationColourElement = <div style={{
-                ...displayBackground,
-                width: "45px",
-                height: "45px",
-                backgroundSize: "45px 45px",
-                clipPath: "polygon(0 0, 45px 45px, 0 45px)",
-            }}/>
+            displayNationColourElement = <div className={displayBackgroundString + " w-[45px] h-[45px] bg-cover clip-border-bl-triangle"}/>;
         }
     } else {
-        displayNationColourElement = <div style={{
-            ...displayBackground,
-            width: "1em",
-            height: "1em",
-            backgroundSize: "1em",
-            position: "absolute",
-        }}/>;
-        if (nationColour === undefined || nationColour === CardNationColour.COMMON_B || nationColour === CardNationColour.COMMON) {
-            containerShapeStyle.borderWidth = undefined;
-            containerShapeStyle.borderColor = undefined;
-            containerShapeStyle.borderStyle = undefined;
+        displayNationColourElement = <div className={displayBackgroundString + " w-[1em] h-[1em] bg-cover absolute"}/>;
+        if (!(nationColour === undefined || nationColour === CardNationColour.COMMON_B || nationColour === CardNationColour.COMMON)) {
+            containerShapeStyle = containerShapeStyle + " border border-white border-solid";
         }
     }
 
-    const locationDisplayStyleClass: string = CardLocationDisplayShape[shape];
-
     const displayStartingLocationElement: React.JSX.Element | null =
         location === CardStartingLocation.DEFAULT ? null :
-            <div className={`${locationDisplayStyleClass} card-location-${locationColour} card-location-${location}`}/>;
+            <div className={`${CardLocationDisplayShape[shape]}${location}${locationColour === "white" ? "" : "-" + locationColour}`}/>;
 
-    return <div style={containerShapeStyle}>
+    return <div className={containerShapeStyle}>
         {displayNationColourElement}
         {displayStartingLocationElement}
     </div>;

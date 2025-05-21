@@ -8,10 +8,10 @@ type CardporiumFilterStateAction = {
     targetValue: boolean
 };
 
-const selectedStyle: Record<0 | 1, React.CSSProperties> = {
-    0: {backgroundColor: "#303030", color: "#fff"},
-    1: {backgroundColor: "#dddddd", color: "#000"}
-};
+const selectedStyle: Array<string> = [
+    "bg-[#303030] text-white contrast-50",
+    "bg-[#dddddd] text-black"
+];
 
 class CardporiumFilterState {
     filterDisplaySet: Set<string>;
@@ -99,22 +99,6 @@ export class CardporiumFilter {
         const {t} = useTranslation("ui", {keyPrefix: "ElementFilterState"});
         let size: number = 1;
         const result: Array<React.JSX.Element> = [];
-        if (this.state.includeVoidContent) {
-            const icon: React.JSX.Element | null = IconRender({});
-            if (icon !== null) {
-                result.push(
-                    <button
-                        onClick={() => this.dispatch({
-                            actionType: "toggle",
-                            targetValue: !this.state.filterVoidDisplay
-                        })}
-                        style={selectedStyle[this.state.filterVoidDisplay ? 1 : 0]}
-                        key={0}
-                    >
-                        {icon}
-                    </button>);
-            }
-        }
         this.state.fullSet.forEach((elem1: string) => {
             const icon: React.JSX.Element | null = IconRender({elem: elem1});
             if (icon !== null) {
@@ -125,7 +109,7 @@ export class CardporiumFilter {
                             elem: elem1,
                             targetValue: !this.state.filterDisplaySet.has(elem1)
                         })}
-                        style={selectedStyle[this.state.filterDisplaySet.has(elem1) ? 1 : 0]}
+                        className={selectedStyle[this.state.filterDisplaySet.has(elem1) ? 1 : 0]}
                         key={size}
                     >
                         {icon}
@@ -134,6 +118,22 @@ export class CardporiumFilter {
                 size++;
             }
         });
+        if (this.state.includeVoidContent) {
+            const icon: React.JSX.Element | null = IconRender({});
+            if (icon !== null) {
+                result.push(
+                    <button
+                        onClick={() => this.dispatch({
+                            actionType: "toggle",
+                            targetValue: !this.state.filterVoidDisplay
+                        })}
+                        className={selectedStyle[this.state.filterVoidDisplay ? 1 : 0]}
+                        key={0}
+                    >
+                        {icon}
+                    </button>);
+            }
+        }
         result.push(
             <button
                 onClick={() => this.dispatch({
