@@ -4,7 +4,7 @@ import {HashRouter} from "react-router-dom";
 import App from "./client/component/App.tsx";
 import './i18n.ts'
 
-const root = ReactDOM.createRoot(
+const root: ReactDOM.Root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 

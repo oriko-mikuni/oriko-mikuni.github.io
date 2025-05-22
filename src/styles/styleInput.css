@@ -7,7 +7,7 @@
     h2 {@apply text-xl font-bold;}
     h3 {@apply text-lg font-bold; }
     a {@apply underline text-[#0080ff];}
-    input[type="file"] {@apply text-black bg-[#dddddd];}
+    input[type="file"] {@apply px-1 text-black bg-[#dddddd] border-black border rounded-lg w-64;}
     input[type="text"], input[type="number"], textarea {@apply text-black bg-[#dddddd] border-black border rounded-lg;}
     button, select {@apply px-1 text-black bg-[#dddddd] border-black border rounded-lg;}
 }

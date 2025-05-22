@@ -53,6 +53,7 @@ export type CardBuilderStateProps = {
     victoryPointsString: string;
     illustration: string;
     exhaustCount: number;
+    isStartingLocationBlack: boolean;
 }
 
 function isDevelopmentCostEmpty(props: CardBuilderStateProps): boolean {
@@ -93,7 +94,8 @@ const CardBuilderStatePropsDefault: CardBuilderStateProps = {
     victoryPoints: 0,
     victoryPointsString: "",
     illustration: "",
-    exhaustCount: 5
+    exhaustCount: 5,
+    isStartingLocationBlack: false,
 }
 
 export function ofCardBuilderStateProps(props: Partial<CardBuilderStateProps>): CardBuilderStateProps {
@@ -113,6 +115,10 @@ export class CardBuilderState {
     }
 
     public getCardDisplay(): ClientCard {
+        const nationColour: CardNationColour =
+            (this.props.nationColour === CardNationColour.COMMON || this.props.nationColour === CardNationColour.COMMON_B)
+                ? (this.props.isStartingLocationBlack ? CardNationColour.COMMON_B : CardNationColour.COMMON)
+                : this.props.nationColour;
         return {
             cardNumber: this.props.cardNumber !== "" ? this.props.cardNumber + "(FAN)" : "FAN",
             developmentCost: isDevelopmentCostEmpty(this.props) ? undefined : developmentCostUnits(this.props),
@@ -124,7 +130,7 @@ export class CardBuilderState {
             keywords: [],
             relatedCards: [],
             name: this.props.name !== "" ? this.props.name : "-",
-            nationColour: this.props.nationColour,
+            nationColour: nationColour,
             nationColourFile: this.props.nationColourFile === 'none' ? undefined : this.props.nationColourFile,
             playerCount: this.props.playerCount,
             startingLocation: this.props.startingLocation,
@@ -143,14 +149,16 @@ export class CardBuilderState {
         const customNationColorInput: React.JSX.Element = <input id="customNationColourInput" type="file" onChange={e => {
             if (e.target.files) {
                 const file: File = e.target.files[0];
-                dispatch({nationColourFile: file, nationColour: CardNationColour.COMMON})
+                if (file) dispatch({nationColourFile: file, nationColour: CardNationColour.COMMON})
             }
         }}/>;
         const illustrationInput: React.JSX.Element  = <input id="illustrationInput" type="file" onChange={e => {
             if (e.target.files) {
                 const file: File = e.target.files[0];
-                const fileURL: string = URL.createObjectURL(file);
-                dispatch({illustration: fileURL})
+                if (file) {
+                    const fileURL: string = URL.createObjectURL(file);
+                    dispatch({illustration: fileURL})
+                }
             }
         }}/>;
         const specialExhaustInput: React.JSX.Element | null =
@@ -160,6 +168,15 @@ export class CardBuilderState {
                     {cardMakerTranslation("Exhaust Count")}
                     <InputNumber value={this.props.exhaustCount} onChange={num => dispatch({exhaustCount: num < 1 ? 1 : num})}/>
                     {cardMakerTranslation("Default Exhaust Count Is Five")}
+                </span>;
+        const customStartingLocationColorButtons: React.JSX.Element | null =
+            (this.props.nationColourFile === 'none'
+                && this.props.nationColour !== CardNationColour.COMMON
+                && this.props.nationColour !== CardNationColour.COMMON_B) ? null :
+                <span>
+                    {cardMakerTranslation("Starting Location Colour")}
+                    <button onClick={() => dispatch({isStartingLocationBlack: true})}>{cardMakerTranslation("black")}</button>
+                    <button onClick={() => dispatch({isStartingLocationBlack: false})}>{cardMakerTranslation("white")}</button>
                 </span>;
         return <>
             {cardMakerTranslation("Name")}
@@ -210,16 +227,21 @@ export class CardBuilderState {
             <InputTextBox value={this.props.effectText} onChange={text => dispatch({effectText: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Development Cost")}
             <CardRenderIconComponents iconName="resource-progress"/>
-            <InputNumber value={this.props.developmentCostProgress} onChange={num => dispatch({developmentCostProgress: num})}/>
+            <InputNumber value={this.props.developmentCostProgress}
+                         onChange={num => dispatch({developmentCostProgress: num})}/>
             <CardRenderIconComponents iconName="resource-material"/>
-            <InputNumber value={this.props.developmentCostMaterial} onChange={num => dispatch({developmentCostMaterial: num})}/>
+            <InputNumber value={this.props.developmentCostMaterial}
+                         onChange={num => dispatch({developmentCostMaterial: num})}/>
             <CardRenderIconComponents iconName="resource-population"/>
-            <InputNumber value={this.props.developmentCostPopulation} onChange={num => dispatch({developmentCostPopulation: num})}/>
+            <InputNumber value={this.props.developmentCostPopulation}
+                         onChange={num => dispatch({developmentCostPopulation: num})}/>
             <CardRenderIconComponents iconName="resource-goods"/>
-            <InputNumber value={this.props.developmentCostGoods} onChange={num => dispatch({developmentCostGoods: num})}/>
+            <InputNumber value={this.props.developmentCostGoods}
+                         onChange={num => dispatch({developmentCostGoods: num})}/>
             <br/>
             {cardMakerTranslation("Development Cost Text")}
-            <InputTextBox value={this.props.developmentCostString} onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
+            <InputTextBox value={this.props.developmentCostString}
+                          onChange={text => dispatch({developmentCostString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Nation Colour")}
             <ButtonGroup range={Object.values(CardNationColour)} ItemRender={arg0 => {
                 if (arg0.arg0 === CardNationColour.COMMON_B) return null;
@@ -235,15 +257,21 @@ export class CardBuilderState {
                 dispatch({nationColour: nationColour, nationColourFile: 'none'})
             }}/><br/>
             {cardMakerTranslation("Custom Nation Colour")}
-            {customNationColorInput}<br/>
+            {customNationColorInput}
+            {customStartingLocationColorButtons}
+            <br/>
             {cardMakerTranslation("Starting Location")}
             <ButtonGroup range={Object.values(CardStartingLocation)}
                          ItemRender={arg0 => {
                              if (arg0.arg0 === undefined || arg0.arg0 === CardStartingLocation.DEFAULT) return <>{cardMakerTranslation("clear")}</>;
-                             return <CardNationColourRender nationColour={undefined} shape={CardNationColourDisplayShape.INLINE_SQUARE} location={arg0.arg0}/>;
+                             return <CardNationColourRender nationColour={undefined}
+                                                            shape={CardNationColourDisplayShape.INLINE_SQUARE}
+                                                            location={arg0.arg0}/>;
                          }}
-                         onClick={location => {dispatch({startingLocation: location})
-                         }}/><br/>
+                         onClick={location => {
+                             dispatch({startingLocation: location})
+                         }}/>
+            <br/>
             {cardMakerTranslation("Player Count")}
             <ButtonGroup range={[1, 2, 3, 4]}
                          ItemRender={arg0 => <>{arg0.arg0}</>}
@@ -269,7 +297,8 @@ export class CardBuilderState {
                 dispatch({victoryPointType: vp})
             }}/><br/>
             {cardMakerTranslation("Scoring Effect")}
-            <InputTextBox value={this.props.victoryPointsString} width="12em" onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
+            <InputTextBox value={this.props.victoryPointsString} width="12em"
+                          onChange={text => dispatch({victoryPointsString: text})} allowBr={true}/><br/>
             {cardMakerTranslation("Illustration")}
             <button onClick={() => {
                 const illustrationInput: HTMLInputElement = document.getElementById("illustrationInput") as HTMLInputElement;

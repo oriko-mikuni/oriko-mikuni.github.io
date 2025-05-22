@@ -55,6 +55,7 @@
     "Development Cost Text": "发展费用文本",
     "Nation Colour": "国家颜色",
     "Custom Nation Colour": "自定义国家颜色",
+    "Starting Location Colour": "起始位置颜色",
     "Starting Location": "起始位置",
     "Player Count": "玩家人数",
     "Expansion": "模组",
@@ -64,7 +65,9 @@
     "Exhaust Count": "耗竭数量",
     "Exhaust Count Settings Unavailable": "要自定义耗竭数量，先将横幅设为{power}。",
     "Default Exhaust Count Is Five": "默认为5，其他数值会显示",
-    "clear": "清除"
+    "clear": "清除",
+    "black": "黑",
+    "white": "白"
   },
   "ElementFilterState": {
     "invert": "反转"

@@ -55,6 +55,7 @@
     "Development Cost Text": "Development Cost Text",
     "Nation Colour": "Nation Colour",
     "Custom Nation Colour": "Custom Nation Colour",
+    "Starting Location Colour": "Starting Location Colour",
     "Starting Location": "Starting Location",
     "Player Count": "Player Count",
     "Expansion": "Expansion",
@@ -64,7 +65,9 @@
     "Exhaust Count": "Exhaust Count",
     "Exhaust Count Settings Unavailable": "To customize exhaust count, first set the banner to {power}.",
     "Default Exhaust Count Is Five": "Default is 5, other values would be shown.",
-    "clear": "Clear"
+    "clear": "Clear",
+    "black": "Black",
+    "white": "White"
   },
   "ElementFilterState": {
     "invert": "Invert"
