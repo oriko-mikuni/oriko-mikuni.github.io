@@ -36,7 +36,7 @@ const nationBgColour: Partial<Record<CardNationColour, string>> = {
     [CardNationColour.VIK]: "#f59e00",
 };
 
-class NationColourImageManifest {
+class ClientNationColourManifest {
     public static nationColourFile: Partial<Record<CardNationColour, Blob>> = {};
     public static initialize(): void {
         for (const colour of Object.values(CardNationColour)) {
@@ -50,7 +50,7 @@ class NationColourImageManifest {
                     return res.blob();
                 })
                 .then((blob: Blob): void => {
-                    NationColourImageManifest.nationColourFile[colour] = blob;
+                    ClientNationColourManifest.nationColourFile[colour] = blob;
                 })
                 .catch(err => console.error("fetch error: " + err));
         }
@@ -59,7 +59,7 @@ class NationColourImageManifest {
 
 export function getNationBgColourFile(colour?: CardNationColour): Blob | null {
     if (colour === undefined) return null;
-    return NationColourImageManifest.nationColourFile[colour] ?? null;
+    return ClientNationColourManifest.nationColourFile[colour] ?? null;
 }
 
 
@@ -68,4 +68,4 @@ export function getNationBgColour(colour?: CardNationColour): string {
     return nationBgColour[colour] ?? "transparent";
 }
 
-NationColourImageManifest.initialize();
+ClientNationColourManifest.initialize();

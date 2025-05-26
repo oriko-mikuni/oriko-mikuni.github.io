@@ -14,19 +14,17 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon.ts";
 import CardExpansionRender from "./CardExpansionRender.tsx";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType.ts";
 
-function getCardClasses(card: ClientCard, onClick?: () => void): string {
+function getCardClasses(card: ClientCard, isReactive: boolean): string {
     const classes: Array<string> = [
         'm-[5px] relative bg-[#555555]',
         'w-[250px] h-[350px] bg-size-[250px_350px]',
         'border-2 border-lt-none-rb-solid rounded-[15px] border-[#888888]',
         'force-content-box'];
-    if (onClick !== undefined) classes.push("transition-transform hover:scale-110 hover:z-50");
+    if (isReactive) classes.push("transition-transform hover:scale-105 hover:cursor-pointer hover:z-50");
     if (card.cardInPlayType === CardInPlayType.STATE) classes.push("state-card");
     else if (card.cardInPlayType === CardInPlayType.POWER) classes.push("power-card");
     else if (card.cardInPlayType === CardInPlayType.PERMANENT) classes.push("permanent-card");
     else classes.push("bg-illustration-placeholder");
-
-    classes.push(`card-name-${card.name}`);
 
     return classes.join(' ');
 }
@@ -63,17 +61,11 @@ function Card(
     </div>;
 
     const backgroundStyle: React.CSSProperties | undefined = card.illustration ? {backgroundImage: `url("${card.illustration}")`} : undefined;
-    return <div
-        className={getCardClasses(card, onClick)}
-        style={backgroundStyle}
-        onClick={onClick}
-    >
+    return <div className={getCardClasses(card, onClick !== undefined)} style={backgroundStyle} onClick={onClick}>
         <div className="relative">
             {topContents}
         </div>
-        <CardSuitIconGroup
-            suit={card.suit}
-        />
+        <CardSuitIconGroup suit={card.suit}/>
         <CardEffectTextBox
             effectText={card.effectText}
             developmentCost={card.developmentCost}
@@ -92,9 +84,7 @@ function Card(
             victoryPointString={card.victoryPointsString}
             diy={card.gameModule === GameModule.DEFAULT}
         />
-        <div className="absolute left-[40px] bottom-[10px] text-[10px] text-white">
-            {card.cardNumber}
-        </div>
+        <div className="absolute left-[40px] bottom-[10px] text-[10px] text-white">{card.cardNumber}</div>
         <CardExpansionRender expansion={card.expansion} position='bottomLeft'/>
         {playerCountRender}
     </div>;

@@ -9,6 +9,7 @@ import enCardEffect from './locales/en/cardEffect.json';
 import enVictoryText from './locales/en/cardVictoryText.json';
 import enUI from './locales/en/ui.json';
 import enTooltip from './locales/en/tooltip.json';
+import enCommonSets from './locales/en/commonSets.json';
 
 import zhCNCardName from './locales/zh-CN/cardName.json';
 import zhCNModuleName from './locales/zh-CN/moduleName.json';
@@ -16,6 +17,7 @@ import zhCNCardEffect from './locales/zh-CN/cardEffect.json';
 import zhCNVictoryText from './locales/zh-CN/cardVictoryText.json';
 import zhCNUi from './locales/zh-CN/ui.json';
 import zhCNTooltip from './locales/zh-CN/tooltip.json';
+import zhCNCommonSets from './locales/zh-CN/commonSets.json';
 
 export const languageName: Record<string, string> = {
     "en": "English",
@@ -39,7 +41,8 @@ i18n
                 cardEffect: enCardEffect,
                 victoryText: enVictoryText,
                 ui: enUI,
-                tooltip: enTooltip
+                tooltip: enTooltip,
+                commonSets: enCommonSets,
             },
             zh_CN: {
                 cardName: zhCNCardName,
@@ -47,10 +50,11 @@ i18n
                 cardEffect: zhCNCardEffect,
                 victoryText: zhCNVictoryText,
                 ui: zhCNUi,
-                tooltip: zhCNTooltip
+                tooltip: zhCNTooltip,
+                commonSets: zhCNCommonSets,
             }
         },
-        ns: ['cardName', 'moduleName', 'cardEffect', 'ui', 'victoryText', 'tooltip'],
+        ns: ['cardName', 'moduleName', 'cardEffect', 'ui', 'victoryText', 'tooltip', 'commonSets'],
     })
 
 export default i18n;

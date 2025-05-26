@@ -3,12 +3,15 @@
     "Homepage": "Homepage",
     "Imperium Cardporium": "Imperium Cardporium",
     "Imperium Card Maker": "Imperium Card Maker",
+    "Imperium Common Sets": "Imperium Common Sets",
     "404": "Page Not Found"
   },
   "HomepageText": {
     "header": "Imperium Card Game",
     "toCardList": "card list",
     "toCardMaker": "card maker",
+    "toCommonSets": "common sets",
+    "toRulebook": "rulebook",
     "toSource": "source",
     "toFeedback": "feedback"
   },
@@ -69,8 +72,28 @@
     "black": "Black",
     "white": "White"
   },
+  "ImperiumCommonSets": {
+    "backToHomepage": "<-- back",
+    "toFeedback": "feedback",
+    "Choose Common Set": "Choose Common Set",
+    "cardDisplaySettings": "Card Display Settings",
+    "minimizeCardDisplay": "Minimize Card Display",
+    "Fame": "Fame",
+    "Uncivilised": "Uncivilised",
+    "Civilised": "Civilised",
+    "Region": "Region",
+    "Tributary": "Tributary",
+    "3 Players": "3 Players",
+    "4 Players": "4 Players",
+    "Remove these cards when playing with Trade Route expansion": "Remove these cards when playing with Trade Route expansion",
+    "Add these cards when playing with Trade Route expansion": "Add these cards when playing with Trade Route expansion",
+    "Tributary Replacement": "Tributary Replacement"
+  },
   "ElementFilterState": {
     "invert": "Invert"
+  },
+  "DialogBox": {
+    "Close": "Close"
   },
   "CardGroup": {
     "hintIfNoCardsLine1": "Currently no cards are shown.",

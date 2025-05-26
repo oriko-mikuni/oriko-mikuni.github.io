@@ -11,7 +11,8 @@ export class PageTitle {
         PageTitle.titles = {
             "/": t("Homepage"),
             "/cards": t("Imperium Cardporium"),
-            "/cardMaker": t("Imperium Card Maker")
+            "/cardMaker": t("Imperium Card Maker"),
+            "/commonSets": t("Imperium Common Sets"),
         };
         this.pageNotFoundTitle = t("404");
         document.title = PageTitle.titles[pathname] || PageTitle.pageNotFoundTitle;

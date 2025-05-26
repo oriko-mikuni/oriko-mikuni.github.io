@@ -38,9 +38,13 @@ function Homepage() : React.JSX.Element {
         <br/>
         <button onClick={() => navigate('/cardMaker')} className={featureButtonClassName}>{t("toCardMaker")}</button>
         <br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'>{t("toSource")}</a>
+        <button onClick={() => navigate('/commonSets')} className={featureButtonClassName}>{t("toCommonSets")}</button>
         <br/>
-        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{t("toFeedback")}</a>
+        <a href='https://www.ospreypublishing.com/media/1kmpbipw/imperium-horizons-rulebook.pdf'><button className={featureButtonClassName}>{t("toRulebook")}</button></a>
+        <br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/'><button>{t("toSource")}</button></a>
+        <br/>
+        <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'><button>{t("toFeedback")}</button></a>
     </div>
 }
 

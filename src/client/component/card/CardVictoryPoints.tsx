@@ -19,8 +19,8 @@ function CardVictoryPoints(
         vpTextClasses = "";
     } else {
         let translateResult: string = diy ? victoryPointString : vpTextTranslate(victoryPointString);
-        if (translateResult.endsWith("#wider")) {
-            translateResult = translateResult.slice(0, translateResult.length - 6);
+        if (translateResult.endsWith("^")) {
+            translateResult = translateResult.slice(0, translateResult.length - 1);
             vpTextClasses = cardVictoryPointWiderText;
         } else
             vpTextClasses = cardVictoryPointText;

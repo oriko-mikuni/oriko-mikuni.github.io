@@ -1,23 +1,23 @@
 import IconNamesJson from '../../genfiles/iconNames.json';
 
-export class IconNamesManifest {
+export class ClientIconManifest {
     public static iconNames: Record<string, string> = {};
 
     public static initialize(): void {
         Object.entries(IconNamesJson as Record<string, string>).forEach(
             (iconEntry: [string, string]): void  => {
-                IconNamesManifest.iconNames[iconEntry[0]] = iconEntry[1];
+                ClientIconManifest.iconNames[iconEntry[0]] = iconEntry[1];
         });
     }
 }
 
 export function getIconByName(name: string): string | undefined {
-    return IconNamesManifest.iconNames[name];
+    return ClientIconManifest.iconNames[name];
 }
 
 export function getHelpText(): string {
     let helpText: string = "";
-    const iconNames = Object.entries(IconNamesManifest.iconNames);
+    const iconNames = Object.entries(ClientIconManifest.iconNames);
     let lastIdx = 0;
     for (let i = 0; i < iconNames.length; i++){
         const entry = iconNames[i];
@@ -25,7 +25,7 @@ export function getHelpText(): string {
             if (iconNames[i][1].slice(0,5) !== iconNames[i-1][1].slice(0,5)) {
                 lastIdx = i;
                 helpText = helpText + "\n\n";
-            } else if (lastIdx === i - 2) {
+            } else if (lastIdx === i - 2 || iconNames[i][1].slice(0, 5) === "expan") {
                 lastIdx = i;
                 helpText = helpText + "\n";
             } else helpText = helpText + "   ";
@@ -35,4 +35,4 @@ export function getHelpText(): string {
     return helpText;
 }
 
-IconNamesManifest.initialize();
+ClientIconManifest.initialize();

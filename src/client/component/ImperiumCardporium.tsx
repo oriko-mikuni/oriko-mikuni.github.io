@@ -26,9 +26,10 @@ import CardVictoryPointIcon from "./card/CardVictoryPointIcon.tsx";
 import {GameModule, moduleNation} from "../../common/cards/GameModule.ts";
 import {CardNationColour} from "../../common/cards/CardNationColour.ts";
 import CardNationColourRender, {CardNationColourDisplayShape} from "./card/CardNationColourRender.tsx";
-import CardDetailDescription from "./tooltip/CardDetailDescription.tsx";
+import DialogBoxCenter from "./common/DialogBoxCenter.tsx";
 import {CardStartingLocation} from "../../common/cards/CardStartingLocation.ts";
 import CheckBox from "./common/CheckBox.tsx";
+import {CardDetailDescription} from "./tooltip/CardDetailDescription.tsx";
 
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
@@ -141,10 +142,29 @@ function ImperiumCardporium(): React.JSX.Element {
             </label>
         </span>;
 
+    let detailedCardDisplay: React.JSX.Element | null;
+    if (state.detailedCard !== undefined) {
+        const detailedCard: ClientCard = state.detailedCard;
+        detailedCardDisplay = <DialogBoxCenter
+            isTextBlack={true}
+            onClose={() => dispatch(CardporiumDisplayState.toggleDetailedCard(undefined))}
+            DialogContent={({isTextBlack}: {isTextBlack: boolean}) => <CardDetailDescription
+                card={detailedCard}
+                clickCard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
+                availableCards={state.getCards()}
+                isTextBlack={isTextBlack}
+            />}
+        />;
+    } else {
+        detailedCardDisplay = null;
+    }
+
     return <div className="flex h-full">
-        <div className={"fixed w-[315px] bg-[#808080] text-white overflow-x-hidden overflow-y-scroll p-[10px] left-0 inset-y-0"}>
-            <button onClick={() => navigate("/")}>{uiTranslation("backToHomepage")}</button> <br/>
-            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{uiTranslation("toFeedback")}</a>
+        <div
+            className={"fixed w-[315px] bg-[#808080] text-white overflow-x-hidden overflow-y-scroll p-[10px] left-0 inset-y-0"}>
+            <button onClick={() => navigate("/")}>{uiTranslation("backToHomepage")}</button>
+            <br/>
+            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'><button>{uiTranslation("toFeedback")}</button></a>
             <h2 className="text-center justify-center">{uiTranslation("gameContents")}</h2> {horizonsUpdateToggle}
             <h2 className="text-center justify-center">{uiTranslation("NationOrCommon")}</h2> {gameModuleFilterButtons}
             <h2 className="text-center justify-center">{uiTranslation("cardDisplaySettings")}</h2> {minimizeCardsToggle}
@@ -164,12 +184,7 @@ function ImperiumCardporium(): React.JSX.Element {
                 onClickACard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
             />
         </div>
-        <CardDetailDescription
-            card={state.detailedCard}
-            availableCards={state.getCards()}
-            closeDialog={() => dispatch(CardporiumDisplayState.toggleDetailedCard(undefined))}
-            clickCard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
-        />
+        {detailedCardDisplay}
     </div>;
 }
 

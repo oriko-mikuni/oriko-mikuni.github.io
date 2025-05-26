@@ -1,48 +1,96 @@
 import React from "react";
 import CardRenderIconComponents from "./CardRenderIconComponents.tsx";
-import {getIconByName} from "../../cards/IconNamesManifest.ts";
+import {getIconByName} from "../../icons/ClientIconManifest.ts";
 
-function getClasses(italic: boolean, bold: boolean): string {
-    const classes: Array<string> = [];
-    if (italic) classes.push("italic");
-    if (bold) classes.push("font-bold");
-    return classes.join(" ");
+export type CardTextRenderSharedProps = {
+    minimize?: boolean;
+    isBlack?: boolean;
+    onClickText?: (arg0: string) => void;
+};
+
+export type CardTextRenderProps = CardTextRenderSharedProps & {
+    text?: string;
+    style?: string;
 }
 
-function CardTextRender({text, minimize = false, isBlack = false}: {
-    text?: string,
-    minimize?: boolean
-    isBlack?: boolean
-}) : React.JSX.Element | null {
-    if (text === undefined) {
-        return null;
-    }
+function CardTextRender(
+    {text, style, ...shared}: CardTextRenderProps
+) : React.JSX.Element | null {
+    if (!text) return null;
 
-    const parts: Array<string> = text.split(/(\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*|\n|\\)/g);
+    const elements: Array<React.JSX.Element> = [];
+    const regex: RegExp = /(\{([^{}]+)})|(\n)|(\[([^\[\]]+)])|(\*([^*]+)\*)|(\\)|(<([^|>]+)\|([^>]+)>)/g;
     let muteNextPart: boolean = false;
 
-    const result: Array<React.JSX.Element> = parts.map((part, index) => {
-        if (part === "") return <span key={index}></span>;
-        const iconRender: string | undefined = getIconByName(part);
-        let italic: boolean = false;
-        let bold: boolean = false;
-        if (muteNextPart) muteNextPart = false;
-        else if (part === '\\') {muteNextPart = true; return <span key={index}></span>}
-        else if (iconRender) return <CardRenderIconComponents iconName={iconRender} key={index} minimize={minimize} isBlack={isBlack}/>;
-        else if (part === '\n') return <br key={index}/>;
-        else if (part.match(/\{[^{}]+}|\[[^\[\]]+]|\*[^*]+\*/g)) {
-            if (part.match(/\[[^\[\]]+]/g)) {
-                italic = true;
-            }
-            if (part.match(/\*[^*]+\*/g)) {
-                bold = true;
-            }
-            part = part.slice(1, part.length - 1);
-        }
-        return <span key={index} className={getClasses(italic, bold)}>{part}</span>;
-    });
+    let lastIndex : number;
+    let tryMatch: RegExpExecArray | null;
+    for (lastIndex = 0; (tryMatch = regex.exec(text)) !== null; lastIndex = regex.lastIndex) {
+        const match: RegExpExecArray = tryMatch;
 
-    return <>{result}</>;
+        const before: string = text.slice(lastIndex, match.index);
+        if (before) {
+            elements.push(<span key={elements.length} className={style}>{before}</span>);
+            muteNextPart = false;
+        }
+
+        const matchIdx: number | undefined = [1, 3, 4, 6, 8, 9].find(number => match[number]);
+
+        if (muteNextPart) {
+            if (matchIdx !== undefined)
+                elements.push(<span key={elements.length} className={style}>{match[matchIdx]}</span>);
+            muteNextPart = false;
+            continue;
+        }
+
+        if (!matchIdx) continue;
+
+        if (matchIdx === 3) {
+            elements.push(<br key={elements.length}/>);
+            continue;
+        }
+
+        if (matchIdx === 8) {
+            muteNextPart = true;
+            continue;
+        }
+
+        if (matchIdx === 1) {
+            const iconRender: string | undefined = getIconByName(match[1]);
+            if (iconRender) {
+                elements.push(
+                    <CardRenderIconComponents key={elements.length}
+                                              iconName={iconRender}
+                                              minimize={shared.minimize}
+                                              isBlack={shared.isBlack}/>
+                );
+                continue;
+            }
+        }
+
+        if (matchIdx === 9 && shared.onClickText !== undefined) {
+            const {onClickText, isBlack, minimize} = shared;
+            elements.push(<span key={elements.length}
+                                className={"hover:underline hover:cursor-pointer"}
+                                onClick={(() => onClickText(match[11]))}>
+                    <CardTextRender text={match[10]} style={style} isBlack={isBlack} minimize={minimize}/>
+                </span>);
+            continue;
+        }
+
+        const innerStyle: string | undefined =
+            matchIdx === 4 ? (style ? style + " italic" : "italic") :
+                matchIdx === 6 ? (style ? style + " font-bold" : "font-bold") :
+                    style;
+
+        elements.push(<CardTextRender key={elements.length}
+                                      text={match[matchIdx+1]}
+                                      style={innerStyle}
+                                      {...shared}/>);
+    }
+    const rest: string = text.slice(lastIndex);
+    if (rest) elements.push(<span key={elements.length} className={style}>{rest}</span>);
+
+    return <>{elements}</>;
 }
 
 export default CardTextRender;

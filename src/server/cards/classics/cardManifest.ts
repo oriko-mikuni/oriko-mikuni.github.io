@@ -60,7 +60,7 @@ import {River} from "./region/River";
 import {Cape} from "./region/Cape";
 import {Woodland} from "./region/Woodland";
 import {SacredPass} from "./region/SacredPass";
-import {Armerians} from "./tributary/Armerians";
+import {Armenians} from "./tributary/Armenians";
 import {Assyrians} from "./tributary/Assyrians";
 import {Egyptians} from "./tributary/Egyptians";
 import {Ionians} from "./tributary/Ionians";
@@ -134,7 +134,7 @@ export const CLASSICS_COMMON_CARD_MANIFEST = new ModuleManifest({
         [CardName.CAPE]: {Factory: Cape},
         [CardName.WOODLAND]: {Factory: Woodland},
         [CardName.SACRED_PASS]: {Factory: SacredPass},
-        [CardName.ARMERIANS]: {Factory: Armerians},
+        [CardName.ARMENIANS]: {Factory: Armenians},
         [CardName.ASSYRIANS]: {Factory: Assyrians},
         [CardName.EGYPTIANS]: {Factory: Egyptians},
         [CardName.IONIANS]: {Factory: Ionians},

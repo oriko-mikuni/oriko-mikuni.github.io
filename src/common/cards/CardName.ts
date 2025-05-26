@@ -139,7 +139,7 @@ export enum CardName {
     SACRED_PASS = "card_name.1REG14",
 
     // CLASSICS TRIBUTARY
-    ARMERIANS = "card_name.1TRI1",
+    ARMENIANS = "card_name.1TRI1",
     ASSYRIANS = "card_name.1TRI2",
     EGYPTIANS = "card_name.1TRI3",
     IONIANS = "card_name.1TRI4",

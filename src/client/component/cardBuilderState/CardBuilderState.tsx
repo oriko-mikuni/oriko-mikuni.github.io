@@ -163,7 +163,7 @@ export class CardBuilderState {
         }}/>;
         const specialExhaustInput: React.JSX.Element | null =
             this.props.suit.length === 0 || this.props.suit[0] !== CardSuitIcon.POWER
-                ? <span><CardTextRender text={cardMakerTranslation("Exhaust Count Settings Unavailable")}></CardTextRender></span>
+                ? <span><CardTextRender text={cardMakerTranslation("Exhaust Count Settings Unavailable")}/></span>
                 : <span>
                     {cardMakerTranslation("Exhaust Count")}
                     <InputNumber value={this.props.exhaustCount} onChange={num => dispatch({exhaustCount: num < 1 ? 1 : num})}/>

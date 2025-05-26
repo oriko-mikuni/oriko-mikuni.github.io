@@ -21,6 +21,7 @@ export class City extends Card implements ICard {
                 CardEffectReuse.city
             ],
             victoryPoints: 1,
+            playerCount: 3
         });
     }
 }

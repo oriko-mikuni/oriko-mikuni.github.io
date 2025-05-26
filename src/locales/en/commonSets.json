@@ -1,0 +1,22 @@
+{
+  "Classics": {
+    "name": "Classics",
+    "description": "Common Cards from [Imperium: Classics].\nTo play with Trade Route expansion or nations from [Imperium: Horizon], switch to *Classics (Updated)* instead.\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box."
+  },
+  "Legends": {
+    "name": "Legends",
+    "description": "Common Cards from [Imperium: Legends].\nTo play with Trade Route expansion or nations from [Imperium: Horizon], switch to *Legends (Updated)* instead.\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box."
+  },
+  "Classics (Updated)": {
+    "name": "Classics (Updated)",
+    "description": "Common Cards from [Imperium: Classics], with updated contents from [Imperium: Horizons].\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box.\nTo play with Trade Route expansion, add <{power}[Merchant]|card_name.MERC1A>, <{fame}[Welcoming]|card_name.3FAM3>, and common {trade-route} cards as usual, but common {uncivilised}/{civilised}/{region}/{tributary} remain the same."
+  },
+  "Legends (Updated)": {
+    "name": "Legends (Updated)",
+    "description": "Common Cards from [Imperium: Legends], with updated contents from [Imperium: Horizons].\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box.\nTo play with Trade Route expansion, add <{power}[Merchant]|card_name.MERC1A>, <{fame}[Welcoming]|card_name.3FAM3>, and common {trade-route} cards as usual, but common {uncivilised}/{civilised}/{region}/{tributary} remain the same."
+  },
+  "Horizons": {
+    "name": "Horizons",
+    "description": "Common Cards from [Imperium: Horizons].\nTo play with Trade Route expansion, add <{power}[Merchant]|card_name.MERC1A>, <{fame}[Welcoming]|card_name.3FAM3>, and common {trade-route} cards, remove common {uncivilised}/{civilised}/{region}/{tributary} with the {Ruthless} icon and add common {uncivilised}/{civilised}/{region}/{tributary} with the {TradeFriendly} icon."
+  }
+}

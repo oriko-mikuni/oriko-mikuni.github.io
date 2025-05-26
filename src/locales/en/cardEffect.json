@@ -887,8 +887,8 @@
   "Free play. Choose: return 1 {exhaust} to your state card OR return a card from your discard pile to the top of your deck.",
   "Free play. Choose: return an {unrest} OR gain 1{progress} and you MAY return an {exhaust} to your state card.":
   "Free play. Choose: return an {unrest}\nOR gain 1{progress} and you MAY return\nan {exhaust} to your state card.",
-  "Free play. Choose: sink a card from your discard pile and steal 1{progress} from each player OR break through for {uncivilised}/{civilised}/{region}/{tributary} and sink this card.":
-  "Free play. Choose: sink a card from your\ndiscard pile and steal 1{progress} from each\nplayer OR break through for\n{uncivilised}/{civilised}/{region}/{tributary} and sink this card.",
+  "Free play. Choose: sink a card from your discard pile to steal 1{progress} from each player OR break through for {uncivilised}/{civilised}/{region}/{tributary} and sink this card.":
+  "Free play. Choose: sink a card from your\ndiscard pile to steal 1{progress} from each\nplayer OR break through for\n{uncivilised}/{civilised}/{region}/{tributary} and sink this card.",
   "Free play. Choose: sink a card from your discard pile to steal 1{progress} from each other player OR break through for {uncivilised}/{civilised}/{region}/{tributary}/{trade-route} and sink this card.":
   "Free play. Choose: sink a card from your\ndiscard pile to steal 1{progress} from each\nother player OR break through for\n{uncivilised}/{civilised}/{region}/{tributary}/{trade-route} and sink this card.",
   "Free play. Discard 2 cards and pay 1{material} to reveal the top card of the main deck.":

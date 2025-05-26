@@ -6,7 +6,7 @@ import {
 import React from "react";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation.ts";
 import CardNationColourCustomImage from "./CardNationColourCustomImage.tsx";
-import {getNationBgColour, getNationBgColourFile} from "../../cards/NationColourImageManifest.ts";
+import {getNationBgColour, getNationBgColourFile} from "../../icons/ClientNationColourManifest.ts";
 
 export enum CardNationColourDisplayShape {
     TRIANGLE = "card-nation-colour-triangle",

@@ -1,9 +1,9 @@
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
 
 type CardporiumDisplayStateAction = {
-    targetIncludeHorizonsState?: boolean,
-    targetMinimizeCards?: boolean,
-    targetDetailedCard?: ClientCard
+    targetIncludeHorizonsState: boolean,
+    targetMinimizeCards: boolean,
+    targetDetailedCard: ClientCard
 };
 
 type CardporiumDisplayStateProps = {
@@ -46,7 +46,7 @@ export class CardporiumDisplayState {
 
     public static reducer(
         state: CardporiumDisplayState,
-        action: CardporiumDisplayStateAction
+        action: Partial<CardporiumDisplayStateAction>
     ): CardporiumDisplayState {
         const resultState: CardporiumDisplayState = new CardporiumDisplayState({});
         resultState.cards = state.cards;

@@ -7,6 +7,7 @@ const cardIconStyle: Record<string, string> = {
     'header': "relative inline-block bg-cover w-[1.2em] h-[1.2em] text-transparent",
     'location': "relative inline-block bg-cover w-[1.2em] h-[1.2em] text-transparent",
     'resource': "relative inline-block bg-cover w-[1.2em] h-[1.2em] text-transparent",
+    'expansion': "relative inline-block bg-cover w-[1.2em] h-[1.2em] text-transparent",
     'vp': "relative inline-block bg-cover w-[1.4em] h-[1.4em] text-transparent",
 }
 
@@ -17,6 +18,7 @@ const cardIconStyleMinimize: Record<string, string> = {
     'header': "relative inline-block align-middle bg-cover w-[1em] h-[1em] text-transparent",
     'location': "relative inline-block align-text-top bg-cover w-[1em] h-[1em] text-transparent",
     'resource': "relative inline-block align-text-top bg-cover w-[1em] h-[1em] text-transparent",
+    'expansion': "relative inline-block bg-cover w-[1em] h-[1em] text-transparent",
     'vp': "relative inline-block bg-cover w-[1.2em] h-[1.2em] text-transparent",
 }
 

@@ -887,7 +887,7 @@
   "免费打出。选择：放回1{exhaust}到你的国体牌，\n*或*从你的弃牌堆中放回1张牌到你的牌堆顶。",
   "Free play. Choose: return an {unrest} OR gain 1{progress} and you MAY return an {exhaust} to your state card.":
   "免费打出。选择：放回1{unrest}，\n*或*获取1{progress}且你*可以*放回1{exhaust}到你的国体牌。",
-  "Free play. Choose: sink a card from your discard pile and steal 1{progress} from each player OR break through for {uncivilised}/{civilised}/{region}/{tributary} and sink this card.":
+  "Free play. Choose: sink a card from your discard pile to steal 1{progress} from each player OR break through for {uncivilised}/{civilised}/{region}/{tributary} and sink this card.":
   "免费打出。选择：从你的弃牌堆中沉没1张牌\n并从每位其他玩家处窃取1{progress}，\n*或*突破{uncivilised}/{civilised}/{region}/{tributary}并沉没本牌。",
   "Free play. Choose: sink a card from your discard pile to steal 1{progress} from each other player OR break through for {uncivilised}/{civilised}/{region}/{tributary}/{trade-route} and sink this card.":
   "免费打出。选择：从你的弃牌堆中沉没1张牌\n以从每位其他玩家处窃取1{progress}，\n*或*突破{uncivilised}/{civilised}/{region}/{tributary}/{trade-route}并沉没本牌。",

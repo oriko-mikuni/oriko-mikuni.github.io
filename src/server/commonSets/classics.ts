@@ -1,0 +1,184 @@
+import {CommonSet, CommonSetName} from "./CommonSet";
+import {CardName} from "../../common/cards/CardName";
+
+export const CLASSICS_COMMON_SET: CommonSet = {
+    setName: CommonSetName.CLASSICS,
+    fame: [
+        CardName.PRAISEWORTHY,
+        CardName.GREAT,
+        CardName.NOTORIOUS,
+        CardName.MARVELLOUS,
+        CardName.GLORIOUS,
+        CardName.TRIUMPHANT,
+        CardName.TRIUMPHANT1,
+        CardName.AWE_INSPIRING
+    ],
+    uncivilised: [
+        CardName.JADE_MASK_C,
+        CardName.ELDERS_C,
+        CardName.TOWN,
+        CardName.TOWN1,
+        CardName.SHRINE,
+        CardName.INVASION_C,
+        CardName.MYSTICISM,
+        CardName.ORACLE_C,
+        CardName.AGRICULTURE,
+        CardName.BOATS,
+        CardName.SHADUF,
+        CardName.CITY_C,
+        CardName.CITY_C1,
+        CardName.CITY_C2,
+        CardName.GAMBLING,
+        CardName.PORT,
+        CardName.DIPLOMACY_C,
+        CardName.LEADERSHIP_C
+    ],
+    civilised: [
+        CardName.EDUCATION_C,
+        CardName.MONEYLENDER_C,
+        CardName.CORRUPTION_C,
+        CardName.ONAGER_C,
+        CardName.METROPOLIS_C,
+        CardName.PHARMACY,
+        CardName.COINAGE,
+        CardName.EXPORTS_C,
+        CardName.URBAN_DEVELOPMENT_C,
+        CardName.MERCENARIES_C,
+        CardName.TEMPLE,
+        CardName.CATAPHRACT_C
+    ],
+    region: [
+        CardName.JUNGLE,
+        CardName.MOUNTAIN_C,
+        CardName.COAST,
+        CardName.FLOODPLAIN,
+        CardName.FOREST,
+        CardName.OASIS,
+        CardName.HILLS,
+        CardName.MARSH,
+        CardName.STEPPE,
+        CardName.RIVER,
+        CardName.CAPE,
+        CardName.WOODLAND,
+        CardName.SACRED_PASS
+    ],
+    tributary: [
+        CardName.ARMENIANS,
+        CardName.ASSYRIANS,
+        CardName.EGYPTIANS,
+        CardName.IONIANS,
+        CardName.QIN,
+        CardName.SUMERIANS,
+        CardName.AKSUMITES,
+        CardName.MINOANS,
+        CardName.HITTITES
+    ],
+    threePlayerAdd: [
+        CardName.RITUALS_N_CEREMONIES_C,
+        CardName.AMBASSADOR,
+        CardName.LOST_SCROLL_C,
+        CardName.WONDER,
+        CardName.WILDERNESS,
+        CardName.OLMECS
+    ],
+    fourPlayerAdd: [
+        CardName.STANDING_ARMY,
+        CardName.DRAMA_N_POETRY_C,
+        CardName.METROPOLIS_C1,
+        CardName.MAURYANS
+    ],
+    alternativeTributary: [],
+    tradeRouteExpansionRemove: [],
+    tradeRouteExpansionAdd: [],
+}
+
+export const CLASSICS_COMMON_SET_UPDATED: CommonSet = {
+    setName: CommonSetName.CLASSICS_UPDATED,
+    fame: [
+        CardName.PRAISEWORTHY,
+        CardName.GREAT,
+        CardName.NOTORIOUS_NEW,
+        CardName.MARVELLOUS,
+        CardName.GLORIOUS,
+        CardName.TRIUMPHANT,
+        CardName.TRIUMPHANT1,
+        CardName.AWE_INSPIRING
+    ],
+    uncivilised: [
+        CardName.JADE_MASK_C_NEW,
+        CardName.ELDERS_C,
+        CardName.TOWN,
+        CardName.TOWN1,
+        CardName.SHRINE,
+        CardName.INVASION_C_NEW,
+        CardName.MYSTICISM_NEW,
+        CardName.ORACLE_C,
+        CardName.AGRICULTURE,
+        CardName.BOATS,
+        CardName.SHADUF,
+        CardName.CITY_C,
+        CardName.CITY_C1,
+        CardName.CITY_C2,
+        CardName.GAMBLING,
+        CardName.PORT,
+        CardName.DIPLOMACY_C,
+        CardName.LEADERSHIP_C
+    ],
+    civilised: [
+        CardName.EDUCATION_C,
+        CardName.MONEYLENDER_C,
+        CardName.CORRUPTION_C,
+        CardName.ONAGER_C,
+        CardName.METROPOLIS_C,
+        CardName.PHARMACY,
+        CardName.COINAGE,
+        CardName.EXPORTS_C,
+        CardName.URBAN_DEVELOPMENT_C,
+        CardName.MERCENARIES_C,
+        CardName.TEMPLE,
+        CardName.CATAPHRACT_C
+    ],
+    region: [
+        CardName.JUNGLE_NEW,
+        CardName.MOUNTAIN_C_NEW,
+        CardName.COAST_NEW,
+        CardName.FLOODPLAIN,
+        CardName.FOREST,
+        CardName.OASIS,
+        CardName.HILLS,
+        CardName.MARSH,
+        CardName.STEPPE,
+        CardName.RIVER,
+        CardName.CAPE_NEW,
+        CardName.WOODLAND,
+        CardName.SACRED_PASS
+    ],
+    tributary: [
+        CardName.ARMENIANS,
+        CardName.ASSYRIANS,
+        CardName.EGYPTIANS,
+        CardName.IONIANS,
+        CardName.QIN,
+        CardName.SUMERIANS,
+        CardName.AKSUMITES,
+        CardName.MINOANS,
+        CardName.HITTITES
+    ],
+    threePlayerAdd: [
+        CardName.RITUALS_N_CEREMONIES_C,
+        CardName.AMBASSADOR_NEW,
+        CardName.LOST_SCROLL_C,
+        CardName.WONDER,
+        CardName.WILDERNESS_NEW,
+        CardName.OLMECS
+    ],
+    fourPlayerAdd: [
+        CardName.STANDING_ARMY,
+        CardName.DRAMA_N_POETRY_C,
+        CardName.METROPOLIS_C1,
+        CardName.MAURYANS
+    ],
+    alternativeTributary: [],
+    tradeRouteExpansionRemove: [],
+    tradeRouteExpansionAdd: [],
+}

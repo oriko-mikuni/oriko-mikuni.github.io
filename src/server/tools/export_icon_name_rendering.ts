@@ -5,6 +5,7 @@ import {CardSuitIcon} from "../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../common/cards/CardTypeIcon";
 import {Resources} from "../../common/Resources";
 import fs from "fs";
+import {CardExpansion} from "../../common/cards/CardExpansion";
 
 class IconNameProcessor {
     static json: Record<string, string> = {};
@@ -15,6 +16,7 @@ class IconNameProcessor {
         this.processIconEnumType("suit", CardSuitIcon);
         this.processIconEnumType("type", CardTypeIcon);
         this.processIconEnumType("resource", Resources);
+        this.processIconEnumType("expansion", CardExpansion, CardExpansion.NONE);
 
         this.processSingleIcon("vp", "variable");
     }
@@ -39,5 +41,4 @@ export function exportIconNameRendering() {
     IconNameProcessor.makeJson();
 
     fs.writeFileSync('src/genfiles/iconNames.json', JSON.stringify(IconNameProcessor.json, null, 2));
-
 }

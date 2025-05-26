@@ -92,7 +92,7 @@
   "1VP per {variable} card (including this one)": "1VP per\n{variable} card (including this one)",
   "2VP if in history": "2VP if in history",
   "2VP per card in history": "2VP per card in history",
-  "2VP per player with fewer {progress} than you": "2VP per player with fewer {progress} than you#wider",
+  "2VP per player with fewer {progress} than you": "2VP per player with fewer {progress} than you^",
   "2VP per {city}/{metropolis}": "2VP per {city}/{metropolis}",
   "2VP per {city}/{metropolis} in play": "2VP per {city}/{metropolis}\nin play",
   "2VP per {city}/{metropolis} in your play area": "2VP per {city}/{metropolis} in your play area",

@@ -1,0 +1,12 @@
+import {CommonSet} from "./CommonSet";
+import {CLASSICS_COMMON_SET, CLASSICS_COMMON_SET_UPDATED} from "./classics";
+import {LEGENDS_COMMON_SET, LEGENDS_COMMON_SET_UPDATED} from "./legends";
+import {HORIZONS_COMMON_SET} from "./horizons";
+
+export const ALL_COMMON_SET_MANIFEST: Array<CommonSet> = [
+    CLASSICS_COMMON_SET,
+    LEGENDS_COMMON_SET,
+    CLASSICS_COMMON_SET_UPDATED,
+    LEGENDS_COMMON_SET_UPDATED,
+    HORIZONS_COMMON_SET
+]

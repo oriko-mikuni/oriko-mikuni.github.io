@@ -1,0 +1,22 @@
+{
+  "Classics": {
+    "name": "经典",
+    "description": "“帝国：经典”的公用牌。\n要使用“帝国：地平线”的国家或者贸易模组，请参照*经典（更新）*。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。"
+  },
+  "Legends": {
+    "name": "传奇",
+    "description": "“帝国：传奇”的公用牌。\n要使用“帝国：地平线”的国家或者贸易模组，请参照*传奇（更新）*。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。"
+  },
+  "Classics (Updated)": {
+    "name": "经典（更新）",
+    "description": "“帝国：经典”的公用牌，带有来自“帝国：地平线”的更新内容。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。\n要使用贸易模组，如常添加<{power}“商人”|card_name.MERC1A>，<{fame}“好客”|card_name.3FAM3>和公用{trade-route}牌，公用{uncivilised}/{civilised}/{region}/{tributary}保持不变。"
+  },
+  "Legends (Updated)": {
+    "name": "传奇（更新）",
+    "description": "“帝国：传奇”的公用牌，带有来自“帝国：地平线”的更新内容。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。\n要使用贸易模组，如常添加<{power}“商人”|card_name.MERC1A>，<{fame}“好客”|card_name.3FAM3>和公用{trade-route}牌，公用{uncivilised}/{civilised}/{region}/{tributary}保持不变。"
+  },
+  "Horizons": {
+    "name": "地平线",
+    "description": "“帝国：地平线”的公用牌。\n要使用贸易模组，添加<{power}“商人”|card_name.MERC1A>，<{fame}“好客”|card_name.3FAM3>，和公用{trade-route}牌，移除带有{Ruthless}图标的公共{uncivilised}/{civilised}/{region}/{tributary}，并添加带有{TradeFriendly}图标的公共{uncivilised}/{civilised}/{region}/{tributary}。"
+  }
+}

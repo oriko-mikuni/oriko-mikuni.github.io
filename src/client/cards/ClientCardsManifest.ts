@@ -81,4 +81,13 @@ export function getCard(cardName: CardName): ClientCard | undefined {
     return ClientCardsManifest.cards.get(cardName);
 }
 
+export function getCards(cardNames: Array<CardName>): Array<ClientCard> {
+    const result: Array<ClientCard> = [];
+    cardNames.forEach(name => {
+        const card: ClientCard | undefined = getCard(name);
+        if (card) result.push(card);
+    })
+    return result;
+}
+
 ClientCardsManifest.initialize();

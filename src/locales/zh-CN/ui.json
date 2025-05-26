@@ -3,12 +3,15 @@
     "Homepage": "首页",
     "Imperium Cardporium": "帝国牌表",
     "Imperium Card Maker": "帝国卡牌制作",
+    "Imperium Common Sets": "帝国公共套牌",
     "404": "找不到页面"
   },
   "HomepageText": {
     "header": "帝国 卡牌游戏",
     "toCardList": "牌表",
     "toCardMaker": "卡牌制作",
+    "toCommonSets": "公共套牌",
+    "toRulebook": "规则说明书",
     "toSource": "源代码",
     "toFeedback": "反馈"
   },
@@ -69,8 +72,28 @@
     "black": "黑",
     "white": "白"
   },
+  "ImperiumCommonSets": {
+    "backToHomepage": "<-- 返回",
+    "toFeedback": "反馈",
+    "Choose Common Set": "选择公共套牌",
+    "cardDisplaySettings": "卡牌显示设置",
+    "minimizeCardDisplay": "最小化卡牌显示",
+    "Fame": "名望",
+    "Uncivilised": "蒙昧",
+    "Civilised": "文明",
+    "Region": "地域",
+    "Tributary": "附庸",
+    "3 Players": "三名玩家",
+    "4 Players": "四名玩家",
+    "Remove these cards when playing with Trade Route expansion": "使用贸易模组时移除",
+    "Add these cards when playing with Trade Route expansion": "使用贸易模组时添加",
+    "Tributary Replacement": "替换附庸"
+  },
   "ElementFilterState": {
     "invert": "反转"
+  },
+  "DialogBox": {
+    "Close": "关闭"
   },
   "CardGroup": {
     "hintIfNoCardsLine1": "目前没有显示任何卡牌。",

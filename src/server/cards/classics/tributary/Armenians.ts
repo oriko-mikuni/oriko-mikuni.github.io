@@ -4,10 +4,10 @@ import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
 
-export class Armerians extends Card implements ICard {
+export class Armenians extends Card implements ICard {
     constructor() {
         super({
-            name: CardName.ARMERIANS,
+            name: CardName.ARMENIANS,
             suit: [CardSuitIcon.TRIBUTARY],
             stateSymbol: [],
             typeIcon: [],

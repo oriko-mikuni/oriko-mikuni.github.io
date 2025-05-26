@@ -1,11 +1,11 @@
-import React from "react";
-import CardTextRender from "../card/CardTextRender.tsx";
 import {ClientCard} from "../../../common/cards/ClientCard.ts";
-import Card from "../card/Card.tsx";
+import React from "react";
 import {useTranslation} from "react-i18next";
+import Card from "../card/Card.tsx";
 import {TFunction} from "i18next";
-import CardItemInList from "../card/CardItemInList.tsx";
 import {getCard} from "../../cards/ClientCardsManifest.ts";
+import CardItemInList from "../card/CardItemInList.tsx";
+import CardTextRender, {CardTextRenderSharedProps} from "../card/CardTextRender.tsx";
 
 function findTooltip(card: ClientCard): Array<string> {
     const result: Array<string> = [];
@@ -13,7 +13,7 @@ function findTooltip(card: ClientCard): Array<string> {
     return result;
 }
 
-function getTooltipRender(card: ClientCard, t: TFunction<string, string>): React.JSX.Element {
+function getTooltipRender(card: ClientCard, t: TFunction<string, string>, textProps: CardTextRenderSharedProps): React.JSX.Element {
     const result: Array<React.JSX.Element> = [];
     findTooltip(card).forEach((value, index) => {
         const name: string = t(value + ".name", {defaultValue: ""});
@@ -21,8 +21,8 @@ function getTooltipRender(card: ClientCard, t: TFunction<string, string>): React
         if (name === "") return;
 
         result.push(<div key={index}>
-            <div className="text-xl font-bold"><CardTextRender text={name} isBlack={true}/></div>
-            <CardTextRender text={description} isBlack={true}/>
+            <div className="text-xl font-bold"><CardTextRender text={name} {...textProps}/></div>
+            <div className="indent-[2em]"><CardTextRender text={description} {...textProps}/></div>
         </div>);
     })
     return <>{result}</>;
@@ -52,26 +52,17 @@ function getRelatedCardsRender(
     </>;
 }
 
-function CardDetailDescription(
-    {card, closeDialog, clickCard, availableCards}:
-    {card?: ClientCard, closeDialog: () => void, clickCard: (arg0: ClientCard) => void, availableCards: Array<ClientCard>}
-): React.JSX.Element {
+export function CardDetailDescription({card, clickCard, availableCards, isTextBlack}: {
+    card: ClientCard,
+    clickCard?: (arg0: ClientCard) => void,
+    availableCards: Array<ClientCard>,
+    isTextBlack: boolean,
+}): React.JSX.Element {
     const {t} = useTranslation("tooltip", {keyPrefix: "tooltip"});
     const {t: t1} = useTranslation("tooltip");
-
-    if (card === undefined) return <></>
-
     return <div>
-        <div className={"fixed size-full bg-[#00000080] z-[100] left-0 top-0"} onClick={closeDialog} key="overlay"></div>
-        <div className={"fixed w-[650px] bg-white text-black text-[12px] z-[101] p-[10px] rounded-[10px] left-1/2 top-1/2 -translate-1/2"} key="dialog">
-            <button onClick={closeDialog} key="close">{t1("Close")}</button>
-            <span className="cardBox text-center justify-center" key="card">
-                <Card card={card}/>
-            </span>
-            {getTooltipRender(card, t)}
-            {getRelatedCardsRender(card, t1, clickCard, availableCards)}
-        </div>
+        <span className="cardBox text-center justify-center" key="card"><Card card={card}/></span>
+        {getTooltipRender(card, t, {isBlack: isTextBlack})}
+        {clickCard && getRelatedCardsRender(card, t1, clickCard, availableCards)}
     </div>;
 }
-
-export default CardDetailDescription;

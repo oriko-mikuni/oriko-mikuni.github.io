@@ -11,7 +11,7 @@ import {ClientCard} from "../../common/cards/ClientCard.ts";
 import Card from "./card/Card.tsx";
 import {toPng} from 'html-to-image';
 import CardTextRender from "./card/CardTextRender.tsx";
-import {getHelpText} from "../cards/IconNamesManifest.ts";
+import {getHelpText} from "../icons/ClientIconManifest.ts";
 
 async function downloadImage(name: string): Promise<void> {
     const element: HTMLElement | null = document.getElementById("cardDisplay");
@@ -63,8 +63,8 @@ function ImperiumCardMaker(): React.JSX.Element {
     return <div className="flex h-full">
         <div className="fixed top-0 left-0 bottom-0 w-[300px] bg-[#666666] text-white overflow-x-hidden overflow-y-scroll p-[10px]">
             <button onClick={() => navigate("/")}>{cardMakerTranslation("backToHomepage")}</button> <br/>
-            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'>{cardMakerTranslation("toFeedback")}</a> <br/>
-            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/wiki/Card-Maker---%E5%8D%A1%E7%89%8C%E5%88%B6%E4%BD%9C'>{cardMakerTranslation("howToAddIcons")}</a> <br/>
+            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/issues'><button>{cardMakerTranslation("toFeedback")}</button></a> <br/>
+            <a href='https://github.com/oriko-mikuni/oriko-mikuni.github.io/wiki/Card-Maker---%E5%8D%A1%E7%89%8C%E5%88%B6%E4%BD%9C'><button>{cardMakerTranslation("howToAddIcons")}</button></a> <br/>
             <div id="cardDisplay">{cardElement}</div>
             <button onClick={() => downloadImage(card.name)}>{cardMakerTranslation("Download Image")}</button><br/>
             {/*<>{cardMakerTranslation("Download Not Supported")}</><br/>*/}

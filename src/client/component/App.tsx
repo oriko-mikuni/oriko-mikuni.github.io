@@ -7,6 +7,7 @@ import {i18n, TFunction} from "i18next";
 import {languageName} from "../../i18n.ts";
 import {PageTitle} from "./PageTitle.tsx";
 import ImperiumCardMaker from "./ImperiumCardMaker.tsx";
+import ImperiumCommonSets from "./ImperiumCommonSets.tsx";
 
 function changeLanguage(i18n: i18n, t: TFunction<string, string>, location: Location, language: string) {
     i18n.changeLanguage(language);
@@ -31,6 +32,7 @@ function App(): React.ReactElement {
             <Route path="/" element={<Homepage />}/>
             <Route path="/cards" element={<ImperiumCardporium/>}/>
             <Route path="/cardMaker" element={<ImperiumCardMaker/>}/>
+            <Route path="/commonSets" element={<ImperiumCommonSets/>}/>
         </Routes>
         <div className="fixed text-right top-[20px] right-[20px] z-[200]">
             <select onChange={(a: ChangeEvent<HTMLSelectElement>) => changeLanguage(i18n, pageTitleTranslation, location, a.target.value)}
