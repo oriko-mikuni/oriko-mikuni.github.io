@@ -3,6 +3,7 @@ import {CardName} from "../../common/cards/CardName";
 
 export const CLASSICS_COMMON_SET: CommonSet = {
     setName: CommonSetName.CLASSICS,
+    includeHorizons: false,
     fame: [
         CardName.PRAISEWORTHY,
         CardName.GREAT,
@@ -73,6 +74,7 @@ export const CLASSICS_COMMON_SET: CommonSet = {
         CardName.MINOANS,
         CardName.HITTITES
     ],
+    tradeRoute: [],
     threePlayerAdd: [
         CardName.RITUALS_N_CEREMONIES_C,
         CardName.AMBASSADOR,
@@ -94,6 +96,7 @@ export const CLASSICS_COMMON_SET: CommonSet = {
 
 export const CLASSICS_COMMON_SET_UPDATED: CommonSet = {
     setName: CommonSetName.CLASSICS_UPDATED,
+    includeHorizons: true,
     fame: [
         CardName.PRAISEWORTHY,
         CardName.GREAT,
@@ -164,6 +167,7 @@ export const CLASSICS_COMMON_SET_UPDATED: CommonSet = {
         CardName.MINOANS,
         CardName.HITTITES
     ],
+    tradeRoute: [],
     threePlayerAdd: [
         CardName.RITUALS_N_CEREMONIES_C,
         CardName.AMBASSADOR_NEW,

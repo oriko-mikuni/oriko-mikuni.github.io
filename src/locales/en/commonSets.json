@@ -1,22 +1,53 @@
 {
   "Classics": {
     "name": "Classics",
-    "description": "Common Cards from [Imperium: Classics].\nTo play with Trade Route expansion or nations from [Imperium: Horizon], switch to *Classics (Updated)* instead.\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box."
+    "description": "Common Cards from [Imperium: Classics].\nTo play with Trade Route expansion or nations from [Imperium: Horizon], check *Include Horizons* and select *Classics (Updated)*.\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box."
   },
   "Legends": {
     "name": "Legends",
-    "description": "Common Cards from [Imperium: Legends].\nTo play with Trade Route expansion or nations from [Imperium: Horizon], switch to *Legends (Updated)* instead.\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box."
+    "description": "Common Cards from [Imperium: Legends].\nTo play with Trade Route expansion or nations from [Imperium: Horizon], check *Include Horizons* and select *Legends (Updated)*.\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box."
   },
   "Classics (Updated)": {
     "name": "Classics (Updated)",
-    "description": "Common Cards from [Imperium: Classics], with updated contents from [Imperium: Horizons].\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box.\nTo play with Trade Route expansion, add <{power}[Merchant]|card_name.MERC1A>, <{fame}[Welcoming]|card_name.3FAM3>, and common {trade-route} cards as usual, but common {uncivilised}/{civilised}/{region}/{tributary} remain the same."
+    "description": "Common Cards from [Imperium: Classics], with updated contents from [Imperium: Horizons].\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box.\nWhen playing with Trade Route expansion, common {uncivilised}/{civilised}/{region}/{tributary} remain the same."
   },
   "Legends (Updated)": {
     "name": "Legends (Updated)",
-    "description": "Common Cards from [Imperium: Legends], with updated contents from [Imperium: Horizons].\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box.\nTo play with Trade Route expansion, add <{power}[Merchant]|card_name.MERC1A>, <{fame}[Welcoming]|card_name.3FAM3>, and common {trade-route} cards as usual, but common {uncivilised}/{civilised}/{region}/{tributary} remain the same."
+    "description": "Common Cards from [Imperium: Legends], with updated contents from [Imperium: Horizons].\nFor each common {tributary} with the same name as one of the players' chosen nations, replace it with a random common {tributary} from a different box.\nWhen playing with Trade Route expansion, common {uncivilised}/{civilised}/{region}/{tributary} remain the same."
   },
   "Horizons": {
     "name": "Horizons",
-    "description": "Common Cards from [Imperium: Horizons].\nTo play with Trade Route expansion, add <{power}[Merchant]|card_name.MERC1A>, <{fame}[Welcoming]|card_name.3FAM3>, and common {trade-route} cards, remove common {uncivilised}/{civilised}/{region}/{tributary} with the {Ruthless} icon and add common {uncivilised}/{civilised}/{region}/{tributary} with the {TradeFriendly} icon."
+    "description": "Common Cards from [Imperium: Horizons].\nTo play with Trade Route expansion, remove common {uncivilised}/{civilised}/{region}/{tributary} with the {Ruthless} icon and add common {uncivilised}/{civilised}/{region}/{tributary} with the {TradeFriendly} icon. See below for detail."
+  },
+  "Common Trade Routes": {
+    "name": "Common Trade Routes",
+    "description": "These cards are always added when playing with Trade Route expansion, regardless of which common set you choose.\nAdd <{fame}[Welcoming]|3FAM3> into {fame} deck, this will increase the size of {fame} deck by 1.\nShuffle the remaining common {trade-route}, put 1 below each of {civilised}/{uncivilised}/{region} deck face up, remove (0/1/2) for (4/3/2-)-player game, and shuffle the rest into the main deck."
+  },
+  "default": {
+    "name": "choose...",
+    "description": "Choose a common set from the left."
+  },
+  "#includeMixed": {
+    "name": "mixed set?"
+  },
+  "A New Beginning": {
+    "name":"A New Beginning",
+    "description": "The sun rises on the dawn of civilisation as you take your first steps into the wide world.\nA thematic mixed set in <BGG File: Imperium Mixed Common Card Sets|MIXED_SET>."
+  },
+  "Rise of Civilisations": {
+    "name": "Rise of Civilisations",
+    "description": "Having laid the strong foundations of your civilisation, you begin to look outward, bumping up against the edges of neighbouring cultures, with their new ideas, technologies, and practices.\nA thematic mixed set in <BGG File: Imperium Mixed Common Card Sets|MIXED_SET>."
+  },
+  "Clash of Legacies": {
+    "name": "Clash of Legacies",
+    "description": "With your civilisation secured, its base broad, and its citizens prosperous, your attention turns to new lands and securing your place in history.\nA thematic mixed set in <BGG File: Imperium Mixed Common Card Sets|MIXED_SET>."
+  },
+  "The Golden Ages": {
+    "name": "The Golden Ages",
+    "description": "You lay down your spears and approach the river as comrades, laughing contentedly as gold nuggets wash through your fingers. As the elders say, a rising tide lifts all boats.\nA thematic mixed set in <BGG File: Imperium Mixed Common Card Sets|MIXED_SET>."
+  },
+  "Way of the Conqueror": {
+    "name": "Way of the Conqueror",
+    "description": "When the messengers returned to the castle with accounts of burned fields and razed villages, we knew the enemy was upon us. We had no choice but to fight.\nA thematic mixed set in <BGG File: Imperium Mixed Common Card Sets|MIXED_SET>."
   }
 }

@@ -30,8 +30,8 @@ function RenderDevelopmentCostBox(
                 )
         }/>;
 
-    if (!hasEffectText) return [<div className="inline-block mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
-    return [<br key={1}/>, <div className="inline-block mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
+    if (!hasEffectText) return [<div className="inline-flex mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
+    return [<br key={1}/>, <div className="inline-flex mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
 }
 
 export function CardEffectTextBox(

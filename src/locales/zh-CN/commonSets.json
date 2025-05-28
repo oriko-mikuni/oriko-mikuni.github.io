@@ -1,22 +1,53 @@
 {
   "Classics": {
     "name": "经典",
-    "description": "“帝国：经典”的公用牌。\n要使用“帝国：地平线”的国家或者贸易模组，请参照*经典（更新）*。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。"
+    "description": "“帝国：经典”的公用牌。\n要使用“帝国：地平线”的国家或者贸易模组，勾选“包含地平线”然后选择*经典（更新）*。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。"
   },
   "Legends": {
     "name": "传奇",
-    "description": "“帝国：传奇”的公用牌。\n要使用“帝国：地平线”的国家或者贸易模组，请参照*传奇（更新）*。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。"
+    "description": "“帝国：传奇”的公用牌。\n要使用“帝国：地平线”的国家或者贸易模组，勾选“包含地平线”然后选择*传奇（更新）*。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。"
   },
   "Classics (Updated)": {
     "name": "经典（更新）",
-    "description": "“帝国：经典”的公用牌，带有来自“帝国：地平线”的更新内容。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。\n要使用贸易模组，如常添加<{power}“商人”|card_name.MERC1A>，<{fame}“好客”|card_name.3FAM3>和公用{trade-route}牌，公用{uncivilised}/{civilised}/{region}/{tributary}保持不变。"
+    "description": "“帝国：经典”的公用牌，带有来自“帝国：地平线”的更新内容。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。\n使用贸易模组时，公用{uncivilised}/{civilised}/{region}/{tributary}保持不变。"
   },
   "Legends (Updated)": {
     "name": "传奇（更新）",
-    "description": "“帝国：传奇”的公用牌，带有来自“帝国：地平线”的更新内容。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。\n要使用贸易模组，如常添加<{power}“商人”|card_name.MERC1A>，<{fame}“好客”|card_name.3FAM3>和公用{trade-route}牌，公用{uncivilised}/{civilised}/{region}/{tributary}保持不变。"
+    "description": "“帝国：传奇”的公用牌，带有来自“帝国：地平线”的更新内容。\n对于每一张与玩家选择的国家同名的的公用{tributary}，使用另一盒游戏的一张随机公用{tributary}替代。\n使用贸易模组时，公用{uncivilised}/{civilised}/{region}/{tributary}保持不变。"
   },
   "Horizons": {
     "name": "地平线",
-    "description": "“帝国：地平线”的公用牌。\n要使用贸易模组，添加<{power}“商人”|card_name.MERC1A>，<{fame}“好客”|card_name.3FAM3>，和公用{trade-route}牌，移除带有{Ruthless}图标的公共{uncivilised}/{civilised}/{region}/{tributary}，并添加带有{TradeFriendly}图标的公共{uncivilised}/{civilised}/{region}/{tributary}。"
+    "description": "“帝国：地平线”的公用牌。\n要使用贸易模组，移除带有{Ruthless}图标的公共{uncivilised}/{civilised}/{region}/{tributary}，并添加带有{TradeFriendly}图标的公共{uncivilised}/{civilised}/{region}/{tributary}，详情见下方。"
+  },
+  "Common Trade Routes": {
+    "name": "公用商路牌",
+    "description": "使用贸易模组时总是加入这些牌，不论使用哪个公共套牌。\n将<{fame}“好客”|3FAM3>加入{fame}牌库，使{fame}牌库多一张牌。\n洗匀余下的公用{trade-route}，往每个{civilised}/{uncivilised}/{region}牌库底各放一张面朝上，按(4/3/2-)人游戏移除(0/1/2)张，余下的洗入主牌库。"
+  },
+  "default": {
+    "name": "选择……",
+    "description": "请在左侧选择一个公共套牌"
+  },
+  "#includeMixed": {
+    "name": "混搭套牌？"
+  },
+  "A New Beginning": {
+    "name": "新的开始",
+    "description": "当你一脚踏入广阔世界，文明的曙光已冉冉升起。\n<BGG文件：Imperium Mixed Common Card Sets|MIXED_SET>中的一个主题混搭套牌。"
+  },
+  "Rise of Civilisations": {
+    "name": "文明崛起",
+    "description": "为自己的文明打下坚实基础后，你开始放眼世界，与周边文化的新思想、新技术和新实践发生碰撞。\n<BGG文件：Imperium Mixed Common Card Sets|MIXED_SET>中的一个主题混搭套牌。"
+  },
+  "Clash of Legacies": {
+    "name": "传承的冲突",
+    "description": "随着文明的稳固，根基的扩大和民众的繁荣，你的注意力转向新的土地，以确保青史留名。\n<BGG文件：Imperium Mixed Common Card Sets|MIXED_SET>中的一个主题混搭套牌。"
+  },
+  "The Golden Ages": {
+    "name": "黄金时代",
+    "description": "你们放下长矛，像战友一样走近河流，金块流过指缝，你们满足地笑了。正如长者所言，水涨船高。\n<BGG文件：Imperium Mixed Common Card Sets|MIXED_SET>中的一个主题混搭套牌。"
+  },
+  "Way of the Conqueror": {
+    "name": "征服者之道",
+    "description": "当信使带着田地烧毁、村庄夷为平地的消息返回城堡，我们知道敌人就在眼前。我们只能战斗。\n<BGG文件：Imperium Mixed Common Card Sets|MIXED_SET>中的一个主题混搭套牌。"
   }
 }

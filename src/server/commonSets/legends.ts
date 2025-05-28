@@ -3,6 +3,7 @@ import {CardName} from "../../common/cards/CardName";
 
 export const LEGENDS_COMMON_SET: CommonSet = {
     setName: CommonSetName.LEGENDS,
+    includeHorizons: false,
     fame: [
         CardName.IMPERIAL,
         CardName.INDEPENDENT,
@@ -73,6 +74,7 @@ export const LEGENDS_COMMON_SET: CommonSet = {
         CardName.CELTS,
         CardName.MACEDONIANS
     ],
+    tradeRoute: [],
     threePlayerAdd: [
         CardName.RITUALS_N_CEREMONIES_L,
         CardName.CITY_L,
@@ -94,6 +96,7 @@ export const LEGENDS_COMMON_SET: CommonSet = {
 
 export const LEGENDS_COMMON_SET_UPDATED: CommonSet = {
     setName: CommonSetName.LEGENDS_UPDATED,
+    includeHorizons: true,
     fame: [
         CardName.IMPERIAL,
         CardName.INDEPENDENT,
@@ -164,6 +167,7 @@ export const LEGENDS_COMMON_SET_UPDATED: CommonSet = {
         CardName.CELTS_NEW,
         CardName.MACEDONIANS
     ],
+    tradeRoute: [],
     threePlayerAdd: [
         CardName.RITUALS_N_CEREMONIES_L,
         CardName.CITY_L,

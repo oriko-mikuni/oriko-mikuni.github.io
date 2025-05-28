@@ -16,8 +16,8 @@ export enum CardNationColourDisplayShape {
 
 const CardNationColourShapeContainerStyle: Record<CardNationColourDisplayShape, string> = {
     [CardNationColourDisplayShape.TRIANGLE]: "absolute bottom-0 left-0 w-[45px] h-[45px] overflow-hidden bg-clip-padding rounded-bl-[inherit] text-transparent",
-    [CardNationColourDisplayShape.INLINE_SQUARE]: "relative inline-block w-[1em] h-[1em] bg-cover text-transparent align-sub",
-    [CardNationColourDisplayShape.MINIMAL_SQUARE]: "relative inline-block w-[1em] h-[1em] bg-cover text-transparent align-text-top",
+    [CardNationColourDisplayShape.INLINE_SQUARE]: "relative inline-flex w-[1em] h-[1em] bg-cover text-transparent align-sub",
+    [CardNationColourDisplayShape.MINIMAL_SQUARE]: "relative inline-flex w-[1em] h-[1em] bg-cover text-transparent align-text-top",
 };
 
 const CardLocationDisplayShape: Record<CardNationColourDisplayShape, string> = {

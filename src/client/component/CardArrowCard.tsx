@@ -7,7 +7,7 @@ function CardArrowCard({cardL, cardR, onClickACard, minimize}: {
     cardL: ClientCard,
     cardR: ClientCard,
     onClickACard?: (arg0: ClientCard) => void,
-    minimize: boolean
+    minimize: boolean,
 }): React.JSX.Element {
     if (minimize)
         return <div className="flex items-center justify-center">

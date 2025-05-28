@@ -33,7 +33,7 @@ function CardVictoryPointIcon(
     const sizeVar: React.CSSProperties & Record<string, string> = {"--size": size};
 
     return <div
-        className={`inline-block size-[var(--size)] text-[calc(var(--size)*0.8)] leading-[var(--size)] text-center bg-cover ${classes}`}
+        className={`inline-grid size-[var(--size)] text-[calc(var(--size)*0.8)] leading-[var(--size)] text-center bg-cover ${classes}`}
         style={sizeVar}
     >
         {victoryPointNumber}

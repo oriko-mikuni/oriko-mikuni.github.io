@@ -70,7 +70,7 @@ function CardTextRender(
         if (matchIdx === 9 && shared.onClickText !== undefined) {
             const {onClickText, isBlack, minimize} = shared;
             elements.push(<span key={elements.length}
-                                className={"hover:underline hover:cursor-pointer"}
+                                className={"underline hover:cursor-pointer"}
                                 onClick={(() => onClickText(match[11]))}>
                     <CardTextRender text={match[10]} style={style} isBlack={isBlack} minimize={minimize}/>
                 </span>);

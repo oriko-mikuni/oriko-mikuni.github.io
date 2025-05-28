@@ -3,6 +3,7 @@ import {CardName} from "../../common/cards/CardName";
 
 export const HORIZONS_COMMON_SET: CommonSet = {
     setName: CommonSetName.HORIZONS,
+    includeHorizons: true,
     fame: [
         CardName.SUPREME,
         CardName.SUPREME1,
@@ -73,6 +74,7 @@ export const HORIZONS_COMMON_SET: CommonSet = {
         CardName.ILLYRIANS,
         CardName.TYRRHENIANS
     ],
+    tradeRoute: [],
     threePlayerAdd: [
         CardName.PRIESTHOOD,
         CardName.TRADING_CITY2,
