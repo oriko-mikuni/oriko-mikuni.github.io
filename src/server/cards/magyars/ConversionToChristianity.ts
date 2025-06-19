@@ -5,8 +5,9 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {isInPlayLocation, Player} from "../../Player";
+import {Player} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class ConversionToChristianity extends Card implements ICard {
     constructor() {

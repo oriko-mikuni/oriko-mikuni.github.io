@@ -3,8 +3,9 @@ import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
-import {PlayerCardLocation} from "../../../Player";
 import {GameModule} from "../../../../common/cards/GameModule";
+
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class JadeMaskL extends Card implements ICard {
     constructor() {
@@ -24,6 +25,6 @@ export class JadeMaskL extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 2 : 0;
+        return param.location === CardLocation.HISTORY ? 2 : 0;
     }
 }

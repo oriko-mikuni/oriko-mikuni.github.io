@@ -56,15 +56,22 @@ export class UnitsUtils {
         )
     }
 
-    static toString(units: Partial<Units> | undefined): string | undefined {
-        if (units === undefined) return undefined;
-        let returnValue: string = "";
+    static resourcesUponToString(units: Units): string {
+        const returnValue: Array<string> = [];
         this.keys.forEach((key: keyof Units): void => {
-            if (units[key] !== undefined && units[key] !== 0) {
-                if (returnValue !== "") returnValue = returnValue + ", ";
-                returnValue = returnValue + "{" + key + "}x" + units[key];
+            if (units[key] === 1) returnValue.push(`{${key}}`);
+            else if (units[key] > 0) returnValue.push(`${units[key]}{${key}}`);
+        });
+        return returnValue.join(" ");
+    }
+
+    static developmentCostToString(units: Partial<Units>): string {
+        const returnValue: Array<string> = [];
+        this.keys.forEach((key: keyof Units): void => {
+            if (units[key] !== undefined && units[key] > 0) {
+                returnValue.push(`{${key}}x${units[key]}`);
             }
         });
-        return returnValue === "" ? undefined : returnValue;
+        return returnValue.join(", ");
     }
 }

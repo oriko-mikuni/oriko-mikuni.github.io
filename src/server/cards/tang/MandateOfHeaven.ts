@@ -5,7 +5,8 @@ import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation} from "../../Player";
+
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class MandateOfHeaven extends Card implements ICard {
     constructor() {

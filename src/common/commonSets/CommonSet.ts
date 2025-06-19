@@ -1,4 +1,4 @@
-import {CardName} from "../../common/cards/CardName";
+import {CardName} from "../cards/CardName";
 
 export enum CommonSetName {
     CLASSICS = "Classics",

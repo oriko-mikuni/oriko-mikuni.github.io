@@ -2,8 +2,8 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {PlayerCardLocation} from "../../Player";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class Nafanua extends Card implements ICard {
     constructor() {
@@ -29,6 +29,6 @@ export class Nafanua extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.LEGENDS ? 1 : 0;
+        return param.location === CardLocation.LEGENDS ? 1 : 0;
     }
 }

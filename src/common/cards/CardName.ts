@@ -1212,6 +1212,10 @@ export function getCardName(value: string): CardName | undefined {
     return Object.values(CardName).find(cardName => cardName.toString() === value);
 }
 
+export function isCardName(value: string): value is CardName {
+    return value.startsWith("card_name:");
+}
+
 const customCardTitleColours: Partial<Record<CardName, string>> = {
     // standard state
     [CardName.BARBARIAN0]: "text-white bg-[#b21e1c]",

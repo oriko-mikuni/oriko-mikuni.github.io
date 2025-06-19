@@ -7,7 +7,9 @@ import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {PlayerCardLocation} from "../../Player";
+
+
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class TheNileCorridor extends Card implements ICard {
     constructor() {
@@ -30,6 +32,6 @@ export class TheNileCorridor extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 2 : 0;
+        return param.location === CardLocation.HISTORY ? 2 : 0;
     }
 }

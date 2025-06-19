@@ -1,7 +1,7 @@
-import {CommonSet, CommonSetName, getCommonSetName} from "../../server/commonSets/CommonSet";
-import {ALL_COMMON_SET_MANIFEST} from "../../server/commonSets/AllCommonSets";
-import {ClientCard} from "../../common/cards/ClientCard";
+import {CommonSet, CommonSetName, getCommonSetName} from "../../common/commonSets/CommonSet";
+import {ALL_COMMON_SET_MANIFEST} from "../../common/commonSets/AllCommonSets";
 import {ClientCommonSet} from "./ClientCommonSet";
+import {CardName} from "../../common/cards/CardName";
 
 class ClientCommonSetManifest {
     public static commonSetNames: Array<Array<CommonSetName>> = [[], [], [], []];
@@ -28,7 +28,7 @@ export function getCommonSet(name?: string): ClientCommonSet | undefined {
     return found !== undefined ? ClientCommonSetManifest.commonSets.get(found) : undefined;
 }
 
-export function getCommonSetCards(name?: string): Array<ClientCard> | undefined {
+export function getCommonSetCards(name?: string): Array<CardName> | undefined {
     const found: ClientCommonSet | undefined = getCommonSet(name);
     return found === undefined ? undefined : found.allCards;
 }

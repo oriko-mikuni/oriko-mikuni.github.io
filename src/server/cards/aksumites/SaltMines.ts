@@ -5,7 +5,9 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {PlayerCardLocation} from "../../Player";
+
+
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class SaltMines extends Card implements ICard {
     constructor() {
@@ -29,6 +31,6 @@ export class SaltMines extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 1 : 0;
+        return param.location === CardLocation.HISTORY ? 1 : 0;
     }
 }

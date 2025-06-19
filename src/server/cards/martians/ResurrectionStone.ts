@@ -2,11 +2,11 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {PlayerCardLocation} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class ResurrectionStone extends Card implements ICard {
     constructor() {
@@ -29,6 +29,6 @@ export class ResurrectionStone extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 0 : -3
+        return param.location === CardLocation.HISTORY ? 0 : -3
     }
 }

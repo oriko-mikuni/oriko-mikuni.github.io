@@ -7,7 +7,8 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Player, PlayerCardLocation} from "../../Player";
+import {Player} from "../../Player";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class SassanidsPowerA extends Card implements ICard {
     constructor() {
@@ -32,7 +33,7 @@ export class SassanidsPowerA extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(Player.countSuit(CardSuitIcon.TRIBUTARY, param.player.selectCards(
-            card => card.location === PlayerCardLocation.HISTORY
+            card => card.location === CardLocation.HISTORY
         )) / 2);
     }
 }

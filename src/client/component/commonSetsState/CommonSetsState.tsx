@@ -1,15 +1,15 @@
-import {ClientCard} from "../../../common/cards/ClientCard.ts";
-import {CommonSetName, getCommonSetName} from "../../../server/commonSets/CommonSet.ts";
+import {CommonSetName, getCommonSetName} from "../../../common/commonSets/CommonSet.ts";
 import React from "react";
 import {allCommonSets, getCommonSet} from "../../cards/ClientCommonSetManifest.ts";
 import {CommonSetRender} from "./CommonSetRender.tsx";
 import {TFunction} from "i18next";
+import {CardName} from "../../../common/cards/CardName.ts";
 
 type CommonSetsStateAction = Partial<CommonSetsStateProps>;
 
 type CommonSetsStateProps = {
     selectedCommonSetName: CommonSetName | 'default';
-    selectedCard: ClientCard | 'none';
+    selectedCard: CardName | 'none';
     minimizeCard: boolean;
     includeMixedSets: boolean;
     includeHorizons: boolean;
@@ -33,7 +33,7 @@ export class CommonSetsState {
         return {selectedCommonSetName: name, selectedCard: 'none'};
     }
 
-    public static toggleSelectedCard(name: ClientCard | 'none'): CommonSetsStateAction {
+    public static toggleSelectedCard(name: CardName | 'none'): CommonSetsStateAction {
         return {selectedCard: name};
     }
 
@@ -58,7 +58,7 @@ export class CommonSetsState {
     }
 
     public renderCardSet(
-        onClickACard?: (arg0: ClientCard) => void,
+        onClickACard?: (arg0: CardName) => void,
     ): React.JSX.Element | null {
         return <CommonSetRender commonSet={getCommonSet(this.props.selectedCommonSetName)} minimizeCard={this.props.minimizeCard} onClickACard={onClickACard}/>;
     }

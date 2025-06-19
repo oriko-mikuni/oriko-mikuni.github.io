@@ -1,18 +1,18 @@
-import {ClientCard} from "../../common/cards/ClientCard.ts";
 import React from "react";
 import Card from "./card/Card.tsx";
 import {useTranslation} from "react-i18next";
 import CardItemInList from "./card/CardItemInList.tsx";
 import {ItemGroup} from "./common/ItemGroup.tsx";
+import {CardName} from "../../common/cards/CardName.ts";
 
 function CardGroup({cards, filter, onClickACard, minimize, groupName}: {
     groupName?: string;
-    cards: Array<ClientCard>,
-    filter?: (arg0: Array<ClientCard>) => Array<ClientCard>,
-    onClickACard?: (arg0: ClientCard) => void,
+    cards: Array<CardName>,
+    filter?: (arg0: Array<CardName>) => Array<CardName>,
+    onClickACard?: (arg0: CardName) => void,
     minimize: boolean,
 }): React.JSX.Element {
-    const filteredCards: Array<ClientCard> = filter ? filter(cards) : cards;
+    const filteredCards: Array<CardName> = filter ? filter(cards) : cards;
     const {t} = useTranslation("ui", {keyPrefix: "CardGroup"});
 
     if (filteredCards.length === 0) {
@@ -25,17 +25,17 @@ function CardGroup({cards, filter, onClickACard, minimize, groupName}: {
                 {t("hintIfNoCardsLine5")}
             </p>;
     } else {
-        const CardRender: ({item}: {item: ClientCard}) => React.JSX.Element = onClickACard === undefined
+        const CardRender: ({item}: {item: CardName}) => React.JSX.Element = onClickACard === undefined
             ? (minimize
-                    ? ((props: {item: ClientCard}): React.JSX.Element =>
-                        <div className="cardBox"><CardItemInList card={props.item}/></div>)
-                    : ((props: {item: ClientCard}): React.JSX.Element =>
-                        <div className="cardBox"><Card card={props.item}/></div>)
+                    ? ((props: {item: CardName}): React.JSX.Element =>
+                        <div className="cardBox"><CardItemInList cardModel={{name: props.item}}/></div>)
+                    : ((props: {item: CardName}): React.JSX.Element =>
+                        <div className="cardBox"><Card cardModel={{name: props.item}}/></div>)
             ) : (minimize
-                    ? ((props: {item: ClientCard}): React.JSX.Element =>
-                        <div className="cardBox"><CardItemInList card={props.item} onClick={() => onClickACard(props.item)}/></div>)
-                    : ((props: {item: ClientCard}): React.JSX.Element =>
-                        <div className="cardBox"><Card card={props.item} onClick={() => onClickACard(props.item)}/></div>)
+                    ? ((props: {item: CardName}): React.JSX.Element =>
+                        <div className="cardBox"><CardItemInList cardModel={{name: props.item}} onClick={() => onClickACard(props.item)}/></div>)
+                    : ((props: {item: CardName}): React.JSX.Element =>
+                        <div className="cardBox"><Card cardModel={{name: props.item}} onClick={() => onClickACard(props.item)}/></div>)
             );
 
         return <ItemGroup groupName={groupName} items={filteredCards} ItemRender={CardRender}/>;

@@ -6,9 +6,9 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation} from "../../Player";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class Mathematics extends Card implements ICard {
     constructor() {

@@ -5,7 +5,7 @@ import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {PlayerCardLocation} from "../../Player";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class EmpressWuZetian extends Card implements ICard {
     constructor() {
@@ -33,6 +33,6 @@ export class EmpressWuZetian extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 1 : 0;
+        return param.location === CardLocation.HISTORY ? 1 : 0;
     }
 }

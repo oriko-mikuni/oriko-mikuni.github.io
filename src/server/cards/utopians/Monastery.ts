@@ -26,6 +26,6 @@ export class Monastery extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return Math.floor(param.player.game.exileArea.length / 4);
+        return Math.floor(param.player.game.exileSize / 4);
     }
 }

@@ -4,7 +4,7 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Units} from "../../../common/Units";
+import {Units, UnitsUtils} from "../../../common/Units";
 
 export class Fishing extends Card implements ICard {
     constructor() {
@@ -27,11 +27,7 @@ export class Fishing extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        const fishItem: [ICard, Units] | undefined =
-            param.player.resourceOnYourCards.find(
-                ([card, ]: [ICard, Units]): boolean => card === this);
-        if (fishItem === undefined) return 0;
-        const fishes: Units = fishItem[1];
+        const fishes: Units = UnitsUtils.of(param.resourceUpon);
         return Math.floor((fishes.goods + fishes.material + fishes.population + fishes.progress) / 4);
     }
 }

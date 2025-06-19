@@ -4,8 +4,8 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {isInPlayLocation} from "../../Player";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class PermanentSettlement extends Card implements ICard {
     constructor() {

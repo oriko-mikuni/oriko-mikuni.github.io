@@ -5,7 +5,8 @@ import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
-import {isInPlayLocation} from "../../../Player";
+
+import {isInPlayLocation} from "../../../../common/cards/CardLocation";
 
 export class Qin extends Card implements ICard {
     constructor() {

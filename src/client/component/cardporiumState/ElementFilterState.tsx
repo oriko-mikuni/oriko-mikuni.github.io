@@ -1,4 +1,3 @@
-import {ClientCard} from "../../../common/cards/ClientCard.ts";
 import React, {useReducer} from "react";
 import {useTranslation} from "react-i18next";
 
@@ -53,30 +52,16 @@ class CardporiumFilterState {
         return resultState;
     }
 
-    public filterOneProp(
-        cards: Array<ClientCard>,
-        cardToProp: (arg0: ClientCard) => string | undefined
-    ): Array<ClientCard> {
-        return cards.filter(card => {
-            const prop: string | undefined = cardToProp(card);
-            if (prop === undefined)
-                return this.filterVoidDisplay;
-            else
-                return this.filterDisplaySet.has(prop);
-        })
+    public passOneProp(
+        prop: string | undefined
+    ): boolean {
+        return prop === undefined ? this.filterVoidDisplay : this.filterDisplaySet.has(prop);
     }
 
-    public filterAnyProps(
-        cards: Array<ClientCard>,
-        cardToProp: (arg0: ClientCard) => Array<string>
-    ): Array<ClientCard> {
-        return cards.filter(card => {
-            const props: Array<string> = cardToProp(card);
-            if (props.length === 0)
-                return this.filterVoidDisplay;
-            else
-                return props.some(prop => this.filterDisplaySet.has(prop));
-        })
+    public passAnyProps(
+        props: Array<string>
+    ): boolean {
+        return props.length === 0 ? this.filterVoidDisplay : props.some(prop => this.filterDisplaySet.has(prop));
     }
 }
 

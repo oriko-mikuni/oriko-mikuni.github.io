@@ -9,8 +9,8 @@ import {Player} from '../Player';
 import {CardNationColour} from '../../common/cards/CardNationColour';
 import { CardInPlayType } from '../../common/cards/CardInPlayType';
 import {CardExpansion} from "../../common/cards/CardExpansion";
-import {Units} from "../../common/Units";
-import {GetVPParameter} from "./ICard";
+import {Units, UnitsUtils} from "../../common/Units";
+import {GetVPParameter, ICard} from "./ICard";
 import {GameModule} from "../../common/cards/GameModule";
 import {KeywordNames} from "../../common/keywords";
 
@@ -41,6 +41,9 @@ export const staticCardProperties = new Map<CardName, Properties>();
 
 export abstract class Card {
     private readonly properties: Properties;
+    garrisonedCards: Array<ICard> = [];
+    resourceUpon: Units = UnitsUtils.EMPTY;
+
     protected constructor(properties: Properties) {
         const staticInstance = staticCardProperties.get(properties.name);
         if (staticInstance === undefined) {

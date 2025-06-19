@@ -12,6 +12,7 @@ import Card from "./card/Card.tsx";
 import {toPng} from 'html-to-image';
 import CardTextRender from "./card/CardTextRender.tsx";
 import {getHelpText} from "../icons/ClientIconManifest.ts";
+import {CardModel} from "../../common/model/CardModel.ts";
 
 async function downloadImage(name: string): Promise<void> {
     const element: HTMLElement | null = document.getElementById("cardDisplay");
@@ -57,7 +58,8 @@ function ImperiumCardMaker(): React.JSX.Element {
         = useReducer(CardBuilderState.reducer, new CardBuilderState({}));
     const {t: cardMakerTranslation} = useTranslation("ui", {keyPrefix: "ImperiumCardMaker"});
     const card: ClientCard = state.getCardDisplay();
-    const cardElement: React.JSX.Element = <div className="cardBox text-center justify-center"><Card card={card}/></div>;
+    const cardModel: CardModel = {}; // state.getTestCardModel();
+    const cardElement: React.JSX.Element = <div className="cardBox text-center justify-center"><Card customClientCard={card} cardModel={cardModel}/></div>;
     const toggles: React.JSX.Element = state.getOperations(dispatch);
 
     return <div className="flex h-full">

@@ -1,8 +1,9 @@
-import React, {useReducer} from "react";
+import React, {useReducer, useState} from "react";
 import {
-    allCards,
+    allCardNames,
     allGameModules,
     allVictoryPoints,
+    getCard,
     getCardUpdate,
     horizonModules
 } from '../cards/ClientCardsManifest.ts';
@@ -30,11 +31,13 @@ import DialogBoxCenter from "./common/DialogBoxCenter.tsx";
 import {CardStartingLocation} from "../../common/cards/CardStartingLocation.ts";
 import CheckBox from "./common/CheckBox.tsx";
 import {CardDetailDescription} from "./tooltip/CardDetailDescription.tsx";
+import {CardName} from "../../common/cards/CardName.ts";
 
 function ImperiumCardporium(): React.JSX.Element {
     pageTitle();
     const navigate: NavigateFunction = useNavigate();
-    const [state, dispatch] = useReducer(CardporiumDisplayState.reducer, new CardporiumDisplayState({cards: allCards(), update: getCardUpdate}));
+    const [state, dispatch] = useReducer(CardporiumDisplayState.reducer, new CardporiumDisplayState({cards: allCardNames(), update: getCardUpdate}));
+    const [dialogCard, setDialogCard] = useState<CardName | undefined>(undefined);
     const gameModuleFilter = new CardporiumFilter(allGameModules(), false);
     const suitFilter = new CardporiumFilter(Object.values(CardSuitIcon));
     const typeFilter = new CardporiumFilter(Object.values(CardTypeIcon));
@@ -54,21 +57,25 @@ function ImperiumCardporium(): React.JSX.Element {
         victoryTranslation
     };
 
-    const filters: Array<(cards: Array<ClientCard>) => Array<ClientCard>> = [
-        cards => gameModuleFilter.state.filterOneProp(cards, card => card.gameModule),
-        cards => suitFilter.state.filterAnyProps(cards, card => card.suit),
-        cards => typeFilter.state.filterAnyProps(cards, card => card.typeIcon),
-        cards => stateFilter.state.filterAnyProps(cards, card => card.stateSymbol),
-        cards => headerFilter.state.filterOneProp(cards, card => card.headerIcon),
-        cards => victoryFilter.state.filterOneProp(cards, card => card.victoryPoints.toString()),
-        cards => textFilter.state.filterText(cards, translation),
-        cards => cards.filter(card => state.includeHorizonsState || !horizonModules.has(card.gameModule))
-    ]
-    const allFilter: (arg0: Array<ClientCard>) => Array<ClientCard> = cards =>
-        filters.reduce(
-            (cardList: Array<ClientCard>, filter: (arg0: Array<ClientCard>) => Array<ClientCard>): Array<ClientCard> => filter(cardList),
-            cards
-        );
+    const filters: Array<(cards: ClientCard) => boolean> = [
+        card => gameModuleFilter.state.passOneProp(card.gameModule),
+        card => suitFilter.state.passAnyProps(card.suit),
+        card => typeFilter.state.passAnyProps(card.typeIcon),
+        card => stateFilter.state.passAnyProps(card.stateSymbol),
+        card => headerFilter.state.passOneProp(card.headerIcon),
+        card => victoryFilter.state.passOneProp(card.victoryPoints.toString()),
+    ];
+    if (textFilter.state.searchText)
+        filters.push(card => textFilter.state.passText(card, translation));
+    if (!state.includeHorizonsState)
+        filters.push(card => !horizonModules.has(card.gameModule));
+
+    const allFilter: (arg0: Array<CardName>) => Array<CardName> = cards =>
+        cards.filter(card => {
+            const cardInstance: ClientCard | undefined = getCard(card);
+            if (cardInstance === undefined) return false;
+            return filters.every(filter => filter(cardInstance));
+        });
 
     const suitFilterButtons: Array<React.JSX.Element> =
         suitFilter.filterButtons(({elem}: {elem?: string}) => {
@@ -142,22 +149,17 @@ function ImperiumCardporium(): React.JSX.Element {
             </label>
         </span>;
 
-    let detailedCardDisplay: React.JSX.Element | null;
-    if (state.detailedCard !== undefined) {
-        const detailedCard: ClientCard = state.detailedCard;
-        detailedCardDisplay = <DialogBoxCenter
+    const detailedCardDisplay: React.JSX.Element | null = dialogCard === undefined ? null :
+        <DialogBoxCenter
             isTextBlack={true}
-            onClose={() => dispatch(CardporiumDisplayState.toggleDetailedCard(undefined))}
-            DialogContent={({isTextBlack}: {isTextBlack: boolean}) => <CardDetailDescription
-                card={detailedCard}
-                clickCard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
+            onClose={() => setDialogCard(undefined)}
+            DialogContent={({isTextBlack}: { isTextBlack: boolean }) => <CardDetailDescription
+                cardName={dialogCard}
+                clickCard={name => setDialogCard(name)}
                 availableCards={state.getCards()}
                 isTextBlack={isTextBlack}
             />}
         />;
-    } else {
-        detailedCardDisplay = null;
-    }
 
     return <div className="flex h-full">
         <div
@@ -181,7 +183,7 @@ function ImperiumCardporium(): React.JSX.Element {
                 cards={state.getCards()}
                 filter={allFilter}
                 minimize={state.minimizeCard}
-                onClickACard={card => dispatch(CardporiumDisplayState.toggleDetailedCard(card))}
+                onClickACard={name => setDialogCard(name)}
             />
         </div>
         {detailedCardDisplay}

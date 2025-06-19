@@ -31,7 +31,7 @@ export class Stelae extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(param.player.selectCards(
-            card => card.location === this
+            card => card.location === this.name
         ).length / 2);
     }
 }

@@ -1,10 +1,10 @@
 import {GetVPParameter, ICard} from "../ICard";
-import {CardName} from "../../../common/cards/CardName";
+import {CardName, isCardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {isPlayerLocation, PlayerCardLocation} from "../../Player";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class TerracottaWarriors extends Card implements ICard {
     constructor() {
@@ -27,7 +27,6 @@ export class TerracottaWarriors extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return !isPlayerLocation(param.location) ? 7 :
-            param.location === PlayerCardLocation.HISTORY ? 3 : 0;
+        return isCardName(param.location) ? 7 : param.location === CardLocation.HISTORY ? 3 : 0;
     }
 }

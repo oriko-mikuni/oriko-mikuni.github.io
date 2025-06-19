@@ -6,7 +6,8 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation, Player} from "../../Player";
+import {Player} from "../../Player";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class DogSleds extends Card implements ICard {
     constructor() {

@@ -22,6 +22,7 @@ import CardExpansionRender from "../card/CardExpansionRender.tsx";
 import CardVictoryPointIcon from "../card/CardVictoryPointIcon.tsx";
 import {useTranslation} from "react-i18next";
 import CardTextRender from "../card/CardTextRender.tsx";
+import {CardModel} from "../../../common/model/CardModel.ts";
 
 enum VictoryPointType {
     number = 'number',
@@ -112,6 +113,18 @@ export class CardBuilderState {
     public static reducer(state: CardBuilderState, action: Partial<CardBuilderStateProps>): CardBuilderState {
         const resultProps: Partial<CardBuilderStateProps> = {...state.props, ...action};
         return new CardBuilderState(resultProps);
+    }
+
+    public getTestCardModel(): CardModel {
+        return {
+            isExhausted: true,
+            resourcesUpon: {
+                material: this.props.developmentCostMaterial,
+                population: this.props.developmentCostPopulation,
+                progress: this.props.developmentCostProgress,
+                goods: this.props.developmentCostGoods
+            }
+        };
     }
 
     public getCardDisplay(): ClientCard {
@@ -229,15 +242,15 @@ export class CardBuilderState {
             <CardRenderIconComponents iconName="resource-progress"/>
             <InputNumber value={this.props.developmentCostProgress}
                          onChange={num => dispatch({developmentCostProgress: num})}/>
+            <CardRenderIconComponents iconName="resource-goods"/>
+            <InputNumber value={this.props.developmentCostGoods}
+                         onChange={num => dispatch({developmentCostGoods: num})}/>
             <CardRenderIconComponents iconName="resource-material"/>
             <InputNumber value={this.props.developmentCostMaterial}
                          onChange={num => dispatch({developmentCostMaterial: num})}/>
             <CardRenderIconComponents iconName="resource-population"/>
             <InputNumber value={this.props.developmentCostPopulation}
                          onChange={num => dispatch({developmentCostPopulation: num})}/>
-            <CardRenderIconComponents iconName="resource-goods"/>
-            <InputNumber value={this.props.developmentCostGoods}
-                         onChange={num => dispatch({developmentCostGoods: num})}/>
             <br/>
             {cardMakerTranslation("Development Cost Text")}
             <InputTextBox value={this.props.developmentCostString}

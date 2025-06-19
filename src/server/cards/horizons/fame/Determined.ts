@@ -3,7 +3,8 @@ import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
-import {isPlayerLocation} from "../../../Player";
+import {LocatedCard} from "../../../Player";
+import {isInPlayLocation} from "../../../../common/cards/CardLocation";
 
 export class Determined extends Card implements ICard {
     constructor() {
@@ -23,9 +24,13 @@ export class Determined extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        return param.player.selectCards(card =>
-            !isPlayerLocation(card.location) &&
-            card.location.suit.some(suit => suit === CardSuitIcon.REGION)
-        ).length;
+        const inPlayRegions: Array<LocatedCard> = param.player.selectCards(card =>
+            isInPlayLocation(card.location) &&
+            card.card.suit.some(suit => suit === CardSuitIcon.REGION)
+        );
+        return inPlayRegions.reduce(
+            (count: number, cardInPlay: LocatedCard): number =>
+                count + param.player.selectCards(card => card.location === cardInPlay.card.name).length
+        , 0);
     }
 }

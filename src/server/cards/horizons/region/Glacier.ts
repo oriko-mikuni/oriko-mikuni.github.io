@@ -6,7 +6,9 @@ import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
-import {PlayerCardLocation} from "../../../Player";
+
+
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class Glacier extends Card implements ICard {
     constructor() {
@@ -29,6 +31,6 @@ export class Glacier extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 2 : 0;
+        return param.location === CardLocation.HISTORY ? 2 : 0;
     }
 }

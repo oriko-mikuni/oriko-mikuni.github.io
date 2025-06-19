@@ -26,8 +26,8 @@ export const horizonModules: Set<GameModule> = new Set<GameModule>([
 
 class ClientCardsManifest {
     public static cards: Map<CardName, ClientCard> = new Map();
-    public static allCards: Array<ClientCard> = [];
-    public static allCardUpdates: Record<string, ClientCard> = {};
+    public static allCardNames: Array<CardName> = [];
+    public static allCardUpdates: Partial<Record<CardName, CardName>> = {};
     public static allVictoryPoints: Array<string> = [];
     public static allGameModules: Array<GameModule> = [];
     public static initialize(): void {
@@ -38,10 +38,12 @@ class ClientCardsManifest {
             if (cardNameEnum === undefined) return;
             ClientCardsManifest.cards.set(cardNameEnum, card);
             if (card.cardNumber !== undefined && card.cardNumber.endsWith("X")) {
-                const cardNumberToUpdate: string = card.cardNumber.slice(0, card.cardNumber.length - 1);
-                this.allCardUpdates[cardNumberToUpdate] = card;
+                const cardNameBeforeUpdate: CardName | undefined = getCardName(card.name.slice(0, card.name.length - 1));
+                if (!cardNameBeforeUpdate)
+                    throw new Error(`Cannot find original card enum [${card.name.slice(0, card.name.length - 1)}] of the updated card enum [${card.name}]`);
+                this.allCardUpdates[cardNameBeforeUpdate] = cardNameEnum;
             } else {
-                ClientCardsManifest.allCards.push(card);
+                ClientCardsManifest.allCardNames.push(cardNameEnum);
             }
             if (!vpSet.has(card.victoryPoints)) vpSet.add(card.victoryPoints);
             if (!gameModuleSet.has(card.gameModule)) gameModuleSet.add(card.gameModule);
@@ -61,12 +63,12 @@ class ClientCardsManifest {
     }
 }
 
-export function allCards(): Array<ClientCard> {
-    return ClientCardsManifest.allCards;
+export function allCardNames(): Array<CardName> {
+    return ClientCardsManifest.allCardNames;
 }
 
-export function getCardUpdate(card: ClientCard): ClientCard {
-    return card.cardNumber !== undefined ? ClientCardsManifest.allCardUpdates[card.cardNumber] ?? card : card;
+export function getCardUpdate(card: CardName): CardName {
+    return ClientCardsManifest.allCardUpdates[card] ?? card;
 }
 
 export function allVictoryPoints(): Array<string> {
@@ -79,15 +81,6 @@ export function allGameModules(): Array<GameModule> {
 
 export function getCard(cardName: CardName): ClientCard | undefined {
     return ClientCardsManifest.cards.get(cardName);
-}
-
-export function getCards(cardNames: Array<CardName>): Array<ClientCard> {
-    const result: Array<ClientCard> = [];
-    cardNames.forEach(name => {
-        const card: ClientCard | undefined = getCard(name);
-        if (card) result.push(card);
-    })
-    return result;
 }
 
 ClientCardsManifest.initialize();

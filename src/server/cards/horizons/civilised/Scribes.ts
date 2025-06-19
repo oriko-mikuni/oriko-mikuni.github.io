@@ -3,7 +3,9 @@ import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
-import {PlayerCardLocation} from "../../../Player";
+
+
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class Scribes extends Card implements ICard {
     constructor() {
@@ -23,7 +25,7 @@ export class Scribes extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(param.player.selectCards(
-            card => card.location === PlayerCardLocation.HISTORY
+            card => card.location === CardLocation.HISTORY
         ).length / 3);
     }
 }

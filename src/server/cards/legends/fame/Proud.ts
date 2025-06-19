@@ -1,9 +1,10 @@
 import {Card} from "../../Card";
 import {GetVPParameter, ICard} from "../../ICard";
-import {CardName} from "../../../../common/cards/CardName";
+import {CardName, isCardName} from "../../../../common/cards/CardName";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {isPlayerLocation, PlayerCardLocation} from "../../../Player";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
+
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class Proud extends Card implements ICard {
     constructor() {
@@ -24,7 +25,6 @@ export class Proud extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return !isPlayerLocation(param.location) ? 12 :
-            param.location === PlayerCardLocation.HISTORY ? 8 : 3;
+        return isCardName(param.location) ? 12 : param.location === CardLocation.HISTORY ? 8 : 3;
     }
 }

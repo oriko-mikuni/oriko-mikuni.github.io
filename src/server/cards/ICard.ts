@@ -3,7 +3,7 @@ import { CardName } from "../../common/cards/CardName";
 import { CardSuitIcon } from "../../common/cards/CardSuitIcon";
 import { CardTypeIcon } from "../../common/cards/CardTypeIcon";
 import { VictoryPoints } from "../../common/cards/ClientCard";
-import { Player, PlayerCardLocation } from "../Player";
+import {Player} from "../Player";
 import {CardExpansion} from "../../common/cards/CardExpansion";
 import {CardHeaderIcon} from "../../common/cards/CardHeaderIcon";
 import {CardNationColour} from "../../common/cards/CardNationColour";
@@ -12,8 +12,9 @@ import {CardStateIcon} from "../../common/cards/CardStateIcon";
 import {Units} from "../../common/Units";
 import {GameModule} from "../../common/cards/GameModule";
 import {KeywordNames} from "../../common/keywords";
+import {CardLocationOrGarrison} from "../../common/cards/CardLocation";
 
-export type GetVPParameter = {player: Player, location: PlayerCardLocation | ICard, scoringResources: Units};
+export type GetVPParameter = {player: Player, location: CardLocationOrGarrison, scoringResources: Units, resourceUpon: Partial<Units>};
 
 export interface ICard {
     name: CardName;
@@ -35,6 +36,8 @@ export interface ICard {
     cardInPlayType?: CardInPlayType;
     exhaustCount?: number;
 
+    garrisonedCards: Array<ICard>;
+    resourceUpon: Partial<Units>;
     canPlayAsAction: (player: Player) => boolean;
     canFreePlay: (player: Player) => boolean;
     // play: (player: Player) => PlayerInput | undefined;

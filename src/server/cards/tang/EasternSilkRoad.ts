@@ -9,7 +9,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {PlayerCardLocation} from "../../Player";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class EasternSilkRoad extends Card implements ICard {
     constructor() {
@@ -35,6 +35,6 @@ export class EasternSilkRoad extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 3 : 0;
+        return param.location === CardLocation.HISTORY ? 3 : 0;
     }
 }

@@ -2,7 +2,9 @@ import {GetVPParameter, ICard} from "../../ICard";
 import {CardName} from "../../../../common/cards/CardName";
 import {Card} from "../../Card";
 import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
-import {Player, PlayerCardLocation} from "../../../Player";
+import {Player} from "../../../Player";
+
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class Travellers extends Card implements ICard {
     constructor() {
@@ -25,7 +27,7 @@ export class Travellers extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         const historyCard = param.player.selectCards(card =>
-            card.location === PlayerCardLocation.HISTORY);
+            card.location === CardLocation.HISTORY);
         return Player.countSuit(CardSuitIcon.REGION, historyCard) +
             Player.countSuit(CardSuitIcon.TRIBUTARY, historyCard);
     }

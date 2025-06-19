@@ -5,12 +5,10 @@ import {useTranslation} from "react-i18next";
 import {CommonSetsState} from "./commonSetsState/CommonSetsState.tsx";
 import {getCommonSetCards} from "../cards/ClientCommonSetManifest.ts";
 import {CardDetailDescription} from "./tooltip/CardDetailDescription.tsx";
-import {ClientCard} from "../../common/cards/ClientCard.ts";
 import CheckBox from "./common/CheckBox.tsx";
 import CardTextRender from "./card/CardTextRender.tsx";
 import {CardName} from "../../common/cards/CardName.ts";
-import {getCard} from "../cards/ClientCardsManifest.ts";
-import {CommonSetName} from "../../server/commonSets/CommonSet.ts";
+import {CommonSetName} from "../../common/commonSets/CommonSet.ts";
 
 function ImperiumCommonSets(): React.JSX.Element {
     pageTitle();
@@ -20,12 +18,12 @@ function ImperiumCommonSets(): React.JSX.Element {
     const {t: commonSetsTranslation} = useTranslation("commonSets");
     const [state, dispatch] = useReducer(CommonSetsState.reducer, new CommonSetsState({}));
 
-    const commonSetCards: Array<ClientCard> | undefined = getCommonSetCards(state.props.selectedCommonSetName);
+    const commonSetCards: Array<CardName> | undefined = getCommonSetCards(state.props.selectedCommonSetName);
     const detailedCardRender: React.JSX.Element | null =
         state.props.selectedCard === 'none' ? null :
             <div>
-                <h2 className="text-center justify-center">{cardTitleTranslation(state.props.selectedCard.name)}</h2>
-                <CardDetailDescription card={state.props.selectedCard} availableCards={commonSetCards ?? []} isTextBlack={true}/>
+                <h2 className="text-center justify-center">{cardTitleTranslation(state.props.selectedCard)}</h2>
+                <CardDetailDescription cardName={state.props.selectedCard} availableCards={commonSetCards ?? []} isTextBlack={true}/>
             </div>;
 
     const minimizeCardsToggle: React.JSX.Element =
@@ -59,11 +57,9 @@ function ImperiumCommonSets(): React.JSX.Element {
                                 if (selectElement !== null) selectElement.value = CommonSetName.TRADE_ROUTES;
                                 dispatch(CommonSetsState.toggleSelectedCommonSet(CommonSetName.TRADE_ROUTES));
                             } else if (name === "MERC1A") {
-                                const card: ClientCard | undefined = getCard(CardName.MERCHANT1);
-                                if (card) dispatch(CommonSetsState.toggleSelectedCard(card));
+                                dispatch(CommonSetsState.toggleSelectedCard(CardName.MERCHANT1));
                             } else if (name === "3FAM3") {
-                                const card: ClientCard | undefined = getCard(CardName.WELCOMING);
-                                if (card) dispatch(CommonSetsState.toggleSelectedCard(card));
+                                dispatch(CommonSetsState.toggleSelectedCard(CardName.WELCOMING));
                             }
                         }}
                         isBlack={true}/>
@@ -81,7 +77,7 @@ function ImperiumCommonSets(): React.JSX.Element {
     </div>
 
     const cardSetRendering: React.JSX.Element | null =
-        state.renderCardSet(card => dispatch(CommonSetsState.toggleSelectedCard(card)));
+        state.renderCardSet(name => dispatch(CommonSetsState.toggleSelectedCard(name)));
 
     return <div className="flex h-full">
         <div

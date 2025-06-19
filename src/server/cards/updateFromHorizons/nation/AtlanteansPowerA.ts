@@ -6,8 +6,9 @@ import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
-import {PlayerCardLocation, Player} from "../../../Player";
+import {Player} from "../../../Player";
 import {GameModule} from "../../../../common/cards/GameModule";
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class AtlanteansPowerA extends Card implements ICard {
     constructor() {
@@ -33,7 +34,7 @@ export class AtlanteansPowerA extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         const sunkenCards =
-            param.player.selectCards(card => card.location === PlayerCardLocation.SUNKEN);
+            param.player.selectCards(card => card.location === CardLocation.SUNKEN);
         return Player.countSuit(CardSuitIcon.UNCIVILISED, sunkenCards)
             + Player.countSuit(CardSuitIcon.FAME, sunkenCards)
             + Player.countSuit(CardSuitIcon.TRIBUTARY, sunkenCards)

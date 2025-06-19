@@ -18,20 +18,15 @@ function RenderDevelopmentCostBox(
         return null;
     }
 
-    const developmentCostResource: string | undefined = UnitsUtils.toString(developmentCost);
+    const developmentCostResource: string = UnitsUtils.developmentCostToString(developmentCost ?? {});
     const developmentCostDisplay: React.JSX.Element | null =
         <CardTextRender text={
-                (
-                    developmentCostResource === undefined ? "" :
-                        translation("Development cost: ") + developmentCostResource
-                ) + (
-                    diy ? developmentCostString.join("\n") :
-                        developmentCostString.map(string => translation(string)).join("\n")
-                )
+            (!developmentCostResource ? "" : translation("Development cost: ") + developmentCostResource)
+            + (diy ? developmentCostString.join("\n") : developmentCostString.map(string => translation(string)).join("\n"))
         }/>;
 
-    if (!hasEffectText) return [<div className="inline-flex mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
-    return [<br key={1}/>, <div className="inline-flex mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
+    if (!hasEffectText) return [<div className="inline-block mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
+    return [<br key={1}/>, <div className="inline-block mt-[4px] p-[2px] bg-white text-black" key={0}>{developmentCostDisplay}</div>];
 }
 
 export function CardEffectTextBox(

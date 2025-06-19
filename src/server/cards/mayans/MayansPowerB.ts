@@ -5,9 +5,10 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation, LocatedCard, Player} from "../../Player";
+import {LocatedCard, Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class MayansPowerB extends Card implements ICard {
     constructor() {

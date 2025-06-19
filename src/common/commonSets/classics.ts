@@ -1,5 +1,5 @@
 import {CommonSet, CommonSetName} from "./CommonSet";
-import {CardName} from "../../common/cards/CardName";
+import {CardName} from "../cards/CardName";
 
 export const CLASSICS_COMMON_SET: CommonSet = {
     setName: CommonSetName.CLASSICS,

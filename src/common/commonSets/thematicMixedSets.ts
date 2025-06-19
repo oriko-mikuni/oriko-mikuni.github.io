@@ -1,5 +1,5 @@
 import {CommonSet, CommonSetName} from "./CommonSet";
-import {CardName} from "../../common/cards/CardName";
+import {CardName} from "../cards/CardName";
 
 export const MIXED_SET_A_NEW_BEGINNING: CommonSet = {
     setName: CommonSetName.A_NEW_BEGINNING,

@@ -6,9 +6,9 @@ import CheckBox from "../common/CheckBox.tsx";
 import InputTextBox from "../common/InputTextBox.tsx";
 
 export type TextTranslationGroup = {
-    nameTranslation?: TFunction<"cardName", undefined>,
-    effectTranslation?: TFunction<"cardEffect", undefined>,
-    victoryTranslation?: TFunction<"cardVictoryText", undefined>
+    nameTranslation: TFunction<"cardName", undefined>,
+    effectTranslation: TFunction<"cardEffect", undefined>,
+    victoryTranslation: TFunction<"cardVictoryText", undefined>
 }
 
 function simplifyText(text: string): string {
@@ -44,51 +44,41 @@ export class TextFilterState {
         this.isSearchVictory = false;
     }
 
-    public filterText(
-        cardList: Array<ClientCard>,
+    public passText(
+        card: ClientCard,
         translation: TextTranslationGroup,
-    ): Array<ClientCard> {
+    ): boolean {
         const simplifiedSearchText = simplifyText(this.searchText);
         if (!simplifiedSearchText)
-            return cardList;
-        return cardList.filter(card => {
-            if (this.isSearchTitle) {
-                const display: string = translation.nameTranslation === undefined ? card.name
-                    : translation.nameTranslation(card.name);
-                if (simplifyText(display).includes(simplifiedSearchText))
-                    return true;
-            }
-            if (this.isSearchEffect && card.effectText !== undefined) {
-                let display: string;
-                const trans = translation.effectTranslation;
-                if (trans === undefined) {
-                    display = card.effectText.join(" ");
-                } else {
-                    display = card.effectText.map(text => trans(text)).join(" ");
-                }
-                if (simplifyText(display).includes(simplifiedSearchText))
-                    return true;
-            }
-            if (this.isSearchEffect && (!UnitsUtils.isEmpty(card.developmentCost) || card.developmentCostString.length > 0)) {
-                const trans = translation.effectTranslation;
-                const developmentCostDisplay = trans === undefined ? (
-                    (UnitsUtils.toString(card.developmentCost) ?? "") +
-                    card.developmentCostString.join(" ")
-                ): (
-                    (UnitsUtils.toString(card.developmentCost) ?? "") +
-                    card.developmentCostString.map(text => trans(text)).join(" ")
-                );
-                if (simplifyText(developmentCostDisplay).includes(simplifiedSearchText))
-                    return true;
-            }
-            if (this.isSearchVictory && card.victoryPointsString !== undefined) {
-                const display: string = translation.victoryTranslation === undefined ? card.victoryPointsString
-                    : translation.victoryTranslation(card.victoryPointsString);
-                if (simplifyText(display).includes(simplifiedSearchText))
-                    return true;
-            }
-            return false;
-        });
+            return true;
+
+        if (this.isSearchTitle) {
+            const display: string = translation.nameTranslation(card.name);
+            if (simplifyText(display).includes(simplifiedSearchText))
+                return true;
+        }
+
+        if (this.isSearchEffect && card.effectText !== undefined) {
+            const display: string = card.effectText.map(text => translation.effectTranslation(text)).join(" ");
+            if (simplifyText(display).includes(simplifiedSearchText))
+                return true;
+        }
+
+        if (this.isSearchEffect && (!UnitsUtils.isEmpty(card.developmentCost) || card.developmentCostString.length > 0)) {
+            const developmentCostDisplay =
+                (UnitsUtils.developmentCostToString(card.developmentCost ?? {})) +
+                card.developmentCostString.map(text => translation.effectTranslation(text)).join(" ");
+            if (simplifyText(developmentCostDisplay).includes(simplifiedSearchText))
+                return true;
+        }
+
+        if (this.isSearchVictory && card.victoryPointsString !== undefined) {
+            const display: string = translation.victoryTranslation(card.victoryPointsString);
+            if (simplifyText(display).includes(simplifiedSearchText))
+                return true;
+        }
+
+        return false;
     }
 }
 

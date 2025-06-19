@@ -1,6 +1,4 @@
-import {ClientCard} from "../../common/cards/ClientCard";
-import {CommonSet, CommonSetName} from "../../server/commonSets/CommonSet";
-import {getCard, getCards} from "./ClientCardsManifest";
+import {CommonSet, CommonSetName} from "../../common/commonSets/CommonSet";
 import {CardName} from "../../common/cards/CardName";
 
 export class ClientCommonSet {
@@ -8,67 +6,42 @@ export class ClientCommonSet {
     includeHorizons: boolean;
     mixed: boolean;
 
-    groups: Array<[string, Array<ClientCard>]>;
-    alternativeTributary: Array<[ClientCard, ClientCard]>;
+    groups: Array<[string, Array<CardName>]>;
+    alternativeTributary: Array<[CardName, CardName]>;
 
-    allCards: Array<ClientCard>;
+    allCards: Array<CardName>;
+
+    public addGroup(name: string, cards: Array<CardName>): void {
+        this.allCards.push(...cards);
+        if (cards.length > 0) this.groups.push([name, cards]);
+    }
 
     constructor(commonSet: CommonSet) {
         this.setName = commonSet.setName;
         this.includeHorizons = commonSet.includeHorizons;
         this.mixed = !!commonSet.mixed;
 
-        let cards: Array<ClientCard>;
         this.allCards = [];
         this.groups = [];
 
-        cards = getCards(commonSet.fame);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Fame", cards]);
+        this.addGroup("Fame", commonSet.fame);
+        this.addGroup("Uncivilised", commonSet.uncivilised);
+        this.addGroup("Civilised", commonSet.civilised);
+        this.addGroup("Region", commonSet.region);
+        this.addGroup("Tributary", commonSet.tributary);
+        this.addGroup("Trade Route", commonSet.tradeRoute);
+        this.addGroup("3 Players", commonSet.threePlayerAdd);
+        this.addGroup("4 Players", commonSet.fourPlayerAdd);
+        this.addGroup("Fame", commonSet.fame);
+        this.addGroup("Add these cards when playing with Trade Route expansion", commonSet.tradeRouteExpansionAdd);
 
-        cards = getCards(commonSet.uncivilised);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Uncivilised", cards]);
-
-        cards = getCards(commonSet.civilised);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Civilised", cards]);
-
-        cards = getCards(commonSet.region);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Region", cards]);
-
-        cards = getCards(commonSet.tributary);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Tributary", cards]);
-
-        cards = getCards(commonSet.tradeRoute);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Trade Route", cards]);
-
-        cards = getCards(commonSet.threePlayerAdd);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["3 Players", cards]);
-
-        cards = getCards(commonSet.fourPlayerAdd);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["4 Players", cards]);
-
-        cards = getCards(commonSet.tradeRouteExpansionRemove);
-        if (cards.length > 0) this.groups.push(["Remove these cards when playing with Trade Route expansion", cards]);
-
-        cards = getCards(commonSet.tradeRouteExpansionAdd);
-        this.allCards.push(...cards);
-        if (cards.length > 0) this.groups.push(["Add these cards when playing with Trade Route expansion", cards]);
+        if (commonSet.tradeRouteExpansionRemove.length > 0)
+            this.groups.push(["Remove these cards when playing with Trade Route expansion", commonSet.tradeRouteExpansionRemove]);
 
         this.alternativeTributary = [];
         commonSet.alternativeTributary.forEach(([name, name1]: [CardName, CardName]) => {
-            const card: ClientCard | undefined = getCard(name);
-            const card1: ClientCard | undefined = getCard(name1);
-            if (card && card1) {
-                this.alternativeTributary.push([card, card1]);
-                this.allCards.push(card1);
-            }
+            this.alternativeTributary.push([name, name1]);
+            this.allCards.push(name1);
         });
     }
 }

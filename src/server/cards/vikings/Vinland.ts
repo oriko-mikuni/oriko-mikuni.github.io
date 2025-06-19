@@ -8,7 +8,8 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation} from "../../Player";
+
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class Vinland extends Card implements ICard {
     constructor() {

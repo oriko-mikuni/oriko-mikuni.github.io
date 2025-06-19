@@ -5,7 +5,9 @@ import {CardSuitIcon} from "../../../../common/cards/CardSuitIcon";
 import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardExpansion} from "../../../../common/cards/CardExpansion";
-import {PlayerCardLocation} from "../../../Player";
+
+
+import {CardLocation} from "../../../../common/cards/CardLocation";
 
 export class Tyranny extends Card implements ICard {
     constructor() {
@@ -27,6 +29,6 @@ export class Tyranny extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 4 : 0;
+        return param.location === CardLocation.HISTORY ? 4 : 0;
     }
 }

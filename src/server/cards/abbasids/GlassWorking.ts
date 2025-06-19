@@ -8,7 +8,6 @@ import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Units} from "../../../common/Units";
 
 export class GlassWorking extends Card implements ICard {
     constructor() {
@@ -34,10 +33,6 @@ export class GlassWorking extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        const glassItem: [ICard, Units] | undefined =
-            param.player.resourceOnYourCards.find(
-                ([card,] : [ICard, Units]): boolean => card === this);
-        if (glassItem === undefined) return 0;
-        return Math.floor(glassItem[1].goods / 2);
+        return Math.floor((param.resourceUpon.goods ?? 0) / 2);
     }
 }

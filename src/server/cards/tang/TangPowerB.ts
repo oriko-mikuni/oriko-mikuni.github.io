@@ -3,11 +3,11 @@ import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {isInPlayLocation} from "../../Player";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class TangPowerB extends Card implements ICard {
     constructor() {

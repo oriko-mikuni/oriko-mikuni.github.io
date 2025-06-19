@@ -2,8 +2,8 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
-import {PlayerCardLocation} from "../../Player";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class Tohunga extends Card implements ICard {
     constructor() {
@@ -27,6 +27,6 @@ export class Tohunga extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.LEGENDS ? -2 : 0
+        return param.location === CardLocation.LEGENDS ? -2 : 0
     }
 }

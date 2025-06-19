@@ -9,7 +9,7 @@ import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
 import {CardEffectReuse} from "../../../common/cards/CardEffectReuse";
-import {PlayerCardLocation} from "../../Player";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class RapaNuiEasterIsland extends Card implements ICard {
     constructor() {
@@ -41,7 +41,7 @@ export class RapaNuiEasterIsland extends Card implements ICard {
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
         return Math.floor(param.player.selectCards(
-            card => card.location === PlayerCardLocation.LEGENDS
+            card => card.location === CardLocation.LEGENDS
         ).length / 3);
     }
 }

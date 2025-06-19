@@ -6,7 +6,8 @@ import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation} from "../../Player";
+
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class LongWalls2 extends Card implements ICard {
     constructor() {

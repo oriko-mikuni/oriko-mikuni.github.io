@@ -1,23 +1,21 @@
-import {ClientCard} from "../../../common/cards/ClientCard.ts";
+import {CardName} from "../../../common/cards/CardName.ts";
 
 type CardporiumDisplayStateAction = {
     targetIncludeHorizonsState: boolean,
-    targetMinimizeCards: boolean,
-    targetDetailedCard: ClientCard
+    targetMinimizeCards: boolean
 };
 
 type CardporiumDisplayStateProps = {
-    cards?: Array<ClientCard>;
-    update?: (arg0: ClientCard) => ClientCard;
+    cards?: Array<CardName>;
+    update?: (arg0: CardName) => CardName;
 }
 
 export class CardporiumDisplayState {
-    cards: Array<ClientCard>;
-    updatedCards: Array<ClientCard>;
-    update?: (arg0: ClientCard) => ClientCard;
+    cards: Array<CardName>;
+    updatedCards: Array<CardName>;
+    update?: (arg0: CardName) => CardName;
     includeHorizonsState: boolean;
     minimizeCard: boolean;
-    detailedCard: ClientCard | undefined;
 
     constructor(props: CardporiumDisplayStateProps) {
         this.cards = props.cards || [];
@@ -25,19 +23,14 @@ export class CardporiumDisplayState {
         this.updatedCards = this.cards.map(card => this.update !== undefined ? this.update(card) : card);
         this.includeHorizonsState = false;
         this.minimizeCard = false;
-        this.detailedCard = undefined;
     }
 
-    public getCards(): Array<ClientCard> {
+    public getCards(): Array<CardName> {
         return this.includeHorizonsState ? this.updatedCards : this.cards;
     }
 
     public static toggleIncludeHorizons(targetIncludeHorizonsState: boolean): Partial<CardporiumDisplayStateAction> {
         return {targetIncludeHorizonsState: targetIncludeHorizonsState};
-    }
-
-    public static toggleDetailedCard(targetDetailedCard?: ClientCard): Partial<CardporiumDisplayStateAction> {
-        return {targetDetailedCard: targetDetailedCard};
     }
 
     public static toggleMinimizeCards(targetMinimizeCard?: boolean): Partial<CardporiumDisplayStateAction> {
@@ -59,8 +52,6 @@ export class CardporiumDisplayState {
             resultState.includeHorizonsState = action.targetIncludeHorizonsState;
         } else if (action.targetMinimizeCards !== undefined) {
             resultState.minimizeCard = action.targetMinimizeCards;
-        } else if (action.targetDetailedCard !== undefined) {
-            resultState.detailedCard = action.targetDetailedCard;
         }
         return resultState;
     }

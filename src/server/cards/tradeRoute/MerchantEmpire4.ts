@@ -2,11 +2,12 @@ import {GetVPParameter, ICard} from "../ICard";
 import {CardName} from "../../../common/cards/CardName";
 import {Card} from "../Card";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
-import {isInPlayLocation, Player} from "../../Player";
+import {Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class MerchantEmpire4 extends Card implements ICard {
     constructor() {

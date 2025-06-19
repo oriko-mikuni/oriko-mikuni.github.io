@@ -6,7 +6,8 @@ import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardHeaderIcon} from "../../../../common/cards/CardHeaderIcon";
 import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
-import {Player, isInPlayLocation, LocatedCard} from "../../../Player";
+import {Player, LocatedCard} from "../../../Player";
+import {isInPlayLocation} from "../../../../common/cards/CardLocation";
 
 export class Masonry extends Card implements ICard {
     constructor() {

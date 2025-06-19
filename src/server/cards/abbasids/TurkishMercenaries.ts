@@ -5,7 +5,7 @@ import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardExpansion} from "../../../common/cards/CardExpansion";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {PlayerCardLocation} from "../../Player";
+import {CardLocation} from "../../../common/cards/CardLocation";
 
 export class TurkishMercenaries extends Card implements ICard {
     constructor() {
@@ -34,6 +34,6 @@ export class TurkishMercenaries extends Card implements ICard {
     }
 
     public override getConditionalVictoryPoints(param: GetVPParameter): number {
-        return param.location === PlayerCardLocation.HISTORY ? 3 : 0;
+        return param.location === CardLocation.HISTORY ? 3 : 0;
     }
 }

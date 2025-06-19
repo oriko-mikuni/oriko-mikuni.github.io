@@ -4,9 +4,10 @@ import {Card} from "../Card";
 import {CardNationColour} from "../../../common/cards/CardNationColour";
 import {CardStateIcon} from "../../../common/cards/CardStateIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
-import {isInPlayLocation, Player} from "../../Player";
+import {Player} from "../../Player";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {KeywordNames} from "../../../common/keywords";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class Kupe extends Card implements ICard {
     constructor() {

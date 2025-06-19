@@ -7,7 +7,8 @@ import {CardInPlayType} from "../../../../common/cards/CardInPlayType";
 import {CardStateIcon} from "../../../../common/cards/CardStateIcon";
 import {CardTypeIcon} from "../../../../common/cards/CardTypeIcon";
 import {CardEffectReuse} from "../../../../common/cards/CardEffectReuse";
-import {isInPlayLocation} from "../../../Player";
+
+import {isInPlayLocation} from "../../../../common/cards/CardLocation";
 
 export class Volcano extends Card implements ICard {
     constructor() {

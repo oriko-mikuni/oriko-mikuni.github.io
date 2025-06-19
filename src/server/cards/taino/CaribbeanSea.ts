@@ -28,16 +28,13 @@ export class CaribbeanSea extends Card implements ICard {
     }
 
     public override getVariableVictoryPoints(param: GetVPParameter): number {
-        const total: Units = param.player.resourceOnYourCards.reduce(
-            (sumUnit: Units, [,curUnit]: [ICard, Units]): Units => {
-                return {
-                    material: sumUnit.material + curUnit.material,
-                    population: sumUnit.population + curUnit.population,
-                    progress: sumUnit.progress + curUnit.progress,
-                    goods: sumUnit.goods + curUnit.goods,
-                }
-            }, UnitsUtils.EMPTY
+        return Math.floor(
+            param.player.tableau.reduce(
+                (sum: number, card: ICard): number => {
+                    const unit: Units = UnitsUtils.of(card.resourceUpon);
+                    return sum + unit.material + unit.population + unit.progress + unit.goods;
+                }, 0
+            ) / 6
         );
-        return Math.floor((total.goods + total.material + total.population + total.progress) / 6);
     }
 }

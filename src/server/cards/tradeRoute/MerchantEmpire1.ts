@@ -6,7 +6,8 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardTypeIcon} from "../../../common/cards/CardTypeIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {isInPlayLocation, Player} from "../../Player";
+import {Player} from "../../Player";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class MerchantEmpire1 extends Card implements ICard {
     constructor() {

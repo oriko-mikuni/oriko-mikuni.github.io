@@ -6,7 +6,8 @@ import {CardSuitIcon} from "../../../common/cards/CardSuitIcon";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon";
 import {CardStartingLocation} from "../../../common/cards/CardStartingLocation";
 import {CardInPlayType} from "../../../common/cards/CardInPlayType";
-import {Player, isInPlayLocation} from "../../Player";
+import {Player} from "../../Player";
+import {isInPlayLocation} from "../../../common/cards/CardLocation";
 
 export class MauryansPowerA extends Card implements ICard {
     constructor() {
