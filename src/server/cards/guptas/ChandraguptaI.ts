@@ -22,7 +22,7 @@ export class ChandraguptaI extends Card implements ICard {
                 "Break through for a {trade-route}/{civilised}.",
                 CardEffectReuse.selfHistory
             ],
-            developmentCost: {goods: 1, material: 2, population: 2},
+            developmentCost: {goods: 1, material: 2, population: 1},
             expansion: CardExpansion.TRADE_FRIENDLY,
             victoryPoints: 2,
             relatedCards: [
