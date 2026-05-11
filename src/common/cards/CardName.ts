@@ -1243,7 +1243,7 @@ const customCardTitleColours: Partial<Record<CardName, string>> = {
     [CardName.SUMMONED_CUL]: "text-white bg-[#48354b]"
 };
 
-export function getCustomCardTitleColour(name: string): string | undefined {
+export function getSpecialCardTitleColour(name: string): string | undefined {
     const cardName: CardName | undefined = getCardName(name);
     return cardName !== undefined ? customCardTitleColours[cardName] : undefined;
 }

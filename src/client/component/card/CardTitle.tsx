@@ -1,6 +1,6 @@
 import React from 'react';
 import {CardSuitIcon, getSuitCardTitleColour} from "../../../common/cards/CardSuitIcon";
-import {getCustomCardTitleColour} from "../../../common/cards/CardName.ts";
+import {getSpecialCardTitleColour} from "../../../common/cards/CardName.ts";
 import {useTranslation} from "react-i18next";
 import CardTextRender from "./CardTextRender.tsx";
 
@@ -19,7 +19,7 @@ function CardTitle(
     const {t: titleTranslation} = useTranslation("cardName");
 
     const titleDisplay: string = getCardTitleDisplay(diy ? title : titleTranslation(title));
-    const titleColour: string = getCustomCardTitleColour(title) || getSuitCardTitleColour(banner);
+    const titleColour: string = getSpecialCardTitleColour(title) || getSuitCardTitleColour(banner);
     const specialExhaustCount: React.JSX.Element | null =
         exhaustCount === undefined ? null :
             <div className="absolute top-[5px] right-[30px] text-white font-bold">

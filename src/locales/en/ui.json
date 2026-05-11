@@ -4,6 +4,7 @@
     "Imperium Cardporium": "Imperium Cardporium",
     "Imperium Card Maker": "Imperium Card Maker",
     "Imperium Common Sets": "Imperium Common Sets",
+    "Imperium Scorer Setup": "Imperium Scorer Setup",
     "404": "Page Not Found"
   },
   "HomepageText": {
@@ -11,6 +12,7 @@
     "toCardList": "card list",
     "toCardMaker": "card maker",
     "toCommonSets": "common sets",
+    "toScorerSetup": "scorer",
     "toRulebook": "rulebook",
     "toSource": "source",
     "toFeedback": "feedback"
@@ -94,6 +96,41 @@
     "Remove these cards when playing with Trade Route expansion": "Remove these cards when playing with Trade Route expansion",
     "Add these cards when playing with Trade Route expansion": "Add these cards when playing with Trade Route expansion",
     "Tributary Replacement": "Tributary Replacement"
+  },
+  "ImperiumScorer": {
+    "backToHomepage": "<-- back",
+    "toFeedback": "feedback",
+    "Choose Common Set": "Choose Common Set",
+    "includeHorizons": "Include Horizons (and its updates)",
+    "enableMixedSet": "Enable Mixed Sets",
+    "Addition Common Setting": "Addition Common Setting",
+    "includeTradeRoutes": "Include Trade Routes",
+    "includePromo": "Include Promo",
+    "Player Setting": "Player Setting",
+    "playerCount": "Player Count",
+    "1 Player (Practise Mode)": "1 Player (Practise Mode)",
+    "2 Players": "2 Players",
+    "3 Players": "3 Players",
+    "4 Players": "4 Players",
+    "PlayerX": {
+      "0": "Player 1",
+      "1": "Player 2",
+      "2": "Player 3",
+      "3": "Player 4"
+    },
+    "PlayerName": "Player Name",
+    "Nation": "Nation",
+    "PowerOption": "Power Option",
+    "powerOptions": {
+      "powerA": "Human Power A",
+      "powerB": "Human Power B",
+      "chieftain": "Bot Chieftain",
+      "warlord": "Bot Warlord",
+      "imperator": "Bot Imperator",
+      "sovereign": "Bot Sovereign",
+      "overlord": "Bot Overlord",
+      "supremeRuler": "Bot Supreme Ruler"
+    }
   },
   "ElementFilterState": {
     "invert": "Invert"

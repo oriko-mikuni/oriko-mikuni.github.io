@@ -1,6 +1,6 @@
 import {ClientCard} from "../../../common/cards/ClientCard";
 import React from "react";
-import {getCustomCardTitleColour} from "../../../common/cards/CardName.ts";
+import {getSpecialCardTitleColour} from "../../../common/cards/CardName.ts";
 import {getSuitCardTitleColour} from "../../../common/cards/CardSuitIcon.ts";
 import CardTextRender, {CardTextRenderSharedProps} from "./CardTextRender.tsx";
 import {CardHeaderIcon} from "../../../common/cards/CardHeaderIcon.ts";
@@ -36,7 +36,7 @@ function CardItemInList({customClientCard, onClick, cardModel = {}}: {
     if (!clientCard) return <></>;
 
     const titleColour: string =
-        getCustomCardTitleColour(clientCard.name) || getSuitCardTitleColour(clientCard.suit?.at(0));
+        getSpecialCardTitleColour(clientCard.name) || getSuitCardTitleColour(clientCard.suit?.at(0));
     const titleTextColorMatch: RegExpMatchArray | null = titleColour.match(/text-(\S+)/);
     const titleTextColor: string = titleTextColorMatch ? titleTextColorMatch[1] : "white";
     const textProps: CardTextRenderSharedProps = {minimize: true, isBlack: titleTextColor === "black"};

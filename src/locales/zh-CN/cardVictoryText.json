@@ -91,7 +91,7 @@
   "1VP per {variable} card": "每{variable}牌1VP",
   "1VP per {variable} card (including this one)": "每{variable}牌\n（包括本牌）\n1VP",
   "2VP if in history": "若在历史中，2VP",
-  "2VP per card in history": "每有1张牌\n在历史中，\n1VP",
+  "2VP per card in history": "每有1张牌\n在历史中，\n2VP",
   "2VP per player with fewer {progress} than you": "每有1位玩家{progress}少于你，2VP",
   "2VP per {city}/{metropolis}": "每{city}/{metropolis}2VP",
   "2VP per {city}/{metropolis} in play": "每有1{city}/{metropolis}\n在场，2VP",
