@@ -24,7 +24,7 @@ export class Mathematics extends Card implements ICard {
                 CardEffectReuse.increaseHandSize1,
                 "Your [Advance] cards lose the {barbarian} icon."
             ],
-            developmentCost: {material: 3, population: 2},
+            developmentCost: {material: 3, population: 1},
             victoryPoints: 2,
             relatedCards: [
                 CardName.ADVANCE_QIN
